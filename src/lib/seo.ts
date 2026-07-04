@@ -14,6 +14,7 @@ export function createMetadata({
 }: SeoInput): Metadata {
   const url = new URL(path, site.url).toString();
   const resolvedTitle = title ? `${title} | ${site.name}` : site.title;
+  const image = new URL("/opengraph-image", site.url).toString();
 
   return {
     metadataBase: new URL(site.url),
@@ -29,11 +30,23 @@ export function createMetadata({
       siteName: site.name,
       locale: "es_ES",
       type: "website",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: `${site.name} - Product Software Engineer`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: resolvedTitle,
       description,
+      images: [image],
+    },
+    icons: {
+      icon: "/icon.svg",
     },
   };
 }
@@ -45,10 +58,10 @@ export function personJsonLd() {
     name: site.name,
     url: site.url,
     email: site.email,
-    jobTitle: "Frontend Tech Lead",
+    jobTitle: "Product Software Engineer",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Logrono",
+      addressLocality: "Logroño",
       addressRegion: "La Rioja",
       addressCountry: "ES",
     },
@@ -58,7 +71,10 @@ export function personJsonLd() {
       "Next.js",
       "TypeScript",
       "Frontend Architecture",
+      "Full Stack Development",
+      "Product Engineering",
       "SEO",
+      "Generative AI",
       "Meteorological platforms",
       "Artificial Intelligence",
     ],

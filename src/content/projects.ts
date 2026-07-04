@@ -37,7 +37,7 @@ export const projects: Project[] = [
     label: "Webmaster",
     logo: "/images/lariojameteo-logo-white.png",
     description:
-      "Portal meteorologico regional que combina audiencia, contenido, SEO, comunidad y distribucion editorial para La Rioja y Logrono.",
+      "Portal meteorologico regional que combina audiencia, contenido, SEO, comunidad y distribucion editorial para La Rioja y Logroño.",
     impact:
       "Proyecto meteorologico regional con trayectoria desde 2012, foco editorial, SEO, comunidad y datos en directo.",
     metrics: [
@@ -141,7 +141,7 @@ export const snowyMediaMentions: MediaMention[] = [
 ];
 
 export const lariojaMeteoSections = [
-  "Predicciones para La Rioja y Logrono",
+  "Predicciones para La Rioja y Logroño",
   "Meteoanalisis, nevadas, pluviometria y embalses",
   "Tiempo real, estaciones Snowy y webcams",
   "Noticias, astronomia, guias y comunidad meteoaficionada",
