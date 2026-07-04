@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #02040a;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --panel: rgba(255, 255, 255, 0.035);
+  --panel-strong: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.1);
+  --cyan: #67e8f9;
+  --teal: #5eead4;
+  --violet: #a78bfa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(103, 232, 249, 0.13), transparent 24rem),
+    radial-gradient(circle at 82% 8%, rgba(94, 234, 212, 0.08), transparent 25rem),
+    linear-gradient(180deg, #02040a 0%, #07111f 48%, #02040a 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background-image:
+    linear-gradient(rgba(103, 232, 249, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 232, 249, 0.035) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.42) 1px, transparent 1.35px);
+  background-size:
+    72px 72px,
+    72px 72px,
+    128px 128px;
+  background-position:
+    center top,
+    center top,
+    12px 20px;
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.88), transparent 88%);
+}
+
+body::after {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.08), transparent) 50% 0 / 1px 100% no-repeat,
+    radial-gradient(ellipse at center, transparent 0%, rgba(2, 4, 10, 0.5) 78%);
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.28);
+}
+
+.orbital-ring {
+  position: absolute;
+  border: 1px solid rgba(103, 232, 249, 0.16);
+  border-radius: 9999px;
+  transform: rotate(-18deg);
+}
+
+.scanline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(103, 232, 249, 0.5),
+    rgba(94, 234, 212, 0.2),
+    transparent
+  );
+}
+
+.space-border {
+  position: relative;
+}
+
+.space-border::before {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  content: "";
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.42), transparent 26%),
+    linear-gradient(315deg, rgba(94, 234, 212, 0.2), transparent 32%);
+  opacity: 0.55;
+}
