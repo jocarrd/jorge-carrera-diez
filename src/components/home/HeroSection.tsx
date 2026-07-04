@@ -1,5 +1,5 @@
 import { ProfileVisual } from "@/components/home/ProfileVisual";
-import { Badge, ButtonLink, Container } from "@/components/ui";
+import { ButtonLink, Container } from "@/components/ui";
 import { profile } from "@/content/profile";
 
 export function HeroSection() {
@@ -11,8 +11,7 @@ export function HeroSection() {
 
         <div className="grid min-h-[70vh] items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <Badge>{profile.positioning}</Badge>
-            <h1 className="mt-8 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Jorge Carrera Diez
             </h1>
             <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-200 sm:text-2xl">
@@ -24,7 +23,7 @@ export function HeroSection() {
             <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-start">
               <ButtonLink href="/proyectos/snowy">Ver Snowy</ButtonLink>
               <ButtonLink href="/cv" variant="secondary">
-                Ver CV
+                CV
               </ButtonLink>
             </div>
             <div className="mt-10 lg:hidden">

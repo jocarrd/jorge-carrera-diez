@@ -32,7 +32,7 @@ export function ProfileVisual() {
               Jorge Carrera Diez
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              Product Software Engineer · Arquitectura · IA aplicada
+              Ingeniero de software · Producto · Arquitectura
             </p>
           </div>
         </div>

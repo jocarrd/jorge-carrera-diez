@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Badge, ButtonLink, MetricCard, Section, SectionHeader, Surface } from "@/components/ui";
+import Image from "next/image";
+import { ButtonLink, MetricCard, Section, SectionHeader, Surface } from "@/components/ui";
 import { lariojaMeteoSections } from "@/content/projects";
 import { createMetadata } from "@/lib/seo";
 
@@ -28,8 +29,7 @@ export default function LariojaMeteoPage() {
   return (
     <main>
       <Section>
-        <Badge>Webmaster</Badge>
-        <h1 className="mt-8 max-w-5xl text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-5xl text-5xl font-semibold tracking-tight text-white sm:text-6xl">
           LaRiojaMeteo: meteorologia regional, comunidad, SEO y base editorial para Snowy.
         </h1>
         <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
@@ -39,6 +39,16 @@ export default function LariojaMeteoPage() {
         </p>
         <div className="mt-9">
           <ButtonLink href="https://lariojameteo.es">Visitar LaRiojaMeteo</ButtonLink>
+        </div>
+        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-black">
+          <Image
+            src="/images/lariojameteo-home.png"
+            alt="Home de LaRiojaMeteo con portada, categorias y ultimo articulo"
+            width={1230}
+            height={923}
+            className="w-full object-cover object-left-top"
+            priority
+          />
         </div>
       </Section>
 

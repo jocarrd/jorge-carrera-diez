@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Contacto",
   description:
-    "Contacto profesional de Jorge Carrera Diez para oportunidades tecnicas, producto, arquitectura, full stack, SEO, meteorologia e IA.",
+    "Contacto profesional de Jorge Carrera Diez para oportunidades tecnicas, producto, arquitectura, frontend, backend, SEO y meteorologia.",
   path: "/contacto",
 });
 
@@ -17,7 +17,7 @@ export default function ContactPage() {
         <SectionHeader
           eyebrow="Contacto"
           title="Hablemos si hay un reto tecnico serio detras."
-          text="Me interesan conversaciones sobre producto, arquitectura, full stack, SEO tecnico, plataformas de datos, meteorologia, IA aplicada y sistemas web escalables."
+          text="Me interesan conversaciones sobre producto, arquitectura, SEO tecnico, plataformas de datos, meteorologia, agentes y sistemas web escalables."
         />
         <Surface className="mt-10 max-w-2xl">
           <p className="text-sm uppercase tracking-[0.18em] text-slate-500">Email</p>

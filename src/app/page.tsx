@@ -1,6 +1,7 @@
 import { JsonLd } from "@/components/JsonLd";
 import { ContactCta } from "@/components/home/ContactCta";
 import { CurrentRoleSection } from "@/components/home/CurrentRoleSection";
+import { EngineeringSnapshot } from "@/components/home/EngineeringSnapshot";
 import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { GenerativeAiSection } from "@/components/home/GenerativeAiSection";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <JsonLd data={personJsonLd()} />
       <JsonLd data={websiteJsonLd()} />
       <HeroSection />
+      <EngineeringSnapshot />
       <CurrentRoleSection />
       <GenerativeAiSection />
       <SnowyShowcase />

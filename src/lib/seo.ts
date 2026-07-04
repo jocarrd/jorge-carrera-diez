@@ -35,7 +35,7 @@ export function createMetadata({
           url: image,
           width: 1200,
           height: 630,
-          alt: `${site.name} - Product Software Engineer`,
+          alt: `${site.name} - Ingeniero de software`,
         },
       ],
     },
@@ -58,7 +58,7 @@ export function personJsonLd() {
     name: site.name,
     url: site.url,
     email: site.email,
-    jobTitle: "Product Software Engineer",
+    jobTitle: "Ingeniero de software",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Logroño",

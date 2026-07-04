@@ -14,7 +14,11 @@ export const skillGroups: SkillGroup[] = [
     items: ["MySQL", "Redis", "Prisma", "Docker", "Coolify", "AWS"],
   },
   {
+    title: "IA y agentes",
+    items: ["Vercel AI SDK", "RAG", "LLMs", "MCP", "Tools", "Evals"],
+  },
+  {
     title: "Producto",
-    items: ["UX", "Roadmap", "Automatizaciones", "IA", "Analitica", "CI/CD"],
+    items: ["UX", "Roadmap", "Automatizaciones", "Analitica", "CI/CD"],
   },
 ];

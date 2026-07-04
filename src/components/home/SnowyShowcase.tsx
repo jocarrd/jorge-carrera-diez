@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ButtonLink, MetricCard } from "@/components/ui";
-import { snowyMetrics } from "@/content/projects";
+import { snowyMetrics, snowyTractionMetrics } from "@/content/projects";
 
 const architectureFlow = [
   "Next.js BFF",
@@ -22,16 +22,13 @@ export function SnowyShowcase() {
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
-              Snowy
-            </p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Snowy: meteorologia, datos, mapas e IA en un producto propio.
             </h2>
             <p className="mt-6 text-base leading-8 text-slate-300">
-              Lo desarrollo como unico ingeniero: frontend con Next.js, backend con
-              NestJS, cache con Redis, MySQL, radar, CMS, SEO, despliegues e
-              integracion de IA generativa sobre datos meteorologicos reales.
+              El proyecto ya funciona como producto: en los ultimos 3 meses ha generado
+              millones de impresiones organicas, decenas de miles de clics y una base de
+              usuarios registrados sobre la que seguir construyendo.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/proyectos/snowy">Ver caso tecnico</ButtonLink>
@@ -55,7 +52,13 @@ export function SnowyShowcase() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-10 grid gap-3 md:grid-cols-3">
+          {snowyTractionMetrics.map((metric) => (
+            <MetricCard key={metric.label} metric={metric} />
+          ))}
+        </div>
+
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
           {snowyMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}

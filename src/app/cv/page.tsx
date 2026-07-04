@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "CV",
   description:
-    "CV de Jorge Carrera Diez, Product Software Engineer e Ingeniero Informatico especializado en full stack, arquitectura, producto digital e IA aplicada.",
+    "CV de Jorge Carrera Diez, ingeniero de software e Ingeniero Informatico especializado en producto digital, arquitectura, frontend, backend y SEO.",
   path: "/cv",
 });
 

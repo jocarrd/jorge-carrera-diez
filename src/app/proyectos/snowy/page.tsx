@@ -1,45 +1,38 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Badge, ButtonLink, MetricCard, Section, SectionHeader, Surface, TechTag } from "@/components/ui";
+import { ButtonLink, MetricCard, Section, SectionHeader, Surface, TechTag } from "@/components/ui";
 import {
   snowyCapabilities,
   snowyMediaMentions,
   snowyMetrics,
+  snowyTractionMetrics,
 } from "@/content/projects";
 import { createMetadata } from "@/lib/seo";
 
-const architectureBlocks = [
-  {
-    title: "snowy.es",
-    label: "Frontend BFF",
-    text: "Next.js renderiza paginas, SEO y UI. Consume el engine y mantiene la logica de negocio fuera del frontend.",
-  },
-  {
-    title: "api.snowy.es",
-    label: "Backend autoridad",
-    text: "NestJS centraliza negocio, autenticacion, cache, proveedores, BD, S3 y contratos HTTP.",
-  },
-  {
-    title: "Redis + MySQL",
-    label: "Datos",
-    text: "MySQL guarda persistencia; Redis cachea datos por dominio y TTL para responder rapido.",
-  },
-  {
-    title: "CMS + Radar + Jobs",
-    label: "Servicios",
-    text: "CMS editorial, motor radar, snapshots, jobs y documentacion transversal para operar el ecosistema.",
-  },
-] as const;
-
 const dataSources = [
   "AEMET",
-  "Wunderground",
   "Euskalmet",
   "MeteoGalicia",
   "MITECO",
   "USGS",
   "IGN",
   "CAMS",
+] as const;
+
+const publicProof = [
+  {
+    title: "Entrevista en RNE",
+    text: "Participacion en radio para explicar Snowy y la evolucion del proyecto meteorologico.",
+    image: "/images/snowy-rne.png",
+    alt: "Jorge Carrera y Daniel Benito en una entrevista de RNE sobre Snowy",
+  },
+  {
+    title: "Articulo en larioja.com",
+    text: "Cobertura en prensa regional sobre el lanzamiento de Snowy desde LaRiojaMeteo.",
+    image: "/images/snowy-larioja-article.jpeg",
+    alt: "Articulo de larioja.com sobre el lanzamiento de Snowy",
+    url: "https://www.larioja.com/la-rioja/snowy-asistente-rioja-meteo-20260122182611-nt.html",
+  },
 ] as const;
 
 const productLines = [
@@ -101,7 +94,7 @@ const productModules = [
     title: "Clima historico",
     text: "Procesamiento de series historicas para analizar tendencias, anomalias y cambios de temperatura por zona.",
     image: "/images/snowy-climate.png",
-    alt: "Modulo de clima historico de Snowy con mapa de calentamiento en Espana",
+    alt: "Modulo de clima historico de Snowy con mapa de calentamiento en España",
   },
   {
     title: "Terremotos",
@@ -128,14 +121,20 @@ export default function SnowyPage() {
   return (
     <main>
       <Section>
-        <Badge>Caso de ingenieria</Badge>
-        <h1 className="mt-8 max-w-5xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-5xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
           Snowy: plataforma meteorologica con mapas, datos en tiempo real e IA.
         </h1>
         <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
-          La desarrollo como unico ingeniero. El proyecto combina producto, frontend,
-          backend, infraestructura, SEO, radar, estaciones, datos ambientales y agentes
-          de IA sobre informacion meteorologica real.
+          Snowy es una plataforma meteorologica para consultar predicciones, mapas,
+          estaciones, avisos, embalses, calidad del aire, terremotos y herramientas
+          inteligentes desde una experiencia rapida y orientada a decisiones reales.
+        </p>
+        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400">
+          La diferencia esta en unir producto, datos, SEO, mapas interactivos y agentes
+          sobre una arquitectura propia: frontend SSR, backend como autoridad, cache por
+          dominio y servicios especializados para radar, CMS y procesos batch. En los
+          ultimos 3 meses, Snowy ha superado los 7,5 millones de impresiones, 51k clics
+          organicos y 1.200 usuarios registrados.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="https://snowy.es">Abrir Snowy</ButtonLink>
@@ -184,7 +183,7 @@ export default function SnowyPage() {
         <SectionHeader
           eyebrow="Producto"
           title="Que es Snowy"
-          text="Una plataforma meteorologica para Espana con prediccion multi-modelo, estaciones en vivo, embalses, terremotos, calidad del aire, polen, avisos, mapas interactivos, WikiMeteo y asistente IA."
+          text="Una plataforma meteorologica para España con prediccion multi-modelo, estaciones en vivo, embalses, terremotos, calidad del aire, polen, avisos, mapas interactivos, WikiMeteo y asistente IA."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {productFeatures.map((feature) => (
@@ -235,11 +234,15 @@ export default function SnowyPage() {
 
       <Section>
         <SectionHeader
-          eyebrow="Superficie"
-          title="Datos, mapas y contenido indexable."
-          text="Snowy combina buscador, mapas, estaciones, radar, herramientas, contenidos SEO, IA y productos B2B sobre una misma base tecnica."
+          title="Traccion real, no solo arquitectura."
+          text="El SEO, el rendimiento y la utilidad del producto ya se reflejan en uso: busqueda organica, clics y usuarios registrados sobre una plataforma propia."
         />
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-10 grid gap-3 md:grid-cols-3">
+          {snowyTractionMetrics.map((metric) => (
+            <MetricCard key={metric.label} metric={metric} />
+          ))}
+        </div>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
           {snowyMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
@@ -248,9 +251,9 @@ export default function SnowyPage() {
 
       <Section className="border-y border-white/10 bg-white/[0.02]">
         <SectionHeader
-          eyebrow="Mi papel"
-          title="Desarrollo end-to-end."
-          text="Defino el roadmap y construyo la plataforma completa: arquitectura, frontend, backend, base de datos, cache, infraestructura, UX, SEO, integraciones, automatizaciones, IA y operativa."
+          eyebrow="Construccion"
+          title="Como esta hecho."
+          text="Snowy se apoya en una arquitectura desacoplada: Next.js para SSR, SEO y UI; NestJS para negocio y datos; Redis para cache; MySQL para persistencia; y servicios separados cuando radar, CMS o jobs tienen cargas distintas."
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {snowyCapabilities.map((item) => (
@@ -259,33 +262,6 @@ export default function SnowyPage() {
               <p className="mt-4 text-sm leading-7 text-slate-400">{item.text}</p>
             </Surface>
           ))}
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeader
-          eyebrow="Arquitectura"
-          title="Front ligero, backend autoridad y servicios separados cuando aportan."
-          text="La arquitectura mantiene el frontend centrado en SSR, SEO y UI. El engine concentra negocio, datos, cache e integraciones. Radar, CMS y jobs viven separados porque tienen ciclos y cargas distintas."
-        />
-        <div className="mt-10 grid gap-4 lg:grid-cols-4">
-          {architectureBlocks.map((block) => (
-            <div
-              key={block.title}
-              className="relative rounded-2xl border border-white/10 bg-white/[0.035] p-6"
-            >
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">
-                {block.label}
-              </p>
-              <h2 className="mt-4 text-xl font-semibold text-white">{block.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-400">{block.text}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5 text-sm leading-7 text-slate-300">
-          El resultado practico: el front no toca base de datos ni proveedores
-          externos directamente. Consume contratos del engine, y cada pieza
-          especializada se despliega y opera con su propia responsabilidad.
         </div>
       </Section>
 
@@ -333,11 +309,73 @@ export default function SnowyPage() {
         <SectionHeader
           eyebrow="Prensa"
           title="Snowy tambien ha tenido recorrido publico."
-          text="El lanzamiento tuvo cobertura en medios regionales y nacionales, algo relevante para un producto que combina meteorologia, comunidad e IA aplicada."
+          text="El proyecto nacio desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales publicos. Es una señal de producto real, comunidad y continuidad."
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          {publicProof.map((item) => {
+            const content = (
+              <>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={900}
+                  height={600}
+                  className="h-72 w-full border-b border-white/10 object-cover object-center"
+                />
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-white">{item.title}</h2>
+                  <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
+                </div>
+              </>
+            );
+
+            if ("url" in item) {
+              return (
+                <a
+                  key={item.title}
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <article
+                key={item.title}
+                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+              >
+                {content}
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          <a
+            href="https://datos.gob.es/es/aplicaciones/snowy"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-6 transition hover:border-cyan-200/50 hover:bg-cyan-300/15"
+          >
+            <p className="font-mono text-sm text-cyan-200">datos.gob.es</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">
+              Ficha publica
+            </p>
+            <h2 className="mt-4 text-lg font-semibold leading-7 text-white">
+              Snowy aparece recogido en el portal nacional de datos abiertos.
+            </h2>
+          </a>
           {snowyMediaMentions.map((mention) => (
-            <Surface key={`${mention.outlet}-${mention.date}`}>
+            <a
+              key={`${mention.outlet}-${mention.date}-${mention.title}`}
+              href={mention.url}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+            >
               <p className="font-mono text-sm text-cyan-300">{mention.outlet}</p>
               <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">
                 {mention.date}
@@ -345,7 +383,7 @@ export default function SnowyPage() {
               <h2 className="mt-4 text-lg font-semibold leading-7 text-white">
                 {mention.title}
               </h2>
-            </Surface>
+            </a>
           ))}
         </div>
       </Section>

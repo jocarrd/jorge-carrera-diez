@@ -11,7 +11,7 @@ export const projects: Project[] = [
     description:
       "Plataforma meteorologica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
     impact:
-      "La desarrollo de extremo a extremo: frontend, backend, cache, radar, CMS, despliegues, observabilidad y decisiones de arquitectura.",
+      "Producto construido sobre frontend SSR, backend propio, cache, radar, CMS, despliegues, observabilidad y decisiones de arquitectura.",
     metrics: [
       { value: "16", label: "modelos meteorologicos" },
       { value: "1.000+", label: "estaciones en vivo" },
@@ -36,6 +36,7 @@ export const projects: Project[] = [
     url: "https://lariojameteo.es",
     label: "Webmaster",
     logo: "/images/lariojameteo-logo-white.png",
+    image: "/images/lariojameteo-home.png",
     description:
       "Portal meteorologico regional que combina audiencia, contenido, SEO, comunidad y distribucion editorial para La Rioja y Logroño.",
     impact:
@@ -84,7 +85,7 @@ export const snowyCapabilities: Capability[] = [
 export const engineeringSignals = [
   {
     title: "Arquitectura de sistema",
-    text: "Separacion de responsabilidades entre BFF, backend autoridad, CMS, radar, jobs y documentacion transversal.",
+    text: "Separacion de responsabilidades entre BFF, backend central, CMS, radar, jobs y documentacion transversal.",
   },
   {
     title: "Criterio pragmatico",
@@ -111,10 +112,28 @@ export const engineeringSignals = [
 export const snowyMetrics: Metric[] = [
   { value: "16", label: "modelos", detail: "ECMWF, GFS, ICON, ARPEGE, GEM y mas" },
   { value: "1.000+", label: "estaciones", detail: "red oficial y comunidad Snowy" },
-  { value: "370+", label: "embalses", detail: "estado y evolucion en Espana" },
+  { value: "370+", label: "embalses", detail: "estado y evolucion en España" },
   { value: "1.000+", label: "terminos", detail: "WikiMeteo en espanol" },
   { value: "20+", label: "herramientas IA", detail: "asistente, voz y decisiones diarias" },
   { value: "10+", label: "capas de mapa", detail: "radar, estaciones, riesgos y aire" },
+];
+
+export const snowyTractionMetrics: Metric[] = [
+  {
+    value: "7,5M",
+    label: "impresiones",
+    detail: "ultimos 3 meses en busqueda organica",
+  },
+  {
+    value: "51k",
+    label: "clics",
+    detail: "trafico captado desde Google en 3 meses",
+  },
+  {
+    value: "1.200+",
+    label: "usuarios registrados",
+    detail: "base propia para comunidad y nuevas funcionalidades",
+  },
 ];
 
 export const snowyMediaMentions: MediaMention[] = [
@@ -122,21 +141,43 @@ export const snowyMediaMentions: MediaMention[] = [
     outlet: "El Confidencial",
     date: "18 enero 2026",
     title: "La Rioja Meteo lanza Snowy como web con IA para decisiones cotidianas sobre el tiempo.",
+    url: "https://www.elconfidencial.com/tecnologia/2026-01-18/web-ia-la-rioja-prevision-tiempo-1tna-1qrt_4282037/",
   },
   {
     outlet: "larioja.com",
     date: "22 enero 2026",
     title: "Nace Snowy, asistente riojano para paraguas, lavadora y recomendaciones diarias.",
+    url: "https://www.larioja.com/la-rioja/snowy-asistente-rioja-meteo-20260122182611-nt.html",
   },
   {
     outlet: "eldiario.es",
     date: "12 enero 2026",
     title: "La Rioja Meteo crea Snowy, una plataforma meteorologica con recomendaciones practicas.",
+    url: "https://www.eldiario.es/la-rioja/rioja-meteo-crea-snowy-nueva-plataforma-meteorologia-dice-poner-lavadora-ropa-ponerte_1_12898410.html",
   },
   {
     outlet: "nuevecuatrouno",
     date: "12 enero 2026",
     title: "Snowy se presenta como nueva plataforma meteorologica de La Rioja Meteo.",
+    url: "https://nuevecuatrouno.com/2026/01/12/nace-snowy-la-plataforma-meteorologica-de-la-rioja-meteo/",
+  },
+  {
+    outlet: "Diario de Leon",
+    date: "14 abril 2026",
+    title: "Snowy como apoyo para planificar la observacion del eclipse en Leon.",
+    url: "https://www.diariodeleon.es/sociedad/260414/2081770/mejor-alia-leon-eclipse.html",
+  },
+  {
+    outlet: "Actualidad Rioja Baja",
+    date: "12 enero 2026",
+    title: "La Rioja Meteo lanza Snowy como plataforma meteorologica avanzada y accesible.",
+    url: "https://actualidadriojabaja.com/la-rioja-meteo-lanza-snowy-una-nueva-plataforma-meteorologica-avanzada-y-accesible/",
+  },
+  {
+    outlet: "nuevecuatrouno",
+    date: "11 abril 2026",
+    title: "Snowy y La Rioja Meteo en la planificacion del eclipse de agosto.",
+    url: "https://nuevecuatrouno.com/2026/04/11/cielo-rioja-apunta-despejado-gran-eclipse-de-agosto/",
   },
 ];
 

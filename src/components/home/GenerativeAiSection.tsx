@@ -1,70 +1,94 @@
 import { Section } from "@/components/ui";
 
-const aiWorkflow = [
+const systemFlow = [
+  "Interfaz",
+  "Agente",
+  "Herramientas",
+  "Datos",
+  "Control",
+] as const;
+
+const agentCapabilities = [
   {
-    step: "01",
-    title: "Caso de uso",
-    text: "Primero separo lo util de lo vistoso: donde una respuesta generativa, un agente o una automatizacion realmente reduce friccion.",
+    label: "contexto",
+    title: "RAG y datos propios",
+    text: "Recuperacion de informacion, fuentes internas, documentacion, embeddings y contexto limitado al caso de uso.",
   },
   {
-    step: "02",
-    title: "Agente y herramientas",
-    text: "Defino contexto, permisos, herramientas, limites y fallback. Un agente sin frontera clara acaba siendo dificil de mantener.",
+    label: "tools",
+    title: "Herramientas y MCP",
+    text: "Agentes con herramientas explicitas, permisos, contratos, function calling y servidores MCP cuando aportan una frontera clara.",
   },
   {
-    step: "03",
-    title: "Integracion",
-    text: "Lo bajo a arquitectura: backend, contratos, trazabilidad, UX, seguridad, costes y dependencias con otros equipos.",
+    label: "sdk",
+    title: "Integracion en producto",
+    text: "Vercel AI SDK, streaming, UX, latencia, coste y fallback integrados dentro de flujos reales, no como demo aislada.",
   },
   {
-    step: "04",
+    label: "ops",
     title: "Control",
-    text: "Mido calidad, errores, latencia y coste. La IA tiene que poder observarse y corregirse como cualquier otra pieza critica.",
+    text: "Logs, trazabilidad, evaluacion de respuestas, limites y capacidad de corregir el sistema como cualquier pieza critica.",
   },
 ] as const;
 
 export function GenerativeAiSection() {
   return (
     <Section id="ia-generativa" className="border-t border-white/10">
-      <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+      <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <div className="max-w-xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-400">
-            IA generativa
-          </p>
-          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Agentes, si aportan algo al sistema.
+          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            IA integrada en producto, no añadida encima.
           </h2>
           <p className="mt-6 text-base leading-8 text-slate-300">
-            Trabajo la IA desde la arquitectura: caso de uso, contexto, herramientas,
-            permisos, trazabilidad, coste y experiencia de usuario. La clave esta en
-            convertir una capacidad generativa en una funcionalidad mantenible.
+            Estoy creciendo en la parte de agentes, RAG, tools, MCP y LLMs desde el sitio
+            que mas me interesa: convertir capacidades generativas en funcionalidades
+            mantenibles dentro de un producto.
           </p>
-          <div className="mt-8 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5">
-            <p className="font-mono text-sm uppercase tracking-[0.18em] text-cyan-200">
-              En Caixa
-            </p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
-              Lidero la integracion de IA generativa en proyectos enterprise,
-              coordinando arquitectura, equipos tecnicos y necesidades de negocio.
-            </p>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/80">
+            {[
+              ["VidaCaixa", "integracion de capacidades generativas en entorno enterprise"],
+              ["Snowy", "asistente y herramientas sobre datos meteorologicos reales"],
+              ["criterio", "contexto, limites, trazabilidad, coste y experiencia final"],
+            ].map(([label, value]) => (
+              <div
+                key={label}
+                className="grid gap-2 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]"
+              >
+                <p className="font-mono text-xs text-slate-500">{label}</p>
+                <p className="text-sm leading-6 text-slate-300">{value}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute bottom-0 left-5 top-5 hidden w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-transparent sm:block" />
-          <div className="space-y-5">
-            {aiWorkflow.map((item) => (
-              <article
-                key={item.step}
-                className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:ml-12"
-              >
-                <div className="mb-4 flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/30 bg-[#07111f] font-mono text-sm text-cyan-200 sm:absolute sm:-left-16 sm:top-5">
-                    {item.step}
+        <div className="space-y-4">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <div className="grid gap-3 lg:grid-cols-5">
+              {systemFlow.map((item, index) => (
+                <div key={item} className="relative rounded-xl border border-white/10 bg-[#07111f] p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="font-mono text-xs text-slate-500">0{index + 1}</p>
+                    <div className="h-2 w-2 rounded-full bg-cyan-300/70 shadow-[0_0_18px_rgba(103,232,249,0.55)]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-8 text-sm font-medium text-white">{item}</p>
+                  {index < systemFlow.length - 1 ? (
+                    <div className="absolute -right-3 top-1/2 hidden h-px w-3 bg-cyan-300/40 lg:block" />
+                  ) : null}
                 </div>
-                <p className="text-sm leading-7 text-slate-400">{item.text}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {agentCapabilities.map((item) => (
+              <article
+                key={item.label}
+                className="group relative min-h-48 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+              >
+                <div className="absolute -right-14 -top-14 h-32 w-32 rounded-full border border-cyan-300/10 transition group-hover:border-cyan-300/20" />
+                <p className="font-mono text-xs text-slate-500">{item.label}</p>
+                <h3 className="mt-8 text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
               </article>
             ))}
           </div>

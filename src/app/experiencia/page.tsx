@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Experiencia",
   description:
-    "Experiencia profesional de Jorge Carrera Diez como Product Software Engineer, Tech Lead, Lead Software Engineer y Full Stack Developer.",
+    "Experiencia profesional de Jorge Carrera Diez como ingeniero de software, Tech Lead, Lead Software Engineer y Full Stack Developer.",
   path: "/experiencia",
 });
 
@@ -17,8 +17,8 @@ export default function ExperiencePage() {
       <Section>
         <SectionHeader
           eyebrow="Experiencia"
-          title="Product Software Engineer con trayectoria en banca, seguros, retail y producto web."
-          text="Esta pagina recoge el recorrido profesional con foco en liderazgo tecnico, arquitectura, full stack, React, Next.js, calidad, CI/CD, IA aplicada y colaboracion con equipos multidisciplinares."
+          title="Ingeniero de software con trayectoria en banca, seguros, retail y producto web."
+          text="Esta pagina recoge el recorrido profesional con foco en liderazgo tecnico, arquitectura, React, Next.js, backend, calidad, CI/CD, agentes y colaboracion con equipos multidisciplinares."
         />
         <div className="mt-12">
           <div className="relative">
