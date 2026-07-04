@@ -1,14 +1,6 @@
 import Image from "next/image";
 import { ButtonLink, MetricCard } from "@/components/ui";
-import { snowyMetrics, snowyTractionMetrics } from "@/content/projects";
-
-const architectureFlow = [
-  "Next.js BFF",
-  "NestJS engine",
-  "Redis + MySQL",
-  "Radar + CMS",
-  "IA + agentes",
-] as const;
+import { snowyTractionMetrics } from "@/content/projects";
 
 export function SnowyShowcase() {
   return (
@@ -29,6 +21,11 @@ export function SnowyShowcase() {
               El proyecto ya funciona como producto: en los ultimos 3 meses ha generado
               millones de impresiones organicas, decenas de miles de clics y una base de
               usuarios registrados sobre la que seguir construyendo.
+            </p>
+            <p className="mt-5 text-sm leading-7 text-slate-400">
+              Para mi perfil es la prueba mas completa: obliga a tomar decisiones de
+              frontend, backend, cache, datos, SEO, infraestructura e IA con restricciones
+              reales de coste, rendimiento y mantenimiento.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/proyectos/snowy">Ver caso tecnico</ButtonLink>
@@ -56,28 +53,6 @@ export function SnowyShowcase() {
           {snowyTractionMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
-        </div>
-
-        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-          {snowyMetrics.map((metric) => (
-            <MetricCard key={metric.label} metric={metric} />
-          ))}
-        </div>
-
-        <div className="mt-14 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-5">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-            {architectureFlow.map((item, index) => (
-              <div key={item} className="flex flex-1 items-center gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 font-mono text-sm text-cyan-200">
-                  {index + 1}
-                </div>
-                <p className="text-sm font-medium text-slate-200">{item}</p>
-                {index < architectureFlow.length - 1 ? (
-                  <div className="hidden h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent lg:block" />
-                ) : null}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -109,3 +109,94 @@ a {
     linear-gradient(315deg, rgba(94, 234, 212, 0.2), transparent 32%);
   opacity: 0.55;
 }
+
+.ai-pipeline-line {
+  background: linear-gradient(
+    90deg,
+    rgba(103, 232, 249, 0.08),
+    rgba(103, 232, 249, 0.65),
+    rgba(94, 234, 212, 0.28),
+    rgba(103, 232, 249, 0.08)
+  );
+  background-size: 220% 100%;
+  animation: ai-line-flow 5.8s ease-in-out infinite;
+}
+
+.ai-node-glow {
+  animation: ai-node-glow 4.8s ease-in-out infinite;
+}
+
+.ai-signal {
+  animation: ai-signal 3.4s ease-in-out infinite;
+}
+
+.ai-orbit {
+  animation: ai-orbit 18s linear infinite;
+}
+
+.ai-console-line {
+  animation: ai-console-line 6s ease-in-out infinite;
+}
+
+@keyframes ai-line-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.45;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.9;
+  }
+}
+
+@keyframes ai-node-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(103, 232, 249, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 32px rgba(103, 232, 249, 0.16);
+  }
+}
+
+@keyframes ai-signal {
+  0%,
+  100% {
+    transform: translateX(-12%);
+    opacity: 0;
+  }
+
+  35%,
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(112%);
+  }
+}
+
+@keyframes ai-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ai-console-line {
+  0%,
+  24% {
+    opacity: 0.4;
+  }
+
+  48%,
+  72% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}

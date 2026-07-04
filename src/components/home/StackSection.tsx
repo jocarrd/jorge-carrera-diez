@@ -1,4 +1,4 @@
-import { Section, SectionHeader, Surface } from "@/components/ui";
+import { Section, SectionHeader } from "@/components/ui";
 import { skillGroups } from "@/content/skills";
 
 export function StackSection() {
@@ -10,21 +10,24 @@ export function StackSection() {
           title="Tecnologia al servicio del producto."
           text="Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario."
         />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]">
           {skillGroups.map((group) => (
-            <Surface key={group.title}>
-              <h3 className="text-lg font-semibold text-white">{group.title}</h3>
-              <div className="mt-5 flex flex-wrap gap-2">
+            <div
+              key={group.title}
+              className="grid gap-4 border-b border-white/10 p-5 last:border-b-0 sm:grid-cols-[10rem_1fr] sm:items-start"
+            >
+              <h3 className="text-base font-semibold text-white">{group.title}</h3>
+              <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300"
+                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300"
                   >
                     {item}
                   </span>
                 ))}
               </div>
-            </Surface>
+            </div>
           ))}
         </div>
       </div>

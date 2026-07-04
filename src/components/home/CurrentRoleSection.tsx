@@ -24,23 +24,28 @@ export function CurrentRoleSection() {
           title="Tech Lead en VidaCaixa, con foco en arquitectura y agentes."
           text="Mi trabajo actual combina criterio tecnico, coordinacion con equipos y aterrizaje de nuevas capacidades en un entorno enterprise."
         />
-        <div className="grid gap-4">
-          {roleSignals.map((signal, index) => (
-            <article
-              key={signal.title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
-            >
-              <div className="absolute right-5 top-5 h-2 w-2 rounded-full bg-cyan-300/70 shadow-[0_0_18px_rgba(103,232,249,0.55)]" />
-              <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full border border-cyan-300/10 transition group-hover:border-cyan-300/20" />
-              <div className="flex items-center justify-between gap-4">
-                <p className="font-mono text-xs text-slate-500">0{index + 1}</p>
-                <p className="font-mono text-xs text-cyan-300/80">vida-caixa</p>
+        <article className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
+          <p className="text-base leading-8 text-slate-300">
+            En VidaCaixa estoy en una posicion donde el codigo importa, pero tambien
+            importan las decisiones alrededor: que arquitectura se sostiene, como se
+            coordina con backend y QA, que estandares se aplican y que capacidades nuevas
+            merece la pena introducir.
+          </p>
+          <p className="mt-5 text-sm leading-7 text-slate-400">
+            La parte de IA la estoy trabajando desde ese prisma: casos de uso con sentido,
+            agentes y herramientas donde aportan valor, y una integracion que encaje con
+            seguridad, trazabilidad, coste y mantenimiento.
+          </p>
+          <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 md:grid-cols-3">
+            {roleSignals.map((signal, index) => (
+              <div key={signal.title}>
+                <p className="font-mono text-xs text-cyan-300/80">0{index + 1}</p>
+                <h3 className="mt-4 text-base font-semibold text-white">{signal.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-400">{signal.text}</p>
               </div>
-              <h3 className="mt-8 text-xl font-semibold text-white">{signal.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-400">{signal.text}</p>
-            </article>
-          ))}
-        </div>
+            ))}
+          </div>
+        </article>
       </div>
     </Section>
   );
