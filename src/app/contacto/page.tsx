@@ -49,11 +49,11 @@ export default function ContactPage() {
               {site.email}
             </a>
             <p className="mt-5 text-sm leading-7 text-slate-400">
-              No hace falta un mensaje perfecto. Con saber quien eres, que estais
-              construyendo y por que crees que puedo aportar, es suficiente para empezar.
+              La forma mas sencilla de contactarme es por correo. Si te apetece escribirme,
+              cuentame brevemente el contexto y seguimos la conversacion desde ahi.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`mailto:${site.email}`}>Escribir email</ButtonLink>
+              <ButtonLink href={`mailto:${site.email}`}>Enviar correo</ButtonLink>
               <ButtonLink href="/cv" variant="secondary">
                 Ver CV
               </ButtonLink>
