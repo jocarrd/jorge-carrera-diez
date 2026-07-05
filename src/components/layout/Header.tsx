@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navigationItems } from "@/constants/navigation";
 import { site } from "@/content/profile";
 
@@ -18,6 +18,24 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#02040a]/80 backdrop-blur-xl">
@@ -76,8 +94,9 @@ export function Header() {
           </button>
         </div>
       </div>
-      <div
+      <nav
         id="mobile-navigation"
+        aria-label="Navegacion movil"
         className={`md:hidden ${isOpen ? "block" : "hidden"}`}
       >
         <div className="mx-5 mb-4 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/95 shadow-2xl sm:mx-6">
@@ -113,7 +132,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

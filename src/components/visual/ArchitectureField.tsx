@@ -15,6 +15,7 @@ export function ArchitectureField() {
       return;
     }
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
     camera.position.set(0, 0, 7);
@@ -114,7 +115,10 @@ export function ArchitectureField() {
       ring.rotation.z = elapsed * 0.045;
 
       renderer.render(scene, camera);
-      animationFrame = requestAnimationFrame(animate);
+
+      if (!prefersReducedMotion) {
+        animationFrame = requestAnimationFrame(animate);
+      }
     };
 
     resize();
