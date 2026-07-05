@@ -29,6 +29,14 @@ export default function CvPage() {
           </a>
           <a
             className="text-cyan-300 hover:text-cyan-100"
+            href={site.universityUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {site.university}
+          </a>
+          <a
+            className="text-cyan-300 hover:text-cyan-100"
             href={site.collegeUrl}
             target="_blank"
             rel="noreferrer"

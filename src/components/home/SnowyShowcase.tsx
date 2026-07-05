@@ -23,9 +23,9 @@ export function SnowyShowcase() {
               usuarios registrados sobre la que seguir construyendo.
             </p>
             <p className="mt-5 text-sm leading-7 text-slate-400">
-              Para mi perfil es la prueba mas completa: obliga a tomar decisiones de
-              frontend, backend, cache, datos, SEO, infraestructura e IA con restricciones
-              reales de coste, rendimiento y mantenimiento.
+              Su desarrollo combina decisiones de frontend, backend, cache, datos, SEO,
+              infraestructura e IA con restricciones reales de coste, rendimiento y
+              mantenimiento.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/proyectos/snowy">Ver caso tecnico</ButtonLink>

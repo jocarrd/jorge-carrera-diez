@@ -7,10 +7,12 @@ export const site = {
   github: "https://github.com/jocarrd",
   college: "Colegio Profesional de Ingenieros en Informática de La Rioja",
   collegeUrl: "https://ingenierosinformaticarioja.com/",
+  university: "Universidad de La Rioja",
+  universityUrl: "https://www.unirioja.es/",
   title:
     "Ingeniero de software especializado en producto, arquitectura, SEO y diseño de sistemas",
   description:
-    "Ingeniero Informatico. Lidero arquitectura y nuevas capacidades en proyectos enterprise y construyo Snowy, una plataforma meteorologica propia con Next.js, NestJS, Redis, MySQL y Docker.",
+    "Ingeniero Informático por la Universidad de La Rioja. Lidero arquitectura y nuevas capacidades en proyectos enterprise y construyo Snowy, una plataforma meteorologica propia con Next.js, NestJS, Redis, MySQL y Docker.",
 };
 
 export const profile = {
