@@ -27,14 +27,11 @@ export default function ContactPage() {
               Contacto
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-slate-300">
-              Si has llegado hasta aqui y crees que mi perfil puede encajar, escribeme con
-              algo de contexto. Leo el correo con calma y suelo responder cuando la
-              conversacion tiene sentido.
+              Estoy abierto a oportunidades donde mi perfil pueda aportar en producto,
+              arquitectura, sistemas web o IA aplicada.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400">
-              Me interesan especialmente equipos donde se construya producto, se cuide la
-              arquitectura y haya problemas reales alrededor de web, datos, SEO o IA
-              generativa.
+              Si crees que puede encajar, puedes escribirme por correo y lo hablamos.
             </p>
           </div>
 
