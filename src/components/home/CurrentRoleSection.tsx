@@ -26,15 +26,14 @@ export function CurrentRoleSection() {
         />
         <article className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
           <p className="text-base leading-7 text-slate-300 sm:leading-8">
-            En VidaCaixa estoy en una posicion donde el codigo importa, pero tambien
-            importan las decisiones alrededor: que arquitectura se sostiene, como se
-            coordina con backend y QA, que estandares se aplican y que capacidades nuevas
-            merece la pena introducir.
+            En VidaCaixa trabajo como Tech Lead en un entorno financiero/asegurador,
+            participando en decisiones de arquitectura frontend, coordinacion tecnica,
+            revisiones de codigo y alineamiento con backend, QA y negocio.
           </p>
           <p className="mt-4 text-sm leading-7 text-slate-400 sm:mt-5">
-            La parte de IA la estoy trabajando desde ese prisma: casos de uso con sentido,
-            agentes y herramientas donde aportan valor, y una integracion que encaje con
-            seguridad, trazabilidad, coste y mantenimiento.
+            Tambien estoy involucrado en la integracion de capacidades de IA generativa,
+            aterrizando casos de uso, agentes y herramientas dentro de flujos enterprise
+            con requisitos de seguridad, trazabilidad y mantenimiento.
           </p>
           <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 md:grid-cols-3">
             {roleSignals.map((signal, index) => (

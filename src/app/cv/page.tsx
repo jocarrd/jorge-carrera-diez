@@ -26,6 +26,14 @@ export default function CvPage() {
           <a className="text-cyan-300 hover:text-cyan-100" href={`mailto:${site.email}`}>
             {site.email}
           </a>
+          <a
+            className="text-cyan-300 hover:text-cyan-100"
+            href={site.collegeUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {site.college}
+          </a>
         </div>
       </Section>
 
