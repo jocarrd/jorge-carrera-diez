@@ -1,3 +1,4 @@
+import { ProfileSummary } from "@/components/ProfileSummary";
 import { ProfileVisual } from "@/components/home/ProfileVisual";
 import { ButtonLink, Container } from "@/components/ui";
 import { profile } from "@/content/profile";
@@ -17,9 +18,7 @@ export function HeroSection() {
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
               {profile.headline}
             </p>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:mt-6 sm:leading-8">
-              {profile.summary}
-            </p>
+            <ProfileSummary className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:mt-6 sm:leading-8" />
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-start">
               <ButtonLink href="/proyectos/snowy">Ver Snowy</ButtonLink>
               <ButtonLink href="/cv" variant="secondary">

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ProfileSummary } from "@/components/ProfileSummary";
 import { Section, SectionHeader, Surface } from "@/components/ui";
 import { experience } from "@/content/experience";
-import { profile, site } from "@/content/profile";
+import { site } from "@/content/profile";
 import { skillGroups } from "@/content/skills";
 import { createMetadata } from "@/lib/seo";
 
@@ -19,8 +20,8 @@ export default function CvPage() {
         <SectionHeader
           eyebrow="CV"
           title="Jorge Carrera Diez"
-          text={profile.summary}
         />
+        <ProfileSummary className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8" />
         <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-300">
           <span>{site.location}</span>
           <a className="text-cyan-300 hover:text-cyan-100" href={`mailto:${site.email}`}>

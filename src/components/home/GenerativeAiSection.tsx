@@ -58,17 +58,17 @@ export function GenerativeAiSection() {
       <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <div className="max-w-xl">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            IA integrada en producto, no añadida encima.
+            IA generativa aplicada a flujos reales.
           </h2>
           <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
-            Estoy creciendo en la parte de agentes, RAG, tools, MCP y LLMs desde el sitio
-            que mas me interesa: convertir capacidades generativas en funcionalidades
-            mantenibles dentro de un producto.
+            Trabajo la parte de agentes, RAG, tools, MCP y LLMs desde una idea sencilla:
+            que la IA resuelva tareas concretas dentro del producto y se pueda mantener
+            como cualquier otra pieza del sistema.
           </p>
           <p className="mt-5 text-sm leading-7 text-slate-400">
-            No lo planteo como anadir un chatbot. Lo trabajo como una pieza mas de
-            arquitectura: entrada de usuario, contexto, herramientas, datos, controles y
-            experiencia final.
+            Me interesa especialmente la parte de diseño del flujo: que contexto necesita
+            el modelo, que herramientas puede usar, como se controlan las respuestas y que
+            experiencia recibe el usuario.
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/80">
             {[

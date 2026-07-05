@@ -17,7 +17,7 @@ export const profile = {
   headline:
     "Ingeniero de software con foco en producto, arquitectura y sistemas web. Actualmente Tech Lead en proyectos de VidaCaixa y creador de Snowy.",
   summary:
-    "Soy Ingeniero Informático colegiado en el Colegio Profesional de Ingenieros en Informática de La Rioja. Trabajo en entornos enterprise liderando decisiones tecnicas y desarrollo Snowy para trabajar producto, frontend, backend, datos, infraestructura, SEO y agentes sobre un sistema real.",
+    "Soy Ingeniero Informático colegiado. Trabajo en entornos enterprise liderando decisiones tecnicas y desarrollo Snowy para trabajar producto, frontend, backend, datos, infraestructura, SEO y agentes sobre un sistema real.",
   positioning:
     "Ingeniero de software · Producto · Arquitectura",
   focus: [
