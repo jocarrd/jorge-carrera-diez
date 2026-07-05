@@ -25,13 +25,13 @@ export function CurrentRoleSection() {
           text="Mi trabajo actual combina criterio tecnico, coordinacion con equipos y aterrizaje de nuevas capacidades en un entorno enterprise."
         />
         <article className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
-          <p className="text-base leading-8 text-slate-300">
+          <p className="text-base leading-7 text-slate-300 sm:leading-8">
             En VidaCaixa estoy en una posicion donde el codigo importa, pero tambien
             importan las decisiones alrededor: que arquitectura se sostiene, como se
             coordina con backend y QA, que estandares se aplican y que capacidades nuevas
             merece la pena introducir.
           </p>
-          <p className="mt-5 text-sm leading-7 text-slate-400">
+          <p className="mt-4 text-sm leading-7 text-slate-400 sm:mt-5">
             La parte de IA la estoy trabajando desde ese prisma: casos de uso con sentido,
             agentes y herramientas donde aportan valor, y una integracion que encaje con
             seguridad, trazabilidad, coste y mantenimiento.

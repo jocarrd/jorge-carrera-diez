@@ -41,10 +41,13 @@ export default function CvPage() {
               <p className="mt-1 text-sm text-slate-500">
                 {item.client ? `${item.client} · ${item.company}` : item.context}
               </p>
-              <p className="mt-5 text-base leading-8 text-slate-300">{item.summary}</p>
-              <ul className="mt-5 grid gap-2 text-sm text-slate-400">
+              <p className="mt-5 text-base leading-7 text-slate-300 sm:leading-8">{item.summary}</p>
+              <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-400">
                 {item.highlights.map((highlight) => (
-                  <li key={highlight}>- {highlight}</li>
+                  <li key={highlight} className="flex gap-2">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-300/70" />
+                    <span>{highlight}</span>
+                  </li>
                 ))}
               </ul>
             </Surface>

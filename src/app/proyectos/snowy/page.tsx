@@ -121,15 +121,15 @@ export default function SnowyPage() {
   return (
     <main>
       <Section>
-        <h1 className="max-w-5xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
           Snowy: plataforma meteorologica con mapas, datos en tiempo real e IA.
         </h1>
-        <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
           Snowy es una plataforma meteorologica para consultar predicciones, mapas,
           estaciones, avisos, embalses, calidad del aire, terremotos y herramientas
           inteligentes desde una experiencia rapida y orientada a decisiones reales.
         </p>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-400">
+        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
           La diferencia esta en unir producto, datos, SEO, mapas interactivos y agentes
           sobre una arquitectura propia: frontend SSR, backend como autoridad, cache por
           dominio y servicios especializados para radar, CMS y procesos batch. En los
@@ -144,7 +144,7 @@ export default function SnowyPage() {
         </div>
       </Section>
 
-      <section className="border-y border-white/10 bg-[#030712] py-16 sm:py-24">
+      <section className="border-y border-white/10 bg-[#030712] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
             <Image
@@ -195,16 +195,16 @@ export default function SnowyPage() {
         </div>
       </Section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-12 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-500">
               Modulos
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               Distintas superficies, una misma arquitectura.
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">
+            <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:leading-8">
               Cada modulo tiene requisitos distintos: datos externos, cache,
               visualizacion, SEO, estado en tiempo real y modelos internos comunes.
             </p>
@@ -242,7 +242,7 @@ export default function SnowyPage() {
             <MetricCard key={metric.label} metric={metric} />
           ))}
         </div>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-6">
           {snowyMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}

@@ -37,7 +37,7 @@ export function ProfileVisual() {
           </div>
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-3">
+        <div className="mt-3 hidden grid-cols-2 gap-3 sm:grid">
           {profileStats.map(([label, value]) => (
             <div key={label} className="rounded-xl bg-white/[0.05] p-4">
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>

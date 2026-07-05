@@ -14,10 +14,10 @@ export function SnowyShowcase() {
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
               Snowy: meteorologia, datos, mapas e IA en un producto propio.
             </h2>
-            <p className="mt-6 text-base leading-8 text-slate-300">
+            <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
               El proyecto ya funciona como producto: en los ultimos 3 meses ha generado
               millones de impresiones organicas, decenas de miles de clics y una base de
               usuarios registrados sobre la que seguir construyendo.

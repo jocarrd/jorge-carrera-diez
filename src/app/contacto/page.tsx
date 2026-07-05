@@ -23,14 +23,14 @@ export default function ContactPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+            <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
               Contacto
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-9 text-slate-300">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
               Estoy abierto a oportunidades donde mi perfil pueda aportar en producto,
               arquitectura, sistemas web o IA aplicada.
             </p>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-400">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
               Si crees que puede encajar, puedes escribirme por correo y lo hablamos.
             </p>
           </div>

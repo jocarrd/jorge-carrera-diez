@@ -20,13 +20,13 @@ export default function ExperiencePage() {
           title="Ingeniero de software con trayectoria en banca, seguros, retail y producto web."
           text="Esta pagina recoge el recorrido profesional con foco en liderazgo tecnico, arquitectura, React, Next.js, backend, calidad, CI/CD, agentes y colaboracion con equipos multidisciplinares."
         />
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           <div className="relative">
             <div className="absolute bottom-0 left-6 top-0 hidden w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-transparent md:block" />
             {experience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="relative grid gap-6 border-b border-white/10 py-8 last:border-b-0 md:grid-cols-[12rem_1fr]"
+                className="relative grid gap-5 border-b border-white/10 py-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8"
               >
                 <div className="hidden md:block">
                   <div className="absolute left-3 top-10 flex h-7 w-7 items-center justify-center rounded-full border border-cyan-300/30 bg-[#07111f]">
@@ -38,12 +38,12 @@ export default function ExperiencePage() {
                   <div className="grid gap-6 lg:grid-cols-[13rem_1fr]">
                     <div>
                       <CompanyMark logo={item.logo} />
-                      <p className="mt-5 font-mono text-sm text-cyan-300">{item.period}</p>
+                      <p className="mt-4 font-mono text-xs leading-5 text-cyan-300 sm:mt-5 sm:text-sm">{item.period}</p>
                       <p className="mt-2 text-sm text-slate-500">{item.context}</p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-semibold text-white">
+                      <h2 className="text-xl font-semibold leading-tight text-white sm:text-2xl">
                         {item.headline ?? `${item.role} - ${item.company}`}
                       </h2>
                       {item.client ? (
@@ -51,10 +51,13 @@ export default function ExperiencePage() {
                           {item.client} · {item.company}
                         </p>
                       ) : null}
-                      <p className="mt-4 text-base leading-8 text-slate-300">{item.summary}</p>
-                      <ul className="mt-5 grid gap-2 text-sm text-slate-400">
+                      <p className="mt-4 text-base leading-7 text-slate-300 sm:leading-8">{item.summary}</p>
+                      <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-400">
                         {item.highlights.map((highlight) => (
-                          <li key={highlight}>- {highlight}</li>
+                          <li key={highlight} className="flex gap-2">
+                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-300/70" />
+                            <span>{highlight}</span>
+                          </li>
                         ))}
                       </ul>
                     </div>

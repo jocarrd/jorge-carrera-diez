@@ -29,10 +29,10 @@ export default function LariojaMeteoPage() {
   return (
     <main>
       <Section>
-        <h1 className="max-w-5xl text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
           LaRiojaMeteo: meteorologia regional, comunidad, SEO y base editorial para Snowy.
         </h1>
-        <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
           Colaboro activamente como socio y perfil tecnico en LaRiojaMeteo, portal de referencia
           meteorologico para La Rioja y Logroño con predicciones, analisis, datos en directo,
           noticias, guias y comunidad.
@@ -40,7 +40,7 @@ export default function LariojaMeteoPage() {
         <div className="mt-9">
           <ButtonLink href="https://lariojameteo.es">Visitar LaRiojaMeteo</ButtonLink>
         </div>
-        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-black">
+        <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
           <Image
             src="/images/lariojameteo-home.png"
             alt="Home de LaRiojaMeteo con portada, categorias y ultimo articulo"
@@ -58,7 +58,7 @@ export default function LariojaMeteoPage() {
           title="De blog meteorologico regional a ecosistema con Snowy."
           text="LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribucion editorial. Snowy aporta producto, datos, IA e infraestructura."
         />
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 lg:grid-cols-4">
           {lariojaMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
@@ -74,7 +74,7 @@ export default function LariojaMeteoPage() {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {responsibilities.map((item) => (
             <Surface key={item}>
-              <p className="text-base leading-8 text-slate-300">{item}</p>
+              <p className="text-base leading-7 text-slate-300 sm:leading-8">{item}</p>
             </Surface>
           ))}
         </div>
@@ -90,7 +90,7 @@ export default function LariojaMeteoPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {lariojaMeteoSections.map((section) => (
               <Surface key={section}>
-                <p className="text-base leading-8 text-slate-300">{section}</p>
+                <p className="text-base leading-7 text-slate-300 sm:leading-8">{section}</p>
               </Surface>
             ))}
           </div>

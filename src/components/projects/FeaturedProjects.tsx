@@ -14,22 +14,22 @@ export function FeaturedProjects() {
   return (
     <div className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035]">
-        <div className="grid gap-8 p-6 lg:grid-cols-[0.75fr_1.25fr] lg:p-8">
+        <div className="grid gap-6 p-5 lg:grid-cols-[0.75fr_1.25fr] lg:gap-8 lg:p-8">
           <div className="flex flex-col">
             <Image
               src={snowy.logo ?? ""}
               alt="Snowy"
               width={150}
               height={48}
-              className="h-12 w-auto object-contain object-left"
+              className="h-10 w-auto object-contain object-left sm:h-12"
             />
-            <h3 className="mt-6 text-3xl font-semibold tracking-tight text-white">
+            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white sm:mt-6 sm:text-3xl">
               {snowy.name}
             </h3>
-            <p className="mt-4 text-base leading-8 text-slate-300">{snowy.description}</p>
+            <p className="mt-4 text-base leading-7 text-slate-300 sm:leading-8">{snowy.description}</p>
             <p className="mt-4 text-sm leading-7 text-slate-400">{snowy.impact}</p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {snowy.stack.slice(0, 7).map((tech) => (
+              {snowy.stack.slice(0, 6).map((tech) => (
                 <TechTag key={tech}>{tech}</TechTag>
               ))}
             </div>
@@ -44,7 +44,7 @@ export function FeaturedProjects() {
               alt="Interfaz de Snowy"
               width={1365}
               height={1049}
-              className="h-full min-h-72 w-full object-cover object-left-top"
+              className="h-64 w-full object-cover object-left-top sm:h-full sm:min-h-72"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@ export function FeaturedProjects() {
             className="absolute bottom-4 left-5 h-16 w-auto object-contain"
           />
         </div>
-        <div className="flex flex-1 flex-col p-6 lg:p-8">
+        <div className="flex flex-1 flex-col p-5 lg:p-8">
           <h3 className="text-2xl font-semibold tracking-tight text-white">
             {lariojaMeteo.name}
           </h3>

@@ -57,10 +57,10 @@ export function GenerativeAiSection() {
     <Section id="ia-generativa" className="border-t border-white/10">
       <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <div className="max-w-xl">
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
             IA integrada en producto, no añadida encima.
           </h2>
-          <p className="mt-6 text-base leading-8 text-slate-300">
+          <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
             Estoy creciendo en la parte de agentes, RAG, tools, MCP y LLMs desde el sitio
             que mas me interesa: convertir capacidades generativas en funcionalidades
             mantenibles dentro de un producto.
