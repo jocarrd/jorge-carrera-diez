@@ -1,7 +1,7 @@
 export const site = {
   name: "Jorge Carrera Diez",
-  domain: "jorge-carrera-diez.es",
-  url: "https://jorge-carrera-diez.es",
+  domain: "jorge-carrera-diez.com",
+  url: "https://jorge-carrera-diez.com",
   email: "jorgecarrera98d@gmail.com",
   location: "Logroño, La Rioja, España",
   github: "https://github.com/jocarrd",
