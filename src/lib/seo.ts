@@ -65,7 +65,7 @@ export function personJsonLd() {
       addressRegion: "La Rioja",
       addressCountry: "ES",
     },
-    sameAs: [site.github, "https://snowy.es", "https://lariojameteo.es"],
+    sameAs: [site.linkedin, site.github, "https://snowy.es", "https://lariojameteo.es"],
     knowsAbout: [
       "React",
       "Next.js",

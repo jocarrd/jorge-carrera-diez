@@ -5,6 +5,7 @@ export const site = {
   email: "jorgecarrera98d@gmail.com",
   location: "Logroño, La Rioja, España",
   github: "https://github.com/jocarrd",
+  linkedin: "https://es.linkedin.com/in/jorge-carrera-diez",
   college: "Colegio Profesional de Ingenieros en Informática de La Rioja",
   collegeUrl: "https://ingenierosinformaticarioja.com/",
   university: "Universidad de La Rioja",

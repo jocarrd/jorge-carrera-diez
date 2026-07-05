@@ -12,6 +12,7 @@ export const metadata: Metadata = createMetadata({
 });
 
 const links = [
+  { href: site.linkedin, label: "LinkedIn" },
   { href: site.github, label: "GitHub" },
   { href: "/cv", label: "CV web" },
   { href: "/proyectos/snowy", label: "Snowy" },
