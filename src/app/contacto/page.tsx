@@ -28,7 +28,7 @@ export default function ContactPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
               Estoy abierto a oportunidades donde mi perfil pueda aportar en producto,
-              arquitectura, sistemas web o IA aplicada.
+              arquitectura, diseño de sistemas o IA aplicada.
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
               Si crees que puede encajar, puedes escribirme por correo y lo hablamos.
