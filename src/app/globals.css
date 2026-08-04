@@ -201,18 +201,27 @@ a {
   }
 }
 
-/* Impresión del CV: la página se guarda como PDF desde el navegador, así que el
-   documento pasa a tinta sobre blanco y se van las superficies decorativas. */
+/* Impresión del CV. La página se guarda como PDF desde el navegador y se usa como
+   currículum, así que deja de ser una pantalla: tinta sobre blanco, sin superficies
+   ni decoración, y densidad de documento en lugar de densidad de web. */
 @media print {
   @page {
     size: A4;
-    margin: 14mm 12mm;
+    margin: 13mm 13mm 12mm;
   }
 
   html,
   body {
     background: #fff !important;
-    color: #0f172a !important;
+    color: #111827 !important;
+  }
+
+  /* Los pseudo-elementos del fondo son `position: fixed` y la impresión los
+     materializa como un bloque gris al final del documento. */
+  body::before,
+  body::after {
+    display: none !important;
+    content: none !important;
   }
 
   header,
@@ -221,47 +230,148 @@ a {
     display: none !important;
   }
 
-  .cv-document section {
-    padding-top: 0 !important;
-    padding-bottom: 18px !important;
-    border: 0 !important;
-    background: transparent !important;
-  }
-
+  .cv-document,
   .cv-document *,
   .cv-document *::before,
   .cv-document *::after {
-    color: #0f172a !important;
+    color: #111827 !important;
     background: transparent !important;
-    border-color: #cbd5e1 !important;
     box-shadow: none !important;
     text-shadow: none !important;
+    border-color: transparent !important;
+    border-radius: 0 !important;
   }
 
-  .cv-document a {
-    color: #0f172a !important;
-    text-decoration: underline;
+  /* Las secciones dejan de ser bandas de página completa. */
+  .cv-document section {
+    padding: 0 !important;
+    border: 0 !important;
   }
 
-  /* Cada bloque de experiencia entero en la misma página. */
-  .cv-document article,
-  .cv-document li {
+  .cv-document section > div {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .cv-document h1 {
+    font-size: 23pt;
+    line-height: 1.1;
+  }
+
+  .cv-role {
+    margin-top: 2pt !important;
+    font-size: 10.5pt;
+    font-weight: 600;
+  }
+
+  .cv-summary {
+    margin-top: 6pt !important;
+    max-width: none !important;
+    font-size: 9.5pt;
+    line-height: 1.42;
+  }
+
+  .cv-contact {
+    margin-top: 7pt !important;
+    gap: 3pt 10pt !important;
+    padding-bottom: 8pt;
+    border-bottom: 0.6pt solid #cbd5e1 !important;
+    font-size: 8.5pt;
+  }
+
+  .cv-contact a {
+    text-decoration: none;
+  }
+
+  .cv-section-title {
+    margin-top: 13pt !important;
+    font-size: 12pt;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .cv-entries,
+  .cv-skills {
+    margin-top: 6pt !important;
+  }
+
+  .cv-entries {
+    gap: 0 !important;
+  }
+
+  .cv-entries > * + * {
+    margin-top: 0 !important;
+  }
+
+  /* Cada puesto entero en la misma página: partir un bloque de experiencia entre
+     dos hojas es el fallo clásico de imprimir un CV desde el navegador. */
+  .cv-entry {
+    padding: 8pt 0 !important;
+    border-bottom: 0.6pt solid #e2e8f0 !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .cv-document h1 {
-    font-size: 26pt;
+  .cv-entry:last-child {
+    border-bottom: 0 !important;
   }
 
-  .cv-document h2 {
-    font-size: 13pt;
+  .cv-period {
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
-  .cv-document p,
-  .cv-document li,
-  .cv-document span {
-    font-size: 10pt;
-    line-height: 1.45;
+  .cv-entry-title {
+    margin-top: 1pt !important;
+    font-size: 11.5pt;
+  }
+
+  .cv-entry-meta {
+    margin-top: 0 !important;
+    font-size: 9pt;
+    font-style: italic;
+  }
+
+  .cv-entry-summary {
+    margin-top: 4pt !important;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+
+  .cv-bullets {
+    margin-top: 4pt !important;
+    gap: 1.5pt !important;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .cv-bullet-dot {
+    margin-top: 4.5pt !important;
+    background: #111827 !important;
+    border-radius: 999px !important;
+  }
+
+  .cv-skills {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4pt 16pt !important;
+  }
+
+  .cv-skill {
+    padding: 3pt 0 !important;
+    break-inside: avoid;
+  }
+
+  .cv-skill-title {
+    font-size: 9.5pt;
+  }
+
+  .cv-skill-items {
+    margin-top: 1pt !important;
+    font-size: 9pt;
+    line-height: 1.35;
   }
 }

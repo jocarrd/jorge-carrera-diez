@@ -8,66 +8,66 @@ export function CvView({ locale }: { locale: Locale }) {
   const content = getCopy(locale);
   const copy = content.pages.cv;
 
+  const contactLinks = [
+    { label: site.email, href: `mailto:${site.email}` },
+    { label: site.domain, href: site.url },
+    { label: "LinkedIn", href: site.linkedin },
+    { label: "GitHub", href: site.github },
+    { label: content.meta.universityLabel, href: site.universityUrl },
+    { label: content.meta.collegeLabel, href: site.collegeUrl },
+  ];
+
   return (
     <main className="cv-document">
       <Section>
-        <SectionHeader eyebrow={copy.eyebrow} title={site.name} />
-        <ProfileSummary
-          locale={locale}
-          className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8"
-        />
-        <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-300">
-          <span>{content.meta.location}</span>
-          <a className="text-cyan-300 hover:text-cyan-100" href={`mailto:${site.email}`}>
-            {site.email}
-          </a>
-          <a
-            className="text-cyan-300 hover:text-cyan-100"
-            href={site.linkedin}
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            className="text-cyan-300 hover:text-cyan-100"
-            href={site.universityUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {content.meta.universityLabel}
-          </a>
-          <a
-            className="text-cyan-300 hover:text-cyan-100"
-            href={site.collegeUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {content.meta.collegeLabel}
-          </a>
-        </div>
-        <div className="mt-8">
-          <PrintButton label={copy.downloadCta} hint={copy.printHint} />
+        <div className="cv-head">
+          <SectionHeader eyebrow={copy.eyebrow} title={site.name} />
+          <p className="cv-role mt-3 text-lg text-slate-300">{content.profile.positioning}</p>
+          <ProfileSummary
+            locale={locale}
+            className="cv-summary mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8"
+          />
+          <div className="cv-contact mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-300">
+            <span>{content.meta.location}</span>
+            {contactLinks.map((link) => (
+              <a
+                key={link.href}
+                className="text-cyan-300 hover:text-cyan-100"
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="mt-8">
+            <PrintButton label={copy.downloadCta} hint={copy.printHint} />
+          </div>
         </div>
       </Section>
 
-      <Section className="border-y border-white/10 bg-white/[0.02]">
-        <SectionHeader eyebrow={copy.experienceEyebrow} title={copy.experienceTitle} />
-        <div className="mt-10 space-y-4">
+      <Section className="cv-section border-y border-white/10 bg-white/[0.02]">
+        <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.experienceTitle}
+        </h2>
+        <div className="cv-entries mt-10 space-y-4">
           {content.experience.map((item) => (
-            <Surface key={`${item.company}-${item.period}`}>
-              <p className="text-sm text-cyan-300">{item.period}</p>
-              <h2 className="mt-2 text-2xl font-semibold text-white">
+            <Surface key={`${item.company}-${item.period}`} className="cv-entry">
+              <p className="cv-period text-sm text-cyan-300">{item.period}</p>
+              <h3 className="cv-entry-title mt-2 text-2xl font-semibold text-white">
                 {item.headline ?? `${item.role} - ${item.company}`}
-              </h2>
-              <p className="mt-1 text-sm text-slate-500">
+              </h3>
+              <p className="cv-entry-meta mt-1 text-sm text-slate-500">
                 {item.client ? `${item.client} · ${item.company}` : item.context}
               </p>
-              <p className="mt-5 text-base leading-7 text-slate-300 sm:leading-8">{item.summary}</p>
-              <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-400">
+              <p className="cv-entry-summary mt-5 text-base leading-7 text-slate-300 sm:leading-8">
+                {item.summary}
+              </p>
+              <ul className="cv-bullets mt-5 grid gap-2 text-sm leading-6 text-slate-400">
                 {item.highlights.map((highlight) => (
                   <li key={highlight} className="flex gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-300/70" />
+                    <span className="cv-bullet-dot mt-2 h-1 w-1 shrink-0 rounded-full bg-cyan-300/70" />
                     <span>{highlight}</span>
                   </li>
                 ))}
@@ -77,13 +77,17 @@ export function CvView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section>
-        <SectionHeader eyebrow={copy.stackEyebrow} title={copy.stackTitle} />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <Section className="cv-section">
+        <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+          {copy.stackTitle}
+        </h2>
+        <div className="cv-skills mt-10 grid gap-4 sm:grid-cols-2">
           {content.skills.map((group) => (
-            <Surface key={group.title}>
-              <h2 className="text-xl font-semibold text-white">{group.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{group.items.join(", ")}</p>
+            <Surface key={group.title} className="cv-skill">
+              <h3 className="cv-skill-title text-xl font-semibold text-white">{group.title}</h3>
+              <p className="cv-skill-items mt-4 text-sm leading-7 text-slate-300">
+                {group.items.join(", ")}
+              </p>
             </Surface>
           ))}
         </div>
