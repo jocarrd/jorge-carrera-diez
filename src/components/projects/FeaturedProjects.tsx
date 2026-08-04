@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink, TechTag } from "@/components/ui";
-import { projects } from "@/content/projects";
+import { getCopy } from "@/content";
+import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
-const snowy = projects.find((project) => project.slug === "snowy");
-const lariojaMeteo = projects.find((project) => project.slug === "lariojameteo");
+export function FeaturedProjects({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale);
+  const labels = copy.featuredProjects;
+  const snowy = copy.projects.find((project) => project.slug === "snowy");
+  const lariojaMeteo = copy.projects.find((project) => project.slug === "lariojameteo");
 
-export function FeaturedProjects() {
   if (!snowy || !lariojaMeteo) {
     return null;
   }
@@ -34,14 +38,14 @@ export function FeaturedProjects() {
               ))}
             </div>
             <div className="mt-8">
-              <ButtonLink href="/proyectos/snowy">Ver Snowy</ButtonLink>
+              <ButtonLink href={routePath(locale, "snowy")}>{labels.snowyCta}</ButtonLink>
             </div>
           </div>
 
           <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black">
             <Image
               src={snowy.image ?? "/images/snowy-home.png"}
-              alt="Interfaz de Snowy"
+              alt={labels.snowyImageAlt}
               width={1365}
               height={1049}
               className="h-64 w-full object-cover object-left-top sm:h-full sm:min-h-72"
@@ -54,7 +58,7 @@ export function FeaturedProjects() {
         <div className="relative h-48 border-b border-white/10 bg-slate-950">
           <Image
             src={lariojaMeteo.image ?? "/images/lariojameteo-home.png"}
-            alt="Home de LaRiojaMeteo"
+            alt={labels.lariojaImageAlt}
             width={1230}
             height={923}
             className="h-full w-full object-cover object-left-top opacity-90"
@@ -83,10 +87,10 @@ export function FeaturedProjects() {
             ))}
           </div>
           <Link
-            href="/proyectos/lariojameteo"
+            href={routePath(locale, "lariojameteo")}
             className="mt-8 text-sm font-medium text-cyan-300 hover:text-cyan-100"
           >
-            Ver LaRiojaMeteo
+            {labels.lariojaCta}
           </Link>
         </div>
       </article>

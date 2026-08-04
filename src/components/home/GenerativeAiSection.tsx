@@ -1,81 +1,25 @@
 import { Section } from "@/components/ui";
-
-const systemFlow = [
-  {
-    title: "Interfaz",
-    caption: "UX, streaming y feedback",
-    metric: "input",
-  },
-  {
-    title: "Agente",
-    caption: "plan, memoria corta y tool choice",
-    metric: "reason",
-  },
-  {
-    title: "Herramientas",
-    caption: "MCP, APIs y contratos",
-    metric: "tools",
-  },
-  {
-    title: "Datos",
-    caption: "RAG, fuentes y permisos",
-    metric: "context",
-  },
-  {
-    title: "Control",
-    caption: "logs, límites y evaluación",
-    metric: "guard",
-  },
-] as const;
+import { getCopy } from "@/content";
+import type { Locale } from "@/i18n/config";
 
 const toolSignals = ["RAG", "MCP", "AI SDK", "evals", "logs", "fallback"] as const;
 
-const consoleLines = [
-  ["intent", "consulta meteorológica con contexto de usuario"],
-  ["tool", "getForecast(), getAlerts(), searchDocs()"],
-  ["context", "fuentes internas + datos en tiempo real"],
-  ["policy", "límites, trazabilidad y respuesta verificable"],
-] as const;
+export function GenerativeAiSection({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale).ai;
 
-const aiPrinciples = [
-  {
-    title: "Contexto antes que prompt",
-    text: "El valor está en que el modelo reciba la información correcta: datos propios, permisos, recuperación, herramientas y límites del caso de uso.",
-  },
-  {
-    title: "Agentes con responsabilidad clara",
-    text: "Me interesa diseñar flujos donde el agente sabe qué puede hacer, qué herramienta usar y cómo dejar trazabilidad para depurar el sistema.",
-  },
-  {
-    title: "Producto, coste y operación",
-    text: "Una funcionalidad con IA también necesita latencia razonable, fallback, observabilidad, evaluaciones y una UX que no obligue al usuario a entender el sistema.",
-  },
-] as const;
-
-export function GenerativeAiSection() {
   return (
     <Section id="ia-generativa" className="border-t border-white/10">
       <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <div className="max-w-xl">
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            IA generativa aplicada a flujos reales.
+            {copy.title}
           </h2>
           <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
-            Trabajo la parte de agentes, RAG, tools, MCP y LLMs desde una idea sencilla:
-            que la IA resuelva tareas concretas dentro del producto y se pueda mantener
-            como cualquier otra pieza del sistema.
+            {copy.lead}
           </p>
-          <p className="mt-5 text-sm leading-7 text-slate-400">
-            Me interesa especialmente la parte de diseño del flujo: qué contexto necesita
-            el modelo, qué herramientas puede usar, cómo se controlan las respuestas y qué
-            experiencia recibe el usuario.
-          </p>
+          <p className="mt-5 text-sm leading-7 text-slate-400">{copy.detail}</p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/80">
-            {[
-              ["VidaCaixa", "integración de capacidades generativas en entorno enterprise"],
-              ["Snowy", "asistente y herramientas sobre datos meteorológicos reales"],
-              ["criterio", "contexto, límites, trazabilidad, coste y experiencia final"],
-            ].map(([label, value]) => (
+            {copy.rows.map(([label, value]) => (
               <div
                 key={label}
                 className="grid gap-2 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]"
@@ -107,11 +51,11 @@ export function GenerativeAiSection() {
               <div className="relative mt-4 sm:mt-5">
                 <div className="absolute left-6 right-6 top-9 hidden h-px ai-pipeline-line lg:block" />
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-5">
-                  {systemFlow.map((item, index) => (
+                  {copy.flow.map((item, index) => (
                     <div
                       key={item.title}
                       className={`group relative overflow-hidden rounded-xl border border-white/10 bg-[#07111f]/90 p-3 ai-node-glow sm:p-4 ${
-                        index === systemFlow.length - 1 ? "col-span-2 lg:col-span-1" : ""
+                        index === copy.flow.length - 1 ? "col-span-2 lg:col-span-1" : ""
                       }`}
                       style={{ animationDelay: `${index * 260}ms` }}
                     >
@@ -148,7 +92,7 @@ export function GenerativeAiSection() {
                     </span>
                   </div>
                   <div className="mt-4 space-y-3">
-                    {consoleLines.map(([label, value], index) => (
+                    {copy.consoleLines.map(([label, value], index) => (
                       <div
                         key={label}
                         className="grid gap-2 font-mono text-xs sm:grid-cols-[5.5rem_1fr] ai-console-line"
@@ -193,9 +137,9 @@ export function GenerativeAiSection() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <h3 className="text-xl font-semibold text-white">Cómo lo enfoco</h3>
+            <h3 className="text-xl font-semibold text-white">{copy.principlesTitle}</h3>
             <div className="mt-6 grid gap-5 lg:grid-cols-3">
-              {aiPrinciples.map((item) => (
+              {copy.principles.map((item) => (
                 <div key={item.title}>
                   <h4 className="text-sm font-semibold text-cyan-100">{item.title}</h4>
                   <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>

@@ -1,42 +1,18 @@
-import { site } from "@/content/profile";
+import { RichText } from "@/components/RichText";
+import { getCopy } from "@/content";
+import type { Locale } from "@/i18n/config";
 
 type ProfileSummaryProps = {
+  locale: Locale;
   className?: string;
 };
 
-export function ProfileSummary({ className = "" }: ProfileSummaryProps) {
+export function ProfileSummary({ locale, className = "" }: ProfileSummaryProps) {
+  const copy = getCopy(locale);
+
   return (
     <p className={className}>
-      Soy Ingeniero Informático por la{" "}
-      <a
-        href={site.universityUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="text-cyan-300 underline-offset-4 hover:text-cyan-100 hover:underline"
-      >
-        {site.university}
-      </a>
-      {" "}y colegiado en el{" "}
-      <a
-        href={site.collegeUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="text-cyan-300 underline-offset-4 hover:text-cyan-100 hover:underline"
-      >
-        {site.college}
-      </a>
-      . Trabajo en entornos enterprise liderando decisiones técnicas, colaboro como
-      freelance con la fundación suiza que publica el{" "}
-      <a
-        href="https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/"
-        target="_blank"
-        rel="noreferrer"
-        className="text-cyan-300 underline-offset-4 hover:text-cyan-100 hover:underline"
-      >
-        Elite Quality Index
-      </a>
-      {" "}de la Universidad de St. Gallen, y desarrollo Snowy para trabajar producto,
-      frontend, backend, datos, infraestructura, SEO y agentes sobre un sistema real.
+      <RichText segments={copy.profile.summary} />
     </p>
   );
 }

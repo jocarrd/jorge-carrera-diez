@@ -1,16 +1,12 @@
 import Image from "next/image";
 import { Surface } from "@/components/ui";
 import { ArchitectureField } from "@/components/visual/ArchitectureField";
-import { profile } from "@/content/profile";
+import { getCopy, site } from "@/content";
+import type { Locale } from "@/i18n/config";
 
-const profileStats = [
-  ["Actual", "Tech Lead"],
-  ["Producto", "Snowy"],
-  ["Base", "Logroño"],
-  ["Stack", "Full stack"],
-] as const;
+export function ProfileVisual({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale);
 
-export function ProfileVisual() {
   return (
     <div className="relative">
       <div className="hidden lg:block">
@@ -20,7 +16,7 @@ export function ProfileVisual() {
         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black">
           <Image
             src="/images/jorge-carrera-diez.png"
-            alt="Retrato profesional de Jorge Carrera Diez"
+            alt={`${site.name} - ${copy.meta.jobTitle}`}
             width={1168}
             height={1408}
             priority
@@ -29,16 +25,14 @@ export function ProfileVisual() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_52%,rgba(2,4,10,0.72)_100%)]" />
           <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/10 bg-black/45 p-4 backdrop-blur-md">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-300">
-              Jorge Carrera Diez
+              {site.name}
             </p>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
-              Ingeniero de software · Producto · Arquitectura
-            </p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">{copy.profile.positioning}</p>
           </div>
         </div>
 
         <div className="mt-3 hidden grid-cols-2 gap-3 sm:grid">
-          {profileStats.map(([label, value]) => (
+          {copy.profile.visualStats.map(([label, value]) => (
             <div key={label} className="rounded-xl bg-white/[0.05] p-4">
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
               <p className="mt-2 font-mono text-sm text-white">{value}</p>
@@ -47,7 +41,7 @@ export function ProfileVisual() {
         </div>
 
         <div className="mt-3 hidden gap-3 lg:grid">
-          {profile.focus.slice(0, 3).map((item) => (
+          {copy.profile.focus.slice(0, 3).map((item) => (
             <div
               key={item}
               className="rounded-xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-200"

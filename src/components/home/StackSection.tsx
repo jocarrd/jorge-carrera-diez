@@ -1,17 +1,20 @@
 import { Section, SectionHeader } from "@/components/ui";
-import { skillGroups } from "@/content/skills";
+import { getCopy } from "@/content";
+import type { Locale } from "@/i18n/config";
 
-export function StackSection() {
+export function StackSection({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale);
+
   return (
     <Section id="stack" className="border-t border-white/10">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeader
-          eyebrow="Stack"
-          title="Tecnología al servicio del producto."
-          text="Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario."
+          eyebrow={copy.stack.eyebrow}
+          title={copy.stack.title}
+          text={copy.stack.text}
         />
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]">
-          {skillGroups.map((group) => (
+          {copy.skills.map((group) => (
             <div
               key={group.title}
               className="grid gap-4 border-b border-white/10 p-5 last:border-b-0 sm:grid-cols-[10rem_1fr] sm:items-start"

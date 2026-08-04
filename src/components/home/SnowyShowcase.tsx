@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { ButtonLink, MetricCard } from "@/components/ui";
-import { snowyTractionMetrics } from "@/content/projects";
+import { getCopy, site } from "@/content";
+import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
-export function SnowyShowcase() {
+export function SnowyShowcase({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale);
+  const showcase = copy.snowyShowcase;
+
   return (
     <section
       id="snowy-showcase"
@@ -15,22 +20,16 @@ export function SnowyShowcase() {
         <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-              Snowy: meteorología, datos, mapas e IA en un producto propio.
+              {showcase.title}
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
-              El proyecto ya funciona como producto: en los últimos 3 meses ha generado
-              millones de impresiones orgánicas, decenas de miles de clics y una base de
-              usuarios registrados sobre la que seguir construyendo.
+              {showcase.lead}
             </p>
-            <p className="mt-5 text-sm leading-7 text-slate-400">
-              Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO,
-              infraestructura e IA con restricciones reales de coste, rendimiento y
-              mantenimiento.
-            </p>
+            <p className="mt-5 text-sm leading-7 text-slate-400">{showcase.detail}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/proyectos/snowy">Ver caso técnico</ButtonLink>
-              <ButtonLink href="https://snowy.es" variant="secondary">
-                Abrir Snowy
+              <ButtonLink href={routePath(locale, "snowy")}>{showcase.ctaPrimary}</ButtonLink>
+              <ButtonLink href={site.snowy} variant="secondary">
+                {showcase.ctaSecondary}
               </ButtonLink>
             </div>
           </div>
@@ -40,7 +39,7 @@ export function SnowyShowcase() {
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
               <Image
                 src="/images/snowy-home.png"
-                alt="Home de Snowy con buscador meteorológico, asistente IA y planificador"
+                alt={showcase.imageAlt}
                 width={1365}
                 height={1049}
                 className="h-auto w-full"
@@ -50,7 +49,7 @@ export function SnowyShowcase() {
         </div>
 
         <div className="mt-10 grid gap-3 md:grid-cols-3">
-          {snowyTractionMetrics.map((metric) => (
+          {copy.pages.snowy.tractionMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
         </div>

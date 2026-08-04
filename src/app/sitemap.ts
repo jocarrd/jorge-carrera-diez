@@ -1,13 +1,20 @@
 import type { MetadataRoute } from "next";
-import { routes, absoluteUrl } from "@/constants/routes";
+import { site } from "@/content";
+import { allPathsFor, allRoutes } from "@/i18n/routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  return allRoutes.map(({ key, path }) => {
+    const translations = allPathsFor(key);
 
-  return routes.map((route) => ({
-    url: absoluteUrl(route),
-    lastModified: now,
-    changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : 0.7,
-  }));
+    return {
+      url: new URL(path, site.url).toString(),
+      lastModified: new Date(),
+      alternates: {
+        languages: {
+          es: new URL(translations.es, site.url).toString(),
+          en: new URL(translations.en, site.url).toString(),
+        },
+      },
+    };
+  });
 }

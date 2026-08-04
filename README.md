@@ -4,6 +4,8 @@ Sitio web personal construido con Next.js para publicar el perfil profesional, e
 
 El proyecto esta organizado como una web estatica/SSR orientada a SEO, rendimiento y mantenimiento sencillo. El contenido principal esta separado de los componentes para facilitar cambios de copy, experiencia, proyectos y metadata sin tocar la estructura visual.
 
+El sitio es bilingue: espanol en la raiz e ingles bajo `/en`, con el mismo arbol de rutas y slugs traducidos.
+
 ## Stack
 
 - Next.js 16 con App Router
@@ -17,16 +19,23 @@ El proyecto esta organizado como una web estatica/SSR orientada a SEO, rendimien
 
 ```txt
 src/
-  app/                    Rutas, metadata y paginas principales
+  app/
+    (es)/                 Arbol espanol: rutas en la raiz
+    (en)/en/              Arbol ingles: mismas paginas bajo /en
   components/
+    cv/                   Boton de impresion del CV
     home/                 Secciones de la landing
-    layout/               Header y footer
+    layout/               Header, footer y selector de idioma
     projects/             Componentes de proyectos
     ui/                   Primitivas reutilizables
-  constants/              Navegacion y constantes compartidas
-  content/                Perfil, experiencia, proyectos y skills
-  lib/                    Utilidades de SEO
+  content/
+    copy/es.ts            Todo el copy en espanol
+    copy/en.ts            Todo el copy en ingles
+    site.ts               Datos que no cambian con el idioma
+  i18n/                   Locales y mapa de rutas por idioma
+  lib/                    Utilidades de SEO y Open Graph
   types/                  Tipos compartidos
+  views/                  Vistas de pagina compartidas entre idiomas
 
 public/
   images/                 Capturas, fotografia y assets visuales
@@ -40,17 +49,23 @@ public/
 - `/proyectos/snowy`: caso tecnico de Snowy con producto, traccion, arquitectura, modulos, SEO, datos, IA y prensa.
 - `/proyectos/lariojameteo`: contexto de LaRiojaMeteo como proyecto meteorologico regional.
 - `/experiencia`: experiencia profesional con foco en EQx, VidaCaixa, Openbank, Inditex, Hiberus y etapas previas.
-- `/cv`: version web del CV.
+- `/cv`: version web del CV, con descarga en PDF via dialogo de impresion.
 - `/contacto`: contacto profesional.
+
+Cada una tiene su equivalente en ingles: `/en`, `/en/projects`, `/en/projects/snowy`,
+`/en/projects/lariojameteo`, `/en/experience`, `/en/cv` y `/en/contact`. El mapa vive en
+`src/i18n/routes.ts`.
 
 ## Contenido editable
 
-La mayor parte del contenido vive en archivos tipados dentro de `src/content`:
+Todo el texto vive en archivos tipados dentro de `src/content`:
 
-- `profile.ts`: posicionamiento, titular, resumen y datos del sitio.
-- `experience.ts`: experiencia profesional y logos asociados.
-- `projects.ts`: Snowy, LaRiojaMeteo, metricas, menciones en prensa y capacidades.
-- `skills.ts`: stack, areas tecnicas y foco profesional.
+- `copy/es.ts` y `copy/en.ts`: perfil, experiencia, proyectos, skills y copy de cada pagina.
+- `site.ts`: nombre, dominio, correo y perfiles, que no cambian con el idioma.
+
+Ambos archivos de copy cumplen el tipo `Copy` (`src/types/content.ts`), asi que **anadir
+un texto en espanol obliga a anadirlo en ingles**: si falta, el build no compila. Esa es la
+garantia de que los dos idiomas no se desincronizan.
 
 Esta separacion evita mezclar copy con componentes y permite actualizar el contenido sin modificar las piezas de UI.
 
@@ -76,8 +91,9 @@ Abrir `http://localhost:3000`.
 El sitio incluye configuracion SEO basica para funcionar como pagina personal indexable:
 
 - Metadata por pagina mediante `createMetadata`.
-- Open Graph generado desde `src/app/opengraph-image.tsx`.
-- `sitemap.xml` y `robots.txt` generados por App Router.
+- Open Graph por idioma desde `src/lib/og-image.tsx`.
+- `hreflang` reciproco entre las dos versiones y `x-default` apuntando al espanol.
+- `sitemap.xml` con las dos variantes de cada pagina y `robots.txt`, generados por App Router.
 - Contenido SSR/static renderizado por Next.js.
 - Copy estructurado por paginas y contenido tipado.
 

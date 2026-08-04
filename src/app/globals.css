@@ -200,3 +200,68 @@ a {
     opacity: 0.5;
   }
 }
+
+/* Impresión del CV: la página se guarda como PDF desde el navegador, así que el
+   documento pasa a tinta sobre blanco y se van las superficies decorativas. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #0f172a !important;
+  }
+
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .cv-document section {
+    padding-top: 0 !important;
+    padding-bottom: 18px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .cv-document *,
+  .cv-document *::before,
+  .cv-document *::after {
+    color: #0f172a !important;
+    background: transparent !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .cv-document a {
+    color: #0f172a !important;
+    text-decoration: underline;
+  }
+
+  /* Cada bloque de experiencia entero en la misma página. */
+  .cv-document article,
+  .cv-document li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-document h1 {
+    font-size: 26pt;
+  }
+
+  .cv-document h2 {
+    font-size: 13pt;
+  }
+
+  .cv-document p,
+  .cv-document li,
+  .cv-document span {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+}

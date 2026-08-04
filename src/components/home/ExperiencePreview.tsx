@@ -1,17 +1,17 @@
 import { ButtonLink, Section, SectionHeader } from "@/components/ui";
-import { experience } from "@/content/experience";
+import { getCopy } from "@/content";
+import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
-const featuredExperience = experience.slice(0, 3);
+export function ExperiencePreview({ locale }: { locale: Locale }) {
+  const copy = getCopy(locale);
+  const preview = copy.experiencePreview;
+  const featuredExperience = copy.experience.slice(0, 3);
 
-export function ExperiencePreview() {
   return (
     <Section id="experiencia">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <SectionHeader
-          eyebrow="Experiencia"
-          title="Liderazgo técnico en proyectos enterprise."
-          text="Mi rol actual da contexto y autoridad: arquitectura, estándares, revisiones, coordinación, agentes y mentoring en sistemas con impacto real."
-        />
+        <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
         <div>
           <div className="grid gap-4">
             {featuredExperience.map((item) => (
@@ -33,8 +33,8 @@ export function ExperiencePreview() {
             ))}
           </div>
           <div className="mt-8">
-            <ButtonLink href="/experiencia" variant="secondary">
-              Ver trayectoria completa
+            <ButtonLink href={routePath(locale, "experience")} variant="secondary">
+              {preview.cta}
             </ButtonLink>
           </div>
         </div>
