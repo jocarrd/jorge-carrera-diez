@@ -39,7 +39,7 @@ public/
 - `/proyectos`: resumen de proyectos principales.
 - `/proyectos/snowy`: caso tecnico de Snowy con producto, traccion, arquitectura, modulos, SEO, datos, IA y prensa.
 - `/proyectos/lariojameteo`: contexto de LaRiojaMeteo como proyecto meteorologico regional.
-- `/experiencia`: experiencia profesional con foco en VidaCaixa, Openbank, Inditex, Hiberus y etapas previas.
+- `/experiencia`: experiencia profesional con foco en EQx, VidaCaixa, Openbank, Inditex, Hiberus y etapas previas.
 - `/cv`: version web del CV.
 - `/contacto`: contacto profesional.
 

@@ -115,12 +115,12 @@ export default async function OpenGraphImage() {
               Jorge Carrera Diez
             </div>
             <div style={{ maxWidth: 640, fontSize: 28, lineHeight: 1.34, color: "#cbd5e1" }}>
-              Tech Lead en VidaCaixa. Creador de Snowy.
+              Tech Lead en VidaCaixa. Freelance para EQx (Suiza). Creador de Snowy.
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 18 }}>
               {[
-                ["actual", "VidaCaixa · agentes"],
+                ["actual", "VidaCaixa · EQx Suiza"],
                 ["producto", "Snowy · backend · SEO"],
                 ["foco", "arquitectura · datos · agentes"],
               ].map(([label, value]) => (

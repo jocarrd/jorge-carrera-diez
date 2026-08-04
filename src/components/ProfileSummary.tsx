@@ -25,9 +25,18 @@ export function ProfileSummary({ className = "" }: ProfileSummaryProps) {
       >
         {site.college}
       </a>
-      . Trabajo en entornos enterprise liderando decisiones técnicas y desarrollo Snowy
-      para trabajar producto, frontend, backend, datos, infraestructura, SEO y agentes
-      sobre un sistema real.
+      . Trabajo en entornos enterprise liderando decisiones técnicas, colaboro como
+      freelance con la fundación suiza que publica el{" "}
+      <a
+        href="https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/"
+        target="_blank"
+        rel="noreferrer"
+        className="text-cyan-300 underline-offset-4 hover:text-cyan-100 hover:underline"
+      >
+        Elite Quality Index
+      </a>
+      {" "}de la Universidad de St. Gallen, y desarrollo Snowy para trabajar producto,
+      frontend, backend, datos, infraestructura, SEO y agentes sobre un sistema real.
     </p>
   );
 }

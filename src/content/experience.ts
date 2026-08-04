@@ -2,6 +2,28 @@ import type { ExperienceItem } from "@/types/content";
 
 export const experience: ExperienceItem[] = [
   {
+    company: "EQx",
+    role: "Ingeniero de software freelance",
+    context: "Universidad de St. Gallen, Suiza",
+    headline: "Ingeniero de software - EQx (Suiza)",
+    client: "Foundation for Value Creation",
+    period: "Julio 2026 - Actualidad",
+    summary:
+      "Colaboro con la Foundation for Value Creation, la fundacion suiza que publica el Elite Quality Index bajo direccion academica de tres institutos de la Universidad de St. Gallen. Es un indice de economia politica, publicado desde 2020, que mide en 151 paises hasta que punto las elites de cada pais crean valor para la sociedad o lo extraen de ella. Asumo el relevo tecnico de sus productos digitales: la web publica del indice y la consola privada que lo acompana.",
+    highlights: [
+      "Traspaso del desarrollador anterior y continuidad del producto sin parar la operativa.",
+      "Responsabilidad de punta a punta sobre la experiencia de usuario de ambos productos.",
+      "Interlocucion directa con direccion del indice, diseno y responsables del modelo de valoracion.",
+      "Priorizacion con criterio de producto: que entra en cada entrega segun los hitos del cliente.",
+      "Trabajo en remoto con un equipo internacional sobre un proyecto de investigacion aplicada.",
+    ],
+    logo: {
+      src: "/logos/eqx.svg",
+      alt: "EQx - Elite Quality Index",
+      fallback: "EQx",
+    },
+  },
+  {
     company: "Capgemini",
     role: "Tech Lead",
     context: "Capgemini",
