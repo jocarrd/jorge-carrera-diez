@@ -22,15 +22,15 @@ const dataSources = [
 const publicProof = [
   {
     title: "Entrevista en RNE",
-    text: "Participacion en radio para explicar Snowy y la evolucion del proyecto meteorologico.",
+    text: "Participación en radio para explicar Snowy y la evolución del proyecto meteorológico.",
     image: "/images/snowy-rne.png",
     alt: "Jorge Carrera y Daniel Benito en una entrevista de RNE sobre Snowy",
   },
   {
-    title: "Articulo en larioja.com",
+    title: "Artículo en larioja.com",
     text: "Cobertura en prensa regional sobre el lanzamiento de Snowy desde LaRiojaMeteo.",
     image: "/images/snowy-larioja-article.jpeg",
-    alt: "Articulo de larioja.com sobre el lanzamiento de Snowy",
+    alt: "Artículo de larioja.com sobre el lanzamiento de Snowy",
     url: "https://www.larioja.com/la-rioja/snowy-asistente-rioja-meteo-20260122182611-nt.html",
   },
 ] as const;
@@ -38,82 +38,82 @@ const publicProof = [
 const productLines = [
   {
     title: "Snowy Energy",
-    text: "Forecasting renovable, simulador y dashboard para energia solar como vertical B2B dentro del ecosistema Snowy.",
+    text: "Forecasting renovable, simulador y dashboard para energía solar como vertical B2B dentro del ecosistema Snowy.",
   },
   {
     title: "Widgets B2B",
-    text: "SDK embebible para integrar datos meteorologicos, mapas, herramientas o asistente IA en webs de terceros.",
+    text: "SDK embebible para integrar datos meteorológicos, mapas, herramientas o asistente IA en webs de terceros.",
   },
   {
     title: "Eclipse 2026",
-    text: "Producto de contenido y planificacion alrededor del eclipse solar total del 12 de agosto de 2026.",
+    text: "Producto de contenido y planificación alrededor del eclipse solar total del 12 de agosto de 2026.",
   },
 ] as const;
 
 const productFeatures = [
   {
-    title: "Prediccion multi-modelo",
-    text: "Comparacion de modelos meteorologicos, prediccion por localidades y herramientas para entender incertidumbre.",
+    title: "Predicción multi-modelo",
+    text: "Comparación de modelos meteorológicos, predicción por localidades y herramientas para entender incertidumbre.",
   },
   {
-    title: "Mapa meteorologico",
+    title: "Mapa meteorológico",
     text: "Radar, estaciones, avisos, terremotos, calidad del aire y capas ambientales en una interfaz interactiva.",
   },
   {
     title: "Estaciones en vivo",
-    text: "Red de estaciones con datos actuales, historicos y flujo de integracion para usuarios.",
+    text: "Red de estaciones con datos actuales, históricos y flujo de integración para usuarios.",
   },
   {
     title: "Contenido SEO",
-    text: "Paginas indexables para localidades, fenomenos, polen, calidad del aire, embalses y WikiMeteo.",
+    text: "Páginas indexables para localidades, fenómenos, polen, calidad del aire, embalses y WikiMeteo.",
   },
   {
     title: "Asistente IA",
-    text: "Conversacion, voz, herramientas especializadas y respuestas apoyadas en datos meteorologicos.",
+    text: "Conversación, voz, herramientas especializadas y respuestas apoyadas en datos meteorológicos.",
   },
   {
     title: "Productos derivados",
-    text: "Energy, widgets embebibles, eclipse 2026 y nuevas verticales sobre la misma base tecnica.",
+    text: "Energy, widgets embebibles, eclipse 2026 y nuevas verticales sobre la misma base técnica.",
   },
 ] as const;
 
 const productModules = [
   {
     title: "Asistente IA",
-    text: "Consultas conversacionales con herramientas meteorologicas: ropa, avisos, prediccion, ubicacion y respuestas accionables.",
+    text: "Consultas conversacionales con herramientas meteorológicas: ropa, avisos, predicción, ubicación y respuestas accionables.",
     image: "/images/snowy-ai-assistant.png",
-    alt: "Asistente de IA de Snowy con recomendacion meteorologica de ropa",
+    alt: "Asistente de IA de Snowy con recomendación meteorológica de ropa",
   },
   {
     title: "Embalses",
-    text: "Datos oficiales, evolucion semanal, mapas y comparativas por comunidades, provincias y cuencas.",
+    text: "Datos oficiales, evolución semanal, mapas y comparativas por comunidades, provincias y cuencas.",
     image: "/images/snowy-reservoirs.png",
-    alt: "Modulo de embalses de Snowy con reserva hidrica y mapa por comunidades",
+    alt: "Módulo de embalses de Snowy con reserva hídrica y mapa por comunidades",
   },
   {
-    title: "Clima historico",
-    text: "Procesamiento de series historicas para analizar tendencias, anomalias y cambios de temperatura por zona.",
+    title: "Clima histórico",
+    text: "Procesamiento de series históricas para analizar tendencias, anomalías y cambios de temperatura por zona.",
     image: "/images/snowy-climate.png",
-    alt: "Modulo de clima historico de Snowy con mapa de calentamiento en España",
+    alt: "Módulo de clima histórico de Snowy con mapa de calentamiento en España",
   },
   {
     title: "Terremotos",
-    text: "Monitor en tiempo real con fuentes oficiales, magnitud, ubicacion, detalle del evento y reporte comunitario.",
+    text: "Monitor en tiempo real con fuentes oficiales, magnitud, ubicación, detalle del evento y reporte comunitario.",
     image: "/images/snowy-earthquakes.png",
-    alt: "Monitor de terremotos de Snowy con evento sismico reciente",
+    alt: "Monitor de terremotos de Snowy con evento sísmico reciente",
   },
   {
     title: "Estaciones",
-    text: "Detalle de estacion con metricas actuales, historicos, favoritos, propietario y datos meteorologicos en vivo.",
+    text: "Detalle de estación con métricas actuales, históricos, favoritos, propietario y datos meteorológicos en vivo.",
     image: "/images/snowy-station-detail.png",
-    alt: "Detalle de estacion meteorologica en Snowy con metricas en vivo",
+    alt: "Detalle de estación meteorológica en Snowy con métricas en vivo",
   },
 ] as const;
 
 export const metadata: Metadata = createMetadata({
   title: "Snowy",
   description:
-    "Snowy, plataforma meteorologica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorologicos e IA.",
+    "Snowy, plataforma meteorológica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorológicos e IA.",
   path: "/proyectos/snowy",
 });
 
@@ -122,19 +122,19 @@ export default function SnowyPage() {
     <main>
       <Section>
         <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
-          Snowy: plataforma meteorologica con mapas, datos en tiempo real e IA.
+          Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
-          Snowy es una plataforma meteorologica para consultar predicciones, mapas,
+          Snowy es una plataforma meteorológica para consultar predicciones, mapas,
           estaciones, avisos, embalses, calidad del aire, terremotos y herramientas
-          inteligentes desde una experiencia rapida y orientada a decisiones reales.
+          inteligentes desde una experiencia rápida y orientada a decisiones reales.
         </p>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
           La diferencia esta en unir producto, datos, SEO, mapas interactivos y agentes
-          sobre una arquitectura propia: frontend SSR, backend como autoridad, cache por
+          sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por
           dominio y servicios especializados para radar, CMS y procesos batch. En los
-          ultimos 3 meses, Snowy ha superado los 7,5 millones de impresiones, 51k clics
-          organicos y 1.200 usuarios registrados.
+          últimos 3 meses, Snowy ha superado los 7,5 millones de impresiones, 51k clics
+          orgánicos y 1.200 usuarios registrados.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="https://snowy.es">Abrir Snowy</ButtonLink>
@@ -149,7 +149,7 @@ export default function SnowyPage() {
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
             <Image
               src="/images/snowy-home.png"
-              alt="Interfaz principal de Snowy con asistente IA, buscador y planificador meteorologico"
+              alt="Interfaz principal de Snowy con asistente IA, buscador y planificador meteorológico"
               width={1365}
               height={1049}
               className="h-auto w-full"
@@ -160,7 +160,7 @@ export default function SnowyPage() {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src="/images/snowy-stations-map.png"
-                alt="Mapa de estaciones meteorologicas en Snowy"
+                alt="Mapa de estaciones meteorológicas en Snowy"
                 width={1280}
                 height={862}
                 className="h-auto w-full"
@@ -169,7 +169,7 @@ export default function SnowyPage() {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src="/images/snowy-radar-map.png"
-                alt="Mapa meteorologico de Snowy con radar, avisos y estaciones"
+                alt="Mapa meteorológico de Snowy con radar, avisos y estaciones"
                 width={1210}
                 height={872}
                 className="h-auto w-full"
@@ -182,8 +182,8 @@ export default function SnowyPage() {
       <Section className="border-y border-white/10 bg-white/[0.02]">
         <SectionHeader
           eyebrow="Producto"
-          title="Que es Snowy"
-          text="Una plataforma meteorologica para España con prediccion multi-modelo, estaciones en vivo, embalses, terremotos, calidad del aire, polen, avisos, mapas interactivos, WikiMeteo y asistente IA."
+          title="Qué es Snowy"
+          text="Una plataforma meteorológica para España con predicción multi-modelo, estaciones en vivo, embalses, terremotos, calidad del aire, polen, avisos, mapas interactivos, WikiMeteo y asistente IA."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {productFeatures.map((feature) => (
@@ -199,14 +199,14 @@ export default function SnowyPage() {
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-500">
-              Modulos
+              Módulos
             </p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               Distintas superficies, una misma arquitectura.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:leading-8">
-              Cada modulo tiene requisitos distintos: datos externos, cache,
-              visualizacion, SEO, estado en tiempo real y modelos internos comunes.
+              Cada módulo tiene requisitos distintos: datos externos, caché,
+              visualización, SEO, estado en tiempo real y modelos internos comunes.
             </p>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
@@ -234,8 +234,8 @@ export default function SnowyPage() {
 
       <Section>
         <SectionHeader
-          title="Traccion real, no solo arquitectura."
-          text="El SEO, el rendimiento y la utilidad del producto ya se reflejan en uso: busqueda organica, clics y usuarios registrados sobre una plataforma propia."
+          title="Tracción real, no solo arquitectura."
+          text="El SEO, el rendimiento y la utilidad del producto ya se reflejan en uso: busqueda orgánica, clics y usuarios registrados sobre una plataforma propia."
         />
         <div className="mt-10 grid gap-3 md:grid-cols-3">
           {snowyTractionMetrics.map((metric) => (
@@ -251,9 +251,9 @@ export default function SnowyPage() {
 
       <Section className="border-y border-white/10 bg-white/[0.02]">
         <SectionHeader
-          eyebrow="Construccion"
-          title="Como esta hecho."
-          text="Snowy se apoya en una arquitectura desacoplada: Next.js para SSR, SEO y UI; NestJS para negocio y datos; Redis para cache; MySQL para persistencia; y servicios separados cuando radar, CMS o jobs tienen cargas distintas."
+          eyebrow="Construcción"
+          title="Cómo está hecho."
+          text="Snowy se apoya en una arquitectura desacoplada: Next.js para SSR, SEO y UI; NestJS para negocio y datos; Redis para caché; MySQL para persistencia; y servicios separados cuando radar, CMS o jobs tienen cargas distintas."
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {snowyCapabilities.map((item) => (
@@ -270,7 +270,7 @@ export default function SnowyPage() {
           <SectionHeader
             eyebrow="SEO y datos"
             title="SEO, datos y rendimiento como decisiones de arquitectura."
-            text="El usuario y Google necesitan respuestas rapidas. Por eso el proyecto trabaja con SSR, cache por dominio, modelo interno de datos, IndexNow, revalidacion y abstraccion de proveedores."
+            text="El usuario y Google necesitan respuestas rápidas. Por eso el proyecto trabaja con SSR, caché por dominio, modelo interno de datos, IndexNow, revalidación y abstracción de proveedores."
           />
           <Surface>
             <h2 className="text-xl font-semibold text-white">Fuentes integradas</h2>
@@ -280,8 +280,8 @@ export default function SnowyPage() {
               ))}
             </div>
             <p className="mt-6 text-sm leading-7 text-slate-400">
-              El objetivo es unificar proveedores heterogeneos en un modelo consistente,
-              precalcular lo costoso y responder muy rapido al usuario final.
+              El objetivo es unificar proveedores heterogéneos en un modelo consistente,
+              precalcular lo costoso y responder muy rápido al usuario final.
             </p>
           </Surface>
         </div>
@@ -292,7 +292,7 @@ export default function SnowyPage() {
           <SectionHeader
             eyebrow="B2B dentro de Snowy"
             title="Energy, widgets y verticales sectoriales."
-            text="La misma base de datos, mapas, predicciones e IA permite construir productos derivados: forecasting energetico, widgets embebibles y herramientas para casos concretos."
+            text="La misma base de datos, mapas, predicciones e IA permite construir productos derivados: forecasting energético, widgets embebibles y herramientas para casos concretos."
           />
           <div className="grid gap-4">
             {productLines.map((line) => (
@@ -308,8 +308,8 @@ export default function SnowyPage() {
       <Section>
         <SectionHeader
           eyebrow="Prensa"
-          title="Snowy tambien ha tenido recorrido publico."
-          text="El proyecto nacio desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales publicos. Es una señal de producto real, comunidad y continuidad."
+          title="Snowy también ha tenido recorrido público."
+          text="El proyecto nacio desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales públicos. Es una señal de producto real, comunidad y continuidad."
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {publicProof.map((item) => {

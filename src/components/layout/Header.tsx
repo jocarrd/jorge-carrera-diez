@@ -52,7 +52,7 @@ export function Header() {
           </span>
         </Link>
         <nav
-          aria-label="Navegacion principal"
+          aria-label="Navegación principal"
           className="hidden items-center rounded-full border border-white/10 bg-white/[0.035] p-1 md:flex"
         >
           {navigationItems.map((item) => (
@@ -76,7 +76,7 @@ export function Header() {
             type="button"
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
-            aria-label={isOpen ? "Cerrar navegacion" : "Abrir navegacion"}
+            aria-label={isOpen ? "Cerrar navegación" : "Abrir navegación"}
             onClick={() => setIsOpen((current) => !current)}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-white transition hover:border-cyan-300/40 md:hidden"
           >
@@ -96,7 +96,7 @@ export function Header() {
       </div>
       <nav
         id="mobile-navigation"
-        aria-label="Navegacion movil"
+        aria-label="Navegación móvil"
         className={`md:hidden ${isOpen ? "block" : "hidden"}`}
       >
         <div className="mx-5 mb-4 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/95 shadow-2xl sm:mx-6">
@@ -116,7 +116,7 @@ export function Header() {
             </div>
           </div>
           <div className="p-4">
-            <p className="font-mono text-xs text-slate-500">Paginas</p>
+            <p className="font-mono text-xs text-slate-500">Páginas</p>
             <div className="mt-3 grid gap-2">
               {navigationItems.map((item) => (
                 <Link

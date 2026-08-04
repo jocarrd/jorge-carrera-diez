@@ -10,8 +10,8 @@ export function ContactCta() {
             Si mi perfil encaja, hablamos.
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-slate-300">
-            Me interesa construir en equipos donde haya producto, criterio tecnico y problemas
-            reales que resolver. La mejor forma de verlo es una conversacion tranquila.
+            Me interesa construir en equipos donde haya producto, criterio técnico y problemas
+            reales que resolver. La mejor forma de verlo es una conversación tranquila.
           </p>
         </div>
         <ButtonLink href={`mailto:${site.email}`}>Escribirme</ButtonLink>

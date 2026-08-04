@@ -9,8 +9,8 @@ export function ExperiencePreview() {
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeader
           eyebrow="Experiencia"
-          title="Liderazgo tecnico en proyectos enterprise."
-          text="Mi rol actual da contexto y autoridad: arquitectura, estandares, revisiones, coordinacion, agentes y mentoring en sistemas con impacto real."
+          title="Liderazgo técnico en proyectos enterprise."
+          text="Mi rol actual da contexto y autoridad: arquitectura, estándares, revisiones, coordinación, agentes y mentoring en sistemas con impacto real."
         />
         <div>
           <div className="grid gap-4">

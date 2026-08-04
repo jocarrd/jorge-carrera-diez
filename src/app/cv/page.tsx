@@ -81,7 +81,7 @@ export default function CvPage() {
       </Section>
 
       <Section>
-        <SectionHeader eyebrow="Stack" title="Competencias tecnicas" />
+        <SectionHeader eyebrow="Stack" title="Competencias técnicas" />
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {skillGroups.map((group) => (
             <Surface key={group.title}>

@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Contacto",
   description:
-    "Contacto profesional de Jorge Carrera Diez para oportunidades tecnicas, producto, arquitectura, frontend, backend, SEO y meteorologia.",
+    "Contacto profesional de Jorge Carrera Diez para oportunidades técnicas, producto, arquitectura, frontend, backend, SEO y meteorología.",
   path: "/contacto",
 });
 
@@ -47,8 +47,8 @@ export default function ContactPage() {
               {site.email}
             </a>
             <p className="mt-5 text-sm leading-7 text-slate-400">
-              La forma mas sencilla de contactarme es por correo. Si te apetece escribirme,
-              cuentame brevemente el contexto y seguimos la conversacion desde ahi.
+              La forma más sencilla de contactarme es por correo. Si te apetece escribirme,
+              cuéntame brevemente el contexto y seguimos la conversación desde ahí.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={`mailto:${site.email}`}>Enviar correo</ButtonLink>
@@ -65,11 +65,11 @@ export default function ContactPage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-white">
-                Tambien puedes revisar antes
+                También puedes revisar antes
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
-                Si quieres tener mas contexto antes de escribir, estos enlaces resumen la
-                parte mas relevante de mi perfil.
+                Si quieres tener más contexto antes de escribir, estos enlaces resumen la
+                parte más relevante de mi perfil.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

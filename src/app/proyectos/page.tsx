@@ -16,8 +16,8 @@ export default function ProjectsPage() {
       <Section>
         <SectionHeader
           eyebrow="Proyectos"
-          title="Snowy como producto principal, LaRiojaMeteo como contexto meteorologico."
-          text="Dos proyectos conectados por la meteorologia, el contenido, el SEO y la construccion de producto web con datos reales."
+          title="Snowy como producto principal, LaRiojaMeteo como contexto meteorológico."
+          text="Dos proyectos conectados por la meteorología, el contenido, el SEO y la construcción de producto web con datos reales."
         />
         <div className="mt-12">
           <FeaturedProjects />

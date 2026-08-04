@@ -7,7 +7,7 @@ export function StackSection() {
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <SectionHeader
           eyebrow="Stack"
-          title="Tecnologia al servicio del producto."
+          title="Tecnología al servicio del producto."
           text="Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario."
         />
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]">

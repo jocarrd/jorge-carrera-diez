@@ -18,7 +18,7 @@ export default function ExperiencePage() {
         <SectionHeader
           eyebrow="Experiencia"
           title="Ingeniero de software con trayectoria en banca, seguros, retail y producto web."
-          text="Esta pagina recoge el recorrido profesional con foco en liderazgo tecnico, arquitectura, React, Next.js, backend, calidad, CI/CD, agentes y colaboracion con equipos multidisciplinares."
+          text="Esta página recoge el recorrido profesional con foco en liderazgo técnico, arquitectura, React, Next.js, backend, calidad, CI/CD, agentes y colaboración con equipos multidisciplinares."
         />
         <div className="mt-8 sm:mt-12">
           <div className="relative">

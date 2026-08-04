@@ -23,7 +23,7 @@ const systemFlow = [
   },
   {
     title: "Control",
-    caption: "logs, limites y evaluacion",
+    caption: "logs, límites y evaluación",
     metric: "guard",
   },
 ] as const;
@@ -31,24 +31,24 @@ const systemFlow = [
 const toolSignals = ["RAG", "MCP", "AI SDK", "evals", "logs", "fallback"] as const;
 
 const consoleLines = [
-  ["intent", "consulta meteorologica con contexto de usuario"],
+  ["intent", "consulta meteorológica con contexto de usuario"],
   ["tool", "getForecast(), getAlerts(), searchDocs()"],
   ["context", "fuentes internas + datos en tiempo real"],
-  ["policy", "limites, trazabilidad y respuesta verificable"],
+  ["policy", "límites, trazabilidad y respuesta verificable"],
 ] as const;
 
 const aiPrinciples = [
   {
     title: "Contexto antes que prompt",
-    text: "El valor esta en que el modelo reciba la informacion correcta: datos propios, permisos, recuperacion, herramientas y limites del caso de uso.",
+    text: "El valor está en que el modelo reciba la información correcta: datos propios, permisos, recuperación, herramientas y límites del caso de uso.",
   },
   {
     title: "Agentes con responsabilidad clara",
-    text: "Me interesa disenar flujos donde el agente sabe que puede hacer, que herramienta usar y como dejar trazabilidad para depurar el sistema.",
+    text: "Me interesa diseñar flujos donde el agente sabe qué puede hacer, qué herramienta usar y cómo dejar trazabilidad para depurar el sistema.",
   },
   {
-    title: "Producto, coste y operacion",
-    text: "Una funcionalidad con IA tambien necesita latencia razonable, fallback, observabilidad, evaluaciones y una UX que no obligue al usuario a entender el sistema.",
+    title: "Producto, coste y operación",
+    text: "Una funcionalidad con IA también necesita latencia razonable, fallback, observabilidad, evaluaciones y una UX que no obligue al usuario a entender el sistema.",
   },
 ] as const;
 
@@ -66,15 +66,15 @@ export function GenerativeAiSection() {
             como cualquier otra pieza del sistema.
           </p>
           <p className="mt-5 text-sm leading-7 text-slate-400">
-            Me interesa especialmente la parte de diseño del flujo: que contexto necesita
-            el modelo, que herramientas puede usar, como se controlan las respuestas y que
+            Me interesa especialmente la parte de diseño del flujo: qué contexto necesita
+            el modelo, qué herramientas puede usar, cómo se controlan las respuestas y qué
             experiencia recibe el usuario.
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/80">
             {[
-              ["VidaCaixa", "integracion de capacidades generativas en entorno enterprise"],
-              ["Snowy", "asistente y herramientas sobre datos meteorologicos reales"],
-              ["criterio", "contexto, limites, trazabilidad, coste y experiencia final"],
+              ["VidaCaixa", "integración de capacidades generativas en entorno enterprise"],
+              ["Snowy", "asistente y herramientas sobre datos meteorológicos reales"],
+              ["criterio", "contexto, límites, trazabilidad, coste y experiencia final"],
             ].map(([label, value]) => (
               <div
                 key={label}
@@ -193,7 +193,7 @@ export function GenerativeAiSection() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-            <h3 className="text-xl font-semibold text-white">Como lo enfoco</h3>
+            <h3 className="text-xl font-semibold text-white">Cómo lo enfoco</h3>
             <div className="mt-6 grid gap-5 lg:grid-cols-3">
               {aiPrinciples.map((item) => (
                 <div key={item.title}>

@@ -9,13 +9,13 @@ export const experience: ExperienceItem[] = [
     client: "Foundation for Value Creation",
     period: "Julio 2026 - Actualidad",
     summary:
-      "Colaboro con la Foundation for Value Creation, la fundacion suiza que publica el Elite Quality Index bajo direccion academica de tres institutos de la Universidad de St. Gallen. Es un indice de economia politica, publicado desde 2020, que mide en 151 paises hasta que punto las elites de cada pais crean valor para la sociedad o lo extraen de ella. Asumo el relevo tecnico de sus productos digitales: la web publica del indice y la consola privada que lo acompana.",
+      "Colaboro con la Foundation for Value Creation, la fundación suiza que publica el Elite Quality Index bajo dirección académica de tres institutos de la Universidad de St. Gallen. Es un índice de economía política, publicado desde 2020, que mide en 151 países hasta qué punto las élites de cada país crean valor para la sociedad o lo extraen de ella. Asumo el relevo técnico de sus productos digitales: la web pública del índice y la consola privada que lo acompaña.",
     highlights: [
       "Traspaso del desarrollador anterior y continuidad del producto sin parar la operativa.",
       "Responsabilidad de punta a punta sobre la experiencia de usuario de ambos productos.",
-      "Interlocucion directa con direccion del indice, diseno y responsables del modelo de valoracion.",
-      "Priorizacion con criterio de producto: que entra en cada entrega segun los hitos del cliente.",
-      "Trabajo en remoto con un equipo internacional sobre un proyecto de investigacion aplicada.",
+      "Interlocución directa con dirección del índice, diseño y responsables del modelo de valoración.",
+      "Priorización con criterio de producto: qué entra en cada entrega según los hitos del cliente.",
+      "Trabajo en remoto con un equipo internacional sobre un proyecto de investigación aplicada.",
     ],
     logo: {
       src: "/logos/eqx.svg",
@@ -31,13 +31,13 @@ export const experience: ExperienceItem[] = [
     client: "VidaCaixa",
     period: "Octubre 2025 - Actualidad",
     summary:
-      "Liderazgo tecnico frontend en un proyecto estrategico del sector asegurador, definiendo arquitectura, estandares de desarrollo, buenas practicas e integracion de Inteligencia Artificial generativa en flujos enterprise.",
+      "Liderazgo técnico frontend en un proyecto estratégico del sector asegurador, definiendo arquitectura, estándares de desarrollo, buenas prácticas e integración de Inteligencia Artificial generativa en flujos enterprise.",
     highlights: [
-      "Definicion de arquitectura frontend y decisiones tecnicas clave.",
-      "Liderazgo de la integracion de IA generativa en proyectos de Caixa.",
-      "Orquestacion de agentes, evaluacion de casos de uso y aterrizaje tecnico de flujos con IA.",
-      "Code reviews, estandares de calidad y mentoring.",
-      "Coordinacion con backend, QA y negocio.",
+      "Definición de arquitectura frontend y decisiones técnicas clave.",
+      "Liderazgo de la integración de IA generativa en proyectos de Caixa.",
+      "Orquestación de agentes, evaluación de casos de uso y aterrizaje técnico de flujos con IA.",
+      "Code reviews, estándares de calidad y mentoring.",
+      "Coordinación con backend, QA y negocio.",
     ],
     logo: {
       src: "/logos/vidacaixa.png",
@@ -57,9 +57,9 @@ export const experience: ExperienceItem[] = [
     summary:
       "Desarrollo de la UI de un sistema de operativa bancaria para sucursales, con foco en React, escalabilidad, mantenibilidad y patrones de arquitectura hexagonal.",
     highlights: [
-      "Construccion de interfaces bancarias escalables.",
-      "Mentorizacion de perfiles junior en React y arquitectura.",
-      "Aplicacion de buenas practicas en un proyecto financiero de alto alcance.",
+      "Construcción de interfaces bancarias escalables.",
+      "Mentorización de perfiles junior en React y arquitectura.",
+      "Aplicación de buenas prácticas en un proyecto financiero de alto alcance.",
     ],
     logo: {
       src: "/logos/openbank.jpg",
@@ -75,7 +75,7 @@ export const experience: ExperienceItem[] = [
     context: "Inditex",
     period: "Junio 2023 - Marzo 2025",
     summary:
-      "Desarrollo y mantenimiento del terminal de gestion de tiendas de Inditex, desplegado en miles de puntos de venta a nivel global.",
+      "Desarrollo y mantenimiento del terminal de gestión de tiendas de Inditex, desplegado en miles de puntos de venta a nivel global.",
     highlights: [
       "Frontend con React y TypeScript; backend con Java y Spring Boot.",
       "CI/CD con GitHub Actions, testing y mejora de calidad.",
@@ -93,11 +93,11 @@ export const experience: ExperienceItem[] = [
     context: "React, Next.js, Node.js",
     period: "Febrero 2022 - Junio 2023",
     summary:
-      "Desarrollo de aplicaciones web en produccion, componentes reutilizables y proyectos como la web corporativa de Hiberus y SivasDescalzo.",
+      "Desarrollo de aplicaciones web en producción, componentes reutilizables y proyectos como la web corporativa de Hiberus y SivasDescalzo.",
     highlights: [
       "React, Next.js, Node.js, Jest y React Testing Library.",
       "Componentes para libreria interna OnlyUI.",
-      "Sistema de gestion de estaciones meteorologicas como TFG.",
+      "Sistema de gestión de estaciones meteorológicas como TFG.",
     ],
     logo: {
       src: "/logos/hiberus.png",
@@ -111,10 +111,10 @@ export const experience: ExperienceItem[] = [
     context: "Wolfsburg mobility",
     period: "Septiembre 2021 - Diciembre 2021",
     summary:
-      "Practicas frontend con Vue, CSS, HTML, Docker y Git, desarrollando una web para usuarios de transporte y un panel de administracion.",
+      "Prácticas frontend con Vue, CSS, HTML, Docker y Git, desarrollando una web para usuarios de transporte y un panel de administración.",
     highlights: [
-      "Interfaz para usuarios de lineas de autobus.",
-      "Panel de control para monitorizacion de componentes de flota.",
+      "Interfaz para usuarios de líneas de autobús.",
+      "Panel de control para monitorización de componentes de flota.",
       "Primer contacto profesional con producto web y operativa real.",
     ],
     logo: {

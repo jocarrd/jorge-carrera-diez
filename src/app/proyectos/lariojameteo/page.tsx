@@ -5,23 +5,23 @@ import { lariojaMeteoSections } from "@/content/projects";
 import { createMetadata } from "@/lib/seo";
 
 const responsibilities = [
-  "Arquitectura y mantenimiento tecnico del sitio web.",
-  "Optimizacion SEO para mejorar posicionamiento y trafico organico.",
-  "Gestion de contenido multimedia, rendimiento y adaptacion movil.",
-  "Analisis de trafico y mejora continua de experiencia de usuario.",
+  "Arquitectura y mantenimiento técnico del sitio web.",
+  "Optimización SEO para mejorar posicionamiento y tráfico orgánico.",
+  "Gestión de contenido multimedia, rendimiento y adaptación móvil.",
+  "Análisis de tráfico y mejora continua de experiencia de usuario.",
 ] as const;
 
 const lariojaMetrics = [
-  { value: "2012", label: "origen", detail: "inicio del proyecto meteorologico original" },
-  { value: "2020", label: "La Rioja Meteo", detail: "evolucion hacia la marca actual" },
-  { value: "2024", label: "Jorge se une", detail: "aportacion tecnica y vision de producto" },
-  { value: "2025", label: "Snowy", detail: "lanzamiento del producto meteorologico avanzado" },
+  { value: "2012", label: "origen", detail: "inicio del proyecto meteorológico original" },
+  { value: "2020", label: "La Rioja Meteo", detail: "evolución hacia la marca actual" },
+  { value: "2024", label: "Jorge se une", detail: "aportación técnica y visión de producto" },
+  { value: "2025", label: "Snowy", detail: "lanzamiento del producto meteorológico avanzado" },
 ] as const;
 
 export const metadata: Metadata = createMetadata({
   title: "LaRiojaMeteo",
   description:
-    "Caso de proyecto LaRiojaMeteo, blog meteorologico con mas de 500.000 visitas mensuales donde Jorge Carrera Diez colabora como webmaster.",
+    "Caso de proyecto LaRiojaMeteo, blog meteorológico con más de 500.000 visitas mensuales donde Jorge Carrera Diez colabora como webmaster.",
   path: "/proyectos/lariojameteo",
 });
 
@@ -30,12 +30,12 @@ export default function LariojaMeteoPage() {
     <main>
       <Section>
         <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
-          LaRiojaMeteo: meteorologia regional, comunidad, SEO y base editorial para Snowy.
+          LaRiojaMeteo: meteorología regional, comunidad, SEO y base editorial para Snowy.
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
-          Colaboro activamente como socio y perfil tecnico en LaRiojaMeteo, portal de referencia
-          meteorologico para La Rioja y Logroño con predicciones, analisis, datos en directo,
-          noticias, guias y comunidad.
+          Colaboro activamente como socio y perfil técnico en LaRiojaMeteo, portal de referencia
+          meteorológico para La Rioja y Logroño con predicciones, análisis, datos en directo,
+          noticias, guías y comunidad.
         </p>
         <div className="mt-9">
           <ButtonLink href="https://lariojameteo.es">Visitar LaRiojaMeteo</ButtonLink>
@@ -43,7 +43,7 @@ export default function LariojaMeteoPage() {
         <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
           <Image
             src="/images/lariojameteo-home.png"
-            alt="Home de LaRiojaMeteo con portada, categorias y ultimo articulo"
+            alt="Home de LaRiojaMeteo con portada, categorías y último artículo"
             width={1230}
             height={923}
             className="w-full object-cover object-left-top"
@@ -55,8 +55,8 @@ export default function LariojaMeteoPage() {
       <Section className="border-y border-white/10 bg-white/[0.02]">
         <SectionHeader
           eyebrow="Trayectoria"
-          title="De blog meteorologico regional a ecosistema con Snowy."
-          text="LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribucion editorial. Snowy aporta producto, datos, IA e infraestructura."
+          title="De blog meteorológico regional a ecosistema con Snowy."
+          text="LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribución editorial. Snowy aporta producto, datos, IA e infraestructura."
         />
         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 lg:grid-cols-4">
           {lariojaMetrics.map((metric) => (
@@ -68,8 +68,8 @@ export default function LariojaMeteoPage() {
       <Section>
         <SectionHeader
           eyebrow="Responsabilidad"
-          title="Un proyecto donde el SEO y la experiencia movil tienen impacto directo."
-          text="LaRiojaMeteo combina trafico, contenido, visibilidad organica y mantenimiento continuo."
+          title="Un proyecto donde el SEO y la experiencia móvil tienen impacto directo."
+          text="LaRiojaMeteo combina tráfico, contenido, visibilidad orgánica y mantenimiento continuo."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {responsibilities.map((item) => (
@@ -85,7 +85,7 @@ export default function LariojaMeteoPage() {
           <SectionHeader
             eyebrow="Contenido"
             title="Un portal con profundidad editorial y datos en tiempo real."
-            text="El portal funciona como archivo meteorologico local: analisis, episodios, fenomenos, guias, webcams, estaciones y comunidad."
+            text="El portal funciona como archivo meteorológico local: análisis, episodios, fenómenos, guías, webcams, estaciones y comunidad."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {lariojaMeteoSections.map((section) => (
