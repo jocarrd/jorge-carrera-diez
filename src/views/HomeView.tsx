@@ -2,11 +2,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { ContactCta } from "@/components/home/ContactCta";
 import { CurrentRoleSection } from "@/components/home/CurrentRoleSection";
 import { ExperiencePreview } from "@/components/home/ExperiencePreview";
-import { GenerativeAiSection } from "@/components/home/GenerativeAiSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
 import { SnowyShowcase } from "@/components/home/SnowyShowcase";
-import { StackSection } from "@/components/home/StackSection";
 import type { Locale } from "@/i18n/config";
 import { personJsonLd, websiteJsonLd } from "@/lib/seo";
 
@@ -17,11 +15,9 @@ export function HomeView({ locale }: { locale: Locale }) {
       <JsonLd data={websiteJsonLd(locale)} />
       <HeroSection locale={locale} />
       <CurrentRoleSection locale={locale} />
-      <GenerativeAiSection locale={locale} />
       <SnowyShowcase locale={locale} />
       <ExperiencePreview locale={locale} />
       <ProjectsPreview locale={locale} />
-      <StackSection locale={locale} />
       <ContactCta locale={locale} />
     </main>
   );

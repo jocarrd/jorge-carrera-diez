@@ -21,7 +21,7 @@ export function CvView({ locale }: { locale: Locale }) {
     <main className="cv-document">
       <Section>
         <div className="cv-head">
-          <SectionHeader eyebrow={copy.eyebrow} title={site.name} />
+          <SectionHeader eyebrow={copy.eyebrow} title={site.name} level={1} />
           <p className="cv-role mt-3 text-lg text-slate-300">{content.profile.positioning}</p>
           <ProfileSummary
             locale={locale}
@@ -81,6 +81,9 @@ export function CvView({ locale }: { locale: Locale }) {
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
           {copy.stackTitle}
         </h2>
+        <p className="cv-section-text mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8">
+          {copy.stackText}
+        </p>
         <div className="cv-skills mt-10 grid gap-4 sm:grid-cols-2">
           {content.skills.map((group) => (
             <Surface key={group.title} className="cv-skill">

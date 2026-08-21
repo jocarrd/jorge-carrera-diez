@@ -9,9 +9,9 @@ export function ProjectsView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} />
+        <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} level={1} />
         <div className="mt-12">
-          <FeaturedProjects locale={locale} />
+          <FeaturedProjects locale={locale} level={2} />
         </div>
       </Section>
     </main>

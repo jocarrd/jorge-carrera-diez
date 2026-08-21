@@ -40,11 +40,9 @@ export const es: Copy = {
     ],
     sections: [
       { anchor: "rol-actual", label: "Rol actual" },
-      { anchor: "ia-generativa", label: "Agentes" },
       { anchor: "snowy-showcase", label: "Snowy" },
       { anchor: "proyectos", label: "Proyectos" },
       { anchor: "experiencia", label: "Experiencia" },
-      { anchor: "stack", label: "Stack" },
     ],
   },
   profile: {
@@ -178,11 +176,6 @@ export const es: Copy = {
     eyebrow: "Proyectos",
     title: "Proyectos con producto, tráfico y decisiones técnicas reales.",
     text: "Snowy concentra la parte más profunda: arquitectura, datos, SEO, IA e infraestructura. LaRiojaMeteo aporta audiencia, contenido y contexto meteorológico regional.",
-  },
-  stack: {
-    eyebrow: "Stack",
-    title: "Tecnología al servicio del producto.",
-    text: "Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario.",
   },
   contactCta: {
     title: "Si mi perfil encaja, hablamos.",
@@ -407,7 +400,7 @@ export const es: Copy = {
     experience: {
       title: "Experiencia",
       description:
-        "Experiencia profesional de Jorge Carrera Diez como ingeniero de software, Tech Lead, Lead Software Engineer y Full Stack Developer.",
+        "Experiencia profesional de Jorge Carrera Diez como ingeniero de software, Tech Lead, Lead Software Engineer y Full Stack Developer, y cómo aplica IA generativa y agentes dentro de flujos enterprise.",
       eyebrow: "Experiencia",
       heading:
         "Ingeniero de software con trayectoria en banca, seguros, retail y producto web.",
@@ -422,6 +415,8 @@ export const es: Copy = {
       experienceTitle: "Trayectoria profesional",
       stackEyebrow: "Stack",
       stackTitle: "Competencias técnicas",
+      stackText:
+        "Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario.",
       downloadCta: "Descargar en PDF",
       printHint: "Se abre el diálogo de impresión: elige «Guardar como PDF».",
     },

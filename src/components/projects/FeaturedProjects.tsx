@@ -4,8 +4,16 @@ import { ButtonLink, TechTag } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
+import type { HeadingLevel } from "@/lib/heading";
+import { headingTags } from "@/lib/heading";
 
-export function FeaturedProjects({ locale }: { locale: Locale }) {
+type FeaturedProjectsProps = {
+  locale: Locale;
+  level?: HeadingLevel;
+};
+
+export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
+  const Heading = headingTags[level];
   const copy = getCopy(locale);
   const labels = copy.featuredProjects;
   const snowy = copy.projects.find((project) => project.slug === "snowy");
@@ -27,9 +35,9 @@ export function FeaturedProjects({ locale }: { locale: Locale }) {
               height={48}
               className="h-10 w-auto object-contain object-left sm:h-12"
             />
-            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white sm:mt-6 sm:text-3xl">
+            <Heading className="mt-5 text-2xl font-semibold tracking-tight text-white sm:mt-6 sm:text-3xl">
               {snowy.name}
-            </h3>
+            </Heading>
             <p className="mt-4 text-base leading-7 text-slate-300 sm:leading-8">{snowy.description}</p>
             <p className="mt-4 text-sm leading-7 text-slate-400">{snowy.impact}</p>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -73,9 +81,9 @@ export function FeaturedProjects({ locale }: { locale: Locale }) {
           />
         </div>
         <div className="flex flex-1 flex-col p-5 lg:p-8">
-          <h3 className="text-2xl font-semibold tracking-tight text-white">
+          <Heading className="text-2xl font-semibold tracking-tight text-white">
             {lariojaMeteo.name}
-          </h3>
+          </Heading>
           <p className="mt-4 text-sm leading-7 text-slate-300">{lariojaMeteo.description}</p>
           <p className="mt-4 text-sm leading-7 text-slate-400">{lariojaMeteo.impact}</p>
           <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">

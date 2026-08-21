@@ -10,11 +10,11 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden">
-      <Container className="relative py-12 sm:py-20 lg:min-h-[calc(100vh-4rem)] lg:py-28">
+      <Container className="relative py-12 sm:py-20 lg:py-24">
         <div className="orbital-ring right-[-18rem] top-20 h-[34rem] w-[34rem]" />
         <div className="orbital-ring right-[-10rem] top-36 h-[22rem] w-[22rem]" />
 
-        <div className="grid items-center gap-10 lg:min-h-[70vh] lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               {site.name}
@@ -22,24 +22,19 @@ export function HeroSection({ locale }: { locale: Locale }) {
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
               {copy.profile.headline}
             </p>
-            <ProfileSummary
-              locale={locale}
-              className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:mt-6 sm:leading-8"
-            />
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-start">
               <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
                 {copy.hero.ctaSecondary}
               </ButtonLink>
             </div>
-            <div className="mt-10 lg:hidden">
-              <ProfileVisual locale={locale} />
-            </div>
+            <ProfileSummary
+              locale={locale}
+              className="mt-8 max-w-2xl text-base leading-7 text-slate-400 sm:mt-10 sm:leading-8"
+            />
           </div>
 
-          <div className="hidden lg:block">
-            <ProfileVisual locale={locale} />
-          </div>
+          <ProfileVisual locale={locale} />
         </div>
       </Container>
     </section>

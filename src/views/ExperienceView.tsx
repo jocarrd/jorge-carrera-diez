@@ -1,4 +1,5 @@
 import { CompanyMark } from "@/components/experience/CompanyMark";
+import { GenerativeAiSection } from "@/components/experience/GenerativeAiSection";
 import { Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -10,7 +11,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} />
+        <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} level={1} />
         <div className="mt-8 sm:mt-12">
           <div className="relative">
             <div className="absolute bottom-0 left-6 top-0 hidden w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-transparent md:block" />
@@ -59,6 +60,8 @@ export function ExperienceView({ locale }: { locale: Locale }) {
           </div>
         </div>
       </Section>
+
+      <GenerativeAiSection locale={locale} />
     </main>
   );
 }

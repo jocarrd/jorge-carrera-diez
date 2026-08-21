@@ -138,7 +138,6 @@ export type Copy = {
   };
   experiencePreview: SectionCopy & { cta: string };
   projectsPreview: SectionCopy;
-  stack: SectionCopy;
   contactCta: {
     title: string;
     text: string;
@@ -166,6 +165,7 @@ export type Copy = {
       experienceEyebrow: string;
       stackTitle: string;
       stackEyebrow: string;
+      stackText: string;
       downloadCta: string;
       printHint: string;
     };

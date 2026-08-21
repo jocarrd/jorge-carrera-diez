@@ -40,11 +40,9 @@ export const en: Copy = {
     ],
     sections: [
       { anchor: "rol-actual", label: "Current role" },
-      { anchor: "ia-generativa", label: "Agents" },
       { anchor: "snowy-showcase", label: "Snowy" },
       { anchor: "proyectos", label: "Projects" },
       { anchor: "experiencia", label: "Experience" },
-      { anchor: "stack", label: "Stack" },
     ],
   },
   profile: {
@@ -184,11 +182,6 @@ export const en: Copy = {
     eyebrow: "Projects",
     title: "Projects with product, traffic and real technical decisions.",
     text: "Snowy holds the deepest work: architecture, data, SEO, AI and infrastructure. LaRiojaMeteo brings audience, content and regional weather context.",
-  },
-  stack: {
-    eyebrow: "Stack",
-    title: "Technology in service of the product.",
-    text: "I pick tools for performance, maintainability, SEO, cost and user experience.",
   },
   contactCta: {
     title: "If my profile fits, let's talk.",
@@ -413,7 +406,7 @@ export const en: Copy = {
     experience: {
       title: "Experience",
       description:
-        "Professional experience of Jorge Carrera Diez as a software engineer, Tech Lead, Lead Software Engineer and Full Stack Developer.",
+        "Professional experience of Jorge Carrera Diez as a software engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
       eyebrow: "Experience",
       heading: "Software engineer with a track record in banking, insurance, retail and web product.",
       text: "This page covers my career with a focus on technical leadership, architecture, React, Next.js, backend, quality, CI/CD, agents and work with cross-functional teams.",
@@ -427,6 +420,8 @@ export const en: Copy = {
       experienceTitle: "Career",
       stackEyebrow: "Stack",
       stackTitle: "Technical skills",
+      stackText:
+        "I pick tools for performance, maintainability, SEO, cost and user experience.",
       downloadCta: "Download as PDF",
       printHint: "This opens the print dialog: choose “Save as PDF”.",
     },

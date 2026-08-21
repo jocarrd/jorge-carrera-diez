@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getCopy, site } from "@/content";
+import { getCopy, organizations, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { defaultLocale, htmlLang, openGraphLocale } from "@/i18n/config";
 import type { RouteKey } from "@/i18n/routes";
@@ -60,15 +60,33 @@ export function personJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${site.url}/#person`,
     name: site.name,
     url: absolute(routePath(locale, "home")),
+    image: absolute(site.photo),
     email: site.email,
     jobTitle: copy.meta.jobTitle,
+    description: copy.meta.description,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Logroño",
       addressRegion: "La Rioja",
       addressCountry: "ES",
+    },
+    worksFor: [organizations.capgemini, organizations.eqx].map((organization) => ({
+      "@type": "Organization",
+      name: organization.name,
+      url: organization.url,
+    })),
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: site.university,
+      url: site.universityUrl,
+    },
+    memberOf: {
+      "@type": "Organization",
+      name: site.college,
+      url: site.collegeUrl,
     },
     sameAs: [site.linkedin, site.github, site.snowy, site.lariojameteo],
     knowsAbout: [
@@ -90,8 +108,11 @@ export function websiteJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${site.url}/#website`,
     name: site.name,
     url: absolute(routePath(locale, "home")),
     inLanguage: htmlLang[locale],
+    author: { "@id": `${site.url}/#person` },
+    publisher: { "@id": `${site.url}/#person` },
   };
 }
