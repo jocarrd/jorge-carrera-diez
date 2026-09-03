@@ -6,6 +6,7 @@ export const site = {
   email: "jorgecarrera98d@gmail.com",
   photo: "/images/jorge-carrera-diez.png",
   github: "https://github.com/jocarrd",
+  malt: "https://www.malt.es/profile/jorgecarreradiez",
   linkedin: "https://es.linkedin.com/in/jorge-carrera-diez",
   college: "Colegio Profesional de Ingenieros en Informática de La Rioja",
   collegeUrl: "https://ingenierosinformaticarioja.com/",
