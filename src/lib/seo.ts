@@ -88,7 +88,12 @@ export function personJsonLd(locale: Locale) {
       name: site.college,
       url: site.collegeUrl,
     },
-    sameAs: [site.linkedin, site.github, site.snowy, site.lariojameteo],
+    sameAs: [site.linkedin, site.github, site.malt, site.snowy, site.lariojameteo],
+    knowsLanguage: [
+      { "@type": "Language", name: "Spanish", alternateName: "es" },
+      { "@type": "Language", name: "English", alternateName: "en" },
+    ],
+    makesOffer: freelanceOffers(locale),
     knowsAbout: [
       "React",
       "Next.js",
@@ -102,6 +107,48 @@ export function personJsonLd(locale: Locale) {
       "Artificial Intelligence",
     ],
   };
+}
+
+/** Servicios que se pueden contratar. Sin esto un agente lee el perfil como una
+ *  biografía y no como alguien a quien se le puede proponer un proyecto. */
+function freelanceOffers(locale: Locale) {
+  const es = locale === "es";
+
+  const services = [
+    {
+      name: es
+        ? "Relevo técnico de productos digitales"
+        : "Technical handover of digital products",
+      description: es
+        ? "Asumir el desarrollo de un producto que ya está en producción cuando su desarrollador anterior lo deja, sin interrumpir la operativa."
+        : "Taking over a product already in production when its previous developer leaves, without interrupting operations.",
+    },
+    {
+      name: es
+        ? "Desarrollo de producto web con React y Next.js"
+        : "Web product development with React and Next.js",
+      description: es
+        ? "Aplicaciones con React, Next.js, TypeScript y NestJS, del frontend al backend y la infraestructura."
+        : "Applications with React, Next.js, TypeScript and NestJS, from frontend to backend and infrastructure.",
+    },
+    {
+      name: es ? "Arquitectura frontend y acompañamiento técnico" : "Frontend architecture and technical advisory",
+      description: es
+        ? "Decisiones de arquitectura, estándares de desarrollo y revisión de código para equipos que ya están construyendo."
+        : "Architecture decisions, development standards and code review for teams already building.",
+    },
+  ];
+
+  return services.map((service) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: service.name,
+      description: service.description,
+      provider: { "@id": `${site.url}/#person` },
+      areaServed: { "@type": "Place", name: es ? "Remoto, horario europeo" : "Remote, European hours" },
+    },
+  }));
 }
 
 export function websiteJsonLd(locale: Locale) {
