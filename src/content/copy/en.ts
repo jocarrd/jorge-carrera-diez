@@ -426,20 +426,62 @@ export const en: Copy = {
       printHint: "This opens the print dialog: choose “Save as PDF”.",
     },
     contact: {
-      title: "Contact",
+      title: "Let's work together",
       description:
-        "Professional contact for Jorge Carrera Diez: technical opportunities, product, architecture, frontend, backend, SEO and weather.",
-      lead: "I am open to opportunities where I can contribute on product, architecture, systems design or applied AI.",
-      detail: "If you think there's a fit, drop me an email and we'll talk.",
-      emailLabel: "email",
+        "Jorge Carrera Diez, freelance software engineer. Technical handover of products already in production, React and Next.js development, and frontend architecture advisory.",
+      lead: "I step into products that already exist, understand them, and keep building without anything grinding to a halt.",
+      detail:
+        "It is what I am doing right now for a Swiss foundation: I took over from their previous developer and picked up both of their digital products without interrupting operations.",
+      availabilityLabel: "availability",
+      availabilityText:
+        "Remote, European hours, in Spanish or English. I work on scoped engagements of a few hours a week rather than full days: it is the format that lets me genuinely commit to what I take on.",
+      servicesTitle: "How I can help",
+      servicesText:
+        "Three ways of working that are already running with real clients, not a list of technologies.",
+      services: [
+        {
+          title: "Taking over a product in flight",
+          text: "Whoever built it is leaving and the work has to continue. I pick up the code, the infrastructure and the product judgement, and keep things running meanwhile.",
+        },
+        {
+          title: "Web product development",
+          text: "React, Next.js, TypeScript and NestJS, from frontend to backend and infrastructure. Including the boring part: deployment, performance and search visibility.",
+        },
+        {
+          title: "Architecture and team support",
+          text: "Architecture decisions, standards and code review for teams already building who would rather not regret it a year from now.",
+        },
+      ],
+      clientsTitle: "Where I have worked",
+      clientsText: "Products in production, with real users and consequences when something breaks.",
+      clients: [
+        {
+          title: "University of St. Gallen",
+          text: "Digital products of the Elite Quality Index, for the Swiss foundation that publishes it.",
+        },
+        {
+          title: "Inditex",
+          text: "Store management terminal, deployed across thousands of points of sale.",
+        },
+        {
+          title: "Openbank · Santander Group",
+          text: "Interface for a banking operations system used in branches.",
+        },
+        {
+          title: "VidaCaixa",
+          text: "Frontend technical leadership: architecture, standards and code review.",
+        },
+      ],
+      emailLabel: "write to me",
       emailHint:
-        "Email is the simplest way to reach me. If you'd like to write, tell me briefly about the context and we'll take the conversation from there.",
+        "Tell me the context in four lines: what the product is, what state it is in, and what you need. I will reply if it fits, and also if it does not.",
       ctaPrimary: "Send an email",
       ctaSecondary: "See CV",
-      linksTitle: "You can also look first",
+      linksTitle: "Before you write",
       linksText:
-        "If you want more context before writing, these links cover the most relevant part of my profile.",
+        "If you would rather have more context first, here is the relevant part of my profile and the place where my work can be hired.",
       links: [
+        { key: "malt", label: "Malt" },
         { key: "linkedin", label: "LinkedIn" },
         { key: "github", label: "GitHub" },
         { key: "cv", label: "Web CV" },

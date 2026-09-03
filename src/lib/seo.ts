@@ -151,6 +151,30 @@ function freelanceOffers(locale: Locale) {
   }));
 }
 
+/** La página de contacto es donde se cierra el trato: se declara como tal y se
+ *  repiten los servicios para que web y datos estructurados digan lo mismo. */
+export function contactPageJsonLd(locale: Locale) {
+  const copy = getCopy(locale);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${absolute(routePath(locale, "contact"))}#contact`,
+    url: absolute(routePath(locale, "contact")),
+    name: copy.pages.contact.title,
+    description: copy.pages.contact.description,
+    inLanguage: htmlLang[locale],
+    about: { "@id": `${site.url}/#person` },
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.name,
+      email: site.email,
+      makesOffer: freelanceOffers(locale),
+    },
+  };
+}
+
 export function websiteJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
