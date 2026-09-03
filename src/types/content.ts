@@ -173,13 +173,21 @@ export type Copy = {
       title: string;
       lead: string;
       detail: string;
+      availabilityLabel: string;
+      availabilityText: string;
+      servicesTitle: string;
+      servicesText: string;
+      services: TitledText[];
+      clientsTitle: string;
+      clientsText: string;
+      clients: TitledText[];
       emailLabel: string;
       emailHint: string;
       ctaPrimary: string;
       ctaSecondary: string;
       linksTitle: string;
       linksText: string;
-      links: { key: "linkedin" | "github" | "cv" | "snowy"; label: string }[];
+      links: { key: "linkedin" | "github" | "malt" | "cv" | "snowy"; label: string }[];
     };
     snowy: PageMeta & {
       heading: string;

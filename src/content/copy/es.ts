@@ -421,20 +421,63 @@ export const es: Copy = {
       printHint: "Se abre el diálogo de impresión: elige «Guardar como PDF».",
     },
     contact: {
-      title: "Contacto",
+      title: "Trabajemos juntos",
       description:
-        "Contacto profesional de Jorge Carrera Diez para oportunidades técnicas, producto, arquitectura, frontend, backend, SEO y meteorología.",
-      lead: "Estoy abierto a oportunidades donde mi perfil pueda aportar en producto, arquitectura, diseño de sistemas o IA aplicada.",
-      detail: "Si crees que puede encajar, puedes escribirme por correo y lo hablamos.",
-      emailLabel: "email",
+        "Jorge Carrera Diez, ingeniero de software freelance. Relevo técnico de productos en producción, desarrollo con React y Next.js y acompañamiento de arquitectura frontend.",
+      lead: "Entro en productos que ya existen, los entiendo y sigo construyéndolos sin que se pare nada.",
+      detail:
+        "Es lo que hago ahora mismo para una fundación suiza: asumí el relevo de su desarrollador anterior y me hice cargo de sus dos productos digitales sin interrumpir la operativa.",
+      availabilityLabel: "disponibilidad",
+      availabilityText:
+        "En remoto y horario europeo, en español o en inglés. Trabajo por encargos acotados de pocas horas a la semana, no por jornadas completas: es el formato que me permite comprometerme de verdad con lo que acepto.",
+      servicesTitle: "En qué puedo ayudarte",
+      servicesText:
+        "Tres formas de trabajo que ya están funcionando con clientes reales, no una lista de tecnologías.",
+      services: [
+        {
+          title: "Relevo técnico de un producto en marcha",
+          text: "Se va quien lo construyó y hay que seguir. Cojo el código, la infraestructura y el criterio de producto, y mantengo la operativa mientras tanto.",
+        },
+        {
+          title: "Desarrollo de producto web",
+          text: "React, Next.js, TypeScript y NestJS, del frontend al backend y la infraestructura. Con la parte aburrida incluida: despliegue, rendimiento y posicionamiento.",
+        },
+        {
+          title: "Arquitectura y acompañamiento del equipo",
+          text: "Decisiones de arquitectura, estándares y revisión de código para equipos que ya están construyendo y quieren no arrepentirse dentro de un año.",
+        },
+      ],
+      clientsTitle: "Dónde he trabajado",
+      clientsText:
+        "Producto en producción, con usuarios reales y consecuencias si algo se rompe.",
+      clients: [
+        {
+          title: "Universidad de St. Gallen",
+          text: "Productos digitales del Elite Quality Index, para la fundación suiza que lo publica.",
+        },
+        {
+          title: "Inditex",
+          text: "Terminal de gestión de tiendas, desplegado en miles de puntos de venta.",
+        },
+        {
+          title: "Openbank · Grupo Santander",
+          text: "Interfaz de un sistema de operativa bancaria para sucursales.",
+        },
+        {
+          title: "VidaCaixa",
+          text: "Liderazgo técnico frontend: arquitectura, estándares y revisión de código.",
+        },
+      ],
+      emailLabel: "escríbeme",
       emailHint:
-        "La forma más sencilla de contactarme es por correo. Si te apetece escribirme, cuéntame brevemente el contexto y seguimos la conversación desde ahí.",
+        "Cuéntame el contexto en cuatro líneas: qué producto es, en qué estado está y qué necesitas. Te respondo si encaja, y también si no.",
       ctaPrimary: "Enviar correo",
       ctaSecondary: "Ver CV",
-      linksTitle: "También puedes revisar antes",
+      linksTitle: "Antes de escribir",
       linksText:
-        "Si quieres tener más contexto antes de escribir, estos enlaces resumen la parte más relevante de mi perfil.",
+        "Si prefieres tener más contexto, aquí está lo relevante de mi perfil y el sitio donde se puede contratar mi trabajo.",
       links: [
+        { key: "malt", label: "Malt" },
         { key: "linkedin", label: "LinkedIn" },
         { key: "github", label: "GitHub" },
         { key: "cv", label: "CV web" },

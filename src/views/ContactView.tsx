@@ -1,14 +1,18 @@
 import Link from "next/link";
-import { ButtonLink, Section } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { ButtonLink, Section, SectionHeader, Surface } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
+import { contactPageJsonLd } from "@/lib/seo";
 
 export function ContactView({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).pages.contact;
 
   const hrefFor = (key: (typeof copy.links)[number]["key"]) => {
     switch (key) {
+      case "malt":
+        return site.malt;
       case "linkedin":
         return site.linkedin;
       case "github":
@@ -22,6 +26,8 @@ export function ContactView({ locale }: { locale: Locale }) {
 
   return (
     <main>
+      <JsonLd data={contactPageJsonLd(locale)} />
+
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
@@ -34,6 +40,13 @@ export function ContactView({ locale }: { locale: Locale }) {
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
               {copy.detail}
             </p>
+
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-5 sm:p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
+                {copy.availabilityLabel}
+              </p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{copy.availabilityText}</p>
+            </div>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
@@ -54,6 +67,32 @@ export function ContactView({ locale }: { locale: Locale }) {
               </ButtonLink>
             </div>
           </div>
+        </div>
+      </Section>
+
+      <Section className="border-t border-white/10 bg-white/[0.02]">
+        <SectionHeader title={copy.servicesTitle} text={copy.servicesText} />
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
+          {copy.services.map((service) => (
+            <Surface key={service.title}>
+              <h3 className="text-lg font-semibold tracking-tight text-white">{service.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-400">{service.text}</p>
+            </Surface>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="border-t border-white/10">
+        <SectionHeader title={copy.clientsTitle} text={copy.clientsText} />
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
+          {copy.clients.map((client) => (
+            <Surface key={client.title}>
+              <h3 className="text-base font-semibold tracking-tight text-white sm:text-lg">
+                {client.title}
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-slate-400">{client.text}</p>
+            </Surface>
+          ))}
         </div>
       </Section>
 
