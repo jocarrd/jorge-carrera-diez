@@ -30,6 +30,7 @@ export const es: Copy = {
     closeMenu: "Cerrar navegación",
     sectionsLabel: "Secciones",
     pagesLabel: "Páginas",
+    localeLabel: "Idioma",
     items: [
       { key: "home", label: "Inicio" },
       { key: "snowy", label: "Snowy" },

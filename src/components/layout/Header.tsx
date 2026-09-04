@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Mark } from "@/components/brand/Mark";
 import { LocaleSwitch } from "@/components/layout/LocaleSwitch";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -55,11 +56,7 @@ export function Header({ locale }: { locale: Locale }) {
           aria-label={copy.homeAriaLabel}
           onClick={closeMenu}
         >
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/25 bg-cyan-300/10 text-sm font-semibold text-white shadow-[0_0_32px_rgba(103,232,249,0.18)]">
-            <span className="absolute inset-1 rounded-full border border-white/10" />
-            <span className="absolute -right-1 top-1 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(103,232,249,0.9)]" />
-            JC
-          </span>
+          <Mark className="h-9 w-9 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
           <span className="hidden leading-tight sm:block">
             <span className="block text-sm font-semibold text-white">Jorge Carrera</span>
             <span className="block text-xs text-slate-500">{copy.brandRole}</span>
@@ -80,7 +77,9 @@ export function Header({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <LocaleSwitch locale={locale} onNavigate={closeMenu} />
+          <div className="hidden md:block">
+            <LocaleSwitch locale={locale} onNavigate={closeMenu} />
+          </div>
           <a
             href={`mailto:${site.email}`}
             className="hidden rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:border-cyan-200/70 hover:bg-cyan-300/15 sm:block"
@@ -129,6 +128,10 @@ export function Header({ locale }: { locale: Locale }) {
                 </Link>
               ))}
             </div>
+          </div>
+          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+            <p className="font-mono text-xs text-slate-500">{copy.localeLabel}</p>
+            <LocaleSwitch locale={locale} onNavigate={closeMenu} />
           </div>
           <div className="p-4">
             <p className="font-mono text-xs text-slate-500">{copy.pagesLabel}</p>

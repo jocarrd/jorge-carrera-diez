@@ -100,6 +100,7 @@ export type Copy = {
     closeMenu: string;
     sectionsLabel: string;
     pagesLabel: string;
+    localeLabel: string;
     items: { key: RouteKey; label: string }[];
     sections: { anchor: string; label: string }[];
   };

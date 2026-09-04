@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#02040a"/>
-  <circle cx="32" cy="32" r="22" fill="#083344" opacity=".55"/>
-  <circle cx="32" cy="32" r="20" fill="none" stroke="#67e8f9" stroke-opacity=".42"/>
-  <path d="M17 35c5-13 23-17 34-7" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="48" cy="27" r="3" fill="#67e8f9"/>
-  <text x="32" y="39" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">JC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <rect x="1" y="1" width="38" height="38" rx="11" fill="#061420"/>
+  <rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="#67e8f9" stroke-opacity=".28"/>
+  <text x="20" y="25.5" text-anchor="middle" fill="#f8fafc" font-size="15" font-weight="500" letter-spacing=".5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jc</text>
+  <circle cx="31.5" cy="9.5" r="2.4" fill="#67e8f9"/>
 </svg>
