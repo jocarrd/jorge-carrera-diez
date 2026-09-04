@@ -34,9 +34,15 @@ export function IsolineField({ className = "" }: { className?: string }) {
     // 16 fps y la página se siente colgada. En teléfono y en máquinas cortas se
     // pinta un fotograma y se acaba: sigue siendo una carta de presión y cuesta
     // cero. Es el mismo patrón que usa la portada del EQx con su malla.
+    // En teléfono no se dibuja nada. Pintar un solo fotograma parecía barato,
+    // pero el bitmap del héroe a densidad 2 se queda en memoria y añade una capa
+    // que el compositor arrastra en cada scroll. Con la página trabándose al
+    // entrar y secciones quedándose en blanco al bajar, el efecto no compensa.
+    const small = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    if (small) return;
+
     const reduced =
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      window.matchMedia("(max-width: 767px), (pointer: coarse)").matches ||
       (navigator.hardwareConcurrency ?? 8) <= 4;
     let width = 0;
     let height = 0;
