@@ -532,3 +532,19 @@ p {
     inset 0 1px 0 rgba(255, 255, 255, 0.07),
     0 30px 80px -34px rgba(0, 0, 0, 0.95);
 }
+
+/* --- Capas fijas: fuera del móvil --------------------------------------------
+   `body::before` y `body::after` son dos capas fijas a pantalla completa, una
+   de ellas con `mask-image` y tres degradados superpuestos. Un elemento fijo
+   con máscara impide al navegador componer el scroll y le obliga a repintar la
+   pantalla entera en cada fotograma: en un teléfono real eso se siente como que
+   la página no se mueve, y no aparece en un emulador de escritorio.
+
+   El fondo del `body` —un degradado plano— se queda, así que el color y la
+   atmósfera no cambian; lo que desaparece es el coste. */
+@media (max-width: 767px), (pointer: coarse) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
