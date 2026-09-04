@@ -23,10 +23,10 @@ export function SnowyView({ locale }: { locale: Locale }) {
         <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
           {copy.lead}
         </p>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-400 sm:mt-5 sm:leading-7">
           {copy.detail}
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -82,7 +82,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           {copy.features.map((feature) => (
             <Surface key={feature.title}>
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-400">{feature.text}</p>
+              <p className="mt-4 text-sm leading-6 text-slate-400">{feature.text}</p>
             </Surface>
           ))}
         </div>
@@ -97,7 +97,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               {copy.modules.title}
             </h2>
-            <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:leading-8">
+            <p className="mt-4 text-base leading-relaxed text-slate-300 sm:mt-5 sm:leading-7">
               {copy.modules.text}
             </p>
           </div>
@@ -116,7 +116,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-white">{module.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-400">{module.text}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{module.text}</p>
                 </div>
               </article>
             ))}
@@ -148,7 +148,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           {copy.capabilities.map((item) => (
             <Surface key={item.title}>
               <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-400">{item.text}</p>
+              <p className="mt-4 text-sm leading-6 text-slate-400">{item.text}</p>
             </Surface>
           ))}
         </div>
@@ -168,7 +168,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 <TechTag key={source}>{source}</TechTag>
               ))}
             </div>
-            <p className="mt-6 text-sm leading-7 text-slate-400">{copy.seo.sourcesText}</p>
+            <p className="mt-6 text-sm leading-6 text-slate-400">{copy.seo.sourcesText}</p>
           </Surface>
         </div>
       </Section>
@@ -184,7 +184,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             {copy.b2b.lines.map((line) => (
               <Surface key={line.title}>
                 <h2 className="text-xl font-semibold text-white">{line.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-slate-400">{line.text}</p>
+                <p className="mt-4 text-sm leading-6 text-slate-400">{line.text}</p>
               </Surface>
             ))}
           </div>
@@ -210,7 +210,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 />
                 <div className="p-6">
                   <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
                 </div>
               </>
             );

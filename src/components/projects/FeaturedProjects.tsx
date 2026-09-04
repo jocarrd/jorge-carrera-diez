@@ -38,8 +38,8 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
             <Heading className="mt-5 text-2xl font-semibold tracking-tight text-white sm:mt-6 sm:text-3xl">
               {snowy.name}
             </Heading>
-            <p className="mt-4 text-base leading-7 text-slate-300 sm:leading-8">{snowy.description}</p>
-            <p className="mt-4 text-sm leading-7 text-slate-400">{snowy.impact}</p>
+            <p className="mt-4 text-base leading-relaxed text-slate-300 sm:leading-7">{snowy.description}</p>
+            <p className="mt-4 text-sm leading-6 text-slate-400">{snowy.impact}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {snowy.stack.slice(0, 6).map((tech) => (
                 <TechTag key={tech}>{tech}</TechTag>
@@ -84,8 +84,8 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
           <Heading className="text-2xl font-semibold tracking-tight text-white">
             {lariojaMeteo.name}
           </Heading>
-          <p className="mt-4 text-sm leading-7 text-slate-300">{lariojaMeteo.description}</p>
-          <p className="mt-4 text-sm leading-7 text-slate-400">{lariojaMeteo.impact}</p>
+          <p className="mt-4 text-sm leading-6 text-slate-300">{lariojaMeteo.description}</p>
+          <p className="mt-4 text-sm leading-6 text-slate-400">{lariojaMeteo.impact}</p>
           <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">
             {lariojaMeteo.metrics?.slice(0, 4).map((metric) => (
               <div key={metric.label} className="bg-[#07111f] p-4">

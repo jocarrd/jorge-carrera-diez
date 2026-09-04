@@ -14,16 +14,17 @@ export function ExperienceView({ locale }: { locale: Locale }) {
         <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} level={1} />
         <div className="mt-8 sm:mt-12">
           <div className="relative">
-            <div className="absolute bottom-0 left-6 top-0 hidden w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-transparent md:block" />
+            <div className="absolute bottom-0 left-[7px] top-0 w-px bg-gradient-to-b from-cyan-300/70 via-white/10 to-transparent md:left-6" />
             {content.experience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="relative grid gap-5 border-b border-white/10 py-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8"
+                className="relative grid gap-5 border-b border-white/10 py-7 pl-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8 md:pl-0"
               >
-                <div className="hidden md:block">
-                  <div className="absolute left-3 top-10 flex h-7 w-7 items-center justify-center rounded-full border border-cyan-300/30 bg-[#07111f]">
-                    <div className="h-2 w-2 rounded-full bg-cyan-300" />
-                  </div>
+                <div
+                  aria-hidden
+                  className="absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-cyan-300/40 bg-[#07111f] md:left-3 md:top-10 md:h-7 md:w-7 md:border-cyan-300/30"
+                >
+                  <div className="h-1.5 w-1.5 rounded-full bg-cyan-300 md:h-2 md:w-2" />
                 </div>
 
                 <div className="md:col-start-2">
@@ -43,7 +44,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                           {item.client} · {item.company}
                         </p>
                       ) : null}
-                      <p className="mt-4 text-base leading-7 text-slate-300 sm:leading-8">{item.summary}</p>
+                      <p className="mt-4 text-base leading-relaxed text-slate-300 sm:leading-7">{item.summary}</p>
                       <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-400">
                         {item.highlights.map((highlight) => (
                           <li key={highlight} className="flex gap-2">
