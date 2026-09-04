@@ -22,7 +22,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
             <p className="rise rise-2 mt-5 max-w-3xl text-lg leading-relaxed text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
               {copy.profile.headline}
             </p>
-            <div className="rise rise-3 mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-start">
+            <div className="rise rise-3 mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
               <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
                 {copy.hero.ctaSecondary}
