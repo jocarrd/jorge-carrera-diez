@@ -34,10 +34,10 @@ export function ContactView({ locale }: { locale: Locale }) {
             <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
               {copy.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
               {copy.lead}
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400 sm:mt-5 sm:leading-8">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-5 sm:leading-7">
               {copy.detail}
             </p>
 
@@ -45,21 +45,22 @@ export function ContactView({ locale }: { locale: Locale }) {
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
                 {copy.availabilityLabel}
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-300">{copy.availabilityText}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-300">{copy.availabilityText}</p>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
+          {/* El destino de la página pesaba lo mismo que la tarjeta de al lado. */}
+          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-6 shadow-[0_0_60px_-22px_rgba(103,232,249,0.5)] sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-cyan-300/70">
               {copy.emailLabel}
             </p>
             <a
-              className="mt-4 block break-all text-xl font-semibold tracking-tight text-cyan-200 transition hover:text-cyan-100 sm:text-3xl"
+              className="mt-4 inline-flex min-h-11 items-center break-all text-xl font-semibold tracking-tight text-cyan-200 transition hover:text-cyan-100 sm:text-3xl"
               href={`mailto:${site.email}`}
             >
               {site.email}
             </a>
-            <p className="mt-5 text-sm leading-7 text-slate-400">{copy.emailHint}</p>
+            <p className="mt-5 text-sm leading-6 text-slate-400">{copy.emailHint}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={`mailto:${site.email}`}>{copy.ctaPrimary}</ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
@@ -76,7 +77,7 @@ export function ContactView({ locale }: { locale: Locale }) {
           {copy.services.map((service) => (
             <Surface key={service.title}>
               <h3 className="text-lg font-semibold tracking-tight text-white">{service.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-400">{service.text}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-400">{service.text}</p>
             </Surface>
           ))}
         </div>
@@ -90,7 +91,7 @@ export function ContactView({ locale }: { locale: Locale }) {
               <h3 className="text-base font-semibold tracking-tight text-white sm:text-lg">
                 {client.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-400">{client.text}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-400">{client.text}</p>
             </Surface>
           ))}
         </div>
@@ -103,7 +104,7 @@ export function ContactView({ locale }: { locale: Locale }) {
               <h2 className="text-2xl font-semibold tracking-tight text-white">
                 {copy.linksTitle}
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">{copy.linksText}</p>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">{copy.linksText}</p>
             </div>
             <div className="flex flex-wrap gap-2">
               {copy.links.map((link) => {
@@ -115,7 +116,7 @@ export function ContactView({ locale }: { locale: Locale }) {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-cyan-300/50 hover:text-white"
+                    className="inline-flex min-h-11 items-center rounded-full border border-white/10 px-4 text-sm text-slate-300 transition hover:border-cyan-300/50 hover:text-white"
                   >
                     {link.label}
                   </Link>

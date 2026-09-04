@@ -13,7 +13,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Surface className="flex h-full flex-col">
       <Badge>{project.label}</Badge>
       <h3 className="mt-5 text-2xl font-semibold text-white">{project.name}</h3>
-      <p className="mt-4 flex-1 text-sm leading-7 text-slate-400">{project.description}</p>
+      <p className="mt-4 flex-1 text-sm leading-6 text-slate-400">{project.description}</p>
       <p className="mt-5 text-sm leading-6 text-slate-300">{project.impact}</p>
 
       {project.metrics ? (

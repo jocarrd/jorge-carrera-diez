@@ -16,8 +16,8 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
               key={index}
               className={
                 index === 0
-                  ? "text-base leading-7 text-slate-300 sm:leading-8"
-                  : "mt-4 text-sm leading-7 text-slate-400 sm:mt-5"
+                  ? "prose-links text-base leading-relaxed text-slate-300 sm:leading-7"
+                  : "mt-4 text-sm leading-6 text-slate-400 sm:mt-5"
               }
             >
               <RichText
@@ -31,7 +31,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
               <div key={signal.title}>
                 <p className="font-mono text-xs text-cyan-300/80">0{index + 1}</p>
                 <h3 className="mt-4 text-base font-semibold text-white">{signal.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{signal.text}</p>
+                <p className="mt-3 text-sm leading-6 text-slate-400">{signal.text}</p>
               </div>
             ))}
           </div>

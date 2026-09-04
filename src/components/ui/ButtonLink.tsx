@@ -20,7 +20,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 items-center justify-center rounded-full border px-5 text-sm font-medium transition ${variantClassName}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-medium tracking-tight transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 sm:min-h-13 sm:px-7 sm:text-base ${variantClassName}`}
       {...props}
     >
       {children}
