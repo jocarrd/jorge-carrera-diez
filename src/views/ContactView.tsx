@@ -49,12 +49,13 @@ export function ContactView({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
+          {/* El destino de la página pesaba lo mismo que la tarjeta de al lado. */}
+          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-6 shadow-[0_0_60px_-22px_rgba(103,232,249,0.5)] sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-cyan-300/70">
               {copy.emailLabel}
             </p>
             <a
-              className="mt-4 block break-all text-xl font-semibold tracking-tight text-cyan-200 transition hover:text-cyan-100 sm:text-3xl"
+              className="mt-4 inline-flex min-h-11 items-center break-all text-xl font-semibold tracking-tight text-cyan-200 transition hover:text-cyan-100 sm:text-3xl"
               href={`mailto:${site.email}`}
             >
               {site.email}
@@ -115,7 +116,7 @@ export function ContactView({ locale }: { locale: Locale }) {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300 transition hover:border-cyan-300/50 hover:text-white"
+                    className="inline-flex min-h-11 items-center rounded-full border border-white/10 px-4 text-sm text-slate-300 transition hover:border-cyan-300/50 hover:text-white"
                   >
                     {link.label}
                   </Link>

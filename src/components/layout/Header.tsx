@@ -36,7 +36,7 @@ export function Header({ locale }: { locale: Locale }) {
       <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
         <Link
           href={routePath(locale, "home")}
-          className="group flex items-center gap-3"
+          className="group flex min-h-11 min-w-11 items-center gap-3 py-1"
           aria-label={copy.homeAriaLabel}
           onClick={closeMenu}
         >
