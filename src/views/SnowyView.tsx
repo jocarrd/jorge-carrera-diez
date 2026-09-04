@@ -39,7 +39,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <section className="border-y border-white/10 bg-[#030712] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+          <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
             <Image
               src="/images/snowy-home.png"
               alt={copy.imageAlts.home}
@@ -50,7 +50,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             />
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+            <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src="/images/snowy-stations-map.png"
                 alt={copy.imageAlts.stations}
@@ -59,7 +59,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 className="h-auto w-full"
               />
             </div>
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+            <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src="/images/snowy-radar-map.png"
                 alt={copy.imageAlts.radar}
