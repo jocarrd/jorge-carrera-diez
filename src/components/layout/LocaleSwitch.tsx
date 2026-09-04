@@ -15,7 +15,7 @@ export function LocaleSwitch({ locale, onNavigate }: LocaleSwitchProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center rounded-full border border-white/10 bg-white/[0.035] p-0.5">
+    <div className="flex items-center rounded-full lvl-2 border p-0.5">
       {locales.map((option) => {
         const isActive = option === locale;
 

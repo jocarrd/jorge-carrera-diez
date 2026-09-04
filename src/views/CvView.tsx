@@ -28,13 +28,13 @@ export function CvView({ locale }: { locale: Locale }) {
             className="cv-summary prose-links mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:leading-7"
           />
           <div className="cv-contact mt-8 flex flex-wrap items-center gap-2 text-sm">
-            <span className="cv-chip inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white/[0.025] px-4 text-slate-400">
+            <span className="cv-chip inline-flex min-h-11 items-center rounded-full lvl-2 border px-4 text-slate-400">
               {content.meta.location}
             </span>
             {contactLinks.map((link) => (
               <a
                 key={link.href}
-                className="cv-chip inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white/[0.025] px-4 text-slate-200 transition-colors hover:border-cyan-300/45 hover:text-cyan-200"
+                className="cv-chip inline-flex min-h-11 items-center rounded-full lvl-2 border px-4 text-slate-200 transition-colors hover:border-cyan-300/45 hover:text-cyan-200"
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
@@ -49,7 +49,7 @@ export function CvView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="cv-section border-y border-white/10 bg-white/[0.02]">
+      <Section className="cv-section border-y border-white/10 lvl-1">
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
           {copy.experienceTitle}
         </h2>

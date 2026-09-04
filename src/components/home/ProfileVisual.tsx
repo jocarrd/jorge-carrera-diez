@@ -33,7 +33,7 @@ export function ProfileVisual({ locale }: { locale: Locale }) {
 
         <div className="mt-3 hidden grid-cols-2 gap-3 sm:grid">
           {copy.profile.visualStats.map(([label, value]) => (
-            <div key={label} className="rounded-xl bg-white/[0.05] p-4">
+            <div key={label} className="rounded-xl lvl-3 p-4">
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
               <p className="mt-2 font-mono text-sm text-white">{value}</p>
             </div>

@@ -28,7 +28,7 @@ export function CompanyMark({ logo }: CompanyMarkProps) {
   }
 
   return (
-    <div className="flex h-12 min-w-32 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-4">
+    <div className="flex h-12 min-w-32 items-center justify-center rounded-xl lvl-3 border px-4">
       <span className="text-sm font-semibold tracking-tight text-white">
         {logo?.fallback}
       </span>

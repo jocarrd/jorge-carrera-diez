@@ -7,10 +7,10 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).currentRole;
 
   return (
-    <Section id="rol-actual" className="border-y border-white/10 bg-white/[0.02]">
+    <Section id="rol-actual" className="border-y border-white/10 lvl-1">
       <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeader eyebrow={copy.eyebrow} title={copy.title} text={copy.text} />
-        <article className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
+        <article className="rounded-2xl lvl-2 border p-6 sm:p-8">
           {copy.paragraphs.map((segments, index) => (
             <p
               key={index}

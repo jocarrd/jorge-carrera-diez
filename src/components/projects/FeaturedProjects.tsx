@@ -25,7 +25,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
 
   return (
     <div className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
-      <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] transition-colors duration-300 hover:border-cyan-300/25">
+      <article className="overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-cyan-300/25">
         <div className="grid gap-6 p-5 lg:grid-cols-[0.88fr_1.12fr] lg:gap-8 lg:p-8">
           <div className="flex flex-col">
             <Image
@@ -62,7 +62,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
         </div>
       </article>
 
-      <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] transition-colors duration-300 hover:border-cyan-300/25">
+      <article className="overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-cyan-300/25">
         <div className="shot-frame relative h-52 border-b border-white/10 bg-slate-950 sm:h-56">
           <Image
             src={lariojaMeteo.image ?? "/images/lariojameteo-home.png"}

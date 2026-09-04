@@ -72,7 +72,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <Section className="border-y border-white/10 bg-white/[0.02]">
+      <Section className="border-y border-white/10 lvl-1">
         <SectionHeader
           eyebrow={copy.product.eyebrow}
           title={copy.product.title}
@@ -105,7 +105,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             {copy.modules.items.map((module) => (
               <article
                 key={module.title}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+                className="overflow-hidden rounded-2xl lvl-2 border"
               >
                 <Image
                   src={module.image}
@@ -138,7 +138,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-y border-white/10 bg-white/[0.02]">
+      <Section className="border-y border-white/10 lvl-1">
         <SectionHeader
           eyebrow={copy.build.eyebrow}
           title={copy.build.title}
@@ -154,7 +154,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-y border-white/10 bg-white/[0.02]">
+      <Section className="border-y border-white/10 lvl-1">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
             eyebrow={copy.seo.eyebrow}
@@ -173,7 +173,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-y border-white/10 bg-white/[0.02]">
+      <Section className="border-y border-white/10 lvl-1">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeader
             eyebrow={copy.b2b.eyebrow}
@@ -222,7 +222,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                   href={item.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+                  className="overflow-hidden rounded-2xl lvl-2 border transition hover:border-cyan-300/25 hover:lvl-3"
                 >
                   {content}
                 </a>
@@ -232,7 +232,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             return (
               <article
                 key={item.title}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+                className="overflow-hidden rounded-2xl lvl-2 border"
               >
                 {content}
               </article>
@@ -260,7 +260,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
               href={mention.url}
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+              className="rounded-2xl lvl-2 border p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-cyan-300/25 hover:lvl-3"
             >
               <p className="font-mono text-sm text-cyan-300">{mention.outlet}</p>
               <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">

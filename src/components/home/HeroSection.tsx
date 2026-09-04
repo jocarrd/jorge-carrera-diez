@@ -16,10 +16,10 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <h1 className="rise rise-1 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="rise rise-1 max-w-4xl text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-white sm:text-7xl lg:text-[5.5rem]">
               {site.name}
             </h1>
-            <p className="rise rise-2 mt-5 max-w-3xl text-lg leading-relaxed text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
+            <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:mt-7 sm:text-xl sm:leading-8">
               {copy.profile.headline}
             </p>
             <div className="rise rise-3 mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
