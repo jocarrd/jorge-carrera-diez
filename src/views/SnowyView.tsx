@@ -20,10 +20,10 @@ export function SnowyView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-5xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
           {copy.lead}
         </p>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-400 sm:mt-5 sm:leading-7">
@@ -49,25 +49,28 @@ export function SnowyView({ locale }: { locale: Locale }) {
               priority
             />
           </div>
+          {/* Las dos capturas venían de tamaños distintos y con `h-auto` cada
+              una tomaba su proporción: la pareja no casaba y una dejaba banda
+              negra. Misma caja y recorte desde arriba. */}
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
-            <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
-              <Image
-                src="/images/snowy-stations-map.webp"
-                alt={copy.imageAlts.stations}
-                width={1280}
-                height={862}
-                className="h-auto w-full"
-              />
-            </div>
-            <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
-              <Image
-                src="/images/snowy-radar-map.webp"
-                alt={copy.imageAlts.radar}
-                width={1210}
-                height={872}
-                className="h-auto w-full"
-              />
-            </div>
+            {[
+              { src: "/images/snowy-stations-map.webp", alt: copy.imageAlts.stations },
+              { src: "/images/snowy-radar-map.webp", alt: copy.imageAlts.radar },
+            ].map((shot) => (
+              <div
+                key={shot.src}
+                className="shot-frame aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black"
+              >
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={1600}
+                  height={1000}
+                  className="h-full w-full object-cover object-top"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

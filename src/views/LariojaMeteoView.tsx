@@ -9,22 +9,22 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
+        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-5xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
           {copy.lead}
         </p>
         <div className="mt-9">
           <ButtonLink href={site.lariojameteo}>{copy.cta}</ButtonLink>
         </div>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
+        <div className="shot-frame mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
           <Image
             src="/images/lariojameteo-home.webp"
             alt={copy.imageAlt}
             width={1230}
             height={923}
-            className="w-full object-cover object-left-top"
+            className="w-full object-cover object-top"
             priority
           />
         </div>
