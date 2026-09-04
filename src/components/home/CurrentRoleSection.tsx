@@ -7,7 +7,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).currentRole;
 
   return (
-    <Section id="rol-actual" className="border-y border-white/10 lvl-1">
+    <Section id="rol-actual" className="section-band">
       <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeader eyebrow={copy.eyebrow} title={copy.title} text={copy.text} />
         <article className="rounded-2xl lvl-2 border p-6 sm:p-8">

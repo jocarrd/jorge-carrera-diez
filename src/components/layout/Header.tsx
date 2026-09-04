@@ -122,7 +122,7 @@ export function Header({ locale }: { locale: Locale }) {
                   key={item.anchor}
                   href={sectionPath(locale, item.anchor)}
                   onClick={closeMenu}
-                  className="rounded-xl lvl-2 border px-3 py-3 text-sm text-slate-200 transition hover:border-cyan-300/40 hover:lvl-3"
+                  className="rounded-xl lvl-2 border px-3 py-3 text-sm text-slate-200 transition hover:border-cyan-300/40 lvl-hover"
                 >
                   {item.label}
                 </Link>
@@ -141,7 +141,7 @@ export function Header({ locale }: { locale: Locale }) {
                   key={item.key}
                   href={routePath(locale, item.key)}
                   onClick={closeMenu}
-                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-slate-300 transition hover:lvl-3 hover:text-white"
+                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-slate-300 transition lvl-hover hover:text-white"
                 >
                   <span>{item.label}</span>
                   <span className="text-slate-600">/</span>

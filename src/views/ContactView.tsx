@@ -71,7 +71,7 @@ export function ContactView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-t border-white/10 lvl-1">
+      <Section className="section-band">
         <SectionHeader title={copy.servicesTitle} text={copy.servicesText} />
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
           {copy.services.map((service) => (
@@ -97,7 +97,7 @@ export function ContactView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-t border-white/10 lvl-1">
+      <Section className="section-band">
         <div className="rounded-2xl lvl-2 border p-6 sm:p-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>

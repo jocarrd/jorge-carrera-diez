@@ -30,7 +30,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-y border-white/10 lvl-1">
+      <Section className="section-band">
         <SectionHeader
           eyebrow={copy.timeline.eyebrow}
           title={copy.timeline.title}
