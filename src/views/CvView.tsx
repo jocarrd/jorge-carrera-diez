@@ -55,7 +55,7 @@ export function CvView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="cv-section border-y border-white/10 lvl-1">
+      <Section className="cv-section section-band">
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
           {copy.experienceTitle}
         </h2>

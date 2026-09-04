@@ -11,13 +11,15 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
   return (
     <Section id="experiencia">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
+        </div>
         <div>
           <div className="grid gap-4">
             {featuredExperience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="rounded-2xl lvl-2 border p-5 transition hover:border-cyan-300/25 hover:lvl-3"
+                className="rounded-2xl lvl-2 border p-5 transition hover:border-cyan-300/25 lvl-hover"
               >
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="font-mono text-sm text-cyan-300">{item.period}</p>
