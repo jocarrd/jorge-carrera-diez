@@ -357,8 +357,8 @@ export const es: Copy = {
       name: "Snowy",
       url: site.snowy,
       label: "Caso de ingeniería",
-      logo: "/images/snowy-logo.png",
-      image: "/images/snowy-home.png",
+      logo: "/images/snowy-logo.webp",
+      image: "/images/snowy-home.webp",
       description:
         "Plataforma meteorológica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
       impact:
@@ -387,7 +387,7 @@ export const es: Copy = {
       url: site.lariojameteo,
       label: "Webmaster",
       logo: "/images/lariojameteo-logo-white.png",
-      image: "/images/lariojameteo-home.png",
+      image: "/images/lariojameteo-home.webp",
       description:
         "Portal meteorológico regional que combina audiencia, contenido, SEO, comunidad y distribución editorial para La Rioja y Logroño.",
       impact:
@@ -557,31 +557,31 @@ export const es: Copy = {
           {
             title: "Asistente IA",
             text: "Consultas conversacionales con herramientas meteorológicas: ropa, avisos, predicción, ubicación y respuestas accionables.",
-            image: "/images/snowy-ai-assistant.png",
+            image: "/images/snowy-ai-assistant.webp",
             alt: "Asistente de IA de Snowy con recomendación meteorológica de ropa",
           },
           {
             title: "Embalses",
             text: "Datos oficiales, evolución semanal, mapas y comparativas por comunidades, provincias y cuencas.",
-            image: "/images/snowy-reservoirs.png",
+            image: "/images/snowy-reservoirs.webp",
             alt: "Módulo de embalses de Snowy con reserva hídrica y mapa por comunidades",
           },
           {
             title: "Clima histórico",
             text: "Procesamiento de series históricas para analizar tendencias, anomalías y cambios de temperatura por zona.",
-            image: "/images/snowy-climate.png",
+            image: "/images/snowy-climate.webp",
             alt: "Módulo de clima histórico de Snowy con mapa de calentamiento en España",
           },
           {
             title: "Terremotos",
             text: "Monitor en tiempo real con fuentes oficiales, magnitud, ubicación, detalle del evento y reporte comunitario.",
-            image: "/images/snowy-earthquakes.png",
+            image: "/images/snowy-earthquakes.webp",
             alt: "Monitor de terremotos de Snowy con evento sísmico reciente",
           },
           {
             title: "Estaciones",
             text: "Detalle de estación con métricas actuales, históricos, favoritos, propietario y datos meteorológicos en vivo.",
-            image: "/images/snowy-station-detail.png",
+            image: "/images/snowy-station-detail.webp",
             alt: "Detalle de estación meteorológica en Snowy con métricas en vivo",
           },
         ],

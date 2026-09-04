@@ -20,7 +20,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         </div>
         <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
           <Image
-            src="/images/lariojameteo-home.png"
+            src="/images/lariojameteo-home.webp"
             alt={copy.imageAlt}
             width={1230}
             height={923}

@@ -14,7 +14,7 @@ export const ogContentType = "image/png";
 export async function renderOpenGraphImage(locale: Locale) {
   const copy = getCopy(locale).meta;
   const profileImageBuffer = await readFile(
-    join(process.cwd(), "public/images/jorge-carrera-diez.png"),
+    join(process.cwd(), "public/images/jorge-carrera-diez.webp"),
   );
   const profileImage = `data:image/png;base64,${profileImageBuffer.toString("base64")}`;
 

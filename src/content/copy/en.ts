@@ -363,8 +363,8 @@ export const en: Copy = {
       name: "Snowy",
       url: site.snowy,
       label: "Engineering case",
-      logo: "/images/snowy-logo.png",
-      image: "/images/snowy-home.png",
+      logo: "/images/snowy-logo.webp",
+      image: "/images/snowy-home.webp",
       description:
         "Weather platform with real-time data, maps, radar, stations, SEO, its own backend, infrastructure and AI.",
       impact:
@@ -393,7 +393,7 @@ export const en: Copy = {
       url: site.lariojameteo,
       label: "Webmaster",
       logo: "/images/lariojameteo-logo-white.png",
-      image: "/images/lariojameteo-home.png",
+      image: "/images/lariojameteo-home.webp",
       description:
         "Regional weather portal combining audience, content, SEO, community and editorial distribution for La Rioja and Logroño.",
       impact:
@@ -561,31 +561,31 @@ export const en: Copy = {
           {
             title: "AI assistant",
             text: "Conversational queries with weather tooling: clothing, alerts, forecast, location and actionable answers.",
-            image: "/images/snowy-ai-assistant.png",
+            image: "/images/snowy-ai-assistant.webp",
             alt: "Snowy AI assistant giving a weather-based clothing recommendation",
           },
           {
             title: "Reservoirs",
             text: "Official data, weekly evolution, maps and comparisons by region, province and river basin.",
-            image: "/images/snowy-reservoirs.png",
+            image: "/images/snowy-reservoirs.webp",
             alt: "Snowy reservoirs module with water reserves and a map by region",
           },
           {
             title: "Historical climate",
             text: "Processing of historical series to analyse trends, anomalies and temperature change by area.",
-            image: "/images/snowy-climate.png",
+            image: "/images/snowy-climate.webp",
             alt: "Snowy historical climate module with a warming map of Spain",
           },
           {
             title: "Earthquakes",
             text: "Real-time monitor with official sources, magnitude, location, event detail and community reports.",
-            image: "/images/snowy-earthquakes.png",
+            image: "/images/snowy-earthquakes.webp",
             alt: "Snowy earthquake monitor showing a recent seismic event",
           },
           {
             title: "Stations",
             text: "Station detail with current metrics, history, favourites, owner and live weather data.",
-            image: "/images/snowy-station-detail.png",
+            image: "/images/snowy-station-detail.webp",
             alt: "Weather station detail in Snowy with live metrics",
           },
         ],

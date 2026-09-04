@@ -52,7 +52,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
 
           <div className="shot-frame group/shot relative overflow-hidden rounded-xl border border-white/10 bg-black">
             <Image
-              src={snowy.image ?? "/images/snowy-home.png"}
+              src={snowy.image ?? "/images/snowy-home.webp"}
               alt={labels.snowyImageAlt}
               width={1365}
               height={1049}
@@ -65,7 +65,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
       <article className="overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-cyan-300/25">
         <div className="shot-frame relative h-52 border-b border-white/10 bg-slate-950 sm:h-56">
           <Image
-            src={lariojaMeteo.image ?? "/images/lariojameteo-home.png"}
+            src={lariojaMeteo.image ?? "/images/lariojameteo-home.webp"}
             alt={labels.lariojaImageAlt}
             width={1230}
             height={923}
