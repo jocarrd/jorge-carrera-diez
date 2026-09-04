@@ -17,7 +17,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
             {featuredExperience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.045]"
+                className="rounded-2xl lvl-2 border p-5 transition hover:border-cyan-300/25 hover:lvl-3"
               >
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="font-mono text-sm text-cyan-300">{item.period}</p>

@@ -15,7 +15,7 @@ export function ButtonLink({
   const variantClassName =
     variant === "primary"
       ? "border-white bg-white text-black hover:bg-cyan-100"
-      : "border-white/15 bg-white/[0.03] text-white hover:border-cyan-300/60 hover:bg-cyan-300/10";
+      : "border-white/15 lvl-2 text-white hover:border-cyan-300/60 hover:bg-cyan-300/10";
 
   return (
     <Link

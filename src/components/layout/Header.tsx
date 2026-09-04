@@ -64,7 +64,7 @@ export function Header({ locale }: { locale: Locale }) {
         </Link>
         <nav
           aria-label={copy.mainNavLabel}
-          className="hidden items-center rounded-full border border-white/10 bg-white/[0.035] p-1 md:flex"
+          className="hidden items-center rounded-full lvl-2 border p-1 md:flex"
         >
           {copy.items.map((item) => (
             <Link
@@ -92,7 +92,7 @@ export function Header({ locale }: { locale: Locale }) {
             aria-controls="mobile-navigation"
             aria-label={isOpen ? copy.closeMenu : copy.openMenu}
             onClick={() => setIsOpen((current) => !current)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-white transition hover:border-cyan-300/40 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full lvl-2 border text-white transition hover:border-cyan-300/40 md:hidden"
           >
             <span className="relative h-3.5 w-4">
               <span
@@ -122,7 +122,7 @@ export function Header({ locale }: { locale: Locale }) {
                   key={item.anchor}
                   href={sectionPath(locale, item.anchor)}
                   onClick={closeMenu}
-                  className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-slate-200 transition hover:border-cyan-300/40 hover:bg-white/[0.05]"
+                  className="rounded-xl lvl-2 border px-3 py-3 text-sm text-slate-200 transition hover:border-cyan-300/40 hover:lvl-3"
                 >
                   {item.label}
                 </Link>
@@ -141,7 +141,7 @@ export function Header({ locale }: { locale: Locale }) {
                   key={item.key}
                   href={routePath(locale, item.key)}
                   onClick={closeMenu}
-                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-slate-300 transition hover:bg-white/[0.05] hover:text-white"
+                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-slate-300 transition hover:lvl-3 hover:text-white"
                 >
                   <span>{item.label}</span>
                   <span className="text-slate-600">/</span>

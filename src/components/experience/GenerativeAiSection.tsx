@@ -105,13 +105,13 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
+                <div className="rounded-xl lvl-2 border p-3 sm:p-4">
                   <p className="font-mono text-xs text-slate-500">tool surface</p>
                   <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
                     {toolSignals.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[0.68rem] text-slate-300 sm:px-3 sm:text-xs"
+                        className="rounded-full lvl-3 border px-2.5 py-1.5 font-mono text-[0.68rem] text-slate-300 sm:px-3 sm:text-xs"
                       >
                         {item}
                       </span>
@@ -136,7 +136,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
+          <div className="rounded-2xl lvl-2 border p-6">
             <h3 className="text-xl font-semibold text-white">{copy.principlesTitle}</h3>
             <div className="mt-6 grid gap-5 lg:grid-cols-3">
               {copy.principles.map((item) => (
