@@ -287,6 +287,17 @@ a {
     text-decoration: none;
   }
 
+  /* En pantalla el bloque de contacto son chips, que le dan forma a lo que era
+     un volcado de enlaces sueltos. En papel un chip es ruido: se desmonta. */
+  .cv-chip {
+    display: inline !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
   .cv-section-title {
     margin-top: 13pt !important;
     font-size: 12pt;

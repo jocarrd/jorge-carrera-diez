@@ -26,7 +26,7 @@ export function LocaleSwitch({ locale, onNavigate }: LocaleSwitchProps) {
             hrefLang={option}
             onClick={onNavigate}
             aria-current={isActive ? "true" : undefined}
-            className={`rounded-full px-2.5 py-1.5 font-mono text-xs uppercase tracking-[0.12em] transition ${
+            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-full px-3 font-mono text-xs uppercase tracking-[0.12em] transition ${
               isActive
                 ? "bg-cyan-300/15 text-cyan-100"
                 : "text-slate-400 hover:text-white"

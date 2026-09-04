@@ -6,8 +6,11 @@ type RichTextProps = {
   linkClassName?: string;
 };
 
+// Tres enlaces cian seguidos dentro de un párrafo lo convertían en un texto
+// que se lee a saltos. El subrayado ya dice que es un enlace; el color se
+// reserva para cuando el puntero está encima.
 const defaultLinkClassName =
-  "text-cyan-300 underline-offset-4 hover:text-cyan-100 hover:underline";
+  "text-slate-300 underline decoration-cyan-300/40 decoration-1 underline-offset-4 transition-colors hover:text-cyan-200 hover:decoration-cyan-300";
 
 export function RichText({ segments, linkClassName }: RichTextProps) {
   return (

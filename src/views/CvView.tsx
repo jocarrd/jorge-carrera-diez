@@ -25,14 +25,16 @@ export function CvView({ locale }: { locale: Locale }) {
           <p className="cv-role mt-3 text-lg text-slate-300">{content.profile.positioning}</p>
           <ProfileSummary
             locale={locale}
-            className="cv-summary mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:leading-7"
+            className="cv-summary prose-links mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:leading-7"
           />
-          <div className="cv-contact mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-300">
-            <span>{content.meta.location}</span>
+          <div className="cv-contact mt-8 flex flex-wrap items-center gap-2 text-sm">
+            <span className="cv-chip inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white/[0.025] px-4 text-slate-400">
+              {content.meta.location}
+            </span>
             {contactLinks.map((link) => (
               <a
                 key={link.href}
-                className="text-cyan-300 hover:text-cyan-100"
+                className="cv-chip inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white/[0.025] px-4 text-slate-200 transition-colors hover:border-cyan-300/45 hover:text-cyan-200"
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
