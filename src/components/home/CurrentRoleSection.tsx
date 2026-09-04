@@ -22,15 +22,14 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
             >
               <RichText
                 segments={segments}
-                linkClassName="text-cyan-300 underline-offset-4 hover:underline"
               />
             </p>
           ))}
           <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 md:grid-cols-3">
-            {copy.signals.map((signal, index) => (
+            {copy.signals.map((signal) => (
               <div key={signal.title}>
-                <p className="font-mono text-xs text-cyan-300/80">0{index + 1}</p>
-                <h3 className="mt-4 text-base font-semibold text-white">{signal.title}</h3>
+                <span aria-hidden className="block h-px w-8 bg-cyan-300/60" />
+                <h3 className="mt-5 text-base font-semibold text-white">{signal.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{signal.text}</p>
               </div>
             ))}
