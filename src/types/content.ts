@@ -11,6 +11,8 @@ export type ExperienceItem = {
   end: string | null;
   summary: string;
   highlights: string[];
+  image?: string;
+  imageAlt?: string;
   logo?: {
     src?: string;
     alt: string;

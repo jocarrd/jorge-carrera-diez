@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CompanyMark } from "@/components/experience/CompanyMark";
 import { GenerativeAiSection } from "@/components/experience/GenerativeAiSection";
 import { Section, SectionHeader } from "@/components/ui";
@@ -45,6 +46,18 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                         </p>
                       ) : null}
                       <p className="mt-4 text-base leading-relaxed text-slate-300 sm:leading-7">{item.summary}</p>
+                      {item.image ? (
+                        <div className="shot-frame mt-5 overflow-hidden rounded-xl border border-white/10 bg-black">
+                          <Image
+                            src={item.image}
+                            alt={item.imageAlt ?? ""}
+                            width={1600}
+                            height={1000}
+                            className="h-auto w-full"
+                            sizes="(min-width: 1024px) 640px, 100vw"
+                          />
+                        </div>
+                      ) : null}
                       <ul className="mt-5 grid gap-2 text-sm leading-6 text-slate-400">
                         {item.highlights.map((highlight) => (
                           <li key={highlight} className="flex gap-2">

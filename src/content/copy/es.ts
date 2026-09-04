@@ -198,11 +198,13 @@ export const es: Copy = {
       context: "Universidad de St. Gallen, Suiza",
       headline: "Ingeniero de software - EQx (Suiza)",
       client: "Foundation for Value Creation",
+      image: "/images/eqx-home.webp",
+      imageAlt: "Portada del Elite Quality Index, el índice que publica la fundación",
       period: "Julio 2026 - Actualidad",
       start: "2026-07",
       end: null,
       summary:
-        "Colaboro con la Foundation for Value Creation, la fundación suiza que publica el Elite Quality Index bajo dirección académica de tres institutos de la Universidad de St. Gallen. Es un índice de economía política, publicado desde 2020, que mide en 151 países hasta qué punto las élites de cada país crean valor para la sociedad o lo extraen de ella. Asumo el relevo técnico de sus productos digitales: la web pública del índice y la consola privada que lo acompaña.",
+        "Relevo técnico de los productos digitales de la Foundation for Value Creation: la web pública del Elite Quality Index y la consola privada que lo acompaña. El índice mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
       highlights: [
         "Traspaso del desarrollador anterior y continuidad del producto sin parar la operativa.",
         "Responsabilidad de punta a punta sobre la experiencia de usuario de ambos productos.",
