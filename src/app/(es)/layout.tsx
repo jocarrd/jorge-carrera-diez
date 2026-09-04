@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { htmlLang } from "@/i18n/config";
 import { createMetadata } from "@/lib/seo";
+import { fontClass } from "@/lib/fonts";
 
 const locale = "es" as const;
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={htmlLang[locale]} className="h-full antialiased" data-scroll-behavior="smooth">
+    <html lang={htmlLang[locale]} className={`h-full antialiased ${fontClass}`} data-scroll-behavior="smooth">
       <body className="min-h-full">
         <Header locale={locale} />
         {children}

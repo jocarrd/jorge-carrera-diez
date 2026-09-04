@@ -16,7 +16,7 @@ export function SectionHeader({ title, text, level = 2 }: SectionHeaderProps) {
       <Heading className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
         {title}
       </Heading>
-      {text ? <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-5 sm:leading-8">{text}</p> : null}
+      {text ? <p className="mt-4 text-base leading-relaxed text-slate-300 sm:mt-5 sm:leading-7">{text}</p> : null}
     </div>
   );
 }

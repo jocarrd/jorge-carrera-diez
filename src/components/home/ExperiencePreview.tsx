@@ -28,7 +28,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
                 <h3 className="mt-4 text-2xl font-semibold text-white">
                   {item.headline ?? `${item.role} - ${item.company}`}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-300">{item.summary}</p>
+                <p className="mt-4 text-sm leading-6 text-slate-300">{item.summary}</p>
               </article>
             ))}
           </div>

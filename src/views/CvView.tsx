@@ -25,7 +25,7 @@ export function CvView({ locale }: { locale: Locale }) {
           <p className="cv-role mt-3 text-lg text-slate-300">{content.profile.positioning}</p>
           <ProfileSummary
             locale={locale}
-            className="cv-summary mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8"
+            className="cv-summary mt-5 max-w-3xl text-base leading-relaxed text-slate-300 sm:leading-7"
           />
           <div className="cv-contact mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-300">
             <span>{content.meta.location}</span>
@@ -61,7 +61,7 @@ export function CvView({ locale }: { locale: Locale }) {
               <p className="cv-entry-meta mt-1 text-sm text-slate-500">
                 {item.client ? `${item.client} · ${item.company}` : item.context}
               </p>
-              <p className="cv-entry-summary mt-5 text-base leading-7 text-slate-300 sm:leading-8">
+              <p className="cv-entry-summary mt-5 text-base leading-relaxed text-slate-300 sm:leading-7">
                 {item.summary}
               </p>
               <ul className="cv-bullets mt-5 grid gap-2 text-sm leading-6 text-slate-400">
@@ -81,14 +81,14 @@ export function CvView({ locale }: { locale: Locale }) {
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-white sm:text-4xl">
           {copy.stackTitle}
         </h2>
-        <p className="cv-section-text mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:leading-8">
+        <p className="cv-section-text mt-4 max-w-3xl text-base leading-relaxed text-slate-300 sm:leading-7">
           {copy.stackText}
         </p>
         <div className="cv-skills mt-10 grid gap-4 sm:grid-cols-2">
           {content.skills.map((group) => (
             <Surface key={group.title} className="cv-skill">
               <h3 className="cv-skill-title text-xl font-semibold text-white">{group.title}</h3>
-              <p className="cv-skill-items mt-4 text-sm leading-7 text-slate-300">
+              <p className="cv-skill-items mt-4 text-sm leading-6 text-slate-300">
                 {group.items.join(", ")}
               </p>
             </Surface>

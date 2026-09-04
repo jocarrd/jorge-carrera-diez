@@ -15,8 +15,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-sans: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-mono-plex), "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {
@@ -34,7 +34,10 @@ body {
     radial-gradient(circle at 82% 8%, rgba(94, 234, 212, 0.08), transparent 25rem),
     linear-gradient(180deg, #02040a 0%, #07111f 48%, #02040a 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Plex trae cifras de ancho variable por defecto; en fechas y datos bailan. */
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -374,4 +377,51 @@ a {
     font-size: 9pt;
     line-height: 1.35;
   }
+}
+
+/* --- Ritmo y detalle tipográfico ------------------------------------------ */
+
+/* Sin esto el H1 parte en "Jorge Carrera / Diez" y deja el apellido huérfano. */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Los enlaces dentro de un párrafo largo eran tres manchas cian seguidas y el
+   texto se leía a saltos. El subrayado ya dice que es un enlace; el color se
+   guarda para cuando el puntero está encima. */
+.prose-links a {
+  color: rgb(203 213 225);
+  text-decoration: underline;
+  text-decoration-color: rgba(103, 232, 249, 0.4);
+  text-decoration-thickness: 1px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.prose-links a:hover,
+.prose-links a:focus-visible {
+  color: var(--cyan);
+  text-decoration-color: var(--cyan);
+}
+
+/* --- Entrada ---------------------------------------------------------------
+   Un desplazamiento corto y un fundido, escalonado por orden de lectura. Parte
+   de un estado visible: si el script no corre o se pide menos movimiento, la
+   página ya está donde tiene que estar. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .rise-1 { animation-delay: 0.04s; }
+  .rise-2 { animation-delay: 0.12s; }
+  .rise-3 { animation-delay: 0.2s; }
+  .rise-4 { animation-delay: 0.28s; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
 }

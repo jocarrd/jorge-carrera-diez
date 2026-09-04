@@ -14,10 +14,10 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
           <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
             {copy.title}
           </h2>
-          <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
+          <p className="mt-5 text-base leading-relaxed text-slate-300 sm:mt-6 sm:leading-7">
             {copy.lead}
           </p>
-          <p className="mt-5 text-sm leading-7 text-slate-400">{copy.detail}</p>
+          <p className="mt-5 text-sm leading-6 text-slate-400">{copy.detail}</p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#050814]/80">
             {copy.rows.map(([label, value]) => (
               <div
@@ -142,7 +142,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
               {copy.principles.map((item) => (
                 <div key={item.title}>
                   <h4 className="text-sm font-semibold text-cyan-100">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-400">{item.text}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
                 </div>
               ))}
             </div>

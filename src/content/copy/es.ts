@@ -343,7 +343,7 @@ export const es: Copy = {
       description:
         "Plataforma meteorológica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
       impact:
-        "Producto construido sobre frontend SSR, backend propio, caché, radar, CMS, despliegues, observabilidad y decisiones de arquitectura.",
+        "Lo construyo entero, del render en servidor al radar y los despliegues. Es donde pruebo en real las decisiones de arquitectura que luego defiendo en cliente.",
       metrics: [
         { value: "16", label: "modelos meteorológicos" },
         { value: "1.000+", label: "estaciones en vivo" },
@@ -404,7 +404,7 @@ export const es: Copy = {
       eyebrow: "Experiencia",
       heading:
         "Ingeniero de software con trayectoria en banca, seguros, retail y producto web.",
-      text: "Esta página recoge el recorrido profesional con foco en liderazgo técnico, arquitectura, React, Next.js, backend, calidad, CI/CD, agentes y colaboración con equipos multidisciplinares.",
+      text: "El recorrido completo, por orden. Dónde he liderado las decisiones técnicas, qué he construido en cada sitio y cómo he ido metiendo agentes de IA en flujos que ya estaban en producción.",
     },
     cv: {
       title: "CV",

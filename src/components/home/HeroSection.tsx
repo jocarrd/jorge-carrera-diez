@@ -16,13 +16,13 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="rise rise-1 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               {site.name}
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
+            <p className="rise rise-2 mt-5 max-w-3xl text-lg leading-relaxed text-slate-200 sm:mt-6 sm:text-2xl sm:leading-9">
               {copy.profile.headline}
             </p>
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-start">
+            <div className="rise rise-3 mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-start">
               <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
                 {copy.hero.ctaSecondary}
@@ -30,7 +30,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
             </div>
             <ProfileSummary
               locale={locale}
-              className="mt-8 max-w-2xl text-base leading-7 text-slate-400 sm:mt-10 sm:leading-8"
+              className="prose-links rise rise-4 mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-10 sm:leading-7"
             />
           </div>
 

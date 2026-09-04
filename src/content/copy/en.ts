@@ -349,7 +349,7 @@ export const en: Copy = {
       description:
         "Weather platform with real-time data, maps, radar, stations, SEO, its own backend, infrastructure and AI.",
       impact:
-        "A product built on SSR frontend, its own backend, cache, radar, CMS, deployments, observability and architecture decisions.",
+        "I build all of it, from server rendering to the radar and the deployments. It is where I test the architecture decisions I later defend in front of a client.",
       metrics: [
         { value: "16", label: "weather models" },
         { value: "1,000+", label: "live stations" },
@@ -409,7 +409,7 @@ export const en: Copy = {
         "Professional experience of Jorge Carrera Diez as a software engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
       eyebrow: "Experience",
       heading: "Software engineer with a track record in banking, insurance, retail and web product.",
-      text: "This page covers my career with a focus on technical leadership, architecture, React, Next.js, backend, quality, CI/CD, agents and work with cross-functional teams.",
+      text: "The full track record, in order. Where I led the technical decisions, what I built at each place, and how I have been putting AI agents into flows that were already in production.",
     },
     cv: {
       title: "CV",
