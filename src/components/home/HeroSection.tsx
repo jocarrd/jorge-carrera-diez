@@ -35,14 +35,20 @@ export function HeroSection({ locale }: { locale: Locale }) {
                 {copy.hero.ctaSecondary}
               </ButtonLink>
             </div>
-            <ProfileSummary
-              locale={locale}
-              className="prose-links rise rise-4 mt-8 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-10 sm:leading-7"
-            />
           </div>
 
           <ProfileVisual locale={locale} />
         </div>
+
+        {/* En móvil la rejilla apila, así que este párrafo se metía entre los
+            botones y la foto: la primera pantalla quedaba en 97 palabras, cero
+            imágenes y ninguna cifra. Bajándolo, lo primero que se ve después del
+            titular es la cara y los cuatro datos. En escritorio gana además una
+            medida de línea más cómoda que la columna estrecha. */}
+        <ProfileSummary
+          locale={locale}
+          className="prose-links rise rise-4 mt-10 max-w-3xl text-base leading-relaxed text-slate-400 sm:mt-12 sm:leading-7"
+        />
       </Container>
     </section>
   );
