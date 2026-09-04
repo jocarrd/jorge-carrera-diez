@@ -14,8 +14,9 @@ import { useEffect, useRef } from "react";
  * salen por marching squares sobre esa malla. Una de cada cuatro va más marcada,
  * como las isohipsas maestras de una carta real.
  */
-const CELL = 18;
-const LEVELS = 22;
+const CELL = 22;
+const LEVELS = 16;
+const FRAME_MS = 1000 / 30;
 
 type Blob = { x: number; y: number; vx: number; vy: number; r: number; a: number };
 
@@ -29,7 +30,14 @@ export function IsolineField({ className = "" }: { className?: string }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Medido con la CPU limitada 10x —un móvil de gama media— el bucle bajaba a
+    // 16 fps y la página se siente colgada. En teléfono y en máquinas cortas se
+    // pinta un fotograma y se acaba: sigue siendo una carta de presión y cuesta
+    // cero. Es el mismo patrón que usa la portada del EQx con su malla.
+    const reduced =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 767px), (pointer: coarse)").matches ||
+      (navigator.hardwareConcurrency ?? 8) <= 4;
     let width = 0;
     let height = 0;
     let cols = 0;
@@ -138,7 +146,14 @@ export function IsolineField({ className = "" }: { className?: string }) {
       }
     };
 
-    const tick = () => {
+    let last = 0;
+    const tick = (now: number) => {
+      // 30 fps bastan para una deriva lenta y ahorran la mitad del trabajo.
+      if (now - last < FRAME_MS) {
+        frame = requestAnimationFrame(tick);
+        return;
+      }
+      last = now;
       for (const b of blobs) {
         b.x += b.vx;
         b.y += b.vy;
