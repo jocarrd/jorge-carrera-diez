@@ -15,8 +15,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-sans: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-mono-plex), "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {
@@ -34,7 +34,10 @@ body {
     radial-gradient(circle at 82% 8%, rgba(94, 234, 212, 0.08), transparent 25rem),
     linear-gradient(180deg, #02040a 0%, #07111f 48%, #02040a 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Plex trae cifras de ancho variable por defecto; en fechas y datos bailan. */
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -284,6 +287,17 @@ a {
     text-decoration: none;
   }
 
+  /* En pantalla el bloque de contacto son chips, que le dan forma a lo que era
+     un volcado de enlaces sueltos. En papel un chip es ruido: se desmonta. */
+  .cv-chip {
+    display: inline !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
   .cv-section-title {
     margin-top: 13pt !important;
     font-size: 12pt;
@@ -374,4 +388,118 @@ a {
     font-size: 9pt;
     line-height: 1.35;
   }
+}
+
+/* --- Ritmo y detalle tipográfico ------------------------------------------ */
+
+/* Sin esto el H1 parte en "Jorge Carrera / Diez" y deja el apellido huérfano. */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Los enlaces dentro de un párrafo largo eran tres manchas cian seguidas y el
+   texto se leía a saltos. El subrayado ya dice que es un enlace; el color se
+   guarda para cuando el puntero está encima. */
+.prose-links a {
+  color: rgb(203 213 225);
+  text-decoration: underline;
+  text-decoration-color: rgba(103, 232, 249, 0.4);
+  text-decoration-thickness: 1px;
+  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+}
+
+.prose-links a:hover,
+.prose-links a:focus-visible {
+  color: var(--cyan);
+  text-decoration-color: var(--cyan);
+}
+
+/* --- Entrada ---------------------------------------------------------------
+   Un desplazamiento corto y un fundido, escalonado por orden de lectura. Parte
+   de un estado visible: si el script no corre o se pide menos movimiento, la
+   página ya está donde tiene que estar. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .rise-1 { animation-delay: 0.04s; }
+  .rise-2 { animation-delay: 0.12s; }
+  .rise-3 { animation-delay: 0.2s; }
+  .rise-4 { animation-delay: 0.28s; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* --- Aparición al entrar en pantalla ---------------------------------------
+   Animación conducida por scroll, sin JavaScript y sin observadores. Arranca en
+   opacidad 0.4, no en cero: si el navegador no soporta `view()` —o el usuario
+   pide menos movimiento— la sección simplemente está ahí, que es como tiene que
+   quedarse. Nada queda esperando a que algo se dispare. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+/* Solo desplazamiento, sin opacidad: a media animación un texto al 40% baja de
+   los umbrales de contraste de verdad, y axe lo cazó midiendo justo ahí. El
+   movimiento por sí solo da el efecto sin que nada deje de leerse nunca. */
+@keyframes reveal {
+  from { transform: translateY(22px); }
+  to   { transform: none; }
+}
+
+/* --- Capturas de producto ---------------------------------------------------
+   Estaban pegadas dentro de una caja con borde. Un anillo interior y una luz
+   desde arriba las asientan, como una pantalla y no como un recorte. */
+.shot-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.shot-frame::after {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, rgba(103, 232, 249, 0.07), transparent 38%);
+}
+
+/* --- Cabecera ---------------------------------------------------------------
+   Sobre el héroe conviene que sea casi invisible; en cuanto se baja, tiene que
+   separarse del contenido que pasa por debajo. */
+.site-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header[data-scrolled="true"] {
+  background-color: rgba(2, 4, 10, 0.92);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* --- Línea de tiempo --------------------------------------------------------
+   El punto marca dónde estás leyendo. */
+.tl-entry .tl-dot {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tl-entry:hover .tl-dot {
+  border-color: rgba(103, 232, 249, 0.85);
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.12);
 }

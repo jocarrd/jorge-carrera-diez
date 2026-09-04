@@ -22,10 +22,10 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
               {showcase.title}
             </h2>
-            <p className="mt-5 text-base leading-7 text-slate-300 sm:mt-6 sm:leading-8">
+            <p className="mt-5 text-base leading-relaxed text-slate-300 sm:mt-6 sm:leading-7">
               {showcase.lead}
             </p>
-            <p className="mt-5 text-sm leading-7 text-slate-400">{showcase.detail}</p>
+            <p className="mt-5 text-sm leading-6 text-slate-400">{showcase.detail}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={routePath(locale, "snowy")}>{showcase.ctaPrimary}</ButtonLink>
               <ButtonLink href={site.snowy} variant="secondary">

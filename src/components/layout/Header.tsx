@@ -13,6 +13,18 @@ export function Header({ locale }: { locale: Locale }) {
 
   const closeMenu = () => setIsOpen(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   useEffect(() => {
     if (!isOpen) {
       return;
@@ -32,11 +44,14 @@ export function Header({ locale }: { locale: Locale }) {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#02040a]/80 backdrop-blur-xl">
+    <header
+      data-scrolled={isScrolled}
+      className="site-header sticky top-0 z-50 border-b border-white/[0.07] bg-[#02040a]/70 backdrop-blur-xl"
+    >
       <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
         <Link
           href={routePath(locale, "home")}
-          className="group flex items-center gap-3"
+          className="group flex min-h-11 min-w-11 items-center gap-3 py-1"
           aria-label={copy.homeAriaLabel}
           onClick={closeMenu}
         >

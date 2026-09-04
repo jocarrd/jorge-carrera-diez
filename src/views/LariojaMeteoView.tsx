@@ -12,7 +12,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         <h1 className="max-w-5xl text-3xl font-semibold tracking-tight text-white sm:text-6xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
           {copy.lead}
         </p>
         <div className="mt-9">
@@ -52,7 +52,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {copy.responsibility.items.map((item) => (
             <Surface key={item}>
-              <p className="text-base leading-7 text-slate-300 sm:leading-8">{item}</p>
+              <p className="text-base leading-relaxed text-slate-300 sm:leading-7">{item}</p>
             </Surface>
           ))}
         </div>
@@ -68,7 +68,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
           <div className="grid gap-4 sm:grid-cols-2">
             {copy.content.items.map((section) => (
               <Surface key={section}>
-                <p className="text-base leading-7 text-slate-300 sm:leading-8">{section}</p>
+                <p className="text-base leading-relaxed text-slate-300 sm:leading-7">{section}</p>
               </Surface>
             ))}
           </div>
