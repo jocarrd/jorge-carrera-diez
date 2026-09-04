@@ -50,7 +50,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
             </div>
           </div>
 
-          <div className="group/shot relative overflow-hidden rounded-xl border border-white/10 bg-black">
+          <div className="shot-frame group/shot relative overflow-hidden rounded-xl border border-white/10 bg-black">
             <Image
               src={snowy.image ?? "/images/snowy-home.png"}
               alt={labels.snowyImageAlt}
@@ -63,7 +63,7 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
       </article>
 
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] transition-colors duration-300 hover:border-cyan-300/25">
-        <div className="relative h-52 border-b border-white/10 bg-slate-950 sm:h-56">
+        <div className="shot-frame relative h-52 border-b border-white/10 bg-slate-950 sm:h-56">
           <Image
             src={lariojaMeteo.image ?? "/images/lariojameteo-home.png"}
             alt={labels.lariojaImageAlt}

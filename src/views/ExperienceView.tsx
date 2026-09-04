@@ -18,11 +18,11 @@ export function ExperienceView({ locale }: { locale: Locale }) {
             {content.experience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="relative grid gap-5 border-b border-white/10 py-7 pl-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8 md:pl-0"
+                className="tl-entry relative grid gap-5 border-b border-white/10 py-7 pl-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8 md:pl-0"
               >
                 <div
                   aria-hidden
-                  className="absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-cyan-300/40 bg-[#07111f] md:left-3 md:top-10 md:h-7 md:w-7 md:border-cyan-300/30"
+                  className="tl-dot absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-cyan-300/40 bg-[#07111f] md:left-3 md:top-10 md:h-7 md:w-7 md:border-cyan-300/30"
                 >
                   <div className="h-1.5 w-1.5 rounded-full bg-cyan-300 md:h-2 md:w-2" />
                 </div>

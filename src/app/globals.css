@@ -436,3 +436,70 @@ p {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: none; }
 }
+
+/* --- Aparición al entrar en pantalla ---------------------------------------
+   Animación conducida por scroll, sin JavaScript y sin observadores. Arranca en
+   opacidad 0.4, no en cero: si el navegador no soporta `view()` —o el usuario
+   pide menos movimiento— la sección simplemente está ahí, que es como tiene que
+   quedarse. Nada queda esperando a que algo se dispare. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+/* Solo desplazamiento, sin opacidad: a media animación un texto al 40% baja de
+   los umbrales de contraste de verdad, y axe lo cazó midiendo justo ahí. El
+   movimiento por sí solo da el efecto sin que nada deje de leerse nunca. */
+@keyframes reveal {
+  from { transform: translateY(22px); }
+  to   { transform: none; }
+}
+
+/* --- Capturas de producto ---------------------------------------------------
+   Estaban pegadas dentro de una caja con borde. Un anillo interior y una luz
+   desde arriba las asientan, como una pantalla y no como un recorte. */
+.shot-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.shot-frame::after {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, rgba(103, 232, 249, 0.07), transparent 38%);
+}
+
+/* --- Cabecera ---------------------------------------------------------------
+   Sobre el héroe conviene que sea casi invisible; en cuanto se baja, tiene que
+   separarse del contenido que pasa por debajo. */
+.site-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header[data-scrolled="true"] {
+  background-color: rgba(2, 4, 10, 0.92);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* --- Línea de tiempo --------------------------------------------------------
+   El punto marca dónde estás leyendo. */
+.tl-entry .tl-dot {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tl-entry:hover .tl-dot {
+  border-color: rgba(103, 232, 249, 0.85);
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.12);
+}
