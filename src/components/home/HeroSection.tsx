@@ -1,5 +1,6 @@
 import { ProfileSummary } from "@/components/ProfileSummary";
 import { ProfileVisual } from "@/components/home/ProfileVisual";
+import { IsolineField } from "@/components/visual/IsolineField";
 import { ButtonLink, Container } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -10,9 +11,15 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden">
+      <IsolineField className="pointer-events-none absolute inset-0 h-full w-full [mask-image:linear-gradient(to_bottom,black_10%,rgba(0,0,0,0.55)_60%,transparent_92%)]" />
+      {/* Las curvas pasando por detrás del texto no rompen el contraste —axe pasa—
+          pero distraen al leer. Un velo suave bajo la columna de texto deja el
+          campo intacto donde se ve y da suelo limpio donde se lee. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-0 w-full bg-[radial-gradient(75%_60%_at_22%_50%,rgba(2,4,10,0.92),rgba(2,4,10,0.55)_45%,transparent_72%)] lg:w-3/5"
+      />
       <Container className="relative py-12 sm:py-20 lg:py-24">
-        <div className="orbital-ring right-[-18rem] top-20 h-[34rem] w-[34rem]" />
-        <div className="orbital-ring right-[-10rem] top-36 h-[22rem] w-[22rem]" />
 
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
           <div>

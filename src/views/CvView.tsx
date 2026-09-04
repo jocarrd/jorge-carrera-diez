@@ -1,3 +1,4 @@
+import { CareerTimeline } from "@/components/cv/CareerTimeline";
 import { PrintButton } from "@/components/cv/PrintButton";
 import { ProfileSummary } from "@/components/ProfileSummary";
 import { Section, SectionHeader, Surface } from "@/components/ui";
@@ -45,6 +46,11 @@ export function CvView({ locale }: { locale: Locale }) {
           </div>
           <div className="mt-8">
             <PrintButton label={copy.downloadCta} hint={copy.printHint} />
+          </div>
+          {/* En papel una barra de tiempo no aporta: el PDF ya lista los puestos
+              en orden. Vive solo en pantalla. */}
+          <div className="cv-screen-only mt-10">
+            <CareerTimeline locale={locale} />
           </div>
         </div>
       </Section>
