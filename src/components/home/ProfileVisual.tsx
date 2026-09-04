@@ -10,7 +10,9 @@ export function ProfileVisual({ locale }: { locale: Locale }) {
   return (
     <div className="relative">
       <div className="hidden lg:block">
-        <ArchitectureField />
+        <div className="hidden sm:contents">
+          <ArchitectureField />
+        </div>
       </div>
       <Surface className="space-border relative overflow-hidden bg-[#050814]/75 p-3 backdrop-blur-xl">
         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black">

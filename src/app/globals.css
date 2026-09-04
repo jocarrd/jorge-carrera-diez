@@ -448,7 +448,7 @@ p {
    opacidad 0.4, no en cero: si el navegador no soporta `view()` —o el usuario
    pide menos movimiento— la sección simplemente está ahí, que es como tiene que
    quedarse. Nada queda esperando a que algo se dispare. */
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (pointer: fine) {
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal linear both;

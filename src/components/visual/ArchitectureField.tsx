@@ -15,6 +15,14 @@ export function ArchitectureField() {
       return;
     }
 
+    // Una escena WebGL con antialias, 64 nodos y bucle de render se creaba en
+    // todos los teléfonos: solo se miraba prefers-reduced-motion. Es lo que más
+    // memoria consume de la página y encaja con las secciones que se quedaban en
+    // blanco al hacer scroll. En pantalla pequeña no se monta.
+    if (window.matchMedia("(max-width: 767px), (pointer: coarse)").matches) {
+      return;
+    }
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);

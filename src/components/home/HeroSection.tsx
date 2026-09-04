@@ -11,7 +11,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden">
-      <IsolineField className="pointer-events-none absolute inset-0 h-full w-full [mask-image:linear-gradient(to_bottom,black_10%,rgba(0,0,0,0.55)_60%,transparent_92%)]" />
+      <IsolineField className="pointer-events-none absolute inset-0 hidden h-full w-full sm:block [mask-image:linear-gradient(to_bottom,black_10%,rgba(0,0,0,0.55)_60%,transparent_92%)]" />
       {/* Las curvas pasando por detrás del texto no rompen el contraste —axe pasa—
           pero distraen al leer. Un velo suave bajo la columna de texto deja el
           campo intacto donde se ve y da suelo limpio donde se lee. */}
