@@ -187,6 +187,10 @@ export const es: Copy = {
     tagline: "Ingeniero de software e Ingeniero Informático.",
     contact: "Contacto",
   },
+  cvTimeline: {
+    label: "Trayectoria",
+    note: "Consultoría enterprise y producto internacional a la vez: banca y seguros por un lado, una fundación suiza y producto propio por otro.",
+  },
   experience: [
     {
       company: "EQx",
@@ -195,6 +199,8 @@ export const es: Copy = {
       headline: "Ingeniero de software - EQx (Suiza)",
       client: "Foundation for Value Creation",
       period: "Julio 2026 - Actualidad",
+      start: "2026-07",
+      end: null,
       summary:
         "Colaboro con la Foundation for Value Creation, la fundación suiza que publica el Elite Quality Index bajo dirección académica de tres institutos de la Universidad de St. Gallen. Es un índice de economía política, publicado desde 2020, que mide en 151 países hasta qué punto las élites de cada país crean valor para la sociedad o lo extraen de ella. Asumo el relevo técnico de sus productos digitales: la web pública del índice y la consola privada que lo acompaña.",
       highlights: [
@@ -217,6 +223,8 @@ export const es: Copy = {
       headline: "Tech Lead - VidaCaixa",
       client: "VidaCaixa",
       period: "Octubre 2025 - Actualidad",
+      start: "2025-10",
+      end: null,
       summary:
         "Liderazgo técnico frontend en un proyecto estratégico del sector asegurador, definiendo arquitectura, estándares de desarrollo, buenas prácticas e integración de Inteligencia Artificial generativa en flujos enterprise.",
       highlights: [
@@ -241,6 +249,8 @@ export const es: Copy = {
       headline: "Lead Software Engineer - Openbank",
       client: "Openbank, Grupo Santander",
       period: "Marzo 2025 - Octubre 2025",
+      start: "2025-03",
+      end: "2025-10",
       summary:
         "Desarrollo de la UI de un sistema de operativa bancaria para sucursales, con foco en React, escalabilidad, mantenibilidad y patrones de arquitectura hexagonal.",
       highlights: [
@@ -261,6 +271,8 @@ export const es: Copy = {
       role: "Full Stack Developer y Front-end",
       context: "Inditex",
       period: "Junio 2023 - Marzo 2025",
+      start: "2023-06",
+      end: "2025-03",
       summary:
         "Desarrollo y mantenimiento del terminal de gestión de tiendas de Inditex, desplegado en miles de puntos de venta a nivel global.",
       highlights: [
@@ -279,6 +291,8 @@ export const es: Copy = {
       role: "Full Stack Developer y Front-end Developer React",
       context: "React, Next.js, Node.js",
       period: "Febrero 2022 - Junio 2023",
+      start: "2022-02",
+      end: "2023-06",
       summary:
         "Desarrollo de aplicaciones web en producción, componentes reutilizables y proyectos como la web corporativa de Hiberus y SivasDescalzo.",
       highlights: [
@@ -297,6 +311,8 @@ export const es: Copy = {
       role: "Intern Front-end Developer Vue",
       context: "Wolfsburg mobility",
       period: "Septiembre 2021 - Diciembre 2021",
+      start: "2021-09",
+      end: "2021-12",
       summary:
         "Prácticas frontend con Vue, CSS, HTML, Docker y Git, desarrollando una web para usuarios de transporte y un panel de administración.",
       highlights: [

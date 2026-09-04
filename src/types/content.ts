@@ -7,6 +7,8 @@ export type ExperienceItem = {
   headline?: string;
   client?: string;
   period: string;
+  start: string;
+  end: string | null;
   summary: string;
   highlights: string[];
   logo?: {
@@ -147,6 +149,10 @@ export type Copy = {
   footer: {
     tagline: string;
     contact: string;
+  };
+  cvTimeline: {
+    label: string;
+    note: string;
   };
   experience: ExperienceItem[];
   skills: SkillGroup[];
