@@ -525,7 +525,7 @@ export const en: Copy = {
       product: {
         eyebrow: "Product",
         title: "What Snowy is",
-        text: "A weather platform for Spain with multi-model forecasting, live stations, reservoirs, earthquakes, air quality, pollen, alerts, interactive maps, WikiMeteo and an AI assistant.",
+        text: "A weather platform for Spain: multi-model forecasting over live data, with interactive maps and an assistant that answers in plain language.",
       },
       features: [
         {

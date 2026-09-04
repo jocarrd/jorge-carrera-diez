@@ -521,7 +521,7 @@ export const es: Copy = {
       product: {
         eyebrow: "Producto",
         title: "Qué es Snowy",
-        text: "Una plataforma meteorológica para España con predicción multi-modelo, estaciones en vivo, embalses, terremotos, calidad del aire, polen, avisos, mapas interactivos, WikiMeteo y asistente IA.",
+        text: "Una plataforma meteorológica para España: predicción multi-modelo sobre datos en vivo, con mapas interactivos y un asistente que responde en lenguaje normal.",
       },
       features: [
         {
