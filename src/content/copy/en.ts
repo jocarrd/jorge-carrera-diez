@@ -204,11 +204,13 @@ export const en: Copy = {
       context: "University of St. Gallen, Switzerland",
       headline: "Software engineer - EQx (Switzerland)",
       client: "Foundation for Value Creation",
+      image: "/images/eqx-home.webp",
+      imageAlt: "Home page of the Elite Quality Index, the index the foundation publishes",
       period: "July 2026 - Present",
       start: "2026-07",
       end: null,
       summary:
-        "I work with the Foundation for Value Creation, the Swiss foundation that publishes the Elite Quality Index under the academic leadership of three University of St. Gallen institutes. It is a political-economy index, published since 2020, ranking 151 countries by how far each country's elites create value for society rather than extract it. I took over its digital products: the public index site and the private console alongside it.",
+        "Technical handover of the digital products of the Foundation for Value Creation: the public site of the Elite Quality Index and the private console behind it. The index measures across 151 countries whether elites create value or extract it, under the academic direction of the University of St. Gallen.",
       highlights: [
         "Handover from the previous developer with no interruption to the running product.",
         "End-to-end ownership of the user experience across both products.",
