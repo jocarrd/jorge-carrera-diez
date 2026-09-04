@@ -38,7 +38,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             <div className="absolute -inset-4 rounded-[2rem] bg-cyan-400/10 blur-3xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
               <Image
-                src="/images/snowy-home.png"
+                src="/images/snowy-home.webp"
                 alt={showcase.imageAlt}
                 width={1365}
                 height={1049}

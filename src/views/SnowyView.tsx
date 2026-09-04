@@ -41,7 +41,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
             <Image
-              src="/images/snowy-home.png"
+              src="/images/snowy-home.webp"
               alt={copy.imageAlts.home}
               width={1365}
               height={1049}
@@ -52,7 +52,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
-                src="/images/snowy-stations-map.png"
+                src="/images/snowy-stations-map.webp"
                 alt={copy.imageAlts.stations}
                 width={1280}
                 height={862}
@@ -61,7 +61,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             </div>
             <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
-                src="/images/snowy-radar-map.png"
+                src="/images/snowy-radar-map.webp"
                 alt={copy.imageAlts.radar}
                 width={1210}
                 height={872}

@@ -17,7 +17,7 @@ export function ProfileVisual({ locale }: { locale: Locale }) {
       <Surface className="space-border relative overflow-hidden bg-[#050814]/75 p-3 backdrop-blur-xl">
         <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black">
           <Image
-            src="/images/jorge-carrera-diez.png"
+            src="/images/jorge-carrera-diez.webp"
             alt={`${site.name} - ${copy.meta.jobTitle}`}
             width={1168}
             height={1408}
