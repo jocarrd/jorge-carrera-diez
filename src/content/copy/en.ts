@@ -13,11 +13,11 @@ export const en: Copy = {
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
     ogEyebrow: "Software engineer",
-    ogTagline: "Tech Lead at VidaCaixa. Freelance for EQx (Switzerland). Creator of Snowy.",
+    ogTagline: "Product, architecture, data and generative AI. From first commit to deploy.",
     ogStats: [
-      ["current", "VidaCaixa · EQx Switzerland"],
-      ["product", "Snowy · backend · SEO"],
-      ["focus", "architecture · data · agents"],
+      ["now", "VidaCaixa · EQx"],
+      ["own product", "Snowy"],
+      ["where", "Remote · Spain"],
     ],
   },
   nav: {
@@ -49,24 +49,24 @@ export const en: Copy = {
   },
   profile: {
     headline:
-      "Software engineer focused on product, architecture and systems design. Currently Tech Lead on VidaCaixa projects, engineering partner to EQx in Switzerland and creator of Snowy.",
+      "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I build Snowy, which is mine top to bottom.",
     positioning: "Software engineer · Product · Architecture",
     positioningLong:
-      "Software engineer focused on product, architecture and systems design.",
+      "Software engineer. I design systems and then stay to maintain them.",
     tagline: ["I design it.", "I build it.", "I keep it running."],
     taglineSub:
-      "Software engineer. Product, architecture, data and generative AI, from the first commit to the deployment.",
+      "Right now: financial product in Madrid, a Swiss academic index, and a weather platform that is mine.",
     availability: "Available for one more project",
     availabilityNote:
       "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week.",
     capabilities: [
       {
         title: "Product architecture",
-        text: "Technical decisions, standards and reviews on systems with real users.",
+        text: "I decide how it is structured, what gets cut and why. Then I defend it in review.",
       },
       {
         title: "Generative AI and agents",
-        text: "RAG, tools, MCP and evaluation inside the product, not in a separate demo.",
+        text: "Agents that do actual work inside the product. Anyone can build the pretty demo.",
       },
       {
         title: "Data and infrastructure",
@@ -126,7 +126,7 @@ export const en: Copy = {
       },
       {
         label: "Own product · Snowy",
-        title: "Where I test for real what I argue for",
+        title: "Where I find out if I was right",
         text: "I build all of it, from server rendering to the radar and the deployments. Product, data, infrastructure, SEO and AI on a real system.",
       },
     ],
@@ -170,7 +170,7 @@ export const en: Copy = {
     ],
   },
   ai: {
-    title: "Generative AI applied to real flows.",
+    title: "AI that does the work, not that looks like it.",
     lead: "I work on agents, RAG, tools, MCP and LLMs from one simple idea: AI should solve concrete tasks inside the product and stay as maintainable as any other part of the system.",
     detail:
       "What interests me most is designing the flow: what context the model needs, which tools it can use, how responses are controlled and what experience the user actually gets.",
@@ -209,7 +209,7 @@ export const en: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy: weather, data, maps and AI in a product of my own.",
+    title: "Snowy is my product, and I keep it running on my own.",
     lead: "The project already works as a product: over the last three months it has generated 14.7 million organic impressions and 242,000 clicks, with more than 1,400 registered users to keep building on.",
     detail:
       "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
@@ -225,12 +225,12 @@ export const en: Copy = {
   },
   projectsPreview: {
     eyebrow: "Projects",
-    title: "Projects with product, traffic and real technical decisions.",
-    text: "Snowy holds the deepest work: architecture, data, SEO, AI and infrastructure. LaRiojaMeteo brings audience, content and regional weather context.",
+    title: "Three projects you can actually open and poke at.",
+    text: "One is entirely mine. One is a client in Switzerland. The third has been publishing for twelve years. All three are live right now.",
   },
   contactCta: {
     title: "If my profile fits, let's talk.",
-    text: "I want to build in teams with product, technical judgement and real problems to solve. The best way to see it is an unhurried conversation.",
+    text: "If you have something in mind and are not sure it fits, write to me and I will tell you straight. If I am not the right person, I will say that too.",
     cta: "Email me",
   },
   footer: {
@@ -413,7 +413,7 @@ export const en: Copy = {
       description:
         "Weather platform with real-time data, maps, radar, stations, SEO, its own backend, infrastructure and AI.",
       impact:
-        "I build all of it, from server rendering to the radar and the deployments. It is where I test the architecture decisions I later defend in front of a client.",
+        "I build all of it, from server rendering to the radar and the deployments. When something falls over at three in the morning, it calls me.",
       metrics: [
         { value: "16", label: "weather models" },
         { value: "1,800+", label: "live stations" },

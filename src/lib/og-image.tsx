@@ -11,12 +11,25 @@ export const ogSize = {
 
 export const ogContentType = "image/png";
 
+const raiz = (...partes: string[]) => join(process.cwd(), ...partes);
+
+/* La tarjeta social es lo primero que se ve del sitio, muchas veces lo unico,
+   asi que se pinta con la misma paleta y la misma tipografia que la web: fondo
+   claro, acento teal y Onest. Antes heredaba el tema oscuro que ya no existe.
+
+   Dos limites de satori que condicionan el codigo: no decodifica WebP —la foto
+   iba en .webp y por eso salia un hueco vacio— y no lee las fuentes del sistema,
+   hay que pasarle el fichero. De ahi el JPEG y los TTF versionados. */
 export async function renderOpenGraphImage(locale: Locale) {
   const copy = getCopy(locale).meta;
-  const profileImageBuffer = await readFile(
-    join(process.cwd(), "public/images/jorge-carrera-diez.webp"),
-  );
-  const profileImage = `data:image/png;base64,${profileImageBuffer.toString("base64")}`;
+
+  const [regular, semibold, bold, retrato] = await Promise.all([
+    readFile(raiz("src/assets/fonts/Onest-Regular.ttf")),
+    readFile(raiz("src/assets/fonts/Onest-SemiBold.ttf")),
+    readFile(raiz("src/assets/fonts/Onest-Bold.ttf")),
+    readFile(raiz("src/assets/jorge-og.jpg")),
+  ]);
+  const foto = `data:image/jpeg;base64,${retrato.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -27,41 +40,21 @@ export async function renderOpenGraphImage(locale: Locale) {
           display: "flex",
           position: "relative",
           overflow: "hidden",
-          background: "linear-gradient(135deg, #02040a 0%, #07111f 50%, #02040a 100%)",
-          color: "#f8fafc",
-          fontFamily: "Arial, Helvetica, sans-serif",
+          background: "#ffffff",
+          color: "#1d1d1f",
+          fontFamily: "Onest",
         }}
       >
+        {/* La banda gris de la derecha repite la superficie de seccion del
+            sitio y le da a la foto un fondo propio sin recortarla. */}
         <div
           style={{
             position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: -150,
-            top: -150,
-            width: 620,
-            height: 620,
-            borderRadius: 999,
-            border: "1px solid rgba(103,232,249,.18)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            right: 92,
-            top: 92,
-            width: 10,
-            height: 10,
-            borderRadius: 999,
-            background: "#67e8f9",
-            boxShadow: "0 0 36px rgba(103,232,249,.9)",
+            right: 0,
+            top: 0,
+            width: 452,
+            height: "100%",
+            background: "#f5f5f7",
           }}
         />
 
@@ -69,116 +62,117 @@ export async function renderOpenGraphImage(locale: Locale) {
           style={{
             position: "relative",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 68,
             width: "100%",
-            padding: "72px 78px",
+            height: "100%",
+            alignItems: "stretch",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: 28, width: 668 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              width: 748,
+              padding: "62px 56px 58px 68px",
+            }}
+          >
+            <div style={{ display: "flex", flexDirection: "column" }}>
               <div
                 style={{
-                  width: 66,
-                  height: 66,
-                  borderRadius: 20,
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  border: "1px solid rgba(255,255,255,.18)",
-                  background: "rgba(255,255,255,.045)",
-                  color: "#fff",
-                  fontSize: 26,
-                  fontWeight: 700,
+                  fontSize: 20,
+                  fontWeight: 600,
+                  letterSpacing: 2.4,
+                  textTransform: "uppercase",
+                  color: "#0f766e",
                 }}
               >
-                JC
+                {copy.ogEyebrow}
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                <div style={{ fontSize: 24, color: "#94a3b8" }}>{site.domain}</div>
+              <div
+                style={{
+                  marginTop: 26,
+                  fontSize: 82,
+                  lineHeight: 1.02,
+                  fontWeight: 700,
+                  letterSpacing: -3.2,
+                  color: "#1d1d1f",
+                }}
+              >
+                {site.name}
+              </div>
+              <div
+                style={{
+                  marginTop: 24,
+                  maxWidth: 600,
+                  fontSize: 27,
+                  lineHeight: 1.42,
+                  color: "#6e6e73",
+                }}
+              >
+                {copy.ogTagline}
               </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                alignSelf: "flex-start",
-                border: "1px solid rgba(255,255,255,.14)",
-                borderRadius: 999,
-                padding: "9px 18px",
-                color: "#dbeafe",
-                fontSize: 20,
-              }}
-            >
-              {copy.ogEyebrow}
-            </div>
-            <div style={{ fontSize: 78, lineHeight: 0.98, fontWeight: 760, letterSpacing: -1.4 }}>
-              {site.name}
-            </div>
-            <div style={{ maxWidth: 640, fontSize: 28, lineHeight: 1.34, color: "#cbd5e1" }}>
-              {copy.ogTagline}
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 18 }}>
-              {copy.ogStats.map(([label, value]) => (
-                <div
-                  key={label}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 18,
-                    width: 560,
-                    borderTop: "1px solid rgba(255,255,255,.1)",
-                    paddingTop: 12,
-                  }}
-                >
-                  <span style={{ width: 95, color: "#64748b", fontSize: 18 }}>{label}</span>
-                  <span style={{ color: "#e2e8f0", fontSize: 21 }}>{value}</span>
-                </div>
-              ))}
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", gap: 46 }}>
+                {copy.ogStats.map(([label, value]) => (
+                  <div key={label} style={{ display: "flex", flexDirection: "column", width: 196 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        fontSize: 15,
+                        fontWeight: 600,
+                        letterSpacing: 1.4,
+                        textTransform: "uppercase",
+                        color: "#86868b",
+                      }}
+                    >
+                      {label}
+                    </div>
+                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#1d1d1f" }}>
+                      {value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: 34,
+                  paddingTop: 24,
+                  borderTop: "1px solid #e8e8ed",
+                  fontSize: 22,
+                  fontWeight: 600,
+                  color: "#1d1d1f",
+                }}
+              >
+                {site.domain}
+              </div>
             </div>
           </div>
 
-          <div
-            style={{
-              width: 338,
-              height: 430,
-              display: "flex",
-              position: "relative",
-              overflow: "hidden",
-              borderRadius: 28,
-              border: "1px solid rgba(255,255,255,.14)",
-              background: "rgba(255,255,255,.035)",
-              boxShadow: "0 24px 90px rgba(0,0,0,.58)",
-            }}
-          >
+          <div style={{ display: "flex", width: 452, alignItems: "flex-end", justifyContent: "center" }}>
             {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse
-                renderiza fuera del DOM de React: next/image no aplica aquí. */}
+                renderiza fuera del DOM de React: next/image no aplica aqui. */}
             <img
-              src={profileImage}
+              src={foto}
               alt=""
-              width={338}
-              height={430}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "50% 31%",
-                borderRadius: 28,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(180deg, transparent 55%, rgba(2,4,10,.45) 100%)",
-              }}
+              width={452}
+              height={630}
+              style={{ width: 452, height: 630, objectFit: "cover", objectPosition: "50% 22%" }}
             />
           </div>
         </div>
       </div>
     ),
-    ogSize,
+    {
+      ...ogSize,
+      fonts: [
+        { name: "Onest", data: regular, weight: 400, style: "normal" },
+        { name: "Onest", data: semibold, weight: 600, style: "normal" },
+        { name: "Onest", data: bold, weight: 700, style: "normal" },
+      ],
+    },
   );
 }
