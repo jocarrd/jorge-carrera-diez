@@ -1,4 +1,4 @@
-import { ButtonLink, Container, CopyEmail } from "@/components/ui";
+import { ButtonLink, Container, CopyEmail, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -10,6 +10,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
   return (
     <section id="contacto" className="py-24 sm:py-28 lg:py-32">
       <Container className="text-center">
+        <Reveal>
         <h2 className="mx-auto max-w-[18ch] text-[2.125rem] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[3.625rem]">
           {cta.title}
         </h2>
@@ -28,6 +29,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
             {copy.profile.availabilityNote}
           </p>
         </div>
+        </Reveal>
       </Container>
     </section>
   );

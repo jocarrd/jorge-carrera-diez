@@ -12,9 +12,12 @@
   --panel-strong: #ebebef;
   --line: #e8e8ed;
   --line-strong: #d2d2d7;
-  --accent: #0071e3;
-  --accent-text: #0066cc;
-  --accent-dark: #2997ff;
+  /* Teal en vez del azul de sistema: enlaza con el cian de Snowy, se separa de
+     la referencia obvia y mide mejor —el azul se quedaba en 4,31:1 sobre el
+     gris de sección, por debajo del mínimo. Este da 5,47:1 y 5,03:1. */
+  --accent: #0f766e;
+  --accent-text: #0f766e;
+  --accent-dark: #2dd4bf;
   --ink-dark: #000000;
   --ink-dark-panel: #1d1d1f;
   --ink-dark-muted: #a1a1a6;
@@ -59,7 +62,7 @@ a {
 }
 
 ::selection {
-  background: rgba(0, 113, 227, 0.18);
+  background: rgba(15, 118, 110, 0.16);
 }
 
 /* ── Superficies ─────────────────────────────────────────────
@@ -254,6 +257,33 @@ a {
       opacity: 1;
       transform: none;
     }
+  }
+}
+
+/* ── Revelado al entrar en pantalla ─────────────────────────
+   El estado de partida lo pone el propio componente al montarse, así que sin
+   JavaScript nunca llega a aplicarse y el contenido se ve desde el principio.
+   Un desplazamiento corto y una curva lenta al final: el movimiento tiene que
+   notarse acabando, no empezando. */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

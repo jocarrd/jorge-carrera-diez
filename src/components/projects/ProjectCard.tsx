@@ -12,9 +12,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Surface className="flex h-full flex-col">
       <Badge>{project.label}</Badge>
-      <h3 className="mt-5 text-2xl font-semibold text-white">{project.name}</h3>
-      <p className="mt-4 flex-1 text-sm leading-6 text-slate-400">{project.description}</p>
-      <p className="mt-5 text-sm leading-6 text-slate-300">{project.impact}</p>
+      <h3 className="mt-5 text-2xl font-semibold text-[var(--foreground)]">{project.name}</h3>
+      <p className="mt-4 flex-1 text-sm leading-6 text-[var(--muted)]">{project.description}</p>
+      <p className="mt-5 text-sm leading-6 text-[var(--muted)]">{project.impact}</p>
 
       {project.metrics ? (
         <div className="mt-6 grid grid-cols-2 gap-3">
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {internalProjectSlugs.has(project.slug) ? (
         <Link
           href={`/proyectos/${project.slug}`}
-          className="mt-6 text-sm font-medium text-cyan-300 hover:text-cyan-100"
+          className="mt-6 text-sm font-medium text-[var(--accent-text)] hover:text-[var(--accent-text)]"
         >
           Ver detalle
         </Link>

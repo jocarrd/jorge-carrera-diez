@@ -1,4 +1,4 @@
-import { Section, SectionHeader } from "@/components/ui";
+import { Section, SectionHeader, Reveal } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -10,9 +10,11 @@ export function AiPreview({ locale }: { locale: Locale }) {
 
   return (
     <Section id="ia">
-      <SectionHeader eyebrow="IA generativa" title={copy.title} text={copy.lead} />
+      <Reveal>
+        <SectionHeader eyebrow="IA generativa" title={copy.title} text={copy.lead} />
+      </Reveal>
 
-      <div className="mt-14 rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-6 sm:p-10">
+      <Reveal delay={80} className="mt-14 rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-6 sm:p-10">
         <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {copy.flow.map((step) => (
             <li key={step.title} className="rounded-[var(--radius-card)] bg-white p-6">
@@ -28,9 +30,9 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </li>
           ))}
         </ol>
-      </div>
+      </Reveal>
 
-      <div className="mt-5 grid gap-5 md:grid-cols-3">
+      <Reveal delay={140} className="mt-5 grid gap-5 md:grid-cols-3">
         {copy.principles.map((principle) => (
           <article
             key={principle.title}
@@ -44,7 +46,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </p>
           </article>
         ))}
-      </div>
+      </Reveal>
     </Section>
   );
 }

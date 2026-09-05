@@ -4,6 +4,7 @@ export { Container } from "./Container";
 export { CopyEmail } from "./CopyEmail";
 export { MetricCard } from "./MetricCard";
 export { ProductShot } from "./ProductShot";
+export { Reveal } from "./Reveal";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";

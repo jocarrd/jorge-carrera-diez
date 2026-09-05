@@ -36,8 +36,8 @@ export function CareerTimeline({ locale }: { locale: Locale }) {
 
   return (
     <div className="lvl-1 rounded-2xl border p-5 sm:p-7">
-      <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300/80">
-        <span aria-hidden className="h-px w-6 bg-cyan-300/50" />
+      <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+        <span aria-hidden className="h-px w-6 bg-[var(--accent)]/50" />
         {content.cvTimeline.label}
       </p>
 
@@ -50,12 +50,12 @@ export function CareerTimeline({ locale }: { locale: Locale }) {
           return (
             <li key={`${item.company}-${item.role}`}>
               <div className="flex items-baseline justify-between gap-3">
-                <span className="text-sm font-medium text-white">{item.company}</span>
-                <span className="shrink-0 font-mono text-[11px] text-slate-500">{item.period}</span>
+                <span className="text-sm font-medium text-[var(--foreground)]">{item.company}</span>
+                <span className="shrink-0 font-mono text-[11px] text-[var(--muted)]">{item.period}</span>
               </div>
               <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
                 <div
-                  className={`h-full rounded-full ${current ? "bg-cyan-300/70" : "bg-white/25"}`}
+                  className={`h-full rounded-full ${current ? "bg-[var(--accent)]" : "bg-white/25"}`}
                   style={{ width: `${Math.max(share, 6)}%` }}
                 />
               </div>
@@ -84,28 +84,28 @@ export function CareerTimeline({ locale }: { locale: Locale }) {
                 <div
                   className={`absolute top-1/2 flex h-9 -translate-y-1/2 items-center overflow-hidden rounded-md px-3 transition-colors ${
                     current
-                      ? "bg-cyan-300/25 ring-1 ring-inset ring-cyan-300/50 group-hover:bg-cyan-300/35"
-                      : "bg-white/[0.07] ring-1 ring-inset ring-white/10 group-hover:bg-white/[0.11]"
+                      ? "bg-[var(--accent)]/25 ring-1 ring-inset ring-[var(--line-strong)] group-hover:bg-[var(--accent)]/35"
+                      : "bg-white/[0.07] ring-1 ring-inset ring-[var(--line)] group-hover:bg-white/[0.11]"
                   }`}
                   style={{ left: `${left}%`, width: `${width}%` }}
                 >
-                  <span className="truncate text-sm font-medium text-white">{item.company}</span>
+                  <span className="truncate text-sm font-medium text-[var(--foreground)]">{item.company}</span>
                 </div>
               </li>
             );
           })}
         </ol>
 
-        <div aria-hidden className="mt-3 flex border-t border-white/10 pt-2">
+        <div aria-hidden className="mt-3 flex border-t border-[var(--line)] pt-2">
           {years.map((year) => (
-            <span key={year} className="flex-1 font-mono text-[11px] text-slate-500">
+            <span key={year} className="flex-1 font-mono text-[11px] text-[var(--muted)]">
               {year}
             </span>
           ))}
         </div>
       </div>
 
-      <p className="mt-6 text-sm leading-6 text-slate-400">{content.cvTimeline.note}</p>
+      <p className="mt-6 text-sm leading-6 text-[var(--muted)]">{content.cvTimeline.note}</p>
     </div>
   );
 }

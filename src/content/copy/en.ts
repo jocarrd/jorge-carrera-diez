@@ -57,7 +57,7 @@ export const en: Copy = {
       "Software engineer. Product, architecture, data and generative AI, from the first commit to the deployment.",
     availability: "Available for one more project",
     availabilityNote:
-      "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week, not full days.",
+      "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week.",
     capabilities: [
       {
         title: "Product architecture",
@@ -497,7 +497,7 @@ export const en: Copy = {
         "It is what I am doing right now for a Swiss foundation: I took over from their previous developer and picked up both of their digital products without interrupting operations.",
       availabilityLabel: "availability",
       availabilityText:
-        "Remote, European hours, in Spanish or English. I work on scoped engagements of a few hours a week rather than full days: it is the format that lets me genuinely commit to what I take on.",
+        "Remote, European hours, in Spanish or English. I work on scoped engagements of a few hours a week: it is the format that lets me genuinely commit to what I take on.",
       servicesTitle: "How I can help",
       servicesText:
         "Three ways of working that are already running with real clients, not a list of technologies.",

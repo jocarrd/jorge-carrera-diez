@@ -20,13 +20,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-5xl">
+        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--foreground)] sm:text-5xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8">
           {copy.lead}
         </p>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-400 sm:mt-5 sm:leading-7">
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
           {copy.detail}
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -37,9 +37,9 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <section className="border-y border-white/10 bg-[#030712] py-10 sm:py-20 lg:py-24">
+      <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="shot-frame overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+          <div className="shot-frame overflow-hidden rounded-2xl border border-[var(--line)] bg-black shadow-2xl">
             <Image
               src="/images/snowy-home.webp"
               alt={copy.imageAlts.home}
@@ -59,7 +59,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             ].map((shot) => (
               <div
                 key={shot.src}
-                className="shot-frame aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-black"
+                className="shot-frame aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--line)] bg-black"
               >
                 <Image
                   src={shot.src}
@@ -84,8 +84,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {copy.features.map((feature) => (
             <Surface key={feature.title}>
-              <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-slate-400">{feature.text}</p>
+              <h2 className="text-xl font-semibold text-[var(--foreground)]">{feature.title}</h2>
+              <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{feature.text}</p>
             </Surface>
           ))}
         </div>
@@ -94,13 +94,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <section className="py-12 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-500">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-text)]">
               {copy.modules.eyebrow}
             </p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
               {copy.modules.title}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-slate-300 sm:mt-5 sm:leading-7">
+            <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
               {copy.modules.text}
             </p>
           </div>
@@ -123,7 +123,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 }`}
               >
                 <div
-                  className={`shrink-0 overflow-hidden border-b border-white/10 bg-black ${
+                  className={`shrink-0 overflow-hidden border-b border-[var(--line)] bg-black ${
                     wide ? "aspect-[16/9]" : "aspect-[6/5]"
                   }`}
                 >
@@ -137,8 +137,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-xl font-semibold text-white">{module.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-400">{module.text}</p>
+                  <h3 className="text-xl font-semibold text-[var(--foreground)]">{module.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{module.text}</p>
                 </div>
               </article>
               );
@@ -170,8 +170,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {copy.capabilities.map((item) => (
             <Surface key={item.title}>
-              <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-slate-400">{item.text}</p>
+              <h2 className="text-xl font-semibold text-[var(--foreground)]">{item.title}</h2>
+              <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
             </Surface>
           ))}
         </div>
@@ -185,13 +185,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
             text={copy.seo.text}
           />
           <Surface>
-            <h2 className="text-xl font-semibold text-white">{copy.seo.sourcesTitle}</h2>
+            <h2 className="text-xl font-semibold text-[var(--foreground)]">{copy.seo.sourcesTitle}</h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {dataSources.map((source) => (
                 <TechTag key={source}>{source}</TechTag>
               ))}
             </div>
-            <p className="mt-6 text-sm leading-6 text-slate-400">{copy.seo.sourcesText}</p>
+            <p className="mt-6 text-sm leading-6 text-[var(--muted)]">{copy.seo.sourcesText}</p>
           </Surface>
         </div>
       </Section>
@@ -206,8 +206,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
           <div className="grid gap-4">
             {copy.b2b.lines.map((line) => (
               <Surface key={line.title}>
-                <h2 className="text-xl font-semibold text-white">{line.title}</h2>
-                <p className="mt-4 text-sm leading-6 text-slate-400">{line.text}</p>
+                <h2 className="text-xl font-semibold text-[var(--foreground)]">{line.title}</h2>
+                <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{line.text}</p>
               </Surface>
             ))}
           </div>
@@ -229,11 +229,11 @@ export function SnowyView({ locale }: { locale: Locale }) {
                   alt={item.alt}
                   width={900}
                   height={600}
-                  className="h-72 w-full border-b border-white/10 object-cover object-center"
+                  className="h-72 w-full border-b border-[var(--line)] object-cover object-center"
                 />
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-6 text-slate-400">{item.text}</p>
+                  <h2 className="text-xl font-semibold text-[var(--foreground)]">{item.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
                 </div>
               </>
             );
@@ -245,7 +245,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                   href={item.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="overflow-hidden rounded-2xl lvl-2 border transition hover:border-cyan-300/25 lvl-hover"
+                  className="overflow-hidden rounded-2xl lvl-2 border transition hover:border-[var(--line-strong)] lvl-hover"
                 >
                   {content}
                 </a>
@@ -267,13 +267,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
             href={site.openData}
             target="_blank"
             rel="noreferrer"
-            className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-6 transition hover:border-cyan-200/50 hover:bg-cyan-300/15"
+            className="rounded-2xl border border-[var(--line-strong)] bg-[var(--panel)] p-6 transition hover:border-[var(--line-strong)] hover:bg-[var(--panel)]"
           >
-            <p className="font-mono text-sm text-cyan-200">{copy.press.openDataLabel}</p>
-            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">
+            <p className="font-mono text-sm text-[var(--accent-text)]">{copy.press.openDataLabel}</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
               {copy.press.openDataTag}
             </p>
-            <h2 className="mt-4 text-lg font-semibold leading-7 text-white">
+            <h2 className="mt-4 text-lg font-semibold leading-7 text-[var(--foreground)]">
               {copy.press.openDataTitle}
             </h2>
           </a>
@@ -283,13 +283,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
               href={mention.url}
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl lvl-2 border p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-cyan-300/25 lvl-hover"
+              className="rounded-2xl lvl-2 border p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-[var(--line-strong)] lvl-hover"
             >
-              <p className="font-mono text-sm text-cyan-300">{mention.outlet}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-slate-500">
+              <p className="font-mono text-sm text-[var(--accent-text)]">{mention.outlet}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
                 {mention.date}
               </p>
-              <h2 className="mt-4 text-lg font-semibold leading-7 text-white">{mention.title}</h2>
+              <h2 className="mt-4 text-lg font-semibold leading-7 text-[var(--foreground)]">{mention.title}</h2>
             </a>
           ))}
         </div>

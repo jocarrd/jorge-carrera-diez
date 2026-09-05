@@ -1,4 +1,4 @@
-import { Section, SectionHeader, ProductShot } from "@/components/ui";
+import { Section, SectionHeader, ProductShot, Reveal } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -9,9 +9,11 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
 
   return (
     <Section id="rol-actual" className="section-band">
-      <SectionHeader title={role.homeTitle} text={role.homeText} />
+      <Reveal>
+        <SectionHeader title={role.homeTitle} text={role.homeText} />
+      </Reveal>
 
-      <div className="mt-14 grid gap-5 md:grid-cols-3">
+      <Reveal delay={80} className="mt-14 grid gap-5 md:grid-cols-3">
         {role.fronts.map((front) => (
           <article key={front.label} className="rounded-[var(--radius-card-lg)] bg-white p-8 sm:p-9">
             <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
@@ -23,7 +25,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
             <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">{front.text}</p>
           </article>
         ))}
-      </div>
+      </Reveal>
 
       {/* El índice suizo es lo menos conocido de los tres frentes y lo que más
           gana con verse: una web pública real detrás de la frase. */}
