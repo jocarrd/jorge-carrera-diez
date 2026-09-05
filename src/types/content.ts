@@ -117,6 +117,7 @@ export type Copy = {
   nav: {
     brandRole: string;
     contact: string;
+    writeToMe: string;
     homeAriaLabel: string;
     mainNavLabel: string;
     mobileNavLabel: string;

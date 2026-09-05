@@ -11,10 +11,9 @@ import { routePath, sectionPath } from "@/i18n/routes";
 export function Header({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).nav;
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
-
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
@@ -26,9 +25,21 @@ export function Header({ locale }: { locale: Locale }) {
     };
   }, []);
 
+  /* La hoja tapa la página entera: si el documento sigue desplazándose detrás,
+     al cerrarla se vuelve a otro sitio. Se compensa el ancho de la barra para
+     que el contenido no dé un salto lateral al bloquearla. */
   useEffect(() => {
     if (!isOpen) {
       return;
+    }
+
+    const { body, documentElement } = document;
+    const gap = window.innerWidth - documentElement.clientWidth;
+    const previous = { overflow: body.style.overflow, paddingRight: body.style.paddingRight };
+
+    body.style.overflow = "hidden";
+    if (gap > 0) {
+      body.style.paddingRight = `${gap}px`;
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -40,6 +51,8 @@ export function Header({ locale }: { locale: Locale }) {
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      body.style.overflow = previous.overflow;
+      body.style.paddingRight = previous.paddingRight;
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
@@ -47,6 +60,7 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header
       data-scrolled={isScrolled}
+      data-menu-open={isOpen}
       className="site-header sticky top-0 z-50"
     >
       <div className="mx-auto flex min-h-14 w-full max-w-[1120px] items-center justify-between gap-4 px-[22px] sm:min-h-12 sm:px-8">
@@ -59,13 +73,9 @@ export function Header({ locale }: { locale: Locale }) {
           <Mark className="h-7 w-7 shrink-0" />
           <span className="hidden leading-tight sm:block">
             <span className="block text-sm font-semibold text-[var(--foreground)]">Jorge Carrera Diez</span>
-            
           </span>
         </Link>
-        <nav
-          aria-label={copy.mainNavLabel}
-          className="hidden items-center gap-1 md:flex"
-        >
+        <nav aria-label={copy.mainNavLabel} className="hidden items-center gap-1 md:flex">
           {copy.items.map((item) => (
             <Link
               key={item.key}
@@ -82,7 +92,7 @@ export function Header({ locale }: { locale: Locale }) {
           </div>
           <a
             href={`mailto:${site.email}`}
-            className="inline-flex min-h-11 items-center rounded-full bg-[var(--accent)] px-4 text-[13px] font-medium text-white transition hover:brightness-110 sm:min-h-9 sm:text-xs"
+            className="hidden min-h-11 items-center rounded-full bg-[var(--accent)] px-4 text-[13px] font-medium text-white transition hover:brightness-110 sm:inline-flex sm:min-h-9 sm:text-xs"
           >
             {copy.contact}
           </a>
@@ -96,58 +106,70 @@ export function Header({ locale }: { locale: Locale }) {
           >
             <span className="relative h-3.5 w-4">
               <span
-                className={`absolute left-0 top-0 h-px w-4 bg-current transition ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "top-[7px] rotate-45" : "top-0"}`}
               />
               <span
-                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition ${isOpen ? "opacity-0" : ""}`}
+                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition-opacity duration-200 ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
               <span
-                className={`absolute bottom-0 left-0 h-px w-4 bg-current transition ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "bottom-[6px] -rotate-45" : "bottom-0"}`}
               />
             </span>
           </button>
         </div>
       </div>
+
       <nav
         id="mobile-navigation"
         aria-label={copy.mobileNavLabel}
-        className={`md:hidden ${isOpen ? "block" : "hidden"}`}
+        className="nav-sheet md:hidden"
+        data-open={isOpen}
+        inert={!isOpen}
       >
-        <div className="mx-6 mb-4 overflow-hidden rounded-[var(--radius-card-lg)] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.12),0_0_0_1px_var(--line)] sm:mx-8">
-          <div className="border-b border-[var(--line)] p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.06em] text-[var(--muted)]">{copy.sectionsLabel}</p>
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              {copy.sections.map((item) => (
-                <Link
-                  key={item.anchor}
-                  href={sectionPath(locale, item.anchor)}
-                  onClick={closeMenu}
-                  className="rounded-xl bg-[var(--panel)] px-3 py-3 text-sm text-[var(--foreground)] transition hover:bg-[var(--panel-strong)]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center justify-between border-b border-[var(--line)] px-4 py-3">
-            <p className="text-xs font-medium uppercase tracking-[0.06em] text-[var(--muted)]">{copy.localeLabel}</p>
-            <LocaleSwitch locale={locale} onNavigate={closeMenu} />
-          </div>
-          <div className="p-4">
-            <p className="text-xs font-medium uppercase tracking-[0.06em] text-[var(--muted)]">{copy.pagesLabel}</p>
-            <div className="mt-3 grid gap-2">
-              {copy.items.map((item) => (
-                <Link
-                  key={item.key}
-                  href={routePath(locale, item.key)}
-                  onClick={closeMenu}
-                  className="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-[var(--foreground)] transition hover:bg-[var(--panel)]"
-                >
+        <div className="nav-sheet-inner">
+          <ul className="flex flex-col">
+            {copy.items.map((item, index) => (
+              <li key={item.key} className="nav-sheet-item" style={{ "--i": index } as React.CSSProperties}>
+                <Link href={routePath(locale, item.key)} onClick={closeMenu} className="nav-sheet-link">
                   <span>{item.label}</span>
-                  <span className="text-[var(--muted)]">&rsaquo;</span>
+                  <svg viewBox="0 0 8 14" aria-hidden className="nav-sheet-chevron">
+                    <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div
+            className="nav-sheet-item mt-10 border-t border-[var(--line)] pt-7"
+            style={{ "--i": copy.items.length } as React.CSSProperties}
+          >
+            <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
+              {copy.sectionsLabel}
+            </p>
+            <ul className="mt-4 flex flex-col gap-1">
+              {copy.sections.map((item) => (
+                <li key={item.anchor}>
+                  <Link href={sectionPath(locale, item.anchor)} onClick={closeMenu} className="nav-sheet-sublink">
+                    {item.label}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
+
+          <div
+            className="nav-sheet-item mt-auto flex items-center justify-between gap-4 pt-10"
+            style={{ "--i": copy.items.length + 1 } as React.CSSProperties}
+          >
+            <LocaleSwitch locale={locale} onNavigate={closeMenu} />
+            <a
+              href={`mailto:${site.email}`}
+              onClick={closeMenu}
+              className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-[15px] font-medium text-white transition active:brightness-110"
+            >
+              {copy.writeToMe}
+            </a>
           </div>
         </div>
       </nav>

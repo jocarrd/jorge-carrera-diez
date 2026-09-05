@@ -21,6 +21,7 @@
   --ink-dark: #000000;
   --ink-dark-panel: #1d1d1f;
   --ink-dark-muted: #a1a1a6;
+  --header-h: 56px;
   --radius-card: 20px;
   --radius-card-lg: 28px;
 }
@@ -149,6 +150,19 @@ a {
 .site-header[data-scrolled="true"] {
   background: #ffffff;
   border-bottom-color: var(--line);
+}
+
+/* Con la hoja abierta la barra deja de tener nada detrás que translucir, y
+   translúcida se vería el contenido de la hoja pasando bajo el logotipo. */
+.site-header[data-menu-open="true"] {
+  background: #ffffff;
+}
+
+/* La barra encoge a partir de `sm`, y la hoja arranca justo debajo. */
+@media (min-width: 640px) {
+  :root {
+    --header-h: 48px;
+  }
 }
 
 /* ── Capturas de producto ────────────────────────────────── */
@@ -290,6 +304,101 @@ a {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ── Hoja de navegación (móvil) ──────────────────────────────
+   No es un desplegable ni un panel lateral: la hoja ocupa todo lo que queda
+   bajo la barra, en opaco, y los enlaces entran escalonados. El escalonado va
+   por variable `--i` en cada elemento, así el orden lo pone el marcado y no
+   hay una regla por posición. Cerrada no se desmonta —para que la salida se
+   anime—, así que se saca del foco con `inert` y con `visibility`. */
+.nav-sheet {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  background: var(--background);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    visibility 0s linear 0.3s;
+}
+
+.nav-sheet[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    visibility 0s;
+}
+
+.nav-sheet-inner {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 24px 22px calc(28px + env(safe-area-inset-bottom));
+}
+
+.nav-sheet-item {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/* El retardo sólo se aplica al entrar. Al cerrar, la hoja entera se desvanece
+   de una vez: escalonar también la salida se percibe como lentitud. */
+.nav-sheet[data-open="true"] .nav-sheet-item {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  transition-delay: calc(60ms + var(--i) * 42ms);
+}
+
+.nav-sheet-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--foreground);
+}
+
+.nav-sheet-chevron {
+  width: 8px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--line-strong);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.nav-sheet-link:active .nav-sheet-chevron {
+  transform: translateX(3px);
+}
+
+.nav-sheet-sublink {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-sheet,
+  .nav-sheet[data-open="true"] .nav-sheet-item {
+    transition-duration: 0.01ms;
+    transition-delay: 0s;
+  }
+
+  .nav-sheet-item {
+    transform: none;
   }
 }
 

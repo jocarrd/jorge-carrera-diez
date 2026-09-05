@@ -23,6 +23,7 @@ export const es: Copy = {
   nav: {
     brandRole: "Ingeniero de software",
     contact: "Contacto",
+    writeToMe: "Escríbeme",
     homeAriaLabel: "Inicio",
     mainNavLabel: "Navegación principal",
     mobileNavLabel: "Navegación móvil",
