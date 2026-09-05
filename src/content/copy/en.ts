@@ -6,7 +6,7 @@ export const en: Copy = {
     siteTitle:
       "Software engineer focused on product, architecture, SEO and systems design",
     description:
-      "Computer engineer from the University of La Rioja. I lead architecture and new capabilities on enterprise projects, work with EQx (Elite Quality Index, University of St. Gallen) and build Snowy, my own weather platform on Next.js, NestJS, Redis, MySQL and Docker.",
+      "Computer engineer from the University of La Rioja. I lead architecture and new capabilities on enterprise projects, work with EQx (Elite Quality Index, University of St. Gallen) and develop Snowy, a weather platform in production on Next.js, NestJS, Redis, MySQL and Docker.",
     location: "Logroño, La Rioja, Spain",
     jobTitle: "Software engineer",
     universityLabel: "University of La Rioja",
@@ -16,7 +16,7 @@ export const en: Copy = {
     ogTagline: "Product, architecture, data and generative AI. From first commit to deploy.",
     ogStats: [
       ["now", "VidaCaixa · EQx"],
-      ["own product", "Snowy"],
+      ["in production", "Snowy"],
       ["where", "Remote · Spain"],
     ],
   },
@@ -49,13 +49,13 @@ export const en: Copy = {
   },
   profile: {
     headline:
-      "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I build Snowy, which is mine top to bottom.",
+      "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
     positioning: "Software engineer · Product · Architecture",
     positioningLong:
       "Software engineer. I design systems and then stay to maintain them.",
     tagline: ["I design it.", "I build it.", "I keep it running."],
     taglineSub:
-      "Right now: financial product in Madrid, a Swiss academic index, and a weather platform that is mine.",
+      "Right now: financial product in Madrid, a Swiss academic index, and a weather platform people use every day.",
     availability: "Available for one more project",
     availabilityNote:
       "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week.",
@@ -112,7 +112,7 @@ export const en: Copy = {
   currentRole: {
     homeTitle: "Three fronts, right now.",
     homeText:
-      "Technical judgement and coordination inside an enterprise environment, full technical ownership of an international product, and one of my own in production.",
+      "Technical judgement and coordination inside an enterprise environment, full technical ownership of an international product, and a weather platform live in production.",
     fronts: [
       {
         label: "Tech Lead · VidaCaixa",
@@ -209,7 +209,7 @@ export const en: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy is my product, and I keep it running on my own.",
+    title: "Snowy: I took it to production, and people use it every day.",
     lead: "The project already works as a product: over the last three months it has generated 14.7 million organic impressions and 242,000 clicks, with more than 1,400 registered users to keep building on.",
     detail:
       "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
@@ -226,7 +226,7 @@ export const en: Copy = {
   projectsPreview: {
     eyebrow: "Projects",
     title: "Three projects you can actually open and poke at.",
-    text: "One is entirely mine. One is a client in Switzerland. The third has been publishing for twelve years. All three are live right now.",
+    text: "I develop one of them end to end. One is a client in Switzerland. The third has been publishing for twelve years. All three are live right now.",
   },
   contactCta: {
     title: "If my profile fits, let's talk.",
@@ -239,7 +239,7 @@ export const en: Copy = {
   },
   cvTimeline: {
     label: "Track record",
-    note: "Enterprise consultancy and international product at once: banking and insurance on one side, a Swiss foundation and my own product on the other.",
+    note: "Enterprise consultancy and international product at once: banking and insurance on one side, a Swiss foundation and a platform in production on the other.",
   },
   experience: [
     {
@@ -413,7 +413,7 @@ export const en: Copy = {
       description:
         "Weather platform with real-time data, maps, radar, stations, SEO, its own backend, infrastructure and AI.",
       impact:
-        "I build all of it, from server rendering to the radar and the deployments. When something falls over at three in the morning, it calls me.",
+        "I handle development end to end, from server rendering to the radar and the deployments. And when something falls over at night, I am the one who fixes it.",
       metrics: [
         { value: "16", label: "weather models" },
         { value: "1,800+", label: "live stations" },
@@ -482,7 +482,7 @@ export const en: Copy = {
       description:
         "Projects by Jorge Carrera Diez: Snowy, the EQx Elite Quality Index and LaRiojaMeteo. Product, architecture, data, SEO and infrastructure.",
       eyebrow: "Projects",
-      heading: "My own product, an international client and a portal with an audience.",
+      heading: "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
     },
     experience: {
@@ -574,7 +574,7 @@ export const en: Copy = {
       title: "Snowy",
       description:
         "Snowy, the weather platform built by Jorge Carrera Diez with Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, weather data and AI.",
-      eyebrow: "My own product",
+      eyebrow: "In production",
       heading: "Snowy: a weather platform with maps, real-time data and AI.",
       facts: [
         { label: "Role", value: "Design, development and infrastructure" },
@@ -585,7 +585,7 @@ export const en: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "What runs underneath.",
-        text: "Everything you see in Snowy is mine to maintain: rendering, backend, data, radar and deployments.",
+        text: "I maintain everything you see in Snowy: rendering, backend, data, radar and deployments.",
         groups: [
           { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
           { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
@@ -595,7 +595,7 @@ export const en: Copy = {
       },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
-        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture of my own: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 14.7 million impressions, 242,000 organic clicks and 1,400 registered users.",
+        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture built for it: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 14.7 million impressions, 242,000 organic clicks and 1,400 registered users.",
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {

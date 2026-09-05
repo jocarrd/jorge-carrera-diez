@@ -6,7 +6,7 @@ export const es: Copy = {
     siteTitle:
       "Ingeniero de software especializado en producto, arquitectura, SEO y diseño de sistemas",
     description:
-      "Ingeniero Informático por la Universidad de La Rioja. Lidero arquitectura y nuevas capacidades en proyectos enterprise, colaboro con EQx (Elite Quality Index, Universidad de St. Gallen) y construyo Snowy, una plataforma meteorológica propia con Next.js, NestJS, Redis, MySQL y Docker.",
+      "Ingeniero Informático por la Universidad de La Rioja. Lidero arquitectura y nuevas capacidades en proyectos enterprise, colaboro con EQx (Elite Quality Index, Universidad de St. Gallen) y desarrollo Snowy, una plataforma meteorológica en producción con Next.js, NestJS, Redis, MySQL y Docker.",
     location: "Logroño, La Rioja, España",
     jobTitle: "Ingeniero de software",
     universityLabel: site.university,
@@ -16,7 +16,7 @@ export const es: Copy = {
     ogTagline: "Producto, arquitectura, datos e IA generativa. Del primer commit al despliegue.",
     ogStats: [
       ["ahora", "VidaCaixa · EQx"],
-      ["producto propio", "Snowy"],
+      ["en producción", "Snowy"],
       ["dónde", "Remoto · España"],
     ],
   },
@@ -49,7 +49,7 @@ export const es: Copy = {
   },
   profile: {
     headline:
-      "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y construyo Snowy, que es mío de arriba abajo.",
+      "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
     positioning: "Ingeniero de software · Producto · Arquitectura",
     positioningLong:
       "Ingeniero de software. Diseño sistemas y luego me quedo a mantenerlos.",
@@ -58,7 +58,7 @@ export const es: Copy = {
     // construye. En tres golpes se lee antes de que nadie decida irse.
     tagline: ["Lo diseño.", "Lo construyo.", "Lo mantengo."],
     taglineSub:
-      "Ahora mismo: producto financiero en Madrid, un índice académico suizo y una plataforma meteorológica que es mía.",
+      "Ahora mismo: producto financiero en Madrid, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Disponible para un proyecto más",
@@ -126,9 +126,9 @@ export const es: Copy = {
         text: "El Elite Quality Index mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
       },
       {
-        label: "Producto propio · Snowy",
+        label: "En producción · Snowy",
         title: "Donde descubro si tenía razón",
-        text: "Lo construyo entero, del render en servidor al radar y los despliegues. Producto, datos, infraestructura, SEO e IA sobre un sistema real.",
+        text: "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Está en producción y no para de crecer.",
       },
     ],
     eyebrow: "Rol actual",
@@ -208,7 +208,7 @@ export const es: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy es mi producto, y lo sostengo yo solo.",
+    title: "Snowy: lo llevé a producción y hoy lo usa gente todos los días.",
     lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 14,7 millones de impresiones orgánicas y 242.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
     detail:
       "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
@@ -225,7 +225,7 @@ export const es: Copy = {
   projectsPreview: {
     eyebrow: "Proyectos",
     title: "Tres proyectos que sí puedes abrir y mirar.",
-    text: "Uno es mío entero. Otro es un cliente en Suiza. El tercero lleva doce años publicando. Los tres están en marcha ahora mismo.",
+    text: "Uno lo desarrollo yo de punta a punta. Otro es un cliente en Suiza. El tercero lleva doce años publicando. Los tres están en marcha ahora mismo.",
   },
   contactCta: {
     title: "Si mi perfil encaja, hablamos.",
@@ -238,7 +238,7 @@ export const es: Copy = {
   },
   cvTimeline: {
     label: "Trayectoria",
-    note: "Consultoría enterprise y producto internacional a la vez: banca y seguros por un lado, una fundación suiza y producto propio por otro.",
+    note: "Consultoría enterprise y producto internacional a la vez: banca y seguros por un lado, una fundación suiza y una plataforma en producción por otro.",
   },
   experience: [
     {
@@ -412,7 +412,7 @@ export const es: Copy = {
       description:
         "Plataforma meteorológica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
       impact:
-        "Lo construyo entero, del render en servidor al radar y los despliegues. Cuando algo se cae a las tres de la mañana, me llama a mí.",
+        "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Y cuando algo se cae de madrugada, lo arreglo yo.",
       metrics: [
         { value: "16", label: "modelos meteorológicos" },
         { value: "1.800+", label: "estaciones en vivo" },
@@ -481,7 +481,7 @@ export const es: Copy = {
       description:
         "Proyectos de Jorge Carrera Diez: Snowy, el Elite Quality Index de EQx y LaRiojaMeteo. Producto, arquitectura, datos, SEO e infraestructura.",
       eyebrow: "Proyectos",
-      heading: "Un producto propio, un cliente internacional y un portal con audiencia.",
+      heading: "Una plataforma en producción, un cliente internacional y un portal con audiencia.",
       text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx es cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
     },
     experience: {
@@ -575,7 +575,7 @@ export const es: Copy = {
       title: "Snowy",
       description:
         "Snowy, plataforma meteorológica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorológicos e IA.",
-      eyebrow: "Producto propio",
+      eyebrow: "En producción",
       heading: "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
       facts: [
         { label: "Rol", value: "Diseño, desarrollo e infraestructura" },
@@ -586,7 +586,7 @@ export const es: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "Qué hay debajo.",
-        text: "Todo lo que se ve en Snowy lo mantengo yo: el render, el backend, los datos, el radar y los despliegues.",
+        text: "Mantengo todo lo que se ve en Snowy: el render, el backend, los datos, el radar y los despliegues.",
         groups: [
           { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
           { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
@@ -674,7 +674,7 @@ export const es: Copy = {
       },
       traction: {
         title: "Tracción real, no solo arquitectura.",
-        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8. Sobre una plataforma propia, sin equipo de marketing detrás.",
+        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8. Sin equipo de marketing detrás.",
       },
       build: {
         eyebrow: "Construcción",
