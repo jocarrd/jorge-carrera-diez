@@ -3,8 +3,11 @@ import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 // El bloque de IA existía sólo en la página de experiencia. Es lo que separa
-// este perfil del de otro tech lead, así que sube a la portada: el flujo
-// completo primero, y debajo el criterio con el que se decide cada pieza.
+// este perfil del de otro tech lead, así que sigue en la portada.
+//
+// Se queda el flujo, que es lo concreto —qué entra, qué decide, qué sale—, y
+// se van las tres tarjetas de criterio: eran las más genéricas de la sección y
+// lo mismo se cuenta mejor en /experiencia, donde ya viven.
 export function AiPreview({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).ai;
 
@@ -14,7 +17,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
         <SectionHeader eyebrow="IA generativa" title={copy.title} text={copy.lead} />
       </Reveal>
 
-      <Reveal delay={80} className="mt-14 rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-6 sm:p-10">
+      <Reveal delay={80} className="mt-12 rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-6 sm:p-10">
         <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {copy.flow.map((step) => (
             <li key={step.title} className="rounded-[var(--radius-card)] bg-white p-6">
@@ -30,22 +33,6 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </li>
           ))}
         </ol>
-      </Reveal>
-
-      <Reveal delay={140} className="mt-5 grid gap-5 md:grid-cols-3">
-        {copy.principles.map((principle) => (
-          <article
-            key={principle.title}
-            className="rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-8"
-          >
-            <h3 className="text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.02em]">
-              {principle.title}
-            </h3>
-            <p className="mt-3 text-[17px] leading-[1.55] text-[var(--muted)]">
-              {principle.text}
-            </p>
-          </article>
-        ))}
       </Reveal>
     </Section>
   );
