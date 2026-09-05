@@ -1,4 +1,5 @@
 import { Section, SectionHeader, Reveal } from "@/components/ui";
+import { AgentHub } from "@/components/visual/AgentHub";
 import { TileGraphic } from "@/components/visual/TileGraphic";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -28,10 +29,13 @@ export function AiPreview({ locale }: { locale: Locale }) {
           pantallas y el bento dejaba de leerse como conjunto. */}
       <Reveal delay={80} className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <article className="ai-focal col-span-2 flex flex-col justify-between rounded-[var(--radius-card-lg)] p-7 sm:row-span-2 sm:p-9">
-          <p className="font-mono text-xs uppercase tracking-[0.08em] text-[var(--accent-dark)]">
-            {focal.metric}
-          </p>
-          <div className="mt-16 sm:mt-0">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.08em] text-[var(--accent-dark)]">
+              {focal.metric}
+            </p>
+            <AgentHub />
+          </div>
+          <div className="mt-10 sm:mt-0">
             <p className="text-[1.75rem] font-semibold tracking-[-0.025em] text-white sm:text-[2.25rem]">
               {focal.title}
             </p>

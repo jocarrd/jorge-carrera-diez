@@ -180,7 +180,13 @@ export const es: Copy = {
     ],
     flow: [
       { title: "Interfaz", caption: "UX, streaming y feedback", metric: "input" },
-      { title: "Agente", caption: "plan, memoria corta y tool choice", metric: "reason" },
+      {
+        title: "Agente",
+        // "tool choice" es el termino del oficio, pero en una frase en espanol
+        // se lee como descuido. La idea es la misma dicha en espanol.
+        caption: "plan, memoria corta y elección de herramienta",
+        metric: "reason",
+      },
       { title: "Herramientas", caption: "MCP, APIs y contratos", metric: "tools" },
       { title: "Datos", caption: "RAG, fuentes y permisos", metric: "context" },
       { title: "Control", caption: "logs, límites y evaluación", metric: "guard" },
@@ -223,18 +229,18 @@ export const es: Copy = {
         alt: "Mapa de Snowy con el radar de precipitación sobre España y las estaciones activas",
       },
       {
-        image: "/images/snowy-ai-assistant.webp",
-        imageMobile: "/images/snowy-asistente-movil.webp",
-        title: "Asistente meteorológico",
-        caption: "Responde con datos de estaciones reales, no con texto genérico.",
-        alt: "Asistente de Snowy respondiendo una consulta con datos de estaciones",
+        image: "/images/snowy-home.webp",
+        imageMobile: "/images/snowy-tiempo-movil.webp",
+        title: "El tiempo, con confianza",
+        caption: "Tres modelos cruzados, indicador de confianza y 1.171 estaciones en directo.",
+        alt: "Portada de El Tiempo en Snowy, con los modelos cruzados y el indicador de confianza",
       },
       {
-        image: "/images/snowy-climate.webp",
-        imageMobile: "/images/snowy-clima-movil.webp",
-        title: "Cambio climático",
-        caption: "Serie histórica por municipio frente a la media del siglo pasado.",
-        alt: "Panel de clima de Snowy con el mapa de anomalía de temperatura en España",
+        image: "/images/snowy-stations-map.webp",
+        imageMobile: "/images/snowy-perfil-movil.webp",
+        title: "Perfil de usuario",
+        caption: "Estaciones, reportes, racha y consultas: la parte de comunidad del producto.",
+        alt: "Perfil de un usuario de Snowy con sus estadísticas de actividad y su estación destacada",
       },
     ],
     imageAlt: "Home de Snowy con buscador meteorológico, asistente IA y planificador",
