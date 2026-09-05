@@ -13,11 +13,11 @@ export const es: Copy = {
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
     ogEyebrow: "Ingeniero de software",
-    ogTagline: "Tech Lead en VidaCaixa. Freelance para EQx (Suiza). Creador de Snowy.",
+    ogTagline: "Producto, arquitectura, datos e IA generativa. Del primer commit al despliegue.",
     ogStats: [
-      ["actual", "VidaCaixa · EQx Suiza"],
-      ["producto", "Snowy · backend · SEO"],
-      ["foco", "arquitectura · datos · agentes"],
+      ["ahora", "VidaCaixa · EQx"],
+      ["producto propio", "Snowy"],
+      ["dónde", "Remoto · España"],
     ],
   },
   nav: {
@@ -49,16 +49,16 @@ export const es: Copy = {
   },
   profile: {
     headline:
-      "Ingeniero de software con foco en producto, arquitectura y diseño de sistemas. Actualmente Tech Lead en proyectos de VidaCaixa, colaborador técnico de EQx en Suiza y creador de Snowy.",
+      "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y construyo Snowy, que es mío de arriba abajo.",
     positioning: "Ingeniero de software · Producto · Arquitectura",
     positioningLong:
-      "Ingeniero de software con foco en producto, arquitectura y diseño de sistemas.",
+      "Ingeniero de software. Diseño sistemas y luego me quedo a mantenerlos.",
     // Tres verbos y punto. Lo que separa este perfil del de alguien que sólo
     // ejecuta tareas no es la lista de tecnologías: es quedarse con lo que
     // construye. En tres golpes se lee antes de que nadie decida irse.
     tagline: ["Lo diseño.", "Lo construyo.", "Lo mantengo."],
     taglineSub:
-      "Ingeniero de software. Producto, arquitectura, datos e IA generativa, del primer commit al despliegue.",
+      "Ahora mismo: producto financiero en Madrid, un índice académico suizo y una plataforma meteorológica que es mía.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Disponible para un proyecto más",
@@ -67,15 +67,15 @@ export const es: Copy = {
     capabilities: [
       {
         title: "Arquitectura de producto",
-        text: "Decisiones técnicas, estándares y revisiones en sistemas con usuarios de verdad.",
+        text: "Decido cómo se estructura, qué se descarta y por qué. Y lo defiendo en la revisión.",
       },
       {
         title: "IA generativa y agentes",
-        text: "RAG, herramientas, MCP y evaluación dentro del producto, no en una demo aparte.",
+        text: "Agentes que hacen algo útil dentro del producto. La demo bonita la sabe hacer cualquiera.",
       },
       {
         title: "Datos e infraestructura",
-        text: "Backend, caché, despliegue continuo y servidor propio, con el coste bajo control.",
+        text: "Mi servidor, mis despliegues y una factura que reviso yo cada mes.",
       },
     ],
     focus: [
@@ -127,7 +127,7 @@ export const es: Copy = {
       },
       {
         label: "Producto propio · Snowy",
-        title: "Donde pruebo en real lo que defiendo",
+        title: "Donde descubro si tenía razón",
         text: "Lo construyo entero, del render en servidor al radar y los despliegues. Producto, datos, infraestructura, SEO e IA sobre un sistema real.",
       },
     ],
@@ -169,7 +169,7 @@ export const es: Copy = {
     ],
   },
   ai: {
-    title: "IA generativa aplicada a flujos reales.",
+    title: "IA que hace trabajo, no que lo aparenta.",
     lead: "Trabajo la parte de agentes, RAG, tools, MCP y LLMs desde una idea sencilla: que la IA resuelva tareas concretas dentro del producto y se pueda mantener como cualquier otra pieza del sistema.",
     detail:
       "Me interesa especialmente la parte de diseño del flujo: qué contexto necesita el modelo, qué herramientas puede usar, cómo se controlan las respuestas y qué experiencia recibe el usuario.",
@@ -208,7 +208,7 @@ export const es: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy: meteorología, datos, mapas e IA en un producto propio.",
+    title: "Snowy es mi producto, y lo sostengo yo solo.",
     lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 14,7 millones de impresiones orgánicas y 242.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
     detail:
       "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
@@ -219,17 +219,17 @@ export const es: Copy = {
   experiencePreview: {
     eyebrow: "Experiencia",
     title: "Liderazgo técnico en proyectos enterprise.",
-    text: "Mi rol actual da contexto y autoridad: arquitectura, estándares, revisiones, coordinación, agentes y mentoring en sistemas con impacto real.",
+    text: "Ocho años decidiendo cómo se construye, revisando lo que escriben otros y respondiendo cuando algo se rompe.",
     cta: "Ver trayectoria completa",
   },
   projectsPreview: {
     eyebrow: "Proyectos",
-    title: "Proyectos con producto, tráfico y decisiones técnicas reales.",
-    text: "Snowy concentra la parte más profunda: arquitectura, datos, SEO, IA e infraestructura. LaRiojaMeteo aporta audiencia, contenido y contexto meteorológico regional.",
+    title: "Tres proyectos que sí puedes abrir y mirar.",
+    text: "Uno es mío entero. Otro es un cliente en Suiza. El tercero lleva doce años publicando. Los tres están en marcha ahora mismo.",
   },
   contactCta: {
     title: "Si mi perfil encaja, hablamos.",
-    text: "Me interesa construir en equipos donde haya producto, criterio técnico y problemas reales que resolver. La mejor forma de verlo es una conversación tranquila.",
+    text: "Si tienes algo entre manos y no sabes si encaja, escríbeme y te lo digo sin rodeos. Si no soy la persona, también te lo diré.",
     cta: "Escribirme",
   },
   footer: {
@@ -412,7 +412,7 @@ export const es: Copy = {
       description:
         "Plataforma meteorológica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
       impact:
-        "Lo construyo entero, del render en servidor al radar y los despliegues. Es donde pruebo en real las decisiones de arquitectura que luego defiendo en cliente.",
+        "Lo construyo entero, del render en servidor al radar y los despliegues. Cuando algo se cae a las tres de la mañana, me llama a mí.",
       metrics: [
         { value: "16", label: "modelos meteorológicos" },
         { value: "1.800+", label: "estaciones en vivo" },

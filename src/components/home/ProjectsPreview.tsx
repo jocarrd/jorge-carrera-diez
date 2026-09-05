@@ -1,6 +1,7 @@
-import { Container, ProductShot, Reveal } from "@/components/ui";
+import { ButtonLink, Container, ProductShot, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
 // LaRiojaMeteo baja al final y ocupa una sola banda: es contexto y audiencia,
 // no el argumento principal, y compitiendo con Snowy los debilitaba a los dos.
@@ -55,6 +56,13 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
             </dl>
           </div>
         </Reveal>
+        {/* El ancla "Proyectos" del menu cae aqui, y aqui solo hay uno de los
+            tres: sin esta salida, quien la sigue cree que esto es todo. */}
+        <div className="mt-8 flex justify-center">
+          <ButtonLink href={routePath(locale, "projects")} variant="secondary">
+            {copy.pages.projects.eyebrow}
+          </ButtonLink>
+        </div>
       </Container>
     </section>
   );
