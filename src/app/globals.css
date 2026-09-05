@@ -106,15 +106,21 @@ a {
   color: #f5f5f7;
 }
 
-/* ── Enlaces dentro de prosa ─────────────────────────────── */
+/* ── Enlaces dentro de prosa ─────────────────────────────────
+   El subrayado va siempre, no al pasar por encima: sobre el gris del párrafo
+   el acento solo llega a 1,07:1 y el enlace quedaría distinguible únicamente
+   por color. Este selector pesa más que la utilidad `underline`, así que
+   ponerlo en `none` aquí la anulaba en toda la prosa del sitio. */
 .prose-links a {
   color: var(--accent-text);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .prose-links a:hover,
 .prose-links a:focus-visible {
-  text-decoration: underline;
+  text-decoration-color: var(--foreground);
 }
 
 /* ── Cabecera ────────────────────────────────────────────────
