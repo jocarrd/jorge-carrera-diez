@@ -26,7 +26,13 @@ export function HomeView({ locale }: { locale: Locale }) {
     <main>
       <JsonLd data={personJsonLd(locale)} />
       <JsonLd data={websiteJsonLd(locale)} />
+      {/* El orden cuenta una historia y antes no la contaba: se entraba en tres
+          secciones seguidas de Snowy antes de saber que hay tres proyectos, y
+          "qué ha construido" no se respondía hasta la novena pantalla.
+          Ahora: qué ha construido -> qué hace ahora -> el caso insignia con su
+          prueba -> cómo trabaja -> quién es -> hablamos. */}
       <HeroSection locale={locale} />
+      <ProjectsPreview locale={locale} />
       <CurrentRoleSection locale={locale} />
       <SnowyShowcase locale={locale} />
       <RadarScrub locale={locale} />
@@ -34,7 +40,6 @@ export function HomeView({ locale }: { locale: Locale }) {
       <StickyShowcase locale={locale} />
       <AiPreview locale={locale} />
       <ExperiencePreview locale={locale} />
-      <ProjectsPreview locale={locale} />
       <AboutSection locale={locale} />
       <ContactCta locale={locale} />
     </main>

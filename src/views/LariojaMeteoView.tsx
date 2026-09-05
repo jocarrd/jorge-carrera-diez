@@ -1,7 +1,15 @@
 import Image from "next/image";
 import { CaseCta, CaseHero, CaseStack } from "@/components/case";
-import { ButtonLink, MetricCard, Reveal, Section, SectionHeader, Surface } from "@/components/ui";
-import { getCopy, site } from "@/content";
+import {
+  BrowserFrame,
+  ButtonLink,
+  MetricCard,
+  Reveal,
+  Section,
+  SectionHeader,
+  Surface,
+} from "@/components/ui";
+import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 export function LariojaMeteoView({ locale }: { locale: Locale }) {
@@ -20,7 +28,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="shot-frame overflow-hidden rounded-2xl border border-[var(--line)] bg-black shadow-2xl">
+            <BrowserFrame label={domainOf(site.lariojameteo)}>
               <Image
                 src="/images/lariojameteo-home.webp"
                 alt={copy.imageAlt}
@@ -29,7 +37,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
                 className="h-auto w-full"
                 priority
               />
-            </div>
+            </BrowserFrame>
           </Reveal>
         </div>
       </section>

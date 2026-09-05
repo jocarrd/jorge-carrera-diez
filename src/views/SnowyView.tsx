@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { CaseCta, CaseDetails, CaseHero, CaseStack } from "@/components/case";
-import { ButtonLink, MetricCard, Section, SectionHeader, Surface, TechTag } from "@/components/ui";
+import {
+  BrowserFrame,
+  ButtonLink,
+  MetricCard,
+  Section,
+  SectionHeader,
+  Surface,
+  TechTag,
+} from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -38,7 +46,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="shot-frame overflow-hidden rounded-2xl border border-[var(--line)] bg-black shadow-2xl">
+          <BrowserFrame label={site.snowyDomain}>
             <Image
               src="/images/snowy-home.webp"
               alt={copy.imageAlts.home}
@@ -47,7 +55,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
               className="h-auto w-full"
               priority
             />
-          </div>
+          </BrowserFrame>
           {/* Las dos capturas venían de tamaños distintos y con `h-auto` cada
               una tomaba su proporción: la pareja no casaba y una dejaba banda
               negra. Misma caja y recorte desde arriba. */}
@@ -58,16 +66,20 @@ export function SnowyView({ locale }: { locale: Locale }) {
             ].map((shot) => (
               <div
                 key={shot.src}
-                className="shot-frame aspect-[16/10] overflow-hidden rounded-2xl border border-[var(--line)] bg-black"
+                className=""
               >
-                <Image
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={1600}
-                  height={1000}
-                  className="h-full w-full object-cover object-top"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
+                <BrowserFrame label={site.snowyDomain}>
+                  <div className="aspect-[16/10]">
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={1600}
+                      height={1000}
+                      className="h-full w-full object-cover object-top"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                    />
+                  </div>
+                </BrowserFrame>
               </div>
             ))}
           </div>

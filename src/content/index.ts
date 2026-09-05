@@ -9,4 +9,4 @@ export function getCopy(locale: Locale): Copy {
   return copies[locale];
 }
 
-export { organizations, site } from "@/content/site";
+export { domainOf, organizations, site } from "@/content/site";

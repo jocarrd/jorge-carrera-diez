@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Container } from "@/components/ui";
-import { getCopy } from "@/content";
+import { Container, LaptopFrame } from "@/components/ui";
+import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 const TOTAL = 14;
@@ -103,7 +103,7 @@ export function RadarScrub({ locale }: { locale: Locale }) {
   }, [listo]);
 
   return (
-    <section ref={contenedor} className="relative h-[170vh] bg-[var(--panel)]">
+    <section ref={contenedor} className="relative h-[130vh] bg-[var(--panel)]">
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
         <Container>
           <div className="mx-auto max-w-[46rem] text-center">
@@ -114,13 +114,14 @@ export function RadarScrub({ locale }: { locale: Locale }) {
               {copy.title}
             </h2>
           </div>
-          <div className="mt-7 overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.10)]">
-            <canvas
-              ref={lienzo}
-              className="block h-auto w-full"
-              role="img"
-              aria-label={copy.imageAlt}
-            />
+          {/* Los fotogramas traen la interfaz de Snowy dentro: el play, las
+              capas, el selector de temperatura. En una caja pelada eso se lee
+              como botonera muerta de esta web; dentro del portátil se lee como
+              lo que es, una aplicación de escritorio en uso. */}
+          <div className="mx-auto mt-7 max-w-[52rem]">
+            <LaptopFrame label={site.snowyDomain}>
+              <canvas ref={lienzo} role="img" aria-label={copy.imageAlt} />
+            </LaptopFrame>
           </div>
           <p className="mt-5 text-center text-sm text-[var(--muted)]">{copy.caption}</p>
         </Container>

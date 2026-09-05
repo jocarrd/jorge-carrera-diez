@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ButtonLink, Reveal, TechTag } from "@/components/ui";
-import { getCopy } from "@/content";
+import { BrowserFrame, ButtonLink, Reveal, TechTag } from "@/components/ui";
+import { domainOf, getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import type { RouteKey } from "@/i18n/routes";
 import { routePath } from "@/i18n/routes";
@@ -68,15 +68,15 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
               </div>
             </div>
 
-            <div className="shot-frame group/shot relative overflow-hidden rounded-xl border border-[var(--line)] bg-black">
+            <BrowserFrame label={lead.url ? domainOf(lead.url) : undefined} className="self-start">
               <Image
                 src={lead.image ?? ""}
                 alt={labels.leadImageAlt}
                 width={1365}
                 height={1049}
-                className="h-64 w-full object-cover object-top transition-transform duration-500 group-hover/shot:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover/shot:scale-100 sm:h-full sm:min-h-72"
+                className="h-64 w-full object-cover object-top sm:h-72"
               />
-            </div>
+            </BrowserFrame>
           </div>
         </article>
       </Reveal>
@@ -85,16 +85,18 @@ export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
         {rest.map((project, index) => (
           <Reveal key={project.slug} delay={index * 80}>
             <article className="flex h-full flex-col overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-[var(--line-strong)]">
-              <div className="shot-frame relative h-48 border-b border-[var(--line)] bg-[var(--panel)] sm:h-56">
-                <Image
-                  src={project.image ?? ""}
-                  alt={project.name}
-                  width={1600}
-                  height={1000}
-                  className="h-full w-full object-cover object-top"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              </div>
+              <BrowserFrame label={project.url ? domainOf(project.url) : undefined}>
+                <div className="h-48 sm:h-56">
+                  <Image
+                    src={project.image ?? ""}
+                    alt={project.name}
+                    width={1600}
+                    height={1000}
+                    className="h-full w-full object-cover object-top"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                </div>
+              </BrowserFrame>
               <div className="flex flex-1 flex-col p-5 lg:p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
                   {project.label}

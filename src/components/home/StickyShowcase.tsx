@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Container } from "@/components/ui";
-import { getCopy } from "@/content";
+import { BrowserFrame, Container } from "@/components/ui";
+import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 /* La captura se queda quieta mientras el texto pasa por al lado. El fijado es
@@ -59,7 +59,8 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
 
         <div className="mt-10 grid gap-10 sm:mt-14 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <div className="shot-frame relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-white">
+            <BrowserFrame label={site.snowyDomain}>
+              <div className="relative aspect-[4/3]">
               {copy.steps.map((step, index) => (
                 <Image
                   key={step.image}
@@ -73,7 +74,8 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               ))}
-            </div>
+              </div>
+            </BrowserFrame>
 
             {/* Tres rayas que dicen por dónde va: sin ellas el cambio de imagen
                 parece un fallo de carga en vez de una respuesta al scroll. */}

@@ -15,6 +15,7 @@ export const site = {
   snowy: "https://snowy.es",
   /** Sin protocolo: es lo que se enseña en la barra del marco de ventana. */
   snowyDomain: "snowy.es",
+  eqx: "https://elitequality.org/",
   lariojameteo: "https://lariojameteo.es",
   eqxIndex: "https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/",
   openData: "https://datos.gob.es/es/aplicaciones/snowy",
@@ -25,3 +26,9 @@ export const organizations = {
   capgemini: { name: "Capgemini", url: "https://www.capgemini.com/es-es/" },
   eqx: { name: "Foundation for Value Creation", url: "https://elitequality.org/" },
 } as const;
+
+/** El dominio que va en la barra del marco de ventana, sin protocolo ni barra
+ *  final: se saca de la URL para no mantener la misma cadena en dos sitios. */
+export function domainOf(url: string): string {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}

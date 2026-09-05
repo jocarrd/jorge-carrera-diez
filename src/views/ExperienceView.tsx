@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CompanyMark } from "@/components/experience/CompanyMark";
 import { GenerativeAiSection } from "@/components/experience/GenerativeAiSection";
-import { Section, SectionHeader } from "@/components/ui";
+import { BrowserFrame, Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -47,7 +47,8 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                       ) : null}
                       <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7">{item.summary}</p>
                       {item.image ? (
-                        <div className="shot-frame mt-5 overflow-hidden rounded-xl border border-[var(--line)] bg-black">
+                        <div className="mt-5">
+                          <BrowserFrame>
                           <Image
                             src={item.image}
                             alt={item.imageAlt ?? ""}
@@ -56,6 +57,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                             className="h-auto w-full"
                             sizes="(min-width: 1024px) 640px, 100vw"
                           />
+                        </BrowserFrame>
                         </div>
                       ) : null}
                       <ul className="mt-5 grid gap-2 text-sm leading-6 text-[var(--muted)]">

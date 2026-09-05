@@ -1,7 +1,15 @@
 import Image from "next/image";
 import { CaseCta, CaseHero, CaseStack } from "@/components/case";
-import { ButtonLink, MetricCard, Reveal, Section, SectionHeader, Surface } from "@/components/ui";
-import { getCopy, organizations, site } from "@/content";
+import {
+  BrowserFrame,
+  ButtonLink,
+  MetricCard,
+  Reveal,
+  Section,
+  SectionHeader,
+  Surface,
+} from "@/components/ui";
+import { domainOf, getCopy, organizations, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 export function EqxView({ locale }: { locale: Locale }) {
@@ -28,7 +36,7 @@ export function EqxView({ locale }: { locale: Locale }) {
       <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="shot-frame overflow-hidden rounded-2xl border border-[var(--line)] bg-black shadow-2xl">
+            <BrowserFrame label={domainOf(site.eqx)}>
               <Image
                 src="/images/eqx-home.webp"
                 alt={copy.imageAlts.home}
@@ -37,20 +45,22 @@ export function EqxView({ locale }: { locale: Locale }) {
                 className="h-auto w-full"
                 priority
               />
-            </div>
+            </BrowserFrame>
           </Reveal>
           {/* La tabla es una tira ancha y baja: recortarla a 16/10 la dejaba
               con bandas. Va a su proporción, sobre blanco, que es su fondo. */}
           <Reveal delay={80}>
-            <div className="shot-frame mt-5 overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
-              <Image
-                src="/images/eqx-rankings.webp"
-                alt={copy.imageAlts.rankings}
-                width={2268}
-                height={1060}
-                className="h-auto w-full"
-                sizes="100vw"
-              />
+            <div className="mt-5">
+              <BrowserFrame label={domainOf(site.eqx)}>
+                <Image
+                  src="/images/eqx-rankings.webp"
+                  alt={copy.imageAlts.rankings}
+                  width={2268}
+                  height={1060}
+                  className="h-auto w-full"
+                  sizes="100vw"
+                />
+              </BrowserFrame>
             </div>
           </Reveal>
         </div>

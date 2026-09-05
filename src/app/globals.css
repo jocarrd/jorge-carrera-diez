@@ -352,6 +352,137 @@ a {
   background: #000;
 }
 
+/* ── Marco de portatil ────────────────────────────────────
+   Medidas reales del MacBook Pro de 14 pulgadas. Ojo: ni una comilla doble en
+   este comentario, que abre una cadena que no se cierra hasta el content de
+   mas abajo y se lleva por delante todo el bloque. Ya paso con el movil.
+     tapa      312,6 x 221,2 mm       -> proporcion 1,4132
+     pantalla  302,4 x 196,4 mm       (3024x1964 px, 14,2 pulgadas diagonal)
+     marco     5,1 mm a los lados     -> 1,631 % del ancho de la tapa
+     ceja      8,4 mm arriba          -> 2,687 %
+     menton    16,4 mm abajo          -> 5,246 %   (8,4 + 196,4 + 16,4 = 221,2)
+   Todo en cqw, igual que el movil: un border-radius en porcentaje se resuelve
+   por eje y deja las esquinas elipticas.
+
+   La base va un 3 % mas ancha que la tapa. Eso no es ortografico —de frente
+   miden lo mismo— pero es como se ve en cualquier foto de producto, donde la
+   base se enseña con algo de perspectiva. Sin ese saliente el portatil parece
+   una tapa flotando. */
+.laptop {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.laptop-lid {
+  position: relative;
+  aspect-ratio: 312.6 / 221.2;
+  padding: 2.687cqw 1.631cqw 5.246cqw;
+  border-radius: 3.5cqw 3.5cqw 0.5cqw 0.5cqw;
+  background: linear-gradient(158deg, #55555a 0%, #2a2a2e 22%, #1b1b1f 60%, #3d3d42 100%);
+  box-shadow: 0 26px 60px -24px rgba(0, 0, 0, 0.45);
+}
+
+.laptop-lid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.laptop-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.9cqw;
+  background: #000;
+}
+
+/* 5,6 % del ancho de la tapa: es lo que hace que el hueco de debajo quede en
+   1,6904, la proporcion de una captura de viewport. Ver LaptopFrame.tsx. */
+.laptop-bar {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 5.6cqw;
+  padding: 0 1.6cqw;
+  background: #ebebef;
+  border-bottom: 1px solid #d6d6db;
+}
+
+.laptop-dots {
+  display: flex;
+  gap: 0.85cqw;
+}
+
+.laptop-dots span {
+  width: 1.35cqw;
+  height: 1.35cqw;
+  border-radius: 999px;
+}
+
+.laptop-dots span:nth-child(1) {
+  background: #ff5f57;
+}
+
+.laptop-dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.laptop-dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.laptop-url {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.7cqw;
+  color: #5b5b60;
+}
+
+.laptop-viewport {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.laptop-viewport > * {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.laptop-base {
+  position: relative;
+  width: 103%;
+  margin-left: -1.5%;
+  height: 1.9cqw;
+  border-radius: 0.35cqw 0.35cqw 1.1cqw 1.1cqw;
+  background: linear-gradient(180deg, #c9c9ce 0%, #9a9aa0 42%, #6f6f75 100%);
+  box-shadow: 0 10px 22px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* El hueco para abrir la tapa. Es el detalle que hace que se lea como portatil
+   y no como un monitor sobre una barra. */
+.laptop-groove {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13%;
+  height: 45%;
+  border-radius: 0 0 0.6cqw 0.6cqw;
+  background: rgba(0, 0, 0, 0.28);
+}
+
 /* ── Marco de dispositivo ─────────────────────────────────
    Medidas reales del iPhone 15 Pro, no aproximadas de memoria:
      cuerpo    70,60 x 146,60 mm  -> proporcion 2,0765

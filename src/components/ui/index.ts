@@ -5,6 +5,7 @@ export { Container } from "./Container";
 export { CountUp } from "./CountUp";
 export { CopyEmail } from "./CopyEmail";
 export { DeviceFrame } from "./DeviceFrame";
+export { LaptopFrame } from "./LaptopFrame";
 export { MetricCard } from "./MetricCard";
 export { ProductShot } from "./ProductShot";
 export { Rail } from "./Rail";
