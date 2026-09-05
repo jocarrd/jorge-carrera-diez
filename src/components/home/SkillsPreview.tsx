@@ -1,4 +1,4 @@
-import { Section, SectionHeader } from "@/components/ui";
+import { Section, SectionHeader, Reveal } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -7,12 +7,14 @@ export function SkillsPreview({ locale }: { locale: Locale }) {
 
   return (
     <Section id="stack">
-      <SectionHeader title={copy.pages.cv.stackTitle} text={copy.pages.cv.stackText} />
+      <Reveal>
+        <SectionHeader title={copy.pages.cv.stackTitle} text={copy.pages.cv.stackText} />
+      </Reveal>
       {/* Cinco tarjetas apiladas con seis líneas cada una eran cinco pantallas
           de scroll para una lista de herramientas. En móvil el grupo cabe en
           una línea corrida; en escritorio, donde hay cinco columnas a la vez,
           la lista vertical se lee mejor. */}
-      <div className="mt-10 grid gap-3.5 sm:mt-12 lg:grid-cols-5">
+      <Reveal delay={80} className="mt-10 grid gap-3.5 sm:mt-12 lg:grid-cols-5">
         {copy.skills.map((group) => (
           <div
             key={group.title}
@@ -29,7 +31,7 @@ export function SkillsPreview({ locale }: { locale: Locale }) {
             </ul>
           </div>
         ))}
-      </div>
+      </Reveal>
     </Section>
   );
 }

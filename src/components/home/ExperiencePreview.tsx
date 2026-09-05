@@ -1,4 +1,4 @@
-import { ButtonLink, Section, SectionHeader } from "@/components/ui";
+import { ButtonLink, Section, SectionHeader, Reveal } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -11,7 +11,9 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
 
   return (
     <Section id="experiencia" className="section-band">
-      <SectionHeader title={copy.cvTimeline.label} text={copy.cvTimeline.note} />
+      <Reveal>
+        <SectionHeader title={copy.cvTimeline.label} text={copy.cvTimeline.note} />
+      </Reveal>
 
       <ol className="mt-12 overflow-hidden rounded-[var(--radius-card-lg)] bg-white">
         {copy.experience.map((role, index) => (

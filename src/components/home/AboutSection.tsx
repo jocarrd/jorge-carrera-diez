@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProfileSummary } from "@/components/ProfileSummary";
-import { Section } from "@/components/ui";
+import { Section, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -12,7 +12,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
 
   return (
     <Section id="sobre-mi">
-      <div className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="mx-auto max-w-[280px] overflow-hidden rounded-[22px] ring-1 ring-black/[0.06] shadow-[0_40px_80px_-24px_rgba(0,0,0,0.28)] sm:max-w-none sm:rounded-[28px]">
           <Image
             src={site.photo}
@@ -33,7 +33,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
             className="prose-links mt-5 text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:mt-6 sm:text-xl"
           />
         </div>
-      </div>
+      </Reveal>
     </Section>
   );
 }

@@ -1,4 +1,4 @@
-import { Container, ProductShot } from "@/components/ui";
+import { Container, ProductShot, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -13,7 +13,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
   return (
     <section id="proyectos" className="section-band py-16 sm:py-24">
       <Container>
-        <div className="grid gap-8 rounded-[var(--radius-card-lg)] bg-white p-7 sm:gap-10 sm:p-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <Reveal className="grid gap-8 rounded-[var(--radius-card-lg)] bg-white p-7 sm:gap-10 sm:p-12 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
             <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
               {project.name}
@@ -54,7 +54,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
             ))}
             </dl>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

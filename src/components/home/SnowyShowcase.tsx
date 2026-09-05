@@ -1,4 +1,4 @@
-import { Container, ProductShot } from "@/components/ui";
+import { Container, ProductShot, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -50,7 +50,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         {/* Tres superficies del producto en una fila: el radar, el asistente y
             el cubo climático. Dicen en una pasada lo que la lista de stack
             tarda un párrafo en contar. */}
-        <div className="mt-12 sm:hidden">
+        <Reveal className="mt-12 sm:hidden">
           <ProductShot
             src="/images/snowy-mapa-movil.webp"
             alt={showcase.imageAlt}
@@ -58,8 +58,8 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             width={430}
             height={932}
           />
-        </div>
-        <div className="mt-16 hidden gap-4 sm:grid sm:grid-cols-3">
+        </Reveal>
+        <Reveal delay={80} className="mt-16 hidden gap-4 sm:grid sm:grid-cols-3">
           <ProductShot
             src="/images/snowy-radar-map.webp"
             alt={showcase.imageAlt}
@@ -81,7 +81,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             width={1200}
             height={900}
           />
-        </div>
+        </Reveal>
 
         {snowy?.metrics ? (
           <>

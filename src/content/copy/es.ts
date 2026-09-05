@@ -62,7 +62,7 @@ export const es: Copy = {
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Disponible para un proyecto más",
     availabilityNote:
-      "En remoto y horario europeo, en español o en inglés. Por encargos acotados de pocas horas a la semana, no por jornadas completas.",
+      "En remoto y horario europeo, en español o en inglés. Por encargos acotados de pocas horas a la semana.",
     capabilities: [
       {
         title: "Arquitectura de producto",
@@ -497,7 +497,7 @@ export const es: Copy = {
         "Es lo que hago ahora mismo para una fundación suiza: asumí el relevo de su desarrollador anterior y me hice cargo de sus dos productos digitales sin interrumpir la operativa.",
       availabilityLabel: "disponibilidad",
       availabilityText:
-        "En remoto y horario europeo, en español o en inglés. Trabajo por encargos acotados de pocas horas a la semana, no por jornadas completas: es el formato que me permite comprometerme de verdad con lo que acepto.",
+        "En remoto y horario europeo, en español o en inglés. Trabajo por encargos acotados de pocas horas a la semana: es el formato que me permite comprometerme de verdad con lo que acepto.",
       servicesTitle: "En qué puedo ayudarte",
       servicesText:
         "Tres formas de trabajo que ya están funcionando con clientes reales, no una lista de tecnologías.",

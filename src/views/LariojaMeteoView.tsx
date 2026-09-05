@@ -9,16 +9,16 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-5xl">
+        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--foreground)] sm:text-5xl">
           {copy.heading}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8">
           {copy.lead}
         </p>
         <div className="mt-9">
           <ButtonLink href={site.lariojameteo}>{copy.cta}</ButtonLink>
         </div>
-        <div className="shot-frame mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black sm:mt-12">
+        <div className="shot-frame mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-black sm:mt-12">
           <Image
             src="/images/lariojameteo-home.webp"
             alt={copy.imageAlt}
@@ -52,13 +52,13 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {copy.responsibility.items.map((item) => (
             <Surface key={item}>
-              <p className="text-base leading-relaxed text-slate-300 sm:leading-7">{item}</p>
+              <p className="text-base leading-relaxed text-[var(--muted)] sm:leading-7">{item}</p>
             </Surface>
           ))}
         </div>
       </Section>
 
-      <Section className="border-t border-white/10">
+      <Section className="border-t border-[var(--line)]">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
             eyebrow={copy.content.eyebrow}
@@ -68,7 +68,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
           <div className="grid gap-4 sm:grid-cols-2">
             {copy.content.items.map((section) => (
               <Surface key={section}>
-                <p className="text-base leading-relaxed text-slate-300 sm:leading-7">{section}</p>
+                <p className="text-base leading-relaxed text-[var(--muted)] sm:leading-7">{section}</p>
               </Surface>
             ))}
           </div>
