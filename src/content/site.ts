@@ -13,6 +13,8 @@ export const site = {
   university: "Universidad de La Rioja",
   universityUrl: "https://www.unirioja.es/",
   snowy: "https://snowy.es",
+  /** Sin protocolo: es lo que se enseña en la barra del marco de ventana. */
+  snowyDomain: "snowy.es",
   lariojameteo: "https://lariojameteo.es",
   eqxIndex: "https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/",
   openData: "https://datos.gob.es/es/aplicaciones/snowy",

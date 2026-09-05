@@ -1,69 +1,92 @@
-import { ButtonLink, Container, ProductShot, Reveal } from "@/components/ui";
-import { getCopy, site } from "@/content";
+import Link from "next/link";
+import { ButtonLink, Container, DeviceFrame, Rail, Reveal, SectionHeader } from "@/components/ui";
+import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
+import type { RouteKey } from "@/i18n/routes";
+import type { Project } from "@/types/content";
 
-// LaRiojaMeteo baja al final y ocupa una sola banda: es contexto y audiencia,
-// no el argumento principal, y compitiendo con Snowy los debilitaba a los dos.
+// Los tres tienen pagina de caso propia y el slug es la clave de ruta.
+const caseRoutes: Record<string, RouteKey> = {
+  snowy: "snowy",
+  eqx: "eqx",
+  lariojameteo: "lariojameteo",
+};
+
+// Antes esta banda enseñaba sólo LaRiojaMeteo, pero el titular prometía tres
+// proyectos "que puedes abrir y mirar" y el ancla del menú caía justo aquí:
+// quien la seguía se encontraba uno. Ahora están los tres, y en el móvil real
+// en el que se usan, que es donde se entiende que son productos y no maquetas.
 export function ProjectsPreview({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
-  const project = copy.projects.find((item) => item.slug === "lariojameteo");
+  const preview = copy.projectsPreview;
+  const projects = copy.projects.filter((project) => project.imageMobile);
 
-  if (!project) return null;
+  if (projects.length === 0) return null;
 
   return (
     <section id="proyectos" className="section-band py-16 sm:py-24">
       <Container>
-        <Reveal className="grid gap-8 rounded-[var(--radius-card-lg)] bg-white p-7 sm:gap-10 sm:p-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
-              {project.name}
-            </p>
-            <h2 className="mt-3.5 text-[1.75rem] font-bold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
-              {project.description}
-            </h2>
-            <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">
-              {project.impact}
-            </p>
-            <a
-              href={site.lariojameteo}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex min-h-11 items-center text-[17px] text-[var(--accent-text)] hover:underline"
-            >
-              {copy.featuredProjects.secondaryCta}
-              <span aria-hidden className="ml-1 text-[15px]">
-                &rsaquo;
-              </span>
-            </a>
-          </div>
-          <div className="flex flex-col gap-7">
-            {project.image ? (
-              <ProductShot src={project.image} alt={copy.featuredProjects.secondaryImageAlt} width={1600} height={1000} />
-            ) : null}
-            <dl className="grid grid-cols-2 gap-5">
-            {(project.metrics ?? []).map((metric) => (
-              <div key={metric.label}>
-                <dt className="sr-only">{metric.label}</dt>
-                <dd>
-                  <span className="block text-[1.875rem] font-bold leading-none tracking-[-0.03em]">
-                    {metric.value}
-                  </span>
-                  <span className="mt-1.5 block text-sm text-[var(--muted)]">{metric.label}</span>
-                </dd>
+        <Reveal>
+          <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
+        </Reveal>
+
+        <Reveal delay={80} className="mt-14 hidden gap-8 sm:grid sm:grid-cols-3 lg:gap-12">
+          {projects.map((project) => (
+            <ProjectDevice key={project.slug} project={project} locale={locale} />
+          ))}
+        </Reveal>
+
+        <Reveal delay={80} className="mt-12 sm:hidden">
+          <Rail label={preview.title}>
+            {projects.map((project) => (
+              <div key={project.slug} className="rail-item w-[62vw] max-w-[15rem]">
+                <ProjectDevice project={project} locale={locale} />
               </div>
             ))}
-            </dl>
-          </div>
+          </Rail>
         </Reveal>
-        {/* El ancla "Proyectos" del menu cae aqui, y aqui solo hay uno de los
-            tres: sin esta salida, quien la sigue cree que esto es todo. */}
-        <div className="mt-8 flex justify-center">
+
+        <div className="mt-14 flex justify-center">
           <ButtonLink href={routePath(locale, "projects")} variant="secondary">
             {copy.pages.projects.eyebrow}
           </ButtonLink>
         </div>
       </Container>
     </section>
+  );
+}
+
+function ProjectDevice({ project, locale }: { project: Project; locale: Locale }) {
+  const copy = getCopy(locale);
+
+  return (
+    <article className="flex flex-col items-center text-center">
+      <DeviceFrame
+        src={project.imageMobile ?? ""}
+        alt={`${project.name} en un móvil`}
+        className="max-w-[15rem]"
+      />
+      <p className="mt-7 text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
+        {project.label}
+      </p>
+      <h3 className="mt-2 text-[1.375rem] font-semibold leading-[1.2] tracking-[-0.02em]">
+        {project.name}
+      </h3>
+      <p className="mt-2.5 text-[15px] leading-[1.5] text-[var(--muted)]">{project.pitch}</p>
+      {/* El rotulo dice "ver el caso", asi que lleva al caso y no a la web del
+          producto: el enlace externo ya esta dentro de cada pagina de caso. */}
+      {caseRoutes[project.slug] ? (
+        <Link
+          href={routePath(locale, caseRoutes[project.slug])}
+          className="mt-3 inline-flex min-h-11 items-center text-[15px] text-[var(--accent-text)] hover:underline"
+        >
+          {copy.featuredProjects.secondaryCta}
+          <span aria-hidden className="ml-1 text-[13px]">
+            &rsaquo;
+          </span>
+        </Link>
+      ) : null}
+    </article>
   );
 }

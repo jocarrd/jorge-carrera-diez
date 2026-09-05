@@ -1,11 +1,16 @@
-import { Container, ProductShot, Reveal } from "@/components/ui";
+import Image from "next/image";
+import { BrowserFrame, ButtonLink, Container, Rail, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
-import Link from "next/link";
 
-// La única sección oscura de la página. Se reserva para Snowy porque es lo que
-// debe recordarse: si todo destacara, no destacaría nada.
+// La sección oscura reservada para Snowy: es lo que debe recordarse y si todo
+// destacara, no destacaría nada.
+//
+// Eran tres capturas de 330 px en fila donde no se leía nada de la interfaz, y
+// las tres compartían el mismo alt. Ahora es una galería: cada superficie a un
+// tamaño en el que se distingue, con su nombre y su alt propio, y se recorren
+// de lado en vez de competir por el mismo ancho.
 export function SnowyShowcase({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const showcase = copy.snowyShowcase;
@@ -24,90 +29,69 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
           {showcase.detail}
         </p>
 
-        <div className="mt-6 flex flex-col items-center gap-1 sm:mt-7 sm:flex-row sm:justify-center sm:gap-x-8">
-          <Link
-            href={routePath(locale, "snowy")}
-            className="inline-flex min-h-11 items-center text-[17px] text-[var(--accent-dark)] hover:underline"
-          >
-            {showcase.ctaPrimary}
-            <span aria-hidden className="ml-1 text-[15px]">
-              &rsaquo;
-            </span>
-          </Link>
-          <a
-            href={site.snowy}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-11 items-center text-[17px] text-[var(--accent-dark)] hover:underline"
-          >
+        {/* Abrir el producto es la acción real; el caso técnico es para quien
+            quiera el detalle. Dos enlaces iguales no lo decían. */}
+        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-9 sm:flex-row sm:justify-center sm:gap-x-6">
+          <ButtonLink href={site.snowy} tone="dark" target="_blank" rel="noreferrer">
             {showcase.ctaSecondary}
-            <span aria-hidden className="ml-1 text-[15px]">
-              &rsaquo;
-            </span>
-          </a>
+          </ButtonLink>
+          <ButtonLink href={routePath(locale, "snowy")} variant="quiet" tone="dark">
+            {showcase.ctaPrimary}
+          </ButtonLink>
         </div>
-
-        {/* Tres superficies del producto en una fila: el radar, el asistente y
-            el cubo climático. Dicen en una pasada lo que la lista de stack
-            tarda un párrafo en contar. */}
-        <Reveal className="mt-12 sm:hidden">
-          <ProductShot
-            src="/images/snowy-mapa-movil.webp"
-            alt={showcase.imageAlt}
-            tone="dark"
-            width={430}
-            height={932}
-          />
-        </Reveal>
-        <Reveal delay={80} className="mt-16 hidden gap-4 sm:grid sm:grid-cols-3">
-          <ProductShot
-            src="/images/snowy-radar-map.webp"
-            alt={showcase.imageAlt}
-            tone="dark"
-            width={1200}
-            height={900}
-          />
-          <ProductShot
-            src="/images/snowy-ai-assistant.webp"
-            alt={showcase.imageAlt}
-            tone="dark"
-            width={1200}
-            height={900}
-          />
-          <ProductShot
-            src="/images/snowy-climate.webp"
-            alt={showcase.imageAlt}
-            tone="dark"
-            width={1200}
-            height={900}
-          />
-        </Reveal>
-
-        {snowy?.metrics ? (
-          <>
-            <p className="mx-auto mt-10 max-w-[46ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-lg">
-              {copy.profile.availability}.{" "}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-[var(--accent-dark)] underline decoration-[var(--accent-dark)]/35 underline-offset-4 hover:decoration-[var(--accent-dark)]"
-              >
-                {copy.contactCta.cta}
-              </a>
-            </p>
-
-            <ul className="mt-7 flex flex-wrap justify-center gap-2">
-              {(snowy.stack ?? []).map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-white/[0.14] px-4 py-1.5 text-sm text-[var(--ink-dark-muted)]"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
       </Container>
+
+      <Container className="mt-14 text-left sm:mt-16">
+        <Reveal delay={80}>
+          <Rail label="Snowy">
+            {showcase.gallery.map((shot) => (
+              <figure key={shot.image} className="rail-item w-[86vw] max-w-[42rem]">
+                <BrowserFrame label={site.snowyDomain} tone="dark">
+                  <Image
+                    src={shot.image}
+                    alt={shot.alt}
+                    width={1200}
+                    height={900}
+                    className="h-auto w-full"
+                    sizes="(max-width: 640px) 86vw, 672px"
+                  />
+                </BrowserFrame>
+                <figcaption className="mt-5">
+                  <p className="text-[17px] font-semibold text-white">{shot.title}</p>
+                  <p className="mt-1 text-[15px] leading-[1.5] text-[var(--ink-dark-muted)]">
+                    {shot.caption}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </Rail>
+        </Reveal>
+      </Container>
+
+      {snowy?.metrics ? (
+        <Container className="mt-14 text-center sm:mt-16">
+          <p className="mx-auto max-w-[46ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-lg">
+            {copy.profile.availability}.{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="text-[var(--accent-dark)] underline decoration-[var(--accent-dark)]/35 underline-offset-4 hover:decoration-[var(--accent-dark)]"
+            >
+              {copy.contactCta.cta}
+            </a>
+          </p>
+
+          <ul className="mt-7 flex flex-wrap justify-center gap-2">
+            {(snowy.stack ?? []).map((item) => (
+              <li
+                key={item}
+                className="rounded-full border border-white/[0.14] px-4 py-1.5 text-sm text-[var(--ink-dark-muted)]"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      ) : null}
     </section>
   );
 }

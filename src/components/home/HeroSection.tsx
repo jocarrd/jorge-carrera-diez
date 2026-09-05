@@ -1,4 +1,4 @@
-import { ButtonLink, Container, ProductShot } from "@/components/ui";
+import { BrowserFrame, ButtonLink, Container, ProductShot } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -28,10 +28,10 @@ export function HeroSection({ locale }: { locale: Locale }) {
         <p className="rise rise-3 mx-auto mt-6 max-w-[34ch] text-[1.0625rem] leading-[1.45] text-[var(--muted)] sm:mt-7 sm:max-w-[46ch] sm:text-[1.5625rem]">
           {copy.profile.taglineSub}
         </p>
-        <div className="rise rise-4 mt-7 flex flex-col items-center gap-1 sm:mt-8 sm:flex-row sm:justify-center sm:gap-x-8">
-          <ButtonLink href={routePath(locale, "snowy")} variant="quiet">
-            {copy.hero.ctaPrimary}
-          </ButtonLink>
+        {/* Dos enlaces de texto iguales no son una jerarquía: hay una acción
+            principal —ver el producto— y una secundaria. La píldora la marca. */}
+        <div className="rise rise-4 mt-8 flex flex-col items-center gap-3 sm:mt-9 sm:flex-row sm:justify-center sm:gap-x-6">
+          <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
           <ButtonLink href={routePath(locale, "contact")} variant="quiet">
             {copy.hero.ctaContact}
           </ButtonLink>
@@ -49,16 +49,20 @@ export function HeroSection({ locale }: { locale: Locale }) {
       </Container>
 
       {/* La captura entra recortada por abajo y se funde con el fondo: el
-          producto no se presenta, se asoma. */}
+          producto no se presenta, se asoma. La ventana con el dominio hace de
+          prueba —se puede teclear y comprobar— sin decirlo en una frase. */}
       <Container className="mt-12 sm:mt-20">
         <div className="relative">
-          <ProductShot
-            src="/images/snowy-home.webp"
-            srcMobile="/images/snowy-home-movil.webp"
-            alt={copy.snowyShowcase.imageAlt}
-            priority
-            crop
-          />
+          <BrowserFrame label={site.snowyDomain}>
+            <ProductShot
+              src="/images/snowy-home.webp"
+              srcMobile="/images/snowy-home-movil.webp"
+              alt={copy.snowyShowcase.imageAlt}
+              priority
+              crop
+              className="!rounded-none !shadow-none !ring-0"
+            />
+          </BrowserFrame>
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-transparent sm:h-28"

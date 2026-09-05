@@ -9,6 +9,16 @@ import type { Locale } from "@/i18n/config";
 // deje de parecerlo. Retrato grande, sin recortar en círculo.
 export function AboutSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
+  const labels = copy.aboutFacts;
+
+  const facts = [
+    { label: labels.location, value: copy.meta.location },
+    {
+      label: labels.languages,
+      value: copy.languages.map((lang) => `${lang.name} (${lang.level.toLowerCase()})`).join(", "),
+    },
+    { label: labels.education, value: copy.education[0]?.title ?? "" },
+  ];
 
   return (
     <Section id="sobre-mi">
@@ -32,6 +42,22 @@ export function AboutSection({ locale }: { locale: Locale }) {
             locale={locale}
             className="prose-links mt-5 text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:mt-6 sm:text-xl"
           />
+
+          {/* La ficha de datos: base, idiomas y formación estaban sólo en el CV
+              y son lo primero que se busca antes de escribir a alguien. De paso
+              la columna de texto deja de quedarse corta frente al retrato. */}
+          <dl className="mt-9 grid gap-px overflow-hidden rounded-[var(--radius-card)] bg-[var(--line)] sm:grid-cols-3">
+            {facts.map((fact) => (
+              <div key={fact.label} className="bg-[var(--background)] px-5 py-4">
+                <dt className="text-[13px] font-medium uppercase tracking-[0.02em] text-[var(--muted)]">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1.5 text-[15px] leading-[1.45] text-[var(--foreground)]">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </Reveal>
     </Section>

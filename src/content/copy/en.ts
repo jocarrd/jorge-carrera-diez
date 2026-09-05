@@ -13,7 +13,7 @@ export const en: Copy = {
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
     ogEyebrow: "Software engineer",
-    ogTagline: "Product, architecture, data and generative AI. From first commit to deploy.",
+    ogTagline: "Product, architecture, data and generative AI in production systems.",
     ogStats: [
       ["now", "VidaCaixa · EQx"],
       ["in production", "Snowy"],
@@ -52,8 +52,8 @@ export const en: Copy = {
       "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
     positioning: "Software engineer · Product · Architecture",
     positioningLong:
-      "Software engineer. I design systems and then stay to maintain them.",
-    tagline: ["I design it.", "I build it.", "I keep it running."],
+      "Software engineer. Web product from architecture through to production.",
+    tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
     availability: "Available for one more project",
@@ -62,15 +62,15 @@ export const en: Copy = {
     capabilities: [
       {
         title: "Product architecture",
-        text: "I decide how it is structured, what gets cut and why. Then I defend it in review.",
+        text: "How the product is structured, what ships in each release and what stays out.",
       },
       {
         title: "Generative AI and agents",
-        text: "Agents that do actual work inside the product. Anyone can build the pretty demo.",
+        text: "Agents and models integrated into the product, with their limits, cost and maintenance.",
       },
       {
         title: "Data and infrastructure",
-        text: "Backend, caching, continuous deployment and my own server, with cost under control.",
+        text: "Databases, caching, deployments and the server everything runs on.",
       },
     ],
     focus: [
@@ -81,7 +81,7 @@ export const en: Copy = {
       "UX, performance, weather data and Artificial Intelligence",
     ],
     summary: [
-      { text: "I am a computer engineer from the " },
+      { text: "Computer engineer from the " },
       { text: "University of La Rioja", href: site.universityUrl, external: true },
       { text: ", chartered by the " },
       {
@@ -90,11 +90,11 @@ export const en: Copy = {
         external: true,
       },
       {
-        text: ". I work in enterprise environments leading technical decisions, collaborate as a freelance engineer with the Swiss foundation that publishes the ",
+        text: ". Over five years in the industry: currently Tech Lead in banking and insurance, and freelance engineer for the Swiss foundation that publishes the ",
       },
       { text: "Elite Quality Index", href: site.eqxIndex, external: true },
       {
-        text: " under the University of St. Gallen, and build Snowy to work on product, frontend, backend, data, infrastructure, SEO and agents over a real system.",
+        text: " under the University of St. Gallen. Alongside that I build Snowy, a weather platform with real users that I use to work product, data and infrastructure end to end.",
       },
     ],
     visualStats: [
@@ -127,7 +127,7 @@ export const en: Copy = {
       {
         label: "Own product · Snowy",
         title: "Where I find out if I was right",
-        text: "I build all of it, from server rendering to the radar and the deployments. Product, data, infrastructure, SEO and AI on a real system.",
+        text: "Built end to end, from server rendering to the radar and the deployments. It is in production and still growing.",
       },
     ],
     eyebrow: "Current role",
@@ -170,7 +170,7 @@ export const en: Copy = {
     ],
   },
   ai: {
-    title: "AI that does the work, not that looks like it.",
+    title: "AI with a concrete job inside the product.",
     lead: "I work on agents, RAG, tools, MCP and LLMs from one simple idea: AI should solve concrete tasks inside the product and stay as maintainable as any other part of the system.",
     detail:
       "What interests me most is designing the flow: what context the model needs, which tools it can use, how responses are controlled and what experience the user actually gets.",
@@ -209,12 +209,32 @@ export const en: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy: I took it to production, and people use it every day.",
+    title: "In production, and in use every day.",
     lead: "The project already works as a product: over the last three months it has generated 14.7 million organic impressions and 242,000 clicks, with more than 1,400 registered users to keep building on.",
     detail:
       "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
     ctaPrimary: "See the engineering case",
     ctaSecondary: "Open Snowy",
+    gallery: [
+      {
+        image: "/images/snowy-radar-map.webp",
+        title: "Precipitation radar",
+        caption: "Half-hour steps over the stations reporting live.",
+        alt: "Snowy map showing the precipitation radar over Spain with active stations",
+      },
+      {
+        image: "/images/snowy-ai-assistant.webp",
+        title: "Weather assistant",
+        caption: "It answers from real station data, not generic text.",
+        alt: "Snowy assistant answering a query using station data",
+      },
+      {
+        image: "/images/snowy-climate.webp",
+        title: "Climate change",
+        caption: "Historical series per municipality against last century's mean.",
+        alt: "Snowy climate panel with the temperature anomaly map of Spain",
+      },
+    ],
     imageAlt: "Snowy home with weather search, AI assistant and planner",
   },
   experiencePreview: {
@@ -226,7 +246,7 @@ export const en: Copy = {
   projectsPreview: {
     eyebrow: "Projects",
     title: "Three projects you can actually open and poke at.",
-    text: "I develop one of them end to end. One is a client in Switzerland. The third has been publishing for twelve years. All three are live right now.",
+    text: "I develop one end to end, another is a client in Switzerland and the third has been publishing for twelve years.",
   },
   contactCta: {
     title: "If my profile fits, let's talk.",
@@ -380,6 +400,23 @@ export const en: Copy = {
       },
     },
   ],
+  aboutFacts: {
+    location: "Based in",
+    languages: "Languages",
+    education: "Education",
+  },
+  education: [
+    {
+      title: "Computer Engineering",
+      org: site.university,
+      url: site.universityUrl,
+      note: "Chartered by the " + site.college,
+    },
+  ],
+  languages: [
+    { name: "Spanish", level: "Native" },
+    { name: "English", level: "Intermediate" },
+  ],
   skills: [
     {
       title: "Frontend",
@@ -405,6 +442,8 @@ export const en: Copy = {
   projects: [
     {
       slug: "snowy",
+      imageMobile: "/images/snowy-movil.webp",
+      pitch: "Multi-model forecasting, radar and an assistant for all of Spain.",
       name: "Snowy",
       url: site.snowy,
       label: "Engineering case",
@@ -413,7 +452,7 @@ export const en: Copy = {
       description:
         "Weather platform with real-time data, maps, radar, stations, SEO, its own backend, infrastructure and AI.",
       impact:
-        "I handle development end to end, from server rendering to the radar and the deployments. And when something falls over at night, I am the one who fixes it.",
+        "Development end to end, from server rendering to the radar and the deployments, with maintenance running since it first shipped.",
       metrics: [
         { value: "16", label: "weather models" },
         { value: "1,800+", label: "live stations" },
@@ -434,6 +473,8 @@ export const en: Copy = {
     },
     {
       slug: "eqx",
+      imageMobile: "/images/eqx-movil.webp",
+      pitch: "The index ranking 151 countries by the quality of their elites.",
       name: "EQx",
       url: "https://elitequality.org/",
       label: "Client",
@@ -452,6 +493,8 @@ export const en: Copy = {
     },
     {
       slug: "lariojameteo",
+      imageMobile: "/images/lariojameteo-movil.webp",
+      pitch: "La Rioja's reference weather portal, publishing since 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
       label: "Webmaster",
@@ -504,6 +547,8 @@ export const en: Copy = {
       stackTitle: "Technical skills",
       stackText:
         "I pick tools for performance, maintainability, SEO, cost and user experience.",
+      educationTitle: "Education",
+      languagesTitle: "Languages",
       downloadCta: "Download as PDF",
       printHint: "This opens the print dialog: choose “Save as PDF”.",
     },
@@ -622,7 +667,7 @@ export const en: Copy = {
           },
           {
             title: "Official data, refreshed on its own",
-            text: "374 reservoirs from MITECO, with volume, weekly variation and last year's comparison. It updates without anyone touching anything.",
+            text: "374 reservoirs from MITECO, with volume, weekly variation and last year's comparison, refreshed automatically.",
             image: "/images/detalle/embalses.webp",
             alt: "National water reserve at 64% with volume, variation and year-on-year comparison",
           },
@@ -1030,7 +1075,7 @@ export const en: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "Two different applications, one person responsible.",
-        text: "The index site and the assessment platform share no code and no framework. What they share is me.",
+        text: "The index site and the assessment platform are two independent systems, with no code or technology in common, and I maintain both.",
         groups: [
           { label: "Index site", items: ["Astro", "React", "Tailwind", "TypeScript"] },
           { label: "Visualisation", items: ["D3", "TopoJSON", "TanStack Table"] },
@@ -1042,7 +1087,7 @@ export const en: Copy = {
   },
   radarScrub: {
     eyebrow: "Live data",
-    title: "Scroll and watch it rain.",
+    title: "Precipitation, live.",
     caption:
       "Snowy's precipitation radar, half an hour per step, over the 1,862 stations reporting live.",
     imageAlt:
@@ -1054,23 +1099,29 @@ export const en: Copy = {
     imageAlt: "Snowy home page with search, assistant and live data",
     steps: [
       {
-        title: "I decide what does not get built",
-        text: "Half the work is saying no. Every feature that ships has to be maintained for the next five years, and that is paid in speed and in late nights.",
+        title: "Half the work is deciding what to cut",
+        text: "Every feature that ships has to be maintained for years, so the decision that weighs most is usually what stays out.",
+        image: "/images/snowy-home.webp",
+        imageAlt: "Snowy home with search, assistant and map entry points",
       },
       {
-        title: "Data beats opinion",
-        text: "Sixteen weather models that disagree with each other, and one interface that has to give an answer. That is where you find out whether a product is useful or merely pretty.",
+        title: "Sixteen models that disagree",
+        text: "Sixteen weather sources with different forecasts for the same point, and one interface that has to give a single answer.",
+        image: "/images/snowy-station-detail.webp",
+        imageAlt: "Madrid weather page showing forecast reliability at 51%",
       },
       {
-        title: "I stay when it breaks",
-        text: "It runs on my server, with my deploys. If the radar stops rendering on a Sunday night, there is nobody to escalate it to.",
+        title: "Maintaining, not just shipping",
+        text: "If the radar stops rendering on a Sunday night it has to be fixed, and that shapes how the thing is built from day one.",
+        image: "/images/snowy-radar-map.webp",
+        imageAlt: "Snowy precipitation radar over Spain",
       },
     ],
   },
   bigStat: {
     eyebrow: "Snowy, last 90 days",
     value: 14687005,
-    label: "organic search impressions, with no ad spend and no marketing team behind it.",
+    label: "organic search impressions, with no ad spend.",
     support: [
       { value: "242,000", label: "visits from search" },
       { value: "8.1", label: "average position on Google" },

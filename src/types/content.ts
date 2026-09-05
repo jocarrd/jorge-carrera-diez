@@ -33,6 +33,8 @@ export type Project = {
   metrics?: Metric[];
   logo?: string;
   image?: string;
+  imageMobile?: string;
+  pitch?: string;
 };
 
 export type Capability = {
@@ -43,6 +45,25 @@ export type Capability = {
 export type SkillGroup = {
   title: string;
   items: string[];
+};
+
+export type GalleryShot = {
+  image: string;
+  title: string;
+  caption: string;
+  alt: string;
+};
+
+export type EducationEntry = {
+  title: string;
+  org: string;
+  url?: string;
+  note?: string;
+};
+
+export type LanguageEntry = {
+  name: string;
+  level: string;
 };
 
 export type Metric = {
@@ -171,6 +192,7 @@ export type Copy = {
     ctaPrimary: string;
     ctaSecondary: string;
     imageAlt: string;
+    gallery: GalleryShot[];
   };
   experiencePreview: SectionCopy & { cta: string };
   projectsPreview: SectionCopy;
@@ -188,6 +210,9 @@ export type Copy = {
     note: string;
   };
   experience: ExperienceItem[];
+  aboutFacts: { location: string; languages: string; education: string };
+  education: EducationEntry[];
+  languages: LanguageEntry[];
   skills: SkillGroup[];
   projects: Project[];
   featuredProjects: {
@@ -206,6 +231,8 @@ export type Copy = {
       stackTitle: string;
       stackEyebrow: string;
       stackText: string;
+      educationTitle: string;
+      languagesTitle: string;
       downloadCta: string;
       printHint: string;
     };
@@ -288,7 +315,7 @@ export type Copy = {
     eyebrow: string;
     title: string;
     imageAlt: string;
-    steps: TitledText[];
+    steps: (TitledText & { image: string; imageAlt: string })[];
   };
   bigStat: {
     eyebrow: string;

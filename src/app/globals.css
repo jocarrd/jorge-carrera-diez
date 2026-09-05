@@ -98,6 +98,376 @@ a {
     0 0 0 1px var(--line);
 }
 
+/* La barra nativa parte la tarjeta por abajo y en escritorio no aporta: el
+   estado lo dan los botones y el contador. El scroll sigue siendo el del
+   sistema, así que el gesto táctil y el del trackpad no cambian. */
+/* La captura fijada cruza de una a otra en vez de saltar: el corte seco se lee
+   como un fallo de carga. Solo opacidad, que es lo que el compositor anima sin
+   repintar. */
+.sticky-shot {
+  transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-shot {
+    transition: none;
+  }
+}
+
+/* ── Piezas del bento de IA ───────────────────────────────
+   Blanco con filo en vez de gris plano: sobre un fondo blanco el gris no se
+   despega y las cuatro quedaban lavadas al lado de la focal negra. El icono en
+   su cuadrado teal es lo unico con color de la tarjeta, y ancla la mirada
+   arriba mientras el texto vive abajo, como en la focal. */
+.ai-tile {
+  min-height: 11.5rem;
+}
+
+.ai-tile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.875rem;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
+}
+
+.ai-tile-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Pieza focal del bento de IA ──────────────────────────
+   Negro con una veladura teal arriba a la derecha: dentro de una seccion clara
+   el contraste hace de foco sin abrir otra seccion oscura, que ya hay dos.
+   La rejilla de puntos es la unica textura tecnica de la pagina y se queda
+   muy por debajo del texto para no competir con el. */
+.ai-focal {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 88% 8%, rgba(45, 212, 191, 0.22) 0%, transparent 58%),
+    var(--ink-dark);
+  min-height: 15rem;
+}
+
+.ai-focal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom left, #000, transparent 62%);
+  -webkit-mask-image: linear-gradient(to bottom left, #000, transparent 62%);
+}
+
+.ai-focal > * {
+  position: relative;
+}
+
+/* ── Marco de ventana ─────────────────────────────────────
+   Barra de 38 px con los tres puntos y el dominio centrado, como una ventana
+   de macOS. El radio interior es el exterior menos el grosor del borde, si no
+   la captura asoma por las esquinas de la ventana. */
+.browser-frame {
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 40px 80px -24px rgba(0, 0, 0, 0.28);
+}
+
+.browser-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 14px;
+  background: var(--panel-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+
+/* Los tres colores del semáforo sólo cuando hay sitio: por debajo se leen como
+   ruido de color en una maqueta que es gris. */
+@media (min-width: 640px) {
+  .browser-dots span:nth-child(1) {
+    background: #ff5f57;
+  }
+
+  .browser-dots span:nth-child(2) {
+    background: #febc2e;
+  }
+
+  .browser-dots span:nth-child(3) {
+    background: #28c840;
+  }
+}
+
+.browser-url {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  /* Sobre --panel-strong, --muted se queda en 4,27:1, justo por debajo del
+     4,5 que pide texto de 12 px. --foreground con algo de mezcla lo sube. */
+  color: color-mix(in srgb, var(--foreground) 72%, var(--panel-strong));
+}
+
+.browser-viewport {
+  position: relative;
+  background: var(--panel);
+}
+
+.browser-dark {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 40px 90px -20px rgba(0, 0, 0, 0.85);
+}
+
+.browser-dark .browser-bar {
+  background: #1d1d1f;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.browser-dark .browser-url {
+  color: var(--ink-dark-muted);
+}
+
+.browser-dark .browser-viewport {
+  background: #000;
+}
+
+/* ── Marco de dispositivo ─────────────────────────────────
+   Medidas reales del iPhone 15 Pro, no aproximadas de memoria:
+     cuerpo    70,60 x 146,60 mm  -> proporcion 2,0765
+     pantalla  65,10 x 141,14 mm  (1179x2556 px a 460 ppi)
+     bisel     2,75 mm por lado   -> 3,895 % del ancho del cuerpo
+     esquina   9,11 mm de pantalla + bisel = 11,86 mm -> 16,80 % del ancho
+   Todo en cqw sobre el contenedor: un border-radius en % se resuelve por eje
+   (% del ancho en horizontal, % del alto en vertical) y en un cuerpo que es el
+   doble de alto que ancho eso da esquinas elipticas en vez de circulares.
+   Sin comillas dobles en este comentario: una suelta abre una cadena que no se
+   cierra hasta el content de abajo y se lleva por delante el bloque. */
+.device {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.device-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 70.6 / 146.6;
+  padding: 3.895cqw;
+  border-radius: 16.8cqw;
+  background: linear-gradient(150deg, #4a4a4f 0%, #17171a 28%, #0b0b0d 62%, #3a3a3f 100%);
+  box-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.35),
+    0 26px 50px -18px rgba(0, 0, 0, 0.4);
+}
+
+/* El filo claro sobre el canto oscuro es lo que da el metal: sin el, el marco
+   parece un borde negro plano pegado encima de la captura. */
+.device-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.device-screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12.9cqw;
+  background: #000;
+}
+
+.device-island {
+  position: absolute;
+  top: 1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30.5%;
+  height: 3.1%;
+  border-radius: 999px;
+  background: #000;
+}
+
+/* La barra de estado ocupa la franja que la captura trae vacia arriba: 59 pt
+   sobre 852 de pantalla, un 6,9 % del alto. */
+.device-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6.9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7.5% 0 8%;
+  color: #000;
+  font-size: 3cqw;
+  pointer-events: none;
+}
+
+.device-time {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  transform: translateY(6%);
+}
+
+.device-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.8cqw;
+}
+
+.device-signal {
+  width: 5.6cqw;
+  height: auto;
+}
+
+.device-wifi {
+  width: 5.2cqw;
+  height: auto;
+}
+
+/* La pila es un rectangulo con borde y relleno: dibujarla en SVG a este tamano
+   se emborrona, y con bordes reales se mantiene limpia al escalar. */
+.device-battery {
+  position: relative;
+  width: 6.4cqw;
+  height: 3.1cqw;
+  border: 0.34cqw solid rgba(0, 0, 0, 0.4);
+  border-radius: 0.9cqw;
+}
+
+.device-battery::before {
+  content: "";
+  position: absolute;
+  inset: 0.45cqw;
+  border-radius: 0.35cqw;
+  background: currentColor;
+}
+
+.device-battery::after {
+  content: "";
+  position: absolute;
+  top: 32%;
+  left: 100%;
+  width: 0.45cqw;
+  height: 36%;
+  margin-left: 0.3cqw;
+  border-radius: 0 0.9cqw 0.9cqw 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.rail-track {
+  scrollbar-width: none;
+  scroll-padding-left: 22px;
+  overscroll-behavior-x: contain;
+}
+
+.rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-track:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-card);
+}
+
+@media (min-width: 640px) {
+  .rail-track {
+    scroll-padding-left: 32px;
+  }
+}
+
+/* Los controles se pintan aqui y no en clases de utilidad porque tienen que
+   invertirse dentro de .section-dark, y una variante por tono en el componente
+   duplicaria el marcado de los dos botones. */
+.rail-counter {
+  color: var(--muted);
+}
+
+/* La barra tambien es texto que se lee: en --line-strong se quedaba en 1,38:1
+   y desaparecia entre los dos numeros. */
+.rail-counter-sep {
+  color: var(--muted);
+}
+
+.rail-btn {
+  background: var(--panel-strong);
+  color: var(--foreground);
+}
+
+.rail-btn:hover:not(:disabled) {
+  background: var(--line-strong);
+}
+
+.section-dark .rail-counter {
+  color: var(--ink-dark-muted);
+}
+
+.section-dark .rail-counter-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.section-dark .rail-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.section-dark .rail-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.section-dark .rail-track:focus-visible {
+  outline-color: var(--accent-dark);
+}
+
+.rail-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+/* En una pantalla táctil las flechas sobran —se arrastra con el dedo— y encima
+   ocupan sitio. El contador sí se queda: dice cuántas tarjetas hay, que es lo
+   que no se ve cuando sólo asoma media. */
+.rail-controls {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rail-controls {
+    display: flex;
+  }
+}
+
 .section-band {
   background: var(--panel);
 }
@@ -402,14 +772,212 @@ a {
   }
 }
 
+/* El CV en papel es otro documento, no la web encogida. La web usa aire y
+   tarjetas para separar ideas; en A4 ese mismo aire se come páginas enteras y
+   parte las fichas por la mitad. Aquí se recupera el ancho útil, se quita todo
+   lo que sólo sirve en pantalla y se prohíbe cortar una experiencia en dos. */
+@page {
+  size: A4;
+  margin: 13mm 12mm 14mm;
+}
+
 @media print {
+  html,
   body {
     background: #ffffff;
     color: #000000;
+    font-size: 10pt;
   }
 
+  /* Los fondos de sección y las sombras no imprimen bien y gastan tóner sin
+     aportar jerarquía: en papel la jerarquía la da el tamaño del texto. */
   .site-header,
-  .no-print {
+  footer,
+  .no-print,
+  .cv-screen-only {
     display: none !important;
+  }
+
+  .section-band,
+  .lvl-2,
+  .lvl-3 {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .cv-document section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* La caja de 1120 px y su padding lateral sobran: el margen del papel lo
+     pone @page, y si no se anulan el texto queda en una columna estrecha. */
+  .cv-document [class*="max-w-"] {
+    max-width: none !important;
+  }
+
+  .cv-document [class*="px-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Cabecera: el nombre manda, el resto se reduce a una línea de datos. */
+  .cv-head {
+    margin-bottom: 6mm;
+  }
+
+  /* En pantalla el titular va centrado, que funciona cuando hay aire alrededor.
+     En A4 deja el nombre flotando sobre un texto alineado a la izquierda. */
+  .cv-head > div:first-of-type {
+    max-width: none !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+
+  /* El eyebrow dice "CV" encima del nombre: en pantalla ubica, en el papel
+     sobra porque el documento ya es el CV. */
+  .cv-head > div:first-of-type > p:first-child {
+    display: none;
+  }
+
+  .cv-head h1 {
+    font-size: 20pt !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .cv-role {
+    margin-top: 1mm !important;
+    font-size: 11pt !important;
+  }
+
+  .cv-summary {
+    margin-top: 2mm !important;
+    max-width: none !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Los datos de contacto dejan de ser botones táctiles: en papel son texto. */
+  .cv-contact {
+    margin-top: 3mm !important;
+    gap: 0 !important;
+    font-size: 9pt !important;
+  }
+
+  .cv-chip {
+    min-height: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .cv-chip:not(:last-child)::after {
+    content: " · ";
+    white-space: pre;
+  }
+
+  .cv-section {
+    margin-top: 6mm;
+  }
+
+  .cv-section-title {
+    font-size: 13pt !important;
+    margin-bottom: 3mm;
+    padding-bottom: 1mm;
+    border-bottom: 1px solid #d2d2d7;
+    break-after: avoid;
+  }
+
+  .cv-section-text {
+    margin-top: 0 !important;
+    max-width: none !important;
+    font-size: 9.5pt !important;
+  }
+
+  /* Lo que el navegador partía por la mitad. Una experiencia entera o pasa a
+     la página siguiente: media ficha a pie de página no se lee. */
+  .cv-entries {
+    margin-top: 0 !important;
+  }
+
+  .cv-entry,
+  .cv-skill {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 4.5mm;
+  }
+
+  .cv-period {
+    font-size: 8.5pt !important;
+    color: #444 !important;
+  }
+
+  .cv-entry-title {
+    margin-top: 0.5mm !important;
+    font-size: 11pt !important;
+    break-after: avoid;
+  }
+
+  .cv-entry-meta {
+    margin-top: 0 !important;
+    font-size: 8.5pt !important;
+  }
+
+  .cv-entry-summary {
+    margin-top: 1.5mm !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .cv-bullets {
+    margin-top: 1.5mm !important;
+    gap: 0.8mm !important;
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .cv-bullet-dot {
+    background: #000 !important;
+  }
+
+  /* Dos columnas de verdad: en pantalla dependen de sm:, que en print no
+     entra, y las competencias caían apiladas ocupando una página entera. */
+  .cv-skills {
+    margin-top: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3mm 6mm !important;
+  }
+
+  /* Formación e idiomas comparten fila en papel: son cuatro líneas cada una y
+     en columna se comían un tercio de la segunda página. */
+  .cv-langs {
+    margin-top: 0 !important;
+  }
+
+  .cv-lang {
+    padding-bottom: 1mm !important;
+    font-size: 9pt !important;
+  }
+
+  .cv-skill-title {
+    font-size: 10pt !important;
+  }
+
+  .cv-skill-items {
+    margin-top: 0.5mm !important;
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Los enlaces en papel se quedan sin destino; el dominio ya va en la
+     cabecera, así que basta con que no parezcan pulsables. */
+  .cv-document a {
+    color: #000 !important;
+    text-decoration: none !important;
   }
 }

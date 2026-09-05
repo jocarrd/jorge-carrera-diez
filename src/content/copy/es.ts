@@ -13,7 +13,7 @@ export const es: Copy = {
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
     ogEyebrow: "Ingeniero de software",
-    ogTagline: "Producto, arquitectura, datos e IA generativa. Del primer commit al despliegue.",
+    ogTagline: "Producto, arquitectura, datos e IA generativa en sistemas en producción.",
     ogStats: [
       ["ahora", "VidaCaixa · EQx"],
       ["en producción", "Snowy"],
@@ -52,11 +52,11 @@ export const es: Copy = {
       "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
     positioning: "Ingeniero de software · Producto · Arquitectura",
     positioningLong:
-      "Ingeniero de software. Diseño sistemas y luego me quedo a mantenerlos.",
-    // Tres verbos y punto. Lo que separa este perfil del de alguien que sólo
-    // ejecuta tareas no es la lista de tecnologías: es quedarse con lo que
-    // construye. En tres golpes se lee antes de que nadie decida irse.
-    tagline: ["Lo diseño.", "Lo construyo.", "Lo mantengo."],
+      "Ingeniero de software. Producto web, de la arquitectura a producción.",
+    // Tres líneas que dicen el oficio, no quién lo hace: antes eran "lo diseño,
+    // lo construyo, lo mantengo" y sonaban a currículum recitado en voz alta.
+    // Lo que hay que entender en dos segundos es el alcance del trabajo.
+    tagline: ["Producto web,", "de la arquitectura", "a producción."],
     taglineSub:
       "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
@@ -67,15 +67,15 @@ export const es: Copy = {
     capabilities: [
       {
         title: "Arquitectura de producto",
-        text: "Decido cómo se estructura, qué se descarta y por qué. Y lo defiendo en la revisión.",
+        text: "Cómo se estructura el producto, qué entra en cada entrega y qué se queda fuera.",
       },
       {
         title: "IA generativa y agentes",
-        text: "Agentes que hacen algo útil dentro del producto. La demo bonita la sabe hacer cualquiera.",
+        text: "Agentes y modelos integrados en el producto, con sus límites, su coste y su mantenimiento.",
       },
       {
         title: "Datos e infraestructura",
-        text: "Mi servidor, mis despliegues y una factura que reviso yo cada mes.",
+        text: "Bases de datos, caché, despliegues y el servidor donde corre todo.",
       },
     ],
     focus: [
@@ -86,16 +86,16 @@ export const es: Copy = {
       "UX, rendimiento, datos meteorológicos e Inteligencia Artificial",
     ],
     summary: [
-      { text: "Soy Ingeniero Informático por la " },
+      { text: "Ingeniero Informático por la " },
       { text: site.university, href: site.universityUrl, external: true },
       { text: " y colegiado en el " },
       { text: site.college, href: site.collegeUrl, external: true },
       {
-        text: ". Trabajo en entornos enterprise liderando decisiones técnicas, colaboro como freelance con la fundación suiza que publica el ",
+        text: ". Más de cinco años en el sector: ahora como Tech Lead en banca y seguros, y como freelance para la fundación suiza que publica el ",
       },
       { text: "Elite Quality Index", href: site.eqxIndex, external: true },
       {
-        text: " de la Universidad de St. Gallen, y desarrollo Snowy para trabajar producto, frontend, backend, datos, infraestructura, SEO y agentes sobre un sistema real.",
+        text: " de la Universidad de St. Gallen. En paralelo desarrollo Snowy, una plataforma meteorológica con usuarios reales que uso para trabajar producto, datos e infraestructura de punta a punta.",
       },
     ],
     visualStats: [
@@ -127,7 +127,7 @@ export const es: Copy = {
       },
       {
         label: "En producción · Snowy",
-        title: "Donde descubro si tenía razón",
+        title: "Un producto propio en producción",
         text: "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Está en producción y no para de crecer.",
       },
     ],
@@ -169,7 +169,7 @@ export const es: Copy = {
     ],
   },
   ai: {
-    title: "IA que hace trabajo, no que lo aparenta.",
+    title: "IA con una tarea concreta dentro del producto.",
     lead: "Trabajo la parte de agentes, RAG, tools, MCP y LLMs desde una idea sencilla: que la IA resuelva tareas concretas dentro del producto y se pueda mantener como cualquier otra pieza del sistema.",
     detail:
       "Me interesa especialmente la parte de diseño del flujo: qué contexto necesita el modelo, qué herramientas puede usar, cómo se controlan las respuestas y qué experiencia recibe el usuario.",
@@ -208,12 +208,32 @@ export const es: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "Snowy: lo llevé a producción y hoy lo usa gente todos los días.",
+    title: "En producción, y en uso cada día.",
     lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 14,7 millones de impresiones orgánicas y 242.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
     detail:
       "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
     ctaPrimary: "Ver caso técnico",
     ctaSecondary: "Abrir Snowy",
+    gallery: [
+      {
+        image: "/images/snowy-radar-map.webp",
+        title: "Radar de precipitación",
+        caption: "Media hora por paso sobre las estaciones que reportan en directo.",
+        alt: "Mapa de Snowy con el radar de precipitación sobre España y las estaciones activas",
+      },
+      {
+        image: "/images/snowy-ai-assistant.webp",
+        title: "Asistente meteorológico",
+        caption: "Responde con datos de estaciones reales, no con texto genérico.",
+        alt: "Asistente de Snowy respondiendo una consulta con datos de estaciones",
+      },
+      {
+        image: "/images/snowy-climate.webp",
+        title: "Cambio climático",
+        caption: "Serie histórica por municipio frente a la media del siglo pasado.",
+        alt: "Panel de clima de Snowy con el mapa de anomalía de temperatura en España",
+      },
+    ],
     imageAlt: "Home de Snowy con buscador meteorológico, asistente IA y planificador",
   },
   experiencePreview: {
@@ -225,7 +245,7 @@ export const es: Copy = {
   projectsPreview: {
     eyebrow: "Proyectos",
     title: "Tres proyectos que sí puedes abrir y mirar.",
-    text: "Uno lo desarrollo yo de punta a punta. Otro es un cliente en Suiza. El tercero lleva doce años publicando. Los tres están en marcha ahora mismo.",
+    text: "Uno lo desarrollo de punta a punta, otro es un cliente en Suiza y el tercero lleva doce años publicando.",
   },
   contactCta: {
     title: "Si mi perfil encaja, hablamos.",
@@ -379,6 +399,23 @@ export const es: Copy = {
       },
     },
   ],
+  aboutFacts: {
+    location: "Base",
+    languages: "Idiomas",
+    education: "Formación",
+  },
+  education: [
+    {
+      title: "Ingeniería Informática",
+      org: site.university,
+      url: site.universityUrl,
+      note: "Colegiado en el " + site.college,
+    },
+  ],
+  languages: [
+    { name: "Español", level: "Nativo" },
+    { name: "Inglés", level: "Intermedio" },
+  ],
   skills: [
     {
       title: "Frontend",
@@ -404,6 +441,8 @@ export const es: Copy = {
   projects: [
     {
       slug: "snowy",
+      imageMobile: "/images/snowy-movil.webp",
+      pitch: "Pronóstico multi-modelo, radar y asistente para toda España.",
       name: "Snowy",
       url: site.snowy,
       label: "Caso de ingeniería",
@@ -412,7 +451,7 @@ export const es: Copy = {
       description:
         "Plataforma meteorológica con datos en tiempo real, mapas, radar, estaciones, SEO, backend propio, infraestructura e IA.",
       impact:
-        "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Y cuando algo se cae de madrugada, lo arreglo yo.",
+        "Desarrollo de punta a punta, del render en servidor al radar y los despliegues, con el mantenimiento en marcha desde que salió a producción.",
       metrics: [
         { value: "16", label: "modelos meteorológicos" },
         { value: "1.800+", label: "estaciones en vivo" },
@@ -433,6 +472,8 @@ export const es: Copy = {
     },
     {
       slug: "eqx",
+      imageMobile: "/images/eqx-movil.webp",
+      pitch: "El índice que ordena 151 países por la calidad de sus élites.",
       name: "EQx",
       url: "https://elitequality.org/",
       label: "Cliente",
@@ -451,6 +492,8 @@ export const es: Copy = {
     },
     {
       slug: "lariojameteo",
+      imageMobile: "/images/lariojameteo-movil.webp",
+      pitch: "El portal meteorológico de referencia en La Rioja desde 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
       label: "Webmaster",
@@ -504,6 +547,8 @@ export const es: Copy = {
       stackTitle: "Competencias técnicas",
       stackText:
         "Elijo herramientas por rendimiento, mantenibilidad, SEO, costes y experiencia de usuario.",
+      educationTitle: "Formación",
+      languagesTitle: "Idiomas",
       downloadCta: "Descargar en PDF",
       printHint: "Se abre el diálogo de impresión: elige «Guardar como PDF».",
     },
@@ -623,7 +668,7 @@ export const es: Copy = {
           },
           {
             title: "Datos oficiales, actualizados solos",
-            text: "374 embalses del MITECO, con su volumen, su variación semanal y la comparación con el año pasado. Se refresca sin que nadie toque nada.",
+            text: "374 embalses del MITECO, con su volumen, su variación semanal y la comparación con el año pasado, actualizados de forma automática.",
             image: "/images/detalle/embalses.webp",
             alt: "Reserva hídrica nacional al 64 % con volumen, variación y comparación anual",
           },
@@ -699,7 +744,7 @@ export const es: Copy = {
       },
       traction: {
         title: "Tracción real, no solo arquitectura.",
-        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8. Sin equipo de marketing detrás.",
+        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8.",
       },
       build: {
         eyebrow: "Construcción",
@@ -1048,7 +1093,7 @@ export const es: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "Dos aplicaciones distintas, un mismo responsable.",
-        text: "La web del índice y la plataforma de evaluación no comparten código ni tecnología. Comparten que las mantengo yo.",
+        text: "La web del índice y la plataforma de evaluación son dos sistemas independientes, sin código ni tecnología en común, y llevo el mantenimiento de las dos.",
         groups: [
           { label: "Web del índice", items: ["Astro", "React", "Tailwind", "TypeScript"] },
           { label: "Visualización", items: ["D3", "TopoJSON", "TanStack Table"] },
@@ -1060,7 +1105,7 @@ export const es: Copy = {
   },
   radarScrub: {
     eyebrow: "Datos en vivo",
-    title: "Baja y verás llover.",
+    title: "Precipitación, en directo.",
     caption:
       "Radar de precipitación de Snowy, media hora por paso, sobre las 1.862 estaciones que reportan en directo.",
     imageAlt:
@@ -1072,23 +1117,29 @@ export const es: Copy = {
     imageAlt: "Portada de Snowy con buscador, asistente y datos en vivo",
     steps: [
       {
-        title: "Decido qué no se hace",
-        text: "La mitad del trabajo es descartar. Cada función que entra hay que mantenerla los próximos cinco años, y eso se paga en velocidad y en madrugadas.",
+        title: "Descartar es la mitad del trabajo",
+        text: "Cada función que entra hay que mantenerla durante años, así que la decisión que más pesa suele ser qué se queda fuera.",
+        image: "/images/snowy-home.webp",
+        imageAlt: "Portada de Snowy con buscador, asistente y accesos a los mapas",
       },
       {
-        title: "Los datos mandan sobre la opinión",
-        text: "Dieciséis modelos meteorológicos que no coinciden entre sí, y una interfaz que tiene que dar una respuesta. Ahí es donde se decide si un producto sirve o solo se ve bonito.",
+        title: "Dieciséis modelos que no coinciden",
+        text: "Dieciséis fuentes meteorológicas con pronósticos distintos para el mismo punto, y una interfaz que tiene que dar una sola respuesta.",
+        image: "/images/snowy-station-detail.webp",
+        imageAlt: "Ficha del tiempo en Madrid con fiabilidad del pronóstico al 51 %",
       },
       {
-        title: "Me quedo cuando se rompe",
-        text: "Está en mi servidor, con mis despliegues. Si el radar deja de pintar un domingo por la noche, no hay a quién escalarlo.",
+        title: "Mantener, no solo entregar",
+        text: "Si el radar deja de pintar un domingo por la noche hay que arreglarlo, y eso condiciona cómo se construye desde el primer día.",
+        image: "/images/snowy-radar-map.webp",
+        imageAlt: "Radar de precipitación de Snowy sobre España",
       },
     ],
   },
   bigStat: {
     eyebrow: "Snowy, últimos 90 días",
     value: 14687005,
-    label: "impresiones en búsqueda orgánica, sin un euro en publicidad ni equipo de marketing detrás.",
+    label: "impresiones en búsqueda orgánica, sin inversión en publicidad.",
     support: [
       { value: "242.000", label: "visitas desde búsqueda" },
       { value: "8,1", label: "posición media en Google" },

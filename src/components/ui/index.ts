@@ -1,10 +1,13 @@
 export { Badge } from "./Badge";
+export { BrowserFrame } from "./BrowserFrame";
 export { ButtonLink } from "./ButtonLink";
 export { Container } from "./Container";
 export { CountUp } from "./CountUp";
 export { CopyEmail } from "./CopyEmail";
+export { DeviceFrame } from "./DeviceFrame";
 export { MetricCard } from "./MetricCard";
 export { ProductShot } from "./ProductShot";
+export { Rail } from "./Rail";
 export { Reveal } from "./Reveal";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";

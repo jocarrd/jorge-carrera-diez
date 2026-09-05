@@ -86,6 +86,61 @@ export function CvView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="cv-section">
+        <div className="grid gap-10 sm:grid-cols-2">
+          <div>
+            <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+              {copy.educationTitle}
+            </h2>
+            <div className="cv-entries mt-8 space-y-4">
+              {content.education.map((item) => (
+                <div key={item.title} className="cv-entry">
+                  <h3 className="cv-entry-title text-xl font-semibold text-[var(--foreground)]">
+                    {item.title}
+                  </h3>
+                  <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
+                    {item.url ? (
+                      <a
+                        className="underline decoration-[var(--line-strong)] underline-offset-4 transition-colors hover:text-[var(--accent-text)]"
+                        href={item.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.org}
+                      </a>
+                    ) : (
+                      item.org
+                    )}
+                  </p>
+                  {item.note ? (
+                    <p className="cv-entry-summary mt-3 text-sm leading-6 text-[var(--muted)]">
+                      {item.note}
+                    </p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+              {copy.languagesTitle}
+            </h2>
+            <dl className="cv-langs mt-8 space-y-3">
+              {content.languages.map((lang) => (
+                <div
+                  key={lang.name}
+                  className="cv-lang flex items-baseline justify-between gap-4 border-b border-[var(--line)] pb-3"
+                >
+                  <dt className="text-base font-medium text-[var(--foreground)]">{lang.name}</dt>
+                  <dd className="text-sm text-[var(--muted)]">{lang.level}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="cv-section">
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
           {copy.stackTitle}
         </h2>
