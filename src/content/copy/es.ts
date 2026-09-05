@@ -544,6 +544,7 @@ export const es: Copy = {
       heading:
         "Ingeniero de software con trayectoria en banca, seguros, retail y producto web.",
       text: "El recorrido completo, por orden. Dónde he liderado las decisiones técnicas, qué he construido en cada sitio y cómo he ido metiendo agentes de IA en flujos que ya estaban en producción.",
+      spanLegend: "En marcha ahora mismo",
     },
     cv: {
       title: "CV",

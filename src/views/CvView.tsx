@@ -1,6 +1,7 @@
 import { CareerTimeline } from "@/components/cv/CareerTimeline";
 import { PrintButton } from "@/components/cv/PrintButton";
 import { ProfileSummary } from "@/components/ProfileSummary";
+import { CareerSpan } from "@/components/visual/CareerSpan";
 import { Section, SectionHeader, Surface } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -59,6 +60,16 @@ export function CvView({ locale }: { locale: Locale }) {
         <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
           {copy.experienceTitle}
         </h2>
+
+        {/* Solo en pantalla: en el PDF la lista ya va en orden y una gráfica
+            gastaría media página sin decir nada que no diga el texto. */}
+        <div className="cv-screen-only mt-10">
+          <CareerSpan
+            items={content.experience}
+            currentLabel={content.pages.experience.spanLegend}
+          />
+        </div>
+
         <div className="cv-entries mt-10 space-y-4">
           {content.experience.map((item) => (
             <Surface key={`${item.company}-${item.period}`} className="cv-entry">

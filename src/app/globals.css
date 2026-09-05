@@ -549,6 +549,124 @@ a {
   }
 }
 
+/* ── Infografia: barras de trayectoria ────────────────────
+   Una lista de puestos esconde lo que aqui se ve de un vistazo: que hay dos
+   frentes a la vez. Las barras se colocan por fecha sobre un eje de anios; el
+   ancho es tiempo, no relleno. */
+.span {
+  position: relative;
+  border-radius: 28px;
+  background: var(--panel);
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .span {
+    padding: 2.5rem 2.5rem 2rem;
+  }
+}
+
+.span-grid {
+  position: relative;
+  height: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.span-year {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.span-rows {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.span-row {
+  position: relative;
+  height: 2.25rem;
+}
+
+.span-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+/* Lo que sigue en marcha se marca en lleno: es la diferencia que importa. */
+.span-bar.is-live {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* El rotulo va suelto y no dentro de la barra: asi puede salirse cuando la
+   barra es demasiado corta para contenerlo. */
+.span-name {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--foreground);
+}
+
+
+
+/* En movil ninguna etiqueta cabe al lado de una barra de 70 px: el nombre sube
+   encima y la barra queda debajo, a lo ancho de la fila. */
+@media (max-width: 767px) {
+  /* El rotulo va delante de la barra en el marcado para que se lea antes; en
+     escritorio se posiciona encima y el orden da igual. Aqui se invierte con
+     order para no duplicar el marcado. */
+  .span-row {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .span-name {
+    position: static;
+    order: -1;
+    display: block;
+    transform: none;
+    margin-bottom: 0.45rem;
+    color: var(--foreground);
+  }
+
+  .span-bar {
+    position: relative;
+    display: block;
+    height: 0.625rem;
+  }
+
+  .span-rows {
+    gap: 1rem;
+  }
+}
+
+.span-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.span-chip {
+  width: 1.5rem;
+  height: 0.625rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
 /* ── Infografia: linea de tiempo ──────────────────────────
    La linea vive en el ::before del carril y los hitos se colocan encima con
    --at, en fraccion del recorrido. En movil la linea se pone vertical, que es

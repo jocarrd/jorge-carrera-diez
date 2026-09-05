@@ -538,6 +538,7 @@ export const en: Copy = {
       eyebrow: "Experience",
       heading: "Software engineer with a track record in banking, insurance, retail and web product.",
       text: "The full track record, in order. Where I led the technical decisions, what I built at each place, and how I have been putting AI agents into flows that were already in production.",
+      spanLegend: "Running right now",
     },
     cv: {
       title: "CV",

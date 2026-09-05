@@ -225,7 +225,12 @@ export type Copy = {
   };
   pages: {
     projects: PageMeta & { eyebrow: string; heading: string; text: string };
-    experience: PageMeta & { eyebrow: string; heading: string; text: string };
+    experience: PageMeta & {
+      eyebrow: string;
+      heading: string;
+      text: string;
+      spanLegend: string;
+    };
     cv: PageMeta & {
       eyebrow: string;
       experienceTitle: string;

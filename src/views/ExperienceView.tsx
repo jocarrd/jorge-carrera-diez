@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CompanyMark } from "@/components/experience/CompanyMark";
 import { GenerativeAiSection } from "@/components/experience/GenerativeAiSection";
 import { BrowserFrame, Section, SectionHeader } from "@/components/ui";
+import { CareerSpan } from "@/components/visual/CareerSpan";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -13,22 +14,32 @@ export function ExperienceView({ locale }: { locale: Locale }) {
     <main>
       <Section>
         <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} level={1} />
-        <div className="mt-8 sm:mt-12">
+
+        {/* La lista de puestos, por completa que sea, esconde que hay dos
+            frentes a la vez. En barras se ve en un vistazo. */}
+        <div className="mt-10 sm:mt-12">
+          <CareerSpan items={content.experience} currentLabel={copy.spanLegend} />
+        </div>
+
+        <div className="mt-12 sm:mt-16">
           <div className="relative">
-            <div className="absolute bottom-0 left-[7px] top-0 w-px bg-gradient-to-b from-cyan-300/70 via-[var(--line)] to-transparent md:left-6" />
+            {/* La columna del carril medía 12rem y solo llevaba un punto: el
+                contenido empezaba a un tercio del ancho y quedaba un hueco
+                muerto a la izquierda. Ahora el carril ocupa lo que ocupa. */}
+            <div className="absolute bottom-0 left-[7px] top-0 w-px bg-gradient-to-b from-cyan-300/70 via-[var(--line)] to-transparent md:left-[7px]" />
             {content.experience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
-                className="tl-entry relative grid gap-5 border-b border-[var(--line)] py-7 pl-7 last:border-b-0 md:grid-cols-[12rem_1fr] md:gap-6 md:py-8 md:pl-0"
+                className="tl-entry relative grid gap-5 border-b border-[var(--line)] py-7 pl-7 last:border-b-0 md:gap-6 md:py-8"
               >
                 <div
                   aria-hidden
-                  className="tl-dot absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[var(--panel)] md:left-3 md:top-10 md:h-7 md:w-7 md:border-[var(--line-strong)]"
+                  className="tl-dot absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[var(--panel)] md:top-10 md:h-4 md:w-4"
                 >
                   <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] md:h-2 md:w-2" />
                 </div>
 
-                <div className="md:col-start-2">
+                <div>
                   <div className="grid gap-6 lg:grid-cols-[13rem_1fr]">
                     <div>
                       <CompanyMark logo={item.logo} />
