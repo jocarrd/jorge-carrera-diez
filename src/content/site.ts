@@ -4,7 +4,7 @@ export const site = {
   domain: "jorge-carrera-diez.com",
   url: "https://www.jorge-carrera-diez.com",
   email: "jorgecarrera98d@gmail.com",
-  photo: "/images/jorge-carrera-diez.webp",
+  photo: "/images/jorge-carrera-diez-claro.webp",
   github: "https://github.com/jocarrd",
   malt: "https://www.malt.es/profile/jorgecarreradiez",
   linkedin: "https://es.linkedin.com/in/jorge-carrera-diez",

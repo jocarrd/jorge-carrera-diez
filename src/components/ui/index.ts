@@ -1,7 +1,9 @@
 export { Badge } from "./Badge";
 export { ButtonLink } from "./ButtonLink";
 export { Container } from "./Container";
+export { CopyEmail } from "./CopyEmail";
 export { MetricCard } from "./MetricCard";
+export { ProductShot } from "./ProductShot";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";

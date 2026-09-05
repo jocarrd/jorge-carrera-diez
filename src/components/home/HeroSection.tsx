@@ -1,7 +1,4 @@
-import { ProfileSummary } from "@/components/ProfileSummary";
-import { ProfileVisual } from "@/components/home/ProfileVisual";
-import { IsolineField } from "@/components/visual/IsolineField";
-import { ButtonLink, Container } from "@/components/ui";
+import { ButtonLink, Container, ProductShot } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -11,44 +8,62 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden">
-      <IsolineField className="pointer-events-none absolute inset-0 hidden h-full w-full sm:block [mask-image:linear-gradient(to_bottom,black_10%,rgba(0,0,0,0.55)_60%,transparent_92%)]" />
-      {/* Las curvas pasando por detrás del texto no rompen el contraste —axe pasa—
-          pero distraen al leer. Un velo suave bajo la columna de texto deja el
-          campo intacto donde se ve y da suelo limpio donde se lee. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-full bg-[radial-gradient(75%_60%_at_22%_50%,rgba(2,4,10,0.92),rgba(2,4,10,0.55)_45%,transparent_72%)] lg:w-3/5"
-      />
-      <Container className="relative py-12 sm:py-20 lg:py-24">
-
-        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
-          <div>
-            <h1 className="rise rise-1 max-w-4xl text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-white sm:text-7xl lg:text-[5.5rem]">
-              {site.name}
-            </h1>
-            <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:mt-7 sm:text-xl sm:leading-8">
-              {copy.profile.headline}
-            </p>
-            <div className="rise rise-3 mt-7 flex flex-wrap items-center gap-3 sm:mt-9">
-              <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
-              <ButtonLink href={routePath(locale, "cv")} variant="secondary">
-                {copy.hero.ctaSecondary}
-              </ButtonLink>
-            </div>
-          </div>
-
-          <ProfileVisual locale={locale} />
+      <Container className="pt-14 text-center sm:pt-24 lg:pt-28">
+        <p className="rise rise-1 text-xl font-semibold text-[var(--muted)] sm:text-[1.3125rem]">
+          {site.name}
+        </p>
+        <p className="rise rise-1 mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--panel)] py-1.5 pl-3 pr-4 text-[14px] font-medium">
+          <span aria-hidden className="h-2 w-2 rounded-full bg-[#1db954]" />
+          {copy.profile.availability}
+        </p>
+        {/* Tres líneas cortas en vez de un párrafo: el titular se lee entero
+            antes de que a nadie le dé tiempo a decidir que no le interesa. */}
+        <h1 className="rise rise-2 mt-4 text-[2.625rem] font-bold leading-[1.05] tracking-[-0.04em] sm:text-[6rem]">
+          {copy.profile.tagline.map((line, index) => (
+            <span key={line} className={index === 2 ? "block text-[var(--muted)]" : "block"}>
+              {line}
+            </span>
+          ))}
+        </h1>
+        <p className="rise rise-3 mx-auto mt-6 max-w-[34ch] text-[1.0625rem] leading-[1.45] text-[var(--muted)] sm:mt-7 sm:max-w-[46ch] sm:text-[1.5625rem]">
+          {copy.profile.taglineSub}
+        </p>
+        <div className="rise rise-4 mt-7 flex flex-col items-center gap-1 sm:mt-8 sm:flex-row sm:justify-center sm:gap-x-8">
+          <ButtonLink href={routePath(locale, "snowy")} variant="quiet">
+            {copy.hero.ctaPrimary}
+          </ButtonLink>
+          <ButtonLink href={routePath(locale, "contact")} variant="quiet">
+            {copy.hero.ctaContact}
+          </ButtonLink>
         </div>
+        {/* Tres capacidades justo bajo los enlaces: es lo que hace que "IA"
+            se lea sin hacer scroll, sin llenar el titular de palabras. */}
+        <ul className="rise rise-4 mx-auto mt-14 grid max-w-[62rem] gap-8 text-left sm:mt-16 sm:grid-cols-3 sm:gap-10">
+          {copy.profile.capabilities.map((item) => (
+            <li key={item.title}>
+              <h2 className="text-[17px] font-semibold tracking-[-0.01em]">{item.title}</h2>
+              <p className="mt-1.5 text-[15px] leading-[1.5] text-[var(--muted)]">{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </Container>
 
-        {/* En móvil la rejilla apila, así que este párrafo se metía entre los
-            botones y la foto: la primera pantalla quedaba en 97 palabras, cero
-            imágenes y ninguna cifra. Bajándolo, lo primero que se ve después del
-            titular es la cara y los cuatro datos. En escritorio gana además una
-            medida de línea más cómoda que la columna estrecha. */}
-        <ProfileSummary
-          locale={locale}
-          className="prose-links rise rise-4 mt-10 max-w-3xl text-base leading-relaxed text-slate-400 sm:mt-12 sm:leading-7"
-        />
+      {/* La captura entra recortada por abajo y se funde con el fondo: el
+          producto no se presenta, se asoma. */}
+      <Container className="mt-12 sm:mt-20">
+        <div className="relative">
+          <ProductShot
+            src="/images/snowy-home.webp"
+            srcMobile="/images/snowy-home-movil.webp"
+            alt={copy.snowyShowcase.imageAlt}
+            priority
+            crop
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-transparent sm:h-28"
+          />
+        </div>
       </Container>
     </section>
   );

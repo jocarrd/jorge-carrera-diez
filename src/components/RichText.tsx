@@ -6,11 +6,11 @@ type RichTextProps = {
   linkClassName?: string;
 };
 
-// Tres enlaces cian seguidos dentro de un párrafo lo convertían en un texto
-// que se lee a saltos. El subrayado ya dice que es un enlace; el color se
-// reserva para cuando el puntero está encima.
+// Sobre gris, el azul solo no llega a 3:1 contra el texto que lo rodea, así que
+// el enlace se marcaría únicamente por color: el subrayado permanente es el que
+// lo hace distinguible, y el color queda como refuerzo.
 const defaultLinkClassName =
-  "text-slate-300 underline decoration-cyan-300/40 decoration-1 underline-offset-4 transition-colors hover:text-cyan-200 hover:decoration-cyan-300";
+  "text-[var(--accent-text)] underline decoration-[var(--accent-text)]/35 decoration-1 underline-offset-4 transition-colors hover:decoration-[var(--accent-text)]";
 
 export function RichText({ segments, linkClassName }: RichTextProps) {
   return (

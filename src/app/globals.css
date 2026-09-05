@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
+/* Paleta clara: el fondo es el papel y la jerarquía la pone el tamaño del
+   texto, no el color. Sólo dos superficies —blanco y gris— más el negro que
+   se reserva para la sección de Snowy, que es la que debe recordarse. */
 :root {
-  --background: #02040a;
-  --foreground: #f8fafc;
-  --muted: #94a3b8;
-  --panel: rgba(255, 255, 255, 0.035);
-  --panel-strong: rgba(255, 255, 255, 0.06);
-  --line: rgba(255, 255, 255, 0.1);
-  --s1: rgba(255, 255, 255, 0.035);
-  --s2: rgba(255, 255, 255, 0.062);
-  --s3: rgba(255, 255, 255, 0.095);
-  --cyan: #67e8f9;
-  --teal: #5eead4;
-  --violet: #a78bfa;
+  --background: #ffffff;
+  --foreground: #1d1d1f;
+  --muted: #6e6e73;
+  --muted-strong: #86868b;
+  --panel: #f5f5f7;
+  --panel-strong: #ebebef;
+  --line: #e8e8ed;
+  --line-strong: #d2d2d7;
+  --accent: #0071e3;
+  --accent-text: #0066cc;
+  --accent-dark: #2997ff;
+  --ink-dark: #000000;
+  --ink-dark-panel: #1d1d1f;
+  --ink-dark-muted: #a1a1a6;
+  --radius-card: 20px;
+  --radius-card-lg: 28px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: var(--font-mono-plex), "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  /* La pila del sistema va primero a propósito: en macOS e iOS resuelve a San
+     Francisco, que es la referencia que perseguimos. Onest sólo entra donde no
+     existe, y comparte métricas lo bastante cerca para no mover la maqueta. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    var(--font-sans-onest), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-mono-plex), "SFMono-Regular", Consolas, Menlo, monospace;
 }
 
 * {
@@ -28,50 +39,19 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(103, 232, 249, 0.13), transparent 24rem),
-    radial-gradient(circle at 82% 8%, rgba(94, 234, 212, 0.08), transparent 25rem),
-    linear-gradient(180deg, #02040a 0%, #07111f 48%, #02040a 100%);
+  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans-plex), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  /* Plex trae cifras de ancho variable por defecto; en fechas y datos bailan. */
+  font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
   text-rendering: optimizeLegibility;
-}
-
-body::before {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  content: "";
-  background-image:
-    linear-gradient(rgba(103, 232, 249, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(103, 232, 249, 0.018) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.16) 1px, transparent 1.35px);
-  background-size:
-    72px 72px,
-    72px 72px,
-    128px 128px;
-  background-position:
-    center top,
-    center top,
-    12px 20px;
-  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.45) 34%, transparent 62%);
-}
-
-body::after {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  content: "";
-  background:
-    radial-gradient(ellipse at center, transparent 0%, rgba(2, 4, 10, 0.62) 88%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -79,503 +59,212 @@ a {
 }
 
 ::selection {
-  background: rgba(103, 232, 249, 0.28);
+  background: rgba(0, 113, 227, 0.18);
 }
 
-.orbital-ring {
-  position: absolute;
-  border: 1px solid rgba(103, 232, 249, 0.16);
-  border-radius: 9999px;
-  transform: rotate(-18deg);
+/* ── Superficies ─────────────────────────────────────────────
+   Tres niveles y ninguno lleva borde salvo el más marcado: en una interfaz
+   clara el borde compite con el texto, y el gris ya separa por sí solo. */
+.lvl-1 {
+  background: var(--panel);
+  border-radius: var(--radius-card);
 }
 
-.scanline {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(103, 232, 249, 0.5),
-    rgba(94, 234, 212, 0.2),
-    transparent
-  );
+.lvl-2 {
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  box-shadow: 0 0 0 1px var(--line);
 }
 
-.space-border {
-  position: relative;
+.lvl-3 {
+  background: var(--panel);
+  border-radius: var(--radius-card-lg);
 }
 
-.space-border::before {
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  border-radius: inherit;
-  content: "";
-  background:
-    linear-gradient(135deg, rgba(103, 232, 249, 0.42), transparent 26%),
-    linear-gradient(315deg, rgba(94, 234, 212, 0.2), transparent 32%);
-  opacity: 0.55;
+.lvl-hover {
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.ai-pipeline-line {
-  background: linear-gradient(
-    90deg,
-    rgba(103, 232, 249, 0.08),
-    rgba(103, 232, 249, 0.65),
-    rgba(94, 234, 212, 0.28),
-    rgba(103, 232, 249, 0.08)
-  );
-  background-size: 220% 100%;
-  animation: ai-line-flow 5.8s ease-in-out infinite;
+.lvl-hover:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.08),
+    0 0 0 1px var(--line);
 }
 
-.ai-node-glow {
-  animation: ai-node-glow 4.8s ease-in-out infinite;
+.section-band {
+  background: var(--panel);
 }
 
-.ai-signal {
-  animation: ai-signal 3.4s ease-in-out infinite;
+.section-dark {
+  background: var(--ink-dark);
+  color: #f5f5f7;
 }
 
-.ai-orbit {
-  animation: ai-orbit 18s linear infinite;
-}
-
-.ai-console-line {
-  animation: ai-console-line 6s ease-in-out infinite;
-}
-
-@keyframes ai-line-flow {
-  0%,
-  100% {
-    background-position: 0% 50%;
-    opacity: 0.45;
-  }
-
-  50% {
-    background-position: 100% 50%;
-    opacity: 0.9;
-  }
-}
-
-@keyframes ai-node-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(103, 232, 249, 0);
-  }
-
-  50% {
-    box-shadow: 0 0 32px rgba(103, 232, 249, 0.16);
-  }
-}
-
-@keyframes ai-signal {
-  0%,
-  100% {
-    transform: translateX(-12%);
-    opacity: 0;
-  }
-
-  35%,
-  60% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(112%);
-  }
-}
-
-@keyframes ai-orbit {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes ai-console-line {
-  0%,
-  24% {
-    opacity: 0.4;
-  }
-
-  48%,
-  72% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.5;
-  }
-}
-
-/* Impresión del CV. La página se guarda como PDF desde el navegador y se usa como
-   currículum, así que deja de ser una pantalla: tinta sobre blanco, sin superficies
-   ni decoración, y densidad de documento en lugar de densidad de web. */
-@media print {
-  @page {
-    size: A4;
-    margin: 13mm 13mm 12mm;
-  }
-
-  html,
-  body {
-    background: #fff !important;
-    color: #111827 !important;
-  }
-
-  /* Los pseudo-elementos del fondo son `position: fixed` y la impresión los
-     materializa como un bloque gris al final del documento. */
-  body::before,
-  body::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  header,
-  footer,
-  .print\:hidden {
-    display: none !important;
-  }
-
-  .cv-document,
-  .cv-document *,
-  .cv-document *::before,
-  .cv-document *::after {
-    color: #111827 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    border-color: transparent !important;
-    border-radius: 0 !important;
-  }
-
-  /* Las secciones dejan de ser bandas de página completa. */
-  .cv-document section {
-    padding: 0 !important;
-    border: 0 !important;
-  }
-
-  .cv-document section > div {
-    max-width: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .cv-document h1 {
-    font-size: 23pt;
-    line-height: 1.1;
-  }
-
-  .cv-role {
-    margin-top: 2pt !important;
-    font-size: 10.5pt;
-    font-weight: 600;
-  }
-
-  .cv-summary {
-    margin-top: 6pt !important;
-    max-width: none !important;
-    font-size: 9.5pt;
-    line-height: 1.42;
-  }
-
-  .cv-contact {
-    margin-top: 7pt !important;
-    gap: 3pt 10pt !important;
-    padding-bottom: 8pt;
-    border-bottom: 0.6pt solid #cbd5e1 !important;
-    font-size: 8.5pt;
-  }
-
-  .cv-contact a {
-    text-decoration: none;
-  }
-
-  /* En pantalla el bloque de contacto son chips, que le dan forma a lo que era
-     un volcado de enlaces sueltos. En papel un chip es ruido: se desmonta. */
-  .cv-screen-only {
-    display: none !important;
-  }
-
-  .cv-chip {
-    display: inline !important;
-    min-height: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-  }
-
-  .cv-section-title {
-    margin-top: 13pt !important;
-    font-size: 12pt;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  .cv-entries,
-  .cv-skills {
-    margin-top: 6pt !important;
-  }
-
-  .cv-entries {
-    gap: 0 !important;
-  }
-
-  .cv-entries > * + * {
-    margin-top: 0 !important;
-  }
-
-  /* Cada puesto entero en la misma página: partir un bloque de experiencia entre
-     dos hojas es el fallo clásico de imprimir un CV desde el navegador. */
-  .cv-entry {
-    padding: 8pt 0 !important;
-    border-bottom: 0.6pt solid #e2e8f0 !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .cv-entry:last-child {
-    border-bottom: 0 !important;
-  }
-
-  .cv-period {
-    font-size: 8.5pt;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .cv-entry-title {
-    margin-top: 1pt !important;
-    font-size: 11.5pt;
-  }
-
-  .cv-entry-meta {
-    margin-top: 0 !important;
-    font-size: 9pt;
-    font-style: italic;
-  }
-
-  .cv-entry-summary {
-    margin-top: 4pt !important;
-    font-size: 9.5pt;
-    line-height: 1.4;
-  }
-
-  .cv-bullets {
-    margin-top: 4pt !important;
-    gap: 1.5pt !important;
-    font-size: 9.5pt;
-    line-height: 1.35;
-  }
-
-  .cv-bullet-dot {
-    margin-top: 4.5pt !important;
-    background: #111827 !important;
-    border-radius: 999px !important;
-  }
-
-  .cv-skills {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 4pt 16pt !important;
-  }
-
-  .cv-skill {
-    padding: 3pt 0 !important;
-    break-inside: avoid;
-  }
-
-  .cv-skill-title {
-    font-size: 9.5pt;
-  }
-
-  .cv-skill-items {
-    margin-top: 1pt !important;
-    font-size: 9pt;
-    line-height: 1.35;
-  }
-}
-
-/* --- Ritmo y detalle tipográfico ------------------------------------------ */
-
-/* Sin esto el H1 parte en "Jorge Carrera / Diez" y deja el apellido huérfano. */
-h1, h2, h3 {
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
-}
-
-/* Los enlaces dentro de un párrafo largo eran tres manchas cian seguidas y el
-   texto se leía a saltos. El subrayado ya dice que es un enlace; el color se
-   guarda para cuando el puntero está encima. */
+/* ── Enlaces dentro de prosa ─────────────────────────────── */
 .prose-links a {
-  color: rgb(203 213 225);
-  text-decoration: underline;
-  text-decoration-color: rgba(103, 232, 249, 0.4);
-  text-decoration-thickness: 1px;
-  transition: color 0.18s ease, text-decoration-color 0.18s ease;
+  color: var(--accent-text);
+  text-decoration: none;
 }
 
 .prose-links a:hover,
 .prose-links a:focus-visible {
-  color: var(--cyan);
-  text-decoration-color: var(--cyan);
+  text-decoration: underline;
 }
 
-/* --- Entrada ---------------------------------------------------------------
-   Un desplazamiento corto y un fundido, escalonado por orden de lectura. Parte
-   de un estado visible: si el script no corre o se pide menos movimiento, la
-   página ya está donde tiene que estar. */
+/* ── Cabecera ────────────────────────────────────────────────
+   Translúcida y muy baja; sólo aparece la línea inferior al hacer scroll. */
+.site-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+/* El desenfoque no siempre llega: navegadores viejos, modo de ahorro, o un
+   Chrome sin GPU que dice soportarlo y no lo pinta. Por eso el fondo va al
+   94 % —sigue leyéndose translúcido sobre el desenfoque real— y donde ni
+   siquiera se declara, opaco. La barra tiene que ser legible, no bonita. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header {
+    background: #ffffff;
+  }
+}
+
+/* Arriba del todo no hay nada debajo, así que la barra puede ser translúcida.
+   En cuanto empieza el scroll sí lo hay, y el desenfoque no siempre llega a
+   pintarse: ahí se vuelve opaca y aparece la línea. */
+.site-header[data-scrolled="true"] {
+  background: #ffffff;
+  border-bottom-color: var(--line);
+}
+
+/* ── Capturas de producto ────────────────────────────────── */
+.shot-frame {
+  position: relative;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.shot-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ── Trayectoria ─────────────────────────────────────────── */
+.tl-entry .tl-dot {
+  background: var(--line-strong);
+  transition: background 0.3s ease;
+}
+
+.tl-entry:hover .tl-dot {
+  background: var(--accent);
+}
+
+/* ── Detalles heredados de la versión oscura ─────────────────
+   Se conservan los nombres porque siguen usándose en las páginas de caso;
+   aquí sólo cambian los valores para que funcionen sobre fondo claro. */
+.space-border {
+  position: relative;
+  border-radius: var(--radius-card-lg);
+  background: var(--panel);
+}
+
+.space-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.scanline {
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+.orbital-ring {
+  position: absolute;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  transform: rotate(-18deg);
+}
+
+.ai-pipeline-line {
+  background: linear-gradient(90deg, transparent, var(--line-strong) 45%, transparent);
+}
+
+.ai-node-glow {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.ai-signal {
+  background: var(--accent);
+}
+
+.ai-orbit {
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+}
+
+.ai-console-line {
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Entrada de contenido ────────────────────────────────────
+   Un solo movimiento, corto y suave. Nada se mueve si el sistema pide
+   reducir movimiento. */
 @media (prefers-reduced-motion: no-preference) {
   .rise {
-    animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation: rise 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
   }
-  .rise-1 { animation-delay: 0.04s; }
-  .rise-2 { animation-delay: 0.12s; }
-  .rise-3 { animation-delay: 0.2s; }
-  .rise-4 { animation-delay: 0.28s; }
-}
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: none; }
-}
+  .rise-1 {
+    animation-delay: 0.02s;
+  }
 
-/* --- Aparición al entrar en pantalla ---------------------------------------
-   Animación conducida por scroll, sin JavaScript y sin observadores. Arranca en
-   opacidad 0.4, no en cero: si el navegador no soporta `view()` —o el usuario
-   pide menos movimiento— la sección simplemente está ahí, que es como tiene que
-   quedarse. Nada queda esperando a que algo se dispare. */
-@media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (pointer: fine) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 45%;
+  .rise-2 {
+    animation-delay: 0.1s;
+  }
+
+  .rise-3 {
+    animation-delay: 0.18s;
+  }
+
+  .rise-4 {
+    animation-delay: 0.26s;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
     }
   }
 }
 
-/* Solo desplazamiento, sin opacidad: a media animación un texto al 40% baja de
-   los umbrales de contraste de verdad, y axe lo cazó midiendo justo ahí. El
-   movimiento por sí solo da el efecto sin que nada deje de leerse nunca. */
-@keyframes reveal {
-  from { transform: translateY(22px); }
-  to   { transform: none; }
-}
-
-/* --- Capturas de producto ---------------------------------------------------
-   Estaban pegadas dentro de una caja con borde. Un anillo interior y una luz
-   desde arriba las asientan, como una pantalla y no como un recorte. */
-.shot-frame {
-  position: relative;
-  isolation: isolate;
-}
-
-.shot-frame::after {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  content: "";
-  border-radius: inherit;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.09),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  background: linear-gradient(180deg, rgba(103, 232, 249, 0.07), transparent 38%);
-}
-
-/* --- Cabecera ---------------------------------------------------------------
-   Sobre el héroe conviene que sea casi invisible; en cuanto se baja, tiene que
-   separarse del contenido que pasa por debajo. */
-.site-header {
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.site-header[data-scrolled="true"] {
-  background-color: rgba(2, 4, 10, 0.92);
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-/* --- Línea de tiempo --------------------------------------------------------
-   El punto marca dónde estás leyendo. */
-.tl-entry .tl-dot {
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.tl-entry:hover .tl-dot {
-  border-color: rgba(103, 232, 249, 0.85);
-  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.12);
-}
-
-/* --- Elevación ---------------------------------------------------------------
-   Tres planos con distancia real entre ellos, en vez de ocho tonos dentro de un
-   3% donde todo pesa igual. El borde y la sombra acompañan al plano: cuanto más
-   arriba, más definido el canto. */
-.lvl-1 {
-  background: var(--s1);
-  border-color: rgba(255, 255, 255, 0.09);
-}
-
-.lvl-2 {
-  background: var(--s2);
-  border-color: rgba(255, 255, 255, 0.13);
-  box-shadow: 0 22px 60px -32px rgba(0, 0, 0, 0.9);
-}
-
-/* `hover:lvl-3` no existe: el prefijo de Tailwind no aplica a una clase propia.
-   El estado se declara aquí, que es donde puede vivir. */
-.lvl-hover {
-  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.lvl-hover:hover {
-  background: var(--s3);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 30px 80px -34px rgba(0, 0, 0, 0.95);
-}
-
-.lvl-3 {
-  background: var(--s3);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 30px 80px -34px rgba(0, 0, 0, 0.95);
-}
-
-/* --- Capas fijas: fuera del móvil --------------------------------------------
-   `body::before` y `body::after` son dos capas fijas a pantalla completa, una
-   de ellas con `mask-image` y tres degradados superpuestos. Un elemento fijo
-   con máscara impide al navegador componer el scroll y le obliga a repintar la
-   pantalla entera en cada fotograma: en un teléfono real eso se siente como que
-   la página no se mueve, y no aparece en un emulador de escritorio.
-
-   El fondo del `body` —un degradado plano— se queda, así que el color y la
-   atmósfera no cambian; lo que desaparece es el coste. */
-@media (max-width: 767px), (pointer: coarse) {
-  body::before,
-  body::after {
-    display: none;
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
   }
-}
 
-/* --- Bandas de sección --------------------------------------------------------
-   Al montar la escala de elevación, secciones enteras se quedaron con color de
-   panel y borde duro arriba y abajo. En un móvil, sin más textura alrededor, ese
-   canto se lee como una línea que corta la pantalla por la mitad.
-
-   Una banda no es un panel: pide la mitad de tinte y, sobre todo, que el borde
-   se disuelva en vez de cortar. */
-.section-band {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.02) 10%,
-    rgba(255, 255, 255, 0.02) 90%,
-    transparent 100%
-  );
+  .site-header,
+  .no-print {
+    display: none !important;
+  }
 }
