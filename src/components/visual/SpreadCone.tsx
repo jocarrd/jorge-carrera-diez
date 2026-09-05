@@ -64,6 +64,11 @@ export function SpreadCone({ ticks, spreadLabel, answerLabel, className = "" }: 
   return (
     <figure className={`cone ${className}`}>
       <div className="cone-stage">
+        {/* Antes del dibujo: en móvil es leyenda y tiene que leerse primero; en
+            escritorio se posiciona encima y el orden del marcado da igual. */}
+        <span className="cone-tag is-spread">{spreadLabel}</span>
+        <span className="cone-tag is-answer">{answerLabel}</span>
+
         <svg viewBox={`0 0 ${W} ${H}`} className="cone-svg" aria-hidden>
           <defs>
             <linearGradient id="cone-fill" x1="0" y1="0" x2="1" y2="0">
@@ -101,8 +106,6 @@ export function SpreadCone({ ticks, spreadLabel, answerLabel, className = "" }: 
           ))}
         </div>
 
-        <span className="cone-tag is-spread">{spreadLabel}</span>
-        <span className="cone-tag is-answer">{answerLabel}</span>
       </div>
     </figure>
   );

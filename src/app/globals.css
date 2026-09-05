@@ -123,20 +123,38 @@ a {
   min-height: 11.5rem;
 }
 
-.ai-tile-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.875rem;
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  color: var(--accent);
+/* El icono se cambia por un diagrama: ocupa el ancho de la tarjeta y cuenta
+   algo, en vez de decir solo de que va. */
+.tile-graphic {
+  display: block;
+  width: 100%;
+  max-width: 8.5rem;
+  margin-top: 1.125rem;
 }
 
-.ai-tile-icon svg {
-  width: 1.25rem;
-  height: 1.25rem;
+.tile-graphic svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tg-soft {
+  fill: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.tg-solid {
+  fill: var(--accent);
+}
+
+.tg-fill {
+  fill: var(--accent);
+}
+
+.tg-stroke {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ── Pieza focal del bento de IA ──────────────────────────
@@ -279,7 +297,7 @@ a {
   overflow: hidden;
   border-radius: 28px;
   background: linear-gradient(170deg, #f7fbfb 0%, var(--panel) 60%, #ffffff 100%);
-  padding: 2rem 1.5rem 3.25rem;
+  padding: 1.5rem 1.25rem 2rem;
 }
 
 @media (min-width: 768px) {
@@ -351,27 +369,56 @@ a {
   transform: translateX(-100%);
 }
 
+/* En movil los rotulos flotantes se salian de la tarjeta por la derecha y se
+   pisaban con las marcas de tiempo. Ahi van como leyenda encima del dibujo, con
+   su muestra de color; flotan solo cuando hay ancho para que no choquen. */
 .cone-tag {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 13px;
   font-weight: 600;
   color: var(--muted);
 }
 
-.cone-tag.is-spread {
-  right: 8%;
-  top: 14%;
+.cone-tag::before {
+  content: "";
+  width: 1.125rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 .cone-tag.is-answer {
-  left: 4%;
-  top: 62%;
+  margin-top: 0.375rem;
   color: var(--accent-text);
+}
+
+.cone-tag.is-answer::before {
+  height: 0.25rem;
+  background: var(--accent);
 }
 
 @media (min-width: 768px) {
   .cone-tag {
+    position: absolute;
+    display: block;
     font-size: 15px;
+  }
+
+  .cone-tag::before {
+    display: none;
+  }
+
+  .cone-tag.is-spread {
+    right: 8%;
+    top: 14%;
+  }
+
+  .cone-tag.is-answer {
+    left: 4%;
+    top: 62%;
+    margin-top: 0;
   }
 }
 

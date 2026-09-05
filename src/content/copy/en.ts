@@ -218,18 +218,21 @@ export const en: Copy = {
     gallery: [
       {
         image: "/images/snowy-radar-map.webp",
+        imageMobile: "/images/snowy-radar-movil.webp",
         title: "Precipitation radar",
         caption: "Half-hour steps over the stations reporting live.",
         alt: "Snowy map showing the precipitation radar over Spain with active stations",
       },
       {
         image: "/images/snowy-ai-assistant.webp",
+        imageMobile: "/images/snowy-asistente-movil.webp",
         title: "Weather assistant",
         caption: "It answers from real station data, not generic text.",
         alt: "Snowy assistant answering a query using station data",
       },
       {
         image: "/images/snowy-climate.webp",
+        imageMobile: "/images/snowy-clima-movil.webp",
         title: "Climate change",
         caption: "Historical series per municipality against last century's mean.",
         alt: "Snowy climate panel with the temperature anomaly map of Spain",

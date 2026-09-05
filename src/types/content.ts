@@ -49,6 +49,8 @@ export type SkillGroup = {
 
 export type GalleryShot = {
   image: string;
+  /** La misma superficie capturada en un móvil real. */
+  imageMobile: string;
   title: string;
   caption: string;
   alt: string;

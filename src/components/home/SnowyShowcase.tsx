@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BrowserFrame, ButtonLink, Container, Rail, Reveal } from "@/components/ui";
+import { BrowserFrame, ButtonLink, Container, DeviceFrame, Rail, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -45,17 +45,26 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         <Reveal delay={80}>
           <Rail label="Snowy">
             {showcase.gallery.map((shot) => (
-              <figure key={shot.image} className="rail-item w-[86vw] max-w-[42rem]">
-                <BrowserFrame label={site.snowyDomain} tone="dark">
-                  <Image
-                    src={shot.image}
-                    alt={shot.alt}
-                    width={1200}
-                    height={900}
-                    className="h-auto w-full"
-                    sizes="(max-width: 640px) 86vw, 672px"
-                  />
-                </BrowserFrame>
+              <figure key={shot.image} className="rail-item w-[62vw] max-w-[42rem] sm:w-[86vw]">
+                {/* En un móvil de 390 px una captura de escritorio se reduce
+                    tanto que no se lee nada. Snowy es responsive, así que en el
+                    móvil se enseña el móvil: la misma superficie, capturada en
+                    un teléfono de verdad. */}
+                <div className="sm:hidden">
+                  <DeviceFrame src={shot.imageMobile} alt={shot.alt} />
+                </div>
+                <div className="hidden sm:block">
+                  <BrowserFrame label={site.snowyDomain} tone="dark">
+                    <Image
+                      src={shot.image}
+                      alt={shot.alt}
+                      width={1200}
+                      height={900}
+                      className="h-auto w-full"
+                      sizes="672px"
+                    />
+                  </BrowserFrame>
+                </div>
                 <figcaption className="mt-5">
                   <p className="text-[17px] font-semibold text-white">{shot.title}</p>
                   <p className="mt-1 text-[15px] leading-[1.5] text-[var(--ink-dark-muted)]">

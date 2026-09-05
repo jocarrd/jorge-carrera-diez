@@ -217,18 +217,21 @@ export const es: Copy = {
     gallery: [
       {
         image: "/images/snowy-radar-map.webp",
+        imageMobile: "/images/snowy-radar-movil.webp",
         title: "Radar de precipitación",
         caption: "Media hora por paso sobre las estaciones que reportan en directo.",
         alt: "Mapa de Snowy con el radar de precipitación sobre España y las estaciones activas",
       },
       {
         image: "/images/snowy-ai-assistant.webp",
+        imageMobile: "/images/snowy-asistente-movil.webp",
         title: "Asistente meteorológico",
         caption: "Responde con datos de estaciones reales, no con texto genérico.",
         alt: "Asistente de Snowy respondiendo una consulta con datos de estaciones",
       },
       {
         image: "/images/snowy-climate.webp",
+        imageMobile: "/images/snowy-clima-movil.webp",
         title: "Cambio climático",
         caption: "Serie histórica por municipio frente a la media del siglo pasado.",
         alt: "Panel de clima de Snowy con el mapa de anomalía de temperatura en España",

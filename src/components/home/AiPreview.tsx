@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { Section, SectionHeader, Reveal } from "@/components/ui";
+import { TileGraphic } from "@/components/visual/TileGraphic";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -11,31 +11,6 @@ import type { Locale } from "@/i18n/config";
 // que toca —de dónde entra la petición, qué herramientas usa, qué datos ve y
 // qué lo vigila—. La rejilla lo dice sin escribirlo, y el contraste de la
 // pieza oscura marca dónde está la decisión.
-
-// Los iconos van en línea y no como librería: son cuatro, de 24, y traerse un
-// paquete entero para esto sale más caro que dibujarlos.
-const icons: Record<string, ReactNode> = {
-  input: (
-    <>
-      <rect x="3" y="4" width="18" height="16" rx="3" />
-      <path d="M3 9h18" />
-    </>
-  ),
-  tools: (
-    <>
-      <path d="M8 6 4 12l4 6" />
-      <path d="m16 6 4 6-4 6" />
-    </>
-  ),
-  context: (
-    <>
-      <ellipse cx="12" cy="6" rx="8" ry="3" />
-      <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
-      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
-    </>
-  ),
-  guard: <path d="m12 3 7 3v6c0 4.42-2.98 8.17-7 9-4.02-.83-7-4.58-7-9V6l7-3Z" />,
-};
 
 export function AiPreview({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).ai;
@@ -71,25 +46,13 @@ export function AiPreview({ locale }: { locale: Locale }) {
             key={step.title}
             className="ai-tile lvl-2 lvl-hover flex flex-col justify-between rounded-[var(--radius-card-lg)] p-5 sm:p-7"
           >
-            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <span className="ai-tile-icon">
-                <svg
-                  aria-hidden
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.7}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {icons[step.metric]}
-                </svg>
-              </span>
+            <div>
               {/* --muted-strong se queda en 3,62:1 sobre blanco a 11 px, por
                   debajo del 4,5 que pide texto pequeño. --muted da 5,07. */}
               <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
                 {step.metric}
               </span>
+              <TileGraphic kind={step.metric} />
             </div>
             <div className="mt-6 sm:mt-10">
               <p className="text-[1.1875rem] font-semibold tracking-[-0.015em]">{step.title}</p>
