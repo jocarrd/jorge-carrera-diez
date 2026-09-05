@@ -940,6 +940,16 @@ export const en: Copy = {
         title: "From a regional weather blog to an ecosystem with Snowy.",
         text: "LaRiojaMeteo brings history, community, local knowledge and editorial distribution. Snowy brings product, data, AI and infrastructure.",
       },
+      history: {
+        eyebrow: "The track record",
+        title: "Twelve years publishing before a line of code changed.",
+        text: "This is not a project you launch: it already had an audience, an archive and search rankings when I arrived. That changes the engagement entirely, because every change lands on something that already works.",
+        milestones: [
+          { at: 0, year: "2012", title: "The project starts", text: "A weather portal for La Rioja, publishing continuously." },
+          { at: 0.55, year: "2024", title: "I join", text: "With 130+ archive pages and half a million visits already banked.", own: true },
+          { at: 1, year: "Today", title: "Performance, SEO and UX", text: "The work is sustaining and improving what already has an audience." },
+        ],
+      },
       metrics: [
         { value: "2012", label: "origin", detail: "start of the original weather project" },
         { value: "2020", label: "La Rioja Meteo", detail: "evolution into the current brand" },
@@ -1015,6 +1025,18 @@ export const en: Copy = {
         { value: "12", label: "pillars across 4 areas" },
         { value: "7th", label: "annual edition" },
       ],
+      scale: {
+        eyebrow: "How it is measured",
+        title: "From four areas to a hundred and fifty-one countries.",
+        text: "The index is not a survey: it is a measurement chain. Each area opens into pillars, each pillar is measured with indicators, and each country's position falls out of that. Keeping it running in production is the engagement.",
+        rungs: [
+          { count: 4, value: "4", label: "areas" },
+          { count: 12, value: "12", label: "pillars" },
+          { count: 148, value: "148", label: "indicators" },
+          { count: 151, value: "151", label: "countries" },
+        ],
+        note: "The last rows draw a sample: the real figure is in the number.",
+      },
       index: {
         eyebrow: "The index",
         title: "Four levels, from a single number to 148 indicators.",

@@ -946,6 +946,16 @@ export const es: Copy = {
         title: "De blog meteorológico regional a ecosistema con Snowy.",
         text: "LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribución editorial. Snowy aporta producto, datos, IA e infraestructura.",
       },
+      history: {
+        eyebrow: "El recorrido",
+        title: "Doce años publicando antes de tocar una línea de código.",
+        text: "No es un proyecto que se lanza: es uno que ya tenía audiencia, archivo y posicionamiento cuando entré. Eso cambia el encargo por completo, porque cualquier cambio se hace sobre algo que ya funciona.",
+        milestones: [
+          { at: 0, year: "2012", title: "Arranca el proyecto", text: "Portal meteorológico de La Rioja, con publicación continua." },
+          { at: 0.55, year: "2024", title: "Me incorporo", text: "Con 130+ páginas de archivo y medio millón de visitas ya acumuladas.", own: true },
+          { at: 1, year: "Hoy", title: "Rendimiento, SEO y UX", text: "El trabajo es sostener y mejorar lo que ya tiene audiencia." },
+        ],
+      },
       metrics: [
         {
           value: "2012",
@@ -1033,6 +1043,18 @@ export const es: Copy = {
         { value: "12", label: "pilares en 4 áreas" },
         { value: "7ª", label: "edición anual" },
       ],
+      scale: {
+        eyebrow: "Cómo se mide",
+        title: "De cuatro áreas a ciento cincuenta y un países.",
+        text: "El índice no es una encuesta: es una cadena de medición. Cada área se abre en pilares, cada pilar se mide con indicadores, y de ahí sale la posición de cada país. Sostener eso en producción es el encargo.",
+        rungs: [
+          { count: 4, value: "4", label: "áreas" },
+          { count: 12, value: "12", label: "pilares" },
+          { count: 148, value: "148", label: "indicadores" },
+          { count: 151, value: "151", label: "países" },
+        ],
+        note: "La última fila dibuja una muestra: la cifra real la dice el número.",
+      },
       index: {
         eyebrow: "El índice",
         title: "Cuatro niveles, de un número a 148 indicadores.",

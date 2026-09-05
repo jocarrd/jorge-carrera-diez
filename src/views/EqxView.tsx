@@ -9,6 +9,7 @@ import {
   SectionHeader,
   Surface,
 } from "@/components/ui";
+import { ScaleLadder } from "@/components/visual/ScaleLadder";
 import { domainOf, getCopy, organizations, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -77,6 +78,22 @@ export function EqxView({ locale }: { locale: Locale }) {
               </Surface>
             </Reveal>
           ))}
+        </div>
+      </Section>
+
+      {/* La escala va antes de las cifras sueltas: primero se entiende que el
+          indice es una cadena de medicion y luego los numeros significan algo. */}
+      <Section>
+        <SectionHeader
+          eyebrow={copy.scale.eyebrow}
+          title={copy.scale.title}
+          text={copy.scale.text}
+        />
+        <div className="mt-12">
+          <div className="ladder-stage">
+            <ScaleLadder rungs={copy.scale.rungs} />
+          </div>
+          <p className="mt-6 text-[13px] text-[var(--muted)]">{copy.scale.note}</p>
         </div>
       </Section>
 

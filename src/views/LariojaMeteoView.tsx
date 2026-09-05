@@ -9,6 +9,7 @@ import {
   SectionHeader,
   Surface,
 } from "@/components/ui";
+import { Timeline } from "@/components/visual/Timeline";
 import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -52,6 +53,19 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
+        </div>
+      </Section>
+
+      {/* El recorrido va antes de qué se hace: sin saber que el sitio llevaba
+          doce años publicando, "rendimiento y SEO" no significa lo mismo. */}
+      <Section>
+        <SectionHeader
+          eyebrow={copy.history.eyebrow}
+          title={copy.history.title}
+          text={copy.history.text}
+        />
+        <div className="mt-14">
+          <Timeline milestones={copy.history.milestones} />
         </div>
       </Section>
 

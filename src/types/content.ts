@@ -298,6 +298,12 @@ export type Copy = {
       cta: string;
       imageAlt: string;
       timeline: SectionCopy;
+      history: {
+        eyebrow: string;
+        title: string;
+        text: string;
+        milestones: { at: number; year: string; title: string; text?: string; own?: boolean }[];
+      };
       metrics: Metric[];
       responsibility: SectionCopy & { items: string[] };
       content: SectionCopy & { items: string[] };
@@ -308,6 +314,13 @@ export type Copy = {
       ctaSecondary: string;
       imageAlts: { home: string; rankings: string };
       client: SectionCopy & { items: TitledText[] };
+      scale: {
+        eyebrow: string;
+        title: string;
+        text: string;
+        rungs: { count: number; value: string; label: string }[];
+        note: string;
+      };
       metrics: Metric[];
       work: SectionCopy & { items: TitledText[] };
       index: SectionCopy & { levels: { level: string; title: string; text: string }[] };
