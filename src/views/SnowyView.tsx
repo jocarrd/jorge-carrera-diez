@@ -11,6 +11,7 @@ import {
   TechTag,
 } from "@/components/ui";
 import { SpreadCone } from "@/components/visual/SpreadCone";
+import { SurfaceTiles } from "@/components/visual/SurfaceTiles";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -136,45 +137,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
               {copy.modules.text}
             </p>
           </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {copy.modules.items.map((module, index) => {
-              // Cinco tarjetas en dos columnas dejan una sola al final. La
-              // ultima es el mapa de estaciones en vivo, la vista mas potente:
-              // ocupa la fila entera y cierra la seccion en vez de sobrar.
-              const wide = index === copy.modules.items.length - 1;
-
-              return (
-              // Cada captura traía su proporción y la tarjeta se estiraba a
-              // ella: en una fila una quedaba casi vacía, con el texto flotando
-              // sobre un hueco muerto. Caja fija arriba y el texto abajo, para
-              // que las tarjetas de una fila compartan cantos y línea base.
-              <article
-                key={module.title}
-                className={`lvl-2 flex flex-col overflow-hidden rounded-2xl border ${
-                  wide ? "lg:col-span-2" : ""
-                }`}
-              >
-                <div
-                  className={`shrink-0 overflow-hidden border-b border-[var(--line)] bg-black ${
-                    wide ? "aspect-[16/9]" : "aspect-[6/5]"
-                  }`}
-                >
-                  <Image
-                    src={module.image}
-                    alt={module.alt}
-                    width={1200}
-                    height={1000}
-                    className="h-full w-full object-cover object-top"
-                    sizes={wide ? "100vw" : "(min-width: 1024px) 50vw, 100vw"}
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-xl font-semibold text-[var(--foreground)]">{module.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{module.text}</p>
-                </div>
-              </article>
-              );
-            })}
+          <div className="mt-10">
+            <SurfaceTiles items={copy.modules.items} />
           </div>
         </div>
       </section>
