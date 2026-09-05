@@ -55,7 +55,7 @@ export const en: Copy = {
       "Software engineer. I design systems and then stay to maintain them.",
     tagline: ["I design it.", "I build it.", "I keep it running."],
     taglineSub:
-      "Right now: financial product in Madrid, a Swiss academic index, and a weather platform people use every day.",
+      "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
     availability: "Available for one more project",
     availabilityNote:
       "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week.",
