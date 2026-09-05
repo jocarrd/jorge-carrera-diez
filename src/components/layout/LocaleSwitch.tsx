@@ -15,7 +15,7 @@ export function LocaleSwitch({ locale, onNavigate }: LocaleSwitchProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center rounded-full lvl-2 border p-0.5">
+    <div className="flex items-center gap-0.5">
       {locales.map((option) => {
         const isActive = option === locale;
 
@@ -26,10 +26,10 @@ export function LocaleSwitch({ locale, onNavigate }: LocaleSwitchProps) {
             hrefLang={option}
             onClick={onNavigate}
             aria-current={isActive ? "true" : undefined}
-            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-full px-3 font-mono text-xs uppercase tracking-[0.12em] transition ${
+            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-full px-2.5 text-xs uppercase transition ${
               isActive
-                ? "bg-cyan-300/15 text-cyan-100"
-                : "text-slate-400 hover:text-white"
+                ? "font-semibold text-[var(--foreground)]"
+                : "text-[var(--muted)] hover:text-[var(--foreground)]"
             }`}
           >
             {option}

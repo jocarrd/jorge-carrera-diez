@@ -1,41 +1,62 @@
-import { RichText } from "@/components/RichText";
-import { Section, SectionHeader } from "@/components/ui";
+import { Section, SectionHeader, ProductShot } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
 export function CurrentRoleSection({ locale }: { locale: Locale }) {
-  const copy = getCopy(locale).currentRole;
+  const copy = getCopy(locale);
+  const role = copy.currentRole;
+  const eqx = copy.experience.find((item) => item.company === "EQx");
 
   return (
     <Section id="rol-actual" className="section-band">
-      <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.title} text={copy.text} />
-        <article className="rounded-2xl lvl-2 border p-6 sm:p-8">
-          {copy.paragraphs.map((segments, index) => (
-            <p
-              key={index}
-              className={
-                index === 0
-                  ? "prose-links text-base leading-relaxed text-slate-300 sm:leading-7"
-                  : "mt-4 text-sm leading-6 text-slate-400 sm:mt-5"
-              }
-            >
-              <RichText
-                segments={segments}
-              />
+      <SectionHeader title={role.homeTitle} text={role.homeText} />
+
+      <div className="mt-14 grid gap-5 md:grid-cols-3">
+        {role.fronts.map((front) => (
+          <article key={front.label} className="rounded-[var(--radius-card-lg)] bg-white p-8 sm:p-9">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
+              {front.label}
             </p>
-          ))}
-          <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 md:grid-cols-3">
-            {copy.signals.map((signal) => (
-              <div key={signal.title}>
-                <span aria-hidden className="block h-px w-8 bg-cyan-300/60" />
-                <h3 className="mt-5 text-base font-semibold text-white">{signal.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{signal.text}</p>
-              </div>
-            ))}
-          </div>
-        </article>
+            <h3 className="mt-4 text-[1.625rem] font-semibold leading-[1.2] tracking-[-0.02em]">
+              {front.title}
+            </h3>
+            <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">{front.text}</p>
+          </article>
+        ))}
       </div>
+
+      {/* El índice suizo es lo menos conocido de los tres frentes y lo que más
+          gana con verse: una web pública real detrás de la frase. */}
+      {eqx?.image ? (
+        <div className="mt-5 overflow-hidden rounded-[var(--radius-card-lg)] bg-white p-8 sm:p-10">
+          <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
+                {eqx.client}
+              </p>
+              <h3 className="mt-3.5 text-[1.75rem] font-bold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
+                {eqx.headline}
+              </h3>
+              <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">{eqx.summary}</p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4">
+              <ProductShot src={eqx.image} alt={eqx.imageAlt ?? eqx.headline ?? ""} />
+              <ProductShot
+                src="/images/eqx-rankings.webp"
+                alt={eqx.imageAlt ?? eqx.headline ?? ""}
+                className="hidden sm:block"
+              />
+            </div>
+              <ProductShot
+                src="/images/eqx-rankings.webp"
+                alt={eqx.imageAlt ?? eqx.headline ?? ""}
+                className="hidden sm:block"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </Section>
   );
 }

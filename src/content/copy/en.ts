@@ -50,6 +50,28 @@ export const en: Copy = {
     headline:
       "Software engineer focused on product, architecture and systems design. Currently Tech Lead on VidaCaixa projects, engineering partner to EQx in Switzerland and creator of Snowy.",
     positioning: "Software engineer · Product · Architecture",
+    positioningLong:
+      "Software engineer focused on product, architecture and systems design.",
+    tagline: ["I design it.", "I build it.", "I keep it running."],
+    taglineSub:
+      "Software engineer. Product, architecture, data and generative AI, from the first commit to the deployment.",
+    availability: "Available for one more project",
+    availabilityNote:
+      "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week, not full days.",
+    capabilities: [
+      {
+        title: "Product architecture",
+        text: "Technical decisions, standards and reviews on systems with real users.",
+      },
+      {
+        title: "Generative AI and agents",
+        text: "RAG, tools, MCP and evaluation inside the product, not in a separate demo.",
+      },
+      {
+        title: "Data and infrastructure",
+        text: "Backend, caching, continuous deployment and my own server, with cost under control.",
+      },
+    ],
     focus: [
       "Web product with React, Next.js, TypeScript and NestJS",
       "Agent orchestration and generative AI integration",
@@ -84,8 +106,29 @@ export const en: Copy = {
   hero: {
     ctaPrimary: "See Snowy",
     ctaSecondary: "CV",
+    ctaContact: "Let's talk",
   },
   currentRole: {
+    homeTitle: "Three fronts, right now.",
+    homeText:
+      "Technical judgement and coordination inside an enterprise environment, full technical ownership of an international product, and one of my own in production.",
+    fronts: [
+      {
+        label: "Tech Lead · VidaCaixa",
+        title: "Technical leadership in a critical environment",
+        text: "Frontend architecture, standards, code reviews and alignment with backend, QA and business in the financial and insurance sector.",
+      },
+      {
+        label: "Freelance · EQx, Switzerland",
+        title: "Technical handover of a global index",
+        text: "The Elite Quality Index measures across 151 countries whether elites create value or extract it, under academic direction from the University of St. Gallen.",
+      },
+      {
+        label: "Own product · Snowy",
+        title: "Where I test for real what I argue for",
+        text: "I build all of it, from server rendering to the radar and the deployments. Product, data, infrastructure, SEO and AI on a real system.",
+      },
+    ],
     eyebrow: "Current role",
     title: "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
     text: "My current work combines technical judgement, coordination across teams and shipping new capabilities — both in an enterprise environment and on an international product where I own the technical handover end to end.",
@@ -278,6 +321,7 @@ export const en: Copy = {
       company: "Minsait (Indra)",
       role: "Full Stack and Frontend Developer",
       context: "Inditex",
+      client: "Inditex",
       period: "June 2023 - March 2025",
       start: "2023-06",
       end: "2025-03",

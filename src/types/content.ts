@@ -111,6 +111,12 @@ export type Copy = {
   profile: {
     headline: string;
     positioning: string;
+    positioningLong: string;
+    tagline: string[];
+    taglineSub: string;
+    capabilities: { title: string; text: string }[];
+    availability: string;
+    availabilityNote: string;
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
@@ -118,10 +124,14 @@ export type Copy = {
   hero: {
     ctaPrimary: string;
     ctaSecondary: string;
+    ctaContact: string;
   };
   currentRole: SectionCopy & {
     paragraphs: RichSegment[][];
     signals: TitledText[];
+    homeTitle: string;
+    homeText: string;
+    fronts: { label: string; title: string; text: string }[];
   };
   ai: {
     title: string;

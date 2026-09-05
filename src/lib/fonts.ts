@@ -1,13 +1,14 @@
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, Onest } from "next/font/google";
 
-// Plex es una familia de ingeniería: la sans y la mono comparten esqueleto, así
-// que los acentos monoespaciados que ya usaba el sitio —fechas, eyebrows, datos—
-// dejan de parecer un cuerpo extraño y pasan a leerse como la misma voz.
-export const sans = IBM_Plex_Sans({
+// La cara que se persigue es San Francisco, que no se puede servir: viene con
+// el sistema en macOS e iOS y ahí la resuelve `-apple-system` en globals.css.
+// Onest entra sólo donde esa pila no existe —Linux, Windows, Android— porque
+// comparte proporciones y altura de x, así que la maqueta no se mueve.
+export const sans = Onest({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-sans-plex",
+  variable: "--font-sans-onest",
 });
 
 export const mono = IBM_Plex_Mono({

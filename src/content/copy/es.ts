@@ -50,6 +50,33 @@ export const es: Copy = {
     headline:
       "Ingeniero de software con foco en producto, arquitectura y diseño de sistemas. Actualmente Tech Lead en proyectos de VidaCaixa, colaborador técnico de EQx en Suiza y creador de Snowy.",
     positioning: "Ingeniero de software · Producto · Arquitectura",
+    positioningLong:
+      "Ingeniero de software con foco en producto, arquitectura y diseño de sistemas.",
+    // Tres verbos y punto. Lo que separa este perfil del de alguien que sólo
+    // ejecuta tareas no es la lista de tecnologías: es quedarse con lo que
+    // construye. En tres golpes se lee antes de que nadie decida irse.
+    tagline: ["Lo diseño.", "Lo construyo.", "Lo mantengo."],
+    taglineSub:
+      "Ingeniero de software. Producto, arquitectura, datos e IA generativa, del primer commit al despliegue.",
+    // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
+    // convierte una página de portfolio en una a la que se puede responder.
+    availability: "Disponible para un proyecto más",
+    availabilityNote:
+      "En remoto y horario europeo, en español o en inglés. Por encargos acotados de pocas horas a la semana, no por jornadas completas.",
+    capabilities: [
+      {
+        title: "Arquitectura de producto",
+        text: "Decisiones técnicas, estándares y revisiones en sistemas con usuarios de verdad.",
+      },
+      {
+        title: "IA generativa y agentes",
+        text: "RAG, herramientas, MCP y evaluación dentro del producto, no en una demo aparte.",
+      },
+      {
+        title: "Datos e infraestructura",
+        text: "Backend, caché, despliegue continuo y servidor propio, con el coste bajo control.",
+      },
+    ],
     focus: [
       "Producto web con React, Next.js, TypeScript y NestJS",
       "Orquestación de agentes e integración de IA generativa",
@@ -80,8 +107,29 @@ export const es: Copy = {
   hero: {
     ctaPrimary: "Ver Snowy",
     ctaSecondary: "CV",
+    ctaContact: "Hablemos",
   },
   currentRole: {
+    homeTitle: "Ahora mismo, tres frentes.",
+    homeText:
+      "Criterio técnico y coordinación en un entorno enterprise, el relevo completo de un producto internacional, y uno propio en producción.",
+    fronts: [
+      {
+        label: "Tech Lead · VidaCaixa",
+        title: "Liderazgo técnico en un entorno crítico",
+        text: "Arquitectura frontend, estándares, revisiones de código y alineamiento con backend, QA y negocio en el sector financiero y asegurador.",
+      },
+      {
+        label: "Freelance · EQx, Suiza",
+        title: "El relevo técnico de un índice global",
+        text: "El Elite Quality Index mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
+      },
+      {
+        label: "Producto propio · Snowy",
+        title: "Donde pruebo en real lo que defiendo",
+        text: "Lo construyo entero, del render en servidor al radar y los despliegues. Producto, datos, infraestructura, SEO e IA sobre un sistema real.",
+      },
+    ],
     eyebrow: "Rol actual",
     title: "Tech Lead en VidaCaixa y colaborador técnico de EQx en Suiza.",
     text: "Mi trabajo actual combina criterio técnico, coordinación con equipos y aterrizaje de nuevas capacidades, tanto en un entorno enterprise como en un producto internacional donde llevo el relevo técnico completo.",
@@ -272,6 +320,7 @@ export const es: Copy = {
       company: "Minsait (Indra)",
       role: "Full Stack Developer y Front-end",
       context: "Inditex",
+      client: "Inditex",
       period: "Junio 2023 - Marzo 2025",
       start: "2023-06",
       end: "2025-03",

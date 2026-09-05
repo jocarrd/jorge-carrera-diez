@@ -3,43 +3,53 @@ import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
+// Las seis etapas estaban repartidas entre secciones y páginas. Juntas, en una
+// sola tabla, se leen de un vistazo y el recorrido se entiende sin abrir nada.
 export function ExperiencePreview({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const preview = copy.experiencePreview;
-  const featuredExperience = copy.experience.slice(0, 3);
 
   return (
-    <Section id="experiencia">
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
-        </div>
-        <div>
-          <div className="grid gap-4">
-            {featuredExperience.map((item) => (
-              <article
-                key={`${item.company}-${item.role}`}
-                className="rounded-2xl lvl-2 border p-5 transition hover:border-cyan-300/25 lvl-hover"
-              >
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="font-mono text-sm text-cyan-300">{item.period}</p>
-                  <p className="text-sm text-slate-500">
-                    {item.client ? `${item.client} · ${item.company}` : item.context}
-                  </p>
-                </div>
-                <h3 className="mt-4 text-2xl font-semibold text-white">
-                  {item.headline ?? `${item.role} - ${item.company}`}
-                </h3>
-                <p className="mt-4 text-sm leading-6 text-slate-300">{item.summary}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-8">
-            <ButtonLink href={routePath(locale, "experience")} variant="secondary">
-              {preview.cta}
-            </ButtonLink>
-          </div>
-        </div>
+    <Section id="experiencia" className="section-band">
+      <SectionHeader title={copy.cvTimeline.label} text={copy.cvTimeline.note} />
+
+      <ol className="mt-12 overflow-hidden rounded-[var(--radius-card-lg)] bg-white">
+        {copy.experience.map((role, index) => (
+          <li
+            key={`${role.company}-${role.period}`}
+            className={`tl-entry grid items-baseline gap-3 p-7 sm:gap-7 sm:p-8 lg:grid-cols-[180px_1fr_190px] ${
+              index === copy.experience.length - 1 ? "" : "border-b border-[var(--line)]"
+            }`}
+          >
+            <p className="text-[15px] text-[var(--muted)]">{role.period}</p>
+            <div>
+              <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.015em]">
+                {role.role}
+              </h3>
+              <p className="mt-1 text-base font-medium lg:hidden">
+                {role.client ?? role.company}
+                {role.client ? (
+                  <span className="text-[var(--muted)]"> · {role.company}</span>
+                ) : null}
+              </p>
+              <p className="mt-1.5 text-base leading-[1.5] text-[var(--muted)]">{role.summary}</p>
+            </div>
+            <p className="hidden text-base font-medium lg:block lg:text-right">
+              {role.client ?? role.company}
+              {role.client ? (
+                <span className="block text-sm font-normal text-[var(--muted)]">
+                  {role.company}
+                </span>
+              ) : null}
+            </p>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-8 text-center">
+        <ButtonLink href={routePath(locale, "experience")} variant="quiet">
+          {preview.cta}
+        </ButtonLink>
       </div>
     </Section>
   );
