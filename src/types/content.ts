@@ -76,6 +76,8 @@ export type Metric = {
 
 export type MediaMention = {
   outlet: string;
+  /** Portada del artículo, capturada de la publicación y verificada. */
+  cover?: string;
   date: string;
   title: string;
   url?: string;
@@ -293,7 +295,15 @@ export type Copy = {
         openDataLabel: string;
         openDataTag: string;
         openDataTitle: string;
-        proof: { title: string; text: string; image: string; alt: string; url?: string }[];
+        proof: {
+          /** El medio, que va como rótulo sobre el titular. */
+          source: string;
+          title: string;
+          text: string;
+          image: string;
+          alt: string;
+          url?: string;
+        }[];
       };
       metrics: Metric[];
       tractionMetrics: Metric[];

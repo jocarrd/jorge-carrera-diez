@@ -840,15 +840,17 @@ export const es: Copy = {
         openDataTitle: "Snowy aparece recogido en el portal nacional de datos abiertos.",
         proof: [
           {
-            title: "Entrevista en RNE",
+            source: "RNE",
+            title: "Una entrevista de radio para explicarlo",
             text: "Participación en radio para explicar Snowy y la evolución del proyecto meteorológico.",
             image: "/images/snowy-rne.png",
             alt: "Jorge Carrera y Daniel Benito en una entrevista de RNE sobre Snowy",
           },
           {
-            title: "Artículo en larioja.com",
+            source: "larioja.com",
+            title: "Cobertura en la prensa regional",
             text: "Cobertura en prensa regional sobre el lanzamiento de Snowy desde LaRiojaMeteo.",
-            image: "/images/snowy-larioja-article.jpeg",
+            image: "/images/snowy-larioja-foto.webp",
             alt: "Artículo de larioja.com sobre el lanzamiento de Snowy",
             url: "https://www.larioja.com/la-rioja/snowy-asistente-rioja-meteo-20260122182611-nt.html",
           },
@@ -878,6 +880,7 @@ export const es: Copy = {
       mediaMentions: [
         {
           outlet: "El Confidencial",
+          cover: "/images/prensa/el-confidencial.webp",
           date: "18 enero 2026",
           title:
             "La Rioja Meteo lanza Snowy como web con IA para decisiones cotidianas sobre el tiempo.",
@@ -885,6 +888,7 @@ export const es: Copy = {
         },
         {
           outlet: "larioja.com",
+          cover: "/images/prensa/larioja-com.webp",
           date: "22 enero 2026",
           title:
             "Nace Snowy, asistente riojano para paraguas, lavadora y recomendaciones diarias.",
@@ -892,6 +896,7 @@ export const es: Copy = {
         },
         {
           outlet: "eldiario.es",
+          cover: "/images/prensa/eldiario-es.webp",
           date: "12 enero 2026",
           title:
             "La Rioja Meteo crea Snowy, una plataforma meteorológica con recomendaciones prácticas.",
@@ -899,18 +904,21 @@ export const es: Copy = {
         },
         {
           outlet: "nuevecuatrouno",
+          cover: "/images/prensa/nuevecuatrouno.webp",
           date: "12 enero 2026",
           title: "Snowy se presenta como nueva plataforma meteorológica de La Rioja Meteo.",
           url: "https://nuevecuatrouno.com/2026/01/12/nace-snowy-la-plataforma-meteorologica-de-la-rioja-meteo/",
         },
         {
           outlet: "Diario de León",
+          cover: "/images/prensa/diario-de-leon.webp",
           date: "14 abril 2026",
           title: "Snowy como apoyo para planificar la observación del eclipse en León.",
           url: "https://www.diariodeleon.es/sociedad/260414/2081770/mejor-alia-leon-eclipse.html",
         },
         {
           outlet: "Actualidad Rioja Baja",
+          cover: "/images/prensa/actualidad-rioja-baja.webp",
           date: "12 enero 2026",
           title:
             "La Rioja Meteo lanza Snowy como plataforma meteorológica avanzada y accesible.",
@@ -918,6 +926,7 @@ export const es: Copy = {
         },
         {
           outlet: "nuevecuatrouno",
+          cover: "/images/prensa/nuevecuatrouno-2.webp",
           date: "11 abril 2026",
           title: "Snowy y La Rioja Meteo en la planificación del eclipse de agosto.",
           url: "https://nuevecuatrouno.com/2026/04/11/cielo-rioja-apunta-despejado-gran-eclipse-de-agosto/",

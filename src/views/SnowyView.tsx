@@ -5,6 +5,7 @@ import {
   ButtonLink,
   MetricCard,
   Section,
+  Rail,
   SectionHeader,
   Surface,
   TechTag,
@@ -251,20 +252,24 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.press.title}
           text={copy.press.text}
         />
+        {/* Las fotos son la prueba: una entrevista de radio y un periódico en
+            la mano. Antes iban de miniatura encima de una caja blanca. Ahora
+            son la tarjeta entera y el texto va sobre un velo, como una portada. */}
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {copy.press.proof.map((item) => {
-            const content = (
+            const contenido = (
               <>
                 <Image
                   src={item.image}
                   alt={item.alt}
                   width={900}
                   height={600}
-                  className="h-72 w-full border-b border-[var(--line)] object-cover object-center"
+                  className="press-photo"
                 />
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold text-[var(--foreground)]">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
+                <div className="press-body">
+                  <p className="press-source">{item.source}</p>
+                  <h2 className="press-title">{item.title}</h2>
+                  <p className="press-text">{item.text}</p>
                 </div>
               </>
             );
@@ -276,53 +281,67 @@ export function SnowyView({ locale }: { locale: Locale }) {
                   href={item.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="overflow-hidden rounded-2xl lvl-2 border transition hover:border-[var(--line-strong)] lvl-hover"
+                  className="press-card is-link"
                 >
-                  {content}
+                  {contenido}
                 </a>
               );
             }
 
             return (
-              <article
-                key={item.title}
-                className="overflow-hidden rounded-2xl lvl-2 border"
-              >
-                {content}
+              <article key={item.title} className="press-card">
+                {contenido}
               </article>
             );
           })}
         </div>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <a
-            href={site.openData}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-2xl border border-[var(--line-strong)] bg-[var(--panel)] p-6 transition hover:border-[var(--line-strong)] hover:bg-[var(--panel)]"
-          >
-            <p className="font-mono text-sm text-[var(--accent-text)]">{copy.press.openDataLabel}</p>
-            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
-              {copy.press.openDataTag}
-            </p>
-            <h2 className="mt-4 text-lg font-semibold leading-7 text-[var(--foreground)]">
-              {copy.press.openDataTitle}
-            </h2>
-          </a>
-          {copy.mediaMentions.map((mention) => (
-            <a
-              key={`${mention.outlet}-${mention.date}-${mention.title}`}
-              href={mention.url}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl lvl-2 border p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_24px_90px_rgba(0,0,0,0.24)] transition hover:border-[var(--line-strong)] lvl-hover"
-            >
-              <p className="font-mono text-sm text-[var(--accent-text)]">{mention.outlet}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
-                {mention.date}
-              </p>
-              <h2 className="mt-4 text-lg font-semibold leading-7 text-[var(--foreground)]">{mention.title}</h2>
-            </a>
-          ))}
+        {/* La ficha del portal nacional de datos abiertos es la unica prueba
+            institucional: va sola y con su captura, no mezclada entre recortes
+            de prensa. */}
+        <a href={site.openData} target="_blank" rel="noreferrer" className="opendata mt-5">
+          <Image
+            src="/images/prensa/datos-gob.webp"
+            alt={copy.press.openDataTitle}
+            width={1200}
+            height={800}
+            className="opendata-shot"
+            sizes="(min-width: 1024px) 32rem, 100vw"
+          />
+          <div className="opendata-body">
+            <p className="clip-outlet">{copy.press.openDataLabel}</p>
+            <p className="clip-date">{copy.press.openDataTag}</p>
+            <h2 className="opendata-title">{copy.press.openDataTitle}</h2>
+          </div>
+        </a>
+
+        {/* Siete recortes en dos columnas serian una pared: en carril se
+            recorren, y cada uno ensena el titular tal como se publico. */}
+        <div className="mt-12">
+          <Rail label={copy.press.title}>
+            {copy.mediaMentions.map((mention) => (
+              <a
+                key={`${mention.outlet}-${mention.date}-${mention.title}`}
+                href={mention.url}
+                target="_blank"
+                rel="noreferrer"
+                className="clip rail-item w-[78vw] max-w-[22rem]"
+              >
+                {mention.cover ? (
+                  <Image
+                    src={mention.cover}
+                    alt={`${mention.title} — ${mention.outlet}`}
+                    width={900}
+                    height={600}
+                    className="clip-cover"
+                    sizes="(min-width: 1024px) 22rem, 78vw"
+                  />
+                ) : null}
+                <p className="clip-outlet">{mention.outlet}</p>
+                <p className="clip-date">{mention.date}</p>
+                <h2 className="clip-title">{mention.title}</h2>
+              </a>
+            ))}
+          </Rail>
         </div>
       </Section>
 
