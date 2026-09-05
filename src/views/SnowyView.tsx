@@ -10,6 +10,7 @@ import {
   Surface,
   TechTag,
 } from "@/components/ui";
+import { ArchitectureStack } from "@/components/visual/ArchitectureStack";
 import { SpreadCone } from "@/components/visual/SpreadCone";
 import { SurfaceTiles } from "@/components/visual/SurfaceTiles";
 import { getCopy, site } from "@/content";
@@ -163,12 +164,25 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.build.title}
           text={copy.build.text}
         />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* El diagrama primero: dice como esta hecho. Las areas de trabajo van
+            debajo como ficha, sin contorno: siete cajas iguales competian entre
+            si y dejaban dos huecos vacios al final de la rejilla. */}
+        <div className="mt-10">
+          <ArchitectureStack
+            layers={copy.architecture.layers}
+            stores={copy.architecture.stores}
+            servicesLabel={copy.architecture.servicesLabel}
+            services={copy.architecture.services}
+            servicesNote={copy.architecture.servicesNote}
+          />
+        </div>
+
+        <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
           {copy.capabilities.map((item) => (
-            <Surface key={item.title}>
-              <h2 className="text-xl font-semibold text-[var(--foreground)]">{item.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-            </Surface>
+            <div key={item.title} className="area">
+              <h2 className="area-title">{item.title}</h2>
+              <p className="area-text">{item.text}</p>
+            </div>
           ))}
         </div>
       </Section>

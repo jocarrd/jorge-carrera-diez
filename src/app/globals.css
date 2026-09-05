@@ -641,6 +641,151 @@ a {
   color: #d8d8dc;
 }
 
+/* ── Areas de trabajo ─────────────────────────────────────
+   Sin contorno: siete cajas iguales eran una rejilla de bordes compitiendo con
+   el texto, y la ultima fila dejaba dos huecos. Con filete arriba, la fila se
+   alinea sola y sobra o falta contenido sin que se note. */
+.area {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1rem;
+}
+
+.area-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+.area-text {
+  margin-top: 0.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ── Diagrama de arquitectura ─────────────────────────────
+   Siete cajas iguales no cuentan como esta hecho algo. Aqui se ve: el front y
+   el engine uno encima del otro, la cache y la base colgando del engine, y las
+   piezas que viven aparte porque su carga no se parece a la del resto. */
+.arch {
+  border-radius: 28px;
+  background: var(--panel);
+  padding: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .arch {
+    padding: 2.5rem;
+  }
+}
+
+.arch-band {
+  display: grid;
+  align-items: baseline;
+  gap: 0.25rem;
+  border-radius: 16px;
+  background: #fff;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+@media (min-width: 640px) {
+  .arch-band {
+    grid-template-columns: 6.5rem 8rem 1fr;
+    gap: 1.25rem;
+    padding: 1.125rem 1.5rem;
+  }
+}
+
+.arch-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.arch-name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.arch-role {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Los conectores: una linea vertical entre bandas y una horquilla hacia los
+   dos almacenes. Sin ellos serian tarjetas apiladas, no un diagrama. */
+.arch-link {
+  display: block;
+  width: 2px;
+  height: 1.25rem;
+  margin-left: 2rem;
+  background: var(--line-strong);
+}
+
+.arch-split {
+  display: block;
+  width: 2px;
+  height: 1.25rem;
+  margin-left: 2rem;
+  background: var(--line-strong);
+}
+
+.arch-stores {
+  display: grid;
+  gap: 0.75rem;
+  border-left: 2px solid var(--line-strong);
+  margin-left: 2rem;
+  padding-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .arch-stores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.arch-band.is-store {
+  grid-template-columns: none;
+  gap: 0.25rem;
+}
+
+.arch-aside {
+  margin-top: 1.75rem;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.25rem;
+}
+
+.arch-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.arch-services li {
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  padding: 0.375rem 0.875rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.arch-note {
+  margin-top: 0.875rem;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 /* ── Superficies de Snowy ─────────────────────────────────
    Misma gramatica que las tarjetas de proyecto —superficie propia con color,
    tipografia grande dentro y la captura sangrando por el borde— pero con el

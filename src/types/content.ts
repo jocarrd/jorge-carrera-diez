@@ -288,6 +288,13 @@ export type Copy = {
       };
       traction: SectionCopy;
       build: SectionCopy;
+      architecture: {
+        layers: { tag: string; name: string; role: string }[];
+        stores: { tag: string; name: string; role: string }[];
+        servicesLabel: string;
+        services: string[];
+        servicesNote: string;
+      };
       capabilities: Capability[];
       seo: SectionCopy & { sourcesTitle: string; sourcesText: string };
       b2b: SectionCopy & { lines: TitledText[] };

@@ -767,6 +767,19 @@ export const en: Copy = {
         title: "How it is built.",
         text: "Snowy runs on a decoupled architecture: Next.js for SSR, SEO and UI; NestJS for business logic and data; Redis for cache; MySQL for persistence; and separate services where radar, CMS or jobs carry different loads.",
       },
+      architecture: {
+        layers: [
+          { tag: "Front", name: "Next.js", role: "Server rendering, SEO and interface" },
+          { tag: "Engine", name: "NestJS", role: "Business logic, integrations and data model" },
+        ],
+        stores: [
+          { tag: "Cache", name: "Redis", role: "What gets asked a lot and changes little" },
+          { tag: "Persistence", name: "MySQL", role: "The state that has to survive" },
+        ],
+        servicesLabel: "Separate",
+        services: ["Radar", "CMS", "Jobs"],
+        servicesNote: "They split off when their load looks nothing like the rest: the radar renders tiles, the jobs run on a schedule.",
+      },
       capabilities: [
         {
           title: "Architecture",

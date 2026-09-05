@@ -774,6 +774,19 @@ export const es: Copy = {
         title: "Cómo está hecho.",
         text: "Snowy se apoya en una arquitectura desacoplada: Next.js para SSR, SEO y UI; NestJS para negocio y datos; Redis para caché; MySQL para persistencia; y servicios separados cuando radar, CMS o jobs tienen cargas distintas.",
       },
+      architecture: {
+        layers: [
+          { tag: "Front", name: "Next.js", role: "Render en servidor, SEO e interfaz" },
+          { tag: "Engine", name: "NestJS", role: "Negocio, integraciones y modelo de datos" },
+        ],
+        stores: [
+          { tag: "Caché", name: "Redis", role: "Lo que se pide mucho y cambia poco" },
+          { tag: "Persistencia", name: "MySQL", role: "El estado que tiene que sobrevivir" },
+        ],
+        servicesLabel: "Aparte",
+        services: ["Radar", "CMS", "Jobs"],
+        servicesNote: "Se separan cuando su carga no se parece a la del resto: el radar pinta tiles, los jobs corren a horas fijas.",
+      },
       capabilities: [
         {
           title: "Arquitectura",
