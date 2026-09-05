@@ -1,4 +1,4 @@
-import { getCopy, site } from "@/content";
+import { getCopy, organizations, site } from "@/content";
 import { locales } from "@/i18n/config";
 import { allPathsFor, routeKeys } from "@/i18n/routes";
 
@@ -6,6 +6,7 @@ const routeLabels: Record<string, string> = {
   home: "Inicio / Home",
   projects: "Proyectos / Projects",
   snowy: "Snowy — plataforma meteorológica / weather platform",
+  eqx: "EQx — Elite Quality Index, cliente en Suiza / client in Switzerland",
   lariojameteo: "LaRiojaMeteo — portal regional / regional portal",
   experience: "Experiencia / Experience",
   cv: "Currículum / CV",
@@ -55,9 +56,10 @@ export function GET() {
     "desarrollo de producto web y acompañamiento de arquitectura frontend.",
     "",
     ...locales.map((locale) => `${section(locale)}\n`),
-    "## Proyectos propios / Own projects",
+    "## Proyectos / Projects",
     "",
     `- Snowy — ${site.snowy}`,
+    `- EQx (Elite Quality Index) — ${organizations.eqx.url}`,
     `- LaRiojaMeteo — ${site.lariojameteo}`,
     "",
   ].join("\n");

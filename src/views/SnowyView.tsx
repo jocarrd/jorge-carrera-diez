@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CaseCta, CaseHero, CaseStack } from "@/components/case";
 import { ButtonLink, MetricCard, Section, SectionHeader, Surface, TechTag } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -19,23 +20,21 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
   return (
     <main>
-      <Section>
-        <h1 className="max-w-4xl text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--foreground)] sm:text-5xl">
-          {copy.heading}
-        </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8">
-          {copy.lead}
-        </p>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
-          {copy.detail}
-        </p>
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={site.snowy}>{copy.ctaPrimary}</ButtonLink>
-          <ButtonLink href={routePath(locale, "cv")} variant="secondary">
-            {copy.ctaSecondary}
-          </ButtonLink>
-        </div>
-      </Section>
+      <CaseHero
+        eyebrow={copy.eyebrow}
+        heading={copy.heading}
+        lead={copy.lead}
+        detail={copy.detail}
+        facts={copy.facts}
+        actions={
+          <>
+            <ButtonLink href={site.snowy}>{copy.ctaPrimary}</ButtonLink>
+            <ButtonLink href={routePath(locale, "cv")} variant="secondary">
+              {copy.ctaSecondary}
+            </ButtonLink>
+          </>
+        }
+      />
 
       <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -294,6 +293,10 @@ export function SnowyView({ locale }: { locale: Locale }) {
           ))}
         </div>
       </Section>
+
+      <CaseStack title={copy.stack.title} text={copy.stack.text} groups={copy.stack.groups} />
+
+      <CaseCta locale={locale} />
     </main>
   );
 }

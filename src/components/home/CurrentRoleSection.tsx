@@ -1,11 +1,13 @@
-import { Section, SectionHeader, ProductShot, Reveal } from "@/components/ui";
+import { ButtonLink, ProductShot, Reveal, Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
 export function CurrentRoleSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const role = copy.currentRole;
   const eqx = copy.experience.find((item) => item.company === "EQx");
+  const eqxCase = copy.pages.eqx;
 
   return (
     <Section id="rol-actual" className="section-band">
@@ -40,19 +42,17 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
                 {eqx.headline}
               </h3>
               <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">{eqx.summary}</p>
+              <div className="mt-6">
+                <ButtonLink href={routePath(locale, "eqx")} variant="quiet">
+                  {eqxCase.title}
+                </ButtonLink>
+              </div>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-4">
               <ProductShot src={eqx.image} alt={eqx.imageAlt ?? eqx.headline ?? ""} />
               <ProductShot
                 src="/images/eqx-rankings.webp"
-                alt={eqx.imageAlt ?? eqx.headline ?? ""}
-                className="hidden sm:block"
-              />
-            </div>
-              <ProductShot
-                src="/images/eqx-rankings.webp"
-                alt={eqx.imageAlt ?? eqx.headline ?? ""}
+                alt={eqxCase.imageAlts.rankings}
                 className="hidden sm:block"
               />
             </div>

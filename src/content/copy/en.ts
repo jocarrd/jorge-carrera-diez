@@ -432,6 +432,24 @@ export const en: Copy = {
       ],
     },
     {
+      slug: "eqx",
+      name: "EQx",
+      url: "https://elitequality.org/",
+      label: "Client",
+      image: "/images/eqx-home.webp",
+      description:
+        "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and a private assessment platform.",
+      impact:
+        "I picked up a project already in production and now keep it running: the index site, the rating platform and the documentation that did not exist before.",
+      metrics: [
+        { value: "151", label: "countries ranked" },
+        { value: "148", label: "indicators" },
+        { value: "12", label: "pillars across 4 areas" },
+        { value: "7th", label: "annual edition" },
+      ],
+      stack: ["Astro", "React", "Next.js", "PostgreSQL", "D3", "GitHub Actions"],
+    },
+    {
       slug: "lariojameteo",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
@@ -452,19 +470,19 @@ export const en: Copy = {
     },
   ],
   featuredProjects: {
-    snowyCta: "See Snowy",
-    lariojaCta: "See LaRiojaMeteo",
-    snowyImageAlt: "Snowy interface",
-    lariojaImageAlt: "LaRiojaMeteo home",
+    leadCta: "See the case",
+    secondaryCta: "See the case",
+    leadImageAlt: "Main project interface",
+    secondaryImageAlt: "Project home page",
   },
   pages: {
     projects: {
       title: "Projects",
       description:
-        "Projects by Jorge Carrera Diez: Snowy, LaRiojaMeteo and product platforms with SEO, data, web architecture and infrastructure.",
+        "Projects by Jorge Carrera Diez: Snowy, the EQx Elite Quality Index and LaRiojaMeteo. Product, architecture, data, SEO and infrastructure.",
       eyebrow: "Projects",
-      heading: "Snowy as the main product, LaRiojaMeteo as the weather context.",
-      text: "Two projects connected by weather, content, SEO and building web product on real data.",
+      heading: "My own product, an international client and a portal with an audience.",
+      text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
     },
     experience: {
       title: "Experience",
@@ -555,7 +573,25 @@ export const en: Copy = {
       title: "Snowy",
       description:
         "Snowy, the weather platform built by Jorge Carrera Diez with Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, weather data and AI.",
+      eyebrow: "My own product",
       heading: "Snowy: a weather platform with maps, real-time data and AI.",
+      facts: [
+        { label: "Role", value: "Design, development and infrastructure" },
+        { label: "Period", value: "Since 2025, ongoing" },
+        { label: "Scope", value: "Whole product, from database to SEO" },
+        { label: "Reach", value: "14.7M impressions in 90 days" },
+      ],
+      stack: {
+        eyebrow: "Stack",
+        title: "What runs underneath.",
+        text: "Everything you see in Snowy is mine to maintain: rendering, backend, data, radar and deployments.",
+        groups: [
+          { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
+          { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
+          { label: "Infrastructure", items: ["Docker", "Coolify", "Cloudflare", "Own VPS"] },
+          { label: "AI and data", items: ["AI SDK", "RAG", "Batch jobs", "GRIB2"] },
+        ],
+      },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
         "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture of my own: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 14.7 million impressions, 242,000 organic clicks and 1,400 registered users.",
@@ -792,8 +828,26 @@ export const en: Copy = {
       title: "LaRiojaMeteo",
       description:
         "LaRiojaMeteo project case: a weather blog with more than 500,000 monthly visits where Jorge Carrera Diez works as webmaster.",
+      eyebrow: "Collaboration",
       heading:
         "LaRiojaMeteo: regional weather, community, SEO and the editorial base for Snowy.",
+      facts: [
+        { label: "Role", value: "Partner and technical lead" },
+        { label: "Period", value: "Since 2024" },
+        { label: "Scope", value: "Site, SEO, performance and live data" },
+        { label: "Origin", value: "Running since 2012" },
+      ],
+      stack: {
+        eyebrow: "Stack",
+        title: "A content portal that has to be fast.",
+        text: "Most of the work is not new features: it is making what already exists load fast, read well on a phone and get found on Google.",
+        groups: [
+          { label: "Platform", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "Visibility", items: ["Technical SEO", "Structured data", "Core Web Vitals"] },
+          { label: "Data", items: ["Snowy stations", "Webcams", "Reservoirs"] },
+          { label: "Measurement", items: ["Search Console", "Analytics"] },
+        ],
+      },
       lead: "I work as a partner and the technical profile at LaRiojaMeteo, the reference weather portal for La Rioja and Logroño, with forecasts, analysis, live data, news, guides and community.",
       cta: "Visit LaRiojaMeteo",
       imageAlt: "LaRiojaMeteo home with cover, categories and latest article",
@@ -831,5 +885,139 @@ export const en: Copy = {
         ],
       },
     },
+    eqx: {
+      title: "EQx",
+      description:
+        "EQx project case: Jorge Carrera Diez took over the technical lead of the Elite Quality Index for the Foundation for Value Creation in St. Gallen, Switzerland.",
+      eyebrow: "Client · Switzerland",
+      heading: "EQx: the index that measures elite quality across 151 countries.",
+      lead: "I took over the technical lead of the Elite Quality Index, a project of the Foundation for Value Creation under the academic leadership of three University of St. Gallen institutes. I came in to pick up a project already in production and keep it running on my own.",
+      detail:
+        "This is the engagement that best shows how I work with a client: nobody handed me the context, it had to be rebuilt by reading the code and measuring what was actually deployed. Today I maintain both the public index site and the private assessment platform, and the client has in writing what used to live in one person's head.",
+      ctaPrimary: "Visit elitequality.org",
+      ctaSecondary: "Get in touch",
+      facts: [
+        { label: "Client", value: "Foundation for Value Creation" },
+        { label: "Role", value: "Technical handover and development" },
+        { label: "Period", value: "Since July 2026" },
+        { label: "Scope", value: "Public site and assessment platform" },
+      ],
+      imageAlts: {
+        home: "elitequality.org homepage with the Elite Quality Index world map",
+        rankings: "EQx country ranking table and interactive map",
+      },
+      client: {
+        eyebrow: "The client",
+        title: "A Swiss foundation publishing an annual academic index.",
+        text: "The Foundation for Value Creation is a non-profit based in St. Gallen, supervised by the Swiss federal authority for foundations. It publishes the Elite Quality Index, which measures how far a country's elites create value rather than extract it.",
+        items: [
+          {
+            title: "Academic leadership",
+            text: "Three University of St. Gallen institutes — IIDM, ERP and SBF — plus an international network of academic partners.",
+          },
+          {
+            title: "Two products",
+            text: "The country index, public at elitequality.org, and the Value Creation Ratings for firms, computed on a private platform.",
+          },
+          {
+            title: "Working in English",
+            text: "All coordination is remote and in English, on European hours. The assessment platform ships in English, Spanish and Chinese.",
+          },
+        ],
+      },
+      metrics: [
+        { value: "151", label: "countries ranked" },
+        { value: "148", label: "indicators" },
+        { value: "12", label: "pillars across 4 areas" },
+        { value: "7th", label: "annual edition" },
+      ],
+      index: {
+        eyebrow: "The index",
+        title: "Four levels, from a single number to 148 indicators.",
+        text: "The shape of the EQx drives the whole interface: every view on the site — the map, the table, the comparison tool — is a way into and out of this hierarchy.",
+        levels: [
+          {
+            level: "Level 1",
+            title: "The index",
+            text: "One score and a global rank per country, plus the Power and Value sub-indexes.",
+          },
+          {
+            level: "Level 2",
+            title: "Four areas",
+            text: "The first breakdown, used to compare countries without going into detail.",
+          },
+          {
+            level: "Level 3",
+            title: "Twelve pillars",
+            text: "The level where you see where a country's score actually comes from.",
+          },
+          {
+            level: "Level 4",
+            title: "148 indicators",
+            text: "The source data. This is what has to be auditable when someone disputes a result.",
+          },
+        ],
+      },
+      work: {
+        eyebrow: "What I do",
+        title: "Pick up a running project and make it sustainable.",
+        text: "The job was not to build from scratch but to take ownership: understand what was there, write it down, and keep shipping without breaking what was already published.",
+        items: [
+          {
+            title: "Map the ground first",
+            text: "Measure what is actually deployed instead of trusting inherited documentation. Much of what the repo described was no longer what was in production.",
+          },
+          {
+            title: "Public index site",
+            text: "A static site with interactive islands: world map, rankings table, country comparison tool and rank evolution over time.",
+          },
+          {
+            title: "Assessment platform",
+            text: "A private application where a firm answers the survey, its rating is computed and the official four-page report is generated.",
+          },
+          {
+            title: "Data that has to add up",
+            text: "Rankings come from the foundation's official workbooks. The import is validated against the source: if it does not match, you fix the importer, not the output.",
+          },
+          {
+            title: "Continuous delivery",
+            text: "Every change ships on merge, and the project moved into the client's own organisation rather than mine.",
+          },
+          {
+            title: "Handover documentation",
+            text: "What I learn gets written down. If someone else comes in tomorrow, they do not repeat the archaeology I had to do.",
+          },
+        ],
+      },
+      vcr: {
+        eyebrow: "self-VCr",
+        title: "The other half: rating firms.",
+        text: "Alongside the country index, the foundation computes a Value Creation Rating for firms. The tool is private and invitation-only, so there are no screenshots here — but I can say what it is made of.",
+        items: [
+          "A multilingual survey with saved progress, so it can be answered across several sessions.",
+          "A scoring engine turning answers into the sustainable value creation score.",
+          "The official four-page report, server-rendered and always faithful to its design.",
+          "An admin console for clients, teams and access links.",
+        ],
+        note: "This is work under client agreement. The specifics belong in a conversation, not on a web page.",
+      },
+      stack: {
+        eyebrow: "Stack",
+        title: "Two different applications, one person responsible.",
+        text: "The index site and the assessment platform share no code and no framework. What they share is me.",
+        groups: [
+          { label: "Index site", items: ["Astro", "React", "Tailwind", "TypeScript"] },
+          { label: "Visualisation", items: ["D3", "TopoJSON", "TanStack Table"] },
+          { label: "Platform", items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"] },
+          { label: "Delivery", items: ["GitHub Actions", "Continuous deploy", "Vitest", "Playwright"] },
+        ],
+      },
+    },
+  },
+  caseCta: {
+    title: "Does any of this fit what you need?",
+    text: "I work on scoped engagements, remote and on European hours. If you have something in mind, tell me and I will say honestly whether I am the right person.",
+    cta: "Email me",
+    ctaSecondary: "See all projects",
   },
 };
