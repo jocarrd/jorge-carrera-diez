@@ -4,17 +4,17 @@ type MetricCardProps = {
   metric: Metric;
 };
 
+// Nueve cajas iguales en fila no son nueve datos: son una rejilla de bordes que
+// compite con las cifras. En una ficha técnica el dato manda y la estructura la
+// da un filete, no un contorno cerrado. El número va en la tipografía de
+// titulares, como en el dato grande de la portada, y la etiqueta en mono, que
+// es donde vive el registro técnico en esta web.
 export function MetricCard({ metric }: MetricCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl lvl-2 border p-4 sm:p-5">
-      <div className="absolute inset-x-0 top-0 h-px scanline" />
-      <p className="font-mono text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
-        {metric.value}
-      </p>
-      <p className="mt-2 text-sm font-medium text-[var(--accent-text)]">{metric.label}</p>
-      {metric.detail ? (
-        <p className="mt-2 text-xs leading-5 text-[var(--muted)] sm:mt-3">{metric.detail}</p>
-      ) : null}
+    <div className="metric-cell">
+      <p className="metric-value">{metric.value}</p>
+      <p className="metric-label">{metric.label}</p>
+      {metric.detail ? <p className="metric-detail">{metric.detail}</p> : null}
     </div>
   );
 }

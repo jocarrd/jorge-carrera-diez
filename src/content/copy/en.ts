@@ -56,9 +56,9 @@ export const en: Copy = {
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
-    availability: "Available for one more project",
+    availability: "Available for new projects",
     availabilityNote:
-      "Remote, European hours, in Spanish or English. On scoped engagements of a few hours a week.",
+      "Remote, European hours, in Spanish or English.",
     capabilities: [
       {
         title: "Product architecture",
@@ -561,7 +561,7 @@ export const en: Copy = {
         "It is what I am doing right now for a Swiss foundation: I took over from their previous developer and picked up both of their digital products without interrupting operations.",
       availabilityLabel: "availability",
       availabilityText:
-        "Remote, European hours, in Spanish or English. I work on scoped engagements of a few hours a week: it is the format that lets me genuinely commit to what I take on.",
+        "Remote, European hours, in Spanish or English. Every engagement is scoped before it starts, so I can genuinely commit to what I take on.",
       servicesTitle: "How I can help",
       servicesText:
         "Three ways of working that are already running with real clients, not a list of technologies.",
@@ -742,7 +742,7 @@ export const en: Copy = {
         ],
       },
       traction: {
-        title: "Real traction, not just architecture.",
+        title: "What shows up in usage.",
         text: "SEO, performance and product usefulness already show up in usage: organic search, clicks and registered users on a platform of my own.",
       },
       build: {
@@ -1130,7 +1130,7 @@ export const en: Copy = {
   },
   caseCta: {
     title: "Does any of this fit what you need?",
-    text: "I work on scoped engagements, remote and on European hours. If you have something in mind, tell me and I will say honestly whether I am the right person.",
+    text: "I work remotely, on European hours. If you have something in mind, tell me and I will say honestly whether I am the right person.",
     cta: "Email me",
     ctaSecondary: "See all projects",
   },

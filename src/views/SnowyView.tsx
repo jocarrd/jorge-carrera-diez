@@ -160,12 +160,12 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader title={copy.traction.title} text={copy.traction.text} />
-        <div className="mt-10 grid gap-3 md:grid-cols-3">
+        <div className="mt-10 grid gap-x-8 gap-y-9 md:grid-cols-3">
           {copy.tractionMetrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
         </div>
-        <div className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-6">
+        <div className="mt-9 grid grid-cols-2 gap-x-8 gap-y-9 lg:grid-cols-6">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}

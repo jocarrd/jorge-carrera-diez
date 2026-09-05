@@ -264,6 +264,58 @@ a {
   transform: translateY(16%);
 }
 
+/* ── Ficha de metricas ────────────────────────────────────
+   Sin contorno: el filete superior alinea la fila y deja el peso visual en la
+   cifra. Es como presenta Apple las especificaciones. */
+.metric-cell {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.875rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+@media (min-width: 640px) {
+  .metric-value {
+    font-size: 2.375rem;
+  }
+}
+
+.metric-label {
+  margin-top: 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.metric-detail {
+  margin-top: 0.5rem;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.section-dark .metric-cell {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.section-dark .metric-value {
+  color: #fff;
+}
+
+.section-dark .metric-label,
+.section-dark .metric-detail {
+  color: var(--ink-dark-muted);
+}
+
 /* ── Bloques de proyecto (pagina /proyectos) ──────────────
    Mismo lenguaje que las tarjetas de la portada —superficie con el color de la
    marca y la captura sangrando— pero a ancho completo, porque aqui caben las

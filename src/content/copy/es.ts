@@ -61,9 +61,9 @@ export const es: Copy = {
       "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
-    availability: "Disponible para un proyecto más",
+    availability: "Disponible para nuevos proyectos",
     availabilityNote:
-      "En remoto y horario europeo, en español o en inglés. Por encargos acotados de pocas horas a la semana.",
+      "En remoto y horario europeo, en español o en inglés.",
     capabilities: [
       {
         title: "Arquitectura de producto",
@@ -561,7 +561,7 @@ export const es: Copy = {
         "Es lo que hago ahora mismo para una fundación suiza: asumí el relevo de su desarrollador anterior y me hice cargo de sus dos productos digitales sin interrumpir la operativa.",
       availabilityLabel: "disponibilidad",
       availabilityText:
-        "En remoto y horario europeo, en español o en inglés. Trabajo por encargos acotados de pocas horas a la semana: es el formato que me permite comprometerme de verdad con lo que acepto.",
+        "En remoto y horario europeo, en español o en inglés. Cada encargo se acota antes de empezar, para poder comprometerme de verdad con lo que acepto.",
       servicesTitle: "En qué puedo ayudarte",
       servicesText:
         "Tres formas de trabajo que ya están funcionando con clientes reales, no una lista de tecnologías.",
@@ -743,7 +743,7 @@ export const es: Copy = {
         ],
       },
       traction: {
-        title: "Tracción real, no solo arquitectura.",
+        title: "Lo que se ve en el uso.",
         text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8.",
       },
       build: {
@@ -1148,7 +1148,7 @@ export const es: Copy = {
   },
   caseCta: {
     title: "¿Te encaja algo de esto?",
-    text: "Trabajo por encargos acotados, en remoto y horario europeo. Si tienes algo entre manos, cuéntamelo y te digo con franqueza si soy la persona.",
+    text: "Trabajo en remoto y horario europeo. Si tienes algo entre manos, cuéntamelo y te digo con franqueza si soy la persona.",
     cta: "Escribirme",
     ctaSecondary: "Ver todos los proyectos",
   },

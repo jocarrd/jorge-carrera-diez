@@ -82,7 +82,7 @@ export function EqxView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader eyebrow={copy.index.eyebrow} title={copy.index.title} text={copy.index.text} />
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-4">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
