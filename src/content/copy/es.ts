@@ -58,7 +58,7 @@ export const es: Copy = {
     // construye. En tres golpes se lee antes de que nadie decida irse.
     tagline: ["Lo diseño.", "Lo construyo.", "Lo mantengo."],
     taglineSub:
-      "Ahora mismo: producto financiero en Madrid, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
+      "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Disponible para un proyecto más",
