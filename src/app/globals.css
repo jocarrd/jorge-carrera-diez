@@ -264,6 +264,66 @@ a {
   transform: translateY(16%);
 }
 
+/* ── Bloques de proyecto (pagina /proyectos) ──────────────
+   Mismo lenguaje que las tarjetas de la portada —superficie con el color de la
+   marca y la captura sangrando— pero a ancho completo, porque aqui caben las
+   metricas y el stack. Los degradados y los colores de texto se heredan de las
+   clases .proj-card--<slug>, que ya los definen. */
+/* Sin `color` aqui: esta regla va despues de .proj-card--eqx en el fichero y
+   con la misma especificidad le pisaba el blanco, dejando la tarjeta oscura con
+   el texto casi invisible. El color lo pone la clase de marca. */
+.proj-feature {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 2.5rem 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .proj-feature {
+    padding: 3.25rem 0 3.25rem 3.25rem;
+  }
+}
+
+.proj-feature-text {
+  color: color-mix(in srgb, currentColor 74%, transparent);
+}
+
+/* Al 58 % se quedaba en 3,92:1 sobre el degradado claro, por debajo del 4,5
+   que pide texto de 12 px. */
+.proj-feature-stack {
+  color: color-mix(in srgb, currentColor 76%, transparent);
+}
+
+/* Sangrado: en escritorio la captura se ensancha por encima de su columna y se
+   desplaza hacia el borde exterior, donde el overflow de la tarjeta la corta.
+   En movil no hay borde exterior al que salir, asi que se queda dentro. */
+@media (min-width: 1024px) {
+  /* Con margen y no con transform: el porcentaje del margen se resuelve contra
+     la columna, asi que los dos lados sangran exactamente lo mismo (34 %). Con
+     translate el porcentaje va contra el ancho del propio elemento y salian
+     asimetricos. */
+  .proj-feature-shot {
+    width: 128%;
+    margin-left: 6%;
+  }
+
+  .proj-feature-shot.is-left {
+    margin-left: -34%;
+  }
+
+  .proj-feature .lg\:grid-cols-\[0\.92fr_1\.08fr\] {
+    align-items: center;
+  }
+}
+
+/* Con la captura a la izquierda el texto necesita el aire por el otro lado. */
+@media (min-width: 1024px) {
+  .proj-feature:has(.proj-feature-shot.is-left) {
+    padding: 3.25rem 3.25rem 3.25rem 0;
+  }
+}
+
 /* ── Marco de ventana ─────────────────────────────────────
    Barra de 38 px con los tres puntos y el dominio centrado, como una ventana
    de macOS. El radio interior es el exterior menos el grosor del borde, si no

@@ -1,5 +1,5 @@
+import { BrowserFrame, ButtonLink, Reveal } from "@/components/ui";
 import Image from "next/image";
-import { BrowserFrame, ButtonLink, Reveal, TechTag } from "@/components/ui";
 import { domainOf, getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import type { RouteKey } from "@/i18n/routes";
@@ -14,119 +14,128 @@ type FeaturedProjectsProps = {
 };
 
 /* Los tres proyectos tienen página propia, así que el slug es también la clave
-   de ruta. Antes esta rejilla era Snowy y LaRiojaMeteo escritos a mano, uno
-   grande y otro pequeño; al aparecer un tercero no había dónde meterlo. */
+   de ruta. */
 const caseRoutes: Record<string, RouteKey> = {
   snowy: "snowy",
   eqx: "eqx",
   lariojameteo: "lariojameteo",
 };
 
+// Antes eran cajas blancas con filo: la captura flotaba dentro con hueco muerto
+// alrededor y las tecnologías eran píldoras de contorno. Ahora comparten
+// gramática con las tarjetas de la portada —superficie propia con el color de
+// la marca y la captura sangrando por el borde— pero a ancho completo, porque
+// esta página sí tiene que caber las métricas y el stack.
+//
+// El lado de la captura alterna. Con tres bloques del mismo alto y la misma
+// composición, la página se lee como una lista; alternando se lee como tres
+// cosas distintas.
 export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
-  const Heading = headingTags[level];
   const copy = getCopy(locale);
-  const labels = copy.featuredProjects;
-  const [lead, ...rest] = copy.projects;
+  const projects = copy.projects.filter((project) => caseRoutes[project.slug]);
 
-  if (!lead) {
-    return null;
-  }
-
-  const routeFor = (project: Project) => caseRoutes[project.slug];
+  if (projects.length === 0) return null;
 
   return (
     <div className="grid gap-5">
-      {/* El primero manda: ocupa el ancho y es el único con métricas a la
-          vista, porque es el que se quiere que abran. */}
-      <Reveal>
-        <article className="overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-[var(--line-strong)]">
-          <div className="grid gap-6 p-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8 lg:p-8">
-            <div className="flex flex-col">
-              {lead.logo ? (
-                <Image
-                  src={lead.logo}
-                  alt={lead.name}
-                  width={150}
-                  height={48}
-                  className="h-10 w-auto object-contain object-left sm:h-12"
-                />
-              ) : null}
-              <Heading className="mt-5 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:mt-6 sm:text-3xl">
-                {lead.name}
-              </Heading>
-              <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
-                {lead.description}
-              </p>
-              <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{lead.impact}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {lead.stack.slice(0, 6).map((tech) => (
-                  <TechTag key={tech}>{tech}</TechTag>
-                ))}
-              </div>
-              <div className="mt-8">
-                <ButtonLink href={routePath(locale, routeFor(lead))}>{labels.leadCta}</ButtonLink>
-              </div>
-            </div>
-
-            <BrowserFrame label={lead.url ? domainOf(lead.url) : undefined} className="self-start">
-              <Image
-                src={lead.image ?? ""}
-                alt={labels.leadImageAlt}
-                width={1365}
-                height={1049}
-                className="h-64 w-full object-cover object-top sm:h-72"
-              />
-            </BrowserFrame>
-          </div>
-        </article>
-      </Reveal>
-
-      <div className="grid gap-5 lg:grid-cols-2">
-        {rest.map((project, index) => (
-          <Reveal key={project.slug} delay={index * 80}>
-            <article className="flex h-full flex-col overflow-hidden rounded-2xl lvl-2 border transition-colors duration-300 hover:border-[var(--line-strong)]">
-              <BrowserFrame label={project.url ? domainOf(project.url) : undefined}>
-                <div className="h-48 sm:h-56">
-                  <Image
-                    src={project.image ?? ""}
-                    alt={project.name}
-                    width={1600}
-                    height={1000}
-                    className="h-full w-full object-cover object-top"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                  />
-                </div>
-              </BrowserFrame>
-              <div className="flex flex-1 flex-col p-5 lg:p-7">
-                <p className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
-                  {project.label}
-                </p>
-                <Heading className="mt-3 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-                  {project.name}
-                </Heading>
-                <p className="mt-4 flex-1 text-sm leading-6 text-[var(--muted)]">
-                  {project.description}
-                </p>
-                <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--line)]">
-                  {project.metrics?.slice(0, 4).map((metric) => (
-                    <div key={metric.label} className="bg-[var(--panel)] p-4">
-                      <p className="font-mono text-xl font-semibold text-[var(--foreground)]">
-                        {metric.value}
-                      </p>
-                      <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{metric.label}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-7">
-                  <ButtonLink href={routePath(locale, routeFor(project))} variant="quiet">
-                    {labels.secondaryCta}
-                  </ButtonLink>
-                </div>
-              </div>
-            </article>
-          </Reveal>
-        ))}
-      </div>
+      {projects.map((project, index) => (
+        <Reveal key={project.slug} delay={index * 80}>
+          <FeatureCard
+            project={project}
+            locale={locale}
+            level={level}
+            reversed={index % 2 === 1}
+          />
+        </Reveal>
+      ))}
     </div>
+  );
+}
+
+function FeatureCard({
+  project,
+  locale,
+  level,
+  reversed,
+}: {
+  project: Project;
+  locale: Locale;
+  level: HeadingLevel;
+  reversed: boolean;
+}) {
+  const Heading = headingTags[level];
+  const copy = getCopy(locale);
+  const dark = project.slug === "eqx";
+
+  return (
+    <article className={`proj-feature proj-card--${project.slug}`}>
+      <div
+        className={`grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-6 ${
+          reversed ? "lg:[&>*:first-child]:order-2" : ""
+        }`}
+      >
+        <div className="proj-feature-body">
+          <p className="proj-card-kicker">{project.label}</p>
+          <Heading className="mt-3 text-[2rem] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.5rem]">
+            {project.name}
+          </Heading>
+          <p className="proj-feature-text mt-4 max-w-[46ch] text-[17px] leading-[1.5]">
+            {project.description}
+          </p>
+
+          {project.metrics?.length ? (
+            <dl className="mt-8 grid max-w-[34rem] grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+              {project.metrics.slice(0, 4).map((metric) => (
+                <div key={metric.label}>
+                  <dt className="sr-only">{metric.label}</dt>
+                  <dd>
+                    <span className="block text-[1.5rem] font-semibold leading-none tracking-[-0.03em]">
+                      {metric.value}
+                    </span>
+                    <span className="proj-feature-text mt-1.5 block text-[13px] leading-[1.35]">
+                      {metric.label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+
+          {/* En texto separado por puntos y no en píldoras: seis contornos
+              seguidos pesaban más que las métricas, que es lo que importa. */}
+          <p className="proj-feature-stack mt-7 font-mono text-[12px] leading-[1.6]">
+            {project.stack.slice(0, 7).join(" · ")}
+          </p>
+
+          <div className="mt-8">
+            <ButtonLink
+              href={routePath(locale, caseRoutes[project.slug])}
+              tone={dark ? "dark" : "light"}
+            >
+              {copy.featuredProjects.leadCta}
+            </ButtonLink>
+          </div>
+        </div>
+
+        {/* La captura se sale de la tarjeta por el lado exterior: recortada
+            contra el borde parece una ventana al producto, terminada dentro
+            parece una foto pegada. */}
+        <div className={`proj-feature-shot ${reversed ? "is-left" : ""}`}>
+          <BrowserFrame
+            label={project.url ? domainOf(project.url) : undefined}
+            tone={dark ? "dark" : "light"}
+          >
+            <Image
+              src={project.image ?? ""}
+              alt={project.name}
+              width={1600}
+              height={1000}
+              className="h-auto w-full"
+              sizes="(min-width: 1024px) 62vw, 100vw"
+            />
+          </BrowserFrame>
+        </div>
+      </div>
+    </article>
   );
 }

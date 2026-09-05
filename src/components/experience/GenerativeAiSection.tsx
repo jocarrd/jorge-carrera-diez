@@ -38,14 +38,16 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[var(--line-strong)] ai-orbit" />
             <div className="pointer-events-none absolute -right-10 top-12 h-32 w-32 rounded-full border border-[var(--line)] ai-orbit" />
 
-            <div className="relative rounded-xl border border-[var(--line)] bg-black/20 p-3">
-              <div className="flex items-center justify-between gap-4 border-b border-[var(--line)] pb-3">
+            {/* Negro al 20 % sobre un panel claro no era ni oscuro ni claro: el
+                texto gris encima medía 2,77:1. Si es una consola, que lo sea. */}
+            <div className="relative rounded-xl border border-white/10 bg-[var(--ink-dark)] p-3">
+              <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-300/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-300/70" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
                 </div>
-                <p className="font-mono text-xs text-[var(--muted)]">agent-runtime</p>
+                <p className="font-mono text-xs text-[var(--ink-dark-muted)]">agent-runtime</p>
               </div>
 
               <div className="relative mt-4 sm:mt-5">
@@ -84,10 +86,10 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
               </div>
 
               <div className="mt-3 grid gap-3 sm:mt-4 lg:grid-cols-[1fr_0.78fr]">
-                <div className="hidden rounded-xl border border-[var(--line)] bg-black/25 p-4 md:block">
+                <div className="hidden rounded-xl border border-white/10 bg-[var(--ink-dark)] p-4 md:block">
                   <div className="flex items-center justify-between gap-4">
-                    <p className="font-mono text-xs text-[var(--muted)]">execution trace</p>
-                    <span className="rounded-full border border-[var(--line)] bg-[var(--panel)] px-2.5 py-1 font-mono text-[0.68rem] text-[var(--accent-text)]">
+                    <p className="font-mono text-xs text-[var(--ink-dark-muted)]">execution trace</p>
+                    <span className="rounded-full border border-white/15 px-2.5 py-1 font-mono text-[0.68rem] text-[var(--accent-dark)]">
                       controlled
                     </span>
                   </div>
@@ -98,8 +100,8 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                         className="grid gap-2 font-mono text-xs sm:grid-cols-[5.5rem_1fr] ai-console-line"
                         style={{ animationDelay: `${index * 480}ms` }}
                       >
-                        <span className="text-[var(--muted)]">{label}</span>
-                        <span className="text-[var(--muted)]">{value}</span>
+                        <span className="text-[var(--accent-dark)]">{label}</span>
+                        <span className="text-[var(--ink-dark-muted)]">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -123,7 +125,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                       ["cost", "cap"],
                       ["eval", "on"],
                     ].map(([label, value]) => (
-                      <div key={label} className="rounded-lg border border-[var(--line)] bg-black/20 p-2.5 sm:p-3">
+                      <div key={label} className="rounded-lg lvl-2 border p-2.5 sm:p-3">
                         <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[var(--muted)]">
                           {label}
                         </p>
