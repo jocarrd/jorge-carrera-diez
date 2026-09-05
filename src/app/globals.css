@@ -168,6 +168,102 @@ a {
   position: relative;
 }
 
+/* ── Tarjetas de proyecto ─────────────────────────────────
+   El movil se recorta contra el borde inferior en vez de terminar dentro: es
+   lo que hace que la tarjeta parezca una ventana al producto y no una foto
+   pegada. De ahi el overflow y el desplazamiento hacia abajo.
+
+   Los degradados salen del color de marca de cada producto —el cian de Snowy,
+   el verde azulado de EQx, el ambar de LaRiojaMeteo—, no de la paleta de esta
+   web: son tres cosas distintas y en tres cajas iguales no lo parecian. */
+.proj-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 30rem;
+  padding: 2rem 1.75rem 0;
+  border-radius: 28px;
+  color: var(--foreground);
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (min-width: 640px) {
+  .proj-card {
+    min-height: 33rem;
+    padding: 2.25rem 2rem 0;
+  }
+}
+
+.proj-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-card {
+    transition: none;
+  }
+
+  .proj-card:hover {
+    transform: none;
+  }
+}
+
+.proj-card--snowy {
+  background: linear-gradient(168deg, #d8ecff 0%, #eef7ff 46%, #ffffff 100%);
+}
+
+.proj-card--lariojameteo {
+  background: linear-gradient(168deg, #ffe6c9 0%, #fff4e6 46%, #ffffff 100%);
+}
+
+/* La oscura rompe la fila. El texto va en blanco (10,8:1 sobre la parada mas
+   clara del degradado) y el kicker en el teal, que ahi mide 5,8:1. */
+.proj-card--eqx {
+  background: linear-gradient(168deg, #10444b 0%, #0b2f35 52%, #071f24 100%);
+  color: #ffffff;
+}
+
+.proj-card-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  /* Al 62 % se quedaba en 4,42:1 sobre el degradado claro, justo por debajo
+     del 4,5 que pide texto de 13 px. */
+  color: color-mix(in srgb, currentColor 74%, transparent);
+}
+
+.proj-card--eqx .proj-card-kicker {
+  color: var(--accent-dark);
+}
+
+.proj-card-title {
+  margin-top: 0.75rem;
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.proj-card-pitch {
+  margin-top: 0.625rem;
+  font-size: 15px;
+  line-height: 1.45;
+  color: color-mix(in srgb, currentColor 72%, transparent);
+}
+
+/* margin-top:auto empuja el movil al fondo; el translate lo saca por el borde
+   para que lo recorte el overflow de la tarjeta. */
+.proj-card-device {
+  margin-top: auto;
+  width: 63%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(16%);
+}
+
 /* ── Marco de ventana ─────────────────────────────────────
    Barra de 38 px con los tres puntos y el dominio centrado, como una ventana
    de macOS. El radio interior es el exterior menos el grosor del borde, si no
@@ -433,8 +529,10 @@ a {
   color: var(--ink-dark-muted);
 }
 
+/* Al 25 % se queda en 2,02:1 sobre el negro y la barra desaparece entre los
+   dos numeros, igual que pasaba en claro. */
 .section-dark .rail-counter-sep {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--ink-dark-muted);
 }
 
 .section-dark .rail-btn {

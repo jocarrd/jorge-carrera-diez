@@ -15,8 +15,12 @@ const caseRoutes: Record<string, RouteKey> = {
 
 // Antes esta banda enseñaba sólo LaRiojaMeteo, pero el titular prometía tres
 // proyectos "que puedes abrir y mirar" y el ancla del menú caía justo aquí:
-// quien la seguía se encontraba uno. Ahora están los tres, y en el móvil real
-// en el que se usan, que es donde se entiende que son productos y no maquetas.
+// quien la seguía se encontraba uno.
+//
+// Y luego eran un móvil flotando sobre el fondo con el texto debajo, en la
+// página. Eso no es una tarjeta: una tarjeta tiene superficie propia, el texto
+// dentro y el producto asomando recortado por su borde. La variedad de fondos
+// —dos claras y una oscura— evita la fila de tres cajas idénticas.
 export function ProjectsPreview({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const preview = copy.projectsPreview;
@@ -31,23 +35,23 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
           <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
         </Reveal>
 
-        <Reveal delay={80} className="mt-14 hidden gap-8 sm:grid sm:grid-cols-3 lg:gap-12">
+        <Reveal delay={80} className="mt-14 hidden gap-5 sm:grid sm:grid-cols-3">
           {projects.map((project) => (
-            <ProjectDevice key={project.slug} project={project} locale={locale} />
+            <ProjectCard key={project.slug} project={project} locale={locale} />
           ))}
         </Reveal>
 
         <Reveal delay={80} className="mt-12 sm:hidden">
           <Rail label={preview.title}>
             {projects.map((project) => (
-              <div key={project.slug} className="rail-item w-[62vw] max-w-[15rem]">
-                <ProjectDevice project={project} locale={locale} />
+              <div key={project.slug} className="rail-item w-[78vw] max-w-[20rem]">
+                <ProjectCard project={project} locale={locale} />
               </div>
             ))}
           </Rail>
         </Reveal>
 
-        <div className="mt-14 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <ButtonLink href={routePath(locale, "projects")} variant="secondary">
             {copy.pages.projects.eyebrow}
           </ButtonLink>
@@ -57,36 +61,23 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
   );
 }
 
-function ProjectDevice({ project, locale }: { project: Project; locale: Locale }) {
-  const copy = getCopy(locale);
+function ProjectCard({ project, locale }: { project: Project; locale: Locale }) {
+  const route = caseRoutes[project.slug];
+  if (!route) return null;
 
   return (
-    <article className="flex flex-col items-center text-center">
-      <DeviceFrame
-        src={project.imageMobile ?? ""}
-        alt={`${project.name} en un móvil`}
-        className="max-w-[15rem]"
-      />
-      <p className="mt-7 text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
-        {project.label}
-      </p>
-      <h3 className="mt-2 text-[1.375rem] font-semibold leading-[1.2] tracking-[-0.02em]">
-        {project.name}
-      </h3>
-      <p className="mt-2.5 text-[15px] leading-[1.5] text-[var(--muted)]">{project.pitch}</p>
-      {/* El rotulo dice "ver el caso", asi que lleva al caso y no a la web del
-          producto: el enlace externo ya esta dentro de cada pagina de caso. */}
-      {caseRoutes[project.slug] ? (
-        <Link
-          href={routePath(locale, caseRoutes[project.slug])}
-          className="mt-3 inline-flex min-h-11 items-center text-[15px] text-[var(--accent-text)] hover:underline"
-        >
-          {copy.featuredProjects.secondaryCta}
-          <span aria-hidden className="ml-1 text-[13px]">
-            &rsaquo;
-          </span>
-        </Link>
-      ) : null}
-    </article>
+    <Link
+      href={routePath(locale, route)}
+      className={`proj-card proj-card--${project.slug} group`}
+      aria-label={`${project.name}: ${project.pitch ?? ""}`}
+    >
+      <p className="proj-card-kicker">{project.label}</p>
+      <h3 className="proj-card-title">{project.name}</h3>
+      <p className="proj-card-pitch">{project.pitch}</p>
+
+      <div className="proj-card-device">
+        <DeviceFrame src={project.imageMobile ?? ""} alt={`${project.name} en un móvil`} />
+      </div>
+    </Link>
   );
 }
