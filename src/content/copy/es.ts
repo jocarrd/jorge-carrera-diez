@@ -679,6 +679,19 @@ export const es: Copy = {
         title: "Qué es Snowy",
         text: "Una plataforma meteorológica para España: predicción multi-modelo sobre datos en vivo, con mapas interactivos y un asistente que responde en lenguaje normal.",
       },
+      convergence: {
+        eyebrow: "El problema de fondo",
+        title: "Dieciséis modelos que no coinciden.",
+        text: "Cada fuente da un pronóstico distinto para el mismo punto, y cuanto más lejos se mira, más se separan entre sí. El trabajo de producto no es enseñarlas todas: es dar una respuesta y decir cuánto se puede fiar uno de ella.",
+        ticks: [
+          { at: 0.02, label: "Ahora" },
+          { at: 0.42, label: "+3 días" },
+          { at: 0.98, label: "+10 días" },
+        ],
+        spreadLabel: "Dispersión entre modelos",
+        answerLabel: "La respuesta",
+        note: "Esquema del comportamiento, no una medición: lo que se representa es que la incertidumbre crece con el alcance.",
+      },
       features: [
         {
           title: "Predicción multi-modelo",

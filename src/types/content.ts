@@ -261,6 +261,15 @@ export type Copy = {
       ctaPrimary: string;
       ctaSecondary: string;
       product: SectionCopy;
+      convergence: {
+        eyebrow: string;
+        title: string;
+        text: string;
+        ticks: { at: number; label: string }[];
+        spreadLabel: string;
+        answerLabel: string;
+        note: string;
+      };
       features: TitledText[];
       modules: {
         eyebrow: string;

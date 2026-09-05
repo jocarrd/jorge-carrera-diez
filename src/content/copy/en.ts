@@ -678,6 +678,19 @@ export const en: Copy = {
         title: "What Snowy is",
         text: "A weather platform for Spain: multi-model forecasting over live data, with interactive maps and an assistant that answers in plain language.",
       },
+      convergence: {
+        eyebrow: "The underlying problem",
+        title: "Sixteen models that disagree.",
+        text: "Each source gives a different forecast for the same point, and the further ahead you look, the further apart they drift. The product work is not showing them all: it is giving one answer and saying how much it can be trusted.",
+        ticks: [
+          { at: 0.02, label: "Now" },
+          { at: 0.42, label: "+3 days" },
+          { at: 0.98, label: "+10 days" },
+        ],
+        spreadLabel: "Spread between models",
+        answerLabel: "The answer",
+        note: "A schematic of the behaviour, not a measurement: what it shows is that uncertainty grows with lead time.",
+      },
       features: [
         {
           title: "Multi-model forecasting",

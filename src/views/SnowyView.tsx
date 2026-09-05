@@ -9,6 +9,7 @@ import {
   Surface,
   TechTag,
 } from "@/components/ui";
+import { SpreadCone } from "@/components/visual/SpreadCone";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -85,6 +86,25 @@ export function SnowyView({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      {/* La infografia va antes de las superficies: primero se entiende el
+          problema —dieciseis fuentes que no coinciden— y luego se enseña que
+          se construyo encima. Al reves, las capturas no significan nada. */}
+      <Section>
+        <SectionHeader
+          eyebrow={copy.convergence.eyebrow}
+          title={copy.convergence.title}
+          text={copy.convergence.text}
+        />
+        <div className="mt-12">
+          <SpreadCone
+            ticks={copy.convergence.ticks}
+            spreadLabel={copy.convergence.spreadLabel}
+            answerLabel={copy.convergence.answerLabel}
+          />
+          <p className="mt-6 text-[13px] text-[var(--muted)]">{copy.convergence.note}</p>
+        </div>
+      </Section>
 
       <Section className="section-band">
         <SectionHeader

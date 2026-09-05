@@ -30,7 +30,7 @@ export function SectionHeader({
           {eyebrow}
         </p>
       ) : null}
-      <Heading className="text-[2rem] font-bold leading-[1.1] tracking-[-0.035em] text-[var(--foreground)] sm:text-[3.25rem]">
+      <Heading className="text-[2rem] font-bold leading-[1.07] tracking-[-0.035em] text-[var(--foreground)] sm:text-[3.25rem]">
         {title}
       </Heading>
       {text ? (

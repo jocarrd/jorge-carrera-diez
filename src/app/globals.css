@@ -247,10 +247,13 @@ a {
   letter-spacing: -0.025em;
 }
 
+/* Medido en apple.com: la frase de tarjeta va a 17 px con peso 600 en gris,
+   no a 15 en regular. Es lo que la hace sonar afirmativa en vez de pie de foto. */
 .proj-card-pitch {
-  margin-top: 0.625rem;
-  font-size: 15px;
-  line-height: 1.45;
+  margin-top: 0.75rem;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
   color: color-mix(in srgb, currentColor 72%, transparent);
 }
 
@@ -262,6 +265,114 @@ a {
   margin-left: auto;
   margin-right: auto;
   transform: translateY(16%);
+}
+
+/* ── Infografia: cono de dispersion ───────────────────────
+   La banda es cuanto se separan los modelos entre si y se abre con el alcance;
+   la linea es la respuesta que hay que dar igualmente. Es la forma real del
+   problema, no un adorno.
+
+   Fondo con la misma gramatica que las tarjetas: gris del sistema, radio 28 y
+   sin borde. Medido en apple.com. */
+.cone-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: linear-gradient(170deg, #f7fbfb 0%, var(--panel) 60%, #ffffff 100%);
+  padding: 2rem 1.5rem 3.25rem;
+}
+
+@media (min-width: 768px) {
+  .cone-stage {
+    padding: 2.75rem 2.5rem 3.5rem;
+  }
+}
+
+.cone-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cone-grid {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 2 6;
+  opacity: 0.7;
+}
+
+/* Los modelos sueltos dentro de la banda: sin ellos la banda es una mancha y
+   lo que se cuenta es que ahi dentro hay pronosticos que no coinciden. */
+.cone-member {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0.28;
+}
+
+.cone-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+
+.cone-head {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.cone-ticks {
+  position: relative;
+  height: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.cone-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* El primero y el ultimo se pegarian al borde de la caja. */
+.cone-ticks span:first-child {
+  transform: none;
+}
+
+.cone-ticks span:last-child {
+  transform: translateX(-100%);
+}
+
+.cone-tag {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.cone-tag.is-spread {
+  right: 8%;
+  top: 14%;
+}
+
+.cone-tag.is-answer {
+  left: 4%;
+  top: 62%;
+  color: var(--accent-text);
+}
+
+@media (min-width: 768px) {
+  .cone-tag {
+    font-size: 15px;
+  }
 }
 
 /* ── Ficha de metricas ────────────────────────────────────
