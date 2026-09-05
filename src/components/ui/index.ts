@@ -1,6 +1,7 @@
 export { Badge } from "./Badge";
 export { ButtonLink } from "./ButtonLink";
 export { Container } from "./Container";
+export { CountUp } from "./CountUp";
 export { CopyEmail } from "./CopyEmail";
 export { MetricCard } from "./MetricCard";
 export { ProductShot } from "./ProductShot";

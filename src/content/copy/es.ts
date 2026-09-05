@@ -604,6 +604,31 @@ export const es: Copy = {
         stations: "Mapa de estaciones meteorológicas en Snowy",
         radar: "Mapa meteorológico de Snowy con radar, avisos y estaciones",
       },
+      details: {
+        eyebrow: "Detalles",
+        title: "Tres sitios donde se nota el trabajo.",
+        text: "Un pantallazo entero demuestra que la web existe. Estos recortes enseñan cómo está resuelta por dentro.",
+        items: [
+          {
+            title: "Cada dato dice de qué se fía",
+            text: "La ficha no solo da la temperatura: dice cuánta confianza merece esa previsión. Cuando dieciséis modelos no se ponen de acuerdo, ocultarlo es mentir por omisión.",
+            image: "/images/detalle/ficha.webp",
+            alt: "Ficha de estación con temperatura, humedad, viento, índice UV y fiabilidad",
+          },
+          {
+            title: "Series de setenta años, en una frase",
+            text: "«Madrid es hoy 1,4 °C más cálido que en 1950-1979». Detrás hay un procesamiento propio de las series históricas; delante, una frase que se entiende sin ser meteorólogo.",
+            image: "/images/detalle/clima.webp",
+            alt: "Tendencia de temperatura por décadas con el mapa de calentamiento de España",
+          },
+          {
+            title: "Datos oficiales, actualizados solos",
+            text: "374 embalses del MITECO, con su volumen, su variación semanal y la comparación con el año pasado. Se refresca sin que nadie toque nada.",
+            image: "/images/detalle/embalses.webp",
+            alt: "Reserva hídrica nacional al 64 % con volumen, variación y comparación anual",
+          },
+        ],
+      },
       product: {
         eyebrow: "Producto",
         title: "Qué es Snowy",
@@ -1032,6 +1057,43 @@ export const es: Copy = {
         ],
       },
     },
+  },
+  radarScrub: {
+    eyebrow: "Datos en vivo",
+    title: "Baja y verás llover.",
+    caption:
+      "Radar de precipitación de Snowy, media hora por paso, sobre las 1.862 estaciones que reportan en directo.",
+    imageAlt:
+      "Secuencia del radar de lluvia de Snowy sobre la península, con las estaciones meteorológicas en vivo",
+  },
+  stickyShowcase: {
+    eyebrow: "Cómo trabajo",
+    title: "Lo que hay detrás de una pantalla que carga rápido.",
+    imageAlt: "Portada de Snowy con buscador, asistente y datos en vivo",
+    steps: [
+      {
+        title: "Decido qué no se hace",
+        text: "La mitad del trabajo es descartar. Cada función que entra hay que mantenerla los próximos cinco años, y eso se paga en velocidad y en madrugadas.",
+      },
+      {
+        title: "Los datos mandan sobre la opinión",
+        text: "Dieciséis modelos meteorológicos que no coinciden entre sí, y una interfaz que tiene que dar una respuesta. Ahí es donde se decide si un producto sirve o solo se ve bonito.",
+      },
+      {
+        title: "Me quedo cuando se rompe",
+        text: "Está en mi servidor, con mis despliegues. Si el radar deja de pintar un domingo por la noche, no hay a quién escalarlo.",
+      },
+    ],
+  },
+  bigStat: {
+    eyebrow: "Snowy, últimos 90 días",
+    value: 14687005,
+    label: "impresiones en búsqueda orgánica, sin un euro en publicidad ni equipo de marketing detrás.",
+    support: [
+      { value: "242.000", label: "visitas desde búsqueda" },
+      { value: "8,1", label: "posición media en Google" },
+      { value: "1.400+", label: "usuarios registrados" },
+    ],
   },
   caseCta: {
     title: "¿Te encaja algo de esto?",

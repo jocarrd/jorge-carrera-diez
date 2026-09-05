@@ -256,6 +256,7 @@ export type Copy = {
       tractionMetrics: Metric[];
       mediaMentions: MediaMention[];
       imageAlts: { home: string; stations: string; radar: string };
+      details: SectionCopy & { items: (TitledText & { image: string; alt: string })[] };
     };
     lariojameteo: PageMeta & CaseIntro & {
       cta: string;
@@ -276,6 +277,24 @@ export type Copy = {
       index: SectionCopy & { levels: { level: string; title: string; text: string }[] };
       vcr: SectionCopy & { items: string[]; note: string };
     };
+  };
+  radarScrub: {
+    eyebrow: string;
+    title: string;
+    caption: string;
+    imageAlt: string;
+  };
+  stickyShowcase: {
+    eyebrow: string;
+    title: string;
+    imageAlt: string;
+    steps: TitledText[];
+  };
+  bigStat: {
+    eyebrow: string;
+    value: number;
+    label: string;
+    support: Metric[];
   };
   caseCta: {
     title: string;
