@@ -209,7 +209,7 @@ export const en: Copy = {
   },
   snowyShowcase: {
     title: "Snowy: weather, data, maps and AI in a product of my own.",
-    lead: "The project already works as a product: over the last 3 months it has generated millions of organic impressions, tens of thousands of clicks and a registered user base to keep building on.",
+    lead: "The project already works as a product: over the last three months it has generated 14.7 million organic impressions and 242,000 clicks, with more than 1,400 registered users to keep building on.",
     detail:
       "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
     ctaPrimary: "See the engineering case",
@@ -415,9 +415,9 @@ export const en: Copy = {
         "I build all of it, from server rendering to the radar and the deployments. It is where I test the architecture decisions I later defend in front of a client.",
       metrics: [
         { value: "16", label: "weather models" },
-        { value: "1,000+", label: "live stations" },
-        { value: "370+", label: "reservoirs tracked" },
-        { value: "20+", label: "AI tools" },
+        { value: "1,800+", label: "live stations" },
+        { value: "374", label: "reservoirs tracked" },
+        { value: "1,400+", label: "registered users" },
       ],
       stack: [
         "Next.js",
@@ -558,7 +558,7 @@ export const en: Copy = {
       heading: "Snowy: a weather platform with maps, real-time data and AI.",
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
-        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture of my own: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 7.5 million impressions, 51k organic clicks and 1,200 registered users.",
+        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture of my own: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 14.7 million impressions, 242,000 organic clicks and 1,400 registered users.",
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {
@@ -732,10 +732,10 @@ export const en: Copy = {
         { value: "10+", label: "map layers", detail: "radar, stations, risks and air" },
       ],
       tractionMetrics: [
-        { value: "7.5M", label: "impressions", detail: "last 3 months in organic search" },
-        { value: "51k", label: "clicks", detail: "traffic from Google over 3 months" },
+        { value: "14.7M", label: "impressions", detail: "last 3 months in organic search" },
+        { value: "242k", label: "clicks", detail: "traffic from Google over 3 months" },
         {
-          value: "1,200+",
+          value: "1,400+",
           label: "registered users",
           detail: "an owned base for community and new features",
         },

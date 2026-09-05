@@ -208,7 +208,7 @@ export const es: Copy = {
   },
   snowyShowcase: {
     title: "Snowy: meteorología, datos, mapas e IA en un producto propio.",
-    lead: "El proyecto ya funciona como producto: en los últimos 3 meses ha generado millones de impresiones orgánicas, decenas de miles de clics y una base de usuarios registrados sobre la que seguir construyendo.",
+    lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 14,7 millones de impresiones orgánicas y 242.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
     detail:
       "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
     ctaPrimary: "Ver caso técnico",
@@ -414,9 +414,9 @@ export const es: Copy = {
         "Lo construyo entero, del render en servidor al radar y los despliegues. Es donde pruebo en real las decisiones de arquitectura que luego defiendo en cliente.",
       metrics: [
         { value: "16", label: "modelos meteorológicos" },
-        { value: "1.000+", label: "estaciones en vivo" },
-        { value: "370+", label: "embalses monitorizados" },
-        { value: "20+", label: "herramientas IA" },
+        { value: "1.800+", label: "estaciones en vivo" },
+        { value: "374", label: "embalses monitorizados" },
+        { value: "1.400+", label: "usuarios registrados" },
       ],
       stack: [
         "Next.js",
@@ -559,7 +559,7 @@ export const es: Copy = {
       heading: "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
       lead: "Snowy es una plataforma meteorológica para consultar predicciones, mapas, estaciones, avisos, embalses, calidad del aire, terremotos y herramientas inteligentes desde una experiencia rápida y orientada a decisiones reales.",
       detail:
-        "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 7,5 millones de impresiones, 51k clics orgánicos y 1.200 usuarios registrados.",
+        "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 14,7 millones de impresiones, 242.000 clics orgánicos y 1.400 usuarios registrados.",
       ctaPrimary: "Abrir Snowy",
       ctaSecondary: "Ver CV",
       imageAlts: {
@@ -637,7 +637,7 @@ export const es: Copy = {
       },
       traction: {
         title: "Tracción real, no solo arquitectura.",
-        text: "El SEO, el rendimiento y la utilidad del producto ya se reflejan en uso: búsqueda orgánica, clics y usuarios registrados sobre una plataforma propia.",
+        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8. Sobre una plataforma propia, sin equipo de marketing detrás.",
       },
       build: {
         eyebrow: "Construcción",
@@ -734,13 +734,13 @@ export const es: Copy = {
       ],
       tractionMetrics: [
         {
-          value: "7,5M",
+          value: "14,7M",
           label: "impresiones",
           detail: "últimos 3 meses en búsqueda orgánica",
         },
-        { value: "51k", label: "clics", detail: "tráfico captado desde Google en 3 meses" },
+        { value: "242k", label: "clics", detail: "tráfico captado desde Google en 3 meses" },
         {
-          value: "1.200+",
+          value: "1.400+",
           label: "usuarios registrados",
           detail: "base propia para comunidad y nuevas funcionalidades",
         },
