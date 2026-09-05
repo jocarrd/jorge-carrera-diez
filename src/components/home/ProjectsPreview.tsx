@@ -30,7 +30,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
               rel="noreferrer"
               className="mt-4 inline-flex min-h-11 items-center text-[17px] text-[var(--accent-text)] hover:underline"
             >
-              {copy.featuredProjects.lariojaCta}
+              {copy.featuredProjects.secondaryCta}
               <span aria-hidden className="ml-1 text-[15px]">
                 &rsaquo;
               </span>
@@ -38,7 +38,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
           </div>
           <div className="flex flex-col gap-7">
             {project.image ? (
-              <ProductShot src={project.image} alt={copy.featuredProjects.lariojaImageAlt} width={1600} height={1000} />
+              <ProductShot src={project.image} alt={copy.featuredProjects.secondaryImageAlt} width={1600} height={1000} />
             ) : null}
             <dl className="grid grid-cols-2 gap-5">
             {(project.metrics ?? []).map((metric) => (

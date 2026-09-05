@@ -81,6 +81,26 @@ export type PageMeta = {
   description: string;
 };
 
+/** Dato de cabecera de un caso: rol, periodo, ámbito, cliente. */
+export type CaseFact = {
+  label: string;
+  value: string;
+};
+
+export type CaseStackGroup = {
+  label: string;
+  items: string[];
+};
+
+/** Lo que toda página de caso comparte por encima de su contenido propio. */
+export type CaseIntro = {
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  facts: CaseFact[];
+  stack: SectionCopy & { groups: CaseStackGroup[] };
+};
+
 export type Copy = {
   meta: {
     siteTitle: string;
@@ -170,10 +190,10 @@ export type Copy = {
   skills: SkillGroup[];
   projects: Project[];
   featuredProjects: {
-    snowyCta: string;
-    lariojaCta: string;
-    snowyImageAlt: string;
-    lariojaImageAlt: string;
+    leadCta: string;
+    secondaryCta: string;
+    leadImageAlt: string;
+    secondaryImageAlt: string;
   };
   pages: {
     projects: PageMeta & { eyebrow: string; heading: string; text: string };
@@ -208,9 +228,7 @@ export type Copy = {
       linksText: string;
       links: { key: "linkedin" | "github" | "malt" | "cv" | "snowy"; label: string }[];
     };
-    snowy: PageMeta & {
-      heading: string;
-      lead: string;
+    snowy: PageMeta & CaseIntro & {
       detail: string;
       ctaPrimary: string;
       ctaSecondary: string;
@@ -238,9 +256,7 @@ export type Copy = {
       mediaMentions: MediaMention[];
       imageAlts: { home: string; stations: string; radar: string };
     };
-    lariojameteo: PageMeta & {
-      heading: string;
-      lead: string;
+    lariojameteo: PageMeta & CaseIntro & {
       cta: string;
       imageAlt: string;
       timeline: SectionCopy;
@@ -248,5 +264,22 @@ export type Copy = {
       responsibility: SectionCopy & { items: string[] };
       content: SectionCopy & { items: string[] };
     };
+    eqx: PageMeta & CaseIntro & {
+      detail: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+      imageAlts: { home: string; rankings: string };
+      client: SectionCopy & { items: TitledText[] };
+      metrics: Metric[];
+      work: SectionCopy & { items: TitledText[] };
+      index: SectionCopy & { levels: { level: string; title: string; text: string }[] };
+      vcr: SectionCopy & { items: string[]; note: string };
+    };
+  };
+  caseCta: {
+    title: string;
+    text: string;
+    cta: string;
+    ctaSecondary: string;
   };
 };

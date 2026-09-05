@@ -431,6 +431,24 @@ export const es: Copy = {
       ],
     },
     {
+      slug: "eqx",
+      name: "EQx",
+      url: "https://elitequality.org/",
+      label: "Cliente",
+      image: "/images/eqx-home.webp",
+      description:
+        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y plataforma privada de evaluación.",
+      impact:
+        "Recogí un proyecto ya en producción y hoy lo sostengo yo: la web del índice, la plataforma de rating y la documentación que antes no existía.",
+      metrics: [
+        { value: "151", label: "países en el ranking" },
+        { value: "148", label: "indicadores" },
+        { value: "12", label: "pilares en 4 áreas" },
+        { value: "7ª", label: "edición anual" },
+      ],
+      stack: ["Astro", "React", "Next.js", "PostgreSQL", "D3", "GitHub Actions"],
+    },
+    {
       slug: "lariojameteo",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
@@ -451,19 +469,19 @@ export const es: Copy = {
     },
   ],
   featuredProjects: {
-    snowyCta: "Ver Snowy",
-    lariojaCta: "Ver LaRiojaMeteo",
-    snowyImageAlt: "Interfaz de Snowy",
-    lariojaImageAlt: "Home de LaRiojaMeteo",
+    leadCta: "Ver el caso",
+    secondaryCta: "Ver el caso",
+    leadImageAlt: "Interfaz del proyecto principal",
+    secondaryImageAlt: "Portada del proyecto",
   },
   pages: {
     projects: {
       title: "Proyectos",
       description:
-        "Proyectos de Jorge Carrera Diez: Snowy, LaRiojaMeteo y plataformas de producto con SEO, datos, arquitectura web e infraestructura.",
+        "Proyectos de Jorge Carrera Diez: Snowy, el Elite Quality Index de EQx y LaRiojaMeteo. Producto, arquitectura, datos, SEO e infraestructura.",
       eyebrow: "Proyectos",
-      heading: "Snowy como producto principal, LaRiojaMeteo como contexto meteorológico.",
-      text: "Dos proyectos conectados por la meteorología, el contenido, el SEO y la construcción de producto web con datos reales.",
+      heading: "Un producto propio, un cliente internacional y un portal con audiencia.",
+      text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx es cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
     },
     experience: {
       title: "Experiencia",
@@ -556,7 +574,25 @@ export const es: Copy = {
       title: "Snowy",
       description:
         "Snowy, plataforma meteorológica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorológicos e IA.",
+      eyebrow: "Producto propio",
       heading: "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
+      facts: [
+        { label: "Rol", value: "Diseño, desarrollo e infraestructura" },
+        { label: "Periodo", value: "Desde 2025, en activo" },
+        { label: "Ámbito", value: "Producto completo, de la base de datos al SEO" },
+        { label: "Alcance", value: "14,7 M de impresiones en 90 días" },
+      ],
+      stack: {
+        eyebrow: "Stack",
+        title: "Qué hay debajo.",
+        text: "Todo lo que se ve en Snowy lo mantengo yo: el render, el backend, los datos, el radar y los despliegues.",
+        groups: [
+          { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
+          { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
+          { label: "Infraestructura", items: ["Docker", "Coolify", "Cloudflare", "VPS propio"] },
+          { label: "IA y datos", items: ["AI SDK", "RAG", "Procesos batch", "GRIB2"] },
+        ],
+      },
       lead: "Snowy es una plataforma meteorológica para consultar predicciones, mapas, estaciones, avisos, embalses, calidad del aire, terremotos y herramientas inteligentes desde una experiencia rápida y orientada a decisiones reales.",
       detail:
         "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 14,7 millones de impresiones, 242.000 clics orgánicos y 1.400 usuarios registrados.",
@@ -798,8 +834,26 @@ export const es: Copy = {
       title: "LaRiojaMeteo",
       description:
         "Caso de proyecto LaRiojaMeteo, blog meteorológico con más de 500.000 visitas mensuales donde Jorge Carrera Diez colabora como webmaster.",
+      eyebrow: "Colaboración",
       heading:
         "LaRiojaMeteo: meteorología regional, comunidad, SEO y base editorial para Snowy.",
+      facts: [
+        { label: "Rol", value: "Socio y responsable técnico" },
+        { label: "Periodo", value: "Desde 2024" },
+        { label: "Ámbito", value: "Web, SEO, rendimiento y datos en directo" },
+        { label: "Origen", value: "Proyecto en marcha desde 2012" },
+      ],
+      stack: {
+        eyebrow: "Stack",
+        title: "Un portal de contenido que tiene que ir rápido.",
+        text: "La mayor parte del trabajo no es funcionalidad nueva, sino que lo que ya hay cargue rápido, se vea bien en móvil y lo encuentre Google.",
+        groups: [
+          { label: "Plataforma", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "Visibilidad", items: ["SEO técnico", "Datos estructurados", "Core Web Vitals"] },
+          { label: "Datos", items: ["Estaciones Snowy", "Webcams", "Embalses"] },
+          { label: "Medición", items: ["Search Console", "Analítica"] },
+        ],
+      },
       lead: "Colaboro activamente como socio y perfil técnico en LaRiojaMeteo, portal de referencia meteorológico para La Rioja y Logroño con predicciones, análisis, datos en directo, noticias, guías y comunidad.",
       cta: "Visitar LaRiojaMeteo",
       imageAlt: "Home de LaRiojaMeteo con portada, categorías y último artículo",
@@ -849,5 +903,139 @@ export const es: Copy = {
         ],
       },
     },
+    eqx: {
+      title: "EQx",
+      description:
+        "Caso de proyecto EQx: Jorge Carrera Diez lleva el relevo técnico del Elite Quality Index de la Foundation for Value Creation, en St. Gallen (Suiza).",
+      eyebrow: "Cliente · Suiza",
+      heading: "EQx: el índice que mide la calidad de las élites de 151 países.",
+      lead: "Llevo el relevo técnico del Elite Quality Index, el proyecto de la Foundation for Value Creation con dirección académica de tres institutos de la Universidad de St. Gallen. Entré para recoger un proyecto ya en producción y sostenerlo yo solo.",
+      detail:
+        "Es el encargo que mejor explica cómo trabajo con un cliente: nadie me pasó el contexto, había que reconstruirlo leyendo el código y midiendo lo que había levantado. Hoy mantengo tanto la web pública del índice como la plataforma privada de evaluación, y el cliente tiene por escrito lo que antes solo estaba en la cabeza de una persona.",
+      ctaPrimary: "Ver elitequality.org",
+      ctaSecondary: "Hablemos",
+      facts: [
+        { label: "Cliente", value: "Foundation for Value Creation" },
+        { label: "Rol", value: "Relevo técnico y desarrollo" },
+        { label: "Periodo", value: "Desde julio de 2026" },
+        { label: "Ámbito", value: "Web pública y plataforma de evaluación" },
+      ],
+      imageAlts: {
+        home: "Portada de elitequality.org con el mapa mundial del Elite Quality Index",
+        rankings: "Tabla y mapa interactivo del ranking de países del EQx",
+      },
+      client: {
+        eyebrow: "El cliente",
+        title: "Una fundación suiza que publica un índice académico anual.",
+        text: "La Foundation for Value Creation es una fundación sin ánimo de lucro con sede en St. Gallen, supervisada por la autoridad federal suiza de fundaciones. Publica el Elite Quality Index, que mide en qué medida las élites de un país crean valor en vez de extraerlo.",
+        items: [
+          {
+            title: "Dirección académica",
+            text: "Tres institutos de la Universidad de St. Gallen —IIDM, ERP y SBF— más una red internacional de socios académicos.",
+          },
+          {
+            title: "Dos productos",
+            text: "El índice de países, público en elitequality.org, y las Value Creation Ratings de empresas, que se calculan en una plataforma privada.",
+          },
+          {
+            title: "Trabajo en inglés",
+            text: "Toda la coordinación es en inglés y en remoto, con horario europeo. La plataforma de evaluación está en inglés, español y chino.",
+          },
+        ],
+      },
+      metrics: [
+        { value: "151", label: "países en el ranking" },
+        { value: "148", label: "indicadores" },
+        { value: "12", label: "pilares en 4 áreas" },
+        { value: "7ª", label: "edición anual" },
+      ],
+      index: {
+        eyebrow: "El índice",
+        title: "Cuatro niveles, de un número a 148 indicadores.",
+        text: "La estructura del EQx es lo que condiciona toda la interfaz: cualquier vista de la web —el mapa, la tabla, el comparador— es una forma de entrar y salir de esta jerarquía.",
+        levels: [
+          {
+            level: "Nivel 1",
+            title: "El índice",
+            text: "Una puntuación y un puesto global por país, más los subíndices de Poder y Valor.",
+          },
+          {
+            level: "Nivel 2",
+            title: "Cuatro áreas",
+            text: "El primer desglose, el que se usa para comparar países entre sí sin bajar al detalle.",
+          },
+          {
+            level: "Nivel 3",
+            title: "Doce pilares",
+            text: "El nivel donde se ve de qué le viene a un país su puntuación.",
+          },
+          {
+            level: "Nivel 4",
+            title: "148 indicadores",
+            text: "El dato de origen. Es lo que hay que poder auditar cuando alguien discute un resultado.",
+          },
+        ],
+      },
+      work: {
+        eyebrow: "Qué hago",
+        title: "Recoger un proyecto en marcha y dejarlo sostenible.",
+        text: "El encargo no era construir de cero, sino hacerse cargo: entender lo que había, ponerlo por escrito y seguir sacando versiones sin romper lo que ya estaba publicado.",
+        items: [
+          {
+            title: "Levantar el mapa del terreno",
+            text: "Medir lo que hay levantado en vez de creerme la documentación heredada. Buena parte de lo que describía el repo ya no era lo que estaba en producción.",
+          },
+          {
+            title: "Web pública del índice",
+            text: "Sitio estático con islas interactivas: mapa mundial, tabla de rankings, comparador de países y visualización de la evolución de puestos.",
+          },
+          {
+            title: "Plataforma de evaluación",
+            text: "Aplicación privada donde una empresa responde la encuesta, se calcula su rating y se genera el informe oficial de cuatro páginas.",
+          },
+          {
+            title: "Datos que tienen que cuadrar",
+            text: "Los rankings salen de los libros oficiales de la fundación. La importación se valida contra el origen: si no cuadra, se arregla el importador, no el resultado.",
+          },
+          {
+            title: "Despliegue continuo",
+            text: "Cada cambio se publica solo al integrarse, y el proyecto pasó a vivir en la organización del cliente, no en la mía.",
+          },
+          {
+            title: "Documentación de traspaso",
+            text: "Lo que aprendí queda escrito. Si mañana entra otra persona, no repite la arqueología que tuve que hacer yo.",
+          },
+        ],
+      },
+      vcr: {
+        eyebrow: "self-VCr",
+        title: "La otra mitad: el rating de empresas.",
+        text: "Junto al índice de países, la fundación calcula el Value Creation Rating de empresas. La herramienta es privada y solo se entra por invitación, así que aquí no hay capturas: lo que sí puedo contar es de qué se compone.",
+        items: [
+          "Encuesta multilingüe con el progreso guardado, para poder responder en varias sesiones.",
+          "Motor de cálculo que convierte las respuestas en la puntuación de creación de valor.",
+          "Informe oficial de cuatro páginas, generado en servidor y siempre idéntico a su diseño.",
+          "Consola de administración para gestionar clientes, equipos y enlaces de acceso.",
+        ],
+        note: "Es trabajo bajo acuerdo con el cliente. Los detalles concretos los cuento en una conversación, no en una página web.",
+      },
+      stack: {
+        eyebrow: "Stack",
+        title: "Dos aplicaciones distintas, un mismo responsable.",
+        text: "La web del índice y la plataforma de evaluación no comparten código ni tecnología. Comparten que las mantengo yo.",
+        groups: [
+          { label: "Web del índice", items: ["Astro", "React", "Tailwind", "TypeScript"] },
+          { label: "Visualización", items: ["D3", "TopoJSON", "TanStack Table"] },
+          { label: "Plataforma", items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"] },
+          { label: "Entrega", items: ["GitHub Actions", "Despliegue continuo", "Vitest", "Playwright"] },
+        ],
+      },
+    },
+  },
+  caseCta: {
+    title: "¿Te encaja algo de esto?",
+    text: "Trabajo por encargos acotados, en remoto y horario europeo. Si tienes algo entre manos, cuéntamelo y te digo con franqueza si soy la persona.",
+    cta: "Escribirme",
+    ctaSecondary: "Ver todos los proyectos",
   },
 };
