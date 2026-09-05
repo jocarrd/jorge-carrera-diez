@@ -85,22 +85,6 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
 
         {snowy?.metrics ? (
           <>
-            <div className="mt-4 grid grid-cols-2 gap-4 text-left lg:grid-cols-4">
-              {snowy.metrics.map((metric) => (
-                <div
-                  key={metric.label}
-                  className="rounded-[var(--radius-card-lg)] bg-[var(--ink-dark-panel)] p-7 sm:p-8"
-                >
-                  <p className="text-[2.25rem] font-bold leading-none tracking-[-0.04em] text-white sm:text-[3.125rem]">
-                    {metric.value}
-                  </p>
-                  <p className="mt-3 text-[15px] leading-[1.4] text-[var(--ink-dark-muted)] sm:text-base">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
             <p className="mx-auto mt-10 max-w-[46ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-lg">
               {copy.profile.availability}.{" "}
               <a

@@ -603,6 +603,31 @@ export const en: Copy = {
         stations: "Map of weather stations in Snowy",
         radar: "Snowy weather map with radar, alerts and stations",
       },
+      details: {
+        eyebrow: "Details",
+        title: "Three places where the work shows.",
+        text: "A full screenshot proves the site exists. These crops show how it is put together.",
+        items: [
+          {
+            title: "Every figure says how much to trust it",
+            text: "The card does not just give a temperature: it says how much confidence that forecast deserves. When sixteen models disagree, hiding it is lying by omission.",
+            image: "/images/detalle/ficha.webp",
+            alt: "Station card with temperature, humidity, wind, UV index and reliability",
+          },
+          {
+            title: "Seventy years of series, in one sentence",
+            text: "\"Madrid is 1.4 °C warmer today than in 1950-1979.\" Behind it sits our own processing of the historical series; in front, a sentence you do not need a meteorology degree to read.",
+            image: "/images/detalle/clima.webp",
+            alt: "Temperature trend by decade with the warming map of Spain",
+          },
+          {
+            title: "Official data, refreshed on its own",
+            text: "374 reservoirs from MITECO, with volume, weekly variation and last year's comparison. It updates without anyone touching anything.",
+            image: "/images/detalle/embalses.webp",
+            alt: "National water reserve at 64% with volume, variation and year-on-year comparison",
+          },
+        ],
+      },
       product: {
         eyebrow: "Product",
         title: "What Snowy is",
@@ -1014,6 +1039,43 @@ export const en: Copy = {
         ],
       },
     },
+  },
+  radarScrub: {
+    eyebrow: "Live data",
+    title: "Scroll and watch it rain.",
+    caption:
+      "Snowy's precipitation radar, half an hour per step, over the 1,862 stations reporting live.",
+    imageAlt:
+      "Sequence of Snowy's rain radar over Spain, with live weather stations",
+  },
+  stickyShowcase: {
+    eyebrow: "How I work",
+    title: "What sits behind a screen that loads fast.",
+    imageAlt: "Snowy home page with search, assistant and live data",
+    steps: [
+      {
+        title: "I decide what does not get built",
+        text: "Half the work is saying no. Every feature that ships has to be maintained for the next five years, and that is paid in speed and in late nights.",
+      },
+      {
+        title: "Data beats opinion",
+        text: "Sixteen weather models that disagree with each other, and one interface that has to give an answer. That is where you find out whether a product is useful or merely pretty.",
+      },
+      {
+        title: "I stay when it breaks",
+        text: "It runs on my server, with my deploys. If the radar stops rendering on a Sunday night, there is nobody to escalate it to.",
+      },
+    ],
+  },
+  bigStat: {
+    eyebrow: "Snowy, last 90 days",
+    value: 14687005,
+    label: "organic search impressions, with no ad spend and no marketing team behind it.",
+    support: [
+      { value: "242,000", label: "visits from search" },
+      { value: "8.1", label: "average position on Google" },
+      { value: "1,400+", label: "registered users" },
+    ],
   },
   caseCta: {
     title: "Does any of this fit what you need?",

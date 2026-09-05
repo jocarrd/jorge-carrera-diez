@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CaseCta, CaseHero, CaseStack } from "@/components/case";
+import { CaseCta, CaseDetails, CaseHero, CaseStack } from "@/components/case";
 import { ButtonLink, MetricCard, Section, SectionHeader, Surface, TechTag } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -293,6 +293,13 @@ export function SnowyView({ locale }: { locale: Locale }) {
           ))}
         </div>
       </Section>
+
+      <CaseDetails
+        eyebrow={copy.details.eyebrow}
+        title={copy.details.title}
+        text={copy.details.text}
+        items={copy.details.items}
+      />
 
       <CaseStack title={copy.stack.title} text={copy.stack.text} groups={copy.stack.groups} />
 
