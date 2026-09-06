@@ -67,7 +67,7 @@ export function EqxView({ locale }: { locale: Locale }) {
       </section>
 
       <Section>
-        <SectionHeader eyebrow={copy.client.eyebrow} title={copy.client.title} text={copy.client.text} />
+        <SectionHeader indice="01" eyebrow={copy.client.eyebrow} title={copy.client.title} text={copy.client.text} />
         {/* Sin caja: era el unico caso que seguia con rejilla de contornos
             mientras el resto de la web usa ficha con filete. */}
         <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
@@ -86,6 +86,7 @@ export function EqxView({ locale }: { locale: Locale }) {
           indice es una cadena de medicion y luego los numeros significan algo. */}
       <Section>
         <SectionHeader
+          indice="02"
           eyebrow={copy.scale.eyebrow}
           title={copy.scale.title}
           text={copy.scale.text}
@@ -99,7 +100,7 @@ export function EqxView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader eyebrow={copy.index.eyebrow} title={copy.index.title} text={copy.index.text} />
+        <SectionHeader indice="03" eyebrow={copy.index.eyebrow} title={copy.index.title} text={copy.index.text} />
         <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-4">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
@@ -125,7 +126,7 @@ export function EqxView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section>
-        <SectionHeader eyebrow={copy.work.eyebrow} title={copy.work.title} text={copy.work.text} />
+        <SectionHeader indice="04" eyebrow={copy.work.eyebrow} title={copy.work.title} text={copy.work.text} />
         <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
           {copy.work.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
@@ -156,6 +157,7 @@ export function EqxView({ locale }: { locale: Locale }) {
       <Section className="section-band border-t border-[var(--line)]">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
+            indice="05"
             eyebrow={copy.vcr.eyebrow}
             title={copy.vcr.title}
             text={copy.vcr.text}

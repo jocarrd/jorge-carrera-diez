@@ -58,6 +58,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           se construyo encima. Al reves, las capturas no significan nada. */}
       <Section>
         <SectionHeader
+          indice="01"
           eyebrow={copy.convergence.eyebrow}
           title={copy.convergence.title}
           text={copy.convergence.text}
@@ -74,6 +75,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader
+          indice="02"
           eyebrow={copy.product.eyebrow}
           title={copy.product.title}
           text={copy.product.text}
@@ -117,6 +119,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader
+          indice="03"
           eyebrow={copy.build.eyebrow}
           title={copy.build.title}
           text={copy.build.text}
@@ -163,6 +166,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
+            indice="04"
             eyebrow={copy.seo.eyebrow}
             title={copy.seo.title}
             text={copy.seo.text}
@@ -184,6 +188,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           {/* Centrado dentro de una rejilla de dos columnas: el titular quedaba
               centrado y las tarjetas a la izquierda. */}
           <SectionHeader
+            indice="05"
             eyebrow={copy.b2b.eyebrow}
             title={copy.b2b.title}
             text={copy.b2b.text}
@@ -217,6 +222,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader
+          indice="06"
           eyebrow={copy.press.eyebrow}
           title={copy.press.title}
           text={copy.press.text}

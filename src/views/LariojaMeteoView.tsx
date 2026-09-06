@@ -46,6 +46,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader
+          indice="01"
           eyebrow={copy.timeline.eyebrow}
           title={copy.timeline.title}
           text={copy.timeline.text}
@@ -65,6 +66,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
           quedaba corto. */}
       <Section className="section-band">
         <SectionHeader
+          indice="02"
           eyebrow={copy.product.eyebrow}
           title={copy.product.title}
           text={copy.product.text}
@@ -98,6 +100,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader
+          indice="03"
           eyebrow={copy.history.eyebrow}
           title={copy.history.title}
           text={copy.history.text}
@@ -109,6 +112,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader
+          indice="04"
           eyebrow={copy.responsibility.eyebrow}
           title={copy.responsibility.title}
           text={copy.responsibility.text}
@@ -127,6 +131,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
+            indice="05"
             eyebrow={copy.content.eyebrow}
             title={copy.content.title}
             text={copy.content.text}

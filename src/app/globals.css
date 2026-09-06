@@ -2349,26 +2349,44 @@ a {
   letter-spacing: -0.005em;
 }
 
-/* El renglón que va encima del titular. Había tres versiones: esta, unas
-   versalitas en el color de marca y otras en la mono. Las versalitas se quedan
-   sólo para las etiquetas de campo dentro de una ficha —ahí sí son un dato—;
-   encima de un titular de sección van así, que es como se anuncia una sección
-   sin competir con ella. */
+/* El renglón que va encima del titular. Un eyebrow dice de qué sección se
+   trata: es un metadato, y en esta web el metadato vive en la monoespaciada.
+   Antes iba en la sans a 20 px, que es exactamente como lo pone Apple —el
+   nombre del producto encima del titular, mismo alfabeto, más pequeño y en
+   gris—, y era de las cosas que más los delataba una vez cambiada la paleta.
+
+   El índice numérico es lo que convierte una sucesión de secciones en un
+   recorrido. Va en el color de marca; el resto del renglón, en gris. */
 .t-eyebrow {
-  margin-bottom: 0.75rem;
-  font-size: 1.125rem;
-  font-weight: 600;
+  display: block;
+  margin-bottom: 1.125rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--muted);
+}
+
+.t-indice {
+  color: var(--accent-text);
+}
+
+.t-eyebrow-sep {
+  margin: 0 0.5rem;
+  color: var(--line-strong);
 }
 
 .section-dark .t-eyebrow {
   color: var(--ink-dark-muted);
 }
 
-@media (min-width: 640px) {
-  .t-eyebrow {
-    font-size: 1.25rem;
-  }
+.section-dark .t-indice {
+  color: var(--accent-dark);
+}
+
+.section-dark .t-eyebrow-sep {
+  color: rgba(255, 255, 255, 0.22);
 }
 
 @media (min-width: 640px) {
