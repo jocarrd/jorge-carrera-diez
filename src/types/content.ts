@@ -326,6 +326,13 @@ export type Copy = {
       cta: string;
       imageAlt: string;
       timeline: SectionCopy;
+      product: {
+        eyebrow: string;
+        title: string;
+        text: string;
+        items: TitledText[];
+        shots: { image: string; title: string; alt: string }[];
+      };
       history: {
         eyebrow: string;
         title: string;

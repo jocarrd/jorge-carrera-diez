@@ -974,7 +974,7 @@ export const es: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "Un portal de contenido que tiene que ir rápido.",
-        text: "La mayor parte del trabajo no es funcionalidad nueva, sino que lo que ya hay cargue rápido, se vea bien en móvil y lo encuentre Google.",
+        text: "Sobre WordPress, con un plugin propio para los datos de Snowy y el resto del trabajo puesto en que lo que ya hay cargue rápido, se vea bien en móvil y lo encuentre Google.",
         groups: [
           { label: "Plataforma", items: ["WordPress", "PHP", "MySQL"] },
           { label: "Visibilidad", items: ["SEO técnico", "Datos estructurados", "Core Web Vitals"] },
@@ -989,6 +989,30 @@ export const es: Copy = {
         eyebrow: "Trayectoria",
         title: "De blog meteorológico regional a ecosistema con Snowy.",
         text: "LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribución editorial. Snowy aporta producto, datos, IA e infraestructura.",
+      },
+      product: {
+        eyebrow: "El trabajo",
+        title: "Modernizar sin romper lo que ya funcionaba.",
+        text: "El portal llevaba doce años publicando y tenía audiencia, archivo y posicionamiento. El encargo fue ponerlo al día por dentro y por fuera, y conectarlo con los datos de Snowy.",
+        items: [
+          {
+            title: "Rediseño y modernización",
+            text: "Puesta al día del portal entero: aspecto, navegación y estructura, sin perder el archivo ni las posiciones que ya tenía en búsqueda.",
+          },
+          {
+            title: "Plugin a medida",
+            text: "Un plugin propio de WordPress que trae los datos de Snowy al portal —estaciones, embalses, webcams— en vez de pegarlos a mano en cada entrada.",
+          },
+          {
+            title: "Rendimiento y móvil",
+            text: "Core Web Vitals, imágenes, caché y una lectura cómoda en el teléfono, que es desde donde entra casi todo el tráfico.",
+          },
+        ],
+        shots: [
+          { image: "/images/lrm/portada.webp", title: "Portada", alt: "Portada de LaRiojaMeteo en un móvil, con el aviso activo y los datos del día" },
+          { image: "/images/lrm/predicciones.webp", title: "Predicciones", alt: "Sección de predicciones de LaRiojaMeteo en un móvil" },
+          { image: "/images/lrm/embalses.webp", title: "Embalses, con datos de Snowy", alt: "Categoría de embalses de LaRiojaMeteo en un móvil, con los datos integrados desde Snowy" },
+        ],
       },
       history: {
         eyebrow: "El recorrido",

@@ -962,7 +962,7 @@ export const en: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "A content portal that has to be fast.",
-        text: "Most of the work is not new features: it is making what already exists load fast, read well on a phone and get found on Google.",
+        text: "On WordPress, with a plugin of my own for the Snowy data and the rest of the work spent making what already exists load fast, read well on a phone and get found on Google.",
         groups: [
           { label: "Platform", items: ["WordPress", "PHP", "MySQL"] },
           { label: "Visibility", items: ["Technical SEO", "Structured data", "Core Web Vitals"] },
@@ -977,6 +977,30 @@ export const en: Copy = {
         eyebrow: "Track record",
         title: "From a regional weather blog to an ecosystem with Snowy.",
         text: "LaRiojaMeteo brings history, community, local knowledge and editorial distribution. Snowy brings product, data, AI and infrastructure.",
+      },
+      product: {
+        eyebrow: "The work",
+        title: "Modernising without breaking what already worked.",
+        text: "The portal had been publishing for twelve years and had an audience, an archive and search rankings. The job was to bring it up to date inside and out, and to wire it to Snowy's data.",
+        items: [
+          {
+            title: "Redesign and modernisation",
+            text: "The whole portal brought up to date —look, navigation and structure— without losing the archive or the search positions it already held.",
+          },
+          {
+            title: "A custom plugin",
+            text: "A WordPress plugin of my own that pulls Snowy's data into the portal —stations, reservoirs, webcams— instead of pasting it by hand into every post.",
+          },
+          {
+            title: "Performance and mobile",
+            text: "Core Web Vitals, images, caching and comfortable reading on a phone, which is where almost all the traffic comes from.",
+          },
+        ],
+        shots: [
+          { image: "/images/lrm/portada.webp", title: "Home", alt: "LaRiojaMeteo home on a phone, with the active warning and the day's data" },
+          { image: "/images/lrm/predicciones.webp", title: "Forecasts", alt: "LaRiojaMeteo forecasts section on a phone" },
+          { image: "/images/lrm/embalses.webp", title: "Reservoirs, with Snowy data", alt: "LaRiojaMeteo reservoirs category on a phone, with data pulled from Snowy" },
+        ],
       },
       history: {
         eyebrow: "The track record",

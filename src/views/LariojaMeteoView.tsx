@@ -3,7 +3,9 @@ import { CaseCta, CaseHero, CaseStack } from "@/components/case";
 import {
   BrowserFrame,
   ButtonLink,
+  DeviceFrame,
   MetricCard,
+  Rail,
   Reveal,
   Section,
   SectionHeader,
@@ -58,6 +60,43 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       {/* El recorrido va antes de qué se hace: sin saber que el sitio llevaba
           doce años publicando, "rendimiento y SEO" no significa lo mismo. */}
+      {/* Faltaba lo mas sustancial del encargo: el rediseño y el plugin propio
+          que trae los datos de Snowy. La pagina decia que el trabajo "no es
+          funcionalidad nueva", y con un plugin a medida de por medio eso se
+          quedaba corto. */}
+      <Section className="section-band">
+        <SectionHeader
+          eyebrow={copy.product.eyebrow}
+          title={copy.product.title}
+          text={copy.product.text}
+        />
+
+        <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
+          {copy.product.items.map((item) => (
+            <div key={item.title} className="area">
+              <h2 className="area-title">{item.title}</h2>
+              <p className="area-text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* El portal se lee casi siempre en el movil, asi que se ensena en el
+            movil: portada, una seccion y la categoria donde se ven los datos
+            que trae el plugin. */}
+        <div className="mt-14">
+          <Rail label={copy.product.title}>
+            {copy.product.shots.map((shot) => (
+              <figure key={shot.image} className="rail-item w-[62vw] max-w-[16rem]">
+                <DeviceFrame src={shot.image} alt={shot.alt} />
+                <figcaption className="mt-5 text-[15px] font-semibold leading-[1.35] text-[var(--muted)]">
+                  {shot.title}
+                </figcaption>
+              </figure>
+            ))}
+          </Rail>
+        </div>
+      </Section>
+
       <Section>
         <SectionHeader
           eyebrow={copy.history.eyebrow}
