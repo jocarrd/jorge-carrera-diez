@@ -23,7 +23,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
   return (
     <Section id="sobre-mi">
       <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div className="mx-auto max-w-[280px] overflow-hidden rounded-[22px] ring-1 ring-black/[0.06] shadow-[0_40px_80px_-24px_rgba(0,0,0,0.28)] sm:max-w-none sm:rounded-[28px]">
+        <div className="mx-auto max-w-[280px] overflow-hidden rounded-[22px] ring-1 ring-black/[0.06] shadow-[0_40px_80px_-24px_rgba(0,0,0,0.28)] sm:max-w-none sm:rounded-[var(--radius-card-lg)]">
           <Image
             src={site.photo}
             alt={copy.meta.ogAlt}

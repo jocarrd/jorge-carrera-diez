@@ -38,7 +38,7 @@ export function ProductShot({
       ? "ring-1 ring-white/[0.12] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.85)]"
       : "ring-1 ring-black/[0.06] shadow-[0_40px_80px_-24px_rgba(0,0,0,0.28)]";
 
-  const frame = `overflow-hidden rounded-[22px] sm:rounded-[28px] ${ring} ${className}`;
+  const frame = `overflow-hidden rounded-[var(--radius-card)] sm:rounded-[var(--radius-card-lg)] ${ring} ${className}`;
 
   if (srcMobile) {
     return (

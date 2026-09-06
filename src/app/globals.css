@@ -5,25 +5,34 @@
    se reserva para la sección de Snowy, que es la que debe recordarse. */
 :root {
   --background: #ffffff;
-  --foreground: #1d1d1f;
-  --muted: #6e6e73;
-  --muted-strong: #86868b;
-  --panel: #f5f5f7;
-  --panel-strong: #ebebef;
-  --line: #e8e8ed;
-  --line-strong: #d2d2d7;
+  --foreground: #16211f;
+  --muted: #5f6f6c;
+  --muted-strong: #788683;
+  --panel: #f1f5f4;
+  --panel-strong: #e6ecea;
+  --line: #e3eae8;
+  --line-strong: #ccd8d5;
   /* Teal en vez del azul de sistema: enlaza con el cian de Snowy, se separa de
      la referencia obvia y mide mejor —el azul se quedaba en 4,31:1 sobre el
      gris de sección, por debajo del mínimo. Este da 5,47:1 y 5,03:1. */
+  /* La escala de grises iba tintada hacia el azul: eran los hexadecimales
+     literales de apple.com —#1d1d1f, #6e6e73, #86868b, #f5f5f7, #d2d2d7,
+     #a1a1a6—. La web no se parecia a Apple por como coloca las cosas sino por
+     de que color eran. Ahora el tinte va hacia el teal del acento, que es lo
+     que hace que el gris sepa a la marca y no a una plantilla.
+
+     Contraste medido contra el anterior: el texto secundario sube de 5,07 a
+     5,28 sobre blanco y de 4,66 a 4,80 sobre el panel; el terciario, de 3,62 a
+     3,79 —sigue siendo para 11 px y elementos grandes, no para prosa—. */
   --accent: #0f766e;
   --accent-text: #0f766e;
   --accent-dark: #2dd4bf;
-  --ink-dark: #000000;
-  --ink-dark-panel: #1d1d1f;
-  --ink-dark-muted: #a1a1a6;
+  --ink-dark: #05100f;
+  --ink-dark-panel: #16211f;
+  --ink-dark-muted: #9aa8a5;
   --header-h: 56px;
-  --radius-card: 20px;
-  --radius-card-lg: 28px;
+  --radius-card: 14px;
+  --radius-card-lg: 18px;
 
   /* Una sola curva y tres duraciones para todo el movimiento de la web. La
      curva por defecto de las utilidades era cubic-bezier(0.4, 0, 0.2, 1) —la de
@@ -263,7 +272,7 @@ a {
   overflow: hidden;
   min-height: 30rem;
   padding: 2rem 1.75rem 0;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   color: var(--foreground);
   isolation: isolate;
   transition: transform var(--dur-media) var(--ease);
@@ -357,7 +366,7 @@ a {
 .cone-stage {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: linear-gradient(170deg, #f7fbfb 0%, var(--panel) 60%, #ffffff 100%);
   padding: 1.5rem 1.25rem 2rem;
 }
@@ -558,7 +567,7 @@ a {
 }
 
 .ladder-stage {
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: linear-gradient(168deg, #10444b 0%, #0b2f35 52%, #071f24 100%);
   padding: 2rem 1.75rem;
 }
@@ -578,7 +587,7 @@ a {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: var(--ink-dark);
   aspect-ratio: 4 / 3;
   transition: transform var(--dur-media) var(--ease);
@@ -702,7 +711,7 @@ a {
   width: 78vw;
   max-width: 21rem;
   min-height: 23rem;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   padding: 1.75rem;
   background:
     radial-gradient(90% 70% at 88% 6%, rgba(45, 212, 191, 0.16) 0%, transparent 60%),
@@ -833,7 +842,7 @@ a {
    el engine uno encima del otro, la cache y la base colgando del engine, y las
    piezas que viven aparte porque su carga no se parece a la del resto. */
 .arch {
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: var(--panel);
   padding: 1.75rem;
 }
@@ -848,7 +857,7 @@ a {
   display: grid;
   align-items: baseline;
   gap: 0.25rem;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   background: #fff;
   padding: 1rem 1.25rem;
   box-shadow: 0 0 0 1px var(--line);
@@ -1002,7 +1011,7 @@ a {
 .tile {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   padding: 1.75rem 1.75rem 0;
   background: linear-gradient(
     166deg,
@@ -1141,7 +1150,7 @@ a {
   display: grid;
   gap: 1.5rem;
   align-items: center;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: var(--panel);
   padding: 1.5rem;
 }
@@ -1177,7 +1186,7 @@ a {
    ancho es tiempo, no relleno. */
 .span {
   position: relative;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   background: var(--panel);
   padding: 2rem 1.5rem 1.5rem;
 }
@@ -1464,7 +1473,7 @@ a {
 .proj-feature {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: var(--radius-card-lg);
   padding: 2.5rem 1.75rem;
 }
 
@@ -2295,6 +2304,11 @@ a {
 }
 
 /* ── Escala de titulares ─────────────────────────────────────
+   Peso 600 y no 700, y el tracking a la mitad: 700 con -0.035em es el ajuste
+   optico exacto de los titulares de apple.com, y con el apreton las formas
+   propias de Instrument Sans —la a, la g, la R— se pierden y la letra pasa por
+   San Francisco. Sigue leyendose rotundo, pero ya se nota que no es la suya.
+
    Cada componente traía su propio tamaño y sólo en la portada había cuatro
    medidas distintas de h2 —58, 52, 48 y 44 px— y ocho en la página de Snowy.
    Un titular de sección tiene que medir siempre lo mismo: es lo que hace que
@@ -2309,30 +2323,30 @@ a {
    sobre negro. */
 .t-section {
   font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.07;
-  letter-spacing: -0.035em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 
 .t-block {
   font-size: 1.625rem;
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  line-height: 1.16;
+  letter-spacing: -0.012em;
 }
 
 .t-card {
   font-size: 1.375rem;
   font-weight: 600;
   line-height: 1.25;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.008em;
 }
 
 .t-item {
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.3;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 /* El renglón que va encima del titular. Había tres versiones: esta, unas

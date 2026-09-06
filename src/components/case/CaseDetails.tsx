@@ -21,7 +21,7 @@ export function CaseDetails({ eyebrow, title, text, items }: CaseDetailsProps) {
           <Reveal key={item.title} delay={index * 60}>
             <figure className="grid gap-6 lg:grid-cols-[1fr_1.35fr] lg:items-center lg:gap-14">
               <figcaption className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <h3 className="text-[1.5rem] font-bold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
+                <h3 className="text-[1.5rem] font-semibold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
                   {item.title}
                 </h3>
                 <p className="mt-4 text-[1.0625rem] leading-[1.55] text-[var(--muted)]">

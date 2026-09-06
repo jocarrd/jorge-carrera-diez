@@ -18,7 +18,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         </p>
         {/* Tres líneas cortas en vez de un párrafo: el titular se lee entero
             antes de que a nadie le dé tiempo a decidir que no le interesa. */}
-        <h1 className="rise rise-2 mt-4 text-[2.625rem] font-bold leading-[1.05] tracking-[-0.04em] sm:text-[6rem]">
+        <h1 className="rise rise-2 mt-4 text-[2.625rem] font-semibold leading-[1.05] tracking-[-0.02em] sm:text-[6rem]">
           {copy.profile.tagline.map((line, index) => (
             <span key={line} className={index === 2 ? "block text-[var(--muted)]" : "block"}>
               {line}

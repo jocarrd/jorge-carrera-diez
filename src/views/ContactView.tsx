@@ -57,7 +57,7 @@ export function ContactView({ locale }: { locale: Locale }) {
           {/* El destino de la página pesaba lo mismo que la tarjeta de al lado.
               El peso lo da la superficie, no el halo de neón que llevaba: ese
               resplandor no salía en ninguna otra parte de la web. */}
-          <div className="rounded-[28px] bg-[var(--panel)] p-7 sm:p-10">
+          <div className="rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-7 sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
               {copy.emailLabel}
             </p>
