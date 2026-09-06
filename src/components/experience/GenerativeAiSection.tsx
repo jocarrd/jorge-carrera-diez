@@ -40,7 +40,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
 
             {/* Negro al 20 % sobre un panel claro no era ni oscuro ni claro: el
                 texto gris encima medía 2,77:1. Si es una consola, que lo sea. */}
-            <div className="relative rounded-xl border border-white/10 bg-[var(--ink-dark)] p-3">
+            <div className="relative rounded-[var(--radius-inner)] border border-white/10 bg-[var(--ink-dark)] p-3">
               <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-300/70" />
@@ -56,7 +56,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   {copy.flow.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`group relative overflow-hidden rounded-xl bg-[var(--panel)] p-3 ai-node-glow sm:p-4 ${
+                      className={`group relative overflow-hidden rounded-[var(--radius-inner)] bg-[var(--panel)] p-3 ai-node-glow sm:p-4 ${
                         index === copy.flow.length - 1 ? "col-span-2 lg:col-span-1" : ""
                       }`}
                     >
@@ -81,7 +81,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
               </div>
 
               <div className="mt-3 grid gap-3 sm:mt-4 lg:grid-cols-[1fr_0.78fr]">
-                <div className="hidden rounded-xl border border-white/10 bg-[var(--ink-dark)] p-4 md:block">
+                <div className="hidden rounded-[var(--radius-inner)] border border-white/10 bg-[var(--ink-dark)] p-4 md:block">
                   <div className="flex items-center justify-between gap-4">
                     <p className="font-mono text-xs text-[var(--ink-dark-muted)]">execution trace</p>
                     <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[var(--accent-dark)]">
@@ -102,7 +102,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-[var(--panel)] p-3 sm:p-4">
+                <div className="rounded-[var(--radius-inner)] bg-[var(--panel)] p-3 sm:p-4">
                   <p className="font-mono text-xs text-[var(--muted)]">tool surface</p>
                   <p className="mt-3 font-mono text-xs leading-[1.8] text-[var(--muted)] sm:mt-4">
                     {toolSignals.join(" · ")}

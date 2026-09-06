@@ -41,7 +41,7 @@ export async function renderOpenGraphImage(locale: Locale) {
           position: "relative",
           overflow: "hidden",
           background: "#ffffff",
-          color: "#1d1d1f",
+          color: "#16211f",
           fontFamily: "Instrument Sans",
         }}
       >
@@ -54,7 +54,7 @@ export async function renderOpenGraphImage(locale: Locale) {
             top: 0,
             width: 452,
             height: "100%",
-            background: "#f5f5f7",
+            background: "#f1f5f4",
           }}
         />
 
@@ -94,9 +94,9 @@ export async function renderOpenGraphImage(locale: Locale) {
                   marginTop: 26,
                   fontSize: 82,
                   lineHeight: 1.02,
-                  fontWeight: 700,
-                  letterSpacing: -3.2,
-                  color: "#1d1d1f",
+                  fontWeight: 600,
+                  letterSpacing: -1.4,
+                  color: "#16211f",
                 }}
               >
                 {site.name}
@@ -107,7 +107,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   maxWidth: 600,
                   fontSize: 27,
                   lineHeight: 1.42,
-                  color: "#6e6e73",
+                  color: "#5f6f6c",
                 }}
               >
                 {copy.ogTagline}
@@ -125,12 +125,12 @@ export async function renderOpenGraphImage(locale: Locale) {
                         fontWeight: 600,
                         letterSpacing: 1.4,
                         textTransform: "uppercase",
-                        color: "#86868b",
+                        color: "#788683",
                       }}
                     >
                       {label}
                     </div>
-                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#1d1d1f" }}>
+                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#16211f" }}>
                       {value}
                     </div>
                   </div>
@@ -144,7 +144,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   borderTop: "1px solid #e8e8ed",
                   fontSize: 22,
                   fontWeight: 600,
-                  color: "#1d1d1f",
+                  color: "#16211f",
                 }}
               >
                 {site.domain}
