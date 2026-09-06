@@ -51,7 +51,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
           </Rail>
         </Reveal>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-12">
           <ButtonLink href={routePath(locale, "projects")} variant="secondary">
             {copy.pages.projects.eyebrow}
           </ButtonLink>

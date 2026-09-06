@@ -19,9 +19,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
   return (
     <section id="snowy-showcase" className="section-dark py-20 sm:py-28 lg:py-32">
       <Container className="text-center">
-        <p className="text-xl font-semibold text-[var(--ink-dark-muted)] sm:text-[1.3125rem]">
-          Snowy
-        </p>
+        <p className="t-eyebrow">Snowy</p>
         <h2 className="t-section mx-auto mt-4 max-w-[20ch] text-white">
           {showcase.title}
         </h2>

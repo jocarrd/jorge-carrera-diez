@@ -53,7 +53,7 @@ function FrontCard({
       <p className="text-[13px] font-semibold uppercase tracking-[0.02em] text-[var(--muted)]">
         {front.label}
       </p>
-      <h3 className="t-block mt-4">
+      <h3 className="t-card mt-4">
         {front.title}
       </h3>
       <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">{front.text}</p>

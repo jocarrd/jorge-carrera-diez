@@ -75,7 +75,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
         </Rail>
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-8">
         <ButtonLink href={routePath(locale, "experience")} variant="quiet">
           {preview.cta}
         </ButtonLink>
