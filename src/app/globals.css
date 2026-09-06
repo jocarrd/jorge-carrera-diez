@@ -642,77 +642,38 @@ a {
 }
 
 /* ── Fuentes de datos ─────────────────────────────────────
-   El color agrupa por dominio del dato —tiempo, agua, sismo, aire—, que es lo
-   que de verdad tienen en comun unas agencias con otras. La sigla manda porque
-   es como se las conoce; el nombre completo va debajo, en pequeno. */
+   Tipografia y aire. Siete tarjetas con borde y barrita de color parecian un
+   panel de control; siete etiquetas grises no decian nada. El nombre grande y
+   lo que aporta debajo basta, y deja respirar la seccion. */
 .sources {
   display: grid;
-  gap: 0.75rem;
+  gap: 1.75rem 2rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 480px) {
   .sources {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.source {
-  position: relative;
-  border-radius: 16px;
-  background: #fff;
-  padding: 0.875rem 1rem 0.875rem 1.5rem;
-  box-shadow: 0 0 0 1px var(--line);
-}
-
-/* La pastilla de color a la izquierda: agrupa de un vistazo sin necesidad de
-   leyenda. */
-.source::before {
-  content: "";
-  position: absolute;
-  left: 0.625rem;
-  top: 0.875rem;
-  bottom: 0.875rem;
-  width: 3px;
-  border-radius: 999px;
-  background: var(--dominio);
-}
-
-.source.is-tiempo {
-  --dominio: #2f7fd4;
-}
-
-.source.is-agua {
-  --dominio: #22a6b3;
-}
-
-.source.is-sismo {
-  --dominio: #d98324;
-}
-
-.source.is-aire {
-  --dominio: #3fa14a;
+@media (min-width: 1024px) {
+  .sources {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .source-sigla {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   color: var(--foreground);
-}
-
-.source-nombre {
-  margin-top: 0.125rem;
-  font-size: 12px;
-  line-height: 1.3;
-  color: var(--muted);
 }
 
 .source-aporta {
-  margin-top: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--foreground);
+  margin-top: 0.25rem;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--muted);
 }
 
 /* ── Capacidades del producto ─────────────────────────────
