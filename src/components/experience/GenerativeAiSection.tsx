@@ -32,7 +32,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
         </div>
 
         <div className="space-y-4">
-          <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-[var(--panel)] p-4 shadow-[0_24px_100px_rgba(0,0,0,0.32)]">
+          <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-[var(--panel)] p-4 shadow-[var(--sombra-3)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(103,232,249,0.18),transparent_16rem),radial-gradient(circle_at_82%_34%,rgba(94,234,212,0.1),transparent_18rem)]" />
             <div className="absolute inset-0 bg-[linear-gradient(rgba(103,232,249,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.035)_1px,transparent_1px)] bg-[size:34px_34px] opacity-60" />
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[var(--line-strong)] ai-orbit" />

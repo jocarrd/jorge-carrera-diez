@@ -42,6 +42,25 @@
 
      Y habia siete duraciones conviviendo. 0.15 s en un hover no se percibe como
      transicion sino como un salto; el minimo util son 0.25. */
+  /* Las sombras van tintadas con el verde profundo de la marca, no en negro
+     puro. Un objeto no proyecta gris: proyecta el color de lo que tiene
+     debajo, y aquí debajo hay un gris verdoso. Es un detalle que no se ve
+     mirándolo de frente pero se nota al comparar: con negro puro las tarjetas
+     flotaban sobre un fondo que no era el suyo.
+
+     Tres alturas y el anillo. Había ocho sombras distintas, cada una inventada
+     donde hizo falta. */
+  --sombra-1:
+    0 1px 2px rgba(11, 32, 29, 0.04),
+    0 8px 24px -12px rgba(11, 32, 29, 0.1);
+  --sombra-2:
+    0 2px 6px rgba(11, 32, 29, 0.05),
+    0 20px 48px -20px rgba(11, 32, 29, 0.16);
+  --sombra-3:
+    0 4px 12px rgba(11, 32, 29, 0.06),
+    0 40px 90px -32px rgba(11, 32, 29, 0.24);
+  --anillo: 0 0 0 1px var(--line);
+
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --dur-rapida: 0.25s;
   --dur-media: 0.4s;
@@ -106,7 +125,7 @@ a {
 .lvl-2 {
   background: #ffffff;
   border-radius: var(--radius-card);
-  box-shadow: 0 0 0 1px var(--line);
+  box-shadow: var(--anillo);
 }
 
 .lvl-3 {
@@ -123,8 +142,8 @@ a {
 .lvl-hover:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.08),
-    0 0 0 1px var(--line);
+    var(--sombra-2),
+    var(--anillo);
 }
 
 /* La barra nativa parte la tarjeta por abajo y en escritorio no aporta: el
@@ -861,7 +880,7 @@ a {
   border-radius: var(--radius-card);
   background: #fff;
   padding: 1rem 1.25rem;
-  box-shadow: 0 0 0 1px var(--line);
+  box-shadow: var(--anillo);
 }
 
 @media (min-width: 640px) {
@@ -1057,8 +1076,8 @@ a {
   overflow: hidden;
   border-radius: 14px 14px 0 0;
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.06),
-    0 -2px 40px -12px rgba(0, 0, 0, 0.25);
+    0 0 0 1px rgba(11, 32, 29, 0.06),
+    var(--sombra-2);
   /* Se sale por abajo: el overflow de la tarjeta la recorta. */
   margin-bottom: -3.5rem;
 }
@@ -1629,7 +1648,7 @@ a {
   padding: 2.687cqw 1.631cqw 5.246cqw;
   border-radius: 3.5cqw 3.5cqw 0.5cqw 0.5cqw;
   background: linear-gradient(158deg, #55555a 0%, #2a2a2e 22%, #1b1b1f 60%, #3d3d42 100%);
-  box-shadow: 0 26px 60px -24px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--sombra-3);
 }
 
 .laptop-lid::after {
@@ -1710,7 +1729,7 @@ a {
   height: 1.9cqw;
   border-radius: 0.35cqw 0.35cqw 1.1cqw 1.1cqw;
   background: linear-gradient(180deg, #c9c9ce 0%, #9a9aa0 42%, #6f6f75 100%);
-  box-shadow: 0 10px 22px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--sombra-2);
 }
 
 /* El hueco para abrir la tapa. Es el detalle que hace que se lea como portatil
@@ -2052,7 +2071,7 @@ a {
   border-radius: var(--radius-card-lg);
   overflow: hidden;
   background: var(--panel);
-  box-shadow: 0 0 0 1px var(--line);
+  box-shadow: var(--anillo);
 }
 
 .shot-frame::after {
@@ -2108,7 +2127,7 @@ a {
 }
 
 .ai-node-glow {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--sombra-1);
 }
 
 .ai-orbit {

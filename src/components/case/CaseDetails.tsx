@@ -28,7 +28,7 @@ export function CaseDetails({ eyebrow, title, text, items }: CaseDetailsProps) {
                   {item.text}
                 </p>
               </figcaption>
-              <div className="overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.07)]">
+              <div className="overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-white shadow-[var(--sombra-2)]">
                 <Image
                   src={item.image}
                   alt={item.alt}
