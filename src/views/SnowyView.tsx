@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CaseCta, CaseDetails, CaseHero, CaseStack } from "@/components/case";
+import { CaseCta, CaseHero } from "@/components/case";
 import {
   BrowserFrame,
   ButtonLink,
@@ -50,33 +50,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
               priority
             />
           </BrowserFrame>
-          {/* Las dos capturas venían de tamaños distintos y con `h-auto` cada
-              una tomaba su proporción: la pareja no casaba y una dejaba banda
-              negra. Misma caja y recorte desde arriba. */}
-          <div className="mt-5 grid gap-5 lg:grid-cols-2">
-            {[
-              { src: "/images/snowy-stations-map.webp", alt: copy.imageAlts.stations },
-              { src: "/images/snowy-radar-map.webp", alt: copy.imageAlts.radar },
-            ].map((shot) => (
-              <div
-                key={shot.src}
-                className=""
-              >
-                <BrowserFrame label={site.snowyDomain}>
-                  <div className="aspect-[16/10]">
-                    <Image
-                      src={shot.src}
-                      alt={shot.alt}
-                      width={1600}
-                      height={1000}
-                      className="h-full w-full object-cover object-top"
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                    />
-                  </div>
-                </BrowserFrame>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -163,6 +136,22 @@ export function SnowyView({ locale }: { locale: Locale }) {
             services={copy.architecture.services}
             servicesNote={copy.architecture.servicesNote}
           />
+        </div>
+
+        {/* Los grupos de tecnologia vivian en una seccion propia al final que
+            repetia lo que ya dice el diagrama. Aqui, debajo, es donde
+            significan algo. */}
+        <div className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+          {copy.stack.groups.map((group) => (
+            <div key={group.label}>
+              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
+                {group.label}
+              </p>
+              <p className="mt-2 text-[15px] leading-[1.5] text-[var(--foreground)]">
+                {group.items.join(" · ")}
+              </p>
+            </div>
+          ))}
         </div>
 
         <div className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
@@ -329,14 +318,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <CaseDetails
-        eyebrow={copy.details.eyebrow}
-        title={copy.details.title}
-        text={copy.details.text}
-        items={copy.details.items}
-      />
 
-      <CaseStack title={copy.stack.title} text={copy.stack.text} groups={copy.stack.groups} />
 
       <CaseCta locale={locale} />
     </main>
