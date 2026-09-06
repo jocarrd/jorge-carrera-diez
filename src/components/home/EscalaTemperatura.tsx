@@ -63,6 +63,7 @@ export function EscalaTemperatura({
                 // desplaza por tramo, así el reparto y la escala son el mismo
                 // dibujo y no dos elementos que coinciden por casualidad.
                 "--tramo": `${(i / (reparto.length - 1)) * 100}%`,
+                "--i": i,
               } as CSSProperties
             }
           />

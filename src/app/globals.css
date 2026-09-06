@@ -2564,6 +2564,70 @@ a {
   }
 }
 
+/* ── La entrada de la escala ─────────────────────────────────
+   El movimiento cuelga del `reveal-in` que ya pone el observador del bloque, así
+   que no hace falta JavaScript nuevo. Y va como animación y no como transición
+   a propósito: el estado final es el natural, de modo que sin JavaScript o con
+   movimiento reducido la gráfica se ve completa desde el primer pintado.
+
+   El orden cuenta el dato en el orden en que se lee: primero la escala, después
+   el reparto creciendo de frío a caliente, y al final los dos extremos. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-in .escala-barra {
+    animation: escala-abrir 0.9s var(--ease) both;
+  }
+
+  .reveal-in .escala-columna {
+    transform-origin: bottom;
+    animation: escala-crecer 0.55s var(--ease) both;
+    /* 12 ms por grado: cincuenta columnas recorren la escala en 0,6 s, que es
+       lo que tarda el ojo en seguirla sin que parezca que va sola. */
+    animation-delay: calc(0.18s + var(--i) * 12ms);
+  }
+
+  .reveal-in .escala-punto {
+    animation: escala-asomar 0.5s var(--ease) both;
+    animation-delay: 0.95s;
+  }
+
+  .reveal-in .escala-ref,
+  .reveal-in .escala-marca {
+    animation: escala-entrar 0.6s var(--ease) both;
+    animation-delay: 1.05s;
+  }
+
+  @keyframes escala-abrir {
+    from {
+      clip-path: inset(0 100% 0 0 round 999px);
+    }
+
+    to {
+      clip-path: inset(0 0 0 0 round 999px);
+    }
+  }
+
+  @keyframes escala-crecer {
+    from {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes escala-asomar {
+    from {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes escala-entrar {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+}
+
 /* ── Escala de titulares ─────────────────────────────────────
    Peso 600 y no 700, y el tracking a la mitad: 700 con -0.035em es el ajuste
    optico exacto de los titulares de apple.com, y con el apreton las formas
