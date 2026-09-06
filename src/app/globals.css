@@ -29,11 +29,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* La pila del sistema va primero a propósito: en macOS e iOS resuelve a San
-     Francisco, que es la referencia que perseguimos. Onest sólo entra donde no
-     existe, y comparte métricas lo bastante cerca para no mover la maqueta. */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    var(--font-sans-onest), "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Onest primero y la pila del sistema de respaldo, no al revés. Con
+     -apple-system delante, en macOS e iOS esto se renderizaba con San
+     Francisco: la letra de Apple. Comparten metricas de sobra —el PDF del CV
+     sigue en 2 paginas y los altos de pagina no se mueven—, asi que el cambio
+     es de voz, no de maqueta. */
+  --font-sans: var(--font-sans-onest), -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-mono-plex), "SFMono-Regular", Consolas, Menlo, monospace;
 }
 
