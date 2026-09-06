@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 // TEMPORAL. Mide desde donde sale Vercel y si algun camino esquiva el reto.
 export const dynamic = "force-dynamic";
+// Probamos si desde Europa Cloudflare no nos ve como bot.
+export const preferredRegion = ["cdg1"];
 
 async function probar(nombre: string, url: string, cabeceras: Record<string, string> = {}) {
   const t0 = Date.now();
