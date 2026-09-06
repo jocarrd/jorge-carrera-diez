@@ -296,8 +296,12 @@ export type Copy = {
         servicesNote: string;
       };
       capabilities: Capability[];
-      seo: SectionCopy & { sourcesTitle: string; sourcesText: string };
-      b2b: SectionCopy & { lines: TitledText[] };
+      seo: SectionCopy & {
+        sourcesTitle: string;
+        sources: { sigla: string; nombre: string; aporta: string; campo: string }[];
+        sourcesText: string;
+      };
+      b2b: SectionCopy & { lines: (TitledText & { url?: string })[] };
       press: SectionCopy & {
         openDataLabel: string;
         openDataTag: string;

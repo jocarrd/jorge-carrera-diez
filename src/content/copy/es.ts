@@ -725,7 +725,7 @@ export const es: Copy = {
         },
         {
           title: "Productos derivados",
-          text: "Energy, widgets embebibles, eclipse 2026 y nuevas verticales sobre la misma base técnica.",
+          text: "Energy, widgets embebibles, producto de eclipses y nuevas verticales sobre la misma base técnica.",
         },
       ],
       modules: {
@@ -822,6 +822,15 @@ export const es: Copy = {
         title: "SEO, datos y rendimiento como decisiones de arquitectura.",
         text: "El usuario y Google necesitan respuestas rápidas. Por eso el proyecto trabaja con SSR, caché por dominio, modelo interno de datos, IndexNow, revalidación y abstracción de proveedores.",
         sourcesTitle: "Fuentes integradas",
+        sources: [
+          { sigla: "AEMET", nombre: "Agencia Estatal de Meteorología", aporta: "Estaciones y avisos", campo: "tiempo" },
+          { sigla: "Euskalmet", nombre: "Agencia Vasca de Meteorología", aporta: "Estaciones del País Vasco", campo: "tiempo" },
+          { sigla: "MeteoGalicia", nombre: "Meteorología de la Xunta", aporta: "Estaciones de Galicia", campo: "tiempo" },
+          { sigla: "MITECO", nombre: "Ministerio para la Transición Ecológica", aporta: "Embalses y reserva hídrica", campo: "agua" },
+          { sigla: "IGN", nombre: "Instituto Geográfico Nacional", aporta: "Sismos en España", campo: "sismo" },
+          { sigla: "USGS", nombre: "United States Geological Survey", aporta: "Sismos en el mundo", campo: "sismo" },
+          { sigla: "CAMS", nombre: "Copernicus Atmosphere Monitoring", aporta: "Calidad del aire y polen", campo: "aire" },
+        ],
         sourcesText:
           "El objetivo es unificar proveedores heterogéneos en un modelo consistente, precalcular lo costoso y responder muy rápido al usuario final.",
       },
@@ -832,15 +841,18 @@ export const es: Copy = {
         lines: [
           {
             title: "Snowy Energy",
+            url: "https://snowy.es/productos/energia",
             text: "Forecasting renovable, simulador y dashboard para energía solar como vertical B2B dentro del ecosistema Snowy.",
           },
           {
             title: "Widgets B2B",
+            url: "https://snowy.es/productos/widgets",
             text: "SDK embebible para integrar datos meteorológicos, mapas, herramientas o asistente IA en webs de terceros.",
           },
           {
-            title: "Eclipse 2026",
-            text: "Producto de contenido y planificación alrededor del eclipse solar total del 12 de agosto de 2026.",
+            title: "Eclipses",
+            url: "https://snowy.es/eclipse-2027",
+            text: "Producto de contenido y planificación: se estrenó con el eclipse total de agosto de 2026 y ya corre para el de 2027.",
           },
         ],
       },

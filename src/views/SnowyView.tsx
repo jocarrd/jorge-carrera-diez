@@ -11,9 +11,10 @@ import {
   TechTag,
 } from "@/components/ui";
 import { ArchitectureStack } from "@/components/visual/ArchitectureStack";
+import { CapabilityRail } from "@/components/visual/CapabilityRail";
 import { SpreadCone } from "@/components/visual/SpreadCone";
 import { SurfaceTiles } from "@/components/visual/SurfaceTiles";
-import { getCopy, site } from "@/content";
+import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
@@ -115,13 +116,11 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.product.title}
           text={copy.product.text}
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {copy.features.map((feature) => (
-            <Surface key={feature.title}>
-              <h2 className="text-xl font-semibold text-[var(--foreground)]">{feature.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{feature.text}</p>
-            </Surface>
-          ))}
+        {/* En carril y en oscuro: seis tarjetas blancas en rejilla iban justo
+            antes de cinco superficies claras con color, y no se distinguian
+            unas de otras. */}
+        <div className="mt-12">
+          <CapabilityRail items={copy.features} label={copy.product.title} />
         </div>
       </Section>
 
@@ -193,6 +192,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             eyebrow={copy.seo.eyebrow}
             title={copy.seo.title}
             text={copy.seo.text}
+            align="left"
           />
           <Surface>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">{copy.seo.sourcesTitle}</h2>
@@ -208,17 +208,35 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          {/* Centrado dentro de una rejilla de dos columnas: el titular quedaba
+              centrado y las tarjetas a la izquierda. */}
           <SectionHeader
             eyebrow={copy.b2b.eyebrow}
             title={copy.b2b.title}
             text={copy.b2b.text}
+            align="left"
           />
-          <div className="grid gap-4">
+          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-1 lg:gap-y-7">
+            {/* Cada linea enlaza a su pagina viva: sin eso son tres
+                afirmaciones que nadie puede comprobar. */}
             {copy.b2b.lines.map((line) => (
-              <Surface key={line.title}>
-                <h2 className="text-xl font-semibold text-[var(--foreground)]">{line.title}</h2>
-                <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{line.text}</p>
-              </Surface>
+              <div key={line.title} className="area">
+                <h2 className="area-title">{line.title}</h2>
+                <p className="area-text">{line.text}</p>
+                {line.url ? (
+                  <a
+                    href={line.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="area-link"
+                  >
+                    {domainOf(line.url)}
+                    <span aria-hidden className="ml-1">
+                      &rsaquo;
+                    </span>
+                  </a>
+                ) : null}
+              </div>
             ))}
           </div>
         </div>
