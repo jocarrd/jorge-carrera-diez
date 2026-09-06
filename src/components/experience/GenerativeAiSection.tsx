@@ -17,22 +17,22 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
           <p className="mt-5 text-base leading-relaxed text-[var(--muted)] sm:mt-6 sm:leading-7">
             {copy.lead}
           </p>
-          <p className="mt-5 text-sm leading-6 text-[var(--muted)]">{copy.detail}</p>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--panel)]">
+          <p className="mt-5 text-base leading-[1.6] text-[var(--muted)]">{copy.detail}</p>
+          <div className="mt-8 overflow-hidden rounded-2xl bg-[var(--panel)]">
             {copy.rows.map(([label, value]) => (
               <div
                 key={label}
                 className="grid gap-2 border-b border-[var(--line)] px-5 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]"
               >
                 <p className="font-mono text-xs text-[var(--muted)]">{label}</p>
-                <p className="text-sm leading-6 text-[var(--muted)]">{value}</p>
+                <p className="text-base leading-[1.6] text-[var(--muted)]">{value}</p>
               </div>
             ))}
           </div>
         </div>
 
         <div className="space-y-4">
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-4 shadow-[0_24px_100px_rgba(0,0,0,0.32)]">
+          <div className="relative overflow-hidden rounded-2xl bg-[var(--panel)] p-4 shadow-[0_24px_100px_rgba(0,0,0,0.32)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(103,232,249,0.18),transparent_16rem),radial-gradient(circle_at_82%_34%,rgba(94,234,212,0.1),transparent_18rem)]" />
             <div className="absolute inset-0 bg-[linear-gradient(rgba(103,232,249,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(103,232,249,0.035)_1px,transparent_1px)] bg-[size:34px_34px] opacity-60" />
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[var(--line-strong)] ai-orbit" />
@@ -56,22 +56,17 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   {copy.flow.map((item, index) => (
                     <div
                       key={item.title}
-                      className={`group relative overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--panel)] p-3 ai-node-glow sm:p-4 ${
+                      className={`group relative overflow-hidden rounded-xl bg-[var(--panel)] p-3 ai-node-glow sm:p-4 ${
                         index === copy.flow.length - 1 ? "col-span-2 lg:col-span-1" : ""
                       }`}
-                      style={{ animationDelay: `${index * 260}ms` }}
                     >
-                      <div
-                        className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-[var(--line)] to-transparent ai-signal"
-                        style={{ animationDelay: `${index * 420}ms` }}
-                      />
                       <div className="relative flex items-center justify-between gap-3">
                         <p className="font-mono text-xs text-[var(--muted)]">0{index + 1}</p>
                         <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[var(--panel)]">
                           <div className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(103,232,249,0.8)]" />
                         </div>
                       </div>
-                      <p className="relative mt-5 text-sm font-semibold text-[var(--foreground)] sm:mt-7">
+                      <p className="relative mt-5 hyphens-auto break-words text-sm font-semibold leading-tight text-[var(--foreground)] sm:mt-7">
                         {item.title}
                       </p>
                       <p className="relative mt-2 hidden min-h-10 text-xs leading-5 text-[var(--muted)] sm:block">
@@ -89,7 +84,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                 <div className="hidden rounded-xl border border-white/10 bg-[var(--ink-dark)] p-4 md:block">
                   <div className="flex items-center justify-between gap-4">
                     <p className="font-mono text-xs text-[var(--ink-dark-muted)]">execution trace</p>
-                    <span className="rounded-full border border-white/15 px-2.5 py-1 font-mono text-[0.68rem] text-[var(--accent-dark)]">
+                    <span className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[var(--accent-dark)]">
                       controlled
                     </span>
                   </div>
@@ -107,25 +102,18 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   </div>
                 </div>
 
-                <div className="rounded-xl lvl-2 border p-3 sm:p-4">
+                <div className="rounded-xl bg-[var(--panel)] p-3 sm:p-4">
                   <p className="font-mono text-xs text-[var(--muted)]">tool surface</p>
-                  <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
-                    {toolSignals.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full lvl-3 border px-2.5 py-1.5 font-mono text-[0.68rem] text-[var(--muted)] sm:px-3 sm:text-xs"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="mt-3 font-mono text-xs leading-[1.8] text-[var(--muted)] sm:mt-4">
+                    {toolSignals.join(" · ")}
+                  </p>
                   <div className="mt-4 grid grid-cols-3 gap-2 sm:mt-5">
                     {[
                       ["lat", "<1s"],
                       ["cost", "cap"],
                       ["eval", "on"],
                     ].map(([label, value]) => (
-                      <div key={label} className="rounded-lg lvl-2 border p-2.5 sm:p-3">
+                      <div key={label} className="rounded-lg bg-[var(--panel)] p-2.5 sm:p-3">
                         <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[var(--muted)]">
                           {label}
                         </p>
@@ -138,8 +126,8 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="rounded-2xl lvl-2 border p-6">
-            <h3 className="text-xl font-semibold text-[var(--foreground)]">{copy.principlesTitle}</h3>
+          <div className="rounded-2xl bg-[var(--panel)] p-7 sm:p-8">
+            <h3 className="t-card">{copy.principlesTitle}</h3>
             <div className="mt-6 grid gap-5 lg:grid-cols-3">
               {copy.principles.map((item) => (
                 <div key={item.title}>

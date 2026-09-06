@@ -1,4 +1,4 @@
-import { Section, TechTag } from "@/components/ui";
+import { Section } from "@/components/ui";
 
 type CaseStackProps = {
   title: string;
@@ -26,11 +26,9 @@ export function CaseStack({ title, text, groups }: CaseStackProps) {
               <p className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
                 {group.label}
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <TechTag key={item}>{item}</TechTag>
-                ))}
-              </div>
+              <p className="mt-3 font-mono text-[13px] leading-[1.8] text-[var(--muted)]">
+                {group.items.join(" · ")}
+              </p>
             </div>
           ))}
         </div>

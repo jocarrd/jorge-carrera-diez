@@ -106,13 +106,13 @@ export function Header({ locale }: { locale: Locale }) {
           >
             <span className="relative h-3.5 w-4">
               <span
-                className={`absolute left-0 h-px w-4 bg-current transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "top-[7px] rotate-45" : "top-0"}`}
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-[var(--dur-media)] ease-[var(--ease)] ${isOpen ? "top-[7px] rotate-45" : "top-0"}`}
               />
               <span
-                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition-opacity duration-200 ${isOpen ? "opacity-0" : "opacity-100"}`}
+                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition-opacity duration-[var(--dur-rapida)] ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
               <span
-                className={`absolute left-0 h-px w-4 bg-current transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "bottom-[6px] -rotate-45" : "bottom-0"}`}
+                className={`absolute left-0 h-px w-4 bg-current transition-all duration-[var(--dur-media)] ease-[var(--ease)] ${isOpen ? "bottom-[6px] -rotate-45" : "bottom-0"}`}
               />
             </span>
           </button>

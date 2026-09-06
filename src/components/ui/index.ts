@@ -1,4 +1,3 @@
-export { Badge } from "./Badge";
 export { BrowserFrame } from "./BrowserFrame";
 export { ButtonLink } from "./ButtonLink";
 export { Container } from "./Container";
@@ -13,4 +12,3 @@ export { Reveal } from "./Reveal";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";
-export { TechTag } from "./TechTag";

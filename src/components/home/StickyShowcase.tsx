@@ -83,7 +83,7 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
               {copy.steps.map((step, index) => (
                 <li
                   key={step.title}
-                  className={`h-[3px] flex-1 rounded-full transition-colors duration-500 ${
+                  className={`h-[3px] flex-1 rounded-full transition-colors duration-[var(--dur-media)] ${
                     index === active ? "bg-[var(--accent)]" : "bg-[var(--line-strong)]"
                   }`}
                 />

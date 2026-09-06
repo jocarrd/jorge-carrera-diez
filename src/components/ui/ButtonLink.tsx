@@ -50,7 +50,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[17px] font-medium transition duration-200 ${variantClassName} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[17px] font-medium transition duration-[var(--dur-rapida)] ${variantClassName} ${className}`}
       {...props}
     >
       {children}

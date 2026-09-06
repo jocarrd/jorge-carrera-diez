@@ -29,14 +29,17 @@ export function AiPreview({ locale }: { locale: Locale }) {
           pantallas y el bento dejaba de leerse como conjunto. */}
       <Reveal delay={80} className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <article className="ai-focal col-span-2 flex flex-col justify-between rounded-[var(--radius-card-lg)] p-7 sm:row-span-2 sm:p-9">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.08em] text-[var(--accent-dark)]">
-              {focal.metric}
-            </p>
+          <p className="font-mono text-xs uppercase tracking-[0.08em] text-[var(--accent-dark)]">
+            {focal.metric}
+          </p>
+          {/* El diagrama vivia pegado al rotulo y dejaba 250 px de negro entre
+              medias. Aqui ocupa el hueco que hay entre el rotulo y el texto,
+              que es lo que hace que la pieza se lea como una sola cosa. */}
+          <div className="flex flex-1 items-center justify-center">
             <AgentHub />
           </div>
           <div className="mt-10 sm:mt-0">
-            <p className="text-[1.75rem] font-semibold tracking-[-0.025em] text-white sm:text-[2.25rem]">
+            <p className="t-block text-white">
               {focal.title}
             </p>
             <p className="mt-2 text-base leading-[1.6] text-[var(--ink-dark-muted)] sm:text-[17px]">

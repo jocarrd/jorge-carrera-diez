@@ -16,12 +16,12 @@ export function AgentHub() {
       <svg viewBox="0 0 180 144" fill="none">
         <defs>
           <radialGradient id="hub-glow" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0" stopColor="#2dd4bf" stopOpacity="0.5" />
+            <stop offset="0" stopColor="#2dd4bf" stopOpacity="0.16" />
             <stop offset="1" stopColor="#2dd4bf" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        <circle cx="90" cy="72" r="62" fill="url(#hub-glow)" />
+        <circle cx="90" cy="72" r="46" fill="url(#hub-glow)" />
 
         {NODES.map((node) => (
           <path
