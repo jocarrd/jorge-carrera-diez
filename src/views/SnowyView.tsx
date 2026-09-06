@@ -89,12 +89,8 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <section className="py-12 sm:py-20 lg:py-24">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-text)]">
-              {copy.modules.eyebrow}
-            </p>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
-              {copy.modules.title}
-            </h2>
+            <p className="t-eyebrow">{copy.modules.eyebrow}</p>
+            <h2 className="t-section">{copy.modules.title}</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
               {copy.modules.text}
             </p>
@@ -176,7 +172,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
               aporta. Ahora cada una lleva su sigla, su nombre y el dato que
               pone, y el color viene del dominio: tiempo, agua, sismo o aire. */}
           <div>
-            <h2 className="text-xl font-semibold text-[var(--foreground)]">{copy.seo.sourcesTitle}</h2>
+            <h2 className="t-card">{copy.seo.sourcesTitle}</h2>
             <SourceGrid sources={copy.seo.sources} className="mt-6" />
             <p className="mt-6 text-base leading-[1.6] text-[var(--muted)]">{copy.seo.sourcesText}</p>
           </div>

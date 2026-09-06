@@ -34,7 +34,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
           />
         </div>
         <div>
-          <p className="text-lg font-semibold text-[var(--muted)] sm:text-xl">{site.name}</p>
+          <p className="t-eyebrow">{site.name}</p>
           <h2 className="t-section mt-3">
             {copy.profile.positioningLong}
           </h2>

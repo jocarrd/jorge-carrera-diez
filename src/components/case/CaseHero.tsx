@@ -22,7 +22,7 @@ export function CaseHero({ eyebrow, heading, lead, detail, facts, actions }: Cas
       <p className="t-eyebrow">
         {eyebrow}
       </p>
-      <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.08] tracking-[-0.035em] text-[var(--foreground)] sm:text-[3.5rem]">
+      <h1 className="t-section mt-4 max-w-4xl">
         {heading}
       </h1>
       <p className="mt-5 max-w-2xl text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:mt-6 sm:text-[1.3125rem] sm:leading-[1.5]">

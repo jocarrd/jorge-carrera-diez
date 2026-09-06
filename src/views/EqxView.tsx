@@ -114,7 +114,7 @@ export function EqxView({ locale }: { locale: Locale }) {
                 <div className="grid gap-2 py-6 sm:grid-cols-[8rem_1fr] sm:gap-8 sm:py-7">
                   <p className="font-mono text-sm text-[var(--accent-text)]">{level.level}</p>
                   <div>
-                    <h3 className="text-lg font-semibold text-[var(--foreground)]">{level.title}</h3>
+                    <h3 className="t-item">{level.title}</h3>
                     <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">{level.text}</p>
                   </div>
                 </div>

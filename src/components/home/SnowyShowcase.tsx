@@ -66,7 +66,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
                   </BrowserFrame>
                 </div>
                 <figcaption className="mt-5">
-                  <p className="text-[17px] font-semibold text-white">{shot.title}</p>
+                  <p className="t-item text-white">{shot.title}</p>
                   <p className="mt-1 text-base leading-[1.6] text-[var(--ink-dark-muted)]">
                     {shot.caption}
                   </p>

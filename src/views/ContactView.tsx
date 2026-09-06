@@ -31,7 +31,7 @@ export function ContactView({ locale }: { locale: Locale }) {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-6xl">
+            <h1 className="t-section max-w-3xl">
               {copy.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-xl sm:leading-9">
@@ -105,7 +105,7 @@ export function ContactView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+            <h2 className="t-block">
               {copy.linksTitle}
             </h2>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">{copy.linksText}</p>

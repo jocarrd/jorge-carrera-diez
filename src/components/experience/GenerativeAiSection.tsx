@@ -11,7 +11,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
     <Section id="ia-generativa" className="border-t border-[var(--line)]">
       <div className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
         <div className="max-w-xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-5xl">
+          <h2 className="t-section">
             {copy.title}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-[var(--muted)] sm:mt-6 sm:leading-7">

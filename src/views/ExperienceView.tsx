@@ -48,7 +48,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                     </div>
 
                     <div>
-                      <h2 className="text-xl font-semibold leading-tight text-[var(--foreground)] sm:text-2xl">
+                      <h2 className="t-card">
                         {item.headline ?? `${item.role} - ${item.company}`}
                       </h2>
                       {item.client ? (

@@ -41,7 +41,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         <ul className="rise rise-4 mx-auto mt-14 grid max-w-[62rem] gap-8 text-left sm:mt-16 sm:grid-cols-3 sm:gap-10">
           {copy.profile.capabilities.map((item) => (
             <li key={item.title}>
-              <h2 className="text-[17px] font-semibold tracking-[-0.01em]">{item.title}</h2>
+              <h2 className="t-item">{item.title}</h2>
               <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">{item.text}</p>
             </li>
           ))}
