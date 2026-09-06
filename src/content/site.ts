@@ -13,6 +13,8 @@ export const site = {
   university: "Universidad de La Rioja",
   universityUrl: "https://www.unirioja.es/",
   snowy: "https://snowy.es",
+  /** El mapa de Snowy. La ruta es /map, no /mapa: el sitio no está traducido. */
+  snowyMapa: "https://snowy.es/map",
   /** Sin protocolo: es lo que se enseña en la barra del marco de ventana. */
   snowyDomain: "snowy.es",
   eqx: "https://elitequality.org/",

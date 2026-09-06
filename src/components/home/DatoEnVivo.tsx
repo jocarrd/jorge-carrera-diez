@@ -1,4 +1,4 @@
-import { getCopy } from "@/content";
+import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { leerEstadoRed } from "@/lib/snowy-live";
 import { EscalaTemperatura } from "./EscalaTemperatura";
@@ -54,7 +54,7 @@ export async function DatoEnVivo({ locale }: { locale: Locale }) {
 
       <p className="vivo-texto">
         {copy.texto}{" "}
-        <a href="https://snowy.es/mapa" target="_blank" rel="noreferrer">
+        <a href={site.snowyMapa} target="_blank" rel="noreferrer">
           {copy.enlace}
         </a>
       </p>
