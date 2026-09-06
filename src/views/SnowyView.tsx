@@ -7,26 +7,15 @@ import {
   Section,
   Rail,
   SectionHeader,
-  Surface,
-  TechTag,
 } from "@/components/ui";
 import { ArchitectureStack } from "@/components/visual/ArchitectureStack";
 import { CapabilityRail } from "@/components/visual/CapabilityRail";
+import { SourceGrid } from "@/components/visual/SourceGrid";
 import { SpreadCone } from "@/components/visual/SpreadCone";
 import { SurfaceTiles } from "@/components/visual/SurfaceTiles";
 import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
-
-const dataSources = [
-  "AEMET",
-  "Euskalmet",
-  "MeteoGalicia",
-  "MITECO",
-  "USGS",
-  "IGN",
-  "CAMS",
-] as const;
 
 export function SnowyView({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).pages.snowy;
@@ -194,15 +183,14 @@ export function SnowyView({ locale }: { locale: Locale }) {
             text={copy.seo.text}
             align="left"
           />
-          <Surface>
+          {/* Siete etiquetas grises no decian quien es cada fuente ni que
+              aporta. Ahora cada una lleva su sigla, su nombre y el dato que
+              pone, y el color viene del dominio: tiempo, agua, sismo o aire. */}
+          <div>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">{copy.seo.sourcesTitle}</h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {dataSources.map((source) => (
-                <TechTag key={source}>{source}</TechTag>
-              ))}
-            </div>
-            <p className="mt-6 text-sm leading-6 text-[var(--muted)]">{copy.seo.sourcesText}</p>
-          </Surface>
+            <SourceGrid sources={copy.seo.sources} className="mt-6" />
+            <p className="mt-6 text-[15px] leading-6 text-[var(--muted)]">{copy.seo.sourcesText}</p>
+          </div>
         </div>
       </Section>
 
