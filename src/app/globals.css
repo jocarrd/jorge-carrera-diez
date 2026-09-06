@@ -1556,21 +1556,12 @@ a {
   background: var(--line-strong);
 }
 
-/* Los tres colores del semáforo sólo cuando hay sitio: por debajo se leen como
-   ruido de color en una maqueta que es gris. */
-@media (min-width: 640px) {
-  .browser-dots span:nth-child(1) {
-    background: #ff5f57;
-  }
+/* Aquí iban #ff5f57, #febc2e y #28c840: los tres colores exactos del semáforo
+   de macOS, en ocho marcos de la web. Era la cita más literal que quedaba.
 
-  .browser-dots span:nth-child(2) {
-    background: #febc2e;
-  }
-
-  .browser-dots span:nth-child(3) {
-    background: #28c840;
-  }
-}
+   El marco sigue haciendo su trabajo —decir que eso es una web de verdad, con
+   su dominio tecleable— sin el guiño. Los tres puntos se quedan en gris, que es
+   lo que hace cualquier navegador que no sea el de Apple. */
 
 .browser-url {
   position: absolute;
@@ -1684,16 +1675,9 @@ a {
   border-radius: 999px;
 }
 
-.laptop-dots span:nth-child(1) {
-  background: #ff5f57;
-}
-
-.laptop-dots span:nth-child(2) {
-  background: #febc2e;
-}
-
-.laptop-dots span:nth-child(3) {
-  background: #28c840;
+/* Mismo criterio que en .browser-dots: fuera el semáforo de macOS. */
+.laptop-dots span {
+  background: var(--line-strong);
 }
 
 .laptop-url {
@@ -2301,6 +2285,283 @@ a {
 @page {
   size: A4;
   margin: 13mm 12mm 14mm;
+}
+
+/* ── La lectura en vivo ──────────────────────────────────────
+   Vive dentro de la banda oscura, debajo de la cifra grande. La relación entre
+   las dos es el argumento: arriba noventa días de histórico, aquí lo que la red
+   está midiendo ahora.
+
+   Empezó siendo una tabla de dos filas y quedaba plana: decía los números sin
+   enseñar lo que tienen de interesante, que es la distancia entre los dos
+   extremos de España en un mismo instante. Un rango se dibuja como un rango. */
+.vivo {
+  margin-top: 4.5rem;
+  padding-top: 2.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.vivo-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vivo-cabecera .t-eyebrow {
+  margin-bottom: 0;
+}
+
+.vivo-sello {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/* El punto que late. Es el único movimiento en bucle de la web y se lo puede
+   permitir porque significa algo: hay una lectura viva detrás. Con movimiento
+   reducido se queda encendido y fijo, que dice lo mismo sin parpadear. */
+.vivo-pulso {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.625rem;
+  border-radius: 999px;
+  background: var(--accent-dark);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vivo-pulso {
+    animation: vivo-latido 2.4s var(--ease) infinite;
+  }
+
+  @keyframes vivo-latido {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.45);
+    }
+
+    70% {
+      opacity: 0.75;
+      box-shadow: 0 0 0 7px rgba(45, 212, 191, 0);
+    }
+  }
+}
+
+.vivo-titular {
+  max-width: 46ch;
+  margin-top: 1.75rem;
+  font-size: 1.375rem;
+  line-height: 1.4;
+  color: var(--ink-dark-muted);
+}
+
+@media (min-width: 640px) {
+  .vivo-titular {
+    font-size: 1.75rem;
+  }
+}
+
+.vivo-titular strong {
+  font-weight: 600;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.vivo-texto {
+  max-width: 52ch;
+  margin-top: 3rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-dark-muted);
+}
+
+.vivo-texto a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(45, 212, 191, 0.4);
+}
+
+.vivo-texto a:hover {
+  text-decoration-color: var(--accent-dark);
+}
+
+/* ── La escala de temperatura ────────────────────────────────
+   La rampa es la de Snowy: azul, cian, esmeralda, ámbar y rojo con los cortes
+   en 0, 10, 20 y 30. Las paradas del degradado son esos mismos grados llevados
+   al rango que dibuja la barra, de -5 a 45, para que la posición de un marcador
+   signifique una temperatura y no un porcentaje cualquiera.
+
+   Encima de la barra, el reparto: una columna por grado con las estaciones que
+   caen en él. Es lo que convierte el bloque en un gráfico —se ve dónde está hoy
+   el país— en vez de en dos cifras sueltas. */
+.escala {
+  --rampa: linear-gradient(
+    90deg,
+    #3b82f6 0%,
+    #06b6d4 10%,
+    #10b981 30%,
+    #f59e0b 50%,
+    #ef4444 70%,
+    #b91c1c 100%
+  );
+  position: relative;
+  margin-top: 3rem;
+  padding-top: 4.5rem;
+}
+
+.escala-reparto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.5rem;
+}
+
+.escala-columna {
+  position: absolute;
+  bottom: 0;
+  min-height: 2px;
+  border-radius: 2px 2px 0 0;
+  background-image: var(--rampa);
+  background-size: 5000% 100%;
+  background-position-x: var(--tramo);
+}
+
+.escala-barra {
+  position: relative;
+  height: 18px;
+  border-radius: 999px;
+  background-image: var(--rampa);
+}
+
+.escala-guia {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.escala-punto {
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  border-radius: 999px;
+  border: 4px solid var(--ink-dark);
+  background: #ffffff;
+}
+
+.escala-eje {
+  position: relative;
+  height: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.escala-ref {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* En pantalla estrecha los dos rótulos van en dos columnas debajo de la barra:
+   colgando de su punto se pisaban en cuanto los extremos se acercaban. */
+.escala-leyenda {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.escala-etiqueta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.escala-valor {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1.875rem;
+  line-height: 1;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.escala-lugar {
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--ink-dark-muted);
+}
+
+.escala-zona {
+  display: block;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* Con sitio, cada rótulo sube a colgar de su punto. El de la mínima crece hacia
+   la derecha y el de la máxima hacia la izquierda, así que aunque los extremos
+   se junten los textos se alejan y no se solapan. */
+/* El corte no es 800 sino 1000: a 800 los dos rotulos ya caben en absoluto pero
+   se tocan, porque cada uno puede medir hasta 17rem y la barra ahi mide 736. */
+@media (min-width: 1000px) {
+  .escala {
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+  }
+
+  .escala-reparto {
+    top: 4.5rem;
+  }
+
+  .escala-leyenda {
+    display: block;
+    margin-top: 0;
+  }
+
+  .escala-marca {
+    position: absolute;
+    top: 0;
+    left: var(--x);
+    width: max-content;
+    max-width: 17rem;
+  }
+
+  .escala-marca.is-max {
+    transform: translateX(-100%);
+    text-align: right;
+  }
+
+  .escala-valor {
+    margin-top: 0.75rem;
+    font-size: 2.5rem;
+  }
+
+  .escala-lugar {
+    position: absolute;
+    top: 12.75rem;
+    width: max-content;
+    max-width: 17rem;
+  }
+
+  .escala-marca.is-max .escala-lugar {
+    right: 0;
+  }
 }
 
 /* ── Escala de titulares ─────────────────────────────────────

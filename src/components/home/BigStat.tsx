@@ -1,4 +1,5 @@
 import { CountUp, Container, Reveal } from "@/components/ui";
+import { DatoEnVivo } from "./DatoEnVivo";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -39,6 +40,12 @@ export function BigStat({ locale }: { locale: Locale }) {
               </div>
             ))}
           </dl>
+        </Reveal>
+
+        {/* Arriba, noventa dias de historico. Aqui debajo, lo que la API acaba
+            de devolver: el mismo sistema, en directo. */}
+        <Reveal delay={200}>
+          <DatoEnVivo locale={locale} />
         </Reveal>
       </Container>
     </section>

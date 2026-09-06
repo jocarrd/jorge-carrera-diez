@@ -1225,6 +1225,16 @@ export const en: Copy = {
       { value: "1,400+", label: "registered users" },
     ],
   },
+  enVivo: {
+    eyebrow: "Right now",
+    reportando: "stations reporting right now, across",
+    redesLabel: "different networks",
+    minimaLabel: "lowest",
+    maximaLabel: "highest",
+    leidoLabel: "read at",
+    texto: "These numbers are not written into the page: the Snowy API just served them, the same one explained below.",
+    enlace: "Open the map",
+  },
   caseCta: {
     title: "Does any of this fit what you need?",
     text: "I work remotely, on European hours. If you have something in mind, tell me and I will say honestly whether I am the right person.",

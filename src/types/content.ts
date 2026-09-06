@@ -380,6 +380,16 @@ export type Copy = {
     label: string;
     support: Metric[];
   };
+  enVivo: {
+    eyebrow: string;
+    reportando: string;
+    redesLabel: string;
+    minimaLabel: string;
+    maximaLabel: string;
+    leidoLabel: string;
+    texto: string;
+    enlace: string;
+  };
   caseCta: {
     title: string;
     text: string;

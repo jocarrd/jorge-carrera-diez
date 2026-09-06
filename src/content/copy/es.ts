@@ -1249,6 +1249,16 @@ export const es: Copy = {
       { value: "1.400+", label: "usuarios registrados" },
     ],
   },
+  enVivo: {
+    eyebrow: "Ahora mismo",
+    reportando: "estaciones reportando ahora mismo, repartidas en",
+    redesLabel: "redes distintas",
+    minimaLabel: "mínima",
+    maximaLabel: "máxima",
+    leidoLabel: "leído",
+    texto: "Estos números no están escritos en la página: los acaba de servir la API de Snowy, la misma que se explica más abajo.",
+    enlace: "Abrir el mapa",
+  },
   caseCta: {
     title: "¿Te encaja algo de esto?",
     text: "Trabajo en remoto y horario europeo. Si tienes algo entre manos, cuéntamelo y te digo con franqueza si soy la persona.",
