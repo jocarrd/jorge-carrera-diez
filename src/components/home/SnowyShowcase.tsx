@@ -89,16 +89,12 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             </a>
           </p>
 
-          <ul className="mt-7 flex flex-wrap justify-center gap-2">
-            {(snowy.stack ?? []).map((item) => (
-              <li
-                key={item}
-                className="rounded-full border border-white/[0.14] px-4 py-1.5 text-sm text-[var(--ink-dark-muted)]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          {/* Igual que en la portada de proyectos: en texto separado por puntos.
+              Diez contornos seguidos pesaban más que el titular que llevan
+              debajo, y la pila es un pie de página, no una llamada. */}
+          <p className="mx-auto mt-8 max-w-2xl text-center font-mono text-[12px] leading-[1.7] text-[var(--ink-dark-muted)]">
+            {(snowy.stack ?? []).join(" · ")}
+          </p>
         </Container>
       ) : null}
     </section>

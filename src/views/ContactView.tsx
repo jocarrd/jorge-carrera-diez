@@ -41,16 +41,23 @@ export function ContactView({ locale }: { locale: Locale }) {
               {copy.detail}
             </p>
 
-            <div className="mt-8 rounded-2xl lvl-1 border p-5 sm:p-6">
+            {/* Era una caja con contorno colgando del texto, y competía con la
+                tarjeta de al lado sin ser tan importante. Un filete separa
+                igual y no pesa. */}
+            <div className="mt-10 border-t border-[var(--line)] pt-6">
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
                 {copy.availabilityLabel}
               </p>
-              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{copy.availabilityText}</p>
+              <p className="mt-3 max-w-md text-base leading-7 text-[var(--muted)]">
+                {copy.availabilityText}
+              </p>
             </div>
           </div>
 
-          {/* El destino de la página pesaba lo mismo que la tarjeta de al lado. */}
-          <div className="rounded-2xl border border-[var(--line-strong)] bg-[var(--accent)]/[0.04] p-6 shadow-[0_0_60px_-22px_rgba(103,232,249,0.5)] sm:p-8">
+          {/* El destino de la página pesaba lo mismo que la tarjeta de al lado.
+              El peso lo da la superficie, no el halo de neón que llevaba: ese
+              resplandor no salía en ninguna otra parte de la web. */}
+          <div className="rounded-[28px] bg-[var(--panel)] p-7 sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
               {copy.emailLabel}
             </p>
@@ -60,7 +67,7 @@ export function ContactView({ locale }: { locale: Locale }) {
             >
               {site.email}
             </a>
-            <p className="mt-5 text-sm leading-6 text-[var(--muted)]">{copy.emailHint}</p>
+            <p className="mt-5 max-w-md text-base leading-7 text-[var(--muted)]">{copy.emailHint}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={`mailto:${site.email}`}>{copy.ctaPrimary}</ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
@@ -73,7 +80,7 @@ export function ContactView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader title={copy.servicesTitle} text={copy.servicesText} />
-        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
+        <div className="mt-10 grid gap-x-12 gap-y-10 sm:mt-14 sm:grid-cols-3">
           {copy.services.map((service) => (
             <div key={service.title} className="area">
               <h3 className="area-title">{service.title}</h3>
@@ -85,7 +92,7 @@ export function ContactView({ locale }: { locale: Locale }) {
 
       <Section className="border-t border-[var(--line)]">
         <SectionHeader title={copy.clientsTitle} text={copy.clientsText} />
-        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
+        <div className="mt-10 grid gap-x-12 gap-y-10 sm:mt-14 sm:grid-cols-2">
           {copy.clients.map((client) => (
             <div key={client.title} className="area">
               <h3 className="area-title">{client.title}</h3>
@@ -96,31 +103,31 @@ export function ContactView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <div className="rounded-2xl lvl-2 border p-6 sm:p-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-                {copy.linksTitle}
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--muted)]">{copy.linksText}</p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {copy.links.map((link) => {
-                const href = hrefFor(link.key);
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+              {copy.linksTitle}
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">{copy.linksText}</p>
+          </div>
+          {/* Cinco contornos en la esquina de una caja pesaban más que el
+              titular. Enlaces subrayados, que es lo que son. */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {copy.links.map((link) => {
+              const href = hrefFor(link.key);
 
-                return (
-                  <Link
-                    key={link.key}
-                    href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel={href.startsWith("http") ? "noreferrer" : undefined}
-                    className="inline-flex min-h-11 items-center rounded-full border border-[var(--line)] px-4 text-sm text-[var(--muted)] transition hover:border-[var(--line-strong)] hover:text-[var(--foreground)]"
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
+              return (
+                <Link
+                  key={link.key}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="inline-flex min-h-11 items-center text-base text-[var(--foreground)] underline decoration-[var(--line-strong)] underline-offset-[6px] transition-colors hover:text-[var(--accent-text)] hover:decoration-[var(--accent)]"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </Section>

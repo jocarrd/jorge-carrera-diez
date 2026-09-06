@@ -22,11 +22,11 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
         {copy.experience.map((role, index) => (
           <li
             key={`${role.company}-${role.period}`}
-            className={`tl-entry grid items-baseline gap-3 p-7 sm:gap-7 sm:p-8 lg:grid-cols-[180px_1fr_190px] ${
+            className={`tl-entry grid items-baseline gap-3 p-7 sm:gap-8 sm:p-9 lg:grid-cols-[14.5rem_1fr_13.5rem] ${
               index === copy.experience.length - 1 ? "" : "border-b border-[var(--line)]"
             }`}
           >
-            <p className="text-[15px] text-[var(--muted)]">{role.period}</p>
+            <p className="font-mono text-[13px] leading-[1.5] text-[var(--muted)]">{role.period}</p>
             <div>
               <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.015em]">
                 {role.role}
@@ -37,7 +37,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
                   <span className="text-[var(--muted)]"> · {role.company}</span>
                 ) : null}
               </p>
-              <p className="mt-1.5 text-base leading-[1.5] text-[var(--muted)]">{role.summary}</p>
+              <p className="mt-2 text-base leading-[1.6] text-[var(--muted)]">{role.summary}</p>
             </div>
             <p className="hidden text-base font-medium lg:block lg:text-right">
               {role.client ?? role.company}
@@ -61,7 +61,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
               <p className="font-mono text-xs tabular-nums text-[var(--muted)]">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <p className="mt-4 text-[15px] text-[var(--muted)]">{role.period}</p>
+              <p className="mt-4 font-mono text-[13px] text-[var(--muted)]">{role.period}</p>
               <h3 className="mt-1.5 text-xl font-semibold leading-[1.25] tracking-[-0.015em]">
                 {role.role}
               </h3>

@@ -783,7 +783,7 @@ a {
    alinea sola y sobra o falta contenido sin que se note. */
 .area {
   border-top: 1px solid var(--line-strong);
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
 .area-title {
@@ -794,9 +794,9 @@ a {
 }
 
 .area-text {
-  margin-top: 0.5rem;
-  font-size: 15px;
-  line-height: 1.5;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--muted);
 }
 
@@ -2219,6 +2219,84 @@ a {
   margin: 13mm 12mm 14mm;
 }
 
+/* La página del CV en pantalla: fuera las cajas. Eran seis contornos
+   redondeados uno encima de otro, pegados, con las líneas llegando a los 120
+   caracteres. La forma buena es la de una ficha: la fecha en una columna
+   estrecha a la izquierda, el contenido en otra que no pasa de 62 caracteres, y
+   un filete separando cada puesto en vez de un contorno cerrado.
+
+   Todo va bajo @media screen porque el papel ya estaba resuelto: el bloque de
+   impresión quita bordes y rellenos de todo lo que empieza por cv-, y el PDF no
+   se puede tocar. */
+@media screen {
+  .cv-entry {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+
+  .cv-entries > .cv-entry:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .cv-timeline .cv-entry {
+    padding-top: 2.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* La fecha es un dato, no prosa: va en la mono, que es donde vive todo lo
+     que es metadato en esta web. */
+  .cv-timeline .cv-period {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+  }
+
+  .cv-skill {
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .cv-timeline .cv-entry {
+    display: grid;
+    grid-template-columns: 13.5rem minmax(0, 62ch);
+    column-gap: 4rem;
+    grid-template-areas:
+      "periodo titulo"
+      "meta resumen"
+      "meta puntos";
+  }
+
+  .cv-timeline .cv-period {
+    grid-area: periodo;
+    align-self: start;
+    margin-top: 0.55rem;
+  }
+
+  .cv-timeline .cv-entry-title {
+    grid-area: titulo;
+    margin-top: 0;
+  }
+
+  .cv-timeline .cv-entry-meta {
+    grid-area: meta;
+    align-self: start;
+    margin-top: 0.6rem;
+  }
+
+  .cv-timeline .cv-entry-summary {
+    grid-area: resumen;
+    margin-top: 1rem;
+  }
+
+  .cv-timeline .cv-bullets {
+    grid-area: puntos;
+    margin-top: 1.25rem;
+  }
+}
+
 @media print {
   html,
   body {
@@ -2308,6 +2386,7 @@ a {
     border: 0 !important;
     border-radius: 0 !important;
     background: transparent !important;
+    text-decoration: none !important;
   }
 
   .cv-chip:not(:last-child)::after {
