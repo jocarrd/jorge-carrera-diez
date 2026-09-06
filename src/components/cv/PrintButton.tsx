@@ -10,7 +10,7 @@ export function PrintButton({ label, hint }: { label: string; hint: string }) {
       >
         {label}
       </button>
-      <p className="mt-2 text-xs text-[var(--muted)]">{hint}</p>
+      <p className="mt-3 text-[14px] leading-[1.5] text-[var(--muted)]">{hint}</p>
     </div>
   );
 }

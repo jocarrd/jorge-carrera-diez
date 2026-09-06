@@ -26,11 +26,11 @@ export function SectionHeader({
   return (
     <div className={`max-w-[46rem] ${alignClassName}`}>
       {eyebrow ? (
-        <p className="mb-3 text-lg font-semibold text-[var(--muted)] sm:text-xl">
+        <p className="t-eyebrow">
           {eyebrow}
         </p>
       ) : null}
-      <Heading className="text-[2rem] font-bold leading-[1.07] tracking-[-0.035em] text-[var(--foreground)] sm:text-[3.25rem]">
+      <Heading className="t-section">
         {title}
       </Heading>
       {text ? (

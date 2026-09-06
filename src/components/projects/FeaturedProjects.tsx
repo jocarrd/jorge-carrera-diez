@@ -76,7 +76,7 @@ function FeatureCard({
       >
         <div className="proj-feature-body">
           <p className="proj-card-kicker">{project.label}</p>
-          <Heading className="mt-3 text-[2rem] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[2.5rem]">
+          <Heading className="t-block mt-3">
             {project.name}
           </Heading>
           <p className="proj-feature-text mt-4 max-w-[46ch] text-[17px] leading-[1.5]">
@@ -92,7 +92,7 @@ function FeatureCard({
                     <span className="block text-[1.5rem] font-semibold leading-none tracking-[-0.03em]">
                       {metric.value}
                     </span>
-                    <span className="proj-feature-text mt-1.5 block text-[13px] leading-[1.35]">
+                    <span className="proj-feature-text mt-1.5 block text-[14px] leading-[1.45]">
                       {metric.label}
                     </span>
                   </dd>

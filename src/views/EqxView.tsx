@@ -94,7 +94,7 @@ export function EqxView({ locale }: { locale: Locale }) {
           <div className="ladder-stage">
             <ScaleLadder rungs={copy.scale.rungs} />
           </div>
-          <p className="mt-6 text-[13px] text-[var(--muted)]">{copy.scale.note}</p>
+          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">{copy.scale.note}</p>
         </div>
       </Section>
 
@@ -145,7 +145,7 @@ export function EqxView({ locale }: { locale: Locale }) {
               <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
                 {group.label}
               </p>
-              <p className="mt-2 text-[15px] leading-[1.5] text-[var(--foreground)]">
+              <p className="mt-2 text-base leading-[1.6] text-[var(--foreground)]">
                 {group.items.join(" · ")}
               </p>
             </div>

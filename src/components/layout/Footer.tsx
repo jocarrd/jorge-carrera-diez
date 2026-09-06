@@ -15,10 +15,10 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="section-band border-t border-[var(--line)]">
       <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-5 px-6 py-9 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-[13px] font-medium text-[var(--foreground)]">
+          <p className="text-[14px] font-medium text-[var(--foreground)]">
             {site.domain}
           </p>
-          <p className="mt-1.5 text-[13px] leading-[1.6] text-[var(--muted)]">
+          <p className="mt-1.5 text-[14px] leading-[1.6] text-[var(--muted)]">
             {site.name} - {copy.footer.tagline}
           </p>
         </div>
@@ -26,7 +26,7 @@ export function Footer({ locale }: { locale: Locale }) {
           {links.map((link) => (
             <a
               key={link.href}
-              className="inline-flex min-h-11 items-center rounded-full px-3 text-[13px] text-[var(--muted)] transition-colors hover:text-[var(--accent-text)]"
+              className="inline-flex min-h-11 items-center rounded-full px-3 text-[14px] text-[var(--muted)] transition-colors hover:text-[var(--accent-text)]"
               href={link.href}
               rel={link.external ? "noreferrer" : undefined}
               target={link.external ? "_blank" : undefined}

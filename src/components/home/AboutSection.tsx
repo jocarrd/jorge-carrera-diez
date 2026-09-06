@@ -35,7 +35,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
         </div>
         <div>
           <p className="text-lg font-semibold text-[var(--muted)] sm:text-xl">{site.name}</p>
-          <h2 className="mt-3 text-[1.875rem] font-bold leading-[1.15] tracking-[-0.035em] sm:text-[3rem]">
+          <h2 className="t-section mt-3">
             {copy.profile.positioningLong}
           </h2>
           <ProfileSummary
@@ -52,7 +52,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
                 <dt className="text-[13px] font-medium uppercase tracking-[0.02em] text-[var(--muted)]">
                   {fact.label}
                 </dt>
-                <dd className="mt-1.5 text-[15px] leading-[1.45] text-[var(--foreground)]">
+                <dd className="mt-1.5 text-base leading-[1.6] text-[var(--foreground)]">
                   {fact.value}
                 </dd>
               </div>

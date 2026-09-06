@@ -19,7 +19,7 @@ type CaseHeroProps = {
 export function CaseHero({ eyebrow, heading, lead, detail, facts, actions }: CaseHeroProps) {
   return (
     <Section className="pb-8 sm:pb-12 lg:pb-14">
-      <p className="text-sm font-medium uppercase tracking-[0.14em] text-[var(--accent-text)]">
+      <p className="t-eyebrow">
         {eyebrow}
       </p>
       <h1 className="mt-4 max-w-4xl text-[2rem] font-bold leading-[1.08] tracking-[-0.035em] text-[var(--foreground)] sm:text-[3.5rem]">
@@ -43,7 +43,7 @@ export function CaseHero({ eyebrow, heading, lead, detail, facts, actions }: Cas
               <dt className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
                 {fact.label}
               </dt>
-              <dd className="mt-2 text-[15px] font-medium leading-6 text-[var(--foreground)]">
+              <dd className="mt-2 text-base font-medium leading-[1.6] text-[var(--foreground)]">
                 {fact.value}
               </dd>
             </div>

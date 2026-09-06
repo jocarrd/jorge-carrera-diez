@@ -52,7 +52,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                         {item.headline ?? `${item.role} - ${item.company}`}
                       </h2>
                       {item.client ? (
-                        <p className="mt-2 text-sm font-medium text-[var(--muted)]">
+                        <p className="mt-2 text-[15px] font-medium text-[var(--muted)]">
                           {item.client} · {item.company}
                         </p>
                       ) : null}
@@ -71,7 +71,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                         </BrowserFrame>
                         </div>
                       ) : null}
-                      <ul className="mt-5 grid gap-2 text-sm leading-6 text-[var(--muted)]">
+                      <ul className="mt-5 grid gap-2.5 text-base leading-[1.6] text-[var(--muted)]">
                         {item.highlights.map((highlight) => (
                           <li key={highlight} className="flex gap-2">
                             <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />

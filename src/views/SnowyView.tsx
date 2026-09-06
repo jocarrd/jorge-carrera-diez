@@ -68,7 +68,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             spreadLabel={copy.convergence.spreadLabel}
             answerLabel={copy.convergence.answerLabel}
           />
-          <p className="mt-6 text-[13px] text-[var(--muted)]">{copy.convergence.note}</p>
+          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">{copy.convergence.note}</p>
         </div>
       </Section>
 
@@ -147,7 +147,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
               <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
                 {group.label}
               </p>
-              <p className="mt-2 text-[15px] leading-[1.5] text-[var(--foreground)]">
+              <p className="mt-2 text-base leading-[1.6] text-[var(--foreground)]">
                 {group.items.join(" · ")}
               </p>
             </div>
@@ -178,7 +178,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
           <div>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">{copy.seo.sourcesTitle}</h2>
             <SourceGrid sources={copy.seo.sources} className="mt-6" />
-            <p className="mt-6 text-[15px] leading-6 text-[var(--muted)]">{copy.seo.sourcesText}</p>
+            <p className="mt-6 text-base leading-[1.6] text-[var(--muted)]">{copy.seo.sourcesText}</p>
           </div>
         </div>
       </Section>

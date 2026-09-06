@@ -13,7 +13,7 @@ export function CaseStack({ title, text, groups }: CaseStackProps) {
     <Section className="border-t border-[var(--line)]">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <h2 className="text-[1.75rem] font-bold leading-[1.12] tracking-[-0.03em] text-[var(--foreground)] sm:text-[2.5rem]">
+          <h2 className="t-section">
             {title}
           </h2>
           {text ? (

@@ -39,7 +39,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
             <p className="text-[1.75rem] font-semibold tracking-[-0.025em] text-white sm:text-[2.25rem]">
               {focal.title}
             </p>
-            <p className="mt-2 text-[15px] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[17px]">
+            <p className="mt-2 text-base leading-[1.6] text-[var(--ink-dark-muted)] sm:text-[17px]">
               {focal.caption}
             </p>
           </div>
@@ -60,7 +60,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </div>
             <div className="mt-6 sm:mt-10">
               <p className="text-[1.1875rem] font-semibold tracking-[-0.015em]">{step.title}</p>
-              <p className="mt-1.5 text-[15px] leading-[1.45] text-[var(--muted)]">{step.caption}</p>
+              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">{step.caption}</p>
             </div>
           </article>
         ))}

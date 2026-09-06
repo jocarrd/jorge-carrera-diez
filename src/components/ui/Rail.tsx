@@ -100,12 +100,19 @@ export function Rail({ children, label, className = "" }: RailProps) {
       ) : null}
 
       {/* tabIndex hace el carril enfocable: sin él, quien navega con teclado no
-          puede desplazarlo con las flechas porque no hay nada que reciba foco. */}
+          puede desplazarlo con las flechas porque no hay nada que reciba foco.
+
+          El desvanecido de los bordes es lo que separa "asoma la siguiente" de
+          "esto está mal maquetado": sin él, el pie de la tarjeta que asoma se
+          cortaba a mitad de palabra contra el borde de la ventana. Se apaga en
+          los extremos para no ensuciar la primera ni la última. */}
       <div
         ref={trackRef}
         role="group"
         aria-label={label}
         tabIndex={0}
+        data-inicio={atStart ? "" : undefined}
+        data-final={atEnd ? "" : undefined}
         className="rail-track -mx-[22px] flex snap-x snap-mandatory gap-5 overflow-x-auto px-[22px] pb-2 sm:-mx-8 sm:px-8"
       >
         {children}

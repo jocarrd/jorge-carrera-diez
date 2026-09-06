@@ -637,9 +637,9 @@ a {
 }
 
 .press-text {
-  margin-top: 0.625rem;
-  font-size: 15px;
-  line-height: 1.45;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.55;
   color: #d8d8dc;
 }
 
@@ -805,7 +805,7 @@ a {
   align-items: center;
   min-height: 2.75rem;
   margin-top: 0.25rem;
-  font-size: 15px;
+  font-size: 1rem;
   color: var(--accent-text);
 }
 
@@ -863,8 +863,8 @@ a {
 }
 
 .arch-role {
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -931,8 +931,8 @@ a {
 .arch-note {
   margin-top: 0.875rem;
   max-width: 52ch;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--muted);
 }
 
@@ -1825,6 +1825,39 @@ a {
   scrollbar-width: none;
   scroll-padding-left: 22px;
   overscroll-behavior-x: contain;
+  /* La máscara recorta el carril, no la ventana: lo que asoma se apaga en vez
+     de cortarse en seco a media palabra. Los dos extremos se abren cuando ya no
+     queda nada por ese lado, para que la primera y la última no salgan
+     desvaídas. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-fade-ini, 44px),
+    #000 calc(100% - var(--rail-fade-fin, 44px)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--rail-fade-ini, 44px),
+    #000 calc(100% - var(--rail-fade-fin, 44px)),
+    transparent 100%
+  );
+}
+
+.rail-track[data-inicio] {
+  --rail-fade-ini: 0px;
+}
+
+.rail-track[data-final] {
+  --rail-fade-fin: 0px;
+}
+
+/* Con el carril enfocado la máscara se quita: recorta lo que pinta el propio
+   elemento, y el aro de foco es lo primero que se comía por los bordes. */
+.rail-track:focus-visible {
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .rail-track::-webkit-scrollbar {
@@ -2217,6 +2250,72 @@ a {
 @page {
   size: A4;
   margin: 13mm 12mm 14mm;
+}
+
+/* ── Escala de titulares ─────────────────────────────────────
+   Cada componente traía su propio tamaño y sólo en la portada había cuatro
+   medidas distintas de h2 —58, 52, 48 y 44 px— y ocho en la página de Snowy.
+   Un titular de sección tiene que medir siempre lo mismo: es lo que hace que
+   dos secciones seguidas se lean como parte de la misma página y no como dos
+   plantillas pegadas.
+
+   Tres escalones y ya: el de sección, el de bloque dentro de una sección y el
+   de ficha. El titular del hero no entra aquí, es único por página. */
+/* Sin color: estas clases son tamaño, peso y tracking. El color lo pone el
+   contexto —hay secciones oscuras— y además estas reglas van sin capa, así que
+   un `text-white` de utilidad perdería contra ellas y el titular saldría negro
+   sobre negro. */
+.t-section {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.035em;
+}
+
+.t-block {
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.t-card {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* El renglón que va encima del titular. Había tres versiones: esta, unas
+   versalitas en el color de marca y otras en la mono. Las versalitas se quedan
+   sólo para las etiquetas de campo dentro de una ficha —ahí sí son un dato—;
+   encima de un titular de sección van así, que es como se anuncia una sección
+   sin competir con ella. */
+.t-eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.section-dark .t-eyebrow {
+  color: var(--ink-dark-muted);
+}
+
+@media (min-width: 640px) {
+  .t-eyebrow {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .t-section {
+    font-size: 3.25rem;
+  }
+
+  .t-block {
+    font-size: 2rem;
+  }
 }
 
 /* La página del CV en pantalla: fuera las cajas. Eran seis contornos

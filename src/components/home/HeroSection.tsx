@@ -42,7 +42,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
           {copy.profile.capabilities.map((item) => (
             <li key={item.title}>
               <h2 className="text-[17px] font-semibold tracking-[-0.01em]">{item.title}</h2>
-              <p className="mt-1.5 text-[15px] leading-[1.5] text-[var(--muted)]">{item.text}</p>
+              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">{item.text}</p>
             </li>
           ))}
         </ul>

@@ -22,7 +22,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         <p className="text-xl font-semibold text-[var(--ink-dark-muted)] sm:text-[1.3125rem]">
           Snowy
         </p>
-        <h2 className="mx-auto mt-4 max-w-[20ch] text-[2.125rem] font-bold leading-[1.1] tracking-[-0.035em] text-white sm:text-[3.625rem]">
+        <h2 className="t-section mx-auto mt-4 max-w-[20ch] text-white">
           {showcase.title}
         </h2>
         <p className="mx-auto mt-5 max-w-[60ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[1.3125rem]">
@@ -67,7 +67,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
                 </div>
                 <figcaption className="mt-5">
                   <p className="text-[17px] font-semibold text-white">{shot.title}</p>
-                  <p className="mt-1 text-[15px] leading-[1.5] text-[var(--ink-dark-muted)]">
+                  <p className="mt-1 text-base leading-[1.6] text-[var(--ink-dark-muted)]">
                     {shot.caption}
                   </p>
                 </figcaption>

@@ -49,10 +49,10 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
     <section className="section-band border-y border-[var(--line)] py-16 sm:py-24">
       <Container>
         <div className="max-w-[46rem]">
-          <p className="text-[15px] font-semibold uppercase tracking-[0.14em] text-[var(--accent-text)]">
+          <p className="t-eyebrow">
             {copy.eyebrow}
           </p>
-          <h2 className="mt-4 text-[2rem] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[3.25rem]">
+          <h2 className="t-section mt-4">
             {copy.title}
           </h2>
         </div>

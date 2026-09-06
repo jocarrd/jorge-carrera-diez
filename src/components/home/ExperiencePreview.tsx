@@ -26,7 +26,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
               index === copy.experience.length - 1 ? "" : "border-b border-[var(--line)]"
             }`}
           >
-            <p className="font-mono text-[13px] leading-[1.5] text-[var(--muted)]">{role.period}</p>
+            <p className="font-mono text-[14px] leading-[1.5] text-[var(--muted)]">{role.period}</p>
             <div>
               <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.015em]">
                 {role.role}

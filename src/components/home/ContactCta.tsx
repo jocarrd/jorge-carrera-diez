@@ -11,7 +11,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
     <section id="contacto" className="py-24 sm:py-28 lg:py-32">
       <Container className="text-center">
         <Reveal>
-        <h2 className="mx-auto max-w-[18ch] text-[2.125rem] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[3.625rem]">
+        <h2 className="t-section mx-auto max-w-[18ch]">
           {cta.title}
         </h2>
         <p className="mx-auto mt-5 max-w-[56ch] text-[1.0625rem] leading-[1.5] text-[var(--muted)] sm:text-[1.3125rem]">
@@ -25,7 +25,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
         </div>
         <div className="mt-7 flex flex-col items-center gap-3.5">
           <CopyEmail email={site.email} label={copy.footer.contact} />
-          <p className="max-w-[52ch] text-[15px] leading-[1.5] text-[var(--muted)]">
+          <p className="max-w-[52ch] text-base leading-[1.6] text-[var(--muted)]">
             {copy.profile.availabilityNote}
           </p>
         </div>

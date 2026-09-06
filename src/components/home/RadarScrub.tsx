@@ -107,10 +107,10 @@ export function RadarScrub({ locale }: { locale: Locale }) {
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
         <Container>
           <div className="mx-auto max-w-[46rem] text-center">
-            <p className="text-[15px] font-semibold uppercase tracking-[0.14em] text-[var(--accent-text)]">
+            <p className="t-eyebrow">
               {copy.eyebrow}
             </p>
-            <h2 className="mt-3 text-[1.75rem] font-bold leading-[1.1] tracking-[-0.035em] sm:text-[2.75rem]">
+            <h2 className="t-section mt-3">
               {copy.title}
             </h2>
           </div>

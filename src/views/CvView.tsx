@@ -49,7 +49,7 @@ export function CvView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="cv-section section-band">
-        <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+        <h2 className="cv-section-title t-block">
           {copy.experienceTitle}
         </h2>
 
@@ -71,7 +71,7 @@ export function CvView({ locale }: { locale: Locale }) {
           {content.experience.map((item) => (
             <article key={`${item.company}-${item.period}`} className="cv-entry">
               <p className="cv-period text-sm text-[var(--muted)]">{item.period}</p>
-              <h3 className="cv-entry-title mt-2 text-[1.625rem] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--foreground)]">
+              <h3 className="cv-entry-title t-card mt-2">
                 {item.headline ?? `${item.role} - ${item.company}`}
               </h3>
               <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
@@ -80,7 +80,7 @@ export function CvView({ locale }: { locale: Locale }) {
               <p className="cv-entry-summary mt-5 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
                 {item.summary}
               </p>
-              <ul className="cv-bullets mt-5 grid gap-2.5 text-[15px] leading-[1.6] text-[var(--muted)]">
+              <ul className="cv-bullets mt-5 grid gap-2.5 text-base leading-[1.6] text-[var(--muted)]">
                 {item.highlights.map((highlight) => (
                   <li key={highlight} className="flex gap-2">
                     <span className="cv-bullet-dot mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
@@ -93,16 +93,16 @@ export function CvView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="cv-section">
+      <Section className="cv-section pb-0 sm:pb-0 lg:pb-0">
         <div className="grid gap-14 sm:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+            <h2 className="cv-section-title t-block">
               {copy.educationTitle}
             </h2>
             <div className="cv-entries mt-8">
               {content.education.map((item) => (
                 <div key={item.title} className="cv-entry">
-                  <h3 className="cv-entry-title text-xl font-semibold text-[var(--foreground)]">
+                  <h3 className="cv-entry-title t-card">
                     {item.title}
                   </h3>
                   <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
@@ -130,7 +130,7 @@ export function CvView({ locale }: { locale: Locale }) {
           </div>
 
           <div>
-            <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+            <h2 className="cv-section-title t-block">
               {copy.languagesTitle}
             </h2>
             <dl className="cv-langs mt-8 space-y-3">
@@ -149,7 +149,7 @@ export function CvView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="cv-section">
-        <h2 className="cv-section-title text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
+        <h2 className="cv-section-title t-block">
           {copy.stackTitle}
         </h2>
         <p className="cv-section-text mt-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:leading-7">
@@ -158,8 +158,8 @@ export function CvView({ locale }: { locale: Locale }) {
         <div className="cv-skills mt-12 grid gap-x-14 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {content.skills.map((group) => (
             <div key={group.title} className="cv-skill">
-              <h3 className="cv-skill-title text-xl font-semibold text-[var(--foreground)]">{group.title}</h3>
-              <p className="cv-skill-items mt-3 text-[15px] leading-[1.6] text-[var(--muted)]">
+              <h3 className="cv-skill-title t-card">{group.title}</h3>
+              <p className="cv-skill-items mt-3 text-base leading-[1.6] text-[var(--muted)]">
                 {group.items.join(", ")}
               </p>
             </div>

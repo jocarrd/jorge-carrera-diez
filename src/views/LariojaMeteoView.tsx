@@ -87,7 +87,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
             {copy.product.shots.map((shot) => (
               <figure key={shot.image} className="rail-item w-[62vw] max-w-[16rem]">
                 <DeviceFrame src={shot.image} alt={shot.alt} />
-                <figcaption className="mt-5 text-[15px] font-semibold leading-[1.35] text-[var(--muted)]">
+                <figcaption className="mt-5 text-base font-semibold leading-[1.4] text-[var(--muted)]">
                   {shot.title}
                 </figcaption>
               </figure>

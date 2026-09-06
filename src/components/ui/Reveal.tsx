@@ -29,12 +29,24 @@ export function Reveal({
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
+          // Con `isIntersecting` a secas, un scroll rápido deja bloques en
+          // blanco: si el elemento entra y sale entre dos fotogramas el
+          // observador nunca llega a verlo dentro, y como se desconecta al
+          // primer aviso, ya no vuelve. Medido bajando la portada de un tirón:
+          // nueve de catorce se quedaban invisibles.
+          //
+          // El borde inferior del elemento por encima del alto de la ventana
+          // significa que ya ha pasado de largo por arriba: revelar igual.
+          const yaPasado = entry.boundingClientRect.bottom < window.innerHeight;
+          if (!entry.isIntersecting && !yaPasado) continue;
           el.classList.add("reveal-in");
           io.disconnect();
         }
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.05 },
+      // Un umbral con área pedía que asomase un trozo del bloque, y los que
+      // miden más que la ventana no llegaban a cumplirlo nunca. Basta el primer
+      // píxel.
+      { rootMargin: "0px 0px -10% 0px", threshold: 0 },
     );
 
     io.observe(el);

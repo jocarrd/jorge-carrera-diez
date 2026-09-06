@@ -12,7 +12,7 @@ export function CaseCta({ locale }: { locale: Locale }) {
   return (
     <Section className="section-band border-t border-[var(--line)]">
       <div className="mx-auto max-w-[46rem] text-center">
-        <h2 className="text-[1.75rem] font-bold leading-[1.12] tracking-[-0.03em] text-[var(--foreground)] sm:text-[2.75rem]">
+        <h2 className="t-section">
           {copy.title}
         </h2>
         <p className="mt-4 text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:mt-5 sm:text-xl">
