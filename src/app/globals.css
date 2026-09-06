@@ -2027,7 +2027,13 @@ a {
 
 /* Arriba del todo no hay nada debajo, así que la barra puede ser translúcida.
    En cuanto empieza el scroll sí lo hay, y el desenfoque no siempre llega a
-   pintarse: ahí se vuelve opaca y aparece la línea. */
+   pintarse: ahí se vuelve opaca y aparece la línea.
+
+   Probado en translúcido al 72 % y al 86 %: cuando pasa por debajo una banda
+   oscura, el titular blanco de esa banda se lee ENCIMA de los enlaces del
+   menú. Con el desenfoque pintado no ocurre, pero el navegador puede declarar
+   que lo soporta y no pintarlo —sin GPU, en modo de ahorro—, y ahí el menú
+   queda ilegible. La barra tiene que ser legible antes que bonita. */
 .site-header[data-scrolled="true"] {
   background: #ffffff;
   border-bottom-color: var(--line);

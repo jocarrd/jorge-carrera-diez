@@ -8,7 +8,7 @@ export function ContactCta({ locale }: { locale: Locale }) {
   const cta = copy.contactCta;
 
   return (
-    <section id="contacto" className="py-24 sm:py-28 lg:py-32">
+    <section id="contacto" className="py-20 sm:py-28 lg:py-32">
       <Container className="text-center">
         <Reveal>
         <h2 className="t-section mx-auto max-w-[18ch]">

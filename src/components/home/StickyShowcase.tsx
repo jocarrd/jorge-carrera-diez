@@ -46,7 +46,7 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
   }, []);
 
   return (
-    <section className="section-band border-y border-[var(--line)] py-16 sm:py-24">
+    <section className="section-band border-y border-[var(--line)] py-16 sm:py-24 lg:py-28">
       <Container>
         <div className="max-w-[46rem]">
           <p className="t-eyebrow">

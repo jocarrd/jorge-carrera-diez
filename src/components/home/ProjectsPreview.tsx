@@ -29,7 +29,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
   if (projects.length === 0) return null;
 
   return (
-    <section id="proyectos" className="section-band py-16 sm:py-24">
+    <section id="proyectos" className="section-band py-16 sm:py-24 lg:py-28">
       <Container>
         <Reveal>
           <SectionHeader eyebrow={preview.eyebrow} title={preview.title} text={preview.text} />
