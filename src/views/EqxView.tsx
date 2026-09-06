@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CaseCta, CaseHero, CaseStack } from "@/components/case";
+import { CaseCta, CaseHero } from "@/components/case";
 import {
   BrowserFrame,
   ButtonLink,
@@ -7,7 +7,6 @@ import {
   Reveal,
   Section,
   SectionHeader,
-  Surface,
 } from "@/components/ui";
 import { ScaleLadder } from "@/components/visual/ScaleLadder";
 import { domainOf, getCopy, organizations, site } from "@/content";
@@ -69,13 +68,15 @@ export function EqxView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader eyebrow={copy.client.eyebrow} title={copy.client.title} text={copy.client.text} />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {/* Sin caja: era el unico caso que seguia con rejilla de contornos
+            mientras el resto de la web usa ficha con filete. */}
+        <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
           {copy.client.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
-              <Surface className="h-full">
-                <h3 className="text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-              </Surface>
+              <div className="area">
+                <h3 className="area-title">{item.title}</h3>
+                <p className="area-text">{item.text}</p>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -125,14 +126,29 @@ export function EqxView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader eyebrow={copy.work.eyebrow} title={copy.work.title} text={copy.work.text} />
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
           {copy.work.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
-              <Surface className="h-full">
-                <h3 className="text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.text}</p>
-              </Surface>
+              <div className="area">
+                <h3 className="area-title">{item.title}</h3>
+                <p className="area-text">{item.text}</p>
+              </div>
             </Reveal>
+          ))}
+        </div>
+
+        {/* Los grupos de tecnologia vivian en una seccion propia al final;
+            aqui van con el trabajo que describen. */}
+        <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+          {copy.stack.groups.map((group) => (
+            <div key={group.label}>
+              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
+                {group.label}
+              </p>
+              <p className="mt-2 text-[15px] leading-[1.5] text-[var(--foreground)]">
+                {group.items.join(" · ")}
+              </p>
+            </div>
           ))}
         </div>
       </Section>
@@ -158,7 +174,6 @@ export function EqxView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <CaseStack title={copy.stack.title} text={copy.stack.text} groups={copy.stack.groups} />
 
       <CaseCta locale={locale} />
     </main>

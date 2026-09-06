@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { ButtonLink, Section, SectionHeader, Surface } from "@/components/ui";
+import { ButtonLink, Section, SectionHeader } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -75,10 +75,10 @@ export function ContactView({ locale }: { locale: Locale }) {
         <SectionHeader title={copy.servicesTitle} text={copy.servicesText} />
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
           {copy.services.map((service) => (
-            <Surface key={service.title}>
-              <h3 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">{service.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{service.text}</p>
-            </Surface>
+            <div key={service.title} className="area">
+              <h3 className="area-title">{service.title}</h3>
+              <p className="area-text">{service.text}</p>
+            </div>
           ))}
         </div>
       </Section>
@@ -87,12 +87,10 @@ export function ContactView({ locale }: { locale: Locale }) {
         <SectionHeader title={copy.clientsTitle} text={copy.clientsText} />
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2">
           {copy.clients.map((client) => (
-            <Surface key={client.title}>
-              <h3 className="text-base font-semibold tracking-tight text-[var(--foreground)] sm:text-lg">
-                {client.title}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{client.text}</p>
-            </Surface>
+            <div key={client.title} className="area">
+              <h3 className="area-title">{client.title}</h3>
+              <p className="area-text">{client.text}</p>
+            </div>
           ))}
         </div>
       </Section>

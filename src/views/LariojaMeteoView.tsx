@@ -9,7 +9,6 @@ import {
   Reveal,
   Section,
   SectionHeader,
-  Surface,
 } from "@/components/ui";
 import { Timeline } from "@/components/visual/Timeline";
 import { domainOf, getCopy, site } from "@/content";
@@ -117,9 +116,9 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {copy.responsibility.items.map((item, index) => (
             <Reveal key={item} delay={index * 60}>
-              <Surface className="h-full">
-                <p className="text-base leading-relaxed text-[var(--muted)] sm:leading-7">{item}</p>
-              </Surface>
+              <div className="area h-full">
+                <p className="area-text mt-0">{item}</p>
+              </div>
             </Reveal>
           ))}
         </div>
