@@ -1,25 +1,26 @@
-import { IBM_Plex_Mono, Onest } from "next/font/google";
+import { DM_Mono, Instrument_Sans } from "next/font/google";
 
-// Onest es la cara de la casa y va primero en la pila, no de respaldo. Antes
-// mandaba `-apple-system`, así que en macOS e iOS la web se renderizaba con San
-// Francisco: la letra de Apple, que es el 70 % de la identidad de una página.
+// Instrument Sans es la cara de la casa y va primero en la pila, no de
+// respaldo. Con `-apple-system` delante, en macOS e iOS la web se renderizaba
+// con San Francisco: la letra de Apple, que es la mayor parte de la identidad
+// de una pagina.
 //
-// Y había un motivo práctico además del de marca: todo el ajuste fino —el
-// interlineado de los titulares, los altos de tarjeta, las dos páginas exactas
-// del PDF del CV— está medido sobre Onest. Con la pila anterior, quien entraba
-// desde un Mac veía una composición que nadie había verificado.
-export const sans = Onest({
+// La pareja es deliberada: una grotesca con caracter para la prosa y una
+// monoespaciada como voz secundaria para todo lo que es metadato —etiquetas,
+// fechas, unidades, dominios—. DM Mono llega hasta el peso 500, que es el
+// maximo que usa esta web en mono.
+export const sans = Instrument_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-sans-onest",
+  variable: "--font-sans-instrument",
 });
 
-export const mono = IBM_Plex_Mono({
+export const mono = DM_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
-  variable: "--font-mono-plex",
+  variable: "--font-mono-dm",
 });
 
 export const fontClass = `${sans.variable} ${mono.variable}`;

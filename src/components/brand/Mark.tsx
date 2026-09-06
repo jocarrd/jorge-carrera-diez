@@ -26,7 +26,7 @@ export function Mark({ className = "" }: { className?: string }) {
         fontSize="15"
         fontWeight="500"
         letterSpacing="0.5"
-        style={{ fontFamily: "var(--font-mono-plex), ui-monospace, monospace" }}
+        style={{ fontFamily: "var(--font-mono-dm), ui-monospace, monospace" }}
       >
         jc
       </text>

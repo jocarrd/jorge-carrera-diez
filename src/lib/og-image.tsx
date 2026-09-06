@@ -15,7 +15,7 @@ const raiz = (...partes: string[]) => join(process.cwd(), ...partes);
 
 /* La tarjeta social es lo primero que se ve del sitio, muchas veces lo unico,
    asi que se pinta con la misma paleta y la misma tipografia que la web: fondo
-   claro, acento teal y Onest. Antes heredaba el tema oscuro que ya no existe.
+   claro, acento teal e Instrument Sans. Antes heredaba el tema oscuro que ya no existe.
 
    Dos limites de satori que condicionan el codigo: no decodifica WebP —la foto
    iba en .webp y por eso salia un hueco vacio— y no lee las fuentes del sistema,
@@ -24,9 +24,9 @@ export async function renderOpenGraphImage(locale: Locale) {
   const copy = getCopy(locale).meta;
 
   const [regular, semibold, bold, retrato] = await Promise.all([
-    readFile(raiz("src/assets/fonts/Onest-Regular.ttf")),
-    readFile(raiz("src/assets/fonts/Onest-SemiBold.ttf")),
-    readFile(raiz("src/assets/fonts/Onest-Bold.ttf")),
+    readFile(raiz("src/assets/fonts/InstrumentSans-Regular.ttf")),
+    readFile(raiz("src/assets/fonts/InstrumentSans-SemiBold.ttf")),
+    readFile(raiz("src/assets/fonts/InstrumentSans-Bold.ttf")),
     readFile(raiz("src/assets/jorge-og.jpg")),
   ]);
   const foto = `data:image/jpeg;base64,${retrato.toString("base64")}`;
@@ -42,7 +42,7 @@ export async function renderOpenGraphImage(locale: Locale) {
           overflow: "hidden",
           background: "#ffffff",
           color: "#1d1d1f",
-          fontFamily: "Onest",
+          fontFamily: "Instrument Sans",
         }}
       >
         {/* La banda gris de la derecha repite la superficie de seccion del
@@ -169,9 +169,9 @@ export async function renderOpenGraphImage(locale: Locale) {
     {
       ...ogSize,
       fonts: [
-        { name: "Onest", data: regular, weight: 400, style: "normal" },
-        { name: "Onest", data: semibold, weight: 600, style: "normal" },
-        { name: "Onest", data: bold, weight: 700, style: "normal" },
+        { name: "Instrument Sans", data: regular, weight: 400, style: "normal" },
+        { name: "Instrument Sans", data: semibold, weight: 600, style: "normal" },
+        { name: "Instrument Sans", data: bold, weight: 700, style: "normal" },
       ],
     },
   );
