@@ -1,4 +1,4 @@
-import { PrintButton } from "@/components/cv/PrintButton";
+import { DownloadCvButton } from "@/components/cv/DownloadCvButton";
 import { ProfileSummary } from "@/components/ProfileSummary";
 import { CareerSpan } from "@/components/visual/CareerSpan";
 import { Section, SectionHeader } from "@/components/ui";
@@ -43,7 +43,7 @@ export function CvView({ locale }: { locale: Locale }) {
             ))}
           </div>
           <div className="mt-8">
-            <PrintButton label={copy.downloadCta} hint={copy.printHint} />
+            <DownloadCvButton locale={locale} label={copy.downloadCta} hint={copy.printHint} />
           </div>
         </div>
       </Section>
