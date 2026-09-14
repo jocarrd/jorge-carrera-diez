@@ -34,9 +34,9 @@ export const es: Copy = {
     localeLabel: "Idioma",
     items: [
       { key: "home", label: "Inicio" },
-      { key: "snowy", label: "Snowy" },
-      { key: "projects", label: "Proyectos" },
       { key: "experience", label: "Experiencia" },
+      { key: "projects", label: "Proyectos" },
+      { key: "snowy", label: "Snowy" },
       { key: "cv", label: "CV" },
       { key: "contact", label: "Contacto" },
     ],
@@ -61,7 +61,7 @@ export const es: Copy = {
       "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
-    availability: "Disponible para nuevos proyectos",
+    availability: "Abierto a nuevas oportunidades",
     availabilityNote:
       "En remoto y horario europeo, en español o en inglés.",
     capabilities: [
@@ -106,7 +106,7 @@ export const es: Copy = {
     ],
   },
   hero: {
-    ctaPrimary: "Ver Snowy",
+    ctaPrimary: "Ver experiencia",
     ctaSecondary: "CV",
     ctaContact: "Hablemos",
   },
@@ -560,7 +560,7 @@ export const es: Copy = {
       educationTitle: "Formación",
       languagesTitle: "Idiomas",
       downloadCta: "Descargar en PDF",
-      printHint: "Se abre el diálogo de impresión: elige «Guardar como PDF».",
+      printHint: "Dos páginas, actualizado a septiembre de 2026.",
     },
     contact: {
       title: "Trabajemos juntos",
@@ -617,7 +617,7 @@ export const es: Copy = {
       ctaSecondary: "Ver CV",
       linksTitle: "Antes de escribir",
       linksText:
-        "Si prefieres tener más contexto, aquí está lo relevante de mi perfil y el sitio donde se puede contratar mi trabajo.",
+        "Si prefieres tener más contexto, aquí está lo relevante de mi perfil y dónde ver mi trabajo.",
       links: [
         { key: "malt", label: "Malt" },
         { key: "linkedin", label: "LinkedIn" },

@@ -29,9 +29,9 @@ export function HeroSection({ locale }: { locale: Locale }) {
           {copy.profile.taglineSub}
         </p>
         {/* Dos enlaces de texto iguales no son una jerarquía: hay una acción
-            principal —ver el producto— y una secundaria. La píldora la marca. */}
+            principal —la trayectoria— y una secundaria. La píldora la marca. */}
         <div className="rise rise-4 mt-8 flex flex-col items-center gap-3 sm:mt-9 sm:flex-row sm:justify-center sm:gap-x-6">
-          <ButtonLink href={routePath(locale, "snowy")}>{copy.hero.ctaPrimary}</ButtonLink>
+          <ButtonLink href={routePath(locale, "experience")}>{copy.hero.ctaPrimary}</ButtonLink>
           <ButtonLink href={routePath(locale, "contact")} variant="quiet">
             {copy.hero.ctaContact}
           </ButtonLink>

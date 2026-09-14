@@ -34,9 +34,9 @@ export const en: Copy = {
     localeLabel: "Language",
     items: [
       { key: "home", label: "Home" },
-      { key: "snowy", label: "Snowy" },
-      { key: "projects", label: "Projects" },
       { key: "experience", label: "Experience" },
+      { key: "projects", label: "Projects" },
+      { key: "snowy", label: "Snowy" },
       { key: "cv", label: "CV" },
       { key: "contact", label: "Contact" },
     ],
@@ -56,7 +56,7 @@ export const en: Copy = {
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
-    availability: "Available for new projects",
+    availability: "Open to new opportunities",
     availabilityNote:
       "Remote, European hours, in Spanish or English.",
     capabilities: [
@@ -105,7 +105,7 @@ export const en: Copy = {
     ],
   },
   hero: {
-    ctaPrimary: "See Snowy",
+    ctaPrimary: "See experience",
     ctaSecondary: "CV",
     ctaContact: "Let's talk",
   },
@@ -554,7 +554,7 @@ export const en: Copy = {
       educationTitle: "Education",
       languagesTitle: "Languages",
       downloadCta: "Download as PDF",
-      printHint: "This opens the print dialog: choose “Save as PDF”.",
+      printHint: "Two pages, updated September 2026.",
     },
     contact: {
       title: "Let's work together",
@@ -610,7 +610,7 @@ export const en: Copy = {
       ctaSecondary: "See CV",
       linksTitle: "Before you write",
       linksText:
-        "If you would rather have more context first, here is the relevant part of my profile and the place where my work can be hired.",
+        "If you would rather have more context first, here is the relevant part of my profile and where to see my work.",
       links: [
         { key: "malt", label: "Malt" },
         { key: "linkedin", label: "LinkedIn" },
