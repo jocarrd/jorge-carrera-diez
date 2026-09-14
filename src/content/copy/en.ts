@@ -418,7 +418,7 @@ export const en: Copy = {
   ],
   languages: [
     { name: "Spanish", level: "Native" },
-    { name: "English", level: "Intermediate" },
+    { name: "English", level: "Professional working proficiency" },
   ],
   skills: [
     {
