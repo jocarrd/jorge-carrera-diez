@@ -113,49 +113,9 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
               </Columna>
             </div>
 
-            <div className="mt-7 border-t border-[var(--line-strong)] pt-6">
-              <div className="grid grid-cols-3 gap-4">
-                {d.stats.map(([value, label]) => (
-                  <div key={label}>
-                    <p className="text-2xl font-semibold leading-none text-[var(--foreground)]">
-                      {value}
-                    </p>
-                    <p className="mt-2 text-xs leading-[1.4] text-[var(--muted)]">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 text-sm leading-[1.6] text-[var(--muted)]">
-                {d.note}
-              </p>
-            </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {copy.flow.map((item, index) => (
-              <div
-                key={item.title}
-                className={`rounded-[var(--radius-inner)] border border-[var(--line)] p-4 ${
-                  index === copy.flow.length - 1
-                    ? "sm:col-span-2 lg:col-span-1"
-                    : ""
-                }`}
-              >
-                <p className="font-mono text-xs text-[var(--muted)]">
-                  0{index + 1}
-                </p>
-                <p className="mt-4 text-sm font-semibold leading-tight text-[var(--foreground)]">
-                  {item.title}
-                </p>
-                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                  {item.caption}
-                </p>
-                <p className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-[var(--muted)]">
-                  {item.metric}
-                </p>
-              </div>
-            ))}
+            <p className="mt-7 border-t border-[var(--line-strong)] pt-6 text-sm leading-[1.6] text-[var(--muted)]">
+              {d.note}
+            </p>
           </div>
 
           <div className="rounded-[var(--radius-card)] bg-[var(--panel)] p-7 sm:p-8">

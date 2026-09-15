@@ -195,7 +195,6 @@ export type Copy = {
       projects: string[];
       system: string[];
       output: string[];
-      stats: [string, string][];
       note: string;
     };
     principlesTitle: string;

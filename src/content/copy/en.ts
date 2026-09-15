@@ -176,9 +176,9 @@ export const en: Copy = {
   },
   ai: {
     title: "A system of my own for working with agents",
-    lead: "The projects I maintain are developed with AI agents on top of a framework I built to hold that work together: one way of working shared across all of them, versioned procedures the agent follows, isolated workspaces where several tasks run in parallel, and verification gates before anything is merged. It is an internal tool, not a product.",
+    lead: "The projects I maintain are developed with AI agents on top of a framework I built to hold that work together. It is an internal tool, not a product.",
     detail:
-      "The proof is the outcome: three products in production maintained by one person, with the same engineering standard across all three.",
+      "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
     rows: [
       ["standard", "Rules, procedures and tooling shared by every project."],
       [
@@ -186,6 +186,33 @@ export const en: Copy = {
         "Documentation and procedures of its own, declared in a contract.",
       ],
       ["repository", "Generated context pointers, never written by hand."],
+    ],
+    flow: [
+      {
+        title: "Standard",
+        caption: "one way of working shared by every project",
+        metric: "base",
+      },
+      {
+        title: "Procedures",
+        caption: "operational knowledge written down and versioned",
+        metric: "skills",
+      },
+      {
+        title: "Isolated workspaces",
+        caption: "several tasks at once without interference",
+        metric: "parallel",
+      },
+      {
+        title: "Gates",
+        caption: "nothing is merged without verification",
+        metric: "gate",
+      },
+      {
+        title: "Measurement",
+        caption: "which procedures are used and which are dead weight",
+        metric: "signal",
+      },
     ],
     diagram: {
       eyebrow: "Every task, in any project",
@@ -207,40 +234,8 @@ export const en: Copy = {
         "The procedure learned",
         "What was measured",
       ],
-      stats: [
-        ["3", "products in production"],
-        ["11", "repositories"],
-        ["1", "person maintaining them"],
-      ],
       note: "Without a system behind it, only the code survives a working session.",
     },
-    flow: [
-      {
-        title: "Standard",
-        caption: "shared by every project",
-        metric: "base",
-      },
-      {
-        title: "Procedures",
-        caption: "operational knowledge written down and versioned",
-        metric: "skills",
-      },
-      {
-        title: "Isolated workspaces",
-        caption: "several tasks at once without interference",
-        metric: "parallel",
-      },
-      {
-        title: "Gates",
-        caption: "nothing is merged without verification",
-        metric: "gate",
-      },
-      {
-        title: "Measurement",
-        caption: "which procedures are actually used",
-        metric: "signal",
-      },
-    ],
     principlesTitle: "The principles behind it",
     principles: [
       {

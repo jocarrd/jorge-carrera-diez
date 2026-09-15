@@ -172,9 +172,9 @@ export const es: Copy = {
   },
   ai: {
     title: "Un sistema propio para trabajar con agentes",
-    lead: "Los proyectos que mantengo se desarrollan con agentes de IA sobre un marco que construí para sostener ese trabajo: una forma de trabajar común a todos ellos, procedimientos versionados que el agente sigue, espacios aislados donde varias tareas avanzan en paralelo y puertas de verificación antes de integrar nada. Es una herramienta interna, no un producto.",
+    lead: "Los proyectos que mantengo se desarrollan con agentes de IA sobre un marco que construí para sostener ese trabajo. Es una herramienta interna, no un producto.",
     detail:
-      "La prueba es el resultado: tres productos en producción mantenidos por una sola persona, con el mismo criterio técnico en los tres.",
+      "Lo que resuelve es que el criterio técnico no dependa de recordar cómo se hizo la última vez, ni se quede en la conversación donde se decidió.",
     rows: [
       [
         "estándar",
@@ -186,37 +186,10 @@ export const es: Copy = {
       ],
       ["repositorio", "Punteros de contexto generados, nunca escritos a mano."],
     ],
-    diagram: {
-      eyebrow: "Cada tarea, en cualquier proyecto",
-      inLabel: "Entra",
-      systemLabel: "El sistema aporta",
-      outLabel: "Queda en git",
-      inTitle: "Una tarea",
-      inCaption: "de cualquiera de los proyectos",
-      projects: ["snowy", "eqx", "lariojameteo"],
-      system: [
-        "El procedimiento a seguir",
-        "Un espacio de trabajo aislado",
-        "Las puertas que hay que pasar",
-        "El contexto del proyecto",
-      ],
-      output: [
-        "El código",
-        "La decisión y su porqué",
-        "El procedimiento aprendido",
-        "Lo medido",
-      ],
-      stats: [
-        ["3", "productos en producción"],
-        ["11", "repositorios"],
-        ["1", "persona manteniéndolos"],
-      ],
-      note: "Sin un sistema detrás, de una sesión de trabajo solo sobrevive el código.",
-    },
     flow: [
       {
         title: "Estándar",
-        caption: "común a todos los proyectos",
+        caption: "una forma de trabajar común a todos los proyectos",
         metric: "base",
       },
       {
@@ -240,6 +213,28 @@ export const es: Copy = {
         metric: "signal",
       },
     ],
+    diagram: {
+      eyebrow: "Cada tarea, en cualquier proyecto",
+      inLabel: "Entra",
+      systemLabel: "El sistema aporta",
+      outLabel: "Queda en git",
+      inTitle: "Una tarea",
+      inCaption: "de cualquiera de los proyectos",
+      projects: ["snowy", "eqx", "lariojameteo"],
+      system: [
+        "El procedimiento a seguir",
+        "Un espacio de trabajo aislado",
+        "Las puertas que hay que pasar",
+        "El contexto del proyecto",
+      ],
+      output: [
+        "El código",
+        "La decisión y su porqué",
+        "El procedimiento aprendido",
+        "Lo medido",
+      ],
+      note: "Sin un sistema detrás, de una sesión de trabajo solo sobrevive el código.",
+    },
     principlesTitle: "Los principios que lo sostienen",
     principles: [
       {
