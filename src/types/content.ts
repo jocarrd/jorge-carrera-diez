@@ -171,6 +171,13 @@ export type Copy = {
     ctaPrimary: string;
     ctaSecondary: string;
     ctaContact: string;
+    cycle: {
+      label: string;
+      state: string;
+      steps: { title: string; caption: string; tag: string }[];
+      foot: string;
+      badge: string;
+    };
   };
   currentRole: SectionCopy & {
     paragraphs: RichSegment[][];
@@ -178,6 +185,7 @@ export type Copy = {
     homeTitle: string;
     homeText: string;
     fronts: { label: string; title: string; text: string }[];
+    homeAside: { label: string; text: string; links: { label: string; route: "snowy" | "eqx" }[] };
   };
   ai: {
     title: string;
@@ -185,7 +193,18 @@ export type Copy = {
     detail: string;
     rows: [string, string][];
     flow: { title: string; caption: string; metric: string }[];
-    consoleLines: [string, string][];
+    diagram: {
+      eyebrow: string;
+      inLabel: string;
+      systemLabel: string;
+      outLabel: string;
+      inTitle: string;
+      inCaption: string;
+      projects: string[];
+      system: string[];
+      output: string[];
+      note: string;
+    };
     principlesTitle: string;
     principles: TitledText[];
   };
@@ -263,104 +282,125 @@ export type Copy = {
       ctaSecondary: string;
       linksTitle: string;
       linksText: string;
-      links: { key: "linkedin" | "github" | "malt" | "cv" | "snowy"; label: string }[];
+      links: {
+        key: "linkedin" | "github" | "malt" | "cv" | "snowy";
+        label: string;
+      }[];
     };
-    snowy: PageMeta & CaseIntro & {
-      detail: string;
-      ctaPrimary: string;
-      ctaSecondary: string;
-      product: SectionCopy;
-      convergence: {
-        eyebrow: string;
-        title: string;
-        text: string;
-        ticks: { at: number; label: string }[];
-        spreadLabel: string;
-        answerLabel: string;
-        note: string;
-      };
-      features: TitledText[];
-      modules: {
-        eyebrow: string;
-        title: string;
-        text: string;
-        items: { title: string; text: string; image: string; alt: string }[];
-      };
-      traction: SectionCopy;
-      build: SectionCopy;
-      architecture: {
-        layers: { tag: string; name: string; role: string }[];
-        stores: { tag: string; name: string; role: string }[];
-        servicesLabel: string;
-        services: string[];
-        servicesNote: string;
-      };
-      capabilities: Capability[];
-      seo: SectionCopy & {
-        sourcesTitle: string;
-        sources: { sigla: string; nombre: string; aporta: string; campo: string }[];
-        sourcesText: string;
-      };
-      b2b: SectionCopy & { lines: (TitledText & { url?: string })[] };
-      press: SectionCopy & {
-        openDataLabel: string;
-        openDataTag: string;
-        openDataTitle: string;
-        proof: {
-          /** El medio, que va como rótulo sobre el titular. */
-          source: string;
+    snowy: PageMeta &
+      CaseIntro & {
+        detail: string;
+        ctaPrimary: string;
+        ctaSecondary: string;
+        product: SectionCopy;
+        convergence: {
+          eyebrow: string;
           title: string;
           text: string;
-          image: string;
-          alt: string;
-          url?: string;
-        }[];
+          ticks: { at: number; label: string }[];
+          spreadLabel: string;
+          answerLabel: string;
+          note: string;
+        };
+        features: TitledText[];
+        modules: {
+          eyebrow: string;
+          title: string;
+          text: string;
+          items: { title: string; text: string; image: string; alt: string }[];
+        };
+        traction: SectionCopy;
+        build: SectionCopy;
+        architecture: {
+          layers: { tag: string; name: string; role: string }[];
+          stores: { tag: string; name: string; role: string }[];
+          servicesLabel: string;
+          services: string[];
+          servicesNote: string;
+        };
+        capabilities: Capability[];
+        seo: SectionCopy & {
+          sourcesTitle: string;
+          sources: {
+            sigla: string;
+            nombre: string;
+            aporta: string;
+            campo: string;
+          }[];
+          sourcesText: string;
+        };
+        b2b: SectionCopy & { lines: (TitledText & { url?: string })[] };
+        press: SectionCopy & {
+          openDataLabel: string;
+          openDataTag: string;
+          openDataTitle: string;
+          proof: {
+            /** El medio, que va como rótulo sobre el titular. */
+            source: string;
+            title: string;
+            text: string;
+            image: string;
+            alt: string;
+            url?: string;
+          }[];
+        };
+        metrics: Metric[];
+        tractionMetrics: Metric[];
+        mediaMentions: MediaMention[];
+        imageAlts: { home: string; stations: string; radar: string };
+        details: SectionCopy & {
+          items: (TitledText & { image: string; alt: string })[];
+        };
       };
-      metrics: Metric[];
-      tractionMetrics: Metric[];
-      mediaMentions: MediaMention[];
-      imageAlts: { home: string; stations: string; radar: string };
-      details: SectionCopy & { items: (TitledText & { image: string; alt: string })[] };
-    };
-    lariojameteo: PageMeta & CaseIntro & {
-      cta: string;
-      imageAlt: string;
-      timeline: SectionCopy;
-      product: {
-        eyebrow: string;
-        title: string;
-        text: string;
-        items: TitledText[];
-        shots: { image: string; title: string; alt: string }[];
+    lariojameteo: PageMeta &
+      CaseIntro & {
+        cta: string;
+        imageAlt: string;
+        timeline: SectionCopy;
+        product: {
+          eyebrow: string;
+          title: string;
+          text: string;
+          items: TitledText[];
+          shots: { image: string; title: string; alt: string }[];
+        };
+        history: {
+          eyebrow: string;
+          title: string;
+          text: string;
+          milestones: {
+            at: number;
+            year: string;
+            title: string;
+            text?: string;
+            own?: boolean;
+          }[];
+        };
+        metrics: Metric[];
+        responsibility: SectionCopy & { items: string[] };
+        content: SectionCopy & { items: string[] };
       };
-      history: {
-        eyebrow: string;
-        title: string;
-        text: string;
-        milestones: { at: number; year: string; title: string; text?: string; own?: boolean }[];
+    eqx: PageMeta &
+      CaseIntro & {
+        detail: string;
+        ctaPrimary: string;
+        ctaSecondary: string;
+        imageAlts: { home: string; rankings: string };
+        client: SectionCopy & { items: TitledText[] };
+        scale: {
+          eyebrow: string;
+          title: string;
+          text: string;
+          rungs: { count: number; value: string; label: string }[];
+          note: string;
+        };
+        metrics: Metric[];
+        work: SectionCopy & { items: TitledText[] };
+        index: SectionCopy & {
+          levels: { level: string; title: string; text: string }[];
+        };
+        vcr: SectionCopy & { items: string[]; note: string };
       };
-      metrics: Metric[];
-      responsibility: SectionCopy & { items: string[] };
-      content: SectionCopy & { items: string[] };
-    };
-    eqx: PageMeta & CaseIntro & {
-      detail: string;
-      ctaPrimary: string;
-      ctaSecondary: string;
-      imageAlts: { home: string; rankings: string };
-      client: SectionCopy & { items: TitledText[] };
-      scale: {
-        eyebrow: string;
-        title: string;
-        text: string;
-        rungs: { count: number; value: string; label: string }[];
-        note: string;
-      };
-      metrics: Metric[];
-      work: SectionCopy & { items: TitledText[] };
-      index: SectionCopy & { levels: { level: string; title: string; text: string }[] };
-      vcr: SectionCopy & { items: string[]; note: string };
-    };
   };
   radarScrub: {
     eyebrow: string;

@@ -15,18 +15,19 @@ const raiz = (...partes: string[]) => join(process.cwd(), ...partes);
 
 /* La tarjeta social es lo primero que se ve del sitio, muchas veces lo unico,
    asi que se pinta con la misma paleta y la misma tipografia que la web: fondo
-   claro, acento teal e Instrument Sans. Antes heredaba el tema oscuro que ya no existe.
+   claro, gris neutro, acento teja y Geist.
 
    Dos limites de satori que condicionan el codigo: no decodifica WebP —la foto
    iba en .webp y por eso salia un hueco vacio— y no lee las fuentes del sistema,
-   hay que pasarle el fichero. De ahi el JPEG y los TTF versionados. */
+   hay que pasarle el fichero. De ahi el JPEG y las fuentes versionadas: son los
+   WOFF estaticos de Geist, porque satori lee ttf, otf y woff pero no woff2. */
 export async function renderOpenGraphImage(locale: Locale) {
   const copy = getCopy(locale).meta;
 
   const [regular, semibold, bold, retrato] = await Promise.all([
-    readFile(raiz("src/assets/fonts/InstrumentSans-Regular.ttf")),
-    readFile(raiz("src/assets/fonts/InstrumentSans-SemiBold.ttf")),
-    readFile(raiz("src/assets/fonts/InstrumentSans-Bold.ttf")),
+    readFile(raiz("src/assets/fonts/Geist-Regular.woff")),
+    readFile(raiz("src/assets/fonts/Geist-SemiBold.woff")),
+    readFile(raiz("src/assets/fonts/Geist-Bold.woff")),
     readFile(raiz("src/assets/jorge-og.jpg")),
   ]);
   const foto = `data:image/jpeg;base64,${retrato.toString("base64")}`;
@@ -41,8 +42,8 @@ export async function renderOpenGraphImage(locale: Locale) {
           position: "relative",
           overflow: "hidden",
           background: "#ffffff",
-          color: "#16211f",
-          fontFamily: "Instrument Sans",
+          color: "#0a0a0a",
+          fontFamily: "Geist",
         }}
       >
         {/* La banda gris de la derecha repite la superficie de seccion del
@@ -54,7 +55,7 @@ export async function renderOpenGraphImage(locale: Locale) {
             top: 0,
             width: 452,
             height: "100%",
-            background: "#f1f5f4",
+            background: "#f2f2f2",
           }}
         />
 
@@ -84,7 +85,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   fontWeight: 600,
                   letterSpacing: 2.4,
                   textTransform: "uppercase",
-                  color: "#0f766e",
+                  color: "#c2410c",
                 }}
               >
                 {copy.ogEyebrow}
@@ -95,8 +96,8 @@ export async function renderOpenGraphImage(locale: Locale) {
                   fontSize: 82,
                   lineHeight: 1.02,
                   fontWeight: 600,
-                  letterSpacing: -1.4,
-                  color: "#16211f",
+                  letterSpacing: -3.4,
+                  color: "#0a0a0a",
                 }}
               >
                 {site.name}
@@ -107,7 +108,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   maxWidth: 600,
                   fontSize: 27,
                   lineHeight: 1.42,
-                  color: "#5f6f6c",
+                  color: "#525252",
                 }}
               >
                 {copy.ogTagline}
@@ -125,12 +126,12 @@ export async function renderOpenGraphImage(locale: Locale) {
                         fontWeight: 600,
                         letterSpacing: 1.4,
                         textTransform: "uppercase",
-                        color: "#788683",
+                        color: "#757575",
                       }}
                     >
                       {label}
                     </div>
-                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#16211f" }}>
+                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#0a0a0a" }}>
                       {value}
                     </div>
                   </div>
@@ -141,10 +142,10 @@ export async function renderOpenGraphImage(locale: Locale) {
                   display: "flex",
                   marginTop: 34,
                   paddingTop: 24,
-                  borderTop: "1px solid #e8e8ed",
+                  borderTop: "1px solid #eaeaea",
                   fontSize: 22,
                   fontWeight: 600,
-                  color: "#16211f",
+                  color: "#0a0a0a",
                 }}
               >
                 {site.domain}
@@ -169,9 +170,9 @@ export async function renderOpenGraphImage(locale: Locale) {
     {
       ...ogSize,
       fonts: [
-        { name: "Instrument Sans", data: regular, weight: 400, style: "normal" },
-        { name: "Instrument Sans", data: semibold, weight: 600, style: "normal" },
-        { name: "Instrument Sans", data: bold, weight: 700, style: "normal" },
+        { name: "Geist", data: regular, weight: 400, style: "normal" },
+        { name: "Geist", data: semibold, weight: 600, style: "normal" },
+        { name: "Geist", data: bold, weight: 700, style: "normal" },
       ],
     },
   );

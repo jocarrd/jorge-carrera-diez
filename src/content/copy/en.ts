@@ -13,7 +13,8 @@ export const en: Copy = {
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
     ogEyebrow: "Software engineer",
-    ogTagline: "Product, architecture, data and generative AI in production systems.",
+    ogTagline:
+      "Product, architecture, data and generative AI in production systems.",
     ogStats: [
       ["now", "VidaCaixa · EQx"],
       ["in production", "Snowy"],
@@ -57,8 +58,7 @@ export const en: Copy = {
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
     availability: "Open to new opportunities",
-    availabilityNote:
-      "Remote, European hours, in Spanish or English.",
+    availabilityNote: "Remote, European hours, in Spanish or English.",
     capabilities: [
       {
         title: "Product architecture",
@@ -82,7 +82,11 @@ export const en: Copy = {
     ],
     summary: [
       { text: "Computer engineer from the " },
-      { text: "University of La Rioja", href: site.universityUrl, external: true },
+      {
+        text: "University of La Rioja",
+        href: site.universityUrl,
+        external: true,
+      },
       { text: ", chartered by the " },
       {
         text: "Official Association of Computer Engineers of La Rioja",
@@ -107,31 +111,53 @@ export const en: Copy = {
   hero: {
     ctaPrimary: "See experience",
     ctaSecondary: "CV",
-    ctaContact: "Let's talk",
+    ctaContact: "Get in touch",
+    cycle: {
+      label: "Delivery cycle",
+      state: "running",
+      steps: [
+        { title: "Architecture", caption: "the decision gets written down", tag: "ADR" },
+        { title: "Implementation", caption: "in an isolated workspace", tag: "branch" },
+        { title: "Review and tests", caption: "nothing lands unverified", tag: "tests" },
+        { title: "Build and deploy", caption: "container and cache", tag: "CI" },
+        { title: "In production", caption: "with real users", tag: "live" },
+      ],
+      foot: "snowy.es · eqx",
+      badge: "3 in production",
+    },
   },
   currentRole: {
-    homeTitle: "Three fronts, right now.",
+    homeTitle: "Tech Lead in banking and insurance.",
     homeText:
-      "Technical judgement and coordination inside an enterprise environment, full technical ownership of an international product, and a weather platform live in production.",
+      "I own the frontend architecture of a product with security, traceability and long-term maintenance requirements. The job is deciding how it gets built, and making sure the team can sustain it.",
     fronts: [
       {
-        label: "Tech Lead · VidaCaixa",
-        title: "Technical leadership in a critical environment",
-        text: "Frontend architecture, standards, code reviews and alignment with backend, QA and business in the financial and insurance sector.",
+        label: "01",
+        title: "Architecture and standards",
+        text: "How the frontend is structured, what ships in each release and which conventions hold across teams.",
       },
       {
-        label: "Freelance · EQx, Switzerland",
-        title: "Technical handover of a global index",
-        text: "The Elite Quality Index measures across 151 countries whether elites create value or extract it, under academic direction from the University of St. Gallen.",
+        label: "02",
+        title: "Reviews and team",
+        text: "Code reviews, technical mentoring and alignment with backend, QA and business.",
       },
       {
-        label: "Own product · Snowy",
-        title: "Where I find out if I was right",
-        text: "Built end to end, from server rendering to the radar and the deployments. It is in production and still growing.",
+        label: "03",
+        title: "Generative AI in production",
+        text: "Use cases and agents inside enterprise flows, with their limits, their cost and their maintenance.",
       },
     ],
+    homeAside: {
+      label: "Also",
+      text: "I keep Snowy running in production and lead the technical handover of the Elite Quality Index at the University of St. Gallen. They are the two places where I decide end to end.",
+      links: [
+        { label: "Snowy", route: "snowy" },
+        { label: "EQx", route: "eqx" },
+      ],
+    },
     eyebrow: "Current role",
-    title: "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
+    title:
+      "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
     text: "My current work combines technical judgement, coordination across teams and shipping new capabilities — both in an enterprise environment and on an international product where I own the technical handover end to end.",
     paragraphs: [
       [
@@ -170,41 +196,84 @@ export const en: Copy = {
     ],
   },
   ai: {
-    title: "AI with a concrete job inside the product.",
-    lead: "I work on agents, RAG, tools, MCP and LLMs from one simple idea: AI should solve concrete tasks inside the product and stay as maintainable as any other part of the system.",
+    title: "A system of my own for working with agents",
+    lead: "The projects I maintain are developed with AI agents on top of a framework I built to hold that work together. It is an internal tool, not a product.",
     detail:
-      "What interests me most is designing the flow: what context the model needs, which tools it can use, how responses are controlled and what experience the user actually gets.",
+      "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
     rows: [
-      ["VidaCaixa", "generative capabilities integrated into an enterprise environment"],
-      ["Snowy", "assistant and tooling over real weather data"],
-      ["principles", "context, limits, traceability, cost and end experience"],
+      ["standard", "Rules, procedures and tooling shared by every project."],
+      [
+        "project",
+        "Documentation and procedures of its own, declared in a contract.",
+      ],
+      ["repository", "Generated context pointers, never written by hand."],
     ],
     flow: [
-      { title: "Interface", caption: "UX, streaming and feedback", metric: "input" },
-      { title: "Agent", caption: "plan, short memory and tool choice", metric: "reason" },
-      { title: "Tools", caption: "MCP, APIs and contracts", metric: "tools" },
-      { title: "Data", caption: "RAG, sources and permissions", metric: "context" },
-      { title: "Control", caption: "logs, limits and evaluation", metric: "guard" },
+      {
+        title: "Standard",
+        caption: "one way of working shared by every project",
+        metric: "base",
+      },
+      {
+        title: "Procedures",
+        caption: "operational knowledge written down and versioned",
+        metric: "skills",
+      },
+      {
+        title: "Isolated workspaces",
+        caption: "several tasks at once without interference",
+        metric: "parallel",
+      },
+      {
+        title: "Gates",
+        caption: "nothing is merged without verification",
+        metric: "gate",
+      },
+      {
+        title: "Measurement",
+        caption: "which procedures are used and which are dead weight",
+        metric: "signal",
+      },
     ],
-    consoleLines: [
-      ["intent", "weather query with user context"],
-      ["tool", "getForecast(), getAlerts(), searchDocs()"],
-      ["context", "internal sources + real-time data"],
-      ["policy", "limits, traceability and verifiable answers"],
-    ],
-    principlesTitle: "How I approach it",
+    diagram: {
+      eyebrow: "Every task, in any project",
+      inLabel: "Goes in",
+      systemLabel: "The system provides",
+      outLabel: "Stays in git",
+      inTitle: "One task",
+      inCaption: "from any project",
+      projects: [
+        "a new feature",
+        "a production bug",
+        "an infrastructure change",
+      ],
+      system: [
+        "The procedure to follow",
+        "An isolated workspace",
+        "The gates it has to pass",
+        "The project context",
+      ],
+      output: [
+        "The code",
+        "The decision and its rationale",
+        "The procedure learned",
+        "What was measured",
+      ],
+      note: "Without a system behind it, only the code survives a working session.",
+    },
+    principlesTitle: "The principles behind it",
     principles: [
       {
-        title: "Context before prompt",
-        text: "The value is in the model receiving the right information: your own data, permissions, retrieval, tools and the limits of the use case.",
+        title: "Reasoning weighs as much as code",
+        text: "What a project knows is not only in what gets programmed: it is in the decisions taken, in the reasoning that led to them, and in what was discussed with whoever defines the product. That shapes every later step and is the first thing to be lost, so I built the architecture to keep it.",
       },
       {
-        title: "Agents with clear responsibility",
-        text: "I like designing flows where the agent knows what it can do, which tool to use and how to leave a trace you can debug.",
+        title: "The standard is verified",
+        text: "The rules holding the work together have automated checks wired into the cycle. A rule you have to remember gets followed some of the time.",
       },
       {
-        title: "Product, cost and operations",
-        text: "An AI feature also needs reasonable latency, fallback, observability, evaluations and a UX that doesn't force the user to understand the system.",
+        title: "What goes unused is retired",
+        text: "Which procedures actually get invoked is measured. A catalogue that grows without pruning stops being useful for finding anything.",
       },
     ],
   },
@@ -227,14 +296,16 @@ export const en: Copy = {
         image: "/images/snowy-home.webp",
         imageMobile: "/images/snowy-tiempo-movil.webp",
         title: "Forecast, with confidence",
-        caption: "Three models cross-checked, a confidence indicator and 1,171 live stations.",
+        caption:
+          "Three models cross-checked, a confidence indicator and 1,171 live stations.",
         alt: "Snowy forecast landing, with cross-checked models and the confidence indicator",
       },
       {
         image: "/images/snowy-stations-map.webp",
         imageMobile: "/images/snowy-perfil-movil.webp",
         title: "User profile",
-        caption: "Stations, reports, streak and queries: the community side of the product.",
+        caption:
+          "Stations, reports, streak and queries: the community side of the product.",
         alt: "A Snowy user profile with activity stats and their featured station",
       },
     ],
@@ -272,7 +343,8 @@ export const en: Copy = {
       headline: "Software engineer - EQx (Switzerland)",
       client: "Foundation for Value Creation",
       image: "/images/eqx-home.webp",
-      imageAlt: "Home page of the Elite Quality Index, the index the foundation publishes",
+      imageAlt:
+        "Home page of the Elite Quality Index, the index the foundation publishes",
       period: "July 2026 - Present",
       start: "2026-07",
       end: null,
@@ -446,7 +518,8 @@ export const en: Copy = {
     {
       slug: "snowy",
       imageMobile: "/images/snowy-movil.webp",
-      pitch: "Multi-model forecasting, radar and an assistant for all of Spain.",
+      pitch:
+        "Multi-model forecasting, radar and an assistant for all of Spain.",
       name: "Snowy",
       url: site.snowy,
       label: "Engineering case",
@@ -492,7 +565,14 @@ export const en: Copy = {
         { value: "12", label: "pillars across 4 areas" },
         { value: "7th", label: "annual edition" },
       ],
-      stack: ["Astro", "React", "Next.js", "PostgreSQL", "D3", "GitHub Actions"],
+      stack: [
+        "Astro",
+        "React",
+        "Next.js",
+        "PostgreSQL",
+        "D3",
+        "GitHub Actions",
+      ],
     },
     {
       slug: "lariojameteo",
@@ -528,7 +608,8 @@ export const en: Copy = {
       description:
         "Projects by Jorge Carrera Diez: Snowy, the EQx Elite Quality Index and LaRiojaMeteo. Product, architecture, data, SEO and infrastructure.",
       eyebrow: "Projects",
-      heading: "A platform in production, an international client and a portal with an audience.",
+      heading:
+        "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
     },
     experience: {
@@ -536,7 +617,8 @@ export const en: Copy = {
       description:
         "Professional experience of Jorge Carrera Diez as a software engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
       eyebrow: "Experience",
-      heading: "Software engineer with a track record in banking, insurance, retail and web product.",
+      heading:
+        "Software engineer with a track record in banking, insurance, retail and web product.",
       text: "The full track record, in order. Where I led the technical decisions, what I built at each place, and how I have been putting AI agents into flows that were already in production.",
       spanLegend: "Running right now",
     },
@@ -584,7 +666,8 @@ export const en: Copy = {
         },
       ],
       clientsTitle: "Where I have worked",
-      clientsText: "Products in production, with real users and consequences when something breaks.",
+      clientsText:
+        "Products in production, with real users and consequences when something breaks.",
       clients: [
         {
           title: "University of St. Gallen",
@@ -636,10 +719,19 @@ export const en: Copy = {
         title: "What runs underneath.",
         text: "I maintain everything you see in Snowy: rendering, backend, data, radar and deployments.",
         groups: [
-          { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
+          {
+            label: "Front",
+            items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"],
+          },
           { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
-          { label: "Infrastructure", items: ["Docker", "Coolify", "Cloudflare", "Own VPS"] },
-          { label: "AI and data", items: ["AI SDK", "RAG", "Batch jobs", "GRIB2"] },
+          {
+            label: "Infrastructure",
+            items: ["Docker", "Coolify", "Cloudflare", "Own VPS"],
+          },
+          {
+            label: "AI and data",
+            items: ["AI SDK", "RAG", "Batch jobs", "GRIB2"],
+          },
         ],
       },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
@@ -665,7 +757,7 @@ export const en: Copy = {
           },
           {
             title: "Seventy years of series, in one sentence",
-            text: "\"Madrid is 1.4 °C warmer today than in 1950-1979.\" Behind it sits our own processing of the historical series; in front, a sentence you do not need a meteorology degree to read.",
+            text: '"Madrid is 1.4 °C warmer today than in 1950-1979." Behind it sits our own processing of the historical series; in front, a sentence you do not need a meteorology degree to read.',
             image: "/images/detalle/clima.webp",
             alt: "Temperature trend by decade with the warming map of Spain",
           },
@@ -769,16 +861,33 @@ export const en: Copy = {
       },
       architecture: {
         layers: [
-          { tag: "Front", name: "Next.js", role: "Server rendering, SEO and interface" },
-          { tag: "Engine", name: "NestJS", role: "Business logic, integrations and data model" },
+          {
+            tag: "Front",
+            name: "Next.js",
+            role: "Server rendering, SEO and interface",
+          },
+          {
+            tag: "Engine",
+            name: "NestJS",
+            role: "Business logic, integrations and data model",
+          },
         ],
         stores: [
-          { tag: "Cache", name: "Redis", role: "What gets asked a lot and changes little" },
-          { tag: "Persistence", name: "MySQL", role: "The state that has to survive" },
+          {
+            tag: "Cache",
+            name: "Redis",
+            role: "What gets asked a lot and changes little",
+          },
+          {
+            tag: "Persistence",
+            name: "MySQL",
+            role: "The state that has to survive",
+          },
         ],
         servicesLabel: "Separate",
         services: ["Radar", "CMS", "Jobs"],
-        servicesNote: "They split off when their load looks nothing like the rest: the radar renders tiles, the jobs run on a schedule.",
+        servicesNote:
+          "They split off when their load looks nothing like the rest: the radar renders tiles, the jobs run on a schedule.",
       },
       capabilities: [
         {
@@ -816,13 +925,48 @@ export const en: Copy = {
         text: "Users and Google both need fast answers. That's why the project runs on SSR, per-domain cache, an internal data model, IndexNow, revalidation and provider abstraction.",
         sourcesTitle: "Integrated sources",
         sources: [
-          { sigla: "AEMET", nombre: "Spain's national weather agency", aporta: "Stations and warnings", campo: "tiempo" },
-          { sigla: "Euskalmet", nombre: "Basque weather agency", aporta: "Basque Country stations", campo: "tiempo" },
-          { sigla: "MeteoGalicia", nombre: "Galician regional weather service", aporta: "Galicia stations", campo: "tiempo" },
-          { sigla: "MITECO", nombre: "Spanish ministry for ecological transition", aporta: "Reservoirs and water reserve", campo: "agua" },
-          { sigla: "IGN", nombre: "Spain's national geographic institute", aporta: "Earthquakes in Spain", campo: "sismo" },
-          { sigla: "USGS", nombre: "United States Geological Survey", aporta: "Earthquakes worldwide", campo: "sismo" },
-          { sigla: "CAMS", nombre: "Copernicus Atmosphere Monitoring", aporta: "Air quality and pollen", campo: "aire" },
+          {
+            sigla: "AEMET",
+            nombre: "Spain's national weather agency",
+            aporta: "Stations and warnings",
+            campo: "tiempo",
+          },
+          {
+            sigla: "Euskalmet",
+            nombre: "Basque weather agency",
+            aporta: "Basque Country stations",
+            campo: "tiempo",
+          },
+          {
+            sigla: "MeteoGalicia",
+            nombre: "Galician regional weather service",
+            aporta: "Galicia stations",
+            campo: "tiempo",
+          },
+          {
+            sigla: "MITECO",
+            nombre: "Spanish ministry for ecological transition",
+            aporta: "Reservoirs and water reserve",
+            campo: "agua",
+          },
+          {
+            sigla: "IGN",
+            nombre: "Spain's national geographic institute",
+            aporta: "Earthquakes in Spain",
+            campo: "sismo",
+          },
+          {
+            sigla: "USGS",
+            nombre: "United States Geological Survey",
+            aporta: "Earthquakes worldwide",
+            campo: "sismo",
+          },
+          {
+            sigla: "CAMS",
+            nombre: "Copernicus Atmosphere Monitoring",
+            aporta: "Air quality and pollen",
+            campo: "aire",
+          },
         ],
         sourcesText:
           "The goal is to unify heterogeneous providers into one consistent model, precompute the expensive parts and answer the end user very fast.",
@@ -875,16 +1019,44 @@ export const en: Copy = {
         ],
       },
       metrics: [
-        { value: "16", label: "models", detail: "ECMWF, GFS, ICON, ARPEGE, GEM and more" },
-        { value: "1,000+", label: "stations", detail: "official network and Snowy community" },
-        { value: "370+", label: "reservoirs", detail: "status and evolution across Spain" },
+        {
+          value: "16",
+          label: "models",
+          detail: "ECMWF, GFS, ICON, ARPEGE, GEM and more",
+        },
+        {
+          value: "1,000+",
+          label: "stations",
+          detail: "official network and Snowy community",
+        },
+        {
+          value: "370+",
+          label: "reservoirs",
+          detail: "status and evolution across Spain",
+        },
         { value: "1,000+", label: "terms", detail: "WikiMeteo in Spanish" },
-        { value: "20+", label: "AI tools", detail: "assistant, voice and daily decisions" },
-        { value: "10+", label: "map layers", detail: "radar, stations, risks and air" },
+        {
+          value: "20+",
+          label: "AI tools",
+          detail: "assistant, voice and daily decisions",
+        },
+        {
+          value: "10+",
+          label: "map layers",
+          detail: "radar, stations, risks and air",
+        },
       ],
       tractionMetrics: [
-        { value: "14.7M", label: "impressions", detail: "last 3 months in organic search" },
-        { value: "242k", label: "clicks", detail: "traffic from Google over 3 months" },
+        {
+          value: "14.7M",
+          label: "impressions",
+          detail: "last 3 months in organic search",
+        },
+        {
+          value: "242k",
+          label: "clicks",
+          detail: "traffic from Google over 3 months",
+        },
         {
           value: "1,400+",
           label: "registered users",
@@ -934,14 +1106,16 @@ export const en: Copy = {
           outlet: "Actualidad Rioja Baja",
           cover: "/images/prensa/actualidad-rioja-baja.webp",
           date: "12 January 2026",
-          title: "La Rioja Meteo launches Snowy as an advanced, accessible weather platform.",
+          title:
+            "La Rioja Meteo launches Snowy as an advanced, accessible weather platform.",
           url: "https://actualidadriojabaja.com/la-rioja-meteo-lanza-snowy-una-nueva-plataforma-meteorologica-avanzada-y-accesible/",
         },
         {
           outlet: "nuevecuatrouno",
           cover: "/images/prensa/nuevecuatrouno-2.webp",
           date: "11 April 2026",
-          title: "Snowy and La Rioja Meteo in the planning for August's eclipse.",
+          title:
+            "Snowy and La Rioja Meteo in the planning for August's eclipse.",
           url: "https://nuevecuatrouno.com/2026/04/11/cielo-rioja-apunta-despejado-gran-eclipse-de-agosto/",
         },
       ],
@@ -965,7 +1139,10 @@ export const en: Copy = {
         text: "On WordPress, with a plugin of my own for the Snowy data and the rest of the work spent making what already exists load fast, read well on a phone and get found on Google.",
         groups: [
           { label: "Platform", items: ["WordPress", "PHP", "MySQL"] },
-          { label: "Visibility", items: ["Technical SEO", "Structured data", "Core Web Vitals"] },
+          {
+            label: "Visibility",
+            items: ["Technical SEO", "Structured data", "Core Web Vitals"],
+          },
           { label: "Data", items: ["Snowy stations", "Webcams", "Reservoirs"] },
           { label: "Measurement", items: ["Search Console", "Analytics"] },
         ],
@@ -997,9 +1174,21 @@ export const en: Copy = {
           },
         ],
         shots: [
-          { image: "/images/lrm/portada.webp", title: "Home", alt: "LaRiojaMeteo home on a phone, with the active warning and the day's data" },
-          { image: "/images/lrm/predicciones.webp", title: "Forecasts", alt: "LaRiojaMeteo forecasts section on a phone" },
-          { image: "/images/lrm/embalses.webp", title: "Reservoirs, with Snowy data", alt: "LaRiojaMeteo reservoirs category on a phone, with data pulled from Snowy" },
+          {
+            image: "/images/lrm/portada.webp",
+            title: "Home",
+            alt: "LaRiojaMeteo home on a phone, with the active warning and the day's data",
+          },
+          {
+            image: "/images/lrm/predicciones.webp",
+            title: "Forecasts",
+            alt: "LaRiojaMeteo forecasts section on a phone",
+          },
+          {
+            image: "/images/lrm/embalses.webp",
+            title: "Reservoirs, with Snowy data",
+            alt: "LaRiojaMeteo reservoirs category on a phone, with data pulled from Snowy",
+          },
         ],
       },
       history: {
@@ -1007,20 +1196,53 @@ export const en: Copy = {
         title: "Twelve years publishing before a line of code changed.",
         text: "This is not a project you launch: it already had an audience, an archive and search rankings when I arrived. That changes the engagement entirely, because every change lands on something that already works.",
         milestones: [
-          { at: 0, year: "2012", title: "The project starts", text: "A weather portal for La Rioja, publishing continuously." },
-          { at: 0.55, year: "2024", title: "I join", text: "With 130+ archive pages and half a million visits already banked.", own: true },
-          { at: 1, year: "Today", title: "Performance, SEO and UX", text: "The work is sustaining and improving what already has an audience." },
+          {
+            at: 0,
+            year: "2012",
+            title: "The project starts",
+            text: "A weather portal for La Rioja, publishing continuously.",
+          },
+          {
+            at: 0.55,
+            year: "2024",
+            title: "I join",
+            text: "With 130+ archive pages and half a million visits already banked.",
+            own: true,
+          },
+          {
+            at: 1,
+            year: "Today",
+            title: "Performance, SEO and UX",
+            text: "The work is sustaining and improving what already has an audience.",
+          },
         ],
       },
       metrics: [
-        { value: "2012", label: "origin", detail: "start of the original weather project" },
-        { value: "2020", label: "La Rioja Meteo", detail: "evolution into the current brand" },
-        { value: "2024", label: "Jorge joins", detail: "technical work and product vision" },
-        { value: "2025", label: "Snowy", detail: "launch of the advanced weather product" },
+        {
+          value: "2012",
+          label: "origin",
+          detail: "start of the original weather project",
+        },
+        {
+          value: "2020",
+          label: "La Rioja Meteo",
+          detail: "evolution into the current brand",
+        },
+        {
+          value: "2024",
+          label: "Jorge joins",
+          detail: "technical work and product vision",
+        },
+        {
+          value: "2025",
+          label: "Snowy",
+          detail: "launch of the advanced weather product",
+        },
       ],
       responsibility: {
         eyebrow: "Responsibility",
-        title: "A project where SEO and the mobile experience have direct impact.",
+        title:
+          "A project where SEO and the mobile experience have direct impact.",
         text: "LaRiojaMeteo combines traffic, content, organic visibility and continuous maintenance.",
         items: [
           "Architecture and technical maintenance of the site.",
@@ -1046,7 +1268,8 @@ export const en: Copy = {
       description:
         "EQx project case: Jorge Carrera Diez took over the technical lead of the Elite Quality Index for the Foundation for Value Creation in St. Gallen, Switzerland.",
       eyebrow: "Client · Switzerland",
-      heading: "EQx: the index that measures elite quality across 151 countries.",
+      heading:
+        "EQx: the index that measures elite quality across 151 countries.",
       lead: "I took over the technical lead of the Elite Quality Index, a project of the Foundation for Value Creation under the academic leadership of three University of St. Gallen institutes. I came in to pick up a project already in production and keep it running on my own.",
       detail:
         "This is the engagement that best shows how I work with a client: nobody handed me the context, it had to be rebuilt by reading the code and measuring what was actually deployed. Today I maintain both the public index site and the private assessment platform, and the client has in writing what used to live in one person's head.",
@@ -1174,10 +1397,27 @@ export const en: Copy = {
         title: "Two different applications, one person responsible.",
         text: "The index site and the assessment platform are two independent systems, with no code or technology in common, and I maintain both.",
         groups: [
-          { label: "Index site", items: ["Astro", "React", "Tailwind", "TypeScript"] },
-          { label: "Visualisation", items: ["D3", "TopoJSON", "TanStack Table"] },
-          { label: "Platform", items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"] },
-          { label: "Delivery", items: ["GitHub Actions", "Continuous deploy", "Vitest", "Playwright"] },
+          {
+            label: "Index site",
+            items: ["Astro", "React", "Tailwind", "TypeScript"],
+          },
+          {
+            label: "Visualisation",
+            items: ["D3", "TopoJSON", "TanStack Table"],
+          },
+          {
+            label: "Platform",
+            items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+          },
+          {
+            label: "Delivery",
+            items: [
+              "GitHub Actions",
+              "Continuous deploy",
+              "Vitest",
+              "Playwright",
+            ],
+          },
         ],
       },
     },
@@ -1232,7 +1472,8 @@ export const en: Copy = {
     minimaLabel: "lowest",
     maximaLabel: "highest",
     leidoLabel: "read at",
-    texto: "These numbers are not written into the page: the Snowy API just served them, the same one explained below.",
+    texto:
+      "These numbers are not written into the page: the Snowy API just served them, the same one explained below.",
     enlace: "Open the map",
   },
   caseCta: {

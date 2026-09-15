@@ -13,7 +13,8 @@ export const es: Copy = {
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
     ogEyebrow: "Ingeniero de software",
-    ogTagline: "Producto, arquitectura, datos e IA generativa en sistemas en producción.",
+    ogTagline:
+      "Producto, arquitectura, datos e IA generativa en sistemas en producción.",
     ogStats: [
       ["ahora", "VidaCaixa · EQx"],
       ["en producción", "Snowy"],
@@ -62,8 +63,7 @@ export const es: Copy = {
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Abierto a nuevas oportunidades",
-    availabilityNote:
-      "En remoto y horario europeo, en español o en inglés.",
+    availabilityNote: "En remoto y horario europeo, en español o en inglés.",
     capabilities: [
       {
         title: "Arquitectura de producto",
@@ -109,28 +109,56 @@ export const es: Copy = {
     ctaPrimary: "Ver experiencia",
     ctaSecondary: "CV",
     ctaContact: "Hablemos",
+    // El titular dice "de la arquitectura a producción": esto es esa frase
+    // convertida en objeto. Cada paso es una puerta real del trabajo, no una
+    // metáfora, y el último no se enciende hasta que hay algo desplegado.
+    cycle: {
+      label: "Ciclo de entrega",
+      state: "en curso",
+      steps: [
+        { title: "Arquitectura", caption: "la decisión queda escrita", tag: "ADR" },
+        { title: "Implementación", caption: "en un espacio aislado", tag: "rama" },
+        { title: "Revisión y pruebas", caption: "nada entra sin verificar", tag: "tests" },
+        { title: "Build y despliegue", caption: "contenedor y caché", tag: "CI" },
+        { title: "En producción", caption: "con usuarios reales", tag: "live" },
+      ],
+      foot: "snowy.es · eqx",
+      badge: "3 en producción",
+    },
   },
   currentRole: {
-    homeTitle: "Ahora mismo, tres frentes.",
+    // Eran tres tarjetas al mismo nivel —VidaCaixa, EQx, Snowy— y tres cosas
+    // al mismo nivel se leen como dispersión, no como alcance. Ahora hay un
+    // solo trabajo contado en tres partes, y lo demás baja a una línea que lo
+    // respalda.
+    homeTitle: "Tech Lead en banca y seguros.",
     homeText:
-      "Criterio técnico y coordinación en un entorno enterprise, el relevo completo de un producto internacional, y uno propio en producción.",
+      "Llevo la arquitectura frontend de un producto con requisitos de seguridad, trazabilidad y mantenimiento a años vista. El trabajo es decidir cómo se construye y que el equipo pueda sostenerlo.",
     fronts: [
       {
-        label: "Tech Lead · VidaCaixa",
-        title: "Liderazgo técnico en un entorno crítico",
-        text: "Arquitectura frontend, estándares, revisiones de código y alineamiento con backend, QA y negocio en el sector financiero y asegurador.",
+        label: "01",
+        title: "Arquitectura y estándares",
+        text: "Cómo se estructura el frontend, qué entra en cada entrega y qué convenciones se mantienen entre equipos.",
       },
       {
-        label: "Freelance · EQx, Suiza",
-        title: "El relevo técnico de un índice global",
-        text: "El Elite Quality Index mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
+        label: "02",
+        title: "Revisiones y equipo",
+        text: "Revisiones de código, acompañamiento técnico y alineamiento con backend, QA y negocio.",
       },
       {
-        label: "En producción · Snowy",
-        title: "Un producto propio en producción",
-        text: "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Está en producción y no para de crecer.",
+        label: "03",
+        title: "IA generativa en producción",
+        text: "Casos de uso y agentes dentro de flujos enterprise, con sus límites, su coste y su mantenimiento.",
       },
     ],
+    homeAside: {
+      label: "Y además",
+      text: "Mantengo Snowy en producción y llevo el relevo técnico del Elite Quality Index de la Universidad de St. Gallen. Son los dos sitios donde decido de punta a punta.",
+      links: [
+        { label: "Snowy", route: "snowy" },
+        { label: "EQx", route: "eqx" },
+      ],
+    },
     eyebrow: "Rol actual",
     title: "Tech Lead en VidaCaixa y colaborador técnico de EQx en Suiza.",
     text: "Mi trabajo actual combina criterio técnico, coordinación con equipos y aterrizaje de nuevas capacidades, tanto en un entorno enterprise como en un producto internacional donde llevo el relevo técnico completo.",
@@ -146,7 +174,9 @@ export const es: Copy = {
         },
       ],
       [
-        { text: "En paralelo colaboro como freelance con la fundación suiza que publica el " },
+        {
+          text: "En paralelo colaboro como freelance con la fundación suiza que publica el ",
+        },
         { text: "Elite Quality Index", href: site.eqxIndex, external: true },
         {
           text: ", un índice de economía política dirigido académicamente por la Universidad de St. Gallen. He asumido el relevo técnico de sus productos digitales y trabajo directamente con dirección y diseño para decidir qué se entrega y cuándo.",
@@ -169,47 +199,87 @@ export const es: Copy = {
     ],
   },
   ai: {
-    title: "IA con una tarea concreta dentro del producto.",
-    lead: "Trabajo la parte de agentes, RAG, tools, MCP y LLMs desde una idea sencilla: que la IA resuelva tareas concretas dentro del producto y se pueda mantener como cualquier otra pieza del sistema.",
+    title: "Un sistema propio para trabajar con agentes",
+    lead: "Los proyectos que mantengo se desarrollan con agentes de IA sobre un marco que construí para sostener ese trabajo. Es una herramienta interna, no un producto.",
     detail:
-      "Me interesa especialmente la parte de diseño del flujo: qué contexto necesita el modelo, qué herramientas puede usar, cómo se controlan las respuestas y qué experiencia recibe el usuario.",
+      "Lo que resuelve es que el criterio técnico no dependa de recordar cómo se hizo la última vez, ni se quede en la conversación donde se decidió.",
     rows: [
-      ["VidaCaixa", "integración de capacidades generativas en entorno enterprise"],
-      ["Snowy", "asistente y herramientas sobre datos meteorológicos reales"],
-      ["criterio", "contexto, límites, trazabilidad, coste y experiencia final"],
+      [
+        "estándar",
+        "Reglas, procedimientos y herramientas comunes a todos los proyectos.",
+      ],
+      [
+        "proyecto",
+        "Documentación y procedimientos propios de cada uno, declarados en un contrato.",
+      ],
+      ["repositorio", "Punteros de contexto generados, nunca escritos a mano."],
     ],
     flow: [
-      { title: "Interfaz", caption: "UX, streaming y feedback", metric: "input" },
       {
-        title: "Agente",
-        // "tool choice" es el termino del oficio, pero en una frase en espanol
-        // se lee como descuido. La idea es la misma dicha en espanol.
-        caption: "plan, memoria corta y elección de herramienta",
-        metric: "reason",
+        title: "Estándar",
+        caption: "una forma de trabajar común a todos los proyectos",
+        metric: "base",
       },
-      { title: "Herramientas", caption: "MCP, APIs y contratos", metric: "tools" },
-      { title: "Datos", caption: "RAG, fuentes y permisos", metric: "context" },
-      { title: "Control", caption: "logs, límites y evaluación", metric: "guard" },
+      {
+        title: "Procedimientos",
+        caption: "conocimiento operativo escrito y versionado",
+        metric: "skills",
+      },
+      {
+        title: "Espacios aislados",
+        caption: "varias tareas a la vez sin interferencias",
+        metric: "parallel",
+      },
+      {
+        title: "Puertas",
+        caption: "ningún cambio se integra sin verificación",
+        metric: "gate",
+      },
+      {
+        title: "Medición",
+        caption: "qué procedimientos se usan y cuáles sobran",
+        metric: "signal",
+      },
     ],
-    consoleLines: [
-      ["intent", "consulta meteorológica con contexto de usuario"],
-      ["tool", "getForecast(), getAlerts(), searchDocs()"],
-      ["context", "fuentes internas + datos en tiempo real"],
-      ["policy", "límites, trazabilidad y respuesta verificable"],
-    ],
-    principlesTitle: "Cómo lo enfoco",
+    diagram: {
+      eyebrow: "Cada tarea, en cualquier proyecto",
+      inLabel: "Entra",
+      systemLabel: "El sistema aporta",
+      outLabel: "Queda en git",
+      inTitle: "Una tarea",
+      inCaption: "de cualquier proyecto",
+      projects: [
+        "una funcionalidad nueva",
+        "un fallo en producción",
+        "un cambio de infraestructura",
+      ],
+      system: [
+        "El procedimiento a seguir",
+        "Un espacio de trabajo aislado",
+        "Las puertas que hay que pasar",
+        "El contexto del proyecto",
+      ],
+      output: [
+        "El código",
+        "La decisión y su porqué",
+        "El procedimiento aprendido",
+        "Lo medido",
+      ],
+      note: "Sin un sistema detrás, de una sesión de trabajo solo sobrevive el código.",
+    },
+    principlesTitle: "Los principios que lo sostienen",
     principles: [
       {
-        title: "Contexto antes que prompt",
-        text: "El valor está en que el modelo reciba la información correcta: datos propios, permisos, recuperación, herramientas y límites del caso de uso.",
+        title: "El razonamiento pesa tanto como el código",
+        text: "El conocimiento de un proyecto no está solo en lo que se programa: está en las decisiones que se tomaron, en el razonamiento que llevó a ellas y en lo que se habló con quien define el producto. Eso condiciona todo el desarrollo posterior y es lo primero que se pierde, así que construí la arquitectura para conservarlo.",
       },
       {
-        title: "Agentes con responsabilidad clara",
-        text: "Me interesa diseñar flujos donde el agente sabe qué puede hacer, qué herramienta usar y cómo dejar trazabilidad para depurar el sistema.",
+        title: "El estándar se verifica",
+        text: "Las reglas que sostienen el trabajo tienen comprobaciones automáticas enganchadas al ciclo. Una norma que hay que recordar se cumple a veces.",
       },
       {
-        title: "Producto, coste y operación",
-        text: "Una funcionalidad con IA también necesita latencia razonable, fallback, observabilidad, evaluaciones y una UX que no obligue al usuario a entender el sistema.",
+        title: "Lo que no se usa, se retira",
+        text: "Se mide qué procedimientos se invocan de verdad. Un catálogo que crece sin podarse deja de servir para encontrar nada.",
       },
     ],
   },
@@ -225,25 +295,29 @@ export const es: Copy = {
         image: "/images/snowy-radar-map.webp",
         imageMobile: "/images/snowy-radar-movil.webp",
         title: "Radar de precipitación",
-        caption: "Media hora por paso sobre las estaciones que reportan en directo.",
+        caption:
+          "Media hora por paso sobre las estaciones que reportan en directo.",
         alt: "Mapa de Snowy con el radar de precipitación sobre España y las estaciones activas",
       },
       {
         image: "/images/snowy-home.webp",
         imageMobile: "/images/snowy-tiempo-movil.webp",
         title: "El tiempo, con confianza",
-        caption: "Tres modelos cruzados, indicador de confianza y 1.171 estaciones en directo.",
+        caption:
+          "Tres modelos cruzados, indicador de confianza y 1.171 estaciones en directo.",
         alt: "Portada de El Tiempo en Snowy, con los modelos cruzados y el indicador de confianza",
       },
       {
         image: "/images/snowy-stations-map.webp",
         imageMobile: "/images/snowy-perfil-movil.webp",
         title: "Perfil de usuario",
-        caption: "Estaciones, reportes, racha y consultas: la parte de comunidad del producto.",
+        caption:
+          "Estaciones, reportes, racha y consultas: la parte de comunidad del producto.",
         alt: "Perfil de un usuario de Snowy con sus estadísticas de actividad y su estación destacada",
       },
     ],
-    imageAlt: "Home de Snowy con buscador meteorológico, asistente IA y planificador",
+    imageAlt:
+      "Home de Snowy con buscador meteorológico, asistente IA y planificador",
   },
   experiencePreview: {
     eyebrow: "Experiencia",
@@ -277,7 +351,8 @@ export const es: Copy = {
       headline: "Ingeniero de software - EQx (Suiza)",
       client: "Foundation for Value Creation",
       image: "/images/eqx-home.webp",
-      imageAlt: "Portada del Elite Quality Index, el índice que publica la fundación",
+      imageAlt:
+        "Portada del Elite Quality Index, el índice que publica la fundación",
       period: "Julio 2026 - Actualidad",
       start: "2026-07",
       end: null,
@@ -497,7 +572,14 @@ export const es: Copy = {
         { value: "12", label: "pilares en 4 áreas" },
         { value: "7ª", label: "edición anual" },
       ],
-      stack: ["Astro", "React", "Next.js", "PostgreSQL", "D3", "GitHub Actions"],
+      stack: [
+        "Astro",
+        "React",
+        "Next.js",
+        "PostgreSQL",
+        "D3",
+        "GitHub Actions",
+      ],
     },
     {
       slug: "lariojameteo",
@@ -533,7 +615,8 @@ export const es: Copy = {
       description:
         "Proyectos de Jorge Carrera Diez: Snowy, el Elite Quality Index de EQx y LaRiojaMeteo. Producto, arquitectura, datos, SEO e infraestructura.",
       eyebrow: "Proyectos",
-      heading: "Una plataforma en producción, un cliente internacional y un portal con audiencia.",
+      heading:
+        "Una plataforma en producción, un cliente internacional y un portal con audiencia.",
       text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx es cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
     },
     experience: {
@@ -631,11 +714,15 @@ export const es: Copy = {
       description:
         "Snowy, plataforma meteorológica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorológicos e IA.",
       eyebrow: "En producción",
-      heading: "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
+      heading:
+        "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
       facts: [
         { label: "Rol", value: "Diseño, desarrollo e infraestructura" },
         { label: "Periodo", value: "Desde 2025, en activo" },
-        { label: "Ámbito", value: "Producto completo, de la base de datos al SEO" },
+        {
+          label: "Ámbito",
+          value: "Producto completo, de la base de datos al SEO",
+        },
         { label: "Alcance", value: "14,7 M de impresiones en 90 días" },
       ],
       stack: {
@@ -643,10 +730,19 @@ export const es: Copy = {
         title: "Qué hay debajo.",
         text: "Mantengo todo lo que se ve en Snowy: el render, el backend, los datos, el radar y los despliegues.",
         groups: [
-          { label: "Front", items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"] },
+          {
+            label: "Front",
+            items: ["Next.js", "React", "TypeScript", "Tailwind", "MapLibre"],
+          },
           { label: "Backend", items: ["NestJS", "Prisma", "MySQL", "Redis"] },
-          { label: "Infraestructura", items: ["Docker", "Coolify", "Cloudflare", "VPS propio"] },
-          { label: "IA y datos", items: ["AI SDK", "RAG", "Procesos batch", "GRIB2"] },
+          {
+            label: "Infraestructura",
+            items: ["Docker", "Coolify", "Cloudflare", "VPS propio"],
+          },
+          {
+            label: "IA y datos",
+            items: ["AI SDK", "RAG", "Procesos batch", "GRIB2"],
+          },
         ],
       },
       lead: "Snowy es una plataforma meteorológica para consultar predicciones, mapas, estaciones, avisos, embalses, calidad del aire, terremotos y herramientas inteligentes desde una experiencia rápida y orientada a decisiones reales.",
@@ -776,16 +872,33 @@ export const es: Copy = {
       },
       architecture: {
         layers: [
-          { tag: "Front", name: "Next.js", role: "Render en servidor, SEO e interfaz" },
-          { tag: "Engine", name: "NestJS", role: "Negocio, integraciones y modelo de datos" },
+          {
+            tag: "Front",
+            name: "Next.js",
+            role: "Render en servidor, SEO e interfaz",
+          },
+          {
+            tag: "Engine",
+            name: "NestJS",
+            role: "Negocio, integraciones y modelo de datos",
+          },
         ],
         stores: [
-          { tag: "Caché", name: "Redis", role: "Lo que se pide mucho y cambia poco" },
-          { tag: "Persistencia", name: "MySQL", role: "El estado que tiene que sobrevivir" },
+          {
+            tag: "Caché",
+            name: "Redis",
+            role: "Lo que se pide mucho y cambia poco",
+          },
+          {
+            tag: "Persistencia",
+            name: "MySQL",
+            role: "El estado que tiene que sobrevivir",
+          },
         ],
         servicesLabel: "Aparte",
         services: ["Radar", "CMS", "Jobs"],
-        servicesNote: "Se separan cuando su carga no se parece a la del resto: el radar pinta tiles, los jobs corren a horas fijas.",
+        servicesNote:
+          "Se separan cuando su carga no se parece a la del resto: el radar pinta tiles, los jobs corren a horas fijas.",
       },
       capabilities: [
         {
@@ -823,13 +936,48 @@ export const es: Copy = {
         text: "El usuario y Google necesitan respuestas rápidas. Por eso el proyecto trabaja con SSR, caché por dominio, modelo interno de datos, IndexNow, revalidación y abstracción de proveedores.",
         sourcesTitle: "Fuentes integradas",
         sources: [
-          { sigla: "AEMET", nombre: "Agencia Estatal de Meteorología", aporta: "Estaciones y avisos", campo: "tiempo" },
-          { sigla: "Euskalmet", nombre: "Agencia Vasca de Meteorología", aporta: "Estaciones del País Vasco", campo: "tiempo" },
-          { sigla: "MeteoGalicia", nombre: "Meteorología de la Xunta", aporta: "Estaciones de Galicia", campo: "tiempo" },
-          { sigla: "MITECO", nombre: "Ministerio para la Transición Ecológica", aporta: "Embalses y reserva hídrica", campo: "agua" },
-          { sigla: "IGN", nombre: "Instituto Geográfico Nacional", aporta: "Sismos en España", campo: "sismo" },
-          { sigla: "USGS", nombre: "United States Geological Survey", aporta: "Sismos en el mundo", campo: "sismo" },
-          { sigla: "CAMS", nombre: "Copernicus Atmosphere Monitoring", aporta: "Calidad del aire y polen", campo: "aire" },
+          {
+            sigla: "AEMET",
+            nombre: "Agencia Estatal de Meteorología",
+            aporta: "Estaciones y avisos",
+            campo: "tiempo",
+          },
+          {
+            sigla: "Euskalmet",
+            nombre: "Agencia Vasca de Meteorología",
+            aporta: "Estaciones del País Vasco",
+            campo: "tiempo",
+          },
+          {
+            sigla: "MeteoGalicia",
+            nombre: "Meteorología de la Xunta",
+            aporta: "Estaciones de Galicia",
+            campo: "tiempo",
+          },
+          {
+            sigla: "MITECO",
+            nombre: "Ministerio para la Transición Ecológica",
+            aporta: "Embalses y reserva hídrica",
+            campo: "agua",
+          },
+          {
+            sigla: "IGN",
+            nombre: "Instituto Geográfico Nacional",
+            aporta: "Sismos en España",
+            campo: "sismo",
+          },
+          {
+            sigla: "USGS",
+            nombre: "United States Geological Survey",
+            aporta: "Sismos en el mundo",
+            campo: "sismo",
+          },
+          {
+            sigla: "CAMS",
+            nombre: "Copernicus Atmosphere Monitoring",
+            aporta: "Calidad del aire y polen",
+            campo: "aire",
+          },
         ],
         sourcesText:
           "El objetivo es unificar proveedores heterogéneos en un modelo consistente, precalcular lo costoso y responder muy rápido al usuario final.",
@@ -862,7 +1010,8 @@ export const es: Copy = {
         text: "El proyecto nació desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales públicos. Es una señal de producto real, comunidad y continuidad.",
         openDataLabel: "datos.gob.es",
         openDataTag: "Ficha pública",
-        openDataTitle: "Snowy aparece recogido en el portal nacional de datos abiertos.",
+        openDataTitle:
+          "Snowy aparece recogido en el portal nacional de datos abiertos.",
         proof: [
           {
             source: "RNE",
@@ -882,12 +1031,32 @@ export const es: Copy = {
         ],
       },
       metrics: [
-        { value: "16", label: "modelos", detail: "ECMWF, GFS, ICON, ARPEGE, GEM y más" },
-        { value: "1.000+", label: "estaciones", detail: "red oficial y comunidad Snowy" },
-        { value: "370+", label: "embalses", detail: "estado y evolución en España" },
+        {
+          value: "16",
+          label: "modelos",
+          detail: "ECMWF, GFS, ICON, ARPEGE, GEM y más",
+        },
+        {
+          value: "1.000+",
+          label: "estaciones",
+          detail: "red oficial y comunidad Snowy",
+        },
+        {
+          value: "370+",
+          label: "embalses",
+          detail: "estado y evolución en España",
+        },
         { value: "1.000+", label: "términos", detail: "WikiMeteo en español" },
-        { value: "20+", label: "herramientas IA", detail: "asistente, voz y decisiones diarias" },
-        { value: "10+", label: "capas de mapa", detail: "radar, estaciones, riesgos y aire" },
+        {
+          value: "20+",
+          label: "herramientas IA",
+          detail: "asistente, voz y decisiones diarias",
+        },
+        {
+          value: "10+",
+          label: "capas de mapa",
+          detail: "radar, estaciones, riesgos y aire",
+        },
       ],
       tractionMetrics: [
         {
@@ -895,7 +1064,11 @@ export const es: Copy = {
           label: "impresiones",
           detail: "últimos 3 meses en búsqueda orgánica",
         },
-        { value: "242k", label: "clics", detail: "tráfico captado desde Google en 3 meses" },
+        {
+          value: "242k",
+          label: "clics",
+          detail: "tráfico captado desde Google en 3 meses",
+        },
         {
           value: "1.400+",
           label: "usuarios registrados",
@@ -931,14 +1104,16 @@ export const es: Copy = {
           outlet: "nuevecuatrouno",
           cover: "/images/prensa/nuevecuatrouno.webp",
           date: "12 enero 2026",
-          title: "Snowy se presenta como nueva plataforma meteorológica de La Rioja Meteo.",
+          title:
+            "Snowy se presenta como nueva plataforma meteorológica de La Rioja Meteo.",
           url: "https://nuevecuatrouno.com/2026/01/12/nace-snowy-la-plataforma-meteorologica-de-la-rioja-meteo/",
         },
         {
           outlet: "Diario de León",
           cover: "/images/prensa/diario-de-leon.webp",
           date: "14 abril 2026",
-          title: "Snowy como apoyo para planificar la observación del eclipse en León.",
+          title:
+            "Snowy como apoyo para planificar la observación del eclipse en León.",
           url: "https://www.diariodeleon.es/sociedad/260414/2081770/mejor-alia-leon-eclipse.html",
         },
         {
@@ -953,7 +1128,8 @@ export const es: Copy = {
           outlet: "nuevecuatrouno",
           cover: "/images/prensa/nuevecuatrouno-2.webp",
           date: "11 abril 2026",
-          title: "Snowy y La Rioja Meteo en la planificación del eclipse de agosto.",
+          title:
+            "Snowy y La Rioja Meteo en la planificación del eclipse de agosto.",
           url: "https://nuevecuatrouno.com/2026/04/11/cielo-rioja-apunta-despejado-gran-eclipse-de-agosto/",
         },
       ],
@@ -977,14 +1153,21 @@ export const es: Copy = {
         text: "Sobre WordPress, con un plugin propio para los datos de Snowy y el resto del trabajo puesto en que lo que ya hay cargue rápido, se vea bien en móvil y lo encuentre Google.",
         groups: [
           { label: "Plataforma", items: ["WordPress", "PHP", "MySQL"] },
-          { label: "Visibilidad", items: ["SEO técnico", "Datos estructurados", "Core Web Vitals"] },
-          { label: "Datos", items: ["Estaciones Snowy", "Webcams", "Embalses"] },
+          {
+            label: "Visibilidad",
+            items: ["SEO técnico", "Datos estructurados", "Core Web Vitals"],
+          },
+          {
+            label: "Datos",
+            items: ["Estaciones Snowy", "Webcams", "Embalses"],
+          },
           { label: "Medición", items: ["Search Console", "Analítica"] },
         ],
       },
       lead: "Colaboro activamente como socio y perfil técnico en LaRiojaMeteo, portal de referencia meteorológico para La Rioja y Logroño con predicciones, análisis, datos en directo, noticias, guías y comunidad.",
       cta: "Visitar LaRiojaMeteo",
-      imageAlt: "Home de LaRiojaMeteo con portada, categorías y último artículo",
+      imageAlt:
+        "Home de LaRiojaMeteo con portada, categorías y último artículo",
       timeline: {
         eyebrow: "Trayectoria",
         title: "De blog meteorológico regional a ecosistema con Snowy.",
@@ -1009,9 +1192,21 @@ export const es: Copy = {
           },
         ],
         shots: [
-          { image: "/images/lrm/portada.webp", title: "Portada", alt: "Portada de LaRiojaMeteo en un móvil, con el aviso activo y los datos del día" },
-          { image: "/images/lrm/predicciones.webp", title: "Predicciones", alt: "Sección de predicciones de LaRiojaMeteo en un móvil" },
-          { image: "/images/lrm/embalses.webp", title: "Embalses, con datos de Snowy", alt: "Categoría de embalses de LaRiojaMeteo en un móvil, con los datos integrados desde Snowy" },
+          {
+            image: "/images/lrm/portada.webp",
+            title: "Portada",
+            alt: "Portada de LaRiojaMeteo en un móvil, con el aviso activo y los datos del día",
+          },
+          {
+            image: "/images/lrm/predicciones.webp",
+            title: "Predicciones",
+            alt: "Sección de predicciones de LaRiojaMeteo en un móvil",
+          },
+          {
+            image: "/images/lrm/embalses.webp",
+            title: "Embalses, con datos de Snowy",
+            alt: "Categoría de embalses de LaRiojaMeteo en un móvil, con los datos integrados desde Snowy",
+          },
         ],
       },
       history: {
@@ -1019,9 +1214,25 @@ export const es: Copy = {
         title: "Doce años publicando antes de tocar una línea de código.",
         text: "No es un proyecto que se lanza: es uno que ya tenía audiencia, archivo y posicionamiento cuando entré. Eso cambia el encargo por completo, porque cualquier cambio se hace sobre algo que ya funciona.",
         milestones: [
-          { at: 0, year: "2012", title: "Arranca el proyecto", text: "Portal meteorológico de La Rioja, con publicación continua." },
-          { at: 0.55, year: "2024", title: "Me incorporo", text: "Con 130+ páginas de archivo y medio millón de visitas ya acumuladas.", own: true },
-          { at: 1, year: "Hoy", title: "Rendimiento, SEO y UX", text: "El trabajo es sostener y mejorar lo que ya tiene audiencia." },
+          {
+            at: 0,
+            year: "2012",
+            title: "Arranca el proyecto",
+            text: "Portal meteorológico de La Rioja, con publicación continua.",
+          },
+          {
+            at: 0.55,
+            year: "2024",
+            title: "Me incorporo",
+            text: "Con 130+ páginas de archivo y medio millón de visitas ya acumuladas.",
+            own: true,
+          },
+          {
+            at: 1,
+            year: "Hoy",
+            title: "Rendimiento, SEO y UX",
+            text: "El trabajo es sostener y mejorar lo que ya tiene audiencia.",
+          },
         ],
       },
       metrics: [
@@ -1030,7 +1241,11 @@ export const es: Copy = {
           label: "origen",
           detail: "inicio del proyecto meteorológico original",
         },
-        { value: "2020", label: "La Rioja Meteo", detail: "evolución hacia la marca actual" },
+        {
+          value: "2020",
+          label: "La Rioja Meteo",
+          detail: "evolución hacia la marca actual",
+        },
         {
           value: "2024",
           label: "Jorge se une",
@@ -1044,7 +1259,8 @@ export const es: Copy = {
       ],
       responsibility: {
         eyebrow: "Responsabilidad",
-        title: "Un proyecto donde el SEO y la experiencia móvil tienen impacto directo.",
+        title:
+          "Un proyecto donde el SEO y la experiencia móvil tienen impacto directo.",
         text: "LaRiojaMeteo combina tráfico, contenido, visibilidad orgánica y mantenimiento continuo.",
         items: [
           "Arquitectura y mantenimiento técnico del sitio web.",
@@ -1070,7 +1286,8 @@ export const es: Copy = {
       description:
         "Caso de proyecto EQx: Jorge Carrera Diez lleva el relevo técnico del Elite Quality Index de la Foundation for Value Creation, en St. Gallen (Suiza).",
       eyebrow: "Cliente · Suiza",
-      heading: "EQx: el índice que mide la calidad de las élites de 151 países.",
+      heading:
+        "EQx: el índice que mide la calidad de las élites de 151 países.",
       lead: "Llevo el relevo técnico del Elite Quality Index, el proyecto de la Foundation for Value Creation con dirección académica de tres institutos de la Universidad de St. Gallen. Entré para recoger un proyecto ya en producción y sostenerlo yo solo.",
       detail:
         "Es el encargo que mejor explica cómo trabajo con un cliente: nadie me pasó el contexto, había que reconstruirlo leyendo el código y midiendo lo que había levantado. Hoy mantengo tanto la web pública del índice como la plataforma privada de evaluación, y el cliente tiene por escrito lo que antes solo estaba en la cabeza de una persona.",
@@ -1198,10 +1415,27 @@ export const es: Copy = {
         title: "Dos aplicaciones distintas, un mismo responsable.",
         text: "La web del índice y la plataforma de evaluación son dos sistemas independientes, sin código ni tecnología en común, y llevo el mantenimiento de las dos.",
         groups: [
-          { label: "Web del índice", items: ["Astro", "React", "Tailwind", "TypeScript"] },
-          { label: "Visualización", items: ["D3", "TopoJSON", "TanStack Table"] },
-          { label: "Plataforma", items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"] },
-          { label: "Entrega", items: ["GitHub Actions", "Despliegue continuo", "Vitest", "Playwright"] },
+          {
+            label: "Web del índice",
+            items: ["Astro", "React", "Tailwind", "TypeScript"],
+          },
+          {
+            label: "Visualización",
+            items: ["D3", "TopoJSON", "TanStack Table"],
+          },
+          {
+            label: "Plataforma",
+            items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+          },
+          {
+            label: "Entrega",
+            items: [
+              "GitHub Actions",
+              "Despliegue continuo",
+              "Vitest",
+              "Playwright",
+            ],
+          },
         ],
       },
     },
@@ -1223,13 +1457,15 @@ export const es: Copy = {
         title: "Descartar es la mitad del trabajo",
         text: "Cada función que entra hay que mantenerla durante años, así que la decisión que más pesa suele ser qué se queda fuera.",
         image: "/images/snowy-home.webp",
-        imageAlt: "Portada de Snowy con buscador, asistente y accesos a los mapas",
+        imageAlt:
+          "Portada de Snowy con buscador, asistente y accesos a los mapas",
       },
       {
         title: "Dieciséis modelos que no coinciden",
         text: "Dieciséis fuentes meteorológicas con pronósticos distintos para el mismo punto, y una interfaz que tiene que dar una sola respuesta.",
         image: "/images/snowy-station-detail.webp",
-        imageAlt: "Ficha del tiempo en Madrid con fiabilidad del pronóstico al 51 %",
+        imageAlt:
+          "Ficha del tiempo en Madrid con fiabilidad del pronóstico al 51 %",
       },
       {
         title: "Mantener, no solo entregar",
@@ -1256,7 +1492,8 @@ export const es: Copy = {
     minimaLabel: "mínima",
     maximaLabel: "máxima",
     leidoLabel: "leído",
-    texto: "Estos números no están escritos en la página: los acaba de servir la API de Snowy, la misma que se explica más abajo.",
+    texto:
+      "Estos números no están escritos en la página: los acaba de servir la API de Snowy, la misma que se explica más abajo.",
     enlace: "Abrir el mapa",
   },
   caseCta: {
