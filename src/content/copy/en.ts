@@ -147,14 +147,6 @@ export const en: Copy = {
         text: "Use cases and agents inside enterprise flows, with their limits, their cost and their maintenance.",
       },
     ],
-    homeAside: {
-      label: "Also",
-      text: "I keep Snowy running in production and lead the technical handover of the Elite Quality Index at the University of St. Gallen. They are the two places where I decide end to end.",
-      links: [
-        { label: "Snowy", route: "snowy" },
-        { label: "EQx", route: "eqx" },
-      ],
-    },
     eyebrow: "Current role",
     title:
       "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
@@ -318,9 +310,9 @@ export const en: Copy = {
     cta: "See full career",
   },
   projectsPreview: {
-    eyebrow: "Projects",
-    title: "Three projects you can actually open and poke at.",
-    text: "I develop one end to end, another is a client in Switzerland and the third has been publishing for twelve years.",
+    eyebrow: "Products",
+    title: "Snowy, EQx and La Rioja Meteo.",
+    text: "All three are in production and I own the technical decisions on all three. One is mine end to end, one belongs to a client in Switzerland and the third has been publishing for twelve years.",
   },
   contactCta: {
     title: "If my profile fits, let's talk.",
@@ -522,7 +514,7 @@ export const en: Copy = {
         "Multi-model forecasting, radar and an assistant for all of Spain.",
       name: "Snowy",
       url: site.snowy,
-      label: "Engineering case",
+      label: "Own product",
       logo: "/images/snowy-logo.webp",
       image: "/images/snowy-home.webp",
       description:
@@ -553,7 +545,7 @@ export const en: Copy = {
       pitch: "The index ranking 151 countries by the quality of their elites.",
       name: "EQx",
       url: "https://elitequality.org/",
-      label: "Client",
+      label: "Client · Switzerland",
       image: "/images/eqx-home.webp",
       description:
         "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and a private assessment platform.",
@@ -580,7 +572,7 @@ export const en: Copy = {
       pitch: "La Rioja's reference weather portal, publishing since 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
-      label: "Webmaster",
+      label: "Regional portal",
       logo: "/images/lariojameteo-logo-white.png",
       image: "/images/lariojameteo-home.webp",
       description:

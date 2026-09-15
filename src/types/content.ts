@@ -185,7 +185,6 @@ export type Copy = {
     homeTitle: string;
     homeText: string;
     fronts: { label: string; title: string; text: string }[];
-    homeAside: { label: string; text: string; links: { label: string; route: "snowy" | "eqx" }[] };
   };
   ai: {
     title: string;
