@@ -219,8 +219,12 @@ export const es: Copy = {
       systemLabel: "El sistema aporta",
       outLabel: "Queda en git",
       inTitle: "Una tarea",
-      inCaption: "de cualquiera de los proyectos",
-      projects: ["snowy", "eqx", "lariojameteo"],
+      inCaption: "de cualquier proyecto",
+      projects: [
+        "una funcionalidad nueva",
+        "un fallo en producción",
+        "un cambio de infraestructura",
+      ],
       system: [
         "El procedimiento a seguir",
         "Un espacio de trabajo aislado",

@@ -220,8 +220,12 @@ export const en: Copy = {
       systemLabel: "The system provides",
       outLabel: "Stays in git",
       inTitle: "One task",
-      inCaption: "from any of the projects",
-      projects: ["snowy", "eqx", "lariojameteo"],
+      inCaption: "from any project",
+      projects: [
+        "a new feature",
+        "a production bug",
+        "an infrastructure change",
+      ],
       system: [
         "The procedure to follow",
         "An isolated workspace",

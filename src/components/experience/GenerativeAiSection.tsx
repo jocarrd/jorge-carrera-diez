@@ -96,7 +96,7 @@ export function GenerativeAiSection({ locale }: { locale: Locale }) {
                   {d.projects.map((p) => (
                     <p
                       key={p}
-                      className="font-mono text-xs text-[var(--accent-text)]"
+                      className="text-xs leading-[1.5] text-[var(--muted)]"
                     >
                       {p}
                     </p>
