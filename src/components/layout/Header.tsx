@@ -63,7 +63,10 @@ export function Header({ locale }: { locale: Locale }) {
       data-menu-open={isOpen}
       className="site-header sticky top-0 z-50"
     >
-      <div className="mx-auto flex min-h-14 w-full max-w-[1120px] items-center justify-between gap-4 px-[22px] sm:min-h-12 sm:px-8">
+      {/* La barra deja de ser una franja pegada al borde y pasa a ser una
+          píldora flotante: separa la navegación del contenido sin cortar la
+          página con una línea, que en oscuro se nota mucho más. */}
+      <div className="header-pill">
         <Link
           href={routePath(locale, "home")}
           className="group flex min-h-11 min-w-11 items-center gap-3 py-1"

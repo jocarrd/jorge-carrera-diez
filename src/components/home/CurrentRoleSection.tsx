@@ -44,7 +44,7 @@ function FrontCard({
 }) {
   return (
     <article
-      className={`rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-white p-8 sm:p-9 ${className}`}
+      className={`rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel-strong)] p-8 sm:p-9 ${className}`}
     >
       <p className="font-mono text-[11px] uppercase tracking-[0.05em] text-[var(--muted-strong)]">
         {front.label}

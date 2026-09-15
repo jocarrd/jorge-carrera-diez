@@ -4,8 +4,9 @@ import type { ComponentProps, ReactNode } from "react";
 type ButtonLinkProps = ComponentProps<typeof Link> & {
   children: ReactNode;
   variant?: "primary" | "secondary" | "quiet";
-  /** En las secciones oscuras el teal de marca se hunde contra el negro: ahí
-   *  la acción principal va en blanco, como hace el propio sistema. */
+  /** Con toda la web en oscuro el primario ya es blanco en cualquier sección.
+   *  `tone` sólo cambia el secundario, que sobre el negro puro necesita un
+   *  borde más claro que sobre el fondo general. */
   tone?: "light" | "dark";
 };
 
@@ -42,14 +43,15 @@ export function ButtonLink({
     );
   }
 
+  // En oscuro la acción principal va en blanco sólido, que es lo que más
+  // contrasta contra el fondo; el acento ámbar se reserva para las etiquetas y
+  // los enlaces, donde no compite con el botón.
   const variantClassName =
     variant === "primary"
-      ? dark
-        ? "bg-white text-[var(--ink-dark)] hover:bg-[var(--panel)]"
-        : "bg-[var(--accent)] text-white hover:brightness-110"
+      ? "bg-[var(--foreground)] text-[var(--background)] hover:brightness-90"
       : dark
-        ? "border border-white/25 text-white hover:bg-white/10"
-        : "border border-[var(--line-strong)] text-[var(--foreground)] hover:bg-[var(--panel)]";
+        ? "border border-white/20 text-white hover:bg-white/10"
+        : "border border-[var(--line-strong)] text-[var(--foreground)] hover:bg-[var(--panel-strong)]";
 
   return (
     <Link
