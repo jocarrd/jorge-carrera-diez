@@ -1,4 +1,5 @@
 import { Section, SectionHeader, Reveal } from "@/components/ui";
+import { DeliveryCycle } from "@/components/home/DeliveryCycle";
 import { AgentHub } from "@/components/visual/AgentHub";
 import { TileGraphic } from "@/components/visual/TileGraphic";
 import { getCopy } from "@/content";
@@ -75,6 +76,21 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </div>
           </article>
         ))}
+      </Reveal>
+
+      {/* El bento dice de qué está hecho el sistema; esto dice qué pasa cuando
+          se usa. Iba en el hero, donde competía con el titular y con las
+          capturas de producto: aquí llega cuando ya se ha explicado. */}
+      <Reveal delay={120}>
+        <div className="mt-4 grid gap-8 rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel)] p-7 sm:p-9 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14">
+          <div>
+            <h3 className="t-card">{copy.detailTitle}</h3>
+            <p className="mt-3 max-w-[54ch] text-[1.0625rem] leading-[1.6] text-[var(--muted)]">
+              {copy.detail}
+            </p>
+          </div>
+          <DeliveryCycle locale={locale} />
+        </div>
       </Reveal>
     </Section>
   );
