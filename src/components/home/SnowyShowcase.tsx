@@ -18,18 +18,22 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
 
   return (
     <section id="snowy-showcase" className="section-dark py-20 sm:py-28 lg:py-32">
-      <Container className="text-center">
+      {/* Estaba centrada: titular corto en medio y párrafo debajo, que es la
+          forma de una página de producto de catálogo. Alineada a la izquierda
+          entra en la misma retícula que el resto y el carril de capturas ya no
+          cuelga de un eje que no comparte con nada. */}
+      <Container>
         <p className="t-eyebrow">Snowy</p>
-        <h2 className="t-section mx-auto mt-4 max-w-[20ch] text-white">
+        <h2 className="t-section mt-4 max-w-[20ch] text-white">
           {showcase.title}
         </h2>
-        <p className="mx-auto mt-5 max-w-[60ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[1.3125rem]">
+        <p className="mt-5 max-w-[60ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[1.1875rem]">
           {showcase.detail}
         </p>
 
         {/* Abrir el producto es la acción real; el caso técnico es para quien
             quiera el detalle. Dos enlaces iguales no lo decían. */}
-        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-9 sm:flex-row sm:justify-center sm:gap-x-6">
+        <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-x-4">
           <ButtonLink href={site.snowy} tone="dark" target="_blank" rel="noreferrer">
             {showcase.ctaSecondary}
           </ButtonLink>
@@ -39,7 +43,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         </div>
       </Container>
 
-      <Container className="mt-14 text-left sm:mt-16">
+      <Container className="mt-14 sm:mt-16">
         <Reveal delay={80}>
           <Rail label="Snowy">
             {showcase.gallery.map((shot) => (
@@ -76,8 +80,8 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
       </Container>
 
       {snowy?.metrics ? (
-        <Container className="mt-14 text-center sm:mt-16">
-          <p className="mx-auto max-w-[46ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-lg">
+        <Container className="mt-14 sm:mt-16">
+          <p className="max-w-[46ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-lg">
             {copy.profile.availability}.{" "}
             <a
               href={`mailto:${site.email}`}
@@ -90,7 +94,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
           {/* Igual que en la portada de proyectos: en texto separado por puntos.
               Diez contornos seguidos pesaban más que el titular que llevan
               debajo, y la pila es un pie de página, no una llamada. */}
-          <p className="mx-auto mt-8 max-w-2xl text-center font-mono text-[12px] leading-[1.7] text-[var(--ink-dark-muted)]">
+          <p className="mt-8 max-w-2xl font-mono text-[12px] leading-[1.7] text-[var(--ink-dark-muted)]">
             {(snowy.stack ?? []).join(" · ")}
           </p>
         </Container>
