@@ -387,8 +387,6 @@ export const es: Copy = {
         src: "/images/logos/vidacaixa.png",
         alt: "VidaCaixa",
         fallback: "VidaCaixa",
-        containerClassName: "p-2",
-        className: "scale-[1.45]",
       },
     },
     {
@@ -411,8 +409,6 @@ export const es: Copy = {
         src: "/images/logos/openbank.png",
         alt: "Openbank Grupo Santander",
         fallback: "Openbank",
-        containerClassName: "p-2",
-        className: "scale-[2.7]",
       },
     },
     {
