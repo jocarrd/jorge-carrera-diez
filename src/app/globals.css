@@ -10,10 +10,15 @@
 :root {
   --background: #0a0a0a;
   --foreground: #f2f2f2;
-  /* Medido sobre el fondo: --muted 8,9:1 y --muted-strong 4,0:1. El terciario
-     es para 11 px, etiquetas y elementos grandes, nunca para prosa. */
-  --muted: #a0a0a0;
-  --muted-strong: #6e6e6e;
+  /* En claro el terciario podía quedarse en 3,7:1 porque sólo lo llevaban
+     etiquetas grandes. En oscuro esas mismas etiquetas son mono de 11,5 px, y
+     axe las marcaba: 3,73 sobre la banda. Los dos grises suben hasta que el
+     terciario pasa el 4,5 sobre las tres superficies.
+
+     Medido sobre la banda (#101010): --muted 9,4:1 y --muted-strong 5,9:1.
+     Sobre la tarjeta (#151515), 9,0:1 y 5,7:1. */
+  --muted: #b0b0b0;
+  --muted-strong: #8f8f8f;
   --panel: #101010;
   --panel-strong: #151515;
   --line: #222222;
