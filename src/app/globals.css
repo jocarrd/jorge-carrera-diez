@@ -1,36 +1,34 @@
 @import "tailwindcss";
 
-/* Paleta clara: el fondo es el papel y la jerarquía la pone el tamaño del
-   texto, no el color. Sólo dos superficies —blanco y gris— más el negro que
-   se reserva para la sección de Snowy, que es la que debe recordarse. */
-:root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  /* La escala de grises va sin tintar. Estuvo tintada primero hacia el azul de
-     Apple y después hacia el teal de la marca; las dos veces el gris arrastraba
-     una temperatura que peleaba con el color de las capturas de producto, que
-     es lo que de verdad manda en esta página. Neutra, las capturas ponen el
-     color y el texto pone el contraste.
+/* Paleta oscura: el fondo es la tinta y el producto pone el color. Las
+   capturas de Snowy y EQx son claras y llenas de azul y verde; sobre negro
+   brillan solas y no hay que rodearlas de nada para que destaquen.
 
-     Medido sobre blanco: --muted 8,0:1, --muted-strong 4,6:1. Sobre --panel,
-     7,7:1 y 4,4:1. El terciario sigue siendo para 11 px y elementos grandes. */
-  --muted: #525252;
-  --muted-strong: #757575;
-  --panel: #fafafa;
-  --panel-strong: #f2f2f2;
-  --line: #eaeaea;
-  --line-strong: #d4d4d4;
-  /* Teja en vez del teal. El acento ya no imita el cian de Snowy: las capturas
-     del producto traen ese azul y el acento de la página competía con ellas en
-     cada sección. Un cálido las deja destacar y, de paso, separa la identidad
-     de la web de la del producto. 5,9:1 sobre blanco y 5,7:1 sobre el panel;
-     en oscuro sube a ámbar, que mide 9:1 sobre el negro. */
-  --accent: #c2410c;
-  --accent-text: #c2410c;
+   Tres superficies: el fondo, la banda que separa secciones y la tarjeta. Se
+   distinguen por dos o tres puntos de luminancia y por el borde de 1 px, no
+   por sombras: en oscuro una sombra no se ve. */
+:root {
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  /* Medido sobre el fondo: --muted 8,9:1 y --muted-strong 4,0:1. El terciario
+     es para 11 px, etiquetas y elementos grandes, nunca para prosa. */
+  --muted: #a0a0a0;
+  --muted-strong: #6e6e6e;
+  --panel: #101010;
+  --panel-strong: #151515;
+  --line: #222222;
+  --line-strong: #2e2e2e;
+  /* El ámbar mide 9,4:1 sobre el fondo. El teja de la versión clara se hundía
+     en negro, así que el acento sube de luminosidad y mantiene la temperatura:
+     es el mismo color de marca a otra altura. */
+  --accent: #fb923c;
+  --accent-text: #fb923c;
   --accent-dark: #fb923c;
+  /* Las secciones que antes eran "la oscura" ahora son el negro puro, que
+     sigue separándolas del fondo general. */
   --ink-dark: #000000;
   --ink-dark-panel: #0c0c0c;
-  --ink-dark-muted: #a1a1a1;
+  --ink-dark-muted: #a0a0a0;
   --header-h: 56px;
   --radius-inner: 8px;
   --radius-card: 12px;
@@ -107,7 +105,7 @@ a {
 }
 
 ::selection {
-  background: rgba(194, 65, 12, 0.14);
+  background: rgba(251, 146, 60, 0.22);
 }
 
 /* ── Superficies ─────────────────────────────────────────────
@@ -120,7 +118,7 @@ a {
 }
 
 .lvl-2 {
-  background: #ffffff;
+  background: var(--panel-strong);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
 }
@@ -318,17 +316,17 @@ a {
 }
 
 .proj-card--snowy {
-  background: linear-gradient(168deg, #d8ecff 0%, #eef7ff 46%, #ffffff 100%);
+  background: linear-gradient(168deg, #0d1b28 0%, #0b1420 52%, #080d14 100%);
 }
 
 .proj-card--lariojameteo {
-  background: linear-gradient(168deg, #ffe6c9 0%, #fff4e6 46%, #ffffff 100%);
+  background: linear-gradient(168deg, #241705 0%, #1a1005 52%, #100a04 100%);
 }
 
 /* La oscura rompe la fila. El texto va en blanco (10,8:1 sobre la parada mas
    clara del degradado) y el kicker en el teal, que ahi mide 5,8:1. */
 .proj-card--eqx {
-  background: linear-gradient(168deg, #10444b 0%, #0b2f35 52%, #071f24 100%);
+  background: linear-gradient(168deg, #0c2f34 0%, #071f24 52%, #04161a 100%);
   color: #ffffff;
 }
 
@@ -385,7 +383,7 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card-lg);
-  background: linear-gradient(170deg, #f7fbfb 0%, var(--panel) 60%, #ffffff 100%);
+  background: linear-gradient(170deg, #121212 0%, var(--panel) 60%, #0b0b0b 100%);
   padding: 1.5rem 1.25rem 2rem;
 }
 
@@ -586,7 +584,7 @@ a {
 
 .ladder-stage {
   border-radius: var(--radius-card-lg);
-  background: linear-gradient(168deg, #10444b 0%, #0b2f35 52%, #071f24 100%);
+  background: linear-gradient(168deg, #0c2f34 0%, #071f24 52%, #04161a 100%);
   padding: 2rem 1.75rem;
 }
 
@@ -876,7 +874,7 @@ a {
   align-items: baseline;
   gap: 0.25rem;
   border-radius: var(--radius-card);
-  background: #fff;
+  background: var(--panel-strong);
   padding: 1rem 1.25rem;
   box-shadow: var(--anillo);
 }
@@ -1033,9 +1031,9 @@ a {
   padding: 1.75rem 1.75rem 0;
   background: linear-gradient(
     166deg,
-    color-mix(in srgb, var(--tinte) 16%, #fff) 0%,
-    color-mix(in srgb, var(--tinte) 6%, #fff) 46%,
-    #ffffff 100%
+    color-mix(in srgb, var(--tinte) 22%, #0a0a0a) 0%,
+    color-mix(in srgb, var(--tinte) 10%, #0a0a0a) 46%,
+    #0a0a0a 100%
   );
 }
 
@@ -1118,7 +1116,7 @@ a {
   height: auto;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--panel-strong);
   transition: transform var(--dur-media) var(--ease);
 }
 
@@ -1186,7 +1184,7 @@ a {
   height: auto;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--panel-strong);
 }
 
 .opendata-title {
@@ -1345,7 +1343,7 @@ a {
   width: 1.0625rem;
   height: 1.0625rem;
   border-radius: 999px;
-  background: #fff;
+  background: var(--panel-strong);
   box-shadow: inset 0 0 0 2px var(--line-strong);
 }
 
@@ -2032,11 +2030,48 @@ a {
 /* ── Cabecera ────────────────────────────────────────────────
    Translúcida y muy baja; sólo aparece la línea inferior al hacer scroll. */
 .site-header {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: saturate(180%) blur(24px);
-  -webkit-backdrop-filter: saturate(180%) blur(24px);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--dur-rapida) var(--ease);
+  background: transparent;
+  padding: 0.75rem 1rem;
+  transition: padding var(--dur-rapida) var(--ease);
+}
+
+.header-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 62rem;
+  margin: 0 auto;
+  min-height: 3rem;
+  padding: 0.4375rem 0.4375rem 0.4375rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(16, 16, 16, 0.82);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease);
+}
+
+@media (min-width: 768px) {
+  .header-pill {
+    width: auto;
+    max-width: none;
+    padding-left: 1.25rem;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: center;
+    padding: 0.875rem 1rem;
+  }
+}
+
+.site-header[data-scrolled="true"] .header-pill {
+  background: rgba(12, 12, 12, 0.92);
+  border-color: var(--line-strong);
 }
 
 /* El desenfoque no siempre llega: navegadores viejos, modo de ahorro, o un
@@ -2044,8 +2079,8 @@ a {
    94 % —sigue leyéndose translúcido sobre el desenfoque real— y donde ni
    siquiera se declara, opaco. La barra tiene que ser legible, no bonita. */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .site-header {
-    background: #ffffff;
+  .header-pill {
+    background: var(--panel-strong);
   }
 }
 
@@ -2058,15 +2093,15 @@ a {
    menú. Con el desenfoque pintado no ocurre, pero el navegador puede declarar
    que lo soporta y no pintarlo —sin GPU, en modo de ahorro—, y ahí el menú
    queda ilegible. La barra tiene que ser legible antes que bonita. */
-.site-header[data-scrolled="true"] {
-  background: #ffffff;
+.site-header[data-menu-open="true"] .header-pill {
+  background: var(--panel-strong);
   border-bottom-color: var(--line);
 }
 
 /* Con la hoja abierta la barra deja de tener nada detrás que translucir, y
    translúcida se vería el contenido de la hoja pasando bajo el logotipo. */
 .site-header[data-menu-open="true"] {
-  background: #ffffff;
+  background: transparent;
 }
 
 /* La barra encoge a partir de `sm`, y la hoja arranca justo debajo. */
@@ -3333,5 +3368,239 @@ a {
   .cycle-dot svg {
     animation: none;
     opacity: 1;
+  }
+}
+
+/* ── Hero: la escena de superficies ──────────────────────────
+   Tres capturas escalonadas y un resplandor detrás. El conjunto sangra por la
+   derecha a propósito: cortado se lee como una ventana a algo más grande, y
+   entero se leería como una foto de producto pegada en la página. */
+.hero-stage {
+  position: relative;
+  margin: 2.5rem -22px 0;
+  padding-bottom: 1rem;
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  left: 22%;
+  top: -12%;
+  width: 78%;
+  aspect-ratio: 1.15;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(251, 146, 60, 0.26),
+    rgba(251, 146, 60, 0.06) 44%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-win {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #000;
+}
+
+.hero-win img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4375rem;
+  height: 30px;
+  padding: 0 0.75rem;
+  background: #121212;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #2c2c2c;
+}
+
+.hero-bar p {
+  margin-left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--muted-strong);
+}
+
+.hero-device {
+  position: absolute;
+  left: 4%;
+  bottom: -0.5rem;
+  width: 30%;
+  max-width: 172px;
+  overflow: hidden;
+  border: 7px solid #1e1e1e;
+  border-radius: 26px;
+  background: #000;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.hero-device img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* En móvil la ventana de detrás no aporta —se ve una franja de 20 px— y en
+   cambio roba altura al titular. */
+.hero-win--back {
+  display: none;
+}
+
+/* Y la de delante se recorta: la captura entera a 390 px de ancho mide 240 px
+   de alto y no se lee nada. Recortada por arriba se reconoce el producto y el
+   móvil, que es la captura hecha para este tamaño, manda en la composición. */
+@media (max-width: 1023px) {
+  .hero-win--front img {
+    height: 19rem;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .hero-device {
+    left: 6%;
+    bottom: -1.25rem;
+    width: 34%;
+    max-width: 128px;
+    border-width: 6px;
+    border-radius: 20px;
+  }
+
+  .hero-stage {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.hero-win--front {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 1024px) {
+  .hero-stage {
+    position: absolute;
+    right: -8rem;
+    top: 4.5rem;
+    width: 56%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-win--back {
+    display: block;
+    position: absolute;
+    left: 28%;
+    top: -1.5rem;
+    width: 72%;
+    opacity: 0.5;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-win--front {
+    position: relative;
+    left: 4%;
+    top: 2.5rem;
+    width: 82%;
+    z-index: 2;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-device {
+    left: -6%;
+    bottom: auto;
+    top: 12.5rem;
+    z-index: 3;
+    width: 152px;
+    max-width: none;
+  }
+
+  /* El pie de la escena se funde con el fondo en vez de cortarse en seco. */
+  .hero-stage::after {
+    content: "";
+    position: absolute;
+    left: -6%;
+    right: 0;
+    bottom: -4.5rem;
+    height: 10rem;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 0.95) 70%);
+    z-index: 4;
+  }
+}
+
+/* ── Movimiento ligado al scroll ─────────────────────────────
+   Las superficies del hero suben un poco mientras se baja: no es un adorno,
+   es lo que da la sensación de profundidad entre las tres capas, que de otro
+   modo se leen como un collage plano.
+
+   Va con `animation-timeline`, así que no hay JavaScript escuchando scroll ni
+   nada que recalcular en cada fotograma; donde no está soportado, no pasa
+   nada. */
+@supports (animation-timeline: view()) {
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    .hero-win--back {
+      animation: flota-atras linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+
+    .hero-device {
+      animation: flota-delante linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+
+  @keyframes flota-atras {
+    to {
+      transform: translateY(-2.5rem);
+    }
+  }
+
+  @keyframes flota-delante {
+    to {
+      transform: translateY(2rem);
+    }
+  }
+}
+
+/* El brillo que cruza una tarjeta al pasar por encima. Es el único efecto de
+   hover con movimiento de la página: en las tarjetas de producto, que son las
+   que se quiere que se pulsen. */
+.proj-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.07) 48%,
+    transparent 58%
+  );
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  transition: background-position var(--dur-lenta) var(--ease);
+}
+
+.proj-card:hover::after {
+  background-position: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-card::after {
+    display: none;
   }
 }

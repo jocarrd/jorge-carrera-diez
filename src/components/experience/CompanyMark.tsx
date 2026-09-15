@@ -14,7 +14,7 @@ export function CompanyMark({ logo }: CompanyMarkProps) {
   if (logo?.src) {
     return (
       <div
-        className={`flex h-12 w-32 items-center justify-center overflow-hidden rounded-[var(--radius-inner)] border border-[var(--line)] bg-white p-3 ${logo.containerClassName ?? ""}`}
+        className={`flex h-12 w-32 items-center justify-center overflow-hidden rounded-[var(--radius-inner)] border border-[var(--line)] bg-[var(--panel-strong)] p-3 ${logo.containerClassName ?? ""}`}
       >
         <Image
           src={logo.src}

@@ -18,7 +18,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
       {/* La tabla se lee de un vistazo en escritorio, donde periodo, puesto y
           empresa caben en la misma línea. En móvil cada fila se parte en cuatro
           y las seis etapas costaban 2,6 pantallas: ahí van en carril. */}
-      <ol className="mt-12 hidden overflow-hidden rounded-[var(--radius-card-lg)] bg-white sm:block">
+      <ol className="mt-12 hidden overflow-hidden rounded-[var(--radius-card-lg)] bg-[var(--line-strong)] sm:block">
         {copy.experience.map((role, index) => (
           <li
             key={`${role.company}-${role.period}`}
@@ -56,7 +56,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
           {copy.experience.map((role, index) => (
             <article
               key={`${role.company}-${role.period}`}
-              className="rail-item flex w-[80vw] max-w-[20rem] flex-col rounded-[var(--radius-card-lg)] bg-white p-7"
+              className="rail-item flex w-[80vw] max-w-[20rem] flex-col rounded-[var(--radius-card-lg)] bg-[var(--panel-strong)] p-7"
             >
               <p className="font-mono text-xs tabular-nums text-[var(--muted)]">
                 {String(index + 1).padStart(2, "0")}

@@ -163,6 +163,7 @@ export type Copy = {
     capabilities: { title: string; text: string }[];
     availability: string;
     availabilityNote: string;
+    clientsLabel: string;
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
@@ -189,6 +190,7 @@ export type Copy = {
   ai: {
     title: string;
     lead: string;
+    detailTitle: string;
     detail: string;
     rows: [string, string][];
     flow: { title: string; caption: string; metric: string }[];

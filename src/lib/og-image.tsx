@@ -15,7 +15,7 @@ const raiz = (...partes: string[]) => join(process.cwd(), ...partes);
 
 /* La tarjeta social es lo primero que se ve del sitio, muchas veces lo unico,
    asi que se pinta con la misma paleta y la misma tipografia que la web: fondo
-   claro, gris neutro, acento teja y Geist.
+   negro, gris neutro, acento ambar y Geist.
 
    Dos limites de satori que condicionan el codigo: no decodifica WebP —la foto
    iba en .webp y por eso salia un hueco vacio— y no lee las fuentes del sistema,
@@ -41,8 +41,8 @@ export async function renderOpenGraphImage(locale: Locale) {
           display: "flex",
           position: "relative",
           overflow: "hidden",
-          background: "#ffffff",
-          color: "#0a0a0a",
+          background: "#0a0a0a",
+          color: "#f2f2f2",
           fontFamily: "Geist",
         }}
       >
@@ -55,7 +55,7 @@ export async function renderOpenGraphImage(locale: Locale) {
             top: 0,
             width: 452,
             height: "100%",
-            background: "#f2f2f2",
+            background: "#101010",
           }}
         />
 
@@ -85,7 +85,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   fontWeight: 600,
                   letterSpacing: 2.4,
                   textTransform: "uppercase",
-                  color: "#c2410c",
+                  color: "#fb923c",
                 }}
               >
                 {copy.ogEyebrow}
@@ -97,7 +97,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   lineHeight: 1.02,
                   fontWeight: 600,
                   letterSpacing: -3.4,
-                  color: "#0a0a0a",
+                  color: "#f2f2f2",
                 }}
               >
                 {site.name}
@@ -108,7 +108,7 @@ export async function renderOpenGraphImage(locale: Locale) {
                   maxWidth: 600,
                   fontSize: 27,
                   lineHeight: 1.42,
-                  color: "#525252",
+                  color: "#a0a0a0",
                 }}
               >
                 {copy.ogTagline}
@@ -126,12 +126,12 @@ export async function renderOpenGraphImage(locale: Locale) {
                         fontWeight: 600,
                         letterSpacing: 1.4,
                         textTransform: "uppercase",
-                        color: "#757575",
+                        color: "#6e6e6e",
                       }}
                     >
                       {label}
                     </div>
-                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#0a0a0a" }}>
+                    <div style={{ display: "flex", marginTop: 9, fontSize: 20, color: "#f2f2f2" }}>
                       {value}
                     </div>
                   </div>
@@ -142,10 +142,10 @@ export async function renderOpenGraphImage(locale: Locale) {
                   display: "flex",
                   marginTop: 34,
                   paddingTop: 24,
-                  borderTop: "1px solid #eaeaea",
+                  borderTop: "1px solid #222222",
                   fontSize: 22,
                   fontWeight: 600,
-                  color: "#0a0a0a",
+                  color: "#f2f2f2",
                 }}
               >
                 {site.domain}
@@ -153,7 +153,15 @@ export async function renderOpenGraphImage(locale: Locale) {
             </div>
           </div>
 
-          <div style={{ display: "flex", width: 452, alignItems: "flex-end", justifyContent: "center" }}>
+          <div
+            style={{
+              position: "relative",
+              display: "flex",
+              width: 452,
+              alignItems: "flex-end",
+              justifyContent: "center",
+            }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse
                 renderiza fuera del DOM de React: next/image no aplica aqui. */}
             <img
@@ -162,6 +170,19 @@ export async function renderOpenGraphImage(locale: Locale) {
               width={452}
               height={630}
               style={{ width: 452, height: 630, objectFit: "cover", objectPosition: "50% 22%" }}
+            />
+            {/* El retrato está recortado sobre fondo claro y contra el negro de
+                la tarjeta deja un canto duro. El degradado lo funde por el lado
+                que da al texto, que es por donde se nota. */}
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                width: 150,
+                height: 630,
+                background: "linear-gradient(to right, #0a0a0a, rgba(10,10,10,0))",
+              }}
             />
           </div>
         </div>

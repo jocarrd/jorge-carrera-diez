@@ -59,6 +59,7 @@ export const en: Copy = {
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
     availability: "Open to new opportunities",
     availabilityNote: "Remote, European hours, in Spanish or English.",
+    clientsLabel: "Where I have worked",
     capabilities: [
       {
         title: "Product architecture",
@@ -190,6 +191,7 @@ export const en: Copy = {
   ai: {
     title: "A system of my own for working with agents",
     lead: "The projects I maintain are developed with AI agents on top of a framework I built to hold that work together. It is an internal tool, not a product.",
+    detailTitle: "Every task follows the same path",
     detail:
       "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
     rows: [
