@@ -24,6 +24,13 @@
   --accent: #fb923c;
   --accent-text: #fb923c;
   --accent-dark: #fb923c;
+  /* El botón primario no puede ir del mismo ámbar que el titular y las
+     etiquetas: al lado del titular en ámbar, el botón desaparecía dentro del
+     mismo color. Medio paso más saturado lo separa sin cambiar de familia, y
+     la tinta encima es un marrón muy oscuro en vez de negro puro, que sobre
+     naranja vibra. */
+  --accent-strong: #f97316;
+  --on-accent: #160b02;
   /* Las secciones que antes eran "la oscura" ahora son el negro puro, que
      sigue separándolas del fondo general. */
   --ink-dark: #000000;
@@ -1232,6 +1239,16 @@ a {
   color: var(--muted);
 }
 
+.span-grid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.375rem;
+  height: 1px;
+  background: var(--line);
+}
+
 .span-rows {
   display: grid;
   gap: 0.5rem;
@@ -1242,12 +1259,15 @@ a {
   height: 2.25rem;
 }
 
+/* El ámbar al 14 % sobre papel era un beige claro; sobre negro se convierte en
+   un marrón que no se distingue del fondo. Lo pasado se pinta en gris y el
+   contraste lo pone la barra en curso, que sigue en ámbar lleno. */
 .span-bar {
   position: absolute;
   top: 0;
   height: 100%;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  background: color-mix(in srgb, var(--foreground) 20%, transparent);
 }
 
 /* Lo que sigue en marcha se marca en lleno: es la diferencia que importa. */
