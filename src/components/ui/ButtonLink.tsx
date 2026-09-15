@@ -9,8 +9,12 @@ type ButtonLinkProps = ComponentProps<typeof Link> & {
   tone?: "light" | "dark";
 };
 
-// `quiet` no es un botón sino un enlace con chevron: es la forma por defecto de
-// llevar a otra página cuando no compite con la acción principal.
+// `quiet` es un enlace con chevron: la forma por defecto de llevar a otra
+// página cuando no compite con la acción principal.
+//
+// La píldora de 48 px de alto y 17 px de texto era de Apple, y con ella puesta
+// daba igual lo demás que se cambiara: el botón es lo que más se mira de una
+// página. Ahora es un rectángulo de radio 8, 44 px de alto y texto de 15.
 export function ButtonLink({
   href,
   children,
@@ -25,7 +29,7 @@ export function ButtonLink({
     return (
       <Link
         href={href}
-        className={`inline-flex min-h-11 items-center text-[17px] transition-colors hover:underline ${
+        className={`inline-flex min-h-11 items-center text-[15px] transition-colors hover:underline ${
           dark ? "text-[var(--accent-dark)]" : "text-[var(--accent-text)]"
         } ${className}`}
         {...props}
@@ -50,7 +54,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center rounded-full px-7 text-[17px] font-medium transition duration-[var(--dur-rapida)] ${variantClassName} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-[var(--radius-inner)] px-5 text-[15px] font-medium transition duration-[var(--dur-rapida)] ${variantClassName} ${className}`}
       {...props}
     >
       {children}

@@ -151,14 +151,6 @@ export const es: Copy = {
         text: "Casos de uso y agentes dentro de flujos enterprise, con sus límites, su coste y su mantenimiento.",
       },
     ],
-    homeAside: {
-      label: "Y además",
-      text: "Mantengo Snowy en producción y llevo el relevo técnico del Elite Quality Index de la Universidad de St. Gallen. Son los dos sitios donde decido de punta a punta.",
-      links: [
-        { label: "Snowy", route: "snowy" },
-        { label: "EQx", route: "eqx" },
-      ],
-    },
     eyebrow: "Rol actual",
     title: "Tech Lead en VidaCaixa y colaborador técnico de EQx en Suiza.",
     text: "Mi trabajo actual combina criterio técnico, coordinación con equipos y aterrizaje de nuevas capacidades, tanto en un entorno enterprise como en un producto internacional donde llevo el relevo técnico completo.",
@@ -326,9 +318,9 @@ export const es: Copy = {
     cta: "Ver trayectoria completa",
   },
   projectsPreview: {
-    eyebrow: "Proyectos",
-    title: "Tres proyectos que sí puedes abrir y mirar.",
-    text: "Uno lo desarrollo de punta a punta, otro es un cliente en Suiza y el tercero lleva doce años publicando.",
+    eyebrow: "Productos",
+    title: "Snowy, EQx y La Rioja Meteo.",
+    text: "Los tres están en producción y en los tres llevo las decisiones técnicas. Uno es mío de punta a punta, otro es de un cliente en Suiza y el tercero lleva doce años publicando.",
   },
   contactCta: {
     title: "Si mi perfil encaja, hablamos.",
@@ -529,7 +521,7 @@ export const es: Copy = {
       pitch: "Pronóstico multi-modelo, radar y asistente para toda España.",
       name: "Snowy",
       url: site.snowy,
-      label: "Caso de ingeniería",
+      label: "Producto propio",
       logo: "/images/snowy-logo.webp",
       image: "/images/snowy-home.webp",
       description:
@@ -560,7 +552,7 @@ export const es: Copy = {
       pitch: "El índice que ordena 151 países por la calidad de sus élites.",
       name: "EQx",
       url: "https://elitequality.org/",
-      label: "Cliente",
+      label: "Cliente · Suiza",
       image: "/images/eqx-home.webp",
       description:
         "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y plataforma privada de evaluación.",
@@ -587,7 +579,7 @@ export const es: Copy = {
       pitch: "El portal meteorológico de referencia en La Rioja desde 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
-      label: "Webmaster",
+      label: "Portal regional",
       logo: "/images/lariojameteo-logo-white.png",
       image: "/images/lariojameteo-home.webp",
       description:
