@@ -12,7 +12,7 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
   return (
     <Section id="experiencia" className="section-band">
       <Reveal>
-        <SectionHeader title={copy.cvTimeline.label} text={copy.cvTimeline.note} />
+        <SectionHeader indice="05" eyebrow={copy.pages.experience.eyebrow} title={copy.cvTimeline.label} text={copy.cvTimeline.note} />
       </Reveal>
 
       {/* La tabla se lee de un vistazo en escritorio, donde periodo, puesto y

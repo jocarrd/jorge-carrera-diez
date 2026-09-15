@@ -43,12 +43,12 @@ export function ButtonLink({
     );
   }
 
-  // La acción principal va en naranja: en blanco contrastaba más, pero en una
-  // página donde el resto es negro, gris y ámbar, el botón blanco se leía como
-  // una pieza prestada de otro sitio.
+  // La acción principal va en blanco sólido: es lo que más contrasta contra el
+  // fondo, y en naranja se confundía con el titular y con las etiquetas, que ya
+  // llevan el acento.
   const variantClassName =
     variant === "primary"
-      ? "bg-[var(--accent-strong)] text-[var(--on-accent)] hover:bg-[var(--accent)]"
+      ? "bg-[var(--foreground)] text-[var(--background)] hover:brightness-90"
       : dark
         ? "border border-white/20 text-white hover:bg-white/10"
         : "border border-[var(--line-strong)] text-[var(--foreground)] hover:bg-[var(--panel-strong)]";

@@ -23,7 +23,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
           entra en la misma retícula que el resto y el carril de capturas ya no
           cuelga de un eje que no comparte con nada. */}
       <Container>
-        <p className="t-eyebrow">Snowy</p>
+        <p className="t-eyebrow"><span className="t-indice">03</span><span aria-hidden className="t-eyebrow-sep">—</span>Snowy</p>
         <h2 className="t-section mt-4 max-w-[20ch] text-white">
           {showcase.title}
         </h2>

@@ -8,6 +8,8 @@ import {
   Rail,
   SectionHeader,
 } from "@/components/ui";
+import { RadarScrub } from "@/components/home/RadarScrub";
+import { StickyShowcase } from "@/components/home/StickyShowcase";
 import { ArchitectureStack } from "@/components/visual/ArchitectureStack";
 import { CapabilityRail } from "@/components/visual/CapabilityRail";
 import { SourceGrid } from "@/components/visual/SourceGrid";
@@ -219,6 +221,12 @@ export function SnowyView({ locale }: { locale: Locale }) {
           </div>
         </div>
       </Section>
+
+      {/* Estos dos venían de la portada, donde eran la tercera y la cuarta
+          pantalla seguidas del mismo producto. Aquí, dentro del caso, llegan
+          cuando alguien ya ha decidido que quiere el detalle. */}
+      <RadarScrub locale={locale} />
+      <StickyShowcase locale={locale} />
 
       <Section>
         <SectionHeader

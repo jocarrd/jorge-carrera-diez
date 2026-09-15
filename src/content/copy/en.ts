@@ -190,7 +190,7 @@ export const en: Copy = {
   },
   ai: {
     title: "A system of my own for working with agents",
-    lead: "The projects I maintain are developed with AI agents on top of a framework I built to hold that work together. It is an internal tool, not a product.",
+    lead: "On the client side, AI goes into flows that are already in production, with their security, traceability and maintenance requirements. On my own projects, development runs on agents over a framework I built to sustain that work: an internal tool, not a product.",
     detailTitle: "Every task follows the same path",
     detail:
       "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
