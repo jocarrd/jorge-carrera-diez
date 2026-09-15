@@ -360,7 +360,7 @@ export const es: Copy = {
         "Trabajo en remoto con un equipo internacional sobre un proyecto de investigación aplicada.",
       ],
       logo: {
-        src: "/logos/eqx.svg",
+        src: "/images/logos/eqx.png",
         alt: "EQx - Elite Quality Index",
         fallback: "EQx",
       },
@@ -384,7 +384,7 @@ export const es: Copy = {
         "Coordinación con backend, QA y negocio.",
       ],
       logo: {
-        src: "/logos/vidacaixa.png",
+        src: "/images/logos/vidacaixa.png",
         alt: "VidaCaixa",
         fallback: "VidaCaixa",
         containerClassName: "p-2",
@@ -408,7 +408,7 @@ export const es: Copy = {
         "Aplicación de buenas prácticas en un proyecto financiero de alto alcance.",
       ],
       logo: {
-        src: "/logos/openbank.jpg",
+        src: "/images/logos/openbank.png",
         alt: "Openbank Grupo Santander",
         fallback: "Openbank",
         containerClassName: "p-2",
@@ -431,7 +431,7 @@ export const es: Copy = {
         "Trabajo en equipos Scrum y despliegues sobre entornos cloud.",
       ],
       logo: {
-        src: "/logos/minsait.webp",
+        src: "/images/logos/minsait.png",
         alt: "Minsait",
         fallback: "Minsait",
       },
@@ -451,7 +451,7 @@ export const es: Copy = {
         "Sistema de gestión de estaciones meteorológicas como TFG.",
       ],
       logo: {
-        src: "/logos/hiberus.png",
+        src: "/images/logos/hiberus.png",
         alt: "Hiberus",
         fallback: "Hiberus",
       },
@@ -471,7 +471,7 @@ export const es: Copy = {
         "Primer contacto profesional con producto web y operativa real.",
       ],
       logo: {
-        src: "/logos/jig.png",
+        src: "/images/logos/jig.png",
         alt: "JIG",
         fallback: "JIG",
       },

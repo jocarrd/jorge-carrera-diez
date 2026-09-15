@@ -352,7 +352,7 @@ export const en: Copy = {
         "Remote work with an international team on an applied research project.",
       ],
       logo: {
-        src: "/logos/eqx.svg",
+        src: "/images/logos/eqx.png",
         alt: "EQx - Elite Quality Index",
         fallback: "EQx",
       },
@@ -376,7 +376,7 @@ export const en: Copy = {
         "Coordination with backend, QA and business.",
       ],
       logo: {
-        src: "/logos/vidacaixa.png",
+        src: "/images/logos/vidacaixa.png",
         alt: "VidaCaixa",
         fallback: "VidaCaixa",
         containerClassName: "p-2",
@@ -400,7 +400,7 @@ export const en: Copy = {
         "Applying good practices on a large-scale financial project.",
       ],
       logo: {
-        src: "/logos/openbank.jpg",
+        src: "/images/logos/openbank.png",
         alt: "Openbank Santander Group",
         fallback: "Openbank",
         containerClassName: "p-2",
@@ -423,7 +423,7 @@ export const en: Copy = {
         "Scrum teams and deployments on cloud environments.",
       ],
       logo: {
-        src: "/logos/minsait.webp",
+        src: "/images/logos/minsait.png",
         alt: "Minsait",
         fallback: "Minsait",
       },
@@ -443,7 +443,7 @@ export const en: Copy = {
         "Weather station management system as my final degree project.",
       ],
       logo: {
-        src: "/logos/hiberus.png",
+        src: "/images/logos/hiberus.png",
         alt: "Hiberus",
         fallback: "Hiberus",
       },
@@ -463,7 +463,7 @@ export const en: Copy = {
         "First professional contact with web product and real operations.",
       ],
       logo: {
-        src: "/logos/jig.png",
+        src: "/images/logos/jig.png",
         alt: "JIG",
         fallback: "JIG",
       },

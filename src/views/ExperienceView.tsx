@@ -26,7 +26,11 @@ export function ExperienceView({ locale }: { locale: Locale }) {
             {/* La columna del carril medía 12rem y solo llevaba un punto: el
                 contenido empezaba a un tercio del ancho y quedaba un hueco
                 muerto a la izquierda. Ahora el carril ocupa lo que ocupa. */}
-            <div className="absolute bottom-0 left-[7px] top-0 w-px bg-gradient-to-b from-cyan-300/70 via-[var(--line)] to-transparent md:left-[7px]" />
+            {/* El carril arranca en el primer punto y muere en el último, no
+                en los bordes del contenedor: antes salía una línea suelta por
+                encima de la primera entrada, desalineada con su texto. Y el
+                degradado venía en cian, del acento anterior. */}
+            <div className="absolute bottom-10 left-[7px] top-9 w-px bg-gradient-to-b from-[var(--accent)]/70 via-[var(--line-strong)] to-transparent md:top-10" />
             {content.experience.map((item) => (
               <article
                 key={`${item.company}-${item.role}`}
@@ -34,7 +38,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
               >
                 <div
                   aria-hidden
-                  className="tl-dot absolute left-0 top-8 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[var(--panel)] md:top-10 md:h-4 md:w-4"
+                  className="tl-dot absolute left-0 top-9 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--line-strong)] bg-[var(--panel-strong)] md:top-10 md:h-4 md:w-4"
                 >
                   <div className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] md:h-2 md:w-2" />
                 </div>
