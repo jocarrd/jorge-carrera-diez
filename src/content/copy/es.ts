@@ -109,28 +109,56 @@ export const es: Copy = {
     ctaPrimary: "Ver experiencia",
     ctaSecondary: "CV",
     ctaContact: "Hablemos",
+    // El titular dice "de la arquitectura a producción": esto es esa frase
+    // convertida en objeto. Cada paso es una puerta real del trabajo, no una
+    // metáfora, y el último no se enciende hasta que hay algo desplegado.
+    cycle: {
+      label: "Ciclo de entrega",
+      state: "en curso",
+      steps: [
+        { title: "Arquitectura", caption: "la decisión queda escrita", tag: "ADR" },
+        { title: "Implementación", caption: "en un espacio aislado", tag: "rama" },
+        { title: "Revisión y pruebas", caption: "nada entra sin verificar", tag: "tests" },
+        { title: "Build y despliegue", caption: "contenedor y caché", tag: "CI" },
+        { title: "En producción", caption: "con usuarios reales", tag: "live" },
+      ],
+      foot: "snowy.es · eqx",
+      badge: "3 en producción",
+    },
   },
   currentRole: {
-    homeTitle: "Ahora mismo, tres frentes.",
+    // Eran tres tarjetas al mismo nivel —VidaCaixa, EQx, Snowy— y tres cosas
+    // al mismo nivel se leen como dispersión, no como alcance. Ahora hay un
+    // solo trabajo contado en tres partes, y lo demás baja a una línea que lo
+    // respalda.
+    homeTitle: "Tech Lead en banca y seguros.",
     homeText:
-      "Criterio técnico y coordinación en un entorno enterprise, el relevo completo de un producto internacional, y uno propio en producción.",
+      "Llevo la arquitectura frontend de un producto con requisitos de seguridad, trazabilidad y mantenimiento a años vista. El trabajo es decidir cómo se construye y que el equipo pueda sostenerlo.",
     fronts: [
       {
-        label: "Tech Lead · VidaCaixa",
-        title: "Liderazgo técnico en un entorno crítico",
-        text: "Arquitectura frontend, estándares, revisiones de código y alineamiento con backend, QA y negocio en el sector financiero y asegurador.",
+        label: "01",
+        title: "Arquitectura y estándares",
+        text: "Cómo se estructura el frontend, qué entra en cada entrega y qué convenciones se mantienen entre equipos.",
       },
       {
-        label: "Freelance · EQx, Suiza",
-        title: "El relevo técnico de un índice global",
-        text: "El Elite Quality Index mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
+        label: "02",
+        title: "Revisiones y equipo",
+        text: "Revisiones de código, acompañamiento técnico y alineamiento con backend, QA y negocio.",
       },
       {
-        label: "En producción · Snowy",
-        title: "Un producto propio en producción",
-        text: "Llevo el desarrollo de punta a punta, del render en servidor al radar y los despliegues. Está en producción y no para de crecer.",
+        label: "03",
+        title: "IA generativa en producción",
+        text: "Casos de uso y agentes dentro de flujos enterprise, con sus límites, su coste y su mantenimiento.",
       },
     ],
+    homeAside: {
+      label: "Y además",
+      text: "Mantengo Snowy en producción y llevo el relevo técnico del Elite Quality Index de la Universidad de St. Gallen. Son los dos sitios donde decido de punta a punta.",
+      links: [
+        { label: "Snowy", route: "snowy" },
+        { label: "EQx", route: "eqx" },
+      ],
+    },
     eyebrow: "Rol actual",
     title: "Tech Lead en VidaCaixa y colaborador técnico de EQx en Suiza.",
     text: "Mi trabajo actual combina criterio técnico, coordinación con equipos y aterrizaje de nuevas capacidades, tanto en un entorno enterprise como en un producto internacional donde llevo el relevo técnico completo.",

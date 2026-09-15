@@ -171,6 +171,13 @@ export type Copy = {
     ctaPrimary: string;
     ctaSecondary: string;
     ctaContact: string;
+    cycle: {
+      label: string;
+      state: string;
+      steps: { title: string; caption: string; tag: string }[];
+      foot: string;
+      badge: string;
+    };
   };
   currentRole: SectionCopy & {
     paragraphs: RichSegment[][];
@@ -178,6 +185,7 @@ export type Copy = {
     homeTitle: string;
     homeText: string;
     fronts: { label: string; title: string; text: string }[];
+    homeAside: { label: string; text: string; links: { label: string; route: "snowy" | "eqx" }[] };
   };
   ai: {
     title: string;

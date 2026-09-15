@@ -111,29 +111,50 @@ export const en: Copy = {
   hero: {
     ctaPrimary: "See experience",
     ctaSecondary: "CV",
-    ctaContact: "Let's talk",
+    ctaContact: "Get in touch",
+    cycle: {
+      label: "Delivery cycle",
+      state: "running",
+      steps: [
+        { title: "Architecture", caption: "the decision gets written down", tag: "ADR" },
+        { title: "Implementation", caption: "in an isolated workspace", tag: "branch" },
+        { title: "Review and tests", caption: "nothing lands unverified", tag: "tests" },
+        { title: "Build and deploy", caption: "container and cache", tag: "CI" },
+        { title: "In production", caption: "with real users", tag: "live" },
+      ],
+      foot: "snowy.es · eqx",
+      badge: "3 in production",
+    },
   },
   currentRole: {
-    homeTitle: "Three fronts, right now.",
+    homeTitle: "Tech Lead in banking and insurance.",
     homeText:
-      "Technical judgement and coordination inside an enterprise environment, full technical ownership of an international product, and a weather platform live in production.",
+      "I own the frontend architecture of a product with security, traceability and long-term maintenance requirements. The job is deciding how it gets built, and making sure the team can sustain it.",
     fronts: [
       {
-        label: "Tech Lead · VidaCaixa",
-        title: "Technical leadership in a critical environment",
-        text: "Frontend architecture, standards, code reviews and alignment with backend, QA and business in the financial and insurance sector.",
+        label: "01",
+        title: "Architecture and standards",
+        text: "How the frontend is structured, what ships in each release and which conventions hold across teams.",
       },
       {
-        label: "Freelance · EQx, Switzerland",
-        title: "Technical handover of a global index",
-        text: "The Elite Quality Index measures across 151 countries whether elites create value or extract it, under academic direction from the University of St. Gallen.",
+        label: "02",
+        title: "Reviews and team",
+        text: "Code reviews, technical mentoring and alignment with backend, QA and business.",
       },
       {
-        label: "Own product · Snowy",
-        title: "Where I find out if I was right",
-        text: "Built end to end, from server rendering to the radar and the deployments. It is in production and still growing.",
+        label: "03",
+        title: "Generative AI in production",
+        text: "Use cases and agents inside enterprise flows, with their limits, their cost and their maintenance.",
       },
     ],
+    homeAside: {
+      label: "Also",
+      text: "I keep Snowy running in production and lead the technical handover of the Elite Quality Index at the University of St. Gallen. They are the two places where I decide end to end.",
+      links: [
+        { label: "Snowy", route: "snowy" },
+        { label: "EQx", route: "eqx" },
+      ],
+    },
     eyebrow: "Current role",
     title:
       "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
