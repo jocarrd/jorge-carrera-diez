@@ -239,8 +239,8 @@ export const en: Copy = {
     principlesTitle: "The principles behind it",
     principles: [
       {
-        title: "Knowledge lives in git",
-        text: "Whatever is decided, learned or measured during a session gets written where it outlives the session. A closed conversation is not documentation.",
+        title: "Reasoning weighs as much as code",
+        text: "What a project knows is not only in what gets programmed: it is in the decisions taken, in the reasoning that led to them, and in what was discussed with whoever defines the product. That shapes every later step and is the first thing to be lost, so I built the architecture to keep it.",
       },
       {
         title: "The standard is verified",

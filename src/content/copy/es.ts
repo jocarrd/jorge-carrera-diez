@@ -238,8 +238,8 @@ export const es: Copy = {
     principlesTitle: "Los principios que lo sostienen",
     principles: [
       {
-        title: "El conocimiento vive en git",
-        text: "Lo que se decide, se aprende o se mide durante una sesión se escribe donde sobreviva a ella. Una conversación cerrada no es documentación.",
+        title: "El razonamiento pesa tanto como el código",
+        text: "El conocimiento de un proyecto no está solo en lo que se programa: está en las decisiones que se tomaron, en el razonamiento que llevó a ellas y en lo que se habló con quien define el producto. Eso condiciona todo el desarrollo posterior y es lo primero que se pierde, así que construí la arquitectura para conservarlo.",
       },
       {
         title: "El estándar se verifica",
