@@ -23,6 +23,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
     <Section id="ia">
       <Reveal>
         <SectionHeader
+          indice="04"
           eyebrow="Trabajo con agentes"
           title={copy.title}
           text={copy.lead}

@@ -193,7 +193,7 @@ export const es: Copy = {
   },
   ai: {
     title: "Un sistema propio para trabajar con agentes",
-    lead: "Los proyectos que mantengo se desarrollan con agentes de IA sobre un marco que construí para sostener ese trabajo. Es una herramienta interna, no un producto.",
+    lead: "En el cliente, la IA entra en flujos que ya están en producción, con sus requisitos de seguridad, trazabilidad y mantenimiento. En mis proyectos, el desarrollo se hace con agentes sobre un marco que construí para sostener ese trabajo: una herramienta interna, no un producto.",
     detailTitle: "Cada tarea sigue el mismo camino",
     detail:
       "Lo que resuelve es que el criterio técnico no dependa de recordar cómo se hizo la última vez, ni se quede en la conversación donde se decidió.",

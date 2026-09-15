@@ -9,7 +9,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
   return (
     <Section id="rol-actual" className="section-band">
       <Reveal>
-        <SectionHeader title={role.homeTitle} text={role.homeText} />
+        <SectionHeader indice="01" eyebrow={role.eyebrow} title={role.homeTitle} text={role.homeText} />
       </Reveal>
 
       {/* En escritorio caben las tres de un vistazo y la rejilla gana. Por

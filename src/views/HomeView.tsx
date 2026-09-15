@@ -7,9 +7,7 @@ import { CurrentRoleSection } from "@/components/home/CurrentRoleSection";
 import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
-import { RadarScrub } from "@/components/home/RadarScrub";
 import { SnowyShowcase } from "@/components/home/SnowyShowcase";
-import { StickyShowcase } from "@/components/home/StickyShowcase";
 import type { Locale } from "@/i18n/config";
 import { personJsonLd, websiteJsonLd } from "@/lib/seo";
 
@@ -26,18 +24,22 @@ export function HomeView({ locale }: { locale: Locale }) {
     <main>
       <JsonLd data={personJsonLd(locale)} />
       <JsonLd data={websiteJsonLd(locale)} />
-      {/* El orden cuenta una historia y antes no la contaba: se entraba en tres
-          secciones seguidas de Snowy antes de saber que hay tres proyectos, y
-          "qué ha construido" no se respondía hasta la novena pantalla.
-          Ahora: qué ha construido -> qué hace ahora -> el caso insignia con su
-          prueba -> cómo trabaja -> quién es -> hablamos. */}
+      {/* El recorrido responde a las preguntas en el orden en que se hacen:
+          qué hago, dónde trabajo ahora, en qué proyectos se ve, la prueba de
+          que uno es mío y está en producción, cómo trabajo con agentes, de
+          dónde vengo, quién soy y cómo escribirme.
+
+          El rol actual iba después de los proyectos y eso dejaba el trabajo
+          principal en segundo plano. Y había cuatro secciones seguidas de
+          Snowy —galería, radar, dato y cómo se construye—: cuatro pantallas
+          del mismo producto hacen que la web parezca de Snowy y no de quien lo
+          hace. El radar y el desglose de construcción se han ido a la página
+          del caso, que es donde alguien los va a buscar. */}
       <HeroSection locale={locale} />
-      <ProjectsPreview locale={locale} />
       <CurrentRoleSection locale={locale} />
+      <ProjectsPreview locale={locale} />
       <SnowyShowcase locale={locale} />
-      <RadarScrub locale={locale} />
       <BigStat locale={locale} />
-      <StickyShowcase locale={locale} />
       <AiPreview locale={locale} />
       <ExperiencePreview locale={locale} />
       <AboutSection locale={locale} />

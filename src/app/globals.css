@@ -24,13 +24,6 @@
   --accent: #fb923c;
   --accent-text: #fb923c;
   --accent-dark: #fb923c;
-  /* El botón primario no puede ir del mismo ámbar que el titular y las
-     etiquetas: al lado del titular en ámbar, el botón desaparecía dentro del
-     mismo color. Medio paso más saturado lo separa sin cambiar de familia, y
-     la tinta encima es un marrón muy oscuro en vez de negro puro, que sobre
-     naranja vibra. */
-  --accent-strong: #f97316;
-  --on-accent: #160b02;
   /* Las secciones que antes eran "la oscura" ahora son el negro puro, que
      sigue separándolas del fondo general. */
   --ink-dark: #000000;
