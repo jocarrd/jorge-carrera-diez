@@ -5,35 +5,36 @@
    se reserva para la sección de Snowy, que es la que debe recordarse. */
 :root {
   --background: #ffffff;
-  --foreground: #16211f;
-  --muted: #5f6f6c;
-  --muted-strong: #788683;
-  --panel: #f1f5f4;
-  --panel-strong: #e6ecea;
-  --line: #e3eae8;
-  --line-strong: #ccd8d5;
-  /* Teal en vez del azul de sistema: enlaza con el cian de Snowy, se separa de
-     la referencia obvia y mide mejor —el azul se quedaba en 4,31:1 sobre el
-     gris de sección, por debajo del mínimo. Este da 5,47:1 y 5,03:1. */
-  /* La escala de grises iba tintada hacia el azul: eran los hexadecimales
-     literales de apple.com —#1d1d1f, #6e6e73, #86868b, #f5f5f7, #d2d2d7,
-     #a1a1a6—. La web no se parecia a Apple por como coloca las cosas sino por
-     de que color eran. Ahora el tinte va hacia el teal del acento, que es lo
-     que hace que el gris sepa a la marca y no a una plantilla.
+  --foreground: #0a0a0a;
+  /* La escala de grises va sin tintar. Estuvo tintada primero hacia el azul de
+     Apple y después hacia el teal de la marca; las dos veces el gris arrastraba
+     una temperatura que peleaba con el color de las capturas de producto, que
+     es lo que de verdad manda en esta página. Neutra, las capturas ponen el
+     color y el texto pone el contraste.
 
-     Contraste medido contra el anterior: el texto secundario sube de 5,07 a
-     5,28 sobre blanco y de 4,66 a 4,80 sobre el panel; el terciario, de 3,62 a
-     3,79 —sigue siendo para 11 px y elementos grandes, no para prosa—. */
-  --accent: #0f766e;
-  --accent-text: #0f766e;
-  --accent-dark: #2dd4bf;
-  --ink-dark: #05100f;
-  --ink-dark-panel: #16211f;
-  --ink-dark-muted: #9aa8a5;
+     Medido sobre blanco: --muted 8,0:1, --muted-strong 4,6:1. Sobre --panel,
+     7,7:1 y 4,4:1. El terciario sigue siendo para 11 px y elementos grandes. */
+  --muted: #525252;
+  --muted-strong: #757575;
+  --panel: #fafafa;
+  --panel-strong: #f2f2f2;
+  --line: #eaeaea;
+  --line-strong: #d4d4d4;
+  /* Teja en vez del teal. El acento ya no imita el cian de Snowy: las capturas
+     del producto traen ese azul y el acento de la página competía con ellas en
+     cada sección. Un cálido las deja destacar y, de paso, separa la identidad
+     de la web de la del producto. 5,9:1 sobre blanco y 5,7:1 sobre el panel;
+     en oscuro sube a ámbar, que mide 9:1 sobre el negro. */
+  --accent: #c2410c;
+  --accent-text: #c2410c;
+  --accent-dark: #fb923c;
+  --ink-dark: #000000;
+  --ink-dark-panel: #0c0c0c;
+  --ink-dark-muted: #a1a1a1;
   --header-h: 56px;
-  --radius-inner: 10px;
-  --radius-card: 14px;
-  --radius-card-lg: 18px;
+  --radius-inner: 8px;
+  --radius-card: 12px;
+  --radius-card-lg: 14px;
 
   /* Una sola curva y tres duraciones para todo el movimiento de la web. La
      curva por defecto de las utilidades era cubic-bezier(0.4, 0, 0.2, 1) —la de
@@ -42,23 +43,18 @@
 
      Y habia siete duraciones conviviendo. 0.15 s en un hover no se percibe como
      transicion sino como un salto; el minimo util son 0.25. */
-  /* Las sombras van tintadas con el verde profundo de la marca, no en negro
-     puro. Un objeto no proyecta gris: proyecta el color de lo que tiene
-     debajo, y aquí debajo hay un gris verdoso. Es un detalle que no se ve
-     mirándolo de frente pero se nota al comparar: con negro puro las tarjetas
-     flotaban sobre un fondo que no era el suyo.
-
-     Tres alturas y el anillo. Había ocho sombras distintas, cada una inventada
-     donde hizo falta. */
+  /* Tres alturas y el anillo. Había ocho sombras distintas, cada una inventada
+     donde hizo falta. Van en negro neutro porque el fondo ya no tiene
+     temperatura: cuando el gris estaba tintado, una sombra gris desentonaba. */
   --sombra-1:
-    0 1px 2px rgba(11, 32, 29, 0.04),
-    0 8px 24px -12px rgba(11, 32, 29, 0.1);
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px -12px rgba(0, 0, 0, 0.10);
   --sombra-2:
-    0 2px 6px rgba(11, 32, 29, 0.05),
-    0 20px 48px -20px rgba(11, 32, 29, 0.16);
+    0 2px 6px rgba(0, 0, 0, 0.05),
+    0 20px 48px -20px rgba(0, 0, 0, 0.14);
   --sombra-3:
-    0 4px 12px rgba(11, 32, 29, 0.06),
-    0 40px 90px -32px rgba(11, 32, 29, 0.24);
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 40px 90px -32px rgba(0, 0, 0, 0.20);
   --anillo: 0 0 0 1px var(--line);
 
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -70,12 +66,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Instrument Sans primero y la pila del sistema de respaldo, no al reves.
-     Con -apple-system delante, en macOS e iOS esto se renderizaba con San
+  /* Geist primero y la pila del sistema de respaldo, no al reves. Con
+     -apple-system delante, en macOS e iOS esto se renderizaba con San
      Francisco: la letra de Apple. */
-  --font-sans: var(--font-sans-instrument), -apple-system, BlinkMacSystemFont,
+  --font-sans: var(--font-sans-geist), -apple-system, BlinkMacSystemFont,
     "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: var(--font-mono-dm), "SFMono-Regular", Consolas, Menlo, monospace;
+  --font-mono: var(--font-mono-geist), "SFMono-Regular", Consolas, Menlo, monospace;
 
   /* Los valores por defecto de las utilidades de transicion. Van literales:
      dentro de @theme, una var() propia no llega a emitirse como custom
@@ -111,7 +107,7 @@ a {
 }
 
 ::selection {
-  background: rgba(15, 118, 110, 0.16);
+  background: rgba(194, 65, 12, 0.14);
 }
 
 /* ── Superficies ─────────────────────────────────────────────
@@ -1076,7 +1072,7 @@ a {
   overflow: hidden;
   border-radius: 14px 14px 0 0;
   box-shadow:
-    0 0 0 1px rgba(11, 32, 29, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.06),
     var(--sombra-2);
   /* Se sale por abajo: el overflow de la tarjeta la recorta. */
   margin-bottom: -3.5rem;
@@ -3021,5 +3017,299 @@ a {
   .cv-document a {
     color: #000 !important;
     text-decoration: none !important;
+  }
+}
+
+/* ── Ciclo de entrega ────────────────────────────────────────
+   El objeto del hero. El borde lleva un haz que gira: el degradado cónico se
+   pinta en un pseudoelemento cuadrado más grande que la tarjeta y el
+   `overflow: hidden` lo recorta, que es la única forma de girar un borde sin
+   animar el propio `background` del elemento.
+
+   Los tiempos están medidos para que la línea vaya siempre por delante del
+   check que le toca: si el check se adelanta, el conjunto se lee como una
+   lista que se enciende sola en vez de como un progreso. */
+.cycle {
+  position: relative;
+  overflow: hidden;
+  padding: 1px;
+  border-radius: 16px;
+  background: var(--line);
+  box-shadow: var(--sombra-2);
+}
+
+.cycle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 68%,
+    var(--accent) 82%,
+    rgba(245, 158, 11, 0.6) 88%,
+    transparent 94%
+  );
+  animation: cycle-spin 5s linear infinite;
+}
+
+@keyframes cycle-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.cycle-in {
+  position: relative;
+  border-radius: 15px;
+  background: var(--background);
+  padding: 1.125rem 1.25rem 1.25rem;
+}
+
+.cycle-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cycle-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+}
+
+.cycle-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: #15803d;
+}
+
+.cycle-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #22c55e;
+  animation: cycle-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes cycle-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);
+  }
+}
+
+.cycle-steps {
+  position: relative;
+  margin-top: 0.375rem;
+  list-style: none;
+}
+
+.cycle-steps::before,
+.cycle-steps::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 26px;
+  width: 2px;
+  border-radius: 2px;
+}
+
+.cycle-steps::before {
+  bottom: 26px;
+  background: var(--line);
+}
+
+.cycle-steps::after {
+  height: calc(100% - 52px);
+  background: linear-gradient(var(--accent), #f59e0b);
+  transform-origin: top;
+  animation: cycle-fill 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes cycle-fill {
+  0% {
+    transform: scaleY(0);
+  }
+  10% {
+    transform: scaleY(0.1);
+  }
+  22% {
+    transform: scaleY(0.34);
+  }
+  34% {
+    transform: scaleY(0.58);
+  }
+  46% {
+    transform: scaleY(0.82);
+  }
+  56%,
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.cycle-steps li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: center;
+  gap: 0.8125rem;
+  padding: 0.6875rem 0;
+}
+
+.cycle-dot {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: var(--background);
+  color: var(--background);
+  animation: cycle-mark 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes cycle-mark {
+  0%,
+  13% {
+    border-color: var(--line);
+    background: var(--background);
+  }
+  19%,
+  100% {
+    border-color: #15803d;
+    background: #15803d;
+  }
+}
+
+.cycle-dot svg {
+  opacity: 0;
+  animation: cycle-tick 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes cycle-tick {
+  0%,
+  14% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  20%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.cycle-text b {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.cycle-text em {
+  display: block;
+  margin-top: 2px;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--muted-strong);
+}
+
+.cycle-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-strong);
+}
+
+.cycle-steps li:last-child .cycle-tag {
+  color: #15803d;
+}
+
+.cycle-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.875rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--line);
+}
+
+.cycle-domains {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.cycle-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #15803d;
+  background: rgba(21, 128, 61, 0.08);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-radius: 999px;
+  padding: 0.25rem 0.625rem;
+  white-space: nowrap;
+}
+
+/* En un móvil el subtítulo de cada paso duplica lo que ya dice el título y
+   obliga a hacer la tarjeta el doble de alta. */
+@media (max-width: 639px) {
+  .cycle-in {
+    padding: 0.9375rem 1rem 1rem;
+  }
+
+  .cycle-steps li {
+    gap: 0.6875rem;
+    padding: 0.5625rem 0;
+  }
+
+  .cycle-text em {
+    display: none;
+  }
+
+  .cycle-text b {
+    font-size: 13.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cycle::before,
+  .cycle-led {
+    animation: none;
+  }
+
+  .cycle-steps::after {
+    animation: none;
+    transform: scaleY(1);
+  }
+
+  .cycle-dot {
+    animation: none;
+    border-color: #15803d;
+    background: #15803d;
+  }
+
+  .cycle-dot svg {
+    animation: none;
+    opacity: 1;
   }
 }

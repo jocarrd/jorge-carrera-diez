@@ -43,7 +43,7 @@ export function SurfaceTiles({ items, className = "" }: SurfaceTilesProps) {
 }
 
 function SurfaceTile({ item, hero = false }: { item: Surface; hero?: boolean }) {
-  const tinte = TINTES[clave(item.image)] ?? "#0f766e";
+  const tinte = TINTES[clave(item.image)] ?? "#c2410c";
 
   return (
     <article

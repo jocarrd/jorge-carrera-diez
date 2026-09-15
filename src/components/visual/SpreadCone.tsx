@@ -72,8 +72,8 @@ export function SpreadCone({ ticks, spreadLabel, answerLabel, className = "" }: 
         <svg viewBox={`0 0 ${W} ${H}`} className="cone-svg" aria-hidden>
           <defs>
             <linearGradient id="cone-fill" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stopColor="#0f766e" stopOpacity="0.04" />
-              <stop offset="1" stopColor="#0f766e" stopOpacity="0.16" />
+              <stop offset="0" stopColor="#c2410c" stopOpacity="0.04" />
+              <stop offset="1" stopColor="#c2410c" stopOpacity="0.16" />
             </linearGradient>
           </defs>
 
