@@ -23,7 +23,10 @@ export function AboutSection({ locale }: { locale: Locale }) {
   return (
     <Section id="sobre-mi">
       <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div className="mx-auto max-w-[280px] overflow-hidden rounded-[22px] ring-1 ring-black/[0.06] shadow-[var(--sombra-3)] sm:max-w-none sm:rounded-[var(--radius-card-lg)]">
+        {/* El retrato está recortado sobre fondo claro y contra el negro de la
+            página deja un canto duro por abajo. El degradado lo apoya en el
+            fondo en vez de pegarlo encima. */}
+        <div className="relative mx-auto max-w-[280px] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] sm:max-w-none">
           <Image
             src={site.photo}
             alt={copy.meta.ogAlt}
@@ -31,6 +34,10 @@ export function AboutSection({ locale }: { locale: Locale }) {
             height={1452}
             className="h-auto w-full"
             sizes="(max-width: 1024px) 100vw, 420px"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/55 to-transparent"
           />
         </div>
         <div>

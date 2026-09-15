@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { Footer } from "@/components/layout/Footer";
@@ -10,6 +10,14 @@ import { fontClass } from "@/lib/fonts";
 const locale = "en" as const;
 
 export const metadata: Metadata = createMetadata({ locale, route: "home" });
+
+/* La barra del navegador en móvil se pinta de este color: sin declararlo se
+   queda blanca sobre una web negra y parece que la página empieza dos
+   centímetros más abajo. */
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
+};
 
 export default function RootLayout({
   children,
