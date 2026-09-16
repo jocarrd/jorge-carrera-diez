@@ -28,6 +28,8 @@ export const en: Copy = {
     homeAriaLabel: "Home",
     mainNavLabel: "Main navigation",
     mobileNavLabel: "Mobile navigation",
+    menuButton: "Menu",
+    closeButton: "Close",
     openMenu: "Open navigation",
     closeMenu: "Close navigation",
     sectionsLabel: "Sections",
