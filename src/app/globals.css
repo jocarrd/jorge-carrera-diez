@@ -4666,3 +4666,92 @@ a {
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* Landing del curso: cómo funciona y autor */
+.course-features {
+  margin-top: 4rem;
+}
+
+.course-features-list {
+  display: grid;
+  gap: 1px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card-lg);
+  background: var(--line);
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .course-features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.course-features-list li {
+  padding: 1.5rem;
+  background: var(--panel);
+}
+
+.course-features-list h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.course-features-list p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.course-author {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.course-author-photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .course-author-photo {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.course-author-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.course-author-text {
+  margin-top: 0.5rem;
+  max-width: 40rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.course-author-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+}
+
+.course-author-links a {
+  color: var(--accent-text);
+}

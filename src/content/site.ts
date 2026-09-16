@@ -8,6 +8,7 @@ export const site = {
   github: "https://github.com/jocarrd",
   malt: "https://www.malt.es/profile/jorgecarreradiez",
   linkedin: "https://es.linkedin.com/in/jorge-carrera-diez",
+  x: "https://x.com/jorgecarrera_es",
   college: "Colegio Profesional de Ingenieros en Informática de La Rioja",
   collegeUrl: "https://ingenierosinformaticarioja.com/",
   university: "Universidad de La Rioja",

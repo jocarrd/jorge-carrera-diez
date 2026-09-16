@@ -63,7 +63,7 @@ export function CourseView({ locale }: { locale: Locale }) {
       <JsonLd data={jsonLd} />
       <Container>
         <header className="course-hero">
-          <p className="t-eyebrow">{copy.courseBreadcrumb}</p>
+          <p className="t-eyebrow">{copy.eyebrow}</p>
           <h1 className="course-title">{copy.title}</h1>
           <p className="course-intro">{copy.intro}</p>
           <ul className="course-meta">
@@ -80,8 +80,6 @@ export function CourseView({ locale }: { locale: Locale }) {
           <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
         </header>
 
-        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} />
-
         <figure className="course-cover">
           <Image
             src={grokBotCourse.cover[locale]}
@@ -93,11 +91,49 @@ export function CourseView({ locale }: { locale: Locale }) {
           />
         </figure>
 
+        <section className="course-features" aria-labelledby="como-funciona">
+          <h2 id="como-funciona" className="t-block">
+            {copy.featuresTitle}
+          </h2>
+          <ul className="course-features-list">
+            {copy.features.map((feature) => (
+              <li key={feature.title}>
+                <h3>{feature.title}</h3>
+                <p>{feature.text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} />
+
         <section className="course-syllabus" aria-labelledby="temario">
           <h2 id="temario" className="t-block">
             {copy.syllabus}
           </h2>
           <Syllabus courseId={grokBotCourse.id} modules={clientModules} lessons={clientLessons} copy={copy} />
+        </section>
+
+        <section className="course-author" aria-labelledby="autor">
+          <Image
+            src={site.photo}
+            alt={site.name}
+            width={96}
+            height={96}
+            className="course-author-photo"
+          />
+          <div>
+            <h2 id="autor" className="course-author-title">
+              {copy.authorTitle}
+            </h2>
+            <p className="course-author-text">{copy.authorText}</p>
+            <p className="course-author-links">
+              <a href={site.x} target="_blank" rel="noopener noreferrer">
+                {copy.authorX} →
+              </a>
+              <Link href={routePath(locale, "home")}>{copy.authorWeb} →</Link>
+            </p>
+          </div>
         </section>
 
         <p className="course-unofficial">

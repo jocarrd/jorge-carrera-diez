@@ -102,12 +102,37 @@ export const grokBotCourse = {
       description:
         "Curso gratis para aprender a usar Grok Bot desde cero. Lecciones cortas en español, con ejemplos reales y prompts que puedes copiar.",
       intro:
-        "Lo he sacado del directo de lanzamiento y de la documentación oficial, y lo he ordenado en 22 lecciones cortas. Si nunca has usado Grok Bot, empieza por la primera.",
+        "xAI presentó Grok Bot con un directo de tres días, de casi nueve horas cada uno. Casi nadie tiene tiempo de verlo. Yo lo he transcrito, lo he cruzado con la documentación oficial y lo he ordenado en lecciones cortas que se leen en el móvil.",
+      eyebrow: "Curso gratis",
+      featuresTitle: "Cómo funciona",
+      features: [
+        {
+          title: "Empiezas desde cero",
+          text: "La primera lección explica qué es un Bot y la última, cuándo no conviene usarlo. Cada lección solo da por sabido lo que viste en las anteriores.",
+        },
+        {
+          title: "El vídeo, a un clic",
+          text: "Si algo se enseñó en el directo, la lección enlaza al minuto exacto. Lees la idea y, si quieres verla funcionando, saltas ahí.",
+        },
+        {
+          title: "Prompts para copiar",
+          text: "Los ejemplos vienen listos para pegarlos en tu Bot. Cambias los nombres por los tuyos y funcionan.",
+        },
+        {
+          title: "Recuerda por dónde vas",
+          text: "Marca lo que terminas y vuelve otro día donde lo dejaste. Sin cuentas ni registros, todo se guarda en tu navegador.",
+        },
+      ],
+      authorTitle: "Quién está detrás",
+      authorText:
+        "Soy Jorge Carrera, ingeniero de software y tech lead. Trabajo con agentes de IA a diario en mis proyectos. Hice este curso para aprender Grok Bot a fondo y lo publico por si a ti también te ahorra las horas de vídeo.",
+      authorX: "Sígueme en X",
+      authorWeb: "Más sobre mí",
       unofficial:
         "Este curso no es de xAI. Está hecho a partir de su documentación y del directo de lanzamiento.",
-      statusTitle: "Estado del curso",
+      statusTitle: "Qué hay ya dentro",
       statusIntro:
-        "El directo de lanzamiento dura tres días. Cuando acaba cada uno, lo transcribo y añado al curso lo que haya de nuevo.",
+        "El curso crece con el directo. Cuando termina la parte de cada día, la transcribo y añado lo nuevo a las lecciones.",
       partLabel: "Parte",
       statusDone: "Ya está en el curso",
       statusProcessing: "Se emite hoy. La añado cuando termine",
@@ -146,12 +171,37 @@ export const grokBotCourse = {
       description:
         "A free course to learn Grok Bot from scratch. Short lessons with real examples and prompts you can copy.",
       intro:
-        "I took the launch livestream and the official docs and turned them into 22 short lessons. If you have never used Grok Bot, start with the first one.",
+        "xAI launched Grok Bot with a three-day livestream, almost nine hours each day. Hardly anyone has time to watch it. I transcribed it, checked it against the official docs and turned it into short lessons you can read on your phone.",
+      eyebrow: "Free course",
+      featuresTitle: "How it works",
+      features: [
+        {
+          title: "You start from zero",
+          text: "The first lesson explains what a Bot is and the last one covers when not to use it. Each lesson only assumes what you saw in the ones before.",
+        },
+        {
+          title: "The video, one click away",
+          text: "When something was shown in the livestream, the lesson links to the exact minute. Read the idea, then jump there if you want to see it working.",
+        },
+        {
+          title: "Prompts to copy",
+          text: "Examples come ready to paste into your Bot. Swap the names for yours and they work.",
+        },
+        {
+          title: "It remembers where you are",
+          text: "Mark what you finish and come back to where you left off. No account needed, everything stays in your browser.",
+        },
+      ],
+      authorTitle: "Who made it",
+      authorText:
+        "I'm Jorge Carrera, a software engineer and tech lead. I work with AI agents every day on my projects. I made this course to learn Grok Bot properly, and I'm sharing it in case it saves you the hours of video too.",
+      authorX: "Follow me on X",
+      authorWeb: "More about me",
       unofficial:
         "This course is not made by xAI. It is based on their docs and the launch livestream.",
-      statusTitle: "Course status",
+      statusTitle: "What's in so far",
       statusIntro:
-        "The launch livestream runs over three days. When each day ends, I transcribe it and add anything new to the course.",
+        "The course grows with the livestream. When each day's part ends, I transcribe it and add what's new to the lessons.",
       partLabel: "Part",
       statusDone: "In the course",
       statusProcessing: "Airing today. Added once it ends",
