@@ -128,6 +128,9 @@ export const grokBotCourse = {
         "Soy Jorge Carrera, ingeniero de software y tech lead. Trabajo con agentes de IA a diario en mis proyectos. Hice este curso para aprender Grok Bot a fondo y lo publico por si a ti también te ahorra las horas de vídeo.",
       authorX: "Sígueme en X",
       authorWeb: "Más sobre mí",
+      followTitle: "¿Te está sirviendo?",
+      followText: "Cada día añado lo nuevo del directo y lo cuento en X. Sígueme y te enteras en cuanto salga.",
+      followButton: "Seguir a @jorgecarrera_es",
       unofficial:
         "Este curso no es de xAI. Está hecho a partir de su documentación y del directo de lanzamiento.",
       statusTitle: "Qué hay ya dentro",
@@ -197,6 +200,9 @@ export const grokBotCourse = {
         "I'm Jorge Carrera, a software engineer and tech lead. I work with AI agents every day on my projects. I made this course to learn Grok Bot properly, and I'm sharing it in case it saves you the hours of video too.",
       authorX: "Follow me on X",
       authorWeb: "More about me",
+      followTitle: "Finding this useful?",
+      followText: "I add what's new from the livestream every day and post about it on X. Follow along to catch it as soon as it's out.",
+      followButton: "Follow @jorgecarrera_es",
       unofficial:
         "This course is not made by xAI. It is based on their docs and the launch livestream.",
       statusTitle: "What's in so far",
