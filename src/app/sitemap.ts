@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content";
-import { allPathsFor, allRoutes } from "@/i18n/routes";
+import { grokBotCourse } from "@/content/courses/grok-bot/meta";
+import { allPathsFor, allRoutes, lessonPath } from "@/i18n/routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return allRoutes.map(({ key, path }) => {
+  // /cursos redirige al curso: una redirección no va al sitemap.
+  const pages = allRoutes.filter(({ key }) => key !== "courses").map(({ key, path }) => {
     const translations = allPathsFor(key);
 
     return {
@@ -17,4 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     };
   });
+
+  const lessons = grokBotCourse.lessons.flatMap((lesson) =>
+    (["es", "en"] as const).map((locale) => ({
+      url: new URL(lessonPath(locale, lesson.slug[locale]), site.url).toString(),
+      lastModified: new Date(grokBotCourse.updated),
+      alternates: {
+        languages: {
+          es: new URL(lessonPath("es", lesson.slug.es), site.url).toString(),
+          en: new URL(lessonPath("en", lesson.slug.en), site.url).toString(),
+        },
+      },
+    })),
+  );
+
+  return [...pages, ...lessons];
 }
