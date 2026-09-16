@@ -2069,90 +2069,117 @@ a {
 }
 
 /* ── Cabecera ────────────────────────────────────────────────
-   Translúcida y muy baja; sólo aparece la línea inferior al hacer scroll. */
+   Una barra fina a todo el ancho, no una píldora. Arriba del todo no tiene
+   fondo ni línea: forma parte del hero. En cuanto hay scroll se vuelve opaca,
+   y al bajar se esconde para dejar leer; al subir un poco vuelve, que es
+   justo cuando alguien busca la navegación. */
 .site-header {
+  border-bottom: 1px solid transparent;
   background: transparent;
-  padding: 0.75rem 1rem;
-  transition: padding var(--dur-rapida) var(--ease);
-}
-
-.header-pill {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  max-width: 62rem;
-  margin: 0 auto;
-  min-height: 3rem;
-  padding: 0.4375rem 0.4375rem 0.4375rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(16, 16, 16, 0.82);
-  backdrop-filter: saturate(160%) blur(16px);
-  -webkit-backdrop-filter: saturate(160%) blur(16px);
   transition:
+    transform var(--dur-media) var(--ease),
     background var(--dur-rapida) var(--ease),
     border-color var(--dur-rapida) var(--ease);
 }
 
-@media (min-width: 768px) {
-  .header-pill {
-    width: auto;
-    max-width: none;
-    padding-left: 1.25rem;
-  }
-
-  .site-header {
-    display: flex;
-    justify-content: center;
-    padding: 0.875rem 1rem;
-  }
+.header-bar {
+  display: flex;
+  height: var(--header-h);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.site-header[data-scrolled="true"] .header-pill {
-  /* Al 82 % el texto de la página se leía a través de la píldora en cuanto
-     pasaba por debajo, sobre todo en móvil, donde la píldora ocupa el ancho
-     entero. Casi opaca y con una sombra corta, se separa del contenido. */
-  background: rgba(12, 12, 12, 0.96);
-  border-color: var(--line-strong);
-  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.9);
-}
-
-/* El desenfoque no siempre llega: navegadores viejos, modo de ahorro, o un
-   Chrome sin GPU que dice soportarlo y no lo pinta. Por eso el fondo va al
-   94 % —sigue leyéndose translúcido sobre el desenfoque real— y donde ni
-   siquiera se declara, opaco. La barra tiene que ser legible, no bonita. */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .header-pill {
-    background: var(--panel-strong);
-  }
-}
-
-/* Arriba del todo no hay nada debajo, así que la barra puede ser translúcida.
-   En cuanto empieza el scroll sí lo hay, y el desenfoque no siempre llega a
-   pintarse: ahí se vuelve opaca y aparece la línea.
-
-   Probado en translúcido al 72 % y al 86 %: cuando pasa por debajo una banda
-   oscura, el titular blanco de esa banda se lee ENCIMA de los enlaces del
-   menú. Con el desenfoque pintado no ocurre, pero el navegador puede declarar
-   que lo soporta y no pintarlo —sin GPU, en modo de ahorro—, y ahí el menú
-   queda ilegible. La barra tiene que ser legible antes que bonita. */
-.site-header[data-menu-open="true"] .header-pill {
-  background: var(--panel-strong);
+/* Casi opaca a propósito: el desenfoque puede declararse soportado y no
+   pintarse (sin GPU, modo de ahorro), y entonces un titular blanco que pasa
+   por debajo se lee encima de los enlaces. Legible antes que bonita. */
+.site-header[data-scrolled="true"] {
   border-bottom-color: var(--line);
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
 }
 
-/* Con la hoja abierta la barra deja de tener nada detrás que translucir, y
-   translúcida se vería el contenido de la hoja pasando bajo el logotipo. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header[data-scrolled="true"] {
+    background: var(--background);
+  }
+}
+
+.site-header[data-hidden="true"] {
+  transform: translateY(-100%);
+}
+
+/* Si alguien llega con el tabulador a un enlace de la barra, la barra tiene
+   que verse aunque el scroll la hubiera escondido. */
+.site-header:focus-within {
+  transform: none;
+}
+
 .site-header[data-menu-open="true"] {
-  background: transparent;
+  transform: none;
+  border-bottom-color: var(--line);
+  background: var(--background);
 }
 
-/* La barra encoge a partir de `sm`, y la hoja arranca justo debajo. */
-@media (min-width: 640px) {
+.header-link {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  padding: 0 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  transition: color var(--dur-rapida) var(--ease);
+}
+
+.header-link:hover,
+.header-link:focus-visible,
+.header-link[aria-current="page"] {
+  color: var(--foreground);
+}
+
+/* "Menú" en texto y no tres rayas: el icono de hamburguesa era lo que más
+   sonaba a plantilla, y la palabra se entiende igual y pesa menos. */
+.header-menu-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.25rem 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.header-menu-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--muted);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    transform var(--dur-rapida) var(--ease);
+}
+
+.site-header[data-menu-open="true"] .header-menu-dot {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+@media (min-width: 768px) {
   :root {
-    --header-h: 48px;
+    --header-h: 64px;
+  }
+
+  /* La clase propia va después de las utilidades y pisaría el `md:hidden`. */
+  .header-menu-button {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
   }
 }
 

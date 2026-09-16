@@ -28,6 +28,8 @@ export const es: Copy = {
     homeAriaLabel: "Inicio",
     mainNavLabel: "Navegación principal",
     mobileNavLabel: "Navegación móvil",
+    menuButton: "Menú",
+    closeButton: "Cerrar",
     openMenu: "Abrir navegación",
     closeMenu: "Cerrar navegación",
     sectionsLabel: "Secciones",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Mark } from "@/components/brand/Mark";
 import { LocaleSwitch } from "@/components/layout/LocaleSwitch";
@@ -8,20 +9,58 @@ import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath, sectionPath } from "@/i18n/routes";
 
+const REVEAL_ZONE = 96;
+const SCROLL_THRESHOLD = 6;
+
 export function Header({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).nav;
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const pathname = usePathname();
 
   const closeMenu = () => setIsOpen(false);
 
+  /* Se esconde al bajar y vuelve al subir. Hace falta un recorrido mínimo en
+     cada sentido: sin él, el rebote del scroll táctil la hace parpadear. Cerca
+     del principio siempre se ve, porque ahí forma parte del hero. */
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 24);
-    onScroll();
+    let lastY = window.scrollY;
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const delta = y - lastY;
+
+      setIsScrolled(y > 8);
+
+      if (y < REVEAL_ZONE) {
+        setIsHidden(false);
+        lastY = y;
+      } else if (delta > SCROLL_THRESHOLD) {
+        setIsHidden(true);
+        lastY = y;
+      } else if (delta < -SCROLL_THRESHOLD) {
+        setIsHidden(false);
+        lastY = y;
+      }
+    };
+
+    const onScroll = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(update);
+      }
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
     };
   }, []);
 
@@ -60,42 +99,42 @@ export function Header({ locale }: { locale: Locale }) {
   return (
     <header
       data-scrolled={isScrolled}
+      data-hidden={isHidden && !isOpen}
       data-menu-open={isOpen}
       className="site-header sticky top-0 z-50"
     >
-      {/* La barra deja de ser una franja pegada al borde y pasa a ser una
-          píldora flotante: separa la navegación del contenido sin cortar la
-          página con una línea, que en oscuro se nota mucho más. */}
-      <div className="header-pill">
+      <div className="header-bar contenedor mx-auto w-full max-w-[1120px] px-[22px] sm:px-8">
         <Link
           href={routePath(locale, "home")}
-          className="group flex min-h-11 min-w-11 items-center gap-3 py-1"
+          className="flex min-h-11 items-center gap-3"
           aria-label={copy.homeAriaLabel}
           onClick={closeMenu}
         >
           <Mark className="h-7 w-7 shrink-0" />
-          <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-semibold text-[var(--foreground)]">Jorge Carrera Diez</span>
-          </span>
+          <span className="text-sm font-semibold tracking-[-0.01em] text-[var(--foreground)]">Jorge Carrera Diez</span>
         </Link>
-        <nav aria-label={copy.mainNavLabel} className="hidden items-center gap-1 md:flex">
-          {copy.items.map((item) => (
-            <Link
-              key={item.key}
-              href={routePath(locale, item.key)}
-              className="rounded-full px-3.5 py-2 text-xs text-[var(--foreground)] transition hover:text-[var(--muted)]"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav aria-label={copy.mainNavLabel} className="hidden items-center md:flex">
+          {copy.items.map((item) => {
+            const href = routePath(locale, item.key);
+            return (
+              <Link
+                key={item.key}
+                href={href}
+                aria-current={pathname === href ? "page" : undefined}
+                className="header-link"
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <div className="hidden md:block">
             <LocaleSwitch locale={locale} onNavigate={closeMenu} />
           </div>
           <a
             href={`mailto:${site.email}`}
-            className="hidden min-h-11 items-center rounded-full bg-[var(--accent)] px-4 text-[13px] font-medium text-white transition hover:brightness-110 sm:inline-flex sm:min-h-9 sm:text-xs"
+            className="hidden min-h-9 items-center rounded-full bg-[var(--accent)] px-4 text-xs font-medium text-white transition hover:brightness-110 md:inline-flex"
           >
             {copy.contact}
           </a>
@@ -105,19 +144,10 @@ export function Header({ locale }: { locale: Locale }) {
             aria-controls="mobile-navigation"
             aria-label={isOpen ? copy.closeMenu : copy.openMenu}
             onClick={() => setIsOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center text-[var(--foreground)] md:hidden"
+            className="header-menu-button md:hidden"
           >
-            <span className="relative h-3.5 w-4">
-              <span
-                className={`absolute left-0 h-px w-4 bg-current transition-all duration-[var(--dur-media)] ease-[var(--ease)] ${isOpen ? "top-[7px] rotate-45" : "top-0"}`}
-              />
-              <span
-                className={`absolute left-0 top-[7px] h-px w-4 bg-current transition-opacity duration-[var(--dur-rapida)] ${isOpen ? "opacity-0" : "opacity-100"}`}
-              />
-              <span
-                className={`absolute left-0 h-px w-4 bg-current transition-all duration-[var(--dur-media)] ease-[var(--ease)] ${isOpen ? "bottom-[6px] -rotate-45" : "bottom-0"}`}
-              />
-            </span>
+            <span aria-hidden>{isOpen ? copy.closeButton : copy.menuButton}</span>
+            <span aria-hidden className="header-menu-dot" />
           </button>
         </div>
       </div>

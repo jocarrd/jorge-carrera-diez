@@ -146,6 +146,8 @@ export type Copy = {
     homeAriaLabel: string;
     mainNavLabel: string;
     mobileNavLabel: string;
+    menuButton: string;
+    closeButton: string;
     openMenu: string;
     closeMenu: string;
     sectionsLabel: string;
