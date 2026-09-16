@@ -17,7 +17,7 @@ updated: "2026-09-16"
 
 En la lección 11 repartiste el trabajo por roles. Ahora tu Bot de datos tiene las cifras y tu Bot de correo escribe los emails. La primera vez que necesitas un correo sobre esas cifras, acabas copiando la respuesta de una conversación y pegándola en la otra.
 
-Los Bots pueden dar ese paso por su cuenta. También pueden pasarse, con varios Bots respondiendo a la misma petición y gastando tu uso semanal (lección 10).
+Los Bots pueden dar ese paso por su cuenta. También pueden pasarse de la raya. Varios Bots responden a la misma petición y gastan tu uso semanal (lección 10).
 
 Aquí verás cómo hacer que colaboren con un solo responsable cada vez y dónde leer lo que se han dicho entre ellos.
 

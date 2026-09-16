@@ -38,7 +38,7 @@ export function CourseStart({ courseId, lessons, copy }: { courseId: string; les
         <span aria-hidden="true">→</span>
       </Link>
       <div className="course-progress" aria-live="polite">
-        <div className="course-progress-bar" role="progressbar" aria-valuemin={0} aria-valuemax={lessons.length} aria-valuenow={done}>
+        <div className="course-progress-bar" role="progressbar" aria-label={`${done}/${lessons.length} ${copy.progressLabel}`} aria-valuemin={0} aria-valuemax={lessons.length} aria-valuenow={done}>
           <span style={{ width: `${(done / lessons.length) * 100}%` }} />
         </div>
         <p>

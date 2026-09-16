@@ -108,7 +108,9 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
       },
       code(token: Tokens.Code) {
         if (token.lang === "prompt") {
-          return `<div class="lesson-prompt"><div class="lesson-prompt-head"><span>${options.labels.prompt}</span><button type="button" class="lesson-copy" data-copy>${options.labels.copy}</button></div><pre><code>${escapeHtml(token.text)}</code></pre></div>\n`;
+          // En el fichero los prompts van cortados a mano para leerlos en el editor; en la web cada frase fluye con el ancho.
+          const text = token.text.replace(/([^.:?!\n])\n(?![ \t]*(?:[-*•]|\d+[.)])[ \t])(?=[ \t]*\S)[ \t]*/g, "$1 ");
+          return `<div class="lesson-prompt"><div class="lesson-prompt-head"><span>${options.labels.prompt}</span><button type="button" class="lesson-copy" data-copy>${options.labels.copy}</button></div><pre><code>${escapeHtml(text)}</code></pre></div>\n`;
         }
         const lang = token.lang ? ` data-lang="${escapeHtml(token.lang)}"` : "";
         return `<pre class="lesson-code"${lang}><code>${escapeHtml(token.text)}</code></pre>\n`;

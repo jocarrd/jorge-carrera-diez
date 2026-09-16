@@ -63,9 +63,7 @@ export function CourseView({ locale }: { locale: Locale }) {
       <JsonLd data={jsonLd} />
       <Container>
         <header className="course-hero">
-          <p className="t-eyebrow">
-            <Link href={routePath(locale, "grokBotCourse")}>{copy.courseBreadcrumb}</Link>
-          </p>
+          <p className="t-eyebrow">{copy.courseBreadcrumb}</p>
           <h1 className="course-title">{copy.title}</h1>
           <p className="course-intro">{copy.intro}</p>
           <ul className="course-meta">
@@ -73,7 +71,7 @@ export function CourseView({ locale }: { locale: Locale }) {
               {lessons.length} {copy.lessonsLabel}
             </li>
             <li>
-              ~{hours} h {copy.readingTime}
+              {new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(hours)} h {copy.readingTime}
             </li>
             <li>
               {copy.updatedLabel} {formatDate(locale, grokBotCourse.updated)}
