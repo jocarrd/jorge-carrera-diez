@@ -65,6 +65,7 @@ export function CourseView({ locale }: { locale: Locale }) {
         <header className="course-hero">
           <p className="t-eyebrow">{copy.eyebrow}</p>
           <h1 className="course-title">{copy.title}</h1>
+          <p className="course-subtitle">{copy.subtitle}</p>
           <p className="course-intro">{copy.intro}</p>
           <ul className="course-meta">
             <li>

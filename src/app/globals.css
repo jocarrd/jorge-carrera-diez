@@ -3704,8 +3704,9 @@ a {
 }
 
 .course-intro {
-  margin-top: 1.25rem;
-  font-size: 1.1875rem;
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: 1.0625rem;
   line-height: 1.55;
   color: var(--muted);
 }
@@ -4929,4 +4930,19 @@ a {
   .syllabus:not(.syllabus--compact) .syllabus-module--intro {
     grid-column: 1 / -1;
   }
+}
+
+.course-subtitle {
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+}
+
+.course-title,
+.lesson-title,
+.course-subtitle {
+  text-wrap: balance;
 }

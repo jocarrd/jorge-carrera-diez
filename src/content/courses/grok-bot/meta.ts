@@ -100,7 +100,9 @@ export const grokBotCourse = {
   ] as CourseLessonRef[],
   copy: {
     es: {
-      title: "Grok Bot, de cero a experto",
+      title: "Grok Bot: una empresa en 72 horas",
+      seoTitle: "Curso de Grok Bot: una empresa en 72 horas",
+      subtitle: "Aprende a usar Grok Bot desde cero siguiendo cómo tres personas de xAI montan una empresa en directo.",
       description:
         "Curso gratis para aprender a usar Grok Bot desde cero. Lecciones cortas en español, con ejemplos reales y prompts que puedes copiar.",
       intro:
@@ -183,7 +185,9 @@ export const grokBotCourse = {
       openSyllabus: "Ver el temario",
     },
     en: {
-      title: "Grok Bot, from zero to expert",
+      title: "Grok Bot: a company in 72 hours",
+      seoTitle: "Grok Bot course: a company in 72 hours",
+      subtitle: "Learn Grok Bot from scratch by following three people from xAI as they build a company live.",
       description:
         "A free course to learn Grok Bot from scratch. Short lessons with real examples and prompts you can copy.",
       intro:
