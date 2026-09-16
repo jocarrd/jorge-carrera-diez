@@ -1,7 +1,7 @@
 ---
 id: "16"
 module: 5
-title: "Que verifique su trabajo"
+title: "Que el Bot compruebe su trabajo"
 description: "Dale a tus Bots una forma de comprobar su trabajo, exige pruebas como capturas, métricas y vídeos, y revisa esas pruebas en vez de los registros."
 level: advanced
 minutes: 8

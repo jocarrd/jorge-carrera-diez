@@ -1,7 +1,7 @@
 ---
 id: "10"
 module: 3
-title: "Routines: trabajo que se repite solo"
+title: "Routines: tareas programadas"
 description: "Haz que un Bot repita una tarea probada con un horario o tras un evento, pruébala sin riesgos y evita que haga ruido o gaste de más."
 level: intermediate
 minutes: 8
