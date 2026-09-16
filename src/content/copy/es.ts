@@ -54,6 +54,10 @@ export const es: Copy = {
     positioning: "Ingeniero de software · Producto · Arquitectura",
     positioningLong:
       "Ingeniero de software. Producto web, de la arquitectura a producción.",
+    // "Sobre mí" repetía palabra por palabra el titular del hero; en móvil,
+    // a nueve pantallas de distancia, se leía como un error. Aquí va lo que
+    // el hero no dice: la titulación, la colegiación y desde dónde trabaja.
+    aboutTitle: "Ingeniero informático colegiado, desde Logroño.",
     // Tres líneas que dicen el oficio, no quién lo hace: antes eran "lo diseño,
     // lo construyo, lo mantengo" y sonaban a currículum recitado en voz alta.
     // Lo que hay que entender en dos segundos es el alcance del trabajo.

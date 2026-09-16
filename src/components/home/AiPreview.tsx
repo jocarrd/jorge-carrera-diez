@@ -30,13 +30,15 @@ export function AiPreview({ locale }: { locale: Locale }) {
         />
       </Reveal>
 
-      {/* Dos columnas ya en móvil: apiladas, las cinco piezas costaban casi dos
-          pantallas y el bento dejaba de leerse como conjunto. */}
+      {/* En móvil eran dos columnas de 170 px: cada texto se partía en líneas
+          de tres palabras y la sección entera costaba casi tres pantallas. Ahora
+          cada pieza es una fila, con el gráfico pequeño a la izquierda y el
+          texto a todo el ancho; el bento de cuatro columnas sigue en escritorio. */}
       <Reveal
         delay={80}
-        className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4"
+        className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-4"
       >
-        <article className="ai-focal col-span-2 flex flex-col justify-between rounded-[var(--radius-card-lg)] p-7 sm:row-span-2 sm:p-9">
+        <article className="ai-focal flex flex-col sm:col-span-2 justify-between rounded-[var(--radius-card-lg)] p-7 sm:row-span-2 sm:p-9">
           <p className="font-mono text-xs uppercase tracking-[0.08em] text-[var(--accent-dark)]">
             {focal.metric}
           </p>
@@ -57,21 +59,21 @@ export function AiPreview({ locale }: { locale: Locale }) {
         {around.map((step) => (
           <article
             key={step.title}
-            className="ai-tile lvl-2 lvl-hover flex flex-col justify-between rounded-[var(--radius-card-lg)] p-5 sm:p-7"
+            className="ai-tile lvl-2 lvl-hover flex flex-row items-center gap-4 rounded-[var(--radius-card-lg)] p-4 sm:flex-col sm:items-stretch sm:justify-between sm:gap-0 sm:p-7"
           >
-            <div>
+            <div className="w-[4.5rem] shrink-0 sm:w-auto">
               {/* --muted-strong se queda en 3,62:1 sobre blanco a 11 px, por
                   debajo del 4,5 que pide texto pequeño. --muted da 5,07. */}
-              <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
+              <span className="hidden font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)] sm:inline">
                 {step.metric}
               </span>
               <TileGraphic kind={step.metric} />
             </div>
-            <div className="mt-6 sm:mt-10">
-              <p className="text-[1.1875rem] font-semibold tracking-[-0.015em]">
+            <div className="sm:mt-10">
+              <p className="text-[1.0625rem] font-semibold tracking-[-0.015em] sm:text-[1.1875rem]">
                 {step.title}
               </p>
-              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">
+              <p className="mt-1 text-[15px] leading-[1.5] text-[var(--muted)] sm:mt-1.5 sm:text-base sm:leading-[1.6]">
                 {step.caption}
               </p>
             </div>
@@ -83,7 +85,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
           se usa. Iba en el hero, donde competía con el titular y con las
           capturas de producto: aquí llega cuando ya se ha explicado. */}
       <Reveal delay={120}>
-        <div className="mt-4 grid gap-8 rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel)] p-7 sm:p-9 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14">
+        <div className="mt-3 grid gap-6 rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel)] p-5 sm:mt-4 sm:gap-8 sm:p-9 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14">
           <div>
             <h3 className="t-card">{copy.detailTitle}</h3>
             <p className="mt-3 max-w-[54ch] text-[1.0625rem] leading-[1.6] text-[var(--muted)]">

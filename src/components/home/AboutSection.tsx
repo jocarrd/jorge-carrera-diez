@@ -23,10 +23,14 @@ export function AboutSection({ locale }: { locale: Locale }) {
   return (
     <Section id="sobre-mi">
       <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        {/* El retrato está recortado sobre fondo claro y contra el negro de la
+        {/* A 280 px de ancho el retrato ocupaba una pantalla entera de móvil antes
+            de llegar a una sola línea de texto. A 200 se reconoce la cara y el
+            texto asoma debajo.
+
+            El retrato está recortado sobre fondo claro y contra el negro de la
             página deja un canto duro por abajo. El degradado lo apoya en el
             fondo en vez de pegarlo encima. */}
-        <div className="relative mx-auto max-w-[280px] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] sm:max-w-none">
+        <div className="relative mx-auto max-w-[200px] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] sm:max-w-none">
           <Image
             src={site.photo}
             alt={copy.meta.ogAlt}
@@ -43,7 +47,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
         <div>
           <p className="t-eyebrow">{site.name}</p>
           <h2 className="t-section mt-3">
-            {copy.profile.positioningLong}
+            {copy.profile.aboutTitle}
           </h2>
           <ProfileSummary
             locale={locale}

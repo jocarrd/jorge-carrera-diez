@@ -29,15 +29,18 @@ export function BigStat({ locale }: { locale: Locale }) {
               </p>
             </div>
 
-            <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-[var(--radius-card)] border border-white/[0.1] bg-white/[0.1] lg:w-[26rem]">
+            {/* En móvil eran tres columnas de 115 px con la etiqueta partida en tres
+                líneas. Ahí cada dato es una fila, cifra a la izquierda y etiqueta
+                a la derecha, que se lee de un golpe. */}
+            <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-card)] border border-white/[0.1] bg-white/[0.1] sm:grid-cols-3 lg:w-[26rem]">
               {copy.support.map((dato) => (
-                <div key={dato.label} className="bg-[var(--ink-dark)] px-4 py-5">
+                <div key={dato.label} className="bg-[var(--ink-dark)] px-5 py-4 sm:px-4 sm:py-5">
                   <dt className="sr-only">{dato.label}</dt>
-                  <dd>
+                  <dd className="flex items-baseline justify-between gap-4 sm:block">
                     <span className="block text-[1.5rem] font-semibold leading-none tracking-[-0.035em] text-white sm:text-[1.875rem]">
                       {dato.value}
                     </span>
-                    <span className="mt-2.5 block text-[13px] leading-[1.4] text-[var(--ink-dark-muted)]">
+                    <span className="block text-right text-[14px] leading-[1.4] text-[var(--ink-dark-muted)] sm:mt-2.5 sm:text-left sm:text-[13px]">
                       {dato.label}
                     </span>
                   </dd>
