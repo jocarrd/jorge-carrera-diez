@@ -1,0 +1,85 @@
+## day 1
+
+The first day was about getting started. They looked for an idea in the audience's suggestions, turned it into a landing page with its own domain and put together their first team of Bots. Along the way came an introduction to Grok Bot, an engineering workshop, two sessions on teams of Bots that already work, and several guests with business advice. It ended with the talks done, the Bots connected to Notion, GitHub and Vercel, and the first landing page online.
+
+{{live 8:42:23 "How the first day went"}}
+
+## module 1 · day 1
+
+Before building anything, the livestream paused for an hour to explain what Grok Bot is. Two people from the Grok Bot team created a Bot called Data Dan from scratch and asked it, by voice, for a Google Form with two questions about coffee. The form came together in front of everyone, click by click, on the Bot's own computer.
+
+Then another Bot, Email Ethan, drafted an email using data it asked Data Dan for without being told to. A rule written in the settings stopped it before sending, and it needed permission before it could show the draft. Not everything worked. The form's QR code said "no access" because the link wasn't public.
+
+That's where the course starts, with what they taught in that hour: what a Bot is, which computer it uses, how to create your first one and what it can do without asking you.
+
+{{live 0:40:49 "Data Dan builds a form live"}}
+
+## module 2 · day 1
+
+Back in the studio, it was time to find the idea. The day before, they had asked on X what company they should build and had thousands of replies. With the X plugin already connected, they created a Bot the chat named "Marky McMarkface" and asked it to summarise what people were suggesting. The Bot grouped the ideas. People wanted "not another SaaS demo", something physical and local, nostalgia for old games, or a company that builds companies. That gave them their direction, a platform for running restaurant pop-ups in San Francisco.
+
+For the landing page, Lauren didn't ask for a design straight away. The Bot was asked to find references from well-made websites, then got a couple of minutes of dictated thinking about the idea and a request to repeat it back in its own words. The Bot added something nobody had asked about. The landing page would be the easy part; finding a venue, cooks and then guests would be hard. The first three prototypes came out dull, and the second round found the style they kept, "night market pink".
+
+Almost everything Lauren did was give the Bot context. How to give it, what a Bot remembers and how to teach it to repeat a task is what comes next.
+
+{{live 1:43:15 "The Bot summarises thousands of audience ideas"}}
+
+{{live 2:15:17 "Asking the Bot to repeat the idea in its own words"}}
+
+## module 3 · day 1
+
+With the idea and the style decided, they needed something online. Roshan created an empty GitHub repository and they connected it to Vercel so every change would go live on its own. While they were still setting it up, the Bot had already pushed the first version of the page.
+
+They connected Notion to keep track of decisions and asked a Bot for domain names. It came up with stall.run, nightmarket.app and popup.place, and they ended up buying shipbythurs.day, which gave the company its name, Ship by Thursday. To store sign-ups they considered a Notion table and switched on the fly to a real database. The credentials were slow to arrive, so they told the Bot to get as far as it could without them.
+
+In the next lessons you connect your own tools, leave logins in place and schedule work without giving more access than needed.
+
+{{live 2:35:42 "The Bot pushes the page while they connect Vercel"}}
+
+## module 4 · day 1
+
+Little by little the studio filled up with Bots. Lauren installed Dr. Eggbot from the marketplace, a Bot that creates Bots, and used it to build a team. Steve became the chief of staff, Grokpot took the quick prototypes and Tater, named by a chat vote, would be the engineer. Matt did the same with a prospecting Bot to find restaurants.
+
+Then it was Codie Sanchez's turn, there to talk business, and the team had to slow down a little. Before creating more Bots, they had to decide which number they wanted to move, leads or email sign-ups. The advice was to try selling it to three people before building, to start on X without paying for ads, and to save every good comment about the product from day one.
+
+Hours later, when Lauren needed a Bot to search for venues, Matt didn't explain how to build one. A template of Matt's own Bot arrived instead. This module teaches you to build a team like that and share the Bots that work.
+
+{{live 2:05:40 "Dr. Eggbot turns Steve into a chief of staff"}}
+
+{{live 2:57:57 "Codie Sanchez: sell it to three people before you build"}}
+
+## module 5 · day 1
+
+Tater, the engineer Bot, was asked to hand the coding to Cursor's cloud agents and come back with a video or a screenshot before deploying anything. Soon after, it opened a pull request of about 2,000 lines that nobody had asked for. The answer was a clear rule. No pull requests for now, changes go straight to main.
+
+Off camera, Lauren built what was called an engineering factory. A Bot called Hashbrown reviews whatever Tater opens, and an automation posts every change to Slack for review. The engineering workshop that followed showed the next level: a newly installed Bot learning the team's rules by asking another Bot, code audits that run overnight and a defined flow for urgent bugs.
+
+That path, from handing off code to automating it with proof along the way, is what this module covers.
+
+{{live 2:50:50 "The 2,000-line pull request nobody asked for"}}
+
+{{live 4:18:13 "A new Bot learns the rules from another Bot"}}
+
+## module 6 · day 1
+
+The next build session was the most chaotic of the day. The screen share froze, one Bot couldn't reach the repositories and another didn't record the date they had picked for the event. They still made progress. The landing page now stored sign-ups and sent a confirmation email, a marketing Bot found the 50 best street corners in San Francisco for handing out flyers, another gathered 15 to 20 caterers with phone numbers, and a new one took charge of putting only the important decisions into Notion.
+
+Halfway through, they changed plans. The first pop-up went from restaurant to art exhibition, and the first thing they did was tell Steve, the coordinator, so the other Bots wouldn't keep working on the old idea.
+
+In between, other sessions showed teams of Bots that have been running for a while. A product team went from a question about data to a prototype for a made-up airline. A founder's team prepared customer calls and kept an eye on competitors. The real-world cases in the course come from those sessions and from what happened to Ship by Thursday.
+
+{{live 5:39:38 "Change of plan: from restaurant to art exhibition"}}
+
+{{live 6:10:24 "From a data question to a prototype"}}
+
+## module 7 · day 1
+
+The day ended with two conversations about what you don't see in a demo. In the session for founders, Shub, from the xAI team, explained how to stop Bots from overspending. The advice was to trigger routines when something happens instead of every few minutes, to have Bots call a website's API instead of clicking through it, and to send one-off questions to a separate Bot.
+
+Then Jenny, who runs seven businesses with 22 Bots, sat down with the team. Jenny helped them write the prompt for the event budget and named what a Bot shouldn't handle alone: guest registration, security and the final read of a contract. Day 2 would be about sales and customer support.
+
+The last module gathers those two conversations: what it costs to work this way and where a person should keep making the call.
+
+{{live 7:55:39 "Using the API instead of the browser to spend less"}}
+
+{{live 8:26:01 "Planning the event budget with Jenny"}}

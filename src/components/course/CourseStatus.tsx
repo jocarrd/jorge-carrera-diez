@@ -20,7 +20,17 @@ function StatusIcon({ status }: { status: LivePart["status"] }) {
 }
 
 /** Qué partes del directo están ya dentro del curso y cuáles faltan. */
-export function CourseStatus({ locale, parts, copy }: { locale: Locale; parts: LivePart[]; copy: CourseCopy }) {
+export function CourseStatus({
+  locale,
+  parts,
+  copy,
+  diaryHref,
+}: {
+  locale: Locale;
+  parts: LivePart[];
+  copy: CourseCopy;
+  diaryHref: string;
+}) {
   const label = { done: copy.statusDone, processing: copy.statusProcessing, upcoming: copy.statusUpcoming };
   return (
     <section id="estado" className="course-status" aria-labelledby="estado-titulo">
@@ -41,6 +51,11 @@ export function CourseStatus({ locale, parts, copy }: { locale: Locale; parts: L
             <p className="course-status-label">{label[part.status]}</p>
             {part.status === "processing" ? <span className="course-status-loader" aria-hidden="true" /> : null}
             <p className="course-status-topics">{part.topics[locale].join(" · ")}</p>
+            {part.status === "done" ? (
+              <a href={`${diaryHref}#${locale === "es" ? "dia" : "day"}-${part.number}`} className="course-status-story">
+                {copy.partStoryLink} →
+              </a>
+            ) : null}
           </li>
         ))}
       </ol>

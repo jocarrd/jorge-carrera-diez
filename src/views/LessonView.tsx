@@ -8,7 +8,8 @@ import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
-import { getLesson, neighbours } from "@/lib/courses/load";
+import { getCourse, getLesson, neighbours, storyForModule } from "@/lib/courses/load";
+import { dayAnchor } from "./DiaryView";
 import { courseClientData } from "./CourseView";
 
 export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
@@ -19,6 +20,10 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
   const { previous, next, index, total } = neighbours(locale, lesson.id);
   const lessonModule = grokBotCourse.modules.find((m) => m.number === lesson.ref.module)!;
   const courseHref = routePath(locale, "grokBotCourse");
+  // El tramo de la historia se cuenta al abrir el módulo, en su primera lección.
+  const firstOfModule = getCourse(locale).lessons.find((l) => l.ref.module === lesson.ref.module)?.id === lesson.id;
+  const story = firstOfModule && lesson.ref.module > 0 ? storyForModule(locale, lesson.ref.module) : [];
+  const diaryHref = routePath(locale, "grokBotDiary");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -78,7 +83,8 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               <Link href={courseHref}>{copy.title}</Link>
               <span aria-hidden="true">/</span>
               <span>
-                {copy.moduleLabel} {lessonModule.number} · {lessonModule.title[locale]}
+                {lessonModule.number === 0 ? copy.introModule : `${copy.moduleLabel} ${lessonModule.number}`} ·{" "}
+                {lessonModule.title[locale]}
               </span>
             </nav>
 
@@ -96,6 +102,18 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               </ul>
               <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
             </header>
+
+            {story.map((segment) => (
+              <section key={segment.day} className="lesson-story" aria-label={copy.storyLabel}>
+                <p className="lesson-story-eyebrow">
+                  {copy.storyLabel} · {copy.dayLabel} {segment.day}
+                </p>
+                <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
+                <Link href={`${diaryHref}#${dayAnchor(locale, segment.day)}`} className="lesson-story-link">
+                  {copy.diaryDayLink} →
+                </Link>
+              </section>
+            ))}
 
             <section className="lesson-objectives" aria-label={copy.objectives}>
               <p className="lesson-objectives-title">{copy.objectives}</p>

@@ -84,10 +84,10 @@ export function Syllabus({
         const items = lessons.filter((l) => l.module === module.number);
         const done = items.filter((l) => progress.completed.includes(l.id)).length;
         return (
-          <li key={module.number} className="syllabus-module">
+          <li key={module.number} className={`syllabus-module ${module.number === 0 ? "syllabus-module--intro" : ""}`}>
             <div className="syllabus-module-head">
               <span className="syllabus-module-number">
-                {copy.moduleLabel} {module.number}
+                {module.number === 0 ? copy.introModule : `${copy.moduleLabel} ${module.number}`}
               </span>
               {!compact ? <span className="syllabus-level">{module.level}</span> : null}
               <span className="syllabus-module-count">
