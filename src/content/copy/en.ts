@@ -54,6 +54,10 @@ export const en: Copy = {
     positioning: "Software engineer · Product · Architecture",
     positioningLong:
       "Software engineer. Web product from architecture through to production.",
+    // "Sobre mí" repetía palabra por palabra el titular del hero; en móvil,
+    // a nueve pantallas de distancia, se leía como un error. Aquí va lo que
+    // el hero no dice: la titulación, la colegiación y desde dónde trabaja.
+    aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",

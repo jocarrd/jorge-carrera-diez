@@ -158,6 +158,7 @@ export type Copy = {
     headline: string;
     positioning: string;
     positioningLong: string;
+    aboutTitle: string;
     tagline: string[];
     taglineSub: string;
     capabilities: { title: string; text: string }[];

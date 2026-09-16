@@ -176,6 +176,25 @@ a {
   min-height: 11.5rem;
 }
 
+@media (max-width: 639px) {
+  .ai-tile {
+    min-height: 0;
+  }
+
+  .ai-tile .tile-graphic {
+    margin-top: 0;
+  }
+
+  .ai-focal {
+    min-height: 0;
+  }
+
+  .ai-focal .agent-hub {
+    max-width: 8.5rem;
+    padding: 0.5rem 0;
+  }
+}
+
 /* El icono se cambia por un diagrama: ocupa el ancho de la tarjeta y cuenta
    algo, en vez de decir solo de que va. */
 .tile-graphic {
@@ -2092,8 +2111,12 @@ a {
 }
 
 .site-header[data-scrolled="true"] .header-pill {
-  background: rgba(12, 12, 12, 0.92);
+  /* Al 82 % el texto de la página se leía a través de la píldora en cuanto
+     pasaba por debajo, sobre todo en móvil, donde la píldora ocupa el ancho
+     entero. Casi opaca y con una sombra corta, se separa del contenido. */
+  background: rgba(12, 12, 12, 0.96);
   border-color: var(--line-strong);
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.9);
 }
 
 /* El desenfoque no siempre llega: navegadores viejos, modo de ahorro, o un
