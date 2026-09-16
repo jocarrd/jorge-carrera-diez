@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
+import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 
 export const routeKeys = [
   "home",
@@ -10,6 +11,8 @@ export const routeKeys = [
   "experience",
   "cv",
   "contact",
+  "courses",
+  "grokBotCourse",
 ] as const;
 
 export type RouteKey = (typeof routeKeys)[number];
@@ -25,6 +28,8 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     experience: "/experiencia",
     cv: "/cv",
     contact: "/contacto",
+    courses: "/cursos",
+    grokBotCourse: "/cursos/grok-bot",
   },
   en: {
     home: "/en",
@@ -35,6 +40,8 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     experience: "/en/experience",
     cv: "/en/cv",
     contact: "/en/contact",
+    courses: "/en/courses",
+    grokBotCourse: "/en/courses/grok-bot",
   },
 };
 
@@ -48,6 +55,11 @@ export function sectionPath(locale: Locale, anchor: string): string {
   return `${home === "/" ? "" : home}/#${anchor}`.replace("//#", "/#");
 }
 
+/** Ruta de una lección del curso de Grok Bot en un idioma. */
+export function lessonPath(locale: Locale, slug: string): string {
+  return `${paths[locale].grokBotCourse}/${slug}`;
+}
+
 export function allPathsFor(key: RouteKey): Record<Locale, string> {
   return Object.fromEntries(
     locales.map((locale) => [locale, paths[locale][key]]),
@@ -57,6 +69,15 @@ export function allPathsFor(key: RouteKey): Record<Locale, string> {
 /** Ruta equivalente en el otro idioma; cae a la home si no hay correspondencia. */
 export function translatePath(pathname: string, target: Locale): string {
   const clean = pathname.replace(/\/$/, "") || "/";
+
+  // Las lecciones tienen slug propio en cada idioma: se traduce por su id.
+  for (const locale of locales) {
+    const base = `${paths[locale].grokBotCourse}/`;
+    if (clean.startsWith(base)) {
+      const lesson = grokBotCourse.lessons.find((l) => l.slug[locale] === clean.slice(base.length));
+      if (lesson) return lessonPath(target, lesson.slug[target]);
+    }
+  }
 
   for (const locale of locales) {
     for (const key of routeKeys) {

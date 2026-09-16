@@ -39,6 +39,7 @@ export const es: Copy = {
       { key: "home", label: "Inicio" },
       { key: "experience", label: "Experiencia" },
       { key: "projects", label: "Proyectos" },
+      { key: "courses", label: "Cursos" },
       { key: "snowy", label: "Snowy" },
       { key: "cv", label: "CV" },
       { key: "contact", label: "Contacto" },

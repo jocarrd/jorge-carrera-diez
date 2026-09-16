@@ -54,6 +54,55 @@ export function createMetadata({ locale, route, title, description }: SeoInput):
   };
 }
 
+/** Metadatos de una página que no es una ruta fija: las lecciones de un curso. */
+export function createPageMetadata({
+  locale,
+  paths,
+  title,
+  description,
+  image,
+  type = "article",
+}: {
+  locale: Locale;
+  paths: Record<Locale, string>;
+  title: string;
+  description: string;
+  image?: string;
+  type?: "article" | "website";
+}): Metadata {
+  const url = absolute(paths[locale]);
+  const resolvedTitle = `${title} | ${site.name}`;
+  return {
+    metadataBase: new URL(site.url),
+    title: resolvedTitle,
+    description,
+    alternates: {
+      canonical: url,
+      languages: {
+        es: absolute(paths.es),
+        en: absolute(paths.en),
+        "x-default": absolute(paths[defaultLocale]),
+      },
+    },
+    openGraph: {
+      title: resolvedTitle,
+      description,
+      url,
+      siteName: site.name,
+      locale: openGraphLocale[locale],
+      type,
+      ...(image ? { images: [{ url: absolute(image), width: 1600, height: 900 }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: resolvedTitle,
+      description,
+      ...(image ? { images: [absolute(image)] } : {}),
+    },
+    icons: { icon: "/icon.svg" },
+  };
+}
+
 export function personJsonLd(locale: Locale) {
   const copy = getCopy(locale);
 
