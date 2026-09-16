@@ -10,7 +10,7 @@ const copy = grokBotCourse.copy[locale];
 export const metadata: Metadata = createPageMetadata({
   locale,
   paths: allPathsFor("grokBotCourse"),
-  title: copy.title,
+  title: copy.seoTitle,
   description: copy.description,
   image: grokBotCourse.cover[locale],
   type: "website",

@@ -65,6 +65,7 @@ export function CourseView({ locale }: { locale: Locale }) {
         <header className="course-hero">
           <p className="t-eyebrow">{copy.eyebrow}</p>
           <h1 className="course-title">{copy.title}</h1>
+          <p className="course-subtitle">{copy.subtitle}</p>
           <p className="course-intro">{copy.intro}</p>
           <ul className="course-meta">
             <li>
@@ -78,6 +79,9 @@ export function CourseView({ locale }: { locale: Locale }) {
             </li>
           </ul>
           <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
+          <p className="course-diary-link">
+            <Link href={routePath(locale, "grokBotDiary")}>{copy.diaryLink} →</Link>
+          </p>
         </header>
 
         <figure className="course-cover">
@@ -105,7 +109,7 @@ export function CourseView({ locale }: { locale: Locale }) {
           </ul>
         </section>
 
-        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} />
+        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} diaryHref={routePath(locale, "grokBotDiary")} />
 
         <section className="course-syllabus" aria-labelledby="temario">
           <h2 id="temario" className="t-block">

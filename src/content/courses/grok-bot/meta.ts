@@ -64,6 +64,7 @@ export const grokBotCourse = {
     },
   ] as LivePart[],
   modules: [
+    { number: 0, title: { es: "La historia", en: "The story" }, level: "beginner" },
     { number: 1, title: { es: "Fundamentos", en: "Fundamentals" }, level: "beginner" },
     { number: 2, title: { es: "Enseñar a tu Bot", en: "Teaching your Bot" }, level: "beginner" },
     { number: 3, title: { es: "Conectar tus herramientas", en: "Connecting your tools" }, level: "intermediate" },
@@ -73,6 +74,7 @@ export const grokBotCourse = {
     { number: 7, title: { es: "Nivel experto", en: "Expert level" }, level: "advanced" },
   ] as CourseModule[],
   lessons: [
+    { id: "00", module: 0, slug: { en: "the-story", es: "la-historia" } },
     { id: "01", module: 1, slug: { en: "what-is-grok-bot", es: "que-es-grok-bot" } },
     { id: "02", module: 1, slug: { en: "the-bots-computer", es: "el-ordenador-de-los-bots" } },
     { id: "03", module: 1, slug: { en: "your-first-bot", es: "tu-primer-bot" } },
@@ -98,7 +100,9 @@ export const grokBotCourse = {
   ] as CourseLessonRef[],
   copy: {
     es: {
-      title: "Grok Bot, de cero a experto",
+      title: "Grok Bot: una empresa en 72 horas",
+      seoTitle: "Curso de Grok Bot: una empresa en 72 horas",
+      subtitle: "Aprende a usar Grok Bot desde cero siguiendo cómo tres personas de xAI montan una empresa en directo.",
       description:
         "Curso gratis para aprender a usar Grok Bot desde cero. Lecciones cortas en español, con ejemplos reales y prompts que puedes copiar.",
       intro:
@@ -131,6 +135,17 @@ export const grokBotCourse = {
       followTitle: "¿Te está sirviendo?",
       followText: "Cada día añado lo nuevo del directo y lo cuento en X. Sígueme y te enteras en cuanto salga.",
       followButton: "Seguir a @jorgecarrera_es",
+      introModule: "Antes de empezar",
+      storyLabel: "En el directo",
+      dayLabel: "Día",
+      diaryTitle: "Diario del directo",
+      diaryDescription: "Lo que pasó cada día en el directo de lanzamiento de Grok Bot, en orden: la empresa que montaron en 72 horas, los Bots que crearon y lo que salió mal.",
+      diaryIntro: "Tres personas de xAI se propusieron montar una empresa en 72 horas con Grok Bot, en directo. Aquí está la historia día a día, con el enlace al minuto de cada momento y a la lección donde aprendes a hacerlo tú.",
+      diaryLink: "Leer la historia del directo día a día",
+      diaryDayLink: "Leer el diario del día",
+      diaryPending: "Se emite hoy. Su historia se añade cuando termine.",
+      partStoryLink: "Qué pasó",
+      learnIn: "Lo aprendes en",
       unofficial:
         "Este curso no es de xAI. Está hecho a partir de su documentación y del directo de lanzamiento.",
       statusTitle: "Qué hay ya dentro",
@@ -170,7 +185,9 @@ export const grokBotCourse = {
       openSyllabus: "Ver el temario",
     },
     en: {
-      title: "Grok Bot, from zero to expert",
+      title: "Grok Bot: a company in 72 hours",
+      seoTitle: "Grok Bot course: a company in 72 hours",
+      subtitle: "Learn Grok Bot from scratch by following three people from xAI as they build a company live.",
       description:
         "A free course to learn Grok Bot from scratch. Short lessons with real examples and prompts you can copy.",
       intro:
@@ -203,6 +220,17 @@ export const grokBotCourse = {
       followTitle: "Finding this useful?",
       followText: "I add what's new from the livestream every day and post about it on X. Follow along to catch it as soon as it's out.",
       followButton: "Follow @jorgecarrera_es",
+      introModule: "Before you start",
+      storyLabel: "In the livestream",
+      dayLabel: "Day",
+      diaryTitle: "Livestream diary",
+      diaryDescription: "What happened each day of the Grok Bot launch livestream, in order: the company built in 72 hours, the Bots created along the way and what went wrong.",
+      diaryIntro: "Three people from xAI set out to build a company in 72 hours with Grok Bot, live. Here's the story day by day, with a link to the minute of each moment and to the lesson where you learn to do it yourself.",
+      diaryLink: "Read the livestream story day by day",
+      diaryDayLink: "Read the diary for this day",
+      diaryPending: "Airing today. Its story is added once it ends.",
+      partStoryLink: "What happened",
+      learnIn: "Learn it in",
       unofficial:
         "This course is not made by xAI. It is based on their docs and the launch livestream.",
       statusTitle: "What's in so far",

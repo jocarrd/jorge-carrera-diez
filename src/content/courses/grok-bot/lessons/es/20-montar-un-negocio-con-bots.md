@@ -94,7 +94,7 @@ El resultado no se vio en el directo. Según esa persona, el siguiente paso ser�
 - **Las imágenes de merchandising salieron con el logo mal,** porque nadie le dio al Bot los archivos de marca.
 - **La idea cambió** de un pop-up de restaurante a una exposición de arte. Los presentadores avisaron en cuanto lo decidieron a Steve, su Bot jefe de gabinete. Avisa primero al coordinador, o los demás Bots seguirán trabajando en el plan viejo.
 
-También señaló lo que sigue necesitando personas en un evento, que es el registro de invitados y la seguridad. Y comparó a la IA leyendo contratos con alguien en segundo de Derecho, que sirve para una primera lectura pero después necesita a un experto.
+La persona invitada que organiza eventos señaló también lo que sigue necesitando personas en un evento, que es el registro de invitados y la seguridad. Y comparó a la IA leyendo contratos con alguien en segundo de Derecho, que sirve para una primera lectura pero después necesita a un experto.
 
 ## Errores habituales
 
