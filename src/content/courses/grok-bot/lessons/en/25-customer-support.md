@@ -24,6 +24,8 @@ Letting an agent answer customers is scary, and rightly so. This lesson shows ho
 
 The workshop host summed it up this way. First, the Bot only reads tickets and tells you the underlying issue. Then it drafts the reply and leaves it as a note on the ticket for you to review. Only when you trust it does it reply to the customer directly. You can stay at the second stage for as long as you like.
 
+![Three stages of a support Bot: first it reads and summarises, then drafts the reply as a note, and finally answers the customer](/images/cursos/grok-bot/esquemas/25-etapas-soporte-en.webp)
+
 ### Three layers of knowledge
 
 The demo used Flylo, the made-up airline, with a single product: in-flight wifi for $20 a month. The knowledge base, in Notion, had three separate parts:

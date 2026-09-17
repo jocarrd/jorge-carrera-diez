@@ -22,6 +22,8 @@ Para una pregunta suelta funciona. Deja de funcionar cuando el trabajo se repite
 
 ### Un Bot es un compañero que se queda
 
+![Esquema de un Bot: Piper, con el trabajo de rendimiento del producto, tiene memoria, skills, routines y un ordenador en la nube](/images/cursos/grok-bot/esquemas/01-anatomia-bot-es.webp)
+
 Un **Bot** es un compañero de IA que se queda contigo. Tiene nombre, un trabajo, su propia conversación y un contexto de trabajo que crece con el tiempo. Trabajas con él enviándole mensajes, igual que le escribirías a un colega.
 
 Piensa en una persona nueva que se sienta en la mesa de al lado. No contratas a alguien distinto para cada tarea. Le das a una persona un área de responsabilidad clara y cada semana necesita menos explicaciones. Con un Bot pasa lo mismo: creas uno para un trabajo, como los informes semanales o el orden de la bandeja de entrada, y vuelves a él una y otra vez.

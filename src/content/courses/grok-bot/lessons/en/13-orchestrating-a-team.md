@@ -24,6 +24,8 @@ This lesson solves both problems with two roles. One Bot coordinates, and anothe
 
 Think of a small office. One person runs the week. They hand out work, chase updates and flag anything that is stuck. Another person keeps the team handbook, which every new hire reads on day one. A team of Bots can work the same way.
 
+![Diagram of a Bot team: you ask for the outcome, the chief of staff hands work to the data, email and engineer Bots, and all of them follow the playbook](/images/cursos/grok-bot/esquemas/13-coordinador-en.webp)
+
 ### The coordinator
 
 The official docs recommend starting small (lesson 11). Give one Bot ownership of an end-to-end outcome, and add another only when the work has a stable specialist role. In a group, "the coordinator can assign work, while the group preserves the handoffs in one conversation" ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)).

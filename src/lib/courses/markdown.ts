@@ -129,6 +129,10 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
         const lang = token.lang ? ` data-lang="${escapeHtml(token.lang)}"` : "";
         return `<pre class="lesson-code"${lang}><code>${escapeHtml(token.text)}</code></pre>\n`;
       },
+      // Los esquemas son cuadrados de 1080 px: con el tamaño declarado no mueven el texto al cargar.
+      image(token: Tokens.Image) {
+        return `<figure class="lesson-figure"><img src="${escapeHtml(token.href)}" alt="${escapeHtml(token.text)}" width="1080" height="1080" loading="lazy" decoding="async"></figure>`;
+      },
       link(this: { parser: { parseInline: (t: Tokens.Generic[]) => string } }, token: Tokens.Link) {
         const inner = this.parser.parseInline(token.tokens);
         const external = /^https?:\/\//.test(token.href);
@@ -139,6 +143,8 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
 
   let html = marked.parse(body, { async: false }) as string;
 
+  // Una imagen sola en su línea llega envuelta en un párrafo, y un <figure> no puede ir dentro de <p>.
+  html = html.replace(/<p>(<figure class="lesson-figure">[\s\S]*?<\/figure>)<\/p>/g, "$1");
   html = linkCrossReferences(html, options);
   if (options.glossary?.length) html = markGlossaryTerms(html, options.glossary);
 

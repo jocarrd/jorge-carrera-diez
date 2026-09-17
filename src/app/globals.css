@@ -6306,3 +6306,18 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+/* Esquemas dentro de las lecciones */
+.lesson-figure {
+  margin: 1.75em 0;
+}
+
+.lesson-figure img {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card-lg);
+}

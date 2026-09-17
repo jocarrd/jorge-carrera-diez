@@ -22,6 +22,8 @@ That works for one-off questions. It breaks down for work that repeats, that spa
 
 ### A Bot is a teammate you keep
 
+![Diagram of a Bot: Piper, with a product performance job, has memory, skills, routines and a cloud computer](/images/cursos/grok-bot/esquemas/01-anatomia-bot-en.webp)
+
 A **Bot** is an AI teammate that stays with you. It has a name, a job, its own conversation, and working context that grows over time. You work with it by sending messages, the way you would message a colleague.
 
 Think of a new colleague who sits at the next desk. You do not hire a new person for every task. You give one person a clear area of responsibility, and each week they need less explanation. A Bot works the same way: you create one for a job, such as weekly reports or inbox triage, and you keep coming back to it.
