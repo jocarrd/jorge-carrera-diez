@@ -4272,14 +4272,18 @@ a {
   color: var(--foreground);
 }
 
-.lesson-body a:not(.live-chip) {
+.lesson-body a:not(.live-chip),
+.lesson-story-body a:not(.live-chip) {
   color: var(--foreground);
   text-decoration: underline;
-  text-decoration-color: var(--line-strong);
+  /* Con --line-strong el subrayado apenas se veía sobre negro y el enlace pasaba por texto. */
+  text-decoration-color: rgba(251, 146, 60, 0.55);
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-.lesson-body a:not(.live-chip):hover {
+.lesson-body a:not(.live-chip):hover,
+.lesson-story-body a:not(.live-chip):hover {
   text-decoration-color: var(--foreground);
 }
 

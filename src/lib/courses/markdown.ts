@@ -74,6 +74,9 @@ type RenderOptions = {
   liveUrls: Record<number, string>;
   day: number;
   dayLabel: string;
+  // Enlaces para las menciones a otras lecciones y módulos dentro del texto.
+  lessonHref: (id: string) => string | null;
+  moduleHref: (module: number) => string | null;
   labels: { copy: string; prompt: string; live: string };
   calloutLabels: Record<"NOTE" | "TIP" | "WARNING", string>;
 };
@@ -134,6 +137,8 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
 
   let html = marked.parse(body, { async: false }) as string;
 
+  html = linkCrossReferences(html, options);
+
   // Callouts con la sintaxis de GitHub: > [!TIP] en la primera línea de la cita.
   html = html.replace(
     /<blockquote>\s*<p>\[!(NOTE|TIP|WARNING)\]\s*(?:<br>)?\s*([\s\S]*?)<\/blockquote>/g,
@@ -142,4 +147,37 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
   );
 
   return { html, toc };
+}
+
+// "lección 05", "lecciones 01 y 05", "lesson 15", "módulo 8" → enlaces. Solo en
+// texto corrido: dentro de un enlace, un titular, un bloque de código o un prompt
+// no se toca nada.
+const SKIP = new Set(["a", "code", "pre", "h1", "h2", "h3", "h4", "button"]);
+const LESSON_REF = /\b(lecci[oó]n(?:es)?|lessons?)\s+(\d{2})((?:(?:,\s*|\s+(?:y|o|and|or)\s+)\d{2})*)/gi;
+const MODULE_REF = /\b(m[oó]dulos?|modules?)\s+(\d)\b/gi;
+
+function linkCrossReferences(html: string, options: RenderOptions): string {
+  const open: string[] = [];
+  return html
+    .split(/(<[^>]+>)/)
+    .map((part) => {
+      const tag = part.match(/^<(\/)?([a-z0-9]+)/i);
+      if (tag) {
+        const name = tag[2].toLowerCase();
+        if (SKIP.has(name) && !part.endsWith("/>")) {
+          if (tag[1]) open.splice(open.lastIndexOf(name), 1);
+          else open.push(name);
+        }
+        return part;
+      }
+      if (open.length > 0 || !part) return part;
+      const link = (href: string | null, text: string) => (href ? `<a href="${href}">${text}</a>` : text);
+      return part
+        .replace(LESSON_REF, (whole, word: string, first: string, rest: string) => {
+          const tail = rest.replace(/\d{2}/g, (id) => link(options.lessonHref(id), id));
+          return `${link(options.lessonHref(first), `${word} ${first}`)}${tail}`;
+        })
+        .replace(MODULE_REF, (whole, word: string, n: string) => link(options.moduleHref(Number(n)), whole));
+    })
+    .join("");
 }
