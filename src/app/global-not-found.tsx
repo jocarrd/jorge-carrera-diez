@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import "./globals.css";
 import { NotFoundContent } from "@/components/layout/NotFoundContent";
 import { Mark } from "@/components/brand/Mark";
@@ -21,10 +22,10 @@ export default function GlobalNotFound() {
   return (
     <html lang="es" className={`h-full antialiased ${fontClass}`}>
       <body className="min-h-full not-found-page">
-        <a href="/" className="not-found-brand" aria-label={site.name}>
+        <Link href="/" className="not-found-brand" aria-label={site.name}>
           <Mark />
           <span>{site.name}</span>
-        </a>
+        </Link>
         <NotFoundContent />
       </body>
     </html>

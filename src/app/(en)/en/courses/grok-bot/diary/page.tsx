@@ -12,7 +12,6 @@ export const metadata: Metadata = createPageMetadata({
   paths: allPathsFor("grokBotDiary"),
   title: `${copy.diaryTitle} · Grok Bot`,
   description: copy.diaryDescription,
-  image: grokBotCourse.cover[locale],
   type: "article",
 });
 

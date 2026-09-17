@@ -36,7 +36,11 @@ const COPY = {
 export function NotFoundContent() {
   const [locale, setLocale] = useState<Locale>("es");
   useEffect(() => {
-    if (window.location.pathname === "/en" || window.location.pathname.startsWith("/en/")) setLocale("en");
+    // Tras el primer pintado: el servidor no conoce la ruta que ha fallado.
+    const frame = requestAnimationFrame(() => {
+      if (window.location.pathname === "/en" || window.location.pathname.startsWith("/en/")) setLocale("en");
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
   const copy = COPY[locale];
 
