@@ -5991,3 +5991,97 @@ details.lesson-objectives ul {
   font-weight: 400;
 }
 
+
+/* Compartir y preguntar */
+.share-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.875rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease);
+}
+
+.share-button:hover {
+  border-color: var(--muted-strong);
+  color: var(--foreground);
+}
+
+.lesson-meta-row .share-button {
+  min-height: 2.25rem;
+  margin-left: auto;
+}
+
+@media (max-width: 639px) {
+  .lesson-meta-row .share-button {
+    margin-left: 0;
+  }
+}
+
+.diary-share {
+  margin-top: 1rem;
+}
+
+.lesson-ask {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card-lg);
+  background: var(--panel);
+}
+
+.lesson-ask-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem 1rem;
+  margin-top: 1rem;
+}
+
+.lesson-follow-secondary {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+}
+
+.lesson-follow-secondary:hover {
+  color: var(--foreground);
+}
+
+.diary-moments a {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.125rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.diary-moments-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* En el móvil, «en directo» se queda en un punto rojo para que quepan los días */
+@media (max-width: 639px) {
+  .diary-nav-note.is-live {
+    width: 0.5rem;
+    height: 0.5rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #ef4444;
+    color: transparent;
+  }
+}

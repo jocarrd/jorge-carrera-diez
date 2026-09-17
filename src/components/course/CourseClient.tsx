@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { CourseCopy } from "@/content/courses/grok-bot/meta";
@@ -156,6 +157,7 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
 
   useEffect(() => {
     markVisited(lessonId);
+    track("lesson_view", { lesson: lessonId });
   }, [lessonId, markVisited]);
 
   // Llegar al resumen cuenta como haber leído la lección: nadie vuelve arriba a pulsar un botón.
@@ -166,6 +168,7 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
     const observer = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) {
         markCompleted(lessonId);
+        track("lesson_complete", { lesson: lessonId });
         observer.disconnect();
       }
     });
@@ -350,6 +353,7 @@ export function NextUp({
           className="next-up-button"
           onClick={() => {
             markCompleted(lessonId);
+            track("next_lesson", { from: lessonId, to: next.id });
             router.push(next.href);
           }}
         >

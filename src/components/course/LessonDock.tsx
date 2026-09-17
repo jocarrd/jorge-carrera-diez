@@ -1,5 +1,6 @@
 "use client";
 
+import { track } from "@vercel/analytics";
 import { useEffect, useRef, useState } from "react";
 import type { TocEntry } from "@/lib/courses/markdown";
 
@@ -36,6 +37,7 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
   const [resume, setResume] = useState<TocEntry | null>(null);
   const key = positionKey(courseId, lessonId);
   const resumeChecked = useRef(false);
+  const halfTracked = useRef(false);
 
   useEffect(() => {
     let frame = 0;
@@ -48,7 +50,13 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
       const footerTop = footer?.getBoundingClientRect().top ?? Infinity;
       setVisible(rect.top < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.85);
       const total = rect.height - window.innerHeight * 0.6;
-      setProgress(Math.min(1, Math.max(0, -rect.top / Math.max(total, 1))));
+      const value = Math.min(1, Math.max(0, -rect.top / Math.max(total, 1)));
+      setProgress(value);
+      // Mitad de la lección leída: sirve para ver dónde abandona la gente.
+      if (value >= 0.5 && !halfTracked.current) {
+        halfTracked.current = true;
+        track("lesson_half", { lesson: lessonId });
+      }
       let index = 0;
       toc.forEach((entry, i) => {
         const el = document.getElementById(entry.id);
@@ -68,7 +76,7 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(frame);
     };
-  }, [toc, key]);
+  }, [toc, key, lessonId]);
 
   // Al abrir la lección desde arriba, si la última vez se quedó a mitad, se ofrece volver.
   useEffect(() => {

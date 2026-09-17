@@ -5,6 +5,7 @@ import { Container } from "@/components/ui";
 import { LessonSource } from "@/components/course/CourseStatus";
 import { LessonTracker, NextUp, ReadingProgress, Syllabus } from "@/components/course/CourseClient";
 import { LessonDock } from "@/components/course/LessonDock";
+import { ShareButton } from "@/components/course/ShareButton";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -106,6 +107,7 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   <li>{copy.levels[lesson.level]}</li>
                 </ul>
                 <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
+                <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} />
               </div>
             </header>
 
@@ -199,25 +201,36 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   </Link>
                 ) : null}
               </div>
-              <aside className="lesson-follow" aria-label={copy.followTitle}>
+              <aside className="lesson-ask" aria-label={copy.askTitle}>
                 <div>
-                  <p className="lesson-follow-title">{copy.followTitle}</p>
-                  <p className="lesson-follow-text">{copy.followText}</p>
+                  <p className="lesson-follow-title">{copy.askTitle}</p>
+                  <p className="lesson-follow-text">{copy.askText}</p>
                 </div>
-                <a
-                  href={`https://x.com/intent/follow?screen_name=${site.x.split("/").pop()}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="lesson-follow-button"
-                >
-                  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                    />
-                  </svg>
-                  {copy.followButton}
-                </a>
+                <div className="lesson-ask-actions">
+                  <a
+                    href={`https://x.com/intent/post?text=${encodeURIComponent(copy.askTweet.replace("{title}", lesson.title))}&url=${encodeURIComponent(new URL(lessonPath(locale, slug), site.url).toString())}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lesson-follow-button"
+                  >
+                    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <path
+                        fill="currentColor"
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                      />
+                    </svg>
+                    {copy.askButton}
+                  </a>
+                  <a
+                    href={`https://x.com/intent/follow?screen_name=${site.x.split("/").pop()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lesson-follow-secondary"
+                  >
+                    {copy.followButton}
+                  </a>
+                  <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} />
+                </div>
               </aside>
             </footer>
           </article>
