@@ -3490,8 +3490,15 @@ a {
 
    Antes esto lo tapaba un degradado al color del fondo sobre toda la escena.
    Ese degradado acababa en seco a media altura del móvil y dejaba un corte
-   horizontal atravesándolo: el remedio se veía más que la banda. */
+   horizontal atravesándolo: el remedio se veía más que la banda.
+
+   El recorte por sí solo deja una ventana muy baja, casi una tira. Ampliando
+   la captura una vez y media, la ventana recupera altura y el contenido se
+   lee: entran el titular, la entradilla y los tres números. Lo que se pierde
+   es la parte derecha del mapa, que no dice nada. */
 .hero-win--front img {
+  width: 150%;
+  max-width: none;
   aspect-ratio: 1600 / 700;
   height: auto;
   object-fit: cover;
@@ -3551,14 +3558,6 @@ a {
    mide 240 px de alto y no se lee nada. Recortada se reconoce el producto y el
    móvil, que es la captura hecha para este tamaño, manda en la composición. */
 @media (max-width: 1023px) {
-  /* A 390 px la captura entera se lee como una miniatura: se amplía una vez y
-     media y la ventana se queda con la parte izquierda. El recorte de altura
-     sigue siendo el mismo, así que la franja blanca del pie tampoco entra. */
-  .hero-win--front img {
-    width: 150%;
-    max-width: none;
-  }
-
   .hero-device {
     left: 6%;
     bottom: -1.25rem;
@@ -3615,14 +3614,6 @@ a {
     max-width: none;
   }
 
-  /* La captura de EQx termina en una franja blanca de página (el bloque de
-     rankings): en la escena se leía como una banda gris que cruzaba por detrás
-     del móvil. Se recorta donde acaba la portada oscura —1600x700 de los
-     1600x1000 originales— y la ventana cierra sobre su propio contenido.
-
-     Antes esto lo tapaba un degradado al color del fondo sobre toda la escena.
-     Ese degradado acababa en seco a media altura del móvil y dejaba un corte
-     horizontal atravesándolo: el remedio se veía más que la banda. */
 }
 
 /* ── Movimiento ligado al scroll ─────────────────────────────
