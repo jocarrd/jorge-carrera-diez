@@ -93,6 +93,10 @@ They replied to the Bot's bug report with "Fix this issue urgently. It's a P0". 
 
 Watch the cost. A routine that runs every five minutes runs 288 times a day, and frequent routines get expensive. Where a tool can send a webhook (a message one app sends another the moment something happens), react to that instead of checking on a timer. Stop the P0 routine when the fix ships.
 
+In the day 2 studio these automations carried the work of three people at once. Bake, Roshan's engineer Bot, got a notice for every pull request that was opened or changed. Each of them had a Slack Bot listening for their mentions, and a Notion board worked as the source of truth that the Bots updated on their own. The Bots even wrote, unprompted, a summary of facts from all of Ship by Thursday's Bots based on merged pull requests.
+
+{{live d2 6:44:07 "A Bot that watches every pull request"}}
+
 ## Triggers that listen to everything
 
 - **A trigger that listens to everything.** You get noise, wasted usage and actions on the wrong input. *Fix:* match one channel and one phrase or event.

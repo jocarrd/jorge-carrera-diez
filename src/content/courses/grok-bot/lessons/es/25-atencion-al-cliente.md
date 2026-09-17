@@ -14,9 +14,11 @@ updated: "2026-09-17"
 
 ## Tickets que se repiten
 
+En la primera pizarra del día 2, el equipo de Ship by Thursday ya se preguntaba cómo atendería a los jugadores: un correo, un teléfono o leer directamente el chat de X. Con un juego abierto al público llegarían las dudas de acceso, los fallos y las quejas. El taller de soporte de ese mismo día enseñó cómo contestarlas con un Bot sin perder el control.
+
 La mayoría de los tickets de soporte preguntan lo mismo: cómo recuperar la contraseña, cómo pedir un reembolso o si pueden compartir su suscripción. La respuesta ya está escrita en algún sitio, en la ayuda pública o en una política interna. Aun así, alguien tiene que leer el ticket, buscarla, comprobar la cuenta del cliente y contestar.
 
-Dejar que un agente responda a clientes asusta, y con razón. Esta lección sale del taller de atención al cliente del segundo día y enseña a darle esa autonomía poco a poco, con reglas claras sobre qué puede decir, qué puede hacer y cuándo debe pasarte el ticket.
+Dejar que un agente responda a clientes asusta, y con razón. Esta lección enseña a darle esa autonomía poco a poco, con reglas claras sobre qué puede decir, qué puede hacer y cuándo debe pasarte el ticket.
 
 ## Gatear, andar y correr
 

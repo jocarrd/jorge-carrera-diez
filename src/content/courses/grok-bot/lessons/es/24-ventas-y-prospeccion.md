@@ -14,9 +14,11 @@ updated: "2026-09-17"
 
 ## Horas que no se pasan vendiendo
 
+Por la tarde el estudio le preguntó a su becario qué hace viral un juego. Contestó que el boca a boca y publicar sin parar, y que en X están los primeros en probar cosas. Para Ship by Thursday, conseguir jugadores era su forma de vender. Los talleres de ventas y prospección enseñaron cómo se hace ese trabajo a escala con Bots.
+
 Un comercial dedica buena parte de la semana a trabajo que no es hablar con clientes. Tiene que buscar a quién escribir, leer lo último que ha publicado cada empresa, redactar correos y apuntar en el CRM lo que se dijo en cada llamada. Un CRM es la herramienta donde el equipo lleva el seguimiento de clientes y oportunidades. Con prisa, los correos acaban pareciendo una plantilla con el nombre cambiado, y el CRM se queda sin actualizar.
 
-La lección 19 enseñó Bots de fundador que preparan llamadas en solo lectura. Esta va un paso más allá, con Bots que sostienen el trabajo diario de ventas y prospección. Sale de dos talleres del segundo día, uno del equipo comercial y otro del equipo que busca clientes nuevos.
+La lección 19 enseñó Bots de fundador que preparan llamadas en solo lectura. Esta va un paso más allá, con Bots que sostienen el trabajo diario de ventas y prospección.
 
 ## Un Bot que hace, no uno que aconseja
 

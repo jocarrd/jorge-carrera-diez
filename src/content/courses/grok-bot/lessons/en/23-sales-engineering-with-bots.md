@@ -14,6 +14,8 @@ updated: "2026-09-17"
 
 ## The sales engineering bottleneck
 
+Ship by Thursday wasn't selling anything yet on day 2, but its morning whiteboard already listed what would come with players. A company selling a technical product ends up with someone answering what the product does inside. In the same building, a workshop showed how a sales engineering team does that with Bots.
+
 A sales engineer, the person who handles the technical side of a sale, spends the day answering questions the docs don't cover. How does the product store data? What happens if two users do the same thing at once? How is it different from the competition? Many answers live in the code, and engineering knows the code. Every "let me check and get back to you" delays the deal by a couple of days.
 
 On top of that, every customer wants to see cases like theirs. That means rebuilding slides for each call and keeping a close eye on what competitors ship. It's repeated work with clear sources and a result you can review, which suits Bots well.

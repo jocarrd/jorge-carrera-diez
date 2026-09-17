@@ -107,6 +107,10 @@ La costumbre sirve también fuera de la ingeniería. Pide a un Bot que grabe un 
 
 {{live d2 5:24:45 "Un Bot que critica las cartas de otro"}}
 
+En el juego del día 2 la verificación cambió según la fase. Con el prototipo, lo que importaba era saber si el juego era divertido, así que Lauren pidió paneles con controles deslizantes para cambiar las reglas y volver a jugar al momento. Cuando los tests empezaron a fallar, los borraron todos. Escribirían tests cuando supieran qué querían probar. Al final del día ya tenía a Crumb, un Bot que entra en la aplicación, hace clic por todas partes y busca fallos como lo haría un jugador.
+
+{{live d2 8:15:46 "Crumb, el Bot que prueba el juego"}}
+
 ## Pruebas que faltan
 
 - **Aceptar un "hecho" sin pruebas.** Los errores te llegan más tarde a ti o a tus usuarios. *Qué hacer:* convierte las pruebas en una norma fija de la descripción o del playbook, en lugar de algo que pides cuando te acuerdas.

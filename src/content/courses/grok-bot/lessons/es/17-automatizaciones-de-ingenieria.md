@@ -93,6 +93,10 @@ Respondió al aviso del Bot sobre el fallo con "Arregla esto con urgencia, es un
 
 Vigila el coste. Una routine cada cinco minutos se ejecuta 288 veces al día, y las routines muy frecuentes salen caras. Si una herramienta puede enviar un webhook (un aviso que una aplicación manda a otra en el momento en que pasa algo), reacciona a ese aviso en lugar de mirar con un temporizador. Detén la routine P0 cuando el arreglo esté publicado.
 
+En el estudio del día 2 estas automatizaciones sostenían el trabajo de tres personas a la vez. Bake, el Bot ingeniero de Roshan, recibía un aviso con cada pull request que se abría o cambiaba. Cada uno tenía un Bot de Slack que escuchaba sus menciones, y un tablero de Notion hacía de fuente de verdad que los Bots actualizaban solos. Los Bots llegaron a escribir por su cuenta un resumen con los hechos de todos los Bots de Ship by Thursday a partir de las pull requests fusionadas.
+
+{{live d2 6:44:07 "Un Bot que vigila cada pull request"}}
+
 ## Disparadores que escuchan todo
 
 - **Un disparador que escucha todo.** Recibes ruido, gastas uso y el Bot actúa sobre información equivocada. *Qué hacer:* que coincida con un canal y una frase o un evento concretos.

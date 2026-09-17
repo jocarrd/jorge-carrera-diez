@@ -14,6 +14,8 @@ updated: "2026-09-17"
 
 ## El cuello de botella de la preventa
 
+Ship by Thursday todavía no vendía nada el día 2, pero su pizarra de la mañana ya apuntaba lo que llegaría con los jugadores. Una empresa que vende un producto técnico acaba teniendo a alguien que responde qué hace ese producto por dentro. En el mismo edificio, un taller enseñaba cómo lo hace un equipo de preventa con Bots.
+
 Quien hace preventa (sales engineering, la parte técnica de una venta) pasa el día contestando preguntas que no están en la documentación. Por ejemplo, cómo guarda los datos el producto, qué pasa si dos usuarios hacen lo mismo a la vez o en qué se diferencia de la competencia. Muchas respuestas están en el código, y el código lo conoce ingeniería. Cada "déjame preguntarlo y te digo" retrasa la venta un par de días.
 
 Además, cada cliente quiere ver casos parecidos al suyo. Eso significa rehacer diapositivas para cada llamada y seguir de cerca lo que lanza la competencia. Son tareas repetidas, con fuentes claras y un resultado que se puede revisar. Encajan bien con los Bots.

@@ -103,6 +103,10 @@ And we'll worry about deploying it later.
 
 Soon after, the Bot opened a pull request of about 2,000 lines that nobody had asked for. The team replied with an explicit rule for that early prototype: "no pull requests, we ship to main for now". Main is the main version of the code, so every change went straight in. Your rule might be the opposite. What matters is that the Bot has one before the first build.
 
+On day 2 the game studio took this further. Lauren asked Dr. Eggbot for an engineer Bot whose job was to launch cloud agents, supervise them and check their work, not to write code itself. By the afternoon her Bot was working with a Cursor coordinator agent that handed tasks to five more agents and launched others to verify. Since everything ran in the cloud, she could close the laptop and go to dinner.
+
+{{live d2 7:20:22 "A coordinator agent running five agents"}}
+
 ## Large code changes written by the Bot itself
 
 - **Asking the Bot to write large code changes itself.** It may get there, but without the tools built for code. *Fix:* have it delegate to a cloud agent and review the result.

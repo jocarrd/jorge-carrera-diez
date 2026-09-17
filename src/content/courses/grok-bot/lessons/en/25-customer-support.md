@@ -14,9 +14,11 @@ updated: "2026-09-17"
 
 ## Tickets that repeat
 
+On the first whiteboard of day 2, the Ship by Thursday team was already asking how they'd support players: an email, a phone number or reading the X chat directly. A game open to the public would bring sign-in questions, bugs and complaints. The support workshop that same day showed how to answer them with a Bot without losing control.
+
 Most support tickets ask the same things: how to recover a password, how to get a refund or whether they can share their subscription. The answer is already written somewhere, in the public help or in an internal policy. Still, someone has to read the ticket, find it, check the customer's account and reply.
 
-Letting an agent answer customers is scary, and rightly so. This lesson comes from the day 2 customer support workshop and shows how to give that autonomy a little at a time, with clear rules about what the Bot can say, what it can do and when it must hand the ticket to you.
+Letting an agent answer customers is scary, and rightly so. This lesson shows how to give that autonomy a little at a time, with clear rules about what the Bot can say, what it can do and when it must hand the ticket to you.
 
 ## Crawl, walk, run
 

@@ -102,6 +102,10 @@ los agentes en la nube. Vuelve con un vídeo o una captura. Del despliegue ya no
 
 Poco después, el Bot abrió una pull request de unas 2.000 líneas que nadie había pedido. El equipo respondió con una regla explícita para ese primer prototipo: nada de pull requests, por ahora todo va directo a main. Main es la versión principal del código, así que cada cambio entraba sin revisión. Tu regla puede ser la contraria. Lo importante es que el Bot la tenga antes de la primera construcción.
 
+El día 2 el estudio de videojuegos llevó esto más lejos. Lauren pidió a Dr. Eggbot un Bot ingeniero cuyo trabajo fuera lanzar agentes en la nube, supervisarlos y comprobar lo que hacían, y no escribir código él mismo. Por la tarde su Bot trabajaba con un agente coordinador de Cursor que repartía tareas entre cinco agentes más y lanzaba otros para verificar. Como todo corría en la nube, podía cerrar el portátil e irse a cenar.
+
+{{live d2 7:20:22 "Un agente coordinador con cinco agentes a su cargo"}}
+
 ## Código grande escrito por el propio Bot
 
 - **Pedir al Bot que escriba él mismo cambios grandes de código.** Puede que lo consiga, pero sin las herramientas pensadas para programar. *Qué hacer:* que delegue en un agente en la nube y revise el resultado.

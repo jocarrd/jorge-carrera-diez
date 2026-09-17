@@ -14,9 +14,11 @@ updated: "2026-09-17"
 
 ## Hours not spent selling
 
+In the afternoon the studio asked their intern what makes a game go viral. He said word of mouth and posting constantly, and that X is where early adopters are. For Ship by Thursday, getting players was its way of selling. The sales and prospecting workshops showed how that work is done at scale with Bots.
+
 A salesperson spends a good part of the week on work that isn't talking to customers. They have to find who to write to, read what each company last published, draft emails and log in the CRM what was said on each call. A CRM is the tool where the team tracks customers and deals. In a rush, emails end up looking like a template with the name swapped, and the CRM goes out of date.
 
-Lesson 19 showed founder Bots that prepare calls in read-only mode. This lesson goes a step further, with Bots that carry the daily work of sales and prospecting. It comes from two day 2 workshops, one from the sales team and one from the team that finds new customers.
+Lesson 19 showed founder Bots that prepare calls in read-only mode. This lesson goes a step further, with Bots that carry the daily work of sales and prospecting.
 
 ## A Bot that does, not one that advises
 

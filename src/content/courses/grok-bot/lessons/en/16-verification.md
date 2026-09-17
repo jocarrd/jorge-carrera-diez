@@ -107,6 +107,10 @@ The same habit works outside engineering. Ask a Bot to record a video of what it
 
 {{live d2 5:24:45 "A Bot that critiques another Bot's letters"}}
 
+In the day 2 game, verification changed with the phase. For the prototype, what mattered was knowing whether the game was fun, so Lauren asked for panels with sliders to change the rules and replay straight away. When the tests started failing, they deleted all of them. They'd write tests once they knew what they wanted to test. By the end of the day she had Crumb, a Bot that goes into the app, clicks around and looks for bugs the way a player would.
+
+{{live d2 8:15:46 "Crumb, the Bot that playtests the game"}}
+
 ## Missing proof
 
 - **Accepting "done" without proof.** Errors reach you, or your users, later. *Fix:* make proof a standing rule in the description or playbook instead of something you remember to ask for.

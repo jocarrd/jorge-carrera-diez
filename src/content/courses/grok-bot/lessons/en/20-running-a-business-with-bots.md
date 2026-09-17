@@ -94,6 +94,18 @@ The result wasn't shown on stream. The guest's next step would be to have the Bo
 
 The events guest also named what still needs people at an event, which is guest registration and security. They compared AI reading contracts to a second-year law student, fine for a first read, with an expert needed afterwards.
 
+### Day 2: changing business in a morning
+
+The pop-up plan didn't make it to day 2. Overnight they left the Bots reviewing the idea with the guests' advice, who had warned about the licences and permits San Francisco requires. By morning the verdict was that there wasn't time. "The agents sold us a pivot," Matt said.
+
+In half an hour at the whiteboard they picked a video game studio, because they were passionate about it and could build it in two days. Before writing any code they decided how to make money without paying giving an advantage in the game: cosmetics, arenas and a stadium with ads. They also decided to leave money for later, because at the start what counts is getting players.
+
+Changing business didn't throw away day 1's work. The Bots, the connections and the way of working still served. They only had to tell everyone the new plan.
+
+{{live d2 0:11:08 "The agents sell them a pivot"}}
+
+{{live d2 0:19:22 "Making money without pay-to-win"}}
+
 ## Ten Bots without a goal
 
 - **Creating ten Bots before choosing a goal.** Each one works hard in a different direction. *Fix:* write the company document and pick the one number first.

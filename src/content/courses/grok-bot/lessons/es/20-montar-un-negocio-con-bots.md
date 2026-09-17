@@ -96,6 +96,18 @@ El resultado no se vio en el directo. Según esa persona, el siguiente paso ser�
 
 La persona invitada que organiza eventos señaló también lo que sigue necesitando personas en un evento, que es el registro de invitados y la seguridad. Y comparó a la IA leyendo contratos con alguien en segundo de Derecho, que sirve para una primera lectura pero después necesita a un experto.
 
+### El día 2: cambiar de negocio en una mañana
+
+El plan de los pop-ups no llegó al segundo día. Por la noche dejaron a los Bots revisando la idea con los consejos de los invitados, que habían avisado de las licencias y los permisos que pide San Francisco. Por la mañana la conclusión era que no daba tiempo. "Los agentes nos vendieron el cambio de idea", dijo Matt.
+
+En media hora de pizarra eligieron un estudio de videojuegos, porque les apasionaba y podían construirlo en dos días. Antes de programar nada decidieron cómo ganar dinero sin que pagar diera ventaja en el juego: objetos cosméticos, arenas y un estadio con publicidad. También decidieron dejar el dinero para después, porque al empezar lo que cuenta es conseguir jugadores.
+
+Cambiar de negocio no tiró el trabajo del día 1. Los Bots, las conexiones y la forma de trabajar siguieron sirviendo. Solo hubo que contarles a todos el plan nuevo.
+
+{{live d2 0:11:08 "Los agentes les venden el cambio de idea"}}
+
+{{live d2 0:19:22 "Ganar dinero sin que pagar dé ventaja"}}
+
 ## Diez Bots sin objetivo
 
 - **Crear diez Bots antes de elegir un objetivo.** Cada uno trabaja mucho en una dirección distinta. *Qué hacer:* escribe primero el documento de empresa y elige la cifra que quieres mover.
