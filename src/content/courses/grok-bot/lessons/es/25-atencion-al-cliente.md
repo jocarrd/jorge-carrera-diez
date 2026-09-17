@@ -24,6 +24,8 @@ Dejar que un agente responda a clientes asusta, y con razón. Esta lección ense
 
 Quien dio el taller lo resumió así. Primero, el Bot solo lee tickets y te dice cuál es el problema de fondo. Después redacta la respuesta y la deja como nota en el ticket para que la revises. Solo cuando confíes en él, responde directamente al cliente. Puedes quedarte en la segunda etapa todo el tiempo que quieras.
 
+![Tres etapas de un Bot de soporte: primero lee y resume, después redacta la respuesta como nota y al final responde al cliente](/images/cursos/grok-bot/esquemas/25-etapas-soporte-es.webp)
+
 ### Tres niveles de conocimiento
 
 La demo usaba Flylo, la aerolínea inventada, con un solo producto: el wifi a bordo por 20 dólares al mes. La base de conocimiento, en Notion, tenía tres partes separadas:

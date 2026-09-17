@@ -7,7 +7,7 @@ import { CourseView } from "@/views/CourseView";
 const locale = "es" as const;
 const copy = grokBotCourse.copy[locale];
 
-export const metadata: Metadata = createPageMetadata({
+const base = createPageMetadata({
   locale,
   paths: allPathsFor("grokBotCourse"),
   title: copy.seoTitle,
@@ -15,6 +15,11 @@ export const metadata: Metadata = createPageMetadata({
   image: grokBotCourse.cover[locale],
   type: "website",
 });
+
+export const metadata: Metadata = {
+  ...base,
+  alternates: { ...base.alternates, types: { "application/rss+xml": `${allPathsFor("grokBotCourse")[locale]}/feed.xml` } },
+};
 
 export default function Page() {
   return <CourseView locale={locale} />;

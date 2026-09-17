@@ -24,6 +24,8 @@ La lección 19 enseñó Bots de fundador que preparan llamadas en solo lectura. 
 
 Una comercial del taller contó su primer error con Grok Bot. Le pedía que investigara a un cliente, y el Bot le devolvía enlaces a webinars para que los viera ella. Le contestó que los viera él y le redactara el correo. Un Bot tiene ordenador propio y trabaja mientras duermes, así que puedes darle el trabajo entero, no solo la búsqueda.
 
+![Esquema de la tropa: 200 empresas pasan al Bot de búsqueda web, que las reparte en tandas de 40 entre cinco soldados y recoge los resultados en un chat de grupo](/images/cursos/grok-bot/esquemas/24-tropa-es.webp)
+
 ### Tu voz, sacada de lo que funcionó
 
 Conectar el correo no basta para que un Bot escriba como tú. El SDR del taller, la persona que busca clientes nuevos, filtró más. Le dijo al Bot que leyera solo los correos enviados a empresas de sus cuentas, que se quedara con los que recibieron una respuesta positiva y que diera más peso a los recientes. En su equipo, lo que funcionaba hace tres meses ya no funciona hoy. Después revisó borradores uno a uno y los criticó, hasta que dejaron de parecer plantillas.

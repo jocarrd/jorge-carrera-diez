@@ -24,6 +24,8 @@ Lesson 19 showed founder Bots that prepare calls in read-only mode. This lesson 
 
 A salesperson in the workshop described her first mistake with Grok Bot. She asked it to research a customer, and the Bot sent back links to webinars for her to watch. She told it to watch them itself and draft the email. A Bot has its own computer and works while you sleep, so you can hand it the whole job, not just the search.
 
+![Diagram of the army: 200 companies go to the web search Bot, which splits them into batches of 40 across five soldiers and collects results in a group chat](/images/cursos/grok-bot/esquemas/24-tropa-en.webp)
+
 ### Your voice, taken from what worked
 
 Connecting your email isn't enough for a Bot to write like you. The SDR in the workshop, the person who finds new customers, filtered further. He told the Bot to read only emails sent to companies in his accounts, keep the ones that got a positive reply and give more weight to recent ones. On his team, what worked three months ago doesn't work today. Then he reviewed drafts one by one and criticised them until they stopped looking like templates.

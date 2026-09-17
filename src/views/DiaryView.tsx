@@ -109,21 +109,23 @@ export function DiaryView({ locale }: { locale: Locale }) {
                       const related = lessons.filter((l) => l.ref.module === segment.module);
                       return (
                         <div key={segment.module} id={`${dayAnchor(locale, part.number)}-${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${segment.module}`} className="diary-segment">
-                          <h3 className="diary-segment-title">
-                            <Link href={moduleAnchor(storyModule.number)}>
-                              {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
-                            </Link>
-                          </h3>
+                          <div className="diary-segment-head">
+                            <h3 className="diary-segment-title">
+                              <Link href={moduleAnchor(storyModule.number)}>
+                                {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                              </Link>
+                            </h3>
+                            <ShareButton
+                              url={`${routePath(locale, "grokBotDiary")}#${dayAnchor(locale, part.number)}-${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${segment.module}`}
+                              title={`${copy.diaryTitle} · ${copy.dayLabel} ${part.number}`}
+                              label={copy.share}
+                              copiedLabel={copy.linkCopied}
+                              iconOnly
+                            />
+                          </div>
                           <div className="lesson-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
-                          <ShareButton
-                            url={`${routePath(locale, "grokBotDiary")}#${dayAnchor(locale, part.number)}-${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${segment.module}`}
-                            title={`${copy.diaryTitle} · ${copy.dayLabel} ${part.number}`}
-                            label={copy.share}
-                            copiedLabel={copy.linkCopied}
-                            className="diary-share"
-                          />
                           {related.length > 0 ? (
-                            <aside className="diary-module-card" aria-label={copy.diaryLearnTitle}>
+                            <aside className="diary-module-card" aria-label={`${copy.diaryLearnTitle} · ${copy.dayLabel} ${part.number} · ${copy.moduleLabel} ${storyModule.number}`}>
                               <p className="diary-module-eyebrow">{copy.diaryLearnTitle}</p>
                               <p className="diary-module-name">
                                 {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}

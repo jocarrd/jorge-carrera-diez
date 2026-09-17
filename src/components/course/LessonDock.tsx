@@ -4,7 +4,7 @@ import { track } from "@vercel/analytics";
 import { useEffect, useRef, useState } from "react";
 import type { TocEntry } from "@/lib/courses/markdown";
 
-type Labels = { contents: string; minutesLeft: string; resume: string; resumeButton: string; close: string };
+type Labels = { contents: string; minutesLeft: string; resume: string; resumeButton: string; close: string; search: string; searchHref: string };
 
 const positionKey = (courseId: string, lessonId: string) => `curso:${courseId}:posicion:${lessonId}`;
 
@@ -38,6 +38,8 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
   const key = positionKey(courseId, lessonId);
   const resumeChecked = useRef(false);
   const halfTracked = useRef(false);
+  const openerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -90,11 +92,33 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
     return () => cancelAnimationFrame(frame);
   }, [key, toc]);
 
+  // La hoja se comporta como un diálogo: el foco entra en ella, no se escapa con
+  // el tabulador y vuelve al botón que la abrió al cerrarla.
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const panel = panelRef.current;
+    const opener = openerRef.current;
+    const focusables = () => [...(panel?.querySelectorAll<HTMLElement>("a, button") ?? [])];
+    (panel?.querySelector<HTMLElement>(".is-current") ?? focusables()[0])?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last?.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first?.focus();
+      }
+    };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      opener?.focus({ preventScroll: true });
+    };
   }, [open]);
 
   if (toc.length === 0) return null;
@@ -122,7 +146,7 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
 
       <div className={`lesson-dock ${visible ? "is-visible" : ""}`} aria-hidden={!visible}>
         <div className="lesson-dock-progress" style={{ transform: `scaleX(${progress})` }} />
-        <button type="button" className="lesson-dock-main" onClick={() => setOpen(true)} tabIndex={visible ? 0 : -1} aria-haspopup="dialog">
+        <button ref={openerRef} type="button" className="lesson-dock-main" onClick={() => setOpen(true)} tabIndex={visible ? 0 : -1} aria-haspopup="dialog">
           <span className="lesson-dock-count">
             {current + 1}/{toc.length}
           </span>
@@ -135,9 +159,12 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
 
       {open ? (
         <div className="lesson-sheet" role="dialog" aria-modal="true" aria-label={labels.contents} onClick={() => setOpen(false)}>
-          <div className="lesson-sheet-panel" onClick={(e) => e.stopPropagation()}>
+          <div ref={panelRef} className="lesson-sheet-panel" onClick={(e) => e.stopPropagation()}>
             <div className="lesson-sheet-head">
               <p>{labels.contents}</p>
+              <a href={labels.searchHref} className="lesson-sheet-search">
+                {labels.search}
+              </a>
               <button type="button" onClick={() => setOpen(false)} aria-label={labels.close}>
                 ×
               </button>

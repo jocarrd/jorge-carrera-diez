@@ -24,6 +24,8 @@ Esta lección resuelve los dos problemas con dos papeles. Un Bot coordina y otro
 
 Piensa en una oficina pequeña. Una persona organiza la semana. Reparte el trabajo, pide novedades y avisa de lo que está atascado. Otra persona mantiene el manual del equipo, que cada incorporación lee el primer día. Un equipo de Bots puede funcionar igual.
 
+![Esquema de un equipo de Bots: tú pides el resultado, el jefe de gabinete reparte el trabajo entre los Bots de datos, correo e ingeniería, y todos siguen el playbook](/images/cursos/grok-bot/esquemas/13-coordinador-es.webp)
+
 ### El coordinador
 
 La documentación oficial recomienda empezar con poco (lección 11). Da a un Bot la responsabilidad de un resultado completo y añade otro solo cuando el trabajo tenga un rol especialista estable. En un grupo, "el coordinador puede asignar trabajo, mientras el grupo conserva los traspasos en una sola conversación" ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)).
