@@ -6267,3 +6267,42 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* Novedades desde la última visita */
+.whats-new {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(134, 239, 172, 0.35);
+  border-radius: var(--radius-card);
+  background: rgba(134, 239, 172, 0.05);
+}
+
+.whats-new-title {
+  font-weight: 600;
+}
+
+.whats-new-group {
+  margin-top: 0.75rem;
+}
+
+.whats-new-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #86efac;
+}
+
+.whats-new ul a {
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.whats-new ul a span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}

@@ -11,6 +11,7 @@ import { lessonPath, routePath } from "@/i18n/routes";
 import { getCourse, getLesson } from "@/lib/courses/load";
 import { CourseSearch, type SearchEntry } from "@/components/course/CourseSearch";
 import { glossary } from "@/content/courses/grok-bot/glossary";
+import { WhatsNew } from "@/components/course/WhatsNew";
 
 function searchEntries(locale: Locale): SearchEntry[] {
   const copy = grokBotCourse.copy[locale];
@@ -96,9 +97,15 @@ export function CourseView({ locale }: { locale: Locale }) {
             </li>
           </ul>
           <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
+          <WhatsNew
+            courseId={grokBotCourse.id}
+            lessons={lessons.map((l) => ({ id: l.id, title: l.title, href: lessonPath(locale, l.slug), updated: l.updated }))}
+            labels={{ title: copy.whatsNewTitle, added: copy.whatsNewAdded, updated: copy.whatsNewUpdated }}
+          />
           <p className="course-diary-link">
             <Link href={routePath(locale, "grokBotDiary")}>{copy.diaryLink} →</Link>
             <Link href={routePath(locale, "grokBotGlossary")}>{copy.glossaryLink} →</Link>
+            <a href={`${routePath(locale, "grokBotCourse")}/feed.xml`}>{copy.feedLink}</a>
           </p>
         </header>
 
