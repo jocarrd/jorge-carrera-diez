@@ -14,7 +14,6 @@ const COPY = {
     links: [
       { key: "experience", label: "Experiencia" },
       { key: "projects", label: "Proyectos" },
-      { key: "grokBotCourse", label: "Curso de Grok Bot" },
       { key: "contact", label: "Contacto" },
     ],
   },
@@ -26,7 +25,6 @@ const COPY = {
     links: [
       { key: "experience", label: "Experience" },
       { key: "projects", label: "Projects" },
-      { key: "grokBotCourse", label: "Grok Bot course" },
       { key: "contact", label: "Contact" },
     ],
   },
