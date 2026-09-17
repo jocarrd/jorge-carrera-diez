@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## El trabajo alrededor de cada llamada
 
 Una fundadora o un equipo comercial pequeño dedica horas al trabajo que rodea las conversaciones. Hay que informarse sobre una empresa antes de la llamada, escribir notas después, mirar qué ha lanzado la competencia, ordenar los comentarios de clientes y contestar correos. Nada de esto es difícil, pero en una semana cargada se queda sin hacer.
 
 Este trabajo encaja bien con los Bots porque se repite, sale de herramientas que ya usas y el resultado puede ser un borrador que tú apruebas. También afecta a clientes y a otras empresas, así que los límites de la lección 04 pesan aquí más que en ninguna otra parte del curso.
 
-## La idea
+## Seis Bots de cara al cliente
 
 Dale a cada trabajo de cara al cliente su propio Bot. Deja que prepare y redacte, y mantén cada mensaje que sale detrás de tu aprobación. La sesión del directo para fundadores enseñó seis Bots montados así. Son Bots de demo con clientes inventados, así que tómalos como patrones que copiar. No los vas a encontrar como productos que instalar. Si buscas puntos de partida oficiales, mira los casos de uso **Sales Outbound** (prospección comercial), **Account Health** (salud de cuentas) y **Chief of Staff** (jefe de gabinete) en [Use cases](https://docs.x.ai/grok-bot/use-cases).
 
@@ -59,7 +59,7 @@ Hay tres reglas de la documentación que valen para todos estos Bots:
 > [!WARNING]
 > La demo para fundadores también enseñó a Stockbot escribiendo a clientes que se habían ido a la competencia, con el aviso de usarlo con responsabilidad. Antes de que un Bot se registre en el producto de otra empresa o contacte con personas, revisa las condiciones de esa empresa, la normativa de privacidad que te aplica y tu propia política. Deja cada uno de esos mensajes como borrador que apruebas tú.
 
-## Paso a paso
+## Empezar por la preparación de llamadas
 
 Empieza por la preparación de llamadas. Solo lee datos y notas el beneficio el primer día.
 
@@ -71,7 +71,7 @@ Empieza por la preparación de llamadas. Solo lee datos y notas el beneficio el 
 6. **Cierra el ciclo.** Después de cada llamada, pide al Bot que lea la transcripción y apunte qué cambiar la próxima vez.
 7. **Añade el siguiente Bot** solo cuando este sea fiable.
 
-## Ejemplo
+## Closebot, Stockbot y Yap bot en la demo
 
 {{live 7:33:07 "Preparar una llamada con un cliente con Closebot"}}
 
@@ -103,7 +103,7 @@ que uso y que evito. Guárdala como skill con el nombre "Escribir como yo". No
 envíes nada.
 ```
 
-## Errores habituales
+## Mensajes que salen sin revisar
 
 - **Dejar que un Bot envíe mensajes de prospección el primer día.** Un nombre o un dato equivocado llega a un cliente y no hay vuelta atrás. *Qué hacer:* mantén borradores y aprobación hasta haber revisado muchos buenos. Una aprobación no deshace el trabajo ya hecho.
 - **Darle al Bot que escribe como tú todas tus cuentas.** Cualquier otro Bot de tu cuenta puede usar ahora esas sesiones. *Qué hacer:* inicia sesión solo en lo que el trabajo necesita y cierra la sesión cuando termines.
@@ -111,7 +111,7 @@ envíes nada.
 - **Llevar los comentarios directamente a código fusionado.** Una sola queja ruidosa cambia el producto. *Qué hacer:* haz que el Bot abra una pull request y revísala como cualquier otro cambio (lección 16).
 - **Hacer preguntas sueltas a los Bots especialistas.** Su contexto se llena de ruido. *Qué hacer:* usa un Bot cajón de sastre y pasa solo lo que importa.
 
-## Resumen
+## Borradores siempre, envíos con aprobación
 
 - Dale a cada trabajo de cara al cliente su propio Bot, ya sea para preparar llamadas, seguir novedades, vigilar a la competencia, recoger comentarios o escribir como tú.
 - Empieza en solo lectura con la preparación de llamadas; después añade una routine y el aprendizaje a partir de las transcripciones.

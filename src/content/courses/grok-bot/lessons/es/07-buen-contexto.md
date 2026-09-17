@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Un resultado vago suele ser falta de contexto
 
 Un Bot solo sabe lo que le cuentas, lo que puede consultar y lo que ha aprendido. Cuando un resultado llega impreciso o desenfocado, lo habitual es que le faltara contexto. El Bot rellenó los huecos adivinando.
 
 Escribir mensajes más largos rara vez ayuda. Lo que ayuda es poner cada dato en su sitio: la petición, un documento compartido, la descripción o un Bot distinto.
 
-## La idea
+## Objetivo, fuentes, límites y ejemplos
 
 El **contexto** es la información con la que trabaja un Bot: tu objetivo, las fuentes, las restricciones y ejemplos de cómo es un buen resultado. Piensa en cómo explicarías un encargo a un profesional independiente su primera mañana. Un buen encargo es breve y concreto. Uno malo se queda en "hazlo genial" o se convierte en dos horas de charla con lo importante perdido en medio.
 
@@ -76,7 +76,7 @@ Ten un Bot solo para preguntas sueltas, así los demás no pierden el foco. Cuan
 
 Después de un mensaje largo, sobre todo si lo has dictado (lección 03), pide al Bot que te repita lo que ha entendido antes de empezar. Leer un resumen corto es más rápido que releer tu propio bloque de texto, y detecta malentendidos antes de que se haga ningún trabajo.
 
-## Paso a paso
+## Preparar el contexto antes de pedir
 
 1. **Escribe el documento común una sola vez.** Pide a un Bot que lo redacte con lo que le cuentes y después revísalo tú.
 2. **Empieza cada petición por el resultado.** Añade las fuentes, los límites y cómo es el trabajo terminado.
@@ -93,7 +93,7 @@ Escribe /workspace/empresa/resumen.md en menos de 300 palabras: a qué nos dedic
 Antes de empezar, repite con tus palabras lo que te acabo de pedir: el objetivo, las fuentes que vas a usar, lo que no vas a hacer y lo que me vas a entregar. Espera a que te dé el visto bueno.
 ```
 
-## Ejemplo
+## Referencias antes de la landing
 
 En una demostración en directo, el equipo de xAI quería prototipos de landing page para una plataforma de restaurantes pop-up, un servicio para restaurantes temporales. Antes de pedir ningún diseño, quien presentaba fue reuniendo contexto.
 
@@ -107,7 +107,7 @@ En una demostración en directo, el equipo de xAI quería prototipos de landing 
 
 El resumen del Bot fue más allá de repetir. Señaló que el verdadero cuello de botella estaba en el primer ciclo del negocio, que era conseguir local, operadores y cocineros y, después, asistentes. Las landing pages importaban menos. Solo después preparó tres prototipos en HTML, páginas web sencillas que puedes abrir y recorrer. Cuando le parecieron "demasiado aburridos", se lo dijo directamente y recibió versiones más vivas.
 
-## Errores habituales
+## Pedir que quede más atractivo y otros mensajes vagos
 
 - **Pedir calidad con palabras vagas.** "hazlo más atractivo" no le da al Bot ningún objetivo. *Qué hacer:* di qué debe cambiar y enséñale un ejemplo.
 - **Un mensaje enorme sin comprobar.** El Bot trabaja sobre un malentendido. *Qué hacer:* pídele que lo repita antes de empezar.
@@ -116,7 +116,7 @@ El resumen del Bot fue más allá de repetir. Señaló que el verdadero cuello d
 - **Un Bot para todo.** Las respuestas pierden precisión con el tiempo. *Qué hacer:* da a cada Bot un solo trabajo y lleva los temas secundarios a otro sitio.
 - **Preguntas sueltas en un Bot de trabajo.** La curiosidad del momento se queda en su contexto junto al trabajo real. *Qué hacer:* házsela a un Bot para preguntas sueltas.
 
-## Resumen
+## Una petición bien armada
 
 - Empieza cada petición por el resultado, las fuentes, los límites y cómo es el trabajo terminado.
 - Da referencias de calidad antes de pedirle a un Bot que construya algo.

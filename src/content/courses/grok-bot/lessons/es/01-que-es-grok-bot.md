@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Un chat olvida, un Bot se queda
 
 Si has usado ChatGPT o Grok, conoces la rutina. Abres un chat nuevo, vuelves a explicar el contexto, recibes un borrador y lo copias en la herramienta donde de verdad se hace el trabajo. Al día siguiente empiezas otra vez de cero.
 
 Para una pregunta suelta funciona. Deja de funcionar cuando el trabajo se repite, pasa por varias aplicaciones o dura más de lo que quieres quedarte mirando. Grok Bot está pensado para ese tipo de trabajo, y te pide que veas la IA de otra manera.
 
-## La idea
+## Nombre, trabajo y conversación propia
 
 ### Un Bot es un compañero que se queda
 
@@ -71,7 +71,7 @@ El curso tiene siete módulos. Cada lección da por sabido solo lo que enseñaro
 6. **Casos reales:** Bots para producto y datos, Bots para fundadores y ventas, y un negocio montado con Bots.
 7. **Nivel experto:** coste y rendimiento, y límites.
 
-## Paso a paso
+## Instalar la app y crear tu primer Bot
 
 1. Abre la [página de descargas de Grok Bot](https://x.ai/bot) y descarga la versión para tu ordenador. En un Mac, arrastra **Grok Bot** a **Applications** (Aplicaciones).
 2. Abre la aplicación y elige **Get started** (empezar) en la pantalla de bienvenida.
@@ -81,7 +81,7 @@ El curso tiene siete módulos. Cada lección da por sabido solo lo que enseñaro
 
 Las instrucciones completas para cada sistema están en [Get started](https://docs.x.ai/grok-bot/get-started).
 
-## Ejemplo
+## Tres Bots con un solo trabajo cada uno
 
 En una demostración en directo, el equipo de xAI enseñó tres Bots, cada uno con un solo trabajo. **Data Dan** se ocupaba de los datos, **Slide Sonya** de una presentación y **Email Ethan** redactaba correos.
 
@@ -97,7 +97,7 @@ Saca de nuestro CRM la lista de oportunidades que toca revisar esta semana. Desc
 
 Las oportunidades son las posibles ventas en curso. Una secuencia activa es una serie de correos comerciales que esa persona ya está recibiendo, y Slack es una aplicación de chat para equipos. El encargo dice qué hacer, dónde trabajar, qué contexto usar y cómo es el trabajo terminado. No hace falta que el primer día escribas algo tan ambicioso. La lección 03 enseña a llegar hasta ahí.
 
-## Errores habituales
+## Fallos típicos del primer día
 
 - **Crear un Bot nuevo para cada tarea.** Cada uno empieza sin contexto y nunca mejora. *Qué hacer:* crea un Bot por trabajo y vuelve siempre a él.
 - **Crear un único "General Helper" (ayudante general) para todo.** Un trabajo vago orienta menos al Bot y hace más difícil reutilizar su contexto. *Qué hacer:* dale a cada Bot un trabajo claro.
@@ -105,7 +105,7 @@ Las oportunidades son las posibles ventas en curso. Una secuencia activa es una 
 - **Esperar solo una respuesta en texto.** Desaprovechas el ordenador. *Qué hacer:* pide el trabajo terminado en la herramienta real, como un borrador guardado en tu correo o una hoja de cálculo con los datos.
 - **Tomar la memoria como fuente de verdad.** Un Bot puede guardar datos desfasados. *Qué hacer:* para decisiones importantes, pídele que consulte la fuente actual.
 
-## Resumen
+## Un Bot en pocas líneas
 
 - Un Bot es un compañero de IA duradero con nombre, un trabajo y su propia conversación.
 - Crea un Bot por trabajo y vuelve a él, para que su contexto se acumule.

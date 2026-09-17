@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## When the Bot has to touch code
 
 Your Bots can already research, write and use a browser. Sooner or later you'll ask one to change real code, for example to fix a bug on your website. A Bot can try. But serious software work needs a setup built for code: a copy of the project, tests to run, and a clean way to hand back the change for review.
 
 Grok Bot gets that setup by handing coding work to Cursor cloud agents. This lesson shows how the work is split, so your Bot keeps the plan and the context while an agent writes the code.
 
-## The idea
+## Model, harness and cloud agents
 
 A few terms first:
 
@@ -60,7 +60,7 @@ Use a cloud agent for complex code tasks. Let the Bot handle research, coordinat
 > [!TIP]
 > Where the line sits depends on your work. Send a few tasks of different sizes to cloud agents before you write a fixed rule.
 
-## Step by step
+## Launch an agent from a Bot and review its PR
 
 1. **Check access.** On a team plan, ask your admin to confirm that the **Cloud Agents** switch is on.
 2. **Connect the code.** In Cursor's cloud agent settings, connect your GitHub organization and choose which repositories agents may use. The screens belong to Cursor, so follow the [Cloud Agent docs](https://cursor.com/docs/cloud-agent) for the current steps.
@@ -83,7 +83,7 @@ Use a cloud agent for complex code tasks. Let the Bot handle research, coordinat
 5. **Follow progress by asking the Bot**, not by watching the agent. Write "What's the status of the agent?" and the Bot reads the transcript and sums it up.
 6. **Review what comes back**: the pull request and the proof you asked for. Lesson 16 covers proof in detail.
 
-## Example
+## The day 1 landing page
 
 On the first day of the livestream, the team built a landing page (a one-page site that presents an offer) for a pop-up food business. They had just created an engineering Bot called Tater to choose the tech stack, the languages and tools the site is built with, and to build it. They told it how to work:
 
@@ -103,7 +103,7 @@ And we'll worry about deploying it later.
 
 Soon after, the Bot opened a pull request of about 2,000 lines that nobody had asked for. The team replied with an explicit rule for that early prototype: "no pull requests, we ship to main for now". Main is the main version of the code, so every change went straight in. Your rule might be the opposite. What matters is that the Bot has one before the first build.
 
-## Common mistakes
+## Large code changes written by the Bot itself
 
 - **Asking the Bot to write large code changes itself.** It may get there, but without the tools built for code. *Fix:* have it delegate to a cloud agent and review the result.
 - **Watching the agent's every step.** You spend your time reading logs. *Fix:* ask the Bot for status, and ask for proof in the pull request.
@@ -111,7 +111,7 @@ Soon after, the Bot opened a pull request of about 2,000 lines that nobody had a
 - **The agent can't reach the repository.** The launch fails before any code is written. In the livestream, a Bot had used the wrong connector for GitHub. *Fix:* check repository access before the first launch; re-authenticate GitHub or install the GitHub command-line tool.
 - **Assuming the agent sees your Bot's computer.** Delegated agents run on separate computers under Cloud Agent network settings. *Fix:* give them access through the Cloud Agent setup, not through your Bot's logins.
 
-## Recap
+## Who plans and who codes
 
 - The model thinks and the harness gives it tools. Grok Bot's harness orchestrates; Cursor's writes code.
 - Bots can delegate coding tasks to Cursor cloud agents, which run on separate computers under your Cloud Agent controls.

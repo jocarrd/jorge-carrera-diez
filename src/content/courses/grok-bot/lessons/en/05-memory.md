@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Every new chat starts from zero
 
 With a chat box, every new conversation starts from zero. You paste the same background, repeat the same preferences, and fix the same mistakes again. A Bot keeps some of what it learns, so the tenth task goes smoother than the first.
 
 That is useful, and it can also mislead you. If you don't know what a Bot remembers, you will either repeat yourself for nothing or trust a memory that is out of date. This lesson shows where the line is.
 
-## The idea
+## What memory keeps and what it leaves out
 
 **Memory** is what a Bot keeps from its past work so it can carry on in its role without rereading every old message. Think of a colleague who has worked with you for months. They remember how you like reports and who the key clients are. Before signing a contract, though, they still open the latest version instead of trusting their recollection.
 
@@ -59,7 +59,7 @@ The xAI team has talked about a memory that several Bots can share, but the offi
 
 When you duplicate a Bot, the copy keeps its profile, settings, enabled skills (saved instructions for a task, lesson 06), routines (scheduled work, lesson 10) and avatar. It does **not** copy conversation history, learned memory or chat attachments. A duplicate is a new colleague with the same job title who has not yet worked with you.
 
-## Step by step
+## Correct the Bot so the change sticks
 
 1. **Correct the Bot in plain words** the moment it gets something wrong. Say that the correction is lasting, so it knows to keep it, not just to fix this one reply.
 2. **Move rules that must never break into the description.** Open **Bot actions → Edit Profile** and add the rule there.
@@ -79,7 +79,7 @@ Forget everything about the old pricing plan we discussed last week. We dropped 
 
 {{live 8:11:06 "Asking a Bot to forget"}}
 
-## Example
+## The Bot that audited code every night
 
 In a live demo, the xAI team installed a ready-made Bot for nightly code audits, a check of the team's code that runs every night. It started with no memory of how the team worked. Instead of copying the instructions into it by hand, the presenter asked an existing engineering Bot to brief it:
 
@@ -97,7 +97,7 @@ This works because memory is per Bot and handoffs are how context moves. For you
 Write our team's working rules to /workspace/team/rules.md. Then message the Report Bot, tell it the file exists, and ask it to confirm it has read it.
 ```
 
-## Common mistakes
+## Trusting an old memory
 
 - **Treating memory as the record.** The Bot quotes last month's figure as if it were today's. *Fix:* keep facts in the source system and ask the Bot to reopen it before decisions.
 - **Correcting in passing.** You fix a draft by hand and the Bot repeats the mistake next week. *Fix:* tell the Bot what was wrong and that the change is permanent.
@@ -106,7 +106,7 @@ Write our team's working rules to /workspace/team/rules.md. Then message the Rep
 - **Assuming a duplicate is a clone.** The copy asks questions the original stopped asking long ago. *Fix:* give the copy its new scope and the key context before assigning work.
 - **Deleting a Bot that others depend on.** A Bot that used to hand it work is not told it was deleted, so it may keep trying. *Fix:* tell those Bots explicitly that it is gone and who takes over.
 
-## Recap
+## Memory helps, the source decides
 
 - A Bot remembers stable preferences, role context and summaries of prior work, not every message.
 - Memory is not a source of truth. For decisions that matter, ask the Bot to check the current source.

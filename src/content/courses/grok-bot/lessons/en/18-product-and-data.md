@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Slow handoffs between data and product
 
 Product work moves in slow handoffs. Someone asks a question, an analyst writes a query, a product manager turns the answer into a spec, a designer mocks it up, and an engineer builds a prototype. Each step waits for a person to be free.
 
 You already know the pieces from earlier lessons: one Bot per role (lesson 11), Bots handing work to each other (lesson 12), routines (lesson 10) and cloud agents for code (lesson 15). This lesson puts them together on one real product loop. You'll see where the Bots save days and where you still need to look carefully.
 
-## The idea
+## A relay race between Bots
 
 A product team of Bots works like a relay race. Each Bot owns one stage, receives the previous result and passes something reviewable to the next. You stay in the conversation as the person who asks the question, checks each hand-off and decides whether the work moves on.
 
@@ -48,7 +48,7 @@ The Bots can run the whole loop, but three points deserve your eyes:
 > [!TIP]
 > A demo goes through each step in one pass. Real work doesn't. Plan for a few rounds at each stage, add your own ideas, and review more carefully when the change carries more risk.
 
-## Step by step
+## Set up the relay stage by stage
 
 1. **Connect the data source** to your data Bot. Use a connector from **Settings → Plugins** if one exists. If not, sign in to the tool yourself in the Bot's browser (lesson 09). Start with read-only access, so the Bot can look but not change anything.
 2. **Put the boundaries in the Bot's description.** Read-only queries, always show the query, never change dashboards or alerts.
@@ -59,7 +59,7 @@ The Bots can run the whole loop, but three points deserve your eyes:
 7. **Ask for designs for each P0** and choose one yourself.
 8. **Send the chosen design to the engineering Bot** and ask for a prototype with screenshots or a video as proof (lesson 16).
 
-## Example
+## Fly Low Airlines, from question to prototype
 
 This is the Fly Low Airlines demo from the livestream, a fictional airline set up for the session.
 
@@ -106,7 +106,7 @@ Next, the team asked Pete to pass the PRD to Emily, and asked Pixel for designs 
 
 Pixel delivered options A and B. The audience picked A, and the design went to Emily. Emily split the P0s into scoped tasks for its engineer Bots. One of them, Nova, launched a cloud agent and kept watch over it. The final prototype wasn't shown in the session.
 
-## Common mistakes
+## Charts without the query
 
 - **Trusting a chart without the query.** A wrong join (the way two tables are combined) or date filter looks just as convincing as a right one. *Fix:* ask for the query and the source link with every number, and spot-check the first answers.
 - **Letting your hypothesis steer the analysis.** The Bot may confirm what you said instead of what the data shows. *Fix:* ask the data Bot to check your reading, as Ashley did with the seat-selection guess.
@@ -114,7 +114,7 @@ Pixel delivered options A and B. The audience picked A, and the design went to E
 - **Skipping the spec review.** Designs and prototypes pile up on top of a wrong requirement. *Fix:* review the P0 list before any design work starts.
 - **Asking the data Bot to change things.** A dashboard, alert or production setting gets modified during an "investigation". *Fix:* keep the data Bot read-only and put changes behind approval.
 
-## Recap
+## Every stage ends in something you can check
 
 - A product team of Bots is a relay: data, spec, design, prototype, with each stage ending in something you can check.
 - With every data answer, ask for the query, source links and a split between facts and assumptions.

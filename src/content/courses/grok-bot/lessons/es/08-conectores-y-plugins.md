@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Tu trabajo vive en otras herramientas
 
 La mayor parte del trabajo real vive en otras herramientas. Tu equipo habla en Slack, escribe documentos en Notion, guarda el código en GitHub y lee el correo en Gmail. Un Bot puede abrir esas webs en su navegador y moverse por ellas con clics, como viste en la lección 02. Funciona, pero va más lento y se rompe cuando una página cambia o una sesión caduca.
 
 Los connectors le dan al Bot una entrada directa. También le dan acceso a tus cuentas, así que cada uno merece un minuto de reflexión antes de añadirlo.
 
-## La idea
+## Un enlace directo con cada servicio
 
 Un **connector** (conector) es un enlace ya preparado entre un Bot y un servicio compatible. Con él, el Bot le pide datos y acciones al servicio directamente, en lugar de leer pantallas y pulsar botones. Piensa en la diferencia entre rellenar un formulario en papel en la ventanilla y tener una línea de teléfono directa con el departamento que toca.
 
@@ -62,7 +62,7 @@ Una web que se usa desde el navegador puede bloquear la automatización, cerrar 
 > [!WARNING]
 > Un mensaje o un documento que el Bot lee a través de un plugin puede traer instrucciones escondidas que intenten desviarlo. Deja los envíos, las publicaciones y los borrados detrás de una aprobación (lección 04), también con herramientas de confianza.
 
-## Paso a paso
+## Instalar un connector desde el Marketplace
 
 1. Abre **Settings** (ajustes) desde el menú de tu cuenta, o pulsa `Cmd/Ctrl+,`.
 2. Entra en **Plugins** y explora el **Marketplace**.
@@ -89,7 +89,7 @@ También puedes pedirle a un Bot en el chat que configure un plugin por ti, como
 - **¿Quién más puede usarlo?** Todos los Bots de tu cuenta.
 - **¿Cómo lo quitas?** Desinstala el connector y después revoca su acceso en los ajustes del propio servicio.
 
-## Ejemplo
+## Miles de ideas leídas desde X
 
 En el directo, el equipo de xAI quería entender miles de ideas de negocio que la gente había dejado como respuestas en X.
 
@@ -108,7 +108,7 @@ Una versión que puedes adaptar, con el connector de X añadido:
 Lee las respuestas a mis tres últimas publicaciones. Agrupa las propuestas por temas, cuenta cuántas respuestas encajan en cada tema y cita dos respuestas por tema con su enlace. No publiques nada, no des me gusta y no respondas a nadie.
 ```
 
-## Errores habituales
+## Clics donde había connector
 
 - **Moverse con clics por una web que tiene connector.** El trabajo va más lento y se rompe más. *Qué hacer:* mira primero en el **Marketplace**.
 - **Iniciar sesión con la cuenta equivocada.** El Bot ve datos que no son o no ve nada. *Qué hacer:* vuelve a conectar con la cuenta correcta.
@@ -116,7 +116,7 @@ Lee las respuestas a mis tres últimas publicaciones. Agrupa las propuestas por 
 - **Mantener conexiones viejas para siempre.** El acceso sigue abierto mucho después de acabar el proyecto. *Qué hacer:* revisa los plugins instalados de vez en cuando y revoca lo que no uses.
 - **Un plugin que no conecta.** Las tareas fallan en la primera llamada. En el directo, un Bot no llegaba a los repositorios de GitHub del equipo (las carpetas donde viven los proyectos de código), al parecer porque se había usado el connector equivocado. *Qué hacer:* ábrelo en **Settings → Plugins** y vuelve a iniciar sesión con la cuenta correcta, o quítalo y conéctalo de nuevo. Con GitHub, el equipo sugirió también instalar la herramienta de línea de comandos de GitHub (un programa que se maneja escribiendo órdenes) en el ordenador del Bot. {{live 5:06:25 "Un Bot que no llegaba a GitHub"}}
 
-## Resumen
+## Connectors primero, clics después
 
 - Un connector da a un Bot acceso directo a un servicio. En la app, los connectors aparecen como **Plugins**.
 - Se instalan desde **Settings → Plugins → Marketplace**, se inicia sesión y se añaden a una tarea con `@`.

@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Usage that runs out on Wednesday
 
 By now you may have several Bots, a few routines and a group chat or two. Then one week your usage runs out on Wednesday, and you don't know which Bot spent it.
 
 Cost and speed come from the same place. A Bot that clicks through a website step by step, rereads a long context or talks in a busy group chat is slow and uses a lot. The habits in this lesson fix both at once.
 
-## The idea
+## Where usage comes from
 
 Every time a Bot thinks, reads a page, looks at a screenshot or writes a reply, a model does work, and that work is what your plan counts. It is measured in tokens, the small chunks of text a model reads and writes. More steps, more text and more runs mean more usage. It works like a taxi meter that keeps running while the Bot drives, whether the trip is useful or not.
 
@@ -54,7 +54,7 @@ Before you pick a schedule, ask how often the answer can really change.
 
 **Group chats.** Every Bot in a group reads the messages and may answer. The docs note that too many parallel handoffs create duplicate work and noisy updates ([Message and collaborate](https://docs.x.ai/grok-bot/chat-and-collaboration)). As lesson 12 explained, it is often cheaper to have one Bot mention two others once and work with each separately.
 
-## Step by step
+## A twenty-minute monthly clean-up
 
 A monthly clean-up takes about twenty minutes:
 
@@ -67,7 +67,7 @@ A monthly clean-up takes about twenty minutes:
 7. **Trim context.** Move one-off questions to a catch-all Bot (lesson 11) and ask Bots to forget context they no longer need (lesson 05).
 8. **Ask the Bot itself** how to make its work cheaper, then review the proposal before you apply it.
 
-## Example
+## A Bot that reviews your usage
 
 {{live 7:56:40 "Routine frequency and asking the Bot to optimize itself"}}
 
@@ -100,7 +100,7 @@ Forget all things about how we generated your profile picture.
 > [!TIP]
 > Grok Bot may ask whether to keep routines running after you've been away a long time, and pause them if you don't answer. When you come back, review the paused routines instead of turning them all back on.
 
-## Common mistakes
+## Routines every few minutes just in case
 
 - **Scheduling every 5 or 15 minutes "to be safe".** Hundreds of runs a day that mostly find nothing. *Fix:* use the slowest schedule that works, or an event trigger.
 - **Broad event listeners.** Every message in a busy channel starts a run. *Fix:* match on a specific channel, phrase or link.
@@ -108,7 +108,7 @@ Forget all things about how we generated your profile picture.
 - **One Bot for everything.** Its context grows and quality drops. *Fix:* split by role and keep a catch-all Bot for loose questions.
 - **Routing coordination through a large group chat.** Bots answer each other and repeat work. *Fix:* use direct handoffs with one owner per stage.
 
-## Recap
+## Fewer runs, better aimed
 
 - Usage comes from model work: steps, text read, screenshots and runs. Plans include weekly usage, which you can check in **Usage & Billing**.
 - Count routine runs before you schedule them, and prefer narrow event triggers to polling.

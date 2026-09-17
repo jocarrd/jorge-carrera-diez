@@ -13,7 +13,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Hacer de mensajero entre tus Bots
 
 En la lección 11 repartiste el trabajo por roles. Ahora tu Bot de datos tiene las cifras y tu Bot de correo escribe los emails. La primera vez que necesitas un correo sobre esas cifras, acabas copiando la respuesta de una conversación y pegándola en la otra.
 
@@ -21,7 +21,7 @@ Los Bots pueden dar ese paso por su cuenta. También pueden pasarse de la raya. 
 
 Aquí verás cómo hacer que colaboren con un solo responsable cada vez y dónde leer lo que se han dicho entre ellos.
 
-## La idea
+## Mensajes entre Bots, como en el chat del trabajo
 
 Tus Bots pueden mandarse mensajes, como compañeros en el chat del trabajo. Uno pregunta, el otro responde cuando puede y tú puedes leer el intercambio. Cuando un Bot le pasa una parte del trabajo a otro, se habla de un **traspaso**.
 
@@ -76,7 +76,7 @@ Las reacciones, como un pulgar arriba, sirven para confirmar algo sin más. Cuan
 
 Los traspasos aparecen en la conversación, así que puedes abrirlos y leer qué se pidió y qué se respondió. Si no sabes dónde ocurrió un intercambio, usa la búsqueda o la paleta de comandos (el buscador rápido de comandos y mensajes). Pueden encontrar mensajes anteriores entre Bots y grupos donde esa función esté disponible.
 
-## Paso a paso
+## Pasar un encargo de un Bot a otro
 
 1. Decide si necesitas ver el traspaso mientras ocurre. Si no, usa un mensaje directo. Si lo necesitas, usa un grupo.
 2. Para un traspaso directo, escribe al Bot que se encarga del resultado final. Menciona al otro Bot con `@`. Di qué tiene que pedir, qué debe devolver y qué hacer si la respuesta no está lista.
@@ -86,7 +86,7 @@ Los traspasos aparecen en la conversación, así que puedes abrirlos y leer qué
 6. Cuando un comentario afecte a un solo resultado, responde a ese mensaje en lugar de escribir uno nuevo.
 7. Lee los traspasos. Si dos Bots hacen el mismo trabajo, nombra a un responsable y dile al otro que pare.
 
-## Ejemplo
+## Email Ethan pide los datos a Data Dan
 
 En la sesión para principiantes del directo, quien presentaba tenía tres Bots. Data Dan había creado una encuesta sobre café, Slide Sonya hacía las diapositivas y Email Ethan le escribía los correos. Le pidió a Ethan un borrador de correo sobre los datos del café. Ethan escribió por su cuenta a Data Dan para conseguir las cifras, y después le pidió que escribiera también a Sonya sobre la presentación.
 
@@ -108,7 +108,7 @@ Para el primer mensaje de un grupo, el ejemplo de la documentación nombra un re
 @Researcher recopila el material de origen y enlaza cada afirmación. @Writer convierte los hallazgos en un borrador de lanzamiento. @Reviewer revisa el borrador frente a las fuentes y enumera solo los problemas que lo bloquean. No publiquéis nada.
 ```
 
-## Errores habituales
+## Traspasos sin responsable
 
 - **Copiar tú las respuestas de un Bot a otro.** Haces de mensajero y el contexto se pierde por el camino. *Qué hacer:* pide al Bot responsable que escriba al otro.
 - **No decir qué hacer si el otro Bot no puede responder.** El Bot improvisa, como Ethan con los datos de ejemplo. *Qué hacer:* indica si debe esperar, preguntarte o parar.
@@ -117,7 +117,7 @@ Para el primer mensaje de un grupo, el ejemplo de la documentación nombra un re
 - **Publicar una imagen en un traspaso al grupo.** El traspaso de un Bot al grupo es solo de texto. *Qué hacer:* pide al Bot que envíe la imagen directamente a su compañero.
 - **Responder con una reacción cuando cambia la instrucción.** Una reacción solo confirma. *Qué hacer:* responde por escrito al mensaje concreto.
 
-## Resumen
+## Cada traspaso con un responsable
 
 - Los Bots pueden escribirse de forma asíncrona, y el traspaso se ve en la conversación.
 - Cada fase necesita un responsable. Los traspasos en paralelo generan trabajo duplicado y ruido.

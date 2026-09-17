@@ -12,7 +12,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Eight Bots with you in the middle
 
 With three or four Bots, you can still message each one yourself. By the time you have eight, you spend your day passing updates between them. Nobody knows who is stuck, and you become the busiest person on your own team.
 
@@ -20,7 +20,7 @@ The second problem shows up when you change how the team works. You decide that 
 
 This lesson solves both problems with two roles. One Bot coordinates, and another Bot keeps the written rules.
 
-## The idea
+## A coordinator and a playbook
 
 Think of a small office. One person runs the week. They hand out work, chase updates and flag anything that is stuck. Another person keeps the team handbook, which every new hire reads on day one. A team of Bots can work the same way.
 
@@ -57,7 +57,7 @@ A new Bot starts empty. Instead of pasting your instructions into it, ask a Bot 
 
 A Bot can also create Bots. The docs say your existing Bots "can also suggest or create a focused Bot when a job should have a long-lived owner". They suggest asking your Bots to check with you before creating several, so the roster stays small.
 
-## Step by step
+## Set up the coordinator and the team manual
 
 1. **Create the coordinator.** Choose **New**, then **Create new agent** in **New chat**. Open **Bot actions → Edit Profile** and give it a name and a description like this:
 
@@ -83,7 +83,7 @@ A Bot can also create Bots. The docs say your existing Bots "can also suggest or
 
 6. **Talk mostly to the coordinator.** Go straight to a specialist only when you need that Bot.
 
-## Example
+## A new Bot learns the rules from another
 
 In the livestream's engineering workshop, the presenter ran a chief of staff and several engineering Bots. They installed a new Bot, a nightly audit engineer. It didn't know how the team worked, and the presenter didn't brief it directly. They sent this to their existing engineering Bot:
 
@@ -102,7 +102,7 @@ Earlier the same day, another presenter used Dr. Eggbot, a Bot that creates Bots
 
 {{live 2:05:40 "A Bot that creates Bots sets up a chief of staff"}}
 
-## Common mistakes
+## A coordinator that works instead of coordinating
 
 - **The coordinator does the work itself.** It fills its context with specialist detail and stops coordinating. *Fix:* write "always delegate to your team" in its description.
 - **Copying the same rule into every Bot.** The copies drift apart and you can't tell which is current. *Fix:* keep one playbook with one owner, and send changes through the owner.
@@ -111,7 +111,7 @@ Earlier the same day, another presenter used Dr. Eggbot, a Bot that creates Bots
 - **Deleting a Bot the coordinator still delegates to.** The coordinator isn't told about the deletion and keeps trying to send it work. *Fix:* tell the coordinator to stop using that Bot, and update the playbook.
 - **Letting a Bot create Bots freely.** The roster grows faster than you can review it. *Fix:* ask it to propose new Bots and wait for your yes.
 
-## Recap
+## A team that organises itself
 
 - One coordinator owns the outcome, delegates, and reports only blockers and decisions.
 - Keep team rules in one playbook, in a document outside any Bot's memory, owned by one Bot that announces changes.

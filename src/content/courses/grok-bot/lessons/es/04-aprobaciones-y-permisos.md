@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Un Bot puede enviar, borrar y publicar
 
 Un chat no puede enviar un correo, borrar un archivo ni publicar una entrada. Un Bot sí, porque trabaja en tus herramientas reales. Por eso es útil, y por eso mismo tienes que decidir de antemano qué puede hacer por su cuenta.
 
 Se trata de encontrar un equilibrio. Si un Bot pregunta por todo, te pasas el día pulsando botones. Si no pregunta por nada, un error puede llegar a un cliente. Grok Bot te da unos pocos controles para ajustar ese equilibrio, y puedes ir aflojándolos a medida que el Bot se gana tu confianza.
 
-## La idea
+## El Bot pregunta antes de pulsar
 
 ### Una petición de aprobación es una pausa antes de actuar
 
@@ -88,7 +88,7 @@ Las contraseñas, los códigos de verificación y los CAPTCHAs funcionan de otra
 
 El ordenador en la nube no es el que tienes delante. Si un Bot puede ejecutar comandos en tu Mac, Windows o Linux se decide en **Settings → General → Agent → Execution on Local Computer** (ejecución en el ordenador local). La opción por defecto es **Ask every time** (preguntar siempre). Elige **Never allowed** (nunca) salvo que un Bot tenga un motivo concreto para trabajar con tus archivos locales. Este ajuste no impide que el Bot use su ordenador en la nube.
 
-## Paso a paso
+## Poner límites y revisar aprobaciones
 
 1. **Pon límites en la descripción.** Abre **Bot actions → Edit Profile** (acciones del Bot, editar perfil) y añade una línea como "No envíes nunca mensajes externos sin aprobación".
 2. **Añade tus primeras reglas.** Abre **Settings → General → Auto-review** y añade una o dos reglas **Ask first** para las acciones que más te importan, como enviar correos.
@@ -97,7 +97,7 @@ El ordenador en la nube no es el que tienes delante. Si un Bot puede ejecutar co
 5. **Revisa cada petición.** Cuando aparezca una aprobación, comprueba el destino y los valores. Usa **Allow once** mientras aprendes cómo se comporta el Bot.
 6. **Amplía la confianza poco a poco.** Cuando una acción haya salido bien muchas veces y sea de bajo riesgo, añade una regla **Allow automatically** concreta para ella. Deja la lista anterior detrás de **Ask first**.
 
-## Ejemplo
+## Una regla escrita en los ajustes
 
 En una demostración en directo, el equipo de xAI abrió los ajustes y escribió una regla en lenguaje natural: no respondas correos por mí sin preguntarme antes. También dejó que el Bot creara diapositivas sin preguntar.
 
@@ -113,7 +113,7 @@ Puedes reproducirlo con una regla **Ask first** para el envío de correos y esta
 Redacta una respuesta al último correo de nuestro proveedor confirmando la entrega del jueves. Enséñame el borrador y espera. No envíes nada hasta que lo apruebe.
 ```
 
-## Errores habituales
+## Aprobar sin mirar
 
 - **Aprobar sin leer el destino.** El Bot actúa sobre la cuenta o el destinatario equivocados. *Qué hacer:* revisa destino, alcance y valores, y pide una explicación sencilla si dudas.
 - **Escribir reglas amplias como "permite todo en el navegador".** Las acciones de riesgo pasan sin pararse. *Qué hacer:* escribe reglas concretas para una acción y un alcance.
@@ -121,7 +121,7 @@ Redacta una respuesta al último correo de nuestro proveedor confirmando la entr
 - **Esperar que una aprobación deshaga lo ya hecho.** La aprobación solo controla la acción propuesta. *Qué hacer:* deja los pasos irreversibles detrás de **Ask first**.
 - **Permitir siempre la ejecución local.** Un Bot puede ejecutar comandos en tu propia máquina sin preguntar. *Qué hacer:* quédate con **Never allowed** o **Ask every time**.
 
-## Resumen
+## Allow once mientras aprendes
 
 - Una petición de aprobación muestra la acción propuesta y sus datos. Revísala antes de aprobar.
 - Usa **Allow once** mientras aprendes y reserva **Always allow** para acciones conocidas y de bajo riesgo.

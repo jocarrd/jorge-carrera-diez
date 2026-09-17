@@ -13,7 +13,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## The Bot you end up asking for everything
 
 After a few weeks with one Bot, you start asking it everything. The sales report, a software bug, a birthday gift idea, the budget. Its answers get harder to steer. The Bot mixes preferences from one job into another, and you repeat context you already gave it.
 
@@ -21,7 +21,7 @@ The opposite also happens. You create a new Bot for every task, and a month late
 
 This lesson is about the middle ground: a few Bots, each with a job it keeps.
 
-## The idea
+## Five signs a job needs its own Bot
 
 A Bot is a long-lived teammate with a name, a job, its own conversation and working context that builds up over time (lessons 01 and 05). The job is what keeps that context useful. When the job is clear, what the Bot learns today still applies tomorrow.
 
@@ -87,7 +87,7 @@ The docs steer you away from a **General Helper** as the owner of real work. A n
 
 The difference is ownership. A catch-all Bot owns nothing, and no work depends on it. A general helper that also runs your reports and routines is the pattern the docs steer you away from. For simple projects, the xAI team added, one "builder" Bot covering engineering, product and design can be enough.
 
-## Step by step
+## Split your week into roles
 
 1. List the recurring work you would hand off in a normal week.
 2. Group the items that share a goal, tools, working style, approval boundary and schedule.
@@ -97,7 +97,7 @@ The difference is ownership. A catch-all Bot owns nothing, and no work depends o
 6. Create a second Bot only when a group of work has become a stable specialty.
 7. Use **Hide from sidebar** for Bots you no longer use. Hiding keeps their work, but it does not pause their routines (lesson 10).
 
-## Example
+## The product team from the livestream
 
 In the livestream's session for product managers, the roster was built around roles. Ashley handled data science, PM Pete wrote product specs and Pixel did design. Emily led engineering, with engineer Bots under it, and Ray handled recruiting.
 
@@ -113,7 +113,7 @@ Own product design mockups. Work from our design system in Figma: fonts, colors 
 
 It names the outcome, the source, the output, the handoff and the boundary. A second design Bot would only make sense if, for example, marketing design needed a different library, style and approver.
 
-## Common mistakes
+## The General Helper and duplicate Bots
 
 - **One General Helper for everything.** Context from one job leaks into another and guidance gets vague. *Fix:* split along the five signals.
 - **One Bot per task.** The roster grows and no Bot keeps enough work to learn from. *Fix:* create Bots for long-lived jobs and send tasks as messages.
@@ -122,7 +122,7 @@ It names the outcome, the source, the output, the handoff and the boundary. A se
 - **Splitting Bots to separate access.** Every Bot uses the same computer and sessions. *Fix:* keep sensitive logins off the computer instead (lesson 09).
 - **Expecting a duplicate to remember.** The copy starts without history or learned memory. *Fix:* give it its new scope before assigning work.
 
-## Recap
+## When to create another Bot
 
 - Create a separate Bot when the work has its own goal, tools, style, approval boundary or schedule.
 - Describe each role by what it owns, uses, produces and must never do.

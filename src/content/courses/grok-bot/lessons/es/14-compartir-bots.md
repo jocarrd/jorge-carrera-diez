@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Montar otra vez el mismo Bot
 
 Has pasado semanas afinando un Bot. Su descripción es precisa, sus skills funcionan y sus routines se ejecutan a su hora. Una compañera te pide "lo mismo". Montarlo desde cero le llevaría las mismas semanas.
 
 Compartirlo lo resuelve, pero abre dos preguntas. ¿Qué sale con el enlace y qué se queda contigo? Y cuando alguien te manda un Bot a *ti*, ¿cómo sabes que hace lo que promete antes de que toque tus cuentas?
 
-## La idea
+## Pasar la receta, no la cocina
 
 Compartir un Bot se parece a pasarle a alguien una copia de tu receta. Recibe las instrucciones y puede preparar el mismo plato. Tu cocina se queda contigo, igual que tu nevera, tus llaves y las notas que has ido escribiendo en los márgenes durante años.
 
@@ -58,7 +58,7 @@ La documentación lo deja claro. Los Bots compartidos los crean otros usuarios y
 
 En el directo se vio además un marketplace de Bots ya hechos, que el equipo de xAI revisa a mano. La documentación oficial solo describe un **Marketplace** para plugins y skills empaquetadas, en **Settings → Plugins**, así que puede que el de Bots todavía no esté disponible para ti.
 
-## Paso a paso
+## Revisar y compartir un Bot
 
 **Para compartir un Bot:**
 
@@ -90,7 +90,7 @@ En el directo se vio además un marketplace de Bots ya hechos, que el equipo de 
 5. Reescribe la descripción con tus propios límites, como "No envíes mensajes externos sin aprobación".
 6. Conecta solo los plugins y las sesiones que necesite la tarea. Todos tus Bots comparten un ordenador, así que una sesión que abras queda disponible para todos (lección 09).
 
-## Ejemplo
+## Stockbot como plantilla
 
 En la sesión del directo para fundadores, el presentador enseñó Stockbot, un Bot que vigila a la competencia. Se registra en sus productos, recorre el onboarding (los pasos que sigue un usuario nuevo) y escribe un análisis detallado con vídeo. Lo compartió desde el escenario con un código QR, para que cualquiera del público pudiera empezar desde el mismo Bot.
 
@@ -106,7 +106,7 @@ Para los Bots del marketplace, el consejo del equipo de xAI coincide con los pas
 
 {{live 8:12:06 "Cómo evaluar una plantilla del marketplace"}}
 
-## Errores habituales
+## Enlaces con datos de clientes
 
 - **Compartir tal cual un Bot que usas con clientes.** Sus skills y routines pueden mostrar nombres de clientes y enlaces internos a cualquiera que tenga la URL. *Qué hacer:* revísalo, cambia lo sensible por marcadores y después compártelo.
 - **Esperar que la copia sepa lo que sabe tu Bot.** El historial no viaja, así que la copia empieza sin tus conversaciones. *Qué hacer:* antes de compartir, pon lo importante en la descripción o en una skill.
@@ -114,7 +114,7 @@ Para los Bots del marketplace, el consejo del equipo de xAI coincide con los pas
 - **Usar un Bot compartido como barrera de seguridad.** Trabaja en el mismo ordenador que tus otros Bots, con las mismas sesiones. *Qué hacer:* dale solo el acceso que necesite la tarea y cierra las sesiones que ya no use.
 - **Tratar un duplicado como un Bot nuevo.** Conserva las routines y el ámbito del original. *Qué hacer:* cámbiale el nombre y el ámbito, y revisa antes las routines copiadas.
 
-## Resumen
+## Qué viaja en un enlace compartido
 
 - Un enlace para compartir es público y entrega una copia con identidad, descripción, skills y routines.
 - Nunca incluye el historial de conversación, las sesiones ni tu ordenador. La documentación no aclara si viaja la memoria aprendida, así que trátala también como pública.

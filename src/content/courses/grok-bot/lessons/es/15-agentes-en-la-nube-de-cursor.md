@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Cuando el Bot tiene que tocar código
 
 Tus Bots ya investigan y redactan, y saben usar un navegador. Tarde o temprano le pedirás a uno que cambie código de verdad, por ejemplo para arreglar un fallo de tu web. Un Bot puede intentarlo. Pero el trabajo serio de software necesita un entorno pensado para código, con una copia del proyecto, tests que ejecutar y una forma ordenada de entregar el cambio para que alguien lo revise.
 
 Grok Bot consigue ese entorno pasando el trabajo de programación a los agentes en la nube de Cursor. Esta lección enseña cómo se reparte, para que tu Bot conserve el plan y el contexto mientras un agente escribe el código.
 
-## La idea
+## Modelo, harness y agentes en la nube
 
 Primero, unos términos:
 
@@ -60,7 +60,7 @@ Usa un agente en la nube para tareas de código complejas. Deja al Bot la invest
 > [!TIP]
 > Dónde está la frontera depende de tu trabajo. Manda a los agentes en la nube unas cuantas tareas de distinto tamaño antes de fijar una regla.
 
-## Paso a paso
+## Lanzar un agente desde un Bot y revisar su PR
 
 1. **Comprueba el acceso.** Si tienes un plan de equipo, pide a tu administrador que confirme que el interruptor **Cloud Agents** está encendido.
 2. **Conecta el código.** En la configuración de agentes en la nube de Cursor, conecta tu organización de GitHub y elige qué repositorios pueden usar. Esas pantallas son de Cursor, así que sigue la [documentación de Cloud Agent](https://cursor.com/docs/cloud-agent) para ver los pasos actuales.
@@ -83,7 +83,7 @@ Usa un agente en la nube para tareas de código complejas. Deja al Bot la invest
 5. **Sigue el avance preguntando al Bot**, no mirando al agente. Escribe "¿Cómo va el agente?" y el Bot leerá la transcripción y te la resumirá.
 6. **Revisa lo que vuelve**, es decir, la pull request y las pruebas que pediste. La lección 16 trata las pruebas a fondo.
 
-## Ejemplo
+## La landing del primer día
 
 El primer día del directo, el equipo montó una landing (una web de una sola página que presenta una oferta) para un negocio de pop-ups de comida. Acababan de crear un Bot de ingeniería llamado Tater para elegir la tecnología de la web y construirla. Le dijeron cómo trabajar:
 
@@ -102,7 +102,7 @@ los agentes en la nube. Vuelve con un vídeo o una captura. Del despliegue ya no
 
 Poco después, el Bot abrió una pull request de unas 2.000 líneas que nadie había pedido. El equipo respondió con una regla explícita para ese primer prototipo: nada de pull requests, por ahora todo va directo a main. Main es la versión principal del código, así que cada cambio entraba sin revisión. Tu regla puede ser la contraria. Lo importante es que el Bot la tenga antes de la primera construcción.
 
-## Errores habituales
+## Código grande escrito por el propio Bot
 
 - **Pedir al Bot que escriba él mismo cambios grandes de código.** Puede que lo consiga, pero sin las herramientas pensadas para programar. *Qué hacer:* que delegue en un agente en la nube y revise el resultado.
 - **Vigilar cada paso del agente.** Te pasas el tiempo leyendo registros. *Qué hacer:* pregunta al Bot cómo va y pide pruebas en la pull request.
@@ -110,7 +110,7 @@ Poco después, el Bot abrió una pull request de unas 2.000 líneas que nadie ha
 - **El agente no llega al repositorio.** El lanzamiento falla antes de escribir una línea. En el directo, un Bot había usado el conector equivocado para GitHub. *Qué hacer:* comprueba el acceso al repositorio antes del primer lanzamiento; vuelve a autenticar GitHub o instala la herramienta de línea de comandos de GitHub.
 - **Dar por hecho que el agente ve el ordenador de tu Bot.** Los agentes delegados trabajan en ordenadores separados, con la configuración de red de Cloud Agent. *Qué hacer:* dales acceso desde la configuración de Cloud Agent, no con las sesiones de tu Bot.
 
-## Resumen
+## Quién planifica y quién programa
 
 - El modelo piensa y el harness le da herramientas. El de Grok Bot orquesta; el de Cursor programa.
 - Los Bots pueden delegar tareas de programación en los agentes en la nube de Cursor, que trabajan en ordenadores separados bajo tus controles de Cloud Agent.

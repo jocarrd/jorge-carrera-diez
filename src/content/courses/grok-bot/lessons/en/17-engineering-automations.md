@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Everything still starts with you
 
 By now your Bots delegate code to cloud agents (lesson 15) and bring back proof (lesson 16). But you still start everything. You paste the pull request link, you notice the build is broken, you chase the agent that has gone quiet.
 
 A lot of engineering work starts from a signal. A pull request opens, a test fails, or it's 3 a.m. and nobody is changing the code. This lesson turns those signals into automations. It also covers the question that decides whether they help or hurt: what may go ahead without you.
 
-## The idea
+## CI, triggers and events
 
 A few terms first. **CI** (continuous integration) is the system that builds and tests your code every time someone proposes a change. When a check fails, people say CI is "red". **Main** is the main version of the code, the one pull requests merge into. **On-call** is the person responsible for incidents at a given time.
 
@@ -44,7 +44,7 @@ Decide how much human involvement a change needs based on its risk. Low-risk cha
 
 On the Bot side, Grok Bot gives you the controls. In **Settings → General → Auto-review** you can add **Ask first** rules, which always stop matching actions for you. When rules conflict, **Ask first** wins over **Allow automatically**. The docs give production deployments as a good **Ask first** example.
 
-## Step by step
+## Four automations from the livestream
 
 The four automations below are patterns the xAI team showed in the livestream. None of them comes ready-made. The review channel ran on **Cursor Automations**, a separate Cursor product built on cloud agents. You can build the other three with routines and event triggers.
 
@@ -74,7 +74,7 @@ The four automations below are patterns the xAI team showed in the livestream. N
 
 4. **The urgent (P0) flow.** P0 is the label for the highest priority. Coding agents sometimes slow down: they wait on a long timer, drift from the goal or play it too safe. A P0 flow defines "urgent" once, as a routine that checks the cloud agents every five minutes and interrupts or redirects any that go off track.
 
-## Example
+## The booked-flights bug
 
 In an engineering demo, a user reported that people couldn't see their booked flights. The engineer's Bot confirmed the bug by browsing the site. The engineer didn't just type "urgent", because that word alone can make an agent skip steps or invent things to go faster. They defined it instead:
 
@@ -93,7 +93,7 @@ They replied to the Bot's bug report with "Fix this issue urgently. It's a P0". 
 
 Watch the cost. A routine that runs every five minutes runs 288 times a day, and frequent routines get expensive. Where a tool can send a webhook (a message one app sends another the moment something happens), react to that instead of checking on a timer. Stop the P0 routine when the fix ships.
 
-## Common mistakes
+## Triggers that listen to everything
 
 - **A trigger that listens to everything.** You get noise, wasted usage and actions on the wrong input. *Fix:* match one channel and one phrase or event.
 - **Letting automations merge anything.** A bad change reaches production at 3 a.m. *Fix:* auto-merge only low-risk changes with passing checks and proof, and add **Ask first** rules for production.
@@ -102,7 +102,7 @@ Watch the cost. A routine that runs every five minutes runs 288 times a day, and
 - **Leaving frequent routines on.** A five-minute check keeps spending after the incident is over. *Fix:* pause or delete it when the work is done.
 - **Skipping the test.** Your first real run becomes the test. *Fix:* use **Test run** with safe inputs, then check that it stopped at the approval point.
 
-## Recap
+## Narrow, tested triggers
 
 - Routines can start from events such as a Slack message or a GitHub notification. Keep the matching rule narrow.
 - Test with **Test run** on safe inputs, and remember it does real work.

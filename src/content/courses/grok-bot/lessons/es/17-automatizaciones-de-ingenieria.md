@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Todo sigue empezando por ti
 
 A estas alturas tus Bots delegan el código en agentes en la nube (lección 15) y vuelven con pruebas (lección 16). Pero todo sigue empezando por ti. Pegas el enlace de la pull request, ves que la build está rota, persigues al agente que lleva un rato callado.
 
 Mucho trabajo de ingeniería arranca con una señal. Se abre una pull request, falla un test o son las tres de la madrugada y nadie está tocando el código. Esta lección convierte esas señales en automatizaciones. También trata la pregunta que decide si ayudan o estorban, que es qué puede seguir adelante sin ti.
 
-## La idea
+## CI, disparadores y eventos
 
 Primero, unos términos. La **CI** (integración continua) es el sistema que compila y prueba tu código cada vez que alguien propone un cambio. Cuando una comprobación falla, se dice que la CI está "en rojo". **Main** es la versión principal del código, en la que se fusionan las pull requests. La **guardia** (on-call) es la persona responsable de las incidencias en cada momento.
 
@@ -44,7 +44,7 @@ Decide cuánta intervención humana necesita un cambio según su riesgo. Los de 
 
 En la parte de tus Bots, Grok Bot te da los controles. En **Settings → General → Auto-review** (ajustes, revisión automática) puedes añadir reglas **Ask first** (preguntar antes), que siempre detienen las acciones que coinciden. Si dos reglas chocan, **Ask first** gana a **Allow automatically** (permitir automáticamente). La documentación pone los despliegues a producción como buen ejemplo de **Ask first**.
 
-## Paso a paso
+## Cuatro automatizaciones del directo
 
 Las cuatro automatizaciones de abajo son patrones que el equipo de xAI enseñó en el directo. Ninguna viene lista para usar. El canal de revisión funcionaba con **Cursor Automations**, un producto aparte de Cursor que trabaja sobre agentes en la nube. Las otras tres puedes montarlas con routines y disparadores por evento.
 
@@ -74,7 +74,7 @@ Las cuatro automatizaciones de abajo son patrones que el equipo de xAI enseñó 
 
 4. **El flujo urgente (P0).** P0 es la etiqueta de máxima prioridad. Los agentes de programación a veces se ralentizan. Esperan con un temporizador largo, se desvían del objetivo o van con demasiada cautela. Un flujo P0 define de una vez qué significa "urgente", con una routine que revisa los agentes en la nube cada cinco minutos e interrumpe o reconduce a los que se desvían.
 
-## Ejemplo
+## El fallo de los vuelos reservados
 
 En una demo de ingeniería, un usuario avisó de que la gente no podía ver sus vuelos reservados. Su Bot de ingeniería confirmó el fallo navegando por la web. Quien lo llevaba no se limitó a escribir "urgente", porque esa palabra sola puede hacer que un agente se salte pasos o se invente cosas para ir más rápido. En su lugar, la definió:
 
@@ -93,7 +93,7 @@ Respondió al aviso del Bot sobre el fallo con "Arregla esto con urgencia, es un
 
 Vigila el coste. Una routine cada cinco minutos se ejecuta 288 veces al día, y las routines muy frecuentes salen caras. Si una herramienta puede enviar un webhook (un aviso que una aplicación manda a otra en el momento en que pasa algo), reacciona a ese aviso en lugar de mirar con un temporizador. Detén la routine P0 cuando el arreglo esté publicado.
 
-## Errores habituales
+## Disparadores que escuchan todo
 
 - **Un disparador que escucha todo.** Recibes ruido, gastas uso y el Bot actúa sobre información equivocada. *Qué hacer:* que coincida con un canal y una frase o un evento concretos.
 - **Dejar que las automatizaciones fusionen cualquier cosa.** Un cambio malo llega a producción a las tres de la madrugada. *Qué hacer:* fusión automática solo para cambios de bajo riesgo con comprobaciones en verde y pruebas, y reglas **Ask first** para producción.
@@ -102,7 +102,7 @@ Vigila el coste. Una routine cada cinco minutos se ejecuta 288 veces al día, y 
 - **Dejar activas routines muy frecuentes.** Una revisión cada cinco minutos sigue gastando cuando la incidencia ya pasó. *Qué hacer:* páusala o bórrala cuando termine el trabajo.
 - **Saltarte la prueba.** Tu primera ejecución real se convierte en la prueba. *Qué hacer:* usa **Test run** con datos seguros y mira si se detuvo donde tenía que pedir aprobación.
 
-## Resumen
+## Disparadores acotados y probados
 
 - Las routines pueden arrancar con eventos como un mensaje de Slack o una notificación de GitHub. Mantén acotada la regla de coincidencia.
 - Prueba con **Test run** y datos seguros, sabiendo que hace trabajo real.

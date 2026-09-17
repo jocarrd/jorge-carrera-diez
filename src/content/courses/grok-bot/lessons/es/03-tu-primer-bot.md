@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Una conversación vacía y una petición vaga
 
 La primera vez que abres Grok Bot te encuentras una conversación vacía. Casi todo el mundo escribe lo mismo que escribiría en un chat, una petición corta y vaga. El Bot tiene que adivinar, y tú pasas los diez minutos siguientes corrigiéndolo.
 
 Hay dos cosas que deciden lo útil que es un Bot desde el principio: lo claro que defines su trabajo y lo claro que describes la primera tarea. Las dos llevan pocos minutos y rinden durante mucho tiempo, porque el Bot conserva su papel y aprende de tus correcciones.
 
-## La idea
+## Nombre, trabajo y descripción
 
 ### Un Bot se define con tres datos
 
@@ -58,7 +58,7 @@ Si te ves repitiendo una preferencia en cada mensaje, pásala a la descripción.
 
 {{live 0:48:01 "Instrucciones explícitas en la descripción de un Bot"}}
 
-## Paso a paso
+## Crear el Bot y escribirle la primera tarea
 
 **Crear el Bot**
 
@@ -88,7 +88,7 @@ Repíteme con tus propias palabras lo que acabo de decir, para saber que me has 
 
 Leer un resumen corto es más rápido que releer una transcripción larga, y detecta los malentendidos antes de que el Bot se ponga a trabajar. Lo mismo sirve antes de cualquier tarea larga. Añade al final "repítelo con tus palabras antes de ejecutar". Revisa el texto transcrito antes de enviarlo, porque el dictado puede entender mal los nombres.
 
-## Ejemplo
+## Piper, un Bot de rendimiento del producto
 
 Este es un Bot bien definido:
 
@@ -110,7 +110,7 @@ Compáralo con una demostración en directo. El equipo de xAI pidió a un Bot nu
 
 {{live 1:06:25 "El enlace del formulario que no era público"}}
 
-## Errores habituales
+## Bots vagos y tareas sin final
 
 - **Darle a un Bot un trabajo vago como "General Helper".** Recibe menos orientación y su contexto cuesta más reutilizarlo. *Qué hacer:* dale un trabajo concreto.
 - **Enviar una petición de una línea.** El Bot adivina las fuentes, el formato y cuándo parar. *Qué hacer:* cubre las cinco partes de una buena tarea.
@@ -118,7 +118,7 @@ Compáralo con una demostración en directo. El equipo de xAI pidió a un Bot nu
 - **Decir "no funciona" cuando un resultado está mal.** El Bot no sabe qué arreglar. *Qué hacer:* explica qué falla, qué esperabas y qué estaba bien.
 - **Empezar con una tarea que cambia cosas.** Los errores llegan a herramientas reales. *Qué hacer:* empieza con tareas de solo lectura y borradores, como verás en la lección 04.
 
-## Resumen
+## Antes de crear el siguiente Bot
 
 - Dale a cada Bot un nombre corto, un trabajo y una descripción.
 - Una buena tarea cubre cinco partes, desde el resultado hasta el punto de revisión.

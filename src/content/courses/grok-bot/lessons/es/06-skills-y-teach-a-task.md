@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Tareas que vuelven cada semana
 
 Hay tareas que vuelven cada semana: el mismo informe, la misma respuesta a un proveedor, los mismos cinco clics en una herramienta web antigua. Explicarlas cada vez lleva tiempo, y el resultado cambia según cómo lo pidas.
 
 La memoria (lección 05) ayuda a que un Bot recuerde tus preferencias. No le da un método fiable para un trabajo concreto. Para eso se guarda una skill.
 
-## La idea
+## Una ficha de receta para tus Bots
 
 Una **skill** es un conjunto de instrucciones reutilizable que explica cómo hacer una tarea. Funciona como una ficha de receta colgada en una cocina compartida: quien la toma sigue los mismos pasos y le sale el mismo plato. Las skills están disponibles para todos tus Bots, aunque un Bot puede necesitar el connector (la conexión con una herramienta, lección 08) o el inicio de sesión adecuado para usar una.
 
@@ -64,7 +64,7 @@ Sigue este orden. Haz la tarea una vez, consigue que salga bien, guarda el méto
 
 La skill que sale es un **borrador**. Una sola demostración enseña el caso en que todo sale bien. No enseña qué hacer si un campo está vacío, si una página no carga o si la acción necesita tu aprobación. Eso lo añades tú.
 
-## Paso a paso
+## Guardar una tarea como skill
 
 ### Guardar una skill a partir de una tarea terminada
 
@@ -99,7 +99,7 @@ En la caja de mensaje de la app de escritorio, escribe `/` para elegir una skill
 
 Si una skill no aparece en el menú de `/`, puede que no esté activada para este Bot. Abre **Settings → Plugins → Yours** (ajustes → plugins → los tuyos), busca la skill y actívala para el Bot actual.
 
-## Ejemplo
+## Slide Sonya aprende a animar una diapositiva
 
 En una demostración en directo, el equipo de xAI tenía un Bot llamado Slide Sonya (lección 01) que trabajaba con una presentación. Quien presentaba quería que añadiera animaciones a las diapositivas, así que se lo enseñó una vez.
 
@@ -121,7 +121,7 @@ Lo mismo sirve para trabajo largo y repetitivo en herramientas de empresa, como 
 
 {{live 6:19:37 "Grabar un flujo de trabajo en el ordenador del Bot"}}
 
-## Errores habituales
+## Skills guardadas antes de tiempo
 
 - **Guardar la skill demasiado pronto.** La skill copia un proceso que todavía tiene fallos. *Qué hacer:* repite la tarea hasta que el resultado esté bien y guárdala después.
 - **Dar por terminada la skill aprendida.** Falla la primera vez que pasa algo inesperado. *Qué hacer:* añade al borrador reglas de decisión, qué hacer ante un fallo y los límites de aprobación.
@@ -130,7 +130,7 @@ Lo mismo sirve para trabajo largo y repetitivo en herramientas de empresa, como 
 - **Programarla sin probarla.** Una routine repite cada día una skill mal hecha. *Qué hacer:* pruébala antes con un ejemplo sin riesgo.
 - **La skill no sale en el menú de `/`.** Crees que se ha perdido. *Qué hacer:* actívala para este Bot en **Settings → Plugins → Yours**.
 
-## Resumen
+## Una buena skill se revisa y se prueba
 
 - Una skill es un conjunto de instrucciones reutilizable para una tarea, disponible para todos tus Bots.
 - Una buena skill dice cuándo usarla, qué necesita, los pasos, cómo comprobar, qué devolver y qué requiere aprobación.

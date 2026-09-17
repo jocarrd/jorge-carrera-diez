@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## A chat forgets, a Bot stays
 
 If you have used ChatGPT or Grok, you know the routine. You open a new chat, explain the background again, get a draft, and then copy it into the tool where the real work happens. The next day you start from zero.
 
 That works for one-off questions. It breaks down for work that repeats, that spans several apps, or that takes longer than you want to sit and watch. Grok Bot is built for that kind of work, and it asks you to think about AI in a different way.
 
-## The idea
+## A name, a job and its own conversation
 
 ### A Bot is a teammate you keep
 
@@ -71,7 +71,7 @@ The course has seven modules. Each lesson assumes only what earlier lessons taug
 6. **Real use cases:** product and data, founders and sales, and running a business with Bots.
 7. **Expert level:** cost and performance, and limits.
 
-## Step by step
+## Install the app and create your first Bot
 
 1. Open the [Grok Bot downloads page](https://x.ai/bot) and download the version for your computer. On a Mac, drag **Grok Bot** to **Applications**.
 2. Open the app and choose **Get started** on the welcome screen.
@@ -81,7 +81,7 @@ The course has seven modules. Each lesson assumes only what earlier lessons taug
 
 Full install instructions for every platform are in [Get started](https://docs.x.ai/grok-bot/get-started).
 
-## Example
+## Three Bots, one job each
 
 In a live demo, the xAI team showed three Bots, each with one job. **Data Dan** handled data, **Slide Sonya** handled a slide deck, and **Email Ethan** drafted emails.
 
@@ -97,7 +97,7 @@ Pull this week's pipeline review list from our CRM. Skip anyone already in an ac
 
 The "pipeline" is the list of possible deals, an "active sequence" is a series of sales emails already going out to that person, and Slack is a team chat app. The request says what to do, where to work, what context to use and what finished work looks like. You do not need to write something this ambitious on day one. Lesson 03 shows how to build up to it.
 
-## Common mistakes
+## First-day mistakes
 
 - **Opening a new Bot for every task.** Each one starts with no context and never improves. *Fix:* create one Bot per job and keep returning to it.
 - **Creating a single "General Helper" for everything.** A vague job gives the Bot less guidance and makes its saved context harder to reuse. *Fix:* give each Bot one clear job.
@@ -105,7 +105,7 @@ The "pipeline" is the list of possible deals, an "active sequence" is a series o
 - **Expecting only a text answer.** You miss the point of the computer. *Fix:* ask for finished work in the real tool, such as a draft saved in your email or a spreadsheet with the data.
 - **Treating memory as the source of truth.** A Bot can hold stale facts. *Fix:* for important decisions, ask it to check the current source.
 
-## Recap
+## A Bot in a few lines
 
 - A Bot is a long-lived AI teammate with a name, a job and its own conversation.
 - Create one Bot per job and come back to it, so its context builds up.

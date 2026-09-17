@@ -13,7 +13,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Peticiones que escribes cada mañana
 
 Hay peticiones que escribes cada semana o cada mañana. Sacar las cifras de ayer. Revisar qué ha cambiado en una presentación compartida. Preparar la lista de reuniones del día.
 
@@ -21,7 +21,7 @@ Una routine hace que el Bot se encargue solo. Se ejecuta en la nube, así que si
 
 Una routine también trabaja cuando nadie mira. Si lee datos equivocados, se ejecuta demasiadas veces o te escribe para no decir nada, lo pagas en uso y en atención. Esta lección explica cómo montarla para poder fiarte de ella.
 
-## La idea
+## Un horario o un evento para cada trabajo
 
 Una **routine** (tarea programada) le dice a un Bot cuándo hacer un trabajo. Puede ejecutarse con un horario o, donde esté disponible, cuando ocurre un evento. Una skill (lección 06) describe cómo se hace una tarea. La routine decide cuándo se hace y qué Bot se encarga.
 
@@ -87,7 +87,7 @@ Revisa de vez en cuando cada cuánto se ejecutan tus routines. Siempre que pueda
 
 {{live 7:56:40 "Por qué una routine cada 15 minutos sale cara"}}
 
-## Paso a paso
+## De tarea resuelta a routine
 
 1. Haz la tarea una vez en una conversación normal y corrígela hasta que el resultado sea el correcto.
 2. Guarda el método como skill (lección 06).
@@ -97,7 +97,7 @@ Revisa de vez en cuando cada cuánto se ejecutan tus routines. Siempre que pueda
 6. Elige **Test run** con datos sin riesgo y revisa el resultado.
 7. Tras las primeras ejecuciones reales, abre **View conversation details → Routines** y lee el historial.
 
-## Ejemplo
+## Ashley y los billetes vendidos ayer
 
 En la demo de producto del directo, un Bot de datos llamado Ashley respondió cuántos billetes se vendieron ayer en móvil y en web, con un gráfico por tipo de viajero. Después, el presentador escribió una sola línea: "Mándame esto como actualización cada mañana a las 6".
 
@@ -113,7 +113,7 @@ Un contraejemplo del mismo día. A un Bot de ingeniería se le pidió una routin
 
 {{live 4:26:37 "Una routine urgente que revisa agentes cada cinco minutos"}}
 
-## Errores habituales
+## Automatizar lo que nunca salió bien
 
 - **Automatizar una tarea que nunca salió bien a mano.** La routine repite los mismos errores cada día. *Qué hacer:* consigue un buen resultado, guárdalo como skill y después prográmalo.
 - **Olvidar la regla para datos que faltan.** El Bot rellena el hueco con datos antiguos y nadie se da cuenta. *Qué hacer:* indica qué hacer si la fuente está vacía, desactualizada o caída.
@@ -123,7 +123,7 @@ Un contraejemplo del mismo día. A un Bot de ingeniería se le pidió una routin
 - **Ocultar un Bot para detener sus routines.** Los Bots ocultos las siguen ejecutando. *Qué hacer:* pausa la routine, y bórrala solo si lo tienes claro, porque no se puede deshacer.
 - **No volver a probar tras un cambio.** Cambia una web, un connector o el formato de un archivo y la routine falla sin que nadie lo note. *Qué hacer:* lanza **Test run** otra vez cuando cambie una fuente.
 
-## Resumen
+## Qué necesita una routine fiable
 
 - La skill dice cómo. La routine dice cuándo y qué Bot se encarga.
 - Especifica el responsable, el horario y la zona horaria, la fuente, el resultado, el límite de aprobación y qué hacer si faltan datos.
