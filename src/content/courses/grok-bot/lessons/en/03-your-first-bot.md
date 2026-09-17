@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## An empty conversation and a vague request
 
 The first time you open Grok Bot, you face an empty conversation. Most people type what they would type into a chat box: a short, vague request. The Bot then guesses, and you spend the next ten minutes correcting it.
 
 Two things decide how useful a Bot is from the start: how clearly you define its job, and how clearly you describe the first task. Both take a few minutes, and both keep paying off, because the Bot keeps its role and learns from your corrections.
 
-## The idea
+## Name, job and description
 
 ### Three things define a Bot
 
@@ -58,7 +58,7 @@ When you notice yourself repeating a preference in every message, move it into t
 
 {{live 0:48:01 "Explicit instructions in a Bot's description"}}
 
-## Step by step
+## Create the Bot and write its first task
 
 **Create the Bot**
 
@@ -88,7 +88,7 @@ Restate to me what I just said in your own words so I know you understood me.
 
 Reading a short summary is quicker than rereading a long transcript, and it catches misunderstandings before the Bot starts. The same trick works before any long task: add "restate in your own words before executing" at the end. Check the transcribed text before you send it, since dictation can mishear names.
 
-## Example
+## Piper, a product performance Bot
 
 Here is a well-defined Bot:
 
@@ -110,7 +110,7 @@ Compare that with a live demo. The xAI team asked a new Bot to create a Google F
 
 {{live 1:06:25 "The form link that was not public"}}
 
-## Common mistakes
+## Vague Bots and tasks with no finish line
 
 - **Giving a Bot a vague job like "General Helper".** It gets less guidance and its context is harder to reuse. *Fix:* give it one specific job.
 - **Sending a one-line request.** The Bot guesses the sources, the format and when to stop. *Fix:* cover the five parts of a strong task.
@@ -118,7 +118,7 @@ Compare that with a live demo. The xAI team asked a new Bot to create a Google F
 - **Saying "it doesn't work" when a result is wrong.** The Bot has nothing to fix. *Fix:* say what is wrong, what you expected and what was already right.
 - **Starting with a task that changes things.** Mistakes land in real tools. *Fix:* start with read-only tasks and drafts, as lesson 04 explains.
 
-## Recap
+## Before you create the next Bot
 
 - Give each Bot a short name, one job and a description.
 - A strong task covers five parts, from the outcome to the review point.

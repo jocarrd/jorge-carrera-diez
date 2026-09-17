@@ -9,7 +9,7 @@ objectives:
   - "Saber qué reto se planteó el equipo en el directo de lanzamiento"
   - "Conocer a quién vas a ver trabajar en cada módulo"
   - "Entender cómo se reparte la historia a lo largo del curso"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## El reto
@@ -20,7 +20,7 @@ Eran Matt Palmer, del equipo de experiencia de desarrollador; Lauren Tan, del eq
 
 {{live 0:00:00 "Arranca el reto: una empresa en tres días"}}
 
-## Cómo es el directo
+## Tres días de directo
 
 Son tres días de casi nueve horas cada uno. La empresa es el hilo que lo recorre, pero cada pocas horas el estudio da paso a otras sesiones. Hay una introducción a Grok Bot para quien no lo ha usado nunca, talleres para ingeniería, producto y fundadores, y charlas con invitados que ya llevan negocios con Bots.
 
@@ -28,16 +28,24 @@ Para aprender, esa mezcla viene muy bien. En las sesiones ves a gente que domina
 
 {{live 0:29:32 "Empieza la introducción a Grok Bot"}}
 
-## Cómo sigues la historia en el curso
+## La historia dentro del curso
 
 Las lecciones van de lo básico a lo avanzado y no siguen el orden del directo, porque así se aprende mejor. La historia la tienes igualmente:
 
 - **Cada módulo empieza con lo que pasó en el directo**, en orden. Si lees el curso de corrido, sigues la empresa desde que no existía.
 - **Cuando algo se vio en el vídeo**, la lección enlaza al minuto exacto.
-- **El diario del directo** junta la historia de cada día en una sola página. Crece cuando sale el día 2 y el día 3.
+- **El diario del directo** junta la historia de cada día en una sola página. Crece a medida que salen los días del directo.
 
-## Cómo acabó el primer día
+## El final del día 1
 
 Al cerrar el día 1 tenían una idea sacada de las propuestas del público, una landing publicada con su propio dominio y un equipo de Bots con nombre propio. También tenían una buena lista de cosas que habían salido mal, y de esas se aprende tanto como de las que funcionaron.
+
+## El giro del día 2
+
+A la mañana siguiente cambiaron de idea. Los invitados del día 1 habían avisado de que un pop-up en San Francisco necesita licencias y permisos, y los Bots, que trabajaron de noche sobre el plan, llegaron a la misma conclusión: no daba tiempo. Ship by Thursday pasó a ser un estudio de videojuegos. Su primer juego convierte los Bots que la gente ya usa en personajes que se enfrentan entre sí.
+
+Al acabar el día 2 tenían un prototipo jugable, login con X, una tabla de clasificación, música y anuncios en vídeo, todo hecho por una docena de Bots que se repartían tareas en Notion. El día 3 tocaba publicarlo y conseguir jugadores.
+
+{{live d2 0:11:08 "Los agentes les venden el cambio de idea"}}
 
 La historia empieza de verdad en el módulo 1, justo antes de que construyeran nada.

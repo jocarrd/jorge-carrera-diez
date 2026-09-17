@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## The Bot does the clicking
 
 A chat box hands you text, and you do the clicking. A Bot can do the clicking itself, because it has a computer. That is what lets it fill in a form, pull numbers from a dashboard or save a file where your team can find it.
 
 Handing a machine to an AI raises fair questions. Where is that computer? Can you see what it is doing? What happens when a website asks for your password? This lesson answers them before you give a Bot real work.
 
-## The idea
+## One cloud computer for all your Bots
 
 ### One computer for all your Bots
 
@@ -74,7 +74,7 @@ Computer use can also be slow, and its speed depends on the AI model doing the w
 
 {{live 0:58:15 "Why computer use can feel slow"}}
 
-## Step by step
+## Watch a Bot work and take control
 
 **Watch a Bot work**
 
@@ -96,7 +96,7 @@ Computer use can also be slow, and its speed depends on the AI model doing the w
 3. Complete authentication in your browser if asked.
 4. In a chat, type `@` to attach the connector to a task.
 
-## Example
+## Data Dan builds a Google form
 
 In a live demo, the xAI team asked a new Bot, Data Dan, to build a Google Form with two questions about coffee. Google Forms had no connector in that setup, so the Bot built the form in the browser on its computer. The presenter opened the computer view and watched it work.
 
@@ -108,7 +108,7 @@ You can ask for the same kind of work. If a sign-in page appears, the Bot should
 Open Google Forms and create a form called "Team lunch". Add two questions: a multiple-choice question "Which day works?" with Tuesday, Wednesday and Thursday, and a short-answer question "Any dietary needs?". Ask me to sign in if needed. Send me the link when it is done.
 ```
 
-## Common mistakes
+## Passwords in chat and other slips
 
 - **Pasting a password or one-time code into the chat.** It ends up in the conversation. *Fix:* take over the computer and type it there, or use the secure secret request when a supported connection offers one. It hides the value from the conversation.
 - **Using separate Bots to keep data apart.** All Bots share files and logins. *Fix:* do not place anything on the computer that any of your Bots should not use.
@@ -116,7 +116,7 @@ Open Google Forms and create a form called "Team lunch". Add two questions: a mu
 - **Forcing browser work when a connector exists.** Clicking through a site is often less reliable. *Fix:* check **Settings → Plugins** first.
 - **Leaving the only copy of a result in a temporary folder.** It can be lost during recovery. *Fix:* ask the Bot to save it in `/workspace` or attach it to the conversation.
 
-## Recap
+## One computer for all, one screen per Bot
 
 - All your Bots share one persistent cloud computer: files, browser sessions and logins.
 - Each Bot has its own screen, but screens are not a security boundary.

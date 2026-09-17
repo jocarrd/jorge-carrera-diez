@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## A business needs everything at once
 
 The last two lessons each showed one team. A small business needs everything at once: research, a website, marketing, suppliers and a budget. With only a few people, most of that work waits.
 
 During the livestream, the hosts tried to start a business in 72 hours with Bots, on camera. They called it "Ship by Thursday", a platform for organizing food pop-ups in San Francisco, which they would test by running their own pop-up. It got messy, and that makes it worth studying, because you can see what worked and what broke. The Bot names and tools below were their choices, and you can use others.
 
-## The idea
+## A list of jobs with a Bot on each
 
 Treat the business as a list of jobs. Each job has one Bot as its owner and ends in something a person can check. The Bots do the preparation. People make the decisions that cost money, need a signature or reach customers.
 
@@ -34,7 +34,7 @@ The official docs give the same order for any role. Put the job and its boundari
 6. **Budget.** An event planner Bot drafted a baseline budget before anyone asked venues for quotes.
 7. **Knowledge base.** A Bot kept a Notion page up to date with the decisions the other Bots made.
 
-## Step by step
+## Start from a one-page company doc
 
 1. **Write a one-page company document** with the idea, the customer and this week's goal. Share it with every Bot. The hosts kept theirs in Notion.
 2. **Research before building.** Point a research Bot at real sources and ask for grouped findings with links.
@@ -44,7 +44,7 @@ The official docs give the same order for any role. Put the job and its boundari
 6. **Keep money, contracts and outgoing messages behind approval.** Add **Ask first** rules under **Settings → General → Auto-review** for purchases and external email.
 7. **Give one Bot the job of recording decisions,** and tell it to check with you before it writes.
 
-## Example
+## Ship by Thursday from scratch
 
 {{live 1:43:15 "The research Bot groups thousands of X replies"}}
 
@@ -94,14 +94,26 @@ The result wasn't shown on stream. The guest's next step would be to have the Bo
 
 The events guest also named what still needs people at an event, which is guest registration and security. They compared AI reading contracts to a second-year law student, fine for a first read, with an expert needed afterwards.
 
-## Common mistakes
+### Day 2: changing business in a morning
+
+The pop-up plan didn't make it to day 2. Overnight they left the Bots reviewing the idea with the guests' advice, who had warned about the licences and permits San Francisco requires. By morning the verdict was that there wasn't time. "The agents sold us a pivot," Matt said.
+
+In half an hour at the whiteboard they picked a video game studio, because they were passionate about it and could build it in two days. Before writing any code they decided how to make money without paying giving an advantage in the game: cosmetics, arenas and a stadium with ads. They also decided to leave money for later, because at the start what counts is getting players.
+
+Changing business didn't throw away day 1's work. The Bots, the connections and the way of working still served. They only had to tell everyone the new plan.
+
+{{live d2 0:11:08 "The agents sell them a pivot"}}
+
+{{live d2 0:19:22 "Making money without pay-to-win"}}
+
+## Ten Bots without a goal
 
 - **Creating ten Bots before choosing a goal.** Each one works hard in a different direction. *Fix:* write the company document and pick the one number first.
 - **Vague search requests** ("find a cool venue"). You get long lists you can't use. *Fix:* give the size, date, budget and exclusions, with the reason for each.
 - **Letting Bots buy, sign or send.** A domain, a deposit or an email goes out without a person deciding. *Fix:* keep **Ask first** rules on purchases and external messages.
 - **Changing plans without telling the Bots.** They keep producing work for the old idea. *Fix:* tell the coordinator Bot and ask it to update the others.
 
-## Recap
+## Bots prepare, you decide
 
 - Split the business into jobs, one Bot each, with every job ending in something you can check.
 - Research and prototypes are cheap, so decide the goal before you build much.

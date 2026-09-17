@@ -9,16 +9,16 @@ objectives:
   - "Explain what a feedback loop is and why a Bot needs one to finish a task on its own"
   - "Require proof in every result and pull request: screenshots, metrics or video"
   - "Build a verification skill with a standard script and a feature map"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Why this matters
+## A "done" nobody checked
 
 When a Bot says "done", you have two options. You can trust it, or you can redo the check yourself. Trusting it leads to surprises. Redoing the check means you still do half the job, and with five Bots and a few cloud agents working at once you can't keep up.
 
 There's a third option. Make the Bot prove it. If it has to show you the working page, the before-and-after numbers or a video of the flow, two things change. The Bot catches its own mistakes before it reports back. And your review takes a minute instead of an hour.
 
-## The idea
+## The passenger seat
 
 A driving instructor doesn't ask the student how the drive went. They sit in the passenger seat and watch the road. Verification gives you that seat, so you look at the result instead of the story.
 
@@ -66,7 +66,7 @@ The docs already list "How to validate the result" as one of the six things a us
 
 In the livestream, the team created theirs with a ready-made skill from a plugin that isn't in the official docs. You don't need it. Ask a Bot to write the script and the feature map as a skill, as in step 3 below.
 
-## Step by step
+## Give the Bot a feedback loop
 
 1. **Write your proof rules once**, in the engineering Bot's description or in the team playbook (lesson 13):
 
@@ -88,7 +88,7 @@ In the livestream, the team created theirs with a ready-made skill from a plugin
 4. **Review the first run.** Did it reach the right screen? Can you understand the proof? Point out what's missing and ask the Bot to update the skill.
 5. **Use proof to decide.** Open the screenshot or video. If it shows the change working, reviewing the code takes far less effort. If proof is missing, send the work back.
 
-## Example
+## Steve and the verification skill
 
 During a build session in the livestream, the team asked Steve, their chief of staff Bot, to create a verification skill. Steve handed the job to Tater, the engineering Bot, which launched a cloud agent to build it.
 
@@ -102,7 +102,16 @@ Earlier the same day, an engineering demo showed the payoff. A cloud agent's pul
 
 The same habit works outside engineering. Ask a Bot to record a video of what it does on a website. It is the fastest way to check whether a task was done right.
 
-## Common mistakes
+> [!TIP]
+> When the output is text, the checker can be another Bot. A student looking for an internship had one Bot writing his cover letters and another reviewing them paragraph by paragraph against a checklist. It flagged empty motivational lines and anything that didn't sound like him.
+
+{{live d2 5:24:45 "A Bot that critiques another Bot's letters"}}
+
+In the day 2 game, verification changed with the phase. For the prototype, what mattered was knowing whether the game was fun, so Lauren asked for panels with sliders to change the rules and replay straight away. When the tests started failing, they deleted all of them. They'd write tests once they knew what they wanted to test. By the end of the day she had Crumb, a Bot that goes into the app, clicks around and looks for bugs the way a player would.
+
+{{live d2 8:15:46 "Crumb, the Bot that playtests the game"}}
+
+## Missing proof
 
 - **Accepting "done" without proof.** Errors reach you, or your users, later. *Fix:* make proof a standing rule in the description or playbook instead of something you remember to ask for.
 - **Reading the agent's trace to judge the result.** You spend an hour and still don't know if it works. *Fix:* look at screenshots, metrics and video first.
@@ -110,7 +119,7 @@ The same habit works outside engineering. Ask a Bot to record a video of what it
 - **Expecting agents to add video unprompted.** In the livestream they didn't, until the skill said so. *Fix:* name every kind of proof you want.
 - **Only telling the Bot when it fails.** It learns less. *Fix:* tell it when the proof was exactly right, too.
 
-## Recap
+## Evidence you can review
 
 - A feedback loop gives the Bot a clear success or failure signal; without one it guesses.
 - Ask for results someone else can check: links, screenshots, an action log and what couldn't be verified.

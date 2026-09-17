@@ -13,7 +13,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Carrying messages between your Bots
 
 In lesson 11 you split work into roles. Now your data Bot has the numbers and your email Bot writes the emails. The first time you need an email about those numbers, you end up copying the answer from one conversation and pasting it into the other.
 
@@ -21,7 +21,7 @@ Bots can take that step themselves. They can also overdo it, with several Bots a
 
 This lesson shows how to let Bots cooperate with one owner at a time, and where to read what they said to each other.
 
-## The idea
+## Bot-to-Bot messages, like a work chat
 
 Your Bots can send each other messages, like colleagues on a work chat. One asks, the other answers when it can, and you can read the exchange. Passing a piece of work from one Bot to another is called a **handoff**.
 
@@ -76,7 +76,7 @@ Reactions, such as a thumbs-up, work for a light acknowledgement. When the Bot n
 
 Handoffs appear in the conversation, so you can open them and read what was asked and answered. When you're not sure where an exchange happened, use search or the command palette (the quick-search box for commands and messages). They can find earlier messages across Bots and groups where that is available.
 
-## Step by step
+## Hand a job from one Bot to another
 
 1. Decide whether you need to watch the handoff as it happens. If not, use a direct message. If you do, use a group.
 2. For a direct handoff, write to the Bot that owns the finished result. Mention the other Bot with `@`. Say what to ask for, what to return and what to do if the answer isn't ready.
@@ -86,7 +86,7 @@ Handoffs appear in the conversation, so you can open them and read what was aske
 6. When feedback applies to one result, reply to that message instead of posting a new one.
 7. Read the handoffs. If two Bots are doing the same work, name one owner and tell the other to stop.
 
-## Example
+## Email Ethan asks Data Dan for the data
 
 In the livestream's beginner session, the presenter had three Bots. Data Dan had built a coffee survey, Slide Sonya made the slides, and Email Ethan wrote the emails. The presenter asked Ethan to draft an email about the coffee data. Ethan messaged Data Dan on its own to get the numbers, and the presenter asked it to message Sonya about the slide deck too.
 
@@ -108,7 +108,7 @@ For a group's first message, the docs' example names one owner per step:
 @Researcher gather the source material and link every claim. @Writer turn the findings into a launch draft. @Reviewer check the draft against the sources and list only blocking issues. Do not publish anything.
 ```
 
-## Common mistakes
+## Handoffs with no owner
 
 - **Copying answers between Bots yourself.** You become the messenger, and context gets lost on the way. *Fix:* ask the owning Bot to message the other one.
 - **No fallback when the other Bot can't deliver.** The Bot improvises, as Ethan did with sample data. *Fix:* say whether to wait, ask you or stop.
@@ -117,7 +117,7 @@ For a group's first message, the docs' example names one owner per step:
 - **Posting an image in a group handoff.** A Bot's handoff to the group is text-only. *Fix:* have the Bot send the image directly to the teammate.
 - **Answering with a reaction when the instruction changed.** A reaction is only an acknowledgement. *Fix:* write a reply to the specific message.
 
-## Recap
+## Every handoff with an owner
 
 - Bots can message each other asynchronously, and the handoff shows in the conversation.
 - Each stage needs one owner. Parallel handoffs create duplicate work and noise.

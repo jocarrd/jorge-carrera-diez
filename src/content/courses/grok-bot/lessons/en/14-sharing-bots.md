@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Rebuilding the same Bot
 
 You spent weeks shaping a Bot. Its description is precise, its skills work and its routines run on time. A colleague asks for "the same thing". Rebuilding it from scratch would take them the same weeks.
 
 Sharing solves that, but it raises two questions. What goes out with the link, and what stays with you? And when someone sends *you* a Bot, how do you know it does what it claims before it touches your accounts?
 
-## The idea
+## Share the recipe, not the kitchen
 
 Sharing a Bot is like handing someone a copy of your recipe. They get the instructions and can cook the same dish. Your kitchen stays with you, along with your fridge, your keys and the notes you wrote in the margins over the years.
 
@@ -58,7 +58,7 @@ The docs are plain about this. Shared Bots are created by other users, not by Sp
 
 The livestream also showed a marketplace of ready-made Bots, which the xAI team reviews by hand. The official docs only describe a **Marketplace** for plugins and packaged skills, under **Settings → Plugins**, so the Bot marketplace may not be available to you yet.
 
-## Step by step
+## Review and share a Bot
 
 **To share a Bot:**
 
@@ -90,7 +90,7 @@ The livestream also showed a marketplace of ready-made Bots, which the xAI team 
 5. Rewrite the description with your own boundaries, such as "Never send external messages without approval."
 6. Connect only the plugins and logins the task needs. All your Bots share one computer, so a login you add is available to every Bot (lesson 09).
 
-## Example
+## Stockbot as a template
 
 In the livestream's session for founders, the presenter showed Stockbot, a Bot that watches competitors. It signs up to their products, walks through their onboarding (the steps a new user goes through) and writes a teardown, a detailed critique, with a video. He shared it from the stage with a QR code, so anyone in the audience could start from the same Bot.
 
@@ -106,7 +106,7 @@ For Bots from the marketplace, the xAI team's advice matched the steps above. Tr
 
 {{live 8:12:06 "How to evaluate a marketplace template"}}
 
-## Common mistakes
+## Links that expose customer data
 
 - **Sharing a Bot you use for client work as it is.** Its skills and routines can expose client names and internal links to anyone with the URL. *Fix:* audit it, replace sensitive details with placeholders, then share.
 - **Expecting the copy to know what your Bot knows.** Conversation history doesn't travel, so the copy starts without your conversations. *Fix:* put what matters in the description or a skill before you share.
@@ -114,7 +114,7 @@ For Bots from the marketplace, the xAI team's advice matched the steps above. Tr
 - **Using a shared Bot as a security boundary.** It runs on the same computer as your other Bots, with the same logins. *Fix:* add only the access the task needs, and sign out of what it no longer uses.
 - **Treating a duplicate like a new Bot.** It keeps the old routines and scope. *Fix:* rename it, change its scope and review the copied routines first.
 
-## Recap
+## What travels in a share link
 
 - A share link is public and gives a copy with identity, description, skills and routines.
 - It never includes conversation history, logins or your computer. The docs don't say whether learned memory travels, so treat it as public too.

@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## Your work lives in other tools
 
 Most real work lives in other tools. Your team chats in Slack, writes documents in Notion, keeps code in GitHub and reads mail in Gmail. A Bot can open those sites in its browser and click through them, as you saw in lesson 02. That works, but it is slower, and it breaks when a page changes or a login expires.
 
 Connectors give a Bot a direct way in. They also give it access to your accounts, so each one deserves a minute of thought before you add it.
 
-## The idea
+## A direct link to each service
 
 A **connector** is a ready-made link between a Bot and a supported service. With it, the Bot asks the service for data and actions directly, instead of reading screens and clicking buttons. Compare filling in a paper form at a front desk with having a direct phone line to the right department.
 
@@ -62,7 +62,7 @@ A site used through the browser can still block automation, end a session or ask
 > [!WARNING]
 > A message or document the Bot reads through a plugin can contain hidden instructions that try to steer it. Keep sending, publishing and deleting behind approval (lesson 04), even for tools you trust.
 
-## Step by step
+## Install a connector from the Marketplace
 
 1. Open **Settings** from the account menu, or press `Cmd/Ctrl+,`.
 2. Go to **Plugins** and browse the **Marketplace**.
@@ -89,7 +89,7 @@ You can also ask a Bot in chat to set up a plugin for you, as the xAI team showe
 - **Who else can use it?** Every Bot on your account.
 - **How do you remove it?** Uninstall the connector, then revoke its access in the service's own settings.
 
-## Example
+## Thousands of ideas read from X
 
 In the livestream, the xAI team wanted to make sense of thousands of business ideas people had posted as replies on X.
 
@@ -108,7 +108,7 @@ A version you could adapt, with the X connector attached:
 Read the replies to my last three posts. Group the suggestions into themes, count how many replies fit each theme, and quote two replies per theme with links. Don't post, like or reply to anything.
 ```
 
-## Common mistakes
+## Clicking where a connector existed
 
 - **Clicking through a site that has a connector.** The work is slower and breaks more often. *Fix:* check the **Marketplace** first.
 - **Signing in with the wrong account.** The Bot sees the wrong data or none at all. *Fix:* reconnect with the intended account.
@@ -116,7 +116,7 @@ Read the replies to my last three posts. Group the suggestions into themes, coun
 - **Keeping old connections forever.** Access stays open long after the project ends. *Fix:* review installed plugins regularly and revoke what you don't use.
 - **A plugin that won't connect.** Tasks fail at the first call. In the livestream, a Bot couldn't reach the team's GitHub repositories (the folders where code projects live) apparently because the wrong connector had been used. *Fix:* reopen it in **Settings → Plugins** and sign in again with the right account, or remove it and reconnect. For GitHub, the team also suggested installing GitHub's command-line tool (a program you run by typing commands) on the Bot's computer. {{live 5:06:25 "A Bot that couldn't reach GitHub"}}
 
-## Recap
+## Connectors first, clicks second
 
 - A connector gives a Bot direct access to a service. In the app, connectors appear as **Plugins**.
 - Install them from **Settings → Plugins → Marketplace**, sign in, and attach them to a task with `@`.

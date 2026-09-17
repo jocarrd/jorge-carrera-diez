@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Cada chat nuevo empieza de cero
 
 En un chat normal, cada conversación nueva empieza de cero. Vuelves a pegar el mismo contexto, repites las mismas preferencias y corriges los mismos errores. Un Bot conserva parte de lo que aprende, así que la décima tarea sale mejor que la primera.
 
 Eso ayuda, pero también puede despistarte. Si no sabes qué recuerda un Bot, acabarás repitiendo cosas sin necesidad o fiándote de un recuerdo que ya no está al día. En esta lección verás dónde está el límite.
 
-## La idea
+## Qué guarda la memoria y qué deja fuera
 
 La **memoria** es lo que un Bot guarda de su trabajo anterior para seguir en su papel sin releer cada mensaje antiguo. Piensa en un compañero que lleva meses trabajando contigo. Recuerda cómo te gustan los informes y quiénes son los clientes importantes. Aun así, antes de firmar un contrato abre la última versión en lugar de fiarse de lo que recuerda.
 
@@ -59,7 +59,7 @@ El equipo de xAI ha hablado de una memoria que puedan compartir varios Bots, per
 
 Cuando duplicas un Bot, la copia conserva el perfil, la configuración, las skills activadas (instrucciones guardadas para una tarea, lección 06), las routines (trabajo programado, lección 10) y el avatar. **No** copia el historial de conversación, la memoria aprendida ni los archivos adjuntos del chat. Una copia es un compañero nuevo con el mismo puesto que todavía no ha trabajado contigo.
 
-## Paso a paso
+## Corregir al Bot para que no lo olvide
 
 1. **Corrige al Bot con palabras sencillas** en cuanto se equivoque. Dile que la corrección es para siempre, para que la guarde y no se limite a arreglar esa respuesta.
 2. **Lleva a la descripción las reglas que nunca deben romperse.** Abre **Bot actions → Edit Profile** (acciones del Bot → editar perfil) y añade ahí la regla.
@@ -79,7 +79,7 @@ Olvida todo lo que hablamos la semana pasada sobre el plan de precios antiguo. L
 
 {{live 8:11:06 "Pedirle a un Bot que olvide"}}
 
-## Ejemplo
+## El Bot que auditaba el código cada noche
 
 En una demostración en directo, el equipo de xAI instaló un Bot ya preparado para auditar cada noche el código del equipo, es decir, revisarlo de forma automática. Empezó sin ningún recuerdo de cómo trabajaba el equipo. En lugar de copiarle las instrucciones a mano, el ponente pidió a un Bot de ingeniería que ya tenía que lo pusiera al día:
 
@@ -97,7 +97,7 @@ Funciona porque la memoria es de cada Bot y los mensajes entre Bots son la forma
 Escribe las reglas de trabajo de nuestro equipo en /workspace/equipo/reglas.md. Después escribe al Bot de informes, dile que el archivo existe y pídele que confirme que lo ha leído.
 ```
 
-## Errores habituales
+## Fiarse de un recuerdo viejo
 
 - **Tratar la memoria como el registro oficial.** El Bot cita la cifra del mes pasado como si fuera la de hoy. *Qué hacer:* mantén los datos en su sistema de origen y pide al Bot que lo vuelva a abrir antes de decidir.
 - **Corregir de pasada.** Arreglas un borrador a mano y la semana siguiente el Bot repite el error. *Qué hacer:* dile al Bot qué estaba mal y que el cambio es permanente.
@@ -106,7 +106,7 @@ Escribe las reglas de trabajo de nuestro equipo en /workspace/equipo/reglas.md. 
 - **Creer que una copia es un clon.** La copia hace preguntas que el original dejó de hacer hace tiempo. *Qué hacer:* dale su nuevo alcance y el contexto clave antes de encargarle trabajo.
 - **Borrar un Bot del que dependen otros.** Al Bot que le pasaba trabajo nadie le avisa del borrado, así que puede seguir intentándolo. *Qué hacer:* diles a esos Bots explícitamente que ya no existe y quién se encarga ahora.
 
-## Resumen
+## La memoria ayuda, la fuente decide
 
 - Un Bot recuerda preferencias estables, contexto de su papel y resúmenes de su trabajo, no cada mensaje.
 - La memoria no es una fuente de verdad. Para decisiones importantes, pide al Bot que consulte la fuente actual.

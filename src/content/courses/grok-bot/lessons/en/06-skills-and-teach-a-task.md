@@ -9,16 +9,16 @@ objectives:
   - "Know what a skill contains and when a task is ready to become one"
   - "Create a skill from a finished task, from written material, or with Teach a task"
   - "Review a draft skill and call it with / in a later conversation"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Why this matters
+## Tasks that come back every week
 
 Some tasks come back every week: the same report, the same reply to a supplier, the same five clicks in an old web tool. Explaining them each time is slow, and the result shifts with your wording.
 
 Memory (lesson 05) helps a Bot remember your preferences. It does not give the Bot a reliable method for a specific job. For that, you save a skill.
 
-## The idea
+## A recipe card for your Bots
 
 A **skill** is a reusable set of instructions for how to do a task. It works like a recipe card that sits in a shared kitchen: whoever picks it up follows the same steps and gets the same dish. Skills are available across your Bots, although a Bot may need the right connector (lesson 08) or login to use one.
 
@@ -64,7 +64,7 @@ Follow this order: do the task once, make it reliable, save the method as a skil
 
 The skill it produces is a **draft**. One demonstration shows the happy path, the case where everything goes right. It does not show what to do when a field is empty, a page fails to load or the action needs your approval. You add that.
 
-## Step by step
+## Save a task as a skill
 
 ### Save a skill from a finished task
 
@@ -99,7 +99,7 @@ In the message box of the desktop app, type `/` to pick a saved skill. (Typing `
 
 If a skill doesn't appear in the `/` menu, it may not be enabled for this Bot. Open **Settings → Plugins → Yours**, find the skill and enable it for the current Bot.
 
-## Example
+## Slide Sonya learns to animate a slide
 
 In a live demo, the xAI team had a Bot called Slide Sonya (lesson 01) that worked on a slide deck. The presenter wanted it to add animations to slides, so they showed it once.
 
@@ -121,7 +121,12 @@ The same approach suits long, repetitive work in business tools, such as a sales
 
 {{live 6:19:37 "Recording a workflow on the Bot's computer"}}
 
-## Common mistakes
+> [!TIP]
+> Every time you see a Bot reason badly, add a line to the skill instead of correcting it and moving on. Write the principle, not the case. A skill built from every detail of one mistake ends up full of examples that no longer help.
+
+{{live d2 3:36:21 "Why a skill built from one mistake goes bad"}}
+
+## Skills saved too early
 
 - **Saving a skill too early.** The skill copies a process that still has errors. *Fix:* run the task until the output is right, then save it.
 - **Treating the learned skill as finished.** It breaks the first time something unexpected happens. *Fix:* add decision rules, failure handling and approval boundaries to the draft.
@@ -130,7 +135,7 @@ The same approach suits long, repetitive work in business tools, such as a sales
 - **Scheduling before testing.** A routine repeats a bad skill every day. *Fix:* test on a safe example first.
 - **The skill isn't in the `/` menu.** You think it was lost. *Fix:* enable it for this Bot under **Settings → Plugins → Yours**.
 
-## Recap
+## A good skill gets reviewed and tested
 
 - A skill is a reusable set of instructions for a task, available across your Bots.
 - A good skill says when to use it, what it needs, the steps, how to check, what to return and what needs approval.

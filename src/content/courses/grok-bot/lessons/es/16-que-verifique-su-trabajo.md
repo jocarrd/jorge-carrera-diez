@@ -9,16 +9,16 @@ objectives:
   - "Explicar qué es un bucle de feedback y por qué un Bot lo necesita para terminar una tarea solo"
   - "Exigir pruebas en cada resultado y cada pull request: capturas, métricas o vídeo"
   - "Crear una skill de verificación con un script estándar y un mapa de funcionalidades"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Por qué importa
+## Un «hecho» sin comprobar
 
 Cuando un Bot dice "hecho", tienes dos opciones. Puedes fiarte o puedes repetir tú la comprobación. Fiarte acaba en sorpresas. Repetir la comprobación significa que sigues haciendo la mitad del trabajo, y con cinco Bots y unos cuantos agentes en la nube trabajando a la vez no das abasto.
 
 Hay una tercera opción, que el Bot lo demuestre. Si tiene que enseñarte la página funcionando, las cifras de antes y después o un vídeo del recorrido, cambian dos cosas. El Bot detecta sus propios errores antes de avisarte. Y tu revisión dura un minuto en lugar de una hora.
 
-## La idea
+## El asiento del copiloto
 
 Un profesor de autoescuela no le pregunta al alumno qué tal ha ido la clase. Se sienta en el asiento del copiloto y mira la carretera. La verificación te da ese asiento, y así miras el resultado en vez de la historia.
 
@@ -66,7 +66,7 @@ La documentación ya incluye "cómo validar el resultado" entre las seis cosas q
 
 En el directo, el equipo creó la suya con una skill ya hecha de un plugin que no aparece en la documentación oficial. No la necesitas. Pide a un Bot que escriba el script y el mapa de funcionalidades como una skill, igual que en el paso 3.
 
-## Paso a paso
+## Dar al Bot un bucle de feedback
 
 1. **Escribe una vez tus normas de pruebas**, en la descripción del Bot de ingeniería o en el playbook del equipo (lección 13):
 
@@ -88,7 +88,7 @@ En el directo, el equipo creó la suya con una skill ya hecha de un plugin que n
 4. **Revisa la primera ejecución.** ¿Llegó a la pantalla correcta? ¿Entiendes la prueba? Señala lo que falte y pide al Bot que actualice la skill.
 5. **Decide con las pruebas.** Abre la captura o el vídeo. Si muestra el cambio funcionando, revisar el código te costará mucho menos. Si falta la prueba, devuelve el trabajo.
 
-## Ejemplo
+## Steve y la skill de verificación
 
 Durante una sesión de construcción del directo, el equipo pidió a Steve, su Bot jefe de gabinete, que creara una skill de verificación. Steve le pasó el encargo a Tater, el Bot de ingeniería, que lanzó un agente en la nube para crearla.
 
@@ -102,7 +102,16 @@ Ese mismo día, en una demo de ingeniería anterior, se vio la recompensa. La pu
 
 La costumbre sirve también fuera de la ingeniería. Pide a un Bot que grabe un vídeo de lo que hace en una web. Es la forma más rápida de saber si la tarea está bien hecha.
 
-## Errores habituales
+> [!TIP]
+> Cuando el resultado es texto, quien verifica puede ser otro Bot. Un estudiante que buscaba prácticas tenía un Bot que escribía sus cartas de presentación y otro que las revisaba párrafo a párrafo con una lista de comprobación. Marcaba las frases motivadoras vacías y lo que no sonaba a él.
+
+{{live d2 5:24:45 "Un Bot que critica las cartas de otro"}}
+
+En el juego del día 2 la verificación cambió según la fase. Con el prototipo, lo que importaba era saber si el juego era divertido, así que Lauren pidió paneles con controles deslizantes para cambiar las reglas y volver a jugar al momento. Cuando los tests empezaron a fallar, los borraron todos. Escribirían tests cuando supieran qué querían probar. Al final del día ya tenía a Crumb, un Bot que entra en la aplicación, hace clic por todas partes y busca fallos como lo haría un jugador.
+
+{{live d2 8:15:46 "Crumb, el Bot que prueba el juego"}}
+
+## Pruebas que faltan
 
 - **Aceptar un "hecho" sin pruebas.** Los errores te llegan más tarde a ti o a tus usuarios. *Qué hacer:* convierte las pruebas en una norma fija de la descripción o del playbook, en lugar de algo que pides cuando te acuerdas.
 - **Leer la traza del agente para juzgar el resultado.** Pasas una hora y sigues sin saber si funciona. *Qué hacer:* mira primero las capturas, las métricas y el vídeo.
@@ -110,7 +119,7 @@ La costumbre sirve también fuera de la ingeniería. Pide a un Bot que grabe un 
 - **Esperar que los agentes añadan vídeo sin pedírselo.** En el directo no lo hicieron hasta que la skill lo indicó. *Qué hacer:* nombra cada tipo de prueba que quieres.
 - **Decirle al Bot solo cuándo falla.** Aprende menos. *Qué hacer:* dile también cuándo la prueba era justo lo que querías.
 
-## Resumen
+## Pruebas que puedes revisar
 
 - Un bucle de feedback da al Bot una señal clara de éxito o fracaso; sin él, adivina.
 - Pide resultados que otra persona pueda comprobar, con enlaces, capturas, un registro de acciones y lo que no se pudo verificar.

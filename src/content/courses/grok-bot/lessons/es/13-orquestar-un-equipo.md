@@ -9,10 +9,10 @@ objectives:
   - "Montar un Bot coordinador que reparte trabajo y detecta bloqueos sin hacer el trabajo él mismo"
   - "Guardar las reglas del equipo en un único playbook del que se encarga un Bot, en lugar de copiarlas en cada uno"
   - "Dar de alta un Bot nuevo a través de otro que ya conoce el trabajo, y pedir a un Bot que cree Bots"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Por qué importa
+## Ocho Bots y tú en medio
 
 Con tres o cuatro Bots todavía puedes escribir a cada uno. Cuando llegas a ocho, te pasas el día llevando novedades de uno a otro. Nadie sabe quién está atascado y acabas siendo la persona más ocupada de tu propio equipo.
 
@@ -20,7 +20,7 @@ El segundo problema aparece cuando cambias la forma de trabajar. Decides que cad
 
 Esta lección resuelve los dos problemas con dos papeles. Un Bot coordina y otro Bot guarda las reglas escritas.
 
-## La idea
+## Un coordinador y un playbook
 
 Piensa en una oficina pequeña. Una persona organiza la semana. Reparte el trabajo, pide novedades y avisa de lo que está atascado. Otra persona mantiene el manual del equipo, que cada incorporación lee el primer día. Un equipo de Bots puede funcionar igual.
 
@@ -57,7 +57,7 @@ Un Bot nuevo empieza vacío. En lugar de pegarle tus instrucciones, pide a un Bo
 
 Un Bot también puede crear Bots. La documentación dice que tus Bots "pueden sugerir o crear un Bot centrado en una tarea cuando un trabajo necesita un responsable duradero". Recomienda pedirles que te consulten antes de crear varios, para que el equipo siga siendo pequeño.
 
-## Paso a paso
+## Montar el coordinador y el manual del equipo
 
 1. **Crea el coordinador.** Elige **New** (nuevo) y, en **New chat**, **Create new agent** (crear un agente nuevo). Abre **Bot actions → Edit Profile** (acciones del Bot, editar perfil) y dale un nombre y una descripción como esta:
 
@@ -83,7 +83,7 @@ Un Bot también puede crear Bots. La documentación dice que tus Bots "pueden su
 
 6. **Habla sobre todo con el coordinador.** Ve directamente a un especialista solo cuando necesites a ese Bot.
 
-## Ejemplo
+## Un Bot nuevo aprende las reglas de otro
 
 En el taller de ingeniería del directo, quien presentaba tenía un jefe de gabinete y varios Bots de ingeniería. Instaló un Bot nuevo, un ingeniero de auditoría nocturna. El Bot nuevo no sabía cómo trabajaba el equipo, y no se lo explicó en persona. Le escribió esto a su Bot de ingeniería de siempre:
 
@@ -101,7 +101,12 @@ Ese mismo día, antes, otra persona del equipo usó Dr. Eggbot, un Bot que crea 
 
 {{live 2:05:40 "Un Bot que crea Bots monta un jefe de gabinete"}}
 
-## Errores habituales
+> [!TIP]
+> Si te ves dando órdenes sueltas a cada Bot, para y dale la regla a quien organiza el equipo. El segundo día, una sola instrucción a Dr. Eggbot, el Bot que crea y ajusta los demás, hizo que todos los Bots de Lauren usaran Notion como fuente de verdad. Al cierre le pidió que leyera las conversaciones de todos y buscara dónde se atascaba el trabajo. El atasco era ella.
+
+{{live d2 7:14:04 "Una regla para todos los Bots a la vez"}}
+
+## El coordinador que trabaja en vez de coordinar
 
 - **El coordinador hace el trabajo él mismo.** Llena su contexto de detalles de especialista y deja de coordinar. *Qué hacer:* escribe "delega siempre en tu equipo" en su descripción.
 - **Copiar la misma regla en cada Bot.** Las copias se van separando y no sabes cuál es la buena. *Qué hacer:* ten un solo playbook con un responsable, y haz pasar los cambios por él.
@@ -110,7 +115,7 @@ Ese mismo día, antes, otra persona del equipo usó Dr. Eggbot, un Bot que crea 
 - **Borrar un Bot en el que el coordinador todavía delega.** Nadie avisa al coordinador del borrado, así que sigue intentando mandarle trabajo. *Qué hacer:* dile al coordinador que deje de usar ese Bot y actualiza el playbook.
 - **Dejar que un Bot cree Bots sin control.** El número de Bots crece más rápido de lo que puedes revisar. *Qué hacer:* pídele que proponga los Bots nuevos y espere tu sí.
 
-## Resumen
+## Un equipo que se organiza solo
 
 - Un coordinador se responsabiliza del resultado, delega y solo te cuenta bloqueos y decisiones.
 - Las reglas del equipo van en un único playbook, en un documento fuera de la memoria de los Bots, y un Bot se encarga de él y anuncia los cambios.

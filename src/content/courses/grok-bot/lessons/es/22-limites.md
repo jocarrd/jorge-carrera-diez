@@ -9,16 +9,16 @@ objectives:
   - "Nombrar los límites actuales que afectan al trabajo real y distinguir los documentados de lo dicho en el directo"
   - "Llevar a código las decisiones que siempre tienen que salir igual"
   - "Decidir dónde tiene que seguir una persona y cuándo no conviene usar un Bot"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Por qué importa
+## Confiar al Bot lo que hace mal
 
 Después de veintiuna lecciones sabes montar un equipo de Bots que investiga, redacta, construye e informa. El riesgo ahora es confiarle a ese equipo trabajo que hace mal, o decisiones que nunca deberían salir de manos de una persona.
 
-Esta lección reúne los límites en un solo sitio, explica cómo sortear los que se pueden sortear y cierra el curso.
+Esta lección reúne los límites en un solo sitio, explica cómo sortear los que se pueden sortear y cierra el recorrido principal del curso.
 
-## La idea
+## Un compañero rápido que a veces se contradice
 
 Un Bot es un compañero nuevo y capaz que trabaja rápido, no duerme y a veces responde de dos formas distintas a la misma pregunta. A ese compañero le das trabajo de verdad. Lo que no le das es la tarjeta de la empresa, la firma de los contratos ni la última palabra sobre nada que no se pueda deshacer.
 
@@ -76,7 +76,7 @@ Hay dos costumbres que ayudan. La primera es poner por escrito qué significan l
 
 No lo uses cuando la tarea sea un clic que haces tú antes, o cuando no sepas describir cómo es el trabajo terminado. Tampoco cuando el único camino incumpla las condiciones de una web, ni cuando un error sea grave y nadie vaya a revisar el resultado.
 
-## Paso a paso
+## Antes de delegar un trabajo nuevo
 
 Antes de encargarle a un Bot un tipo de trabajo nuevo, comprueba:
 
@@ -86,7 +86,7 @@ Antes de encargarle a un Bot un tipo de trabajo nuevo, comprueba:
 4. **¿Alguna web va a pedir inicio de sesión, un CAPTCHA o una comprobación humana?** Planifica cuándo tomarás el control.
 5. **¿Quién revisa el resultado y cuándo?** Pon nombre a la persona y al momento.
 
-## Ejemplo
+## Reembolsos decididos por una regla en código
 
 {{live 8:02:48 "Decisiones deterministas con código"}}
 
@@ -111,14 +111,19 @@ aprobación antes de enviarla.
 
 El Bot sigue leyendo la solicitud, reuniendo los datos del pedido y redactando la respuesta. La decisión sale de un código que puedes probar.
 
-## Errores habituales
+> [!WARNING]
+> Hay herramientas a las que un Bot no llega. Si no tienen MCP ni funcionan en Linux, que es el sistema de su ordenador, hoy no hay forma de usarlas. Y el límite también está en ti. Con muchos Bots trabajando a la vez aumenta lo que tienes que revisar, y en el directo más de uno reconoció que hacía más trabajo que nunca y estaba más ocupado que nunca.
+
+{{live d2 1:21:08 "Herramientas sin MCP que no funcionan en Linux"}}
+
+## Falsas zonas de seguridad
 
 - **Tratar Bots distintos como zonas de seguridad separadas.** Un inicio de sesión de un Bot está disponible para todos. *Qué hacer:* no dejes sesiones delicadas en el ordenador, o dale a ese trabajo su propio usuario de Cursor.
 - **Pedirle al Bot que supere un CAPTCHA o una web bloqueada.** No debe hacerlo, e intentarlo puede incumplir las normas de la web. *Qué hacer:* toma el control y haz tú el paso humano.
 - **Confiar al modelo las reglas.** El mismo caso recibe respuestas distintas en días distintos. *Qué hacer:* escribe la regla como código o como criterios explícitos.
 - **Dar por hecho que "Stop now" deshace el trabajo.** Lo que ya está hecho sigue hecho. *Qué hacer:* pon la aprobación antes de la acción y no después.
 
-## Resumen
+## Dónde no usar un Bot
 
 - Las webs pueden bloquear la automatización o pedir pasos humanos, y el Bot te los pasa a ti.
 - Los Bots comparten un ordenador, la memoria no es una fuente y Auto Review se basa en un modelo que no ve todos los efectos secundarios.
@@ -128,7 +133,7 @@ El Bot sigue leyendo la solicitud, reuniendo los datos del pedido y redactando l
 
 ### Adónde ir ahora
 
-Has terminado el curso. La documentación oficial es la referencia que se mantiene al día:
+Has terminado el recorrido principal. Si trabajas en ventas o en atención al cliente, el módulo 8 aplica todo esto a esos equipos. La documentación oficial es la referencia que se mantiene al día:
 
 - [Use cases](https://docs.x.ai/grok-bot/use-cases) para nuevos roles que probar.
 - [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) antes de que un Bot actúe fuera de tu cuenta.

@@ -10,10 +10,10 @@ objectives:
   - "Entender por qué una sesión iniciada para un Bot queda disponible para todos tus Bots"
   - "Distinguir una petición segura de secreto del chat normal y saber qué no se escribe nunca en un mensaje"
   - "Cerrar sesiones y quitar accesos cuando termina un proyecto"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Por qué importa
+## El trabajo detrás de una pantalla de login
 
 Los connectors de la lección 08 cubren muchos servicios, pero buena parte de tu trabajo está detrás de una pantalla de inicio de sesión. Piensa en un panel de analítica, en el portal de un proveedor o en la administración de una herramienta interna. Tarde o temprano un Bot llega a una de esas páginas y se detiene.
 
@@ -21,7 +21,7 @@ Lo más rápido sería pegarle la contraseña en el chat. No lo hagas. Un mensaj
 
 Esta lección explica la forma segura de dejar a un Bot con la sesión iniciada, qué expone esa sesión y cómo retirarla después.
 
-## La idea
+## El Bot usa tus accesos, no tiene los suyos
 
 Un Bot no tiene identidad ni credenciales propias. Actúa en tu nombre, con los accesos que tú le das. Las credenciales las escribes tú, en el ordenador del Bot, y el Bot trabaja con la sesión que queda abierta.
 
@@ -74,7 +74,7 @@ Todo lo anterior ocurre en el ordenador en la nube. Dejar que un Bot ejecute com
 
 {{live 8:14:24 "Por qué el equipo evita la ejecución local"}}
 
-## Paso a paso
+## Iniciar sesión por el Bot sin darle la contraseña
 
 1. En tu petición, avisa al Bot de que puede necesitarte: "Pídeme que inicie sesión si hace falta".
 2. Cuando se detenga en una pantalla de inicio de sesión, abre **Agent Computer** (el ordenador del agente) desde la conversación.
@@ -84,7 +84,7 @@ Todo lo anterior ocurre en el ordenador en la nube. Dejar que un Bot ejecute com
 6. Devuelve el control y dile al Bot que siga desde la página actual.
 7. Si el Bot te muestra una petición segura de secreto, escribe el valor ahí y en ningún otro sitio.
 
-## Ejemplo
+## Un panel de solo lectura con parada para el login
 
 Esta petición sale de la guía de inicio oficial. Pide un trabajo de solo lectura y deja prevista la parada para iniciar sesión.
 
@@ -100,7 +100,12 @@ La semana siguiente, otro Bot que prepara tu informe de los lunes abre el mismo 
 Si una web te pide volver a iniciar sesión o te muestra una comprobación de verificación, detente y pídeme que tome el control. No intentes nunca saltarte la comprobación.
 ```
 
-## Errores habituales
+> [!NOTE]
+> El segundo día del directo se anunció una integración de Grok Bot con 1Password. No aparece en la documentación oficial que usa este curso, descargada el 16 de septiembre. Si ya la tienes en tu app, úsala para que los secretos no pasen por el chat.
+
+{{live d2 7:03:35 "La integración con 1Password, anunciada en directo"}}
+
+## Secretos pegados en el chat
 
 - **Pegar una contraseña o un código de un solo uso en el chat.** El secreto queda en el historial y le llega al modelo. *Qué hacer:* toma el control o usa la petición segura de secreto, y cambia la contraseña si ya ha ocurrido.
 - **Repartir el trabajo entre varios Bots para que una sesión sea privada.** Todos los Bots de tu cuenta pueden usar todas las sesiones del ordenador. *Qué hacer:* no abras esa sesión en el ordenador, o usa otro usuario de Cursor para ese trabajo.
@@ -109,7 +114,7 @@ Si una web te pide volver a iniciar sesión o te muestra una comprobación de ve
 - **Enseñar secretos mientras grabas con Teach a task.** La grabación recoge lo que aparece en pantalla (lección 06). *Qué hacer:* inicia sesión antes de empezar a grabar y toma el control para meter las credenciales.
 - **Borrar un Bot y dar por hecho que sus accesos desaparecen.** Borrar un Bot no elimina las sesiones del navegador ni los archivos. *Qué hacer:* al cerrar el proyecto, deja en pausa o borra sus routines (tareas programadas, lección 10) y cierra sesión en sus webs del ordenador. Después desinstala sus plugins, revócalos en cada servicio y elimina los archivos sensibles de `/workspace`, la carpeta compartida del ordenador.
 
-## Resumen
+## Tú escribes la contraseña, el Bot usa la sesión
 
 - Los Bots actúan en tu nombre. Las credenciales las escribes tú tomando el control de **Agent Computer**, y el Bot trabaja con la sesión.
 - Una sesión abierta para un Bot está disponible para todos tus Bots, así que tener varios Bots no separa los accesos.

@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Los clics los hace el Bot
 
 Un chat te da texto y los clics los haces tú. Un Bot puede hacer los clics él mismo, porque tiene un ordenador. Gracias a eso puede rellenar un formulario, sacar cifras de un panel o guardar un archivo donde tu equipo lo encuentre.
 
 Dejarle una máquina a una IA plantea dudas razonables. Dónde está ese ordenador, si puedes ver lo que hace, qué pasa cuando una web pide tu contraseña. Esta lección las resuelve antes de que le encargues trabajo real a un Bot.
 
-## La idea
+## Un ordenador en la nube para todos tus Bots
 
 ### Un ordenador para todos tus Bots
 
@@ -74,7 +74,7 @@ El uso del ordenador también puede ir lento, y su velocidad depende del modelo 
 
 {{live 0:58:15 "Por qué el uso del ordenador va lento"}}
 
-## Paso a paso
+## Ver trabajar a un Bot y tomar el control
 
 **Ver trabajar a un Bot**
 
@@ -96,7 +96,7 @@ El uso del ordenador también puede ir lento, y su velocidad depende del modelo 
 3. Completa la autenticación en tu navegador si te la pide.
 4. En un chat, escribe `@` para vincular el connector a la tarea.
 
-## Ejemplo
+## Data Dan crea un formulario de Google
 
 En una demostración en directo, el equipo de xAI le pidió a un Bot nuevo, Data Dan, que creara un formulario de Google con dos preguntas sobre café. En esa configuración Google Forms no tenía connector, así que el Bot montó el formulario en el navegador de su ordenador. La ponente abrió la vista del ordenador y lo vio trabajar.
 
@@ -108,7 +108,7 @@ Puedes encargar algo parecido. Si aparece una página de inicio de sesión, el B
 Abre Google Forms y crea un formulario llamado "Comida de equipo". Añade dos preguntas: una de opción múltiple, "¿Qué día te viene bien?", con martes, miércoles y jueves, y una de respuesta corta, "¿Alguna restricción alimentaria?". Pídeme que inicie sesión si hace falta. Mándame el enlace cuando termines.
 ```
 
-## Errores habituales
+## Contraseñas en el chat y otros descuidos
 
 - **Pegar una contraseña o un código de un solo uso en el chat.** Queda en la conversación. *Qué hacer:* toma el control del ordenador y escríbelo ahí, o usa la petición segura de secreto cuando una conexión compatible la ofrezca. Esa petición no deja el valor en la conversación.
 - **Usar Bots distintos para separar datos.** Todos comparten archivos y sesiones. *Qué hacer:* no pongas en el ordenador nada que alguno de tus Bots no deba usar.
@@ -116,7 +116,7 @@ Abre Google Forms y crea un formulario llamado "Comida de equipo". Añade dos pr
 - **Forzar el navegador cuando existe un connector.** Ir haciendo clic por una web suele ser menos fiable. *Qué hacer:* mira antes en **Settings → Plugins**.
 - **Dejar la única copia de un resultado en una carpeta temporal.** Puede perderse en una recuperación. *Qué hacer:* pide al Bot que lo guarde en `/workspace` o lo adjunte a la conversación.
 
-## Resumen
+## Un ordenador para todos, una pantalla por Bot
 
 - Todos tus Bots comparten un ordenador persistente en la nube: archivos, sesiones del navegador e inicios de sesión.
 - Cada Bot tiene su propia pantalla, pero las pantallas no son una barrera de seguridad.

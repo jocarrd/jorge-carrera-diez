@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## The work around every call
 
 A founder or a small sales team spends hours on the work around the actual conversations. They read up on a company before a call, write notes afterwards, check what competitors shipped, sort customer feedback and answer email. None of it is hard, but in a busy week it gets dropped.
 
 This work suits Bots because it repeats, it reads from tools you already use, and the output can be a draft you approve. It also touches customers and other companies, so the boundaries from lesson 04 matter more here than anywhere else in the course.
 
-## The idea
+## Six customer-facing Bots
 
 Give each customer-facing job its own Bot. Let it prepare and draft, and keep every outgoing message behind your approval. The livestream session for founders showed six Bots built this way. They are demo Bots with invented customers, so treat them as patterns to copy. You won't find them as products to install. For official starting points, see the **Sales Outbound**, **Account Health** and **Chief of Staff** use cases in [Use cases](https://docs.x.ai/grok-bot/use-cases).
 
@@ -59,7 +59,7 @@ Three rules from the docs apply to all of these Bots:
 > [!WARNING]
 > The founders' demo also showed Stockbot writing to customers who had left for a competitor, with a reminder to use this responsibly. Before a Bot signs up for another company's product or contacts people, check that company's terms, your local privacy rules and your own policy. Keep every such message as a draft you approve.
 
-## Step by step
+## Start with call prep
 
 Start with the call briefing. It only reads data, and you see the value on the first day.
 
@@ -71,7 +71,7 @@ Start with the call briefing. It only reads data, and you see the value on the f
 6. **Close the loop.** After each call, ask the Bot to read the transcript and note what to change next time.
 7. **Add the next Bot** only once this one is reliable.
 
-## Example
+## Closebot, Stockbot and Yap bot in the demo
 
 {{live 7:33:07 "Preparing a customer call with Closebot"}}
 
@@ -101,7 +101,7 @@ guide of how I write: greeting, length, tone, phrases I use and avoid. Save it
 as a skill called "Write like me". Do not send anything.
 ```
 
-## Common mistakes
+## Messages that go out unreviewed
 
 - **Letting a Bot send outreach on day one.** A wrong name or claim reaches a customer and can't be taken back. *Fix:* keep drafts and approval until you have reviewed many good ones. An approval doesn't reverse work already completed.
 - **Giving a voice Bot every account you have.** Every other Bot on your account can now use those sessions. *Fix:* sign in only to what the job needs, and sign out when you stop.
@@ -109,7 +109,7 @@ as a skill called "Write like me". Do not send anything.
 - **Sending feedback straight into merged code.** A single loud complaint changes the product. *Fix:* have the Bot open a pull request and review it like any other change (lesson 16).
 - **Asking random questions to specialist Bots.** Their context fills with noise. *Fix:* use a catch-all Bot and pass on only what matters.
 
-## Recap
+## Drafts always, sends with approval
 
 - Give each customer-facing job its own Bot: briefings, shipped changes, competitors, feedback and your voice.
 - Start with read-only call briefings, then add a routine and learning from transcripts.

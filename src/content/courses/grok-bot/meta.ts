@@ -12,6 +12,8 @@ export type LivePart = {
   number: number;
   date: string;
   status: "done" | "processing" | "upcoming";
+  // Emisión del día en X; los {{live}} de ese día enlazan aquí.
+  liveUrl?: string;
   topics: Record<Locale, string[]>;
 };
 
@@ -27,8 +29,7 @@ export type CourseModule = {
 export const grokBotCourse = {
   id: "grok-bot",
   slug: { es: "grok-bot", en: "grok-bot" } as Record<Locale, string>,
-  updated: "2026-09-16",
-  liveUrl: "https://x.com/i/broadcasts/1AxRnZbVpjaxl",
+  updated: "2026-09-17",
   docsUrl: "https://docs.x.ai/grok-bot/overview",
   cover: {
     es: "/images/cursos/grok-bot/portada-es.png",
@@ -39,6 +40,7 @@ export const grokBotCourse = {
       number: 1,
       date: "2026-09-15",
       status: "done",
+      liveUrl: "https://x.com/i/broadcasts/1AxRnZbVpjaxl",
       topics: {
         es: ["Grok Bot 101", "Ingeniería", "Producto", "Fundadores"],
         en: ["Grok Bot 101", "Engineering", "Product", "Founders"],
@@ -47,7 +49,8 @@ export const grokBotCourse = {
     {
       number: 2,
       date: "2026-09-16",
-      status: "processing",
+      status: "done",
+      liveUrl: "https://x.com/i/broadcasts/1PKqrNyvmYwGb",
       topics: {
         es: ["Sales Engineering", "Ventas", "SDRs", "Atención al cliente"],
         en: ["Sales Engineering", "Sales", "SDRs", "Customer Support"],
@@ -56,7 +59,7 @@ export const grokBotCourse = {
     {
       number: 3,
       date: "2026-09-17",
-      status: "upcoming",
+      status: "processing",
       topics: {
         es: ["Marketing Ops", "Post-venta", "Marketing", "Presentación final"],
         en: ["Marketing Ops", "Post-Sales", "Marketing", "Final showcase"],
@@ -72,6 +75,7 @@ export const grokBotCourse = {
     { number: 5, title: { es: "Grok Bot para ingeniería", en: "Grok Bot for engineering" }, level: "advanced" },
     { number: 6, title: { es: "Casos reales", en: "Real use cases" }, level: "advanced" },
     { number: 7, title: { es: "Nivel experto", en: "Expert level" }, level: "advanced" },
+    { number: 8, title: { es: "Ventas y atención al cliente", en: "Sales and customer support" }, level: "advanced" },
   ] as CourseModule[],
   lessons: [
     { id: "00", module: 0, slug: { en: "the-story", es: "la-historia" } },
@@ -97,6 +101,9 @@ export const grokBotCourse = {
     { id: "20", module: 6, slug: { en: "running-a-business-with-bots", es: "montar-un-negocio-con-bots" } },
     { id: "21", module: 7, slug: { en: "cost-and-performance", es: "coste-y-rendimiento" } },
     { id: "22", module: 7, slug: { en: "limits", es: "limites" } },
+    { id: "23", module: 8, slug: { en: "sales-engineering-with-bots", es: "preventa-con-bots" } },
+    { id: "24", module: 8, slug: { en: "sales-and-prospecting", es: "ventas-y-prospeccion" } },
+    { id: "25", module: 8, slug: { en: "customer-support", es: "atencion-al-cliente" } },
   ] as CourseLessonRef[],
   copy: {
     es: {
@@ -137,6 +144,7 @@ export const grokBotCourse = {
       followButton: "Seguir a @jorgecarrera_es",
       introModule: "Antes de empezar",
       storyLabel: "En el directo",
+      storyMore: "Seguir leyendo",
       dayLabel: "Día",
       diaryTitle: "Diario del directo",
       diaryDescription: "Lo que pasó cada día en el directo de lanzamiento de Grok Bot, en orden: la empresa que montaron en 72 horas, los Bots que crearon y lo que salió mal.",
@@ -222,6 +230,7 @@ export const grokBotCourse = {
       followButton: "Follow @jorgecarrera_es",
       introModule: "Before you start",
       storyLabel: "In the livestream",
+      storyMore: "Keep reading",
       dayLabel: "Day",
       diaryTitle: "Livestream diary",
       diaryDescription: "What happened each day of the Grok Bot launch livestream, in order: the company built in 72 hours, the Bots created along the way and what went wrong.",

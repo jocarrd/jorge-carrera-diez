@@ -10,10 +10,10 @@ objectives:
   - "Write a routine request with an owner, schedule, inputs, result, boundary and a plan for missing data"
   - "Use Test run, pause a routine and read its run history"
   - "Choose a frequency or trigger that does not waste usage"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Why this matters
+## Requests you type every morning
 
 Some requests you type every week, or every morning. Pull yesterday's numbers. Check what changed in a shared deck. List today's meetings.
 
@@ -21,7 +21,7 @@ A routine lets the Bot do that on its own. It runs in the cloud, so it keeps goi
 
 A routine also works when nobody is watching. If it reads the wrong data, runs too often or messages you about nothing, you pay in usage and in attention. This lesson shows how to set one up so you can trust it.
 
-## The idea
+## A schedule or an event for each job
 
 A **routine** tells one Bot when to run a piece of work. It can run on a schedule or, where supported, after an event. A skill (lesson 06) describes how to do a task. A routine decides when it happens and which Bot owns it.
 
@@ -87,7 +87,7 @@ Review how often your routines run from time to time. Where you can, start a rou
 
 {{live 7:56:40 "Why a routine every 15 minutes gets expensive"}}
 
-## Step by step
+## From a solved task to a routine
 
 1. Run the task once in a normal conversation and fix it until the result is right.
 2. Save the method as a skill (lesson 06).
@@ -97,7 +97,7 @@ Review how often your routines run from time to time. Where you can, start a rou
 6. Choose **Test run** with safe input and review the result.
 7. After the first real runs, open **View conversation details → Routines** and read the history.
 
-## Example
+## Ashley and yesterday's ticket sales
 
 In the livestream's product demo, a data Bot called Ashley answered a question about yesterday's ticket sales on mobile versus web, with a chart by traveler type. The presenter then wrote one line: "Send me this as an update every morning at 6 a.m."
 
@@ -113,7 +113,12 @@ A counterexample from the same day: an engineering Bot was asked for a routine t
 
 {{live 4:26:37 "An urgent routine that checks agents every five minutes"}}
 
-## Common mistakes
+> [!TIP]
+> A routine can also fire when something changes in another tool. In the prospecting workshop, when an account moved to a new stage in the CRM, a routine took its contacts out of the email sequence. A salesperson from the sales workshop gave a rule for schedules: one or two a day, because more ends up as noise.
+
+{{live d2 6:18:32 "A routine that fires when the CRM changes"}}
+
+## Automating what never worked
 
 - **Automating a task that never worked by hand.** The routine repeats the same errors every day. *Fix:* get one good result, save it as a skill, then schedule it.
 - **Leaving out the missing-data rule.** The Bot fills the gap with old data and nobody notices. *Fix:* say what to do when the source is empty, stale or down.
@@ -123,7 +128,7 @@ A counterexample from the same day: an engineering Bot was asked for a routine t
 - **Hiding a Bot to stop its routines.** Hidden Bots keep running them. *Fix:* pause the routine, and delete it only if you are sure, because there is no undo.
 - **Not re-testing after a change.** A website, connector or file format changes and the routine breaks without anyone noticing. *Fix:* run **Test run** again after any change to a source.
 
-## Recap
+## What a reliable routine needs
 
 - A skill says how. A routine says when, and which Bot owns it.
 - Specify the owner, schedule and time zone, input, result, approval boundary and missing-data rule.

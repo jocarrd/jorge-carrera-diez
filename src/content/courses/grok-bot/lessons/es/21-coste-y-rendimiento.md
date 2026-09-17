@@ -9,16 +9,16 @@ objectives:
   - "Explicar qué hace que el trabajo de un Bot consuma uso y dónde consultarlo"
   - "Calcular cuántas ejecuciones genera el horario de una routine y elegir uno sensato"
   - "Aplicar cinco hábitos que hacen a los Bots más rápidos y baratos sin perder calidad"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Por qué importa
+## El uso que se acaba el miércoles
 
 A estas alturas quizá tengas varios Bots, unas cuantas routines y algún chat de grupo. Y una semana el uso se acaba el miércoles sin que sepas qué Bot lo ha gastado.
 
 El coste y la velocidad tienen el mismo origen. Un Bot que recorre una web clic a clic, relee un contexto largo o habla en un grupo concurrido va lento y gasta mucho. Los hábitos de esta lección mejoran las dos cosas a la vez.
 
-## La idea
+## De dónde sale el gasto
 
 Cada vez que un Bot razona, lee una página, mira una captura o escribe una respuesta, un modelo hace trabajo, y ese trabajo es lo que cuenta tu plan. Se mide en tokens, los trozos pequeños de texto que un modelo lee y escribe. Más pasos, más texto y más ejecuciones suponen más uso. Funciona como el taxímetro de un taxi, que sigue corriendo mientras el Bot conduce, tanto si el trayecto sirve como si no.
 
@@ -54,7 +54,7 @@ Antes de elegir un horario, pregúntate cada cuánto puede cambiar de verdad la 
 
 **Chats de grupo.** Cada Bot de un grupo lee los mensajes y puede responder. La documentación advierte que demasiados traspasos en paralelo crean trabajo duplicado y avisos ruidosos ([Message and collaborate](https://docs.x.ai/grok-bot/chat-and-collaboration)). Como viste en la lección 12, suele salir más barato que un Bot mencione a otros dos una vez y trabaje con cada uno por separado.
 
-## Paso a paso
+## Una limpieza mensual de veinte minutos
 
 Una limpieza mensual lleva unos veinte minutos:
 
@@ -67,7 +67,7 @@ Una limpieza mensual lleva unos veinte minutos:
 7. **Recorta contexto.** Lleva las preguntas sueltas a un Bot cajón de sastre (lección 11) y pide a los Bots que olviden el contexto que ya no necesitan (lección 05).
 8. **Pregúntale al propio Bot** cómo abaratar su trabajo y revisa la propuesta antes de aplicarla.
 
-## Ejemplo
+## Un Bot que revisa tu consumo
 
 {{live 7:56:40 "Frecuencia de routines y pedir al Bot que se optimice"}}
 
@@ -101,7 +101,12 @@ Olvida todo lo relacionado con cómo generamos tu foto de perfil.
 > [!TIP]
 > Grok Bot puede preguntarte si mantener las routines activas cuando llevas mucho tiempo sin aparecer, y pausarlas si no respondes. Cuando vuelvas, revisa las routines pausadas en lugar de reactivarlas todas.
 
-## Errores habituales
+> [!NOTE]
+> El segundo día dejó cifras reales. Una baraja de diapositivas de casos de cliente costó entre 20 y 30 dólares, frente a cuatro o cinco horas de trabajo. Un ticket de soporte de dificultad media costaba entre 1 y 2 dólares, y agrupando los sencillos bajó a unos 20 céntimos (lección 25). Decirle al Bot qué ticket o qué cuenta exacta mirar también ahorra, porque no tiene que buscar.
+
+{{live d2 1:23:16 "Lo que costó una baraja de diapositivas"}}
+
+## Routines cada pocos minutos por si acaso
 
 - **Programar cada 5 o 15 minutos "por si acaso".** Cientos de ejecuciones al día que casi nunca encuentran nada. *Qué hacer:* usa el horario más lento que funcione, o un disparador por evento.
 - **Disparadores por evento demasiado amplios.** Cada mensaje de un canal concurrido lanza una ejecución. *Qué hacer:* filtra por un canal, una frase o un enlace concretos.
@@ -109,7 +114,7 @@ Olvida todo lo relacionado con cómo generamos tu foto de perfil.
 - **Un solo Bot para todo.** Su contexto crece y la calidad baja. *Qué hacer:* separa por roles y ten un Bot cajón de sastre para preguntas sueltas.
 - **Coordinar a través de un chat de grupo grande.** Los Bots se responden entre sí y repiten trabajo. *Qué hacer:* usa traspasos directos con un único responsable por etapa.
 
-## Resumen
+## Menos ejecuciones, mejor enfocadas
 
 - El uso sale del trabajo del modelo, es decir, de los pasos, el texto leído, las capturas y las ejecuciones. Los planes incluyen uso semanal, que consultas en **Usage & Billing**.
 - Cuenta las ejecuciones de una routine antes de programarla y prefiere disparadores por evento estrechos al polling.

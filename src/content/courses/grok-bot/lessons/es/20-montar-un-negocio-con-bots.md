@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Un negocio lo necesita todo a la vez
 
 Las dos lecciones anteriores enseñaron un equipo cada una. Un negocio pequeño lo necesita todo a la vez, desde la investigación y la web hasta el marketing, los proveedores y el presupuesto. Con pocas personas, casi todo ese trabajo se queda esperando.
 
 En el directo, los presentadores intentaron montar un negocio en 72 horas con Bots, delante de la cámara. Lo llamaron "Ship by Thursday", una plataforma para organizar pop-ups de comida en San Francisco que pondrían a prueba montando su propio pop-up. Fue caótico, y eso lo hace útil para estudiar, porque se ve qué funcionó y qué se rompió. Los nombres de los Bots y las herramientas fueron elección suya, y tú puedes usar otros.
 
-## La idea
+## Una lista de trabajos con un Bot en cada uno
 
 Trata el negocio como una lista de trabajos. Cada trabajo tiene un Bot responsable y termina en algo que una persona puede comprobar. Los Bots preparan. Las personas toman las decisiones que cuestan dinero, necesitan una firma o llegan a los clientes.
 
@@ -34,7 +34,7 @@ La documentación oficial propone el mismo orden para cualquier rol. Escribe el 
 6. **Presupuesto.** Un Bot organizador de eventos preparó un presupuesto base antes de pedir precios a los locales.
 7. **Base de conocimiento.** Un Bot mantenía al día una página de Notion con las decisiones de los demás Bots.
 
-## Paso a paso
+## Arrancar desde un documento de una página
 
 1. **Escribe un documento de empresa de una página** con la idea, el cliente y el objetivo de esta semana. Compártelo con todos los Bots. Los presentadores lo tenían en Notion.
 2. **Investiga antes de construir.** Apunta un Bot de investigación a fuentes reales y pide los hallazgos agrupados y con enlaces.
@@ -44,7 +44,7 @@ La documentación oficial propone el mismo orden para cualquier rol. Escribe el 
 6. **Deja el dinero, los contratos y los mensajes que salen detrás de una aprobación.** Añade reglas **Ask first** (preguntar antes) en **Settings → General → Auto-review** (ajustes, revisión automática) para compras y correo externo.
 7. **Encarga a un Bot que registre las decisiones** y dile que te consulte antes de escribir.
 
-## Ejemplo
+## Ship by Thursday desde cero
 
 {{live 1:43:15 "El Bot de investigación agrupa miles de respuestas en X"}}
 
@@ -96,14 +96,26 @@ El resultado no se vio en el directo. Según esa persona, el siguiente paso ser�
 
 La persona invitada que organiza eventos señaló también lo que sigue necesitando personas en un evento, que es el registro de invitados y la seguridad. Y comparó a la IA leyendo contratos con alguien en segundo de Derecho, que sirve para una primera lectura pero después necesita a un experto.
 
-## Errores habituales
+### El día 2: cambiar de negocio en una mañana
+
+El plan de los pop-ups no llegó al segundo día. Por la noche dejaron a los Bots revisando la idea con los consejos de los invitados, que habían avisado de las licencias y los permisos que pide San Francisco. Por la mañana la conclusión era que no daba tiempo. "Los agentes nos vendieron el cambio de idea", dijo Matt.
+
+En media hora de pizarra eligieron un estudio de videojuegos, porque les apasionaba y podían construirlo en dos días. Antes de programar nada decidieron cómo ganar dinero sin que pagar diera ventaja en el juego: objetos cosméticos, arenas y un estadio con publicidad. También decidieron dejar el dinero para después, porque al empezar lo que cuenta es conseguir jugadores.
+
+Cambiar de negocio no tiró el trabajo del día 1. Los Bots, las conexiones y la forma de trabajar siguieron sirviendo. Solo hubo que contarles a todos el plan nuevo.
+
+{{live d2 0:11:08 "Los agentes les venden el cambio de idea"}}
+
+{{live d2 0:19:22 "Ganar dinero sin que pagar dé ventaja"}}
+
+## Diez Bots sin objetivo
 
 - **Crear diez Bots antes de elegir un objetivo.** Cada uno trabaja mucho en una dirección distinta. *Qué hacer:* escribe primero el documento de empresa y elige la cifra que quieres mover.
 - **Hacer búsquedas vagas** ("búscame un local chulo"). Recibes listas largas que no sirven. *Qué hacer:* da el tamaño, la fecha, el presupuesto y las exclusiones, con el motivo de cada una.
 - **Dejar que los Bots compren, firmen o envíen.** Un dominio, una señal o un correo salen sin que decida una persona. *Qué hacer:* mantén reglas **Ask first** para compras y mensajes externos.
 - **Cambiar de plan sin avisar a los Bots.** Siguen produciendo trabajo para la idea anterior. *Qué hacer:* avisa al Bot coordinador y pídele que actualice a los demás.
 
-## Resumen
+## Los Bots preparan, tú decides
 
 - Divide el negocio en trabajos, un Bot para cada uno, y que cada trabajo termine en algo que puedas comprobar.
 - Investigar y prototipar es barato, así que decide el objetivo antes de construir mucho.

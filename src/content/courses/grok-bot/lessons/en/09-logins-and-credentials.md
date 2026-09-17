@@ -10,10 +10,10 @@ objectives:
   - "Explain why a login made for one Bot is available to all your Bots"
   - "Tell a secure secret request apart from ordinary chat, and know what never goes in a message"
   - "Clean up logins and local access when a project ends"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Why this matters
+## Work behind a login screen
 
 Connectors (lesson 08) cover many services, but a lot of your work sits behind a login page. Think of an analytics dashboard, a supplier portal or an internal admin panel. Sooner or later a Bot reaches one of those pages and stops.
 
@@ -21,7 +21,7 @@ The quick fix would be to paste your password into the chat. Don't. A chat messa
 
 This lesson shows the safe way to get a Bot signed in, what that sign-in exposes, and how to remove it again.
 
-## The idea
+## The Bot uses your access and has none of its own
 
 A Bot has no identity or credentials of its own. It acts as you, with the access you give it. You type your credentials yourself, on the Bot's computer, and the Bot works in the signed-in session you leave behind.
 
@@ -74,7 +74,7 @@ Everything above happens on the cloud computer. Letting a Bot run commands on th
 
 {{live 8:14:24 "Why the team avoids local execution"}}
 
-## Step by step
+## Log in for the Bot without handing over the password
 
 1. In your request, tell the Bot it may need you: "Ask me to sign in if needed."
 2. When it stops at a login, open **Agent Computer** from the conversation.
@@ -84,7 +84,7 @@ Everything above happens on the cloud computer. Letting a Bot run commands on th
 6. Give control back and tell the Bot to continue from the current page.
 7. If the Bot shows a secure secret request instead, type the value there and nowhere else.
 
-## Example
+## A read-only dashboard with a stop for login
 
 This request comes from the official getting-started guide. It asks for read-only work and plans the sign-in as a stop.
 
@@ -100,7 +100,12 @@ Next week, a second Bot that prepares your Monday report opens the same dashboar
 If a website asks you to sign in again or shows a verification check, stop and ask me to take over. Never try to get around the check.
 ```
 
-## Common mistakes
+> [!NOTE]
+> On day 2 of the livestream, a Grok Bot integration with 1Password was announced. It isn't in the official docs this course uses, downloaded on 16 September. If your app already has it, use it so secrets never go through chat.
+
+{{live d2 7:03:35 "The 1Password integration, announced live"}}
+
+## Secrets pasted into chat
 
 - **Pasting a password or one-time code into the chat.** The secret lands in the history and reaches the model. *Fix:* take over the computer or use the secure secret request, and change the password if it already happened.
 - **Using separate Bots to keep a login private.** Every Bot on your account can use every session on the computer. *Fix:* keep that login off the computer, or use a separate Cursor user for that work.
@@ -109,7 +114,7 @@ If a website asks you to sign in again or shows a verification check, stop and a
 - **Showing secrets while recording with Teach a task.** The recording captures what is on screen (lesson 06). *Fix:* sign in before you start recording, and use a takeover for credentials.
 - **Deleting a Bot and assuming its access is gone.** Deleting a Bot does not remove browser sessions or files. *Fix:* when a project ends, pause or delete its routines (scheduled jobs, lesson 10) and sign out of its websites on the computer. Then uninstall its plugins, revoke them in each service, and remove sensitive files from `/workspace`, the shared folder on the computer.
 
-## Recap
+## You type the password, the Bot uses the session
 
 - Bots act as you. You type credentials yourself by taking over **Agent Computer**, and the Bot works in the session.
 - A session opened for one Bot is available to all your Bots, so separate Bots don't keep logins apart.

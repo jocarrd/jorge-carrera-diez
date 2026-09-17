@@ -9,16 +9,16 @@ objectives:
   - "Name the current limits that affect real work, and tell documented ones from livestream claims"
   - "Move decisions that must always come out the same into code"
   - "Decide where a person must stay in the loop, and when not to use a Bot at all"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
-## Why this matters
+## Trusting a Bot with what it does badly
 
 After twenty-one lessons you can build a team of Bots that researches, drafts, builds and reports. The risk now is trusting that team with work it does badly, or with decisions that should never leave a person.
 
-This lesson collects the limits in one place, shows how to work around the ones you can, and closes the course.
+This lesson collects the limits in one place, shows how to work around the ones you can, and closes the main path of the course.
 
-## The idea
+## A fast colleague who sometimes contradicts itself
 
 A Bot is a capable new colleague who works fast, never sleeps, and sometimes answers the same question two different ways. You give that colleague real work. You don't hand over the company card, the signature on contracts, or the final call on anything you can't undo.
 
@@ -76,7 +76,7 @@ Two habits help. First, write down what vague words mean. In lesson 17 you saw t
 
 Skip the Bot when the task is a single click you can do faster, or when you can't describe what "done" looks like. Skip it when the only way through breaks a site's terms, and when a mistake would be serious and nobody will review the output.
 
-## Step by step
+## Before you delegate new work
 
 Before you hand a Bot a new kind of work, check:
 
@@ -86,7 +86,7 @@ Before you hand a Bot a new kind of work, check:
 4. **Will a site need a login, a CAPTCHA or a human check?** Plan when you will take over.
 5. **Who reviews the output, and when?** Name the person and the moment.
 
-## Example
+## Refunds decided by a rule in code
 
 {{live 8:02:48 "Deterministic decisions with code"}}
 
@@ -109,14 +109,19 @@ reply to the customer and wait for my approval before sending.
 
 The Bot still reads the request, gathers the order data and drafts the reply. The decision itself comes from code you can test.
 
-## Common mistakes
+> [!WARNING]
+> Some tools are out of a Bot's reach. If they have no MCP and don't run on Linux, the system its computer uses, there's no way to use them today. The limit is also you. With many Bots working at once there's more for you to review, and on the livestream more than one person admitted they were getting more done than ever and were busier than ever.
+
+{{live d2 1:21:08 "Tools with no MCP that don't run on Linux"}}
+
+## False safety zones
 
 - **Treating separate Bots as separate security zones.** A login for one Bot is available to all of them. *Fix:* keep sensitive sessions off the computer, or give that work its own Cursor user.
 - **Asking the Bot to get past a CAPTCHA or a blocked site.** It shouldn't, and trying can break the site's rules. *Fix:* take over and do the human step yourself.
 - **Relying on the model for rules.** The same case gets different answers on different days. *Fix:* write the rule as code or as explicit criteria.
 - **Assuming "Stop now" undoes work.** Completed actions stay done. *Fix:* put approval before the action, not after it.
 
-## Recap
+## Where not to use a Bot
 
 - Sites can block automation or demand human steps, and the Bot hands those to you.
 - Bots share one computer, memory is not a source, and Auto Review is model-based and misses some side effects.
@@ -126,7 +131,7 @@ The Bot still reads the request, gathers the order data and drafts the reply. Th
 
 ### Where to go next
 
-You have finished the course. The official docs are the reference that stays current:
+You have finished the main path. If you work in sales or customer support, module 8 applies all of this to those teams. The official docs are the reference that stays current:
 
 - [Use cases](https://docs.x.ai/grok-bot/use-cases) for new roles to try.
 - [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) before a Bot acts outside your account.

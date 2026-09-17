@@ -13,7 +13,7 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## El Bot al que acabas pidiendo de todo
 
 Tras unas semanas con un solo Bot, acabas pidiéndole de todo. El informe de ventas, un fallo de software, una idea de regalo, el presupuesto. Cada vez cuesta más dirigir sus respuestas. El Bot mezcla preferencias de un trabajo con las de otro, y tú repites contexto que ya le habías dado.
 
@@ -21,7 +21,7 @@ También pasa lo contrario. Creas un Bot nuevo para cada tarea y al mes la barra
 
 Esta lección trata del punto intermedio: pocos Bots, cada uno con un trabajo que conserva.
 
-## La idea
+## Cinco señales para separar un trabajo
 
 Un Bot es un compañero de larga duración con nombre, un trabajo, su propia conversación y un contexto de trabajo que crece con el tiempo (lecciones 01 y 05). El trabajo es lo que mantiene útil ese contexto. Si el trabajo está claro, lo que el Bot aprende hoy le sigue sirviendo mañana.
 
@@ -87,7 +87,7 @@ La documentación desaconseja que un **General Helper** se encargue de trabajo r
 
 La diferencia está en la responsabilidad. Un Bot cajón de sastre no tiene nada a su cargo y ningún trabajo depende de él. Un ayudante general que además lleva tus informes y tus routines es lo que la documentación desaconseja. Para proyectos sencillos, añadió el equipo de xAI, puede bastar un único Bot "builder" que haga ingeniería, producto y diseño.
 
-## Paso a paso
+## Repartir tu semana en roles
 
 1. Apunta el trabajo recurrente que delegarías en una semana normal.
 2. Agrupa lo que comparte objetivo, herramientas, forma de trabajar, límite de aprobación y calendario.
@@ -97,7 +97,7 @@ La diferencia está en la responsabilidad. Un Bot cajón de sastre no tiene nada
 6. Crea un segundo Bot solo cuando un grupo de trabajo se haya convertido en una especialidad estable.
 7. Usa **Hide from sidebar** (ocultar de la barra lateral) con los Bots que ya no uses. Ocultarlos conserva su trabajo, pero no pausa sus routines (lección 10).
 
-## Ejemplo
+## El equipo de producto del directo
 
 En la sesión del directo para product managers, el equipo de Bots estaba organizado por roles. Ashley se ocupaba de la ciencia de datos, PM Pete de las especificaciones de producto y Pixel del diseño. Emily dirigía ingeniería, con Bots ingenieros a su cargo, y Ray llevaba la selección de personal.
 
@@ -113,7 +113,7 @@ Encárgate de las maquetas de diseño de producto. Trabaja con nuestro sistema d
 
 Nombra el resultado, la fuente, lo que entrega, a quién se lo pasa y el límite. Un segundo Bot de diseño solo tendría sentido si, por ejemplo, el diseño de marketing necesitara otra biblioteca, otro estilo y otra persona que apruebe.
 
-## Errores habituales
+## El General Helper y los Bots duplicados
 
 - **Un General Helper para todo.** El contexto de un trabajo se cuela en otro y las indicaciones se vuelven difusas. *Qué hacer:* separa según las cinco señales.
 - **Un Bot por tarea.** El equipo crece y ningún Bot acumula trabajo suficiente para aprender. *Qué hacer:* crea Bots para trabajos duraderos y manda las tareas como mensajes.
@@ -122,7 +122,7 @@ Nombra el resultado, la fuente, lo que entrega, a quién se lo pasa y el límite
 - **Separar Bots para separar accesos.** Todos los Bots usan el mismo ordenador y las mismas sesiones. *Qué hacer:* mantén las sesiones delicadas fuera del ordenador (lección 09).
 - **Esperar que un duplicado recuerde.** La copia empieza sin historial ni memoria aprendida. *Qué hacer:* explícale su nuevo ámbito antes de darle trabajo.
 
-## Resumen
+## Cuándo crear otro Bot
 
 - Crea un Bot aparte cuando el trabajo tenga su propio objetivo, herramientas, forma de trabajar, límite de aprobación o calendario.
 - Describe cada rol por lo que gestiona, lo que usa, lo que entrega y lo que no debe hacer nunca.

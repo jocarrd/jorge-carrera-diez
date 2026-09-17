@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Por qué importa
+## Traspasos lentos entre datos y producto
 
 El trabajo de producto avanza a base de traspasos lentos. Alguien hace una pregunta, una analista escribe la consulta, el responsable de producto convierte la respuesta en una especificación, una diseñadora la maqueta y un ingeniero monta un prototipo. Cada paso espera a que alguien tenga un hueco.
 
 Ya conoces las piezas de lecciones anteriores. Un Bot por rol (lección 11), Bots que se pasan trabajo (lección 12), routines (lección 10) y agentes en la nube para el código (lección 15). Esta lección las junta en un ciclo de producto real. Verás dónde ahorran días los Bots y dónde tienes que mirar con cuidado.
 
-## La idea
+## Una carrera de relevos entre Bots
 
 Un equipo de producto hecho de Bots funciona como una carrera de relevos. Cada Bot se encarga de una etapa, recibe el resultado anterior y entrega al siguiente algo que se pueda revisar. Tú sigues en la conversación como la persona que hace la pregunta, comprueba cada entrega y decide si el trabajo pasa a la siguiente etapa.
 
@@ -48,7 +48,7 @@ Los Bots pueden recorrer el ciclo entero, pero hay tres puntos que merecen tu at
 > [!TIP]
 > Una demo hace cada paso de una sola vez. El trabajo real necesita más. Cuenta con varias vueltas en cada etapa, añade tus propias ideas y revisa con más cuidado cuanto más riesgo tenga el cambio.
 
-## Paso a paso
+## Montar el relevo etapa por etapa
 
 1. **Conecta la fuente de datos** a tu Bot de datos. Usa un connector (conector) de **Settings → Plugins** (ajustes, plugins) si existe. Si no, inicia tú la sesión en la herramienta desde el navegador del Bot (lección 09). Empieza con acceso de solo lectura, para que el Bot pueda mirar sin cambiar nada.
 2. **Escribe los límites en la descripción del Bot.** Consultas de solo lectura, enseñar siempre la consulta y no tocar nunca paneles ni alertas.
@@ -59,7 +59,7 @@ Los Bots pueden recorrer el ciclo entero, pero hay tres puntos que merecen tu at
 7. **Pide diseños para cada P0** y elige tú.
 8. **Envía el diseño elegido al Bot de ingeniería** y pide un prototipo con capturas o un vídeo como prueba (lección 16).
 
-## Ejemplo
+## Fly Low Airlines, de la pregunta al prototipo
 
 Esta es la demo de Fly Low Airlines del directo, una aerolínea ficticia preparada para la sesión.
 
@@ -108,7 +108,7 @@ Luego pidieron a Pete que pasara el PRD a Emily, y a Pixel que hiciera diseños 
 
 Pixel entregó dos opciones, A y B. El público eligió la A y el diseño pasó a Emily. Emily dividió los P0 en tareas acotadas para sus Bots ingenieros. Uno de ellos, Nova, lanzó un agente en la nube y lo fue vigilando. El prototipo final no se enseñó en la sesión.
 
-## Errores habituales
+## Gráficos sin consulta
 
 - **Fiarte de un gráfico sin ver la consulta.** Un cruce de tablas o un filtro de fechas mal puesto convence igual que uno bueno. *Qué hacer:* pide la consulta y el enlace a la fuente con cada cifra, y comprueba las primeras respuestas.
 - **Dejar que tu hipótesis dirija el análisis.** El Bot puede confirmar lo que dijiste en vez de lo que dicen los datos. *Qué hacer:* pide al Bot de datos que contraste tu lectura, como hizo Ashley con lo de los asientos.
@@ -116,7 +116,7 @@ Pixel entregó dos opciones, A y B. El público eligió la A y el diseño pasó 
 - **Saltarte la revisión del PRD.** Diseños y prototipos se acumulan sobre un requisito equivocado. *Qué hacer:* revisa la lista de P0 antes de que empiece el diseño.
 - **Pedir cambios al Bot de datos.** Un panel, una alerta o un ajuste de producción cambia durante una "investigación". *Qué hacer:* mantén al Bot de datos en solo lectura y deja los cambios detrás de una aprobación.
 
-## Resumen
+## Cada etapa termina en algo comprobable
 
 - Un equipo de producto de Bots es un relevo que va de los datos al PRD, al diseño y al prototipo, y cada etapa termina en algo que puedes comprobar.
 - Con cada respuesta de datos, pide la consulta, los enlaces a la fuente y la separación entre hechos y suposiciones.

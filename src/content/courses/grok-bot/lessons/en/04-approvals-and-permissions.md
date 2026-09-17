@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## A Bot can send, delete and publish
 
 A chat box cannot send an email, delete a file or publish a post. A Bot can, because it works in your real tools. That is why it is useful, and it is also why you need to decide in advance what it may do on its own.
 
 The goal is a balance. If a Bot asks about everything, you spend your day clicking buttons. If it asks about nothing, a wrong guess can reach a customer. Grok Bot gives you a few controls to set that balance, and you can loosen them as the Bot earns your trust.
 
-## The idea
+## The Bot asks before it clicks
 
 ### An approval request is a pause before an action
 
@@ -88,7 +88,7 @@ Passwords, two-factor codes and CAPTCHAs work differently. They are not approval
 
 The cloud computer is not the computer in front of you. Whether a Bot may run commands on your Mac, Windows or Linux machine is set in **Settings → General → Agent → Execution on Local Computer**. The default is **Ask every time**. Choose **Never allowed** unless a Bot has a specific reason to work on your local files. This setting does not stop the Bot from using its cloud computer.
 
-## Step by step
+## Set limits and review approvals
 
 1. **Set boundaries in the description.** Open **Bot actions → Edit Profile** and add a line such as "Never send external messages without approval."
 2. **Add your first rules.** Open **Settings → General → Auto-review** and add one or two **Ask first** rules for the actions you care about most, such as sending email.
@@ -97,7 +97,7 @@ The cloud computer is not the computer in front of you. Whether a Bot may run co
 5. **Review each request.** When an approval appears, check the target and values. Use **Allow once** while you are still learning how the Bot behaves.
 6. **Widen trust gradually.** When an action has been right many times and is low risk, add a narrow **Allow automatically** rule for it. Keep the list above behind **Ask first**.
 
-## Example
+## A rule written in settings
 
 In a live demo, the xAI team opened settings and wrote a rule in plain language: don't reply to emails for me without asking first. The presenter also allowed the Bot to create slides without asking.
 
@@ -113,7 +113,7 @@ You can reproduce this with an **Ask first** rule for sending email and this tas
 Draft a reply to the latest email from our supplier confirming Thursday's delivery. Show me the draft and wait. Do not send anything until I approve.
 ```
 
-## Common mistakes
+## Approving without looking
 
 - **Approving without reading the target.** The Bot acts on the wrong account or recipient. *Fix:* check target, scope and values, and ask for a plain-language explanation if unsure.
 - **Writing broad rules like "allow everything in the browser".** Risky actions go through without a stop. *Fix:* write narrow rules for one action and scope.
@@ -121,7 +121,7 @@ Draft a reply to the latest email from our supplier confirming Thursday's delive
 - **Expecting an approval to undo work already done.** An approval only controls the proposed action. *Fix:* keep irreversible steps behind **Ask first**.
 - **Setting local execution to always allowed.** A Bot can run commands on your own machine without asking. *Fix:* keep **Never allowed** or **Ask every time**.
 
-## Recap
+## Allow once while you learn
 
 - An approval request shows the proposed action and its inputs. Review before you approve.
 - Use **Allow once** while you learn, and save **Always allow** for low-risk, well-known actions.

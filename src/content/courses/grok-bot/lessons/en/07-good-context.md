@@ -12,13 +12,13 @@ objectives:
 updated: "2026-09-16"
 ---
 
-## Why this matters
+## A vague result usually means missing context
 
 A Bot only knows what you tell it, what it can reach and what it has learned. When a result comes back vague or off target, the cause is usually missing context. The Bot filled the gaps with guesses.
 
 Longer messages rarely help. What helps is putting each piece of information in the right place: the request, a shared document, the description, or a separate Bot.
 
-## The idea
+## Goal, sources, limits and examples
 
 **Context** is the information a Bot works from: your goal, the sources, the constraints and examples of what good looks like. Think of briefing a freelancer on their first morning. A good brief is short and specific. A bad one is either "make it great" or a two-hour ramble with the important part buried in the middle.
 
@@ -76,7 +76,7 @@ Keep one Bot just for one-off questions, so your other Bots stay focused. When i
 
 After a long message, especially a dictated one (lesson 03), ask the Bot to repeat back what it understood before it starts. Reading a short summary is faster than rereading your own wall of text, and it catches misunderstandings before any work happens.
 
-## Step by step
+## Prepare the context before you ask
 
 1. **Write the shared document once.** Ask a Bot to draft it from what you tell it, then edit it yourself.
 2. **Open each request with the result.** Add the sources, the limits and what finished looks like.
@@ -93,7 +93,7 @@ Write /workspace/company/overview.md in under 300 words: what we do, who our cus
 Before you start, restate what I just asked in your own words: the goal, the sources you'll use, what you won't do, and what you'll hand back. Wait for my OK.
 ```
 
-## Example
+## References before the landing page
 
 In a live demo, the xAI team wanted landing page prototypes for a pop-up restaurant platform, a service for temporary restaurants. Before asking for any design, the presenter built up context.
 
@@ -107,7 +107,7 @@ In a live demo, the xAI team wanted landing page prototypes for a pop-up restaur
 
 The Bot's summary did more than repeat what they said. It pointed out that the real bottleneck was the first cycle of the business: finding a venue, operators and cooks, and then guests. The landing pages mattered less. Only after that did it produce three HTML prototypes, simple web pages you can open and click through. When the presenter found them "too boring", they said so directly and got livelier versions.
 
-## Common mistakes
+## Asking for something more appealing and other vague requests
 
 - **Vague quality words.** "make it cooler" gives the Bot nothing to aim for. *Fix:* say what should change and show an example.
 - **One huge unchecked message.** The Bot acts on a misunderstanding. *Fix:* ask for a restate before it starts.
@@ -116,7 +116,7 @@ The Bot's summary did more than repeat what they said. It pointed out that the r
 - **One Bot for everything.** Answers get less precise over time. *Fix:* give each Bot one job and move side topics elsewhere.
 - **Loose questions in a working Bot.** Trivia sits in its context next to real work. *Fix:* ask a catch-all Bot instead.
 
-## Recap
+## A well-built request
 
 - Lead every request with the result, the sources, the limits and what finished looks like.
 - Give quality references before asking a Bot to build.
