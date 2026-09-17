@@ -26,7 +26,8 @@ export function CourseSearch({ entries, labels }: { entries: SearchEntry[]; labe
             const title = normalize(e.title);
             const score = words.reduce((sum, w) => sum + (title.includes(w) ? 3 : e.haystack.includes(w) ? 1 : 0), 0);
             const all = words.every((w) => e.haystack.includes(w));
-            return { e, score: score + (all ? 10 : 0) };
+            // La lección entera va antes que sus secciones cuando encaja igual de bien.
+            return { e, score: score + (all ? 10 : 0) + (e.kind === "lesson" && all ? 4 : 0) };
           })
           .filter((r) => r.score > 0)
           .sort((a, b) => b.score - a.score || Number(a.e.kind !== "lesson") - Number(b.e.kind !== "lesson"))
