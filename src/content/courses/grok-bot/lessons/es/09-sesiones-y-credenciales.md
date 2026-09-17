@@ -10,7 +10,7 @@ objectives:
   - "Entender por qué una sesión iniciada para un Bot queda disponible para todos tus Bots"
   - "Distinguir una petición segura de secreto del chat normal y saber qué no se escribe nunca en un mensaje"
   - "Cerrar sesiones y quitar accesos cuando termina un proyecto"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## El trabajo detrás de una pantalla de login
@@ -99,6 +99,11 @@ La semana siguiente, otro Bot que prepara tu informe de los lunes abre el mismo 
 ```prompt
 Si una web te pide volver a iniciar sesión o te muestra una comprobación de verificación, detente y pídeme que tome el control. No intentes nunca saltarte la comprobación.
 ```
+
+> [!NOTE]
+> El segundo día del directo se anunció una integración de Grok Bot con 1Password. No aparece en la documentación oficial que usa este curso, descargada el 16 de septiembre. Si ya la tienes en tu app, úsala para que los secretos no pasen por el chat.
+
+{{live d2 7:03:35 "La integración con 1Password, anunciada en directo"}}
 
 ## Secretos pegados en el chat
 

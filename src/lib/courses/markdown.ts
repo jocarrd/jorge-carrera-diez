@@ -70,7 +70,10 @@ export function toSeconds(hms: string) {
 }
 
 type RenderOptions = {
-  liveUrl: string;
+  // Emisión de cada día; un {{live}} sin día usa el de la página.
+  liveUrls: Record<number, string>;
+  day: number;
+  dayLabel: string;
   labels: { copy: string; prompt: string; live: string };
   calloutLabels: Record<"NOTE" | "TIP" | "WARNING", string>;
 };
@@ -83,18 +86,24 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
     extensions: [
       {
         // {{live 0:43:54 "Etiqueta"}} → enlace al minuto exacto del directo.
+        // {{live d2 0:43:54 "Etiqueta"}} → lo mismo en la emisión del día 2.
         name: "live",
         level: "inline",
         start: (src: string) => src.indexOf("{{live"),
         tokenizer(src: string) {
-          const m = src.match(/^\{\{live (\d+:\d{2}:\d{2}) "([^"]+)"\}\}/);
+          const m = src.match(/^\{\{live (?:d(\d) )?(\d+:\d{2}:\d{2}) "([^"]+)"\}\}/);
           if (!m) return undefined;
-          return { type: "live", raw: m[0], time: m[1], label: m[2] };
+          return { type: "live", raw: m[0], day: m[1] ? Number(m[1]) : options.day, time: m[2], label: m[3] };
         },
         renderer(token) {
-          const t = token as unknown as { time: string; label: string };
-          const href = `${options.liveUrl}?t=${toSeconds(t.time)}s`;
-          return `<a class="live-chip" href="${href}" target="_blank" rel="noopener noreferrer"><span class="live-chip-dot" aria-hidden="true"></span><span class="live-chip-time">${t.time}</span><span class="live-chip-label">${escapeHtml(t.label)}</span></a>`;
+          const t = token as unknown as { day: number; time: string; label: string };
+          const url = options.liveUrls[t.day];
+          // Un día sin emisión enlazada rompe el build en vez de publicar un enlace muerto.
+          if (!url) throw new Error(`{{live}} apunta al día ${t.day}, que no tiene liveUrl`);
+          const href = `${url}?t=${toSeconds(t.time)}s`;
+          // Con más de un día publicado, la hora sola no dice de qué emisión es.
+          const time = Object.keys(options.liveUrls).length > 1 ? `${options.dayLabel} ${t.day} · ${t.time}` : t.time;
+          return `<a class="live-chip" href="${href}" target="_blank" rel="noopener noreferrer"><span class="live-chip-dot" aria-hidden="true"></span><span class="live-chip-time">${time}</span><span class="live-chip-label">${escapeHtml(t.label)}</span></a>`;
         },
       },
     ],

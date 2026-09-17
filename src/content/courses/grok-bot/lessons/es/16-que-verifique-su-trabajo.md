@@ -9,7 +9,7 @@ objectives:
   - "Explicar qué es un bucle de feedback y por qué un Bot lo necesita para terminar una tarea solo"
   - "Exigir pruebas en cada resultado y cada pull request: capturas, métricas o vídeo"
   - "Crear una skill de verificación con un script estándar y un mapa de funcionalidades"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Un «hecho» sin comprobar
@@ -101,6 +101,11 @@ Cuando volvió la pull request de verificación, el equipo vio que las pull requ
 Ese mismo día, en una demo de ingeniería anterior, se vio la recompensa. La pull request de un agente en la nube llegó con capturas de lo que había cambiado. La persona que la revisaba contó que con esas capturas tenía confianza suficiente para fusionarla sin repasar paso a paso lo que había hecho el agente.
 
 La costumbre sirve también fuera de la ingeniería. Pide a un Bot que grabe un vídeo de lo que hace en una web. Es la forma más rápida de saber si la tarea está bien hecha.
+
+> [!TIP]
+> Cuando el resultado es texto, quien verifica puede ser otro Bot. Un estudiante que buscaba prácticas tenía un Bot que escribía sus cartas de presentación y otro que las revisaba párrafo a párrafo con una lista de comprobación. Marcaba las frases motivadoras vacías y lo que no sonaba a él.
+
+{{live d2 5:24:45 "Un Bot que critica las cartas de otro"}}
 
 ## Pruebas que faltan
 

@@ -9,14 +9,14 @@ objectives:
   - "Name the current limits that affect real work, and tell documented ones from livestream claims"
   - "Move decisions that must always come out the same into code"
   - "Decide where a person must stay in the loop, and when not to use a Bot at all"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Trusting a Bot with what it does badly
 
 After twenty-one lessons you can build a team of Bots that researches, drafts, builds and reports. The risk now is trusting that team with work it does badly, or with decisions that should never leave a person.
 
-This lesson collects the limits in one place, shows how to work around the ones you can, and closes the course.
+This lesson collects the limits in one place, shows how to work around the ones you can, and closes the main path of the course.
 
 ## A fast colleague who sometimes contradicts itself
 
@@ -109,6 +109,11 @@ reply to the customer and wait for my approval before sending.
 
 The Bot still reads the request, gathers the order data and drafts the reply. The decision itself comes from code you can test.
 
+> [!WARNING]
+> Some tools are out of a Bot's reach. If they have no MCP and don't run on Linux, the system its computer uses, there's no way to use them today. The limit is also you. With many Bots working at once there's more for you to review, and on the livestream more than one person admitted they were getting more done than ever and were busier than ever.
+
+{{live d2 1:21:08 "Tools with no MCP that don't run on Linux"}}
+
 ## False safety zones
 
 - **Treating separate Bots as separate security zones.** A login for one Bot is available to all of them. *Fix:* keep sensitive sessions off the computer, or give that work its own Cursor user.
@@ -126,7 +131,7 @@ The Bot still reads the request, gathers the order data and drafts the reply. Th
 
 ### Where to go next
 
-You have finished the course. The official docs are the reference that stays current:
+You have finished the main path. If you work in sales or customer support, module 8 applies all of this to those teams. The official docs are the reference that stays current:
 
 - [Use cases](https://docs.x.ai/grok-bot/use-cases) for new roles to try.
 - [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) before a Bot acts outside your account.

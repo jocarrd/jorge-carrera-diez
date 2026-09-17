@@ -9,7 +9,7 @@ objectives:
   - "Montar un Bot coordinador que reparte trabajo y detecta bloqueos sin hacer el trabajo él mismo"
   - "Guardar las reglas del equipo en un único playbook del que se encarga un Bot, en lugar de copiarlas en cada uno"
   - "Dar de alta un Bot nuevo a través de otro que ya conoce el trabajo, y pedir a un Bot que cree Bots"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Ocho Bots y tú en medio
@@ -100,6 +100,11 @@ Poco después, acordó con ese mismo Bot de ingeniería un flujo para bugs urgen
 Ese mismo día, antes, otra persona del equipo usó Dr. Eggbot, un Bot que crea Bots, instalado desde el marketplace. Le pidió que convirtiera su Bot por defecto en jefe de gabinete y que añadiera un Bot de prototipos con un nombre de comida. Dr. Eggbot no aparece en la documentación oficial, así que puede que no lo encuentres. Consigues lo mismo pidiendo a uno de tus Bots que te proponga un Bot nuevo.
 
 {{live 2:05:40 "Un Bot que crea Bots monta un jefe de gabinete"}}
+
+> [!TIP]
+> Si te ves dando órdenes sueltas a cada Bot, para y dale la regla a quien organiza el equipo. El segundo día, una sola instrucción a Dr. Eggbot, el Bot que crea y ajusta los demás, hizo que todos los Bots de Lauren usaran Notion como fuente de verdad. Al cierre le pidió que leyera las conversaciones de todos y buscara dónde se atascaba el trabajo. El atasco era ella.
+
+{{live d2 7:14:04 "Una regla para todos los Bots a la vez"}}
 
 ## El coordinador que trabaja en vez de coordinar
 

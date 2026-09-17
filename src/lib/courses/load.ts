@@ -19,6 +19,10 @@ function fileFor(locale: Locale, ref: CourseLessonRef) {
   return join(LESSONS_DIR, locale, `${ref.id}-${ref.slug[locale]}.md`);
 }
 
+const liveUrls: Record<number, string> = Object.fromEntries(
+  grokBotCourse.parts.filter((p) => p.liveUrl).map((p) => [p.number, p.liveUrl!]),
+);
+
 const cache = new Map<string, Lesson>();
 
 export function getLesson(locale: Locale, slug: string): Lesson | null {
@@ -34,7 +38,9 @@ export function getLesson(locale: Locale, slug: string): Lesson | null {
   const { data, body } = parseFrontMatter(source, file);
   const copy = grokBotCourse.copy[locale];
   const { html, toc } = renderLesson(body, {
-    liveUrl: grokBotCourse.liveUrl,
+    liveUrls,
+    day: 1,
+    dayLabel: copy.dayLabel,
     labels: { copy: copy.copy, prompt: copy.prompt, live: copy.live },
     calloutLabels: CALLOUTS[locale],
   });
@@ -82,9 +88,11 @@ export function getStory(locale: Locale): StoryDay[] {
   const file = join(STORY_DIR, `${locale}.md`);
   const source = readFileSync(file, "utf8");
   const copy = grokBotCourse.copy[locale];
-  const render = (body: string) =>
+  const render = (body: string, day: number) =>
     renderLesson(body, {
-      liveUrl: grokBotCourse.liveUrl,
+      liveUrls,
+      day,
+      dayLabel: copy.dayLabel,
       labels: { copy: copy.copy, prompt: copy.prompt, live: copy.live },
       calloutLabels: CALLOUTS[locale],
     }).html;
@@ -102,9 +110,9 @@ export function getStory(locale: Locale): StoryDay[] {
     const summary = heading.match(/^day (\d+)$/);
     const segment = heading.match(/^module (\d+) · day (\d+)$/);
     if (summary) {
-      dayFor(Number(summary[1])).html = render(body);
+      dayFor(Number(summary[1])).html = render(body, Number(summary[1]));
     } else if (segment) {
-      dayFor(Number(segment[2])).segments.push({ module: Number(segment[1]), day: Number(segment[2]), html: render(body) });
+      dayFor(Number(segment[2])).segments.push({ module: Number(segment[1]), day: Number(segment[2]), html: render(body, Number(segment[2])) });
     } else {
       throw new Error(`${file}: cabecera de historia no reconocida "## ${heading}"`);
     }

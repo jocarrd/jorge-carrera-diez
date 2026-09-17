@@ -9,7 +9,7 @@ objectives:
   - "Explain what a feedback loop is and why a Bot needs one to finish a task on its own"
   - "Require proof in every result and pull request: screenshots, metrics or video"
   - "Build a verification skill with a standard script and a feature map"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## A "done" nobody checked
@@ -101,6 +101,11 @@ When the verification pull request came back, the team noticed that the pull req
 Earlier the same day, an engineering demo showed the payoff. A cloud agent's pull request arrived with screenshots of what it had changed. The engineer reviewing it said the screenshots gave them enough confidence to merge without going through the agent's work step by step.
 
 The same habit works outside engineering. Ask a Bot to record a video of what it does on a website. It is the fastest way to check whether a task was done right.
+
+> [!TIP]
+> When the output is text, the checker can be another Bot. A student looking for an internship had one Bot writing his cover letters and another reviewing them paragraph by paragraph against a checklist. It flagged empty motivational lines and anything that didn't sound like him.
+
+{{live d2 5:24:45 "A Bot that critiques another Bot's letters"}}
 
 ## Missing proof
 

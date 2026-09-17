@@ -9,7 +9,7 @@ objectives:
   - "Saber qué contiene una skill y cuándo una tarea está lista para serlo"
   - "Crear una skill a partir de una tarea terminada, de material escrito o con Teach a task"
   - "Revisar una skill en borrador y usarla con / en otra conversación"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Tareas que vuelven cada semana
@@ -120,6 +120,11 @@ Para que esa skill se pueda reutilizar con seguridad, el siguiente paso sería c
 Lo mismo sirve para trabajo largo y repetitivo en herramientas de empresa, como los pasos que sigue un equipo comercial en Salesforce, un CRM muy extendido.
 
 {{live 6:19:37 "Grabar un flujo de trabajo en el ordenador del Bot"}}
+
+> [!TIP]
+> Cada vez que veas a un Bot razonar mal, añade una línea a la skill en lugar de corregirlo y seguir. Escribe el principio, no el caso. Una skill hecha con todos los detalles de un error concreto acaba llena de ejemplos que ya no sirven.
+
+{{live d2 3:36:21 "Por qué una skill hecha a partir de un error se estropea"}}
 
 ## Skills guardadas antes de tiempo
 

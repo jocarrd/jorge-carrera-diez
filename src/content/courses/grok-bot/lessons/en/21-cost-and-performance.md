@@ -9,7 +9,7 @@ objectives:
   - "Explain what makes Bot work consume usage and where to check it"
   - "Calculate how many runs a routine schedule creates and pick a sensible one"
   - "Apply five habits that make Bots faster and cheaper without losing quality"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Usage that runs out on Wednesday
@@ -99,6 +99,11 @@ Forget all things about how we generated your profile picture.
 
 > [!TIP]
 > Grok Bot may ask whether to keep routines running after you've been away a long time, and pause them if you don't answer. When you come back, review the paused routines instead of turning them all back on.
+
+> [!NOTE]
+> Day 2 brought real figures. A deck of customer case slides cost between $20 and $30, against four or five hours of work. A medium support ticket cost between $1 and $2, and batching the simple ones brought it down to about 20 cents (lesson 25). Telling the Bot exactly which ticket or account to look at also saves usage, because it doesn't have to search.
+
+{{live d2 1:23:16 "What a slide deck cost"}}
 
 ## Routines every few minutes just in case
 

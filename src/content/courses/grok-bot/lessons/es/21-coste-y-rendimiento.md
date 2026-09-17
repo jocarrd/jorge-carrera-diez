@@ -9,7 +9,7 @@ objectives:
   - "Explicar qué hace que el trabajo de un Bot consuma uso y dónde consultarlo"
   - "Calcular cuántas ejecuciones genera el horario de una routine y elegir uno sensato"
   - "Aplicar cinco hábitos que hacen a los Bots más rápidos y baratos sin perder calidad"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## El uso que se acaba el miércoles
@@ -100,6 +100,11 @@ Olvida todo lo relacionado con cómo generamos tu foto de perfil.
 
 > [!TIP]
 > Grok Bot puede preguntarte si mantener las routines activas cuando llevas mucho tiempo sin aparecer, y pausarlas si no respondes. Cuando vuelvas, revisa las routines pausadas en lugar de reactivarlas todas.
+
+> [!NOTE]
+> El segundo día dejó cifras reales. Una baraja de diapositivas de casos de cliente costó entre 20 y 30 dólares, frente a cuatro o cinco horas de trabajo. Un ticket de soporte de dificultad media costaba entre 1 y 2 dólares, y agrupando los sencillos bajó a unos 20 céntimos (lección 25). Decirle al Bot qué ticket o qué cuenta exacta mirar también ahorra, porque no tiene que buscar.
+
+{{live d2 1:23:16 "Lo que costó una baraja de diapositivas"}}
 
 ## Routines cada pocos minutos por si acaso
 

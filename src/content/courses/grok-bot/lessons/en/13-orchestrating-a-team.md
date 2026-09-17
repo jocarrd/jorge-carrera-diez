@@ -9,7 +9,7 @@ objectives:
   - "Set up a coordinator Bot that assigns work and spots blockers instead of doing the work itself"
   - "Keep team-wide rules in one playbook owned by one Bot, instead of copying them into every Bot"
   - "Onboard a new Bot through an existing one, and ask a Bot to create a Bot"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Eight Bots with you in the middle
@@ -101,6 +101,11 @@ A few minutes later, the presenter agreed a workflow for urgent bugs with the sa
 Earlier the same day, another presenter used Dr. Eggbot, a Bot that creates Bots, installed from the marketplace. They had it turn their default Bot into a chief of staff and add a prototyping Bot with a food-themed name. Dr. Eggbot isn't in the official docs, so you may not find it. You can get the same result by asking one of your own Bots to propose a new Bot.
 
 {{live 2:05:40 "A Bot that creates Bots sets up a chief of staff"}}
+
+> [!TIP]
+> If you find yourself giving each Bot one-off orders, stop and give the rule to whoever organises the team. On day 2, a single instruction to Dr. Eggbot, the Bot that creates and tunes the others, made all of Lauren's Bots use Notion as the source of truth. At the end of the day she asked it to read everyone's conversations and find where work got stuck. The bottleneck was her.
+
+{{live d2 7:14:04 "One rule for every Bot at once"}}
 
 ## A coordinator that works instead of coordinating
 

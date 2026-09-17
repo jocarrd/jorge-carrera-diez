@@ -10,7 +10,7 @@ objectives:
   - "Pedir una routine con responsable, horario, fuentes, resultado, límites y un plan para cuando falten datos"
   - "Usar Test run, pausar una routine y leer su historial de ejecuciones"
   - "Elegir una frecuencia o un disparador que no malgaste uso"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Peticiones que escribes cada mañana
@@ -112,6 +112,11 @@ La responsable es Ashley, porque se lo pides en su conversación. Los otros cinc
 Un contraejemplo del mismo día. A un Bot de ingeniería se le pidió una routine que revisara cada cinco minutos sus agentes de código en la nube (lección 15) durante un arreglo urgente. Tenía sentido durante la emergencia. Si se queda activa, son 288 ejecuciones al día.
 
 {{live 4:26:37 "Una routine urgente que revisa agentes cada cinco minutos"}}
+
+> [!TIP]
+> Una routine también puede saltar cuando algo cambia en otra herramienta. En el taller de prospección, cuando una cuenta avanzaba de etapa en el CRM, una routine sacaba a sus contactos de la secuencia de correos. Una comercial del taller de ventas dio una regla para el horario: una o dos al día, porque más acaba siendo ruido.
+
+{{live d2 6:18:32 "Una routine que salta cuando cambia el CRM"}}
 
 ## Automatizar lo que nunca salió bien
 

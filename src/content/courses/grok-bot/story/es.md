@@ -83,3 +83,103 @@ El último módulo recoge esas dos conversaciones: cuánto cuesta trabajar así 
 {{live 7:55:39 "Usar la API en lugar del navegador para gastar menos"}}
 
 {{live 8:26:01 "El presupuesto del evento con ayuda de Jenny"}}
+
+## day 2
+
+El segundo día empezó con un cambio de planes. Por la noche dejaron a los Bots revisando la idea de los pop-ups con los consejos de los invitados, y a la mañana siguiente la conclusión era que no daba tiempo a montarla en dos días. Pasaron a ser un estudio de videojuegos. El primer juego convierte las plantillas de Bots del público en personajes que se enfrentan entre sí. Al cerrar el día tenían login con X, una tabla de clasificación vacía, música generada, anuncios en vídeo y un tablero de Notion en el que una docena de Bots nuevos se repartían el trabajo. Entre medias hubo cuatro talleres, de preventa, ventas, prospección y atención al cliente.
+
+{{live 8:10:34 "El balance del segundo día"}}
+
+## module 1 · day 2
+
+"Los agentes nos vendieron el cambio de idea", resumió Matt al abrir la emisión. Los invitados del día anterior habían avisado de que en San Francisco un pop-up necesita licencias y permisos, y los Bots, trabajando de noche, llegaron a la misma conclusión. En media hora de pizarra salió la idea nueva. Cada persona sube un Bot que ya usa, el juego le da estadísticas y una habilidad, y lo enfrenta al equipo de otra persona.
+
+Poco después, en el primer taller, una Bot llamada Serena Williams entraba en la web de reservas de Southwest con su propio ordenador para compararla con la de Flylo, la aerolínea inventada de la demo. Nadie le había preparado ninguna integración. Eso es lo que explican las lecciones de este módulo: qué es un Bot, qué ordenador usa y qué puede hacer sin pedirte permiso.
+
+{{live 0:11:08 "Los agentes les venden el cambio de idea"}}
+
+{{live 0:51:05 "Serena prueba la web de Southwest en su ordenador"}}
+
+## module 2 · day 2
+
+El juego no empezó en código. Lauren escribió el plan con un playbook de planificación mientras los otros dos seguían en la pizarra, y le pidió a su Bot jefe de gabinete que hablara con Dr. Eggbot para crear un ingeniero. Al final del mensaje añadió su frase de siempre: "repítelo con tus palabras antes de empezar". Alguien comentó que a una persona sería raro decírselo así. La respuesta fue que eso es escucha activa.
+
+Más tarde, mirando cómo había quedado la descripción del Bot ingeniero, Lauren vio que estaba llena de detalles de un solo problema. Explicó que cuando una regla o una skill nace de un error concreto, el agente tiende a meter en ella todos los detalles de ese caso, y la skill acaba siendo un montón de ejemplos que ya no sirven. Le pidió a Dr. Eggbot que la reescribiera con principios generales.
+
+Este módulo va de eso, de lo que recuerda un Bot, de cómo enseñarle una tarea y de cómo darle el contexto justo.
+
+{{live 1:32:28 "Repítelo con tus palabras antes de empezar"}}
+
+{{live 3:36:21 "Por qué una skill hecha a partir de un error se estropea"}}
+
+## module 3 · day 2
+
+La creadora Karen X. Cheng enseñó el uso más comentado del día. Su Bot hace de madrugada un periódico personal con su calendario, sus correos, los paquetes que llegan, un cómic de su día y un crucigrama con pistas de su vida. Luego busca una impresora en la wifi y lo imprime sin preguntar. Contó también que conectar a Grok Bot su pantalla split-flap, la de las letras que giran como en los aeropuertos, le llevó dos minutos: pegó una clave de la API y listo. Hacerlo antes programando le había costado mucho más.
+
+En el estudio, los Bots empezaron a enterarse solos de lo que pasaba. Un Bot recibía un aviso con cada pull request, otro escuchaba menciones en Slack y otro vigilaba el tablero de Notion. A media tarde el equipo se enteró en directo de que Grok Bot acababa de lanzar una integración con 1Password. "Nos habría venido genial tenerla ayer", comentaron en el estudio. Se habían pasado buena parte del día 1 peleándose con las credenciales.
+
+Conectar herramientas, iniciar sesiones y programar routines que salten con un evento son los temas de este módulo.
+
+{{live 2:46:13 "El periódico que se imprime solo"}}
+
+{{live 7:03:35 "La integración con 1Password, anunciada en directo"}}
+
+## module 4 · day 2
+
+Por la tarde había tantos Bots que hizo falta un sistema. Roshan pidió a su jefe de gabinete una lista de tareas en Notion y luego la convirtió en un tablero. Los tres crearon a la vez, por voz, un Bot para Slack con Dr. Eggbot, y a dos de ellos les salió con el mismo nombre, Ping. Lauren resolvió el desorden con una sola orden a Dr. Eggbot: que todos sus Bots trataran Notion como la fuente de verdad y lo mantuvieran al día.
+
+Lauren dio un criterio para saber cuándo hacerlo. Si notas que estás dando órdenes sueltas a cada Bot, es hora de parar y organizar el equipo entero. En el taller de preventa se vio el caso contrario: una Bot pidió a otras dos que le dijeran qué Bots les faltaban y los creó ella misma.
+
+Al final del día, Lauren pidió a Dr. Eggbot que leyera las conversaciones de todos sus Bots y buscara dónde se atascaba el trabajo. La respuesta fue que el atasco era ella: "Lauren es el bus de interrupciones".
+
+{{live 6:47:16 "Tres personas crean el mismo Bot a la vez"}}
+
+{{live 8:16:47 "Dr. Eggbot busca los atascos del equipo"}}
+
+## module 5 · day 2
+
+El primer prototipo fue HTML desechable, sin login ni base de datos, con paneles de controles deslizantes para cambiar las reglas del juego en tiempo real. "Si el juego no es divertido, lo demás da igual", dijo Lauren. Había que llegar pronto a la parte divertida sin esperar a que el agente acabara cada cambio.
+
+Hubo tropiezos. Lauren pidió una librería CSS de brillos y todas las cartas salieron iguales y "demasiado brillantes"; admitió que había dirigido mal al agente. También cayeron en que el panel de depuración no podía ir en el navegador de un juego competitivo, porque cualquiera lo usaría para hacer trampas desde la consola. Así que separaron cliente y servidor. Cuando los tests empezaron a fallar, los borraron todos. Los escribirían cuando supieran qué querían probar.
+
+Por la tarde, Lauren tenía un agente coordinador en la nube repartiendo trabajo entre cinco agentes más, con otros que verificaban el resultado, mientras el tablero de Notion se movía solo. Así se trabaja en el módulo de ingeniería, dejando el código a los agentes y comprobando lo que hacen.
+
+{{live 1:52:21 "Si el juego no es divertido, lo demás da igual"}}
+
+{{live 7:19:20 "Borran todos los tests para ir más rápido"}}
+
+## module 6 · day 2
+
+Entre bloque y bloque de construcción, el estudio dio paso a gente que ya trabaja así. Marcel, dueño de Icon Coffee, una cafetería con tostadero en Potrero Hill, tiene un Bot jefe de gabinete conectado a la caja. Desde el móvil le pregunta cuánto vendían hace dos años, y le pasó una foto de la carta para ver qué productos apenas salían.
+
+Matthew Berman, que vive de hacer vídeos sobre IA, contó dos casos. Fotografió lo que ya no usaba y dejó que su Bot buscara precios de venta recientes, publicara los anuncios y contestara a los compradores, y así vendió una PlayStation y un MacBook. Otro Bot revisó doce meses de facturas de la luz y le encontró un plan 1.000 dólares más barato al año. Matt Palmer lo resumió así: los problemas personales se parecen mucho a los de una empresa. Regatear en Marketplace es lo mismo que negociar con un proveedor.
+
+Mientras tanto, Ship by Thursday seguía sin clientes. Los casos reales de este módulo salen de esas conversaciones.
+
+{{live d2 4:52:04 "El Bot que vende lo que ya no usas"}}
+
+{{live d2 5:01:16 "Mil dólares al año menos en la factura de la luz"}}
+
+## module 7 · day 2
+
+Los números llegaron con las preguntas del público. Una baraja entera de diapositivas costó entre 20 y 30 dólares frente a cuatro o cinco horas de trabajo. Responder un ticket de soporte de dificultad media costaba 1 o 2 dólares, y agrupando los sencillos con un script bajó a unos 20 céntimos. El consejo más repetido para gastar menos fue lanzar menos routines y decirle al Bot exactamente qué ticket o qué cuenta mirar.
+
+También salieron los límites. Si una herramienta no tiene MCP y no funciona en Linux, un Bot no puede usarla. Algunas webs detectan que es un Bot y lo bloquean. Y Matthew Berman confesó el problema que casi nadie cuenta: "hago más trabajo que nunca y estoy más ocupado que nunca".
+
+El día acabó con el juego conectado a su servidor y el login con X funcionando, aunque todavía no se podían añadir Bots por un fallo. El día 3 tocaba desplegarlo, ponerle nombre y conseguir que jugara el público.
+
+{{live 8:00:40 "Cuánto cuesta responder un ticket"}}
+
+{{live 5:05:22 "Más trabajo hecho, más cansancio"}}
+
+## module 8 · day 2
+
+La primera pizarra del día no hablaba solo del juego. Matt apuntó lo que necesitaría el estudio para ser una empresa de verdad: que la gente descubriera el juego, un correo o incluso un teléfono para atender a los jugadores y quizá leer directamente el chat de X. Por la tarde le preguntaron al becario del equipo, un estudiante de Stanford, qué hace viral un juego. Contestó que el boca a boca y publicar sin parar, en X para los primeros jugadores y en subreddits pequeños pidiendo opinión.
+
+Esas piezas de empresa se vieron a fondo en cuatro talleres del mismo día. En preventa, una Bot probaba la competencia en su ordenador mientras otro leía el código. En prospección, una "tropa" de Bots investigaba 200 empresas en paralelo. En atención al cliente, un Bot respondía tickets, devolvía pagos y avisaba en Slack de lo urgente.
+
+Este módulo recoge esos talleres. Es el trabajo que le esperaba a Ship by Thursday en cuanto el juego tuviera jugadores.
+
+{{live d2 0:24:29 "Un estudio de juegos necesita lo mismo que cualquier empresa"}}
+
+{{live d2 7:35:52 "Gatear, andar y correr con un Bot de soporte"}}

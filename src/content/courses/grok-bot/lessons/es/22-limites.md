@@ -9,14 +9,14 @@ objectives:
   - "Nombrar los límites actuales que afectan al trabajo real y distinguir los documentados de lo dicho en el directo"
   - "Llevar a código las decisiones que siempre tienen que salir igual"
   - "Decidir dónde tiene que seguir una persona y cuándo no conviene usar un Bot"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Confiar al Bot lo que hace mal
 
 Después de veintiuna lecciones sabes montar un equipo de Bots que investiga, redacta, construye e informa. El riesgo ahora es confiarle a ese equipo trabajo que hace mal, o decisiones que nunca deberían salir de manos de una persona.
 
-Esta lección reúne los límites en un solo sitio, explica cómo sortear los que se pueden sortear y cierra el curso.
+Esta lección reúne los límites en un solo sitio, explica cómo sortear los que se pueden sortear y cierra el recorrido principal del curso.
 
 ## Un compañero rápido que a veces se contradice
 
@@ -111,6 +111,11 @@ aprobación antes de enviarla.
 
 El Bot sigue leyendo la solicitud, reuniendo los datos del pedido y redactando la respuesta. La decisión sale de un código que puedes probar.
 
+> [!WARNING]
+> Hay herramientas a las que un Bot no llega. Si no tienen MCP ni funcionan en Linux, que es el sistema de su ordenador, hoy no hay forma de usarlas. Y el límite también está en ti. Con muchos Bots trabajando a la vez aumenta lo que tienes que revisar, y en el directo más de uno reconoció que hacía más trabajo que nunca y estaba más ocupado que nunca.
+
+{{live d2 1:21:08 "Herramientas sin MCP que no funcionan en Linux"}}
+
 ## Falsas zonas de seguridad
 
 - **Tratar Bots distintos como zonas de seguridad separadas.** Un inicio de sesión de un Bot está disponible para todos. *Qué hacer:* no dejes sesiones delicadas en el ordenador, o dale a ese trabajo su propio usuario de Cursor.
@@ -128,7 +133,7 @@ El Bot sigue leyendo la solicitud, reuniendo los datos del pedido y redactando l
 
 ### Adónde ir ahora
 
-Has terminado el curso. La documentación oficial es la referencia que se mantiene al día:
+Has terminado el recorrido principal. Si trabajas en ventas o en atención al cliente, el módulo 8 aplica todo esto a esos equipos. La documentación oficial es la referencia que se mantiene al día:
 
 - [Use cases](https://docs.x.ai/grok-bot/use-cases) para nuevos roles que probar.
 - [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) antes de que un Bot actúe fuera de tu cuenta.

@@ -9,7 +9,7 @@ objectives:
   - "Know what a skill contains and when a task is ready to become one"
   - "Create a skill from a finished task, from written material, or with Teach a task"
   - "Review a draft skill and call it with / in a later conversation"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Tasks that come back every week
@@ -120,6 +120,11 @@ To make that skill safe to reuse, the next move would be to finish the draft: wh
 The same approach suits long, repetitive work in business tools, such as a sales team's steps in Salesforce, a popular CRM.
 
 {{live 6:19:37 "Recording a workflow on the Bot's computer"}}
+
+> [!TIP]
+> Every time you see a Bot reason badly, add a line to the skill instead of correcting it and moving on. Write the principle, not the case. A skill built from every detail of one mistake ends up full of examples that no longer help.
+
+{{live d2 3:36:21 "Why a skill built from one mistake goes bad"}}
 
 ## Skills saved too early
 

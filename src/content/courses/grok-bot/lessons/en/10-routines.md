@@ -10,7 +10,7 @@ objectives:
   - "Write a routine request with an owner, schedule, inputs, result, boundary and a plan for missing data"
   - "Use Test run, pause a routine and read its run history"
   - "Choose a frequency or trigger that does not waste usage"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Requests you type every morning
@@ -112,6 +112,11 @@ The owner is Ashley, because you ask in Ashley's conversation. The other five po
 A counterexample from the same day: an engineering Bot was asked for a routine that checked on its coding agents in the cloud (lesson 15) every five minutes during an urgent fix. That made sense during the emergency. Left running, it is 288 runs a day.
 
 {{live 4:26:37 "An urgent routine that checks agents every five minutes"}}
+
+> [!TIP]
+> A routine can also fire when something changes in another tool. In the prospecting workshop, when an account moved to a new stage in the CRM, a routine took its contacts out of the email sequence. A salesperson from the sales workshop gave a rule for schedules: one or two a day, because more ends up as noise.
+
+{{live d2 6:18:32 "A routine that fires when the CRM changes"}}
 
 ## Automating what never worked
 

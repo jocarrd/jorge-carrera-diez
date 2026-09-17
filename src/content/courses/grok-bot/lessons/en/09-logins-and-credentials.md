@@ -10,7 +10,7 @@ objectives:
   - "Explain why a login made for one Bot is available to all your Bots"
   - "Tell a secure secret request apart from ordinary chat, and know what never goes in a message"
   - "Clean up logins and local access when a project ends"
-updated: "2026-09-16"
+updated: "2026-09-17"
 ---
 
 ## Work behind a login screen
@@ -99,6 +99,11 @@ Next week, a second Bot that prepares your Monday report opens the same dashboar
 ```prompt
 If a website asks you to sign in again or shows a verification check, stop and ask me to take over. Never try to get around the check.
 ```
+
+> [!NOTE]
+> On day 2 of the livestream, a Grok Bot integration with 1Password was announced. It isn't in the official docs this course uses, downloaded on 16 September. If your app already has it, use it so secrets never go through chat.
+
+{{live d2 7:03:35 "The 1Password integration, announced live"}}
 
 ## Secrets pasted into chat
 
