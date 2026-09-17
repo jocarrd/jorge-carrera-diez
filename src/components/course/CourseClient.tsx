@@ -94,7 +94,16 @@ export function Syllabus({
                 {done}/{items.length}
               </span>
             </div>
-            <p className="syllabus-module-title">{module.title}</p>
+            {!compact && items[0] ? (
+              <Link href={items[0].href} className="syllabus-module-title syllabus-module-link">
+                {module.title}
+                <span className="syllabus-module-start">
+                  {copy.syllabusStart} <span aria-hidden="true">→</span>
+                </span>
+              </Link>
+            ) : (
+              <p className="syllabus-module-title">{module.title}</p>
+            )}
             <ol className="syllabus-lessons">
               {items.map((lesson) => {
                 const isDone = progress.completed.includes(lesson.id);
@@ -192,4 +201,64 @@ export function ReadingProgress() {
     };
   }, []);
   return <div className="reading-progress" style={{ transform: `scaleX(${value})` }} aria-hidden="true" />;
+}
+
+export type DiaryNavItem = { anchor: string; label: string; note?: string; live?: boolean };
+
+/** Barra fija del diario: saltar entre días y volver al temario sin subir hasta arriba. */
+export function DiaryNav({
+  items,
+  label,
+  syllabusHref,
+  syllabusLabel,
+  shortSyllabusLabel,
+}: {
+  items: DiaryNavItem[];
+  label: string;
+  syllabusHref: string;
+  syllabusLabel: string;
+  shortSyllabusLabel: string;
+}) {
+  const [active, setActive] = useState(items[0]?.anchor);
+  const listRef = useRef<HTMLOListElement>(null);
+
+  // En el móvil la fila de días se desliza: el día activo tiene que quedar a la vista.
+  useEffect(() => {
+    const link = listRef.current?.querySelector<HTMLElement>(".is-active");
+    const list = listRef.current;
+    if (!link || !list) return;
+    list.scrollTo({ left: link.offsetLeft - 8, behavior: "smooth" });
+  }, [active]);
+
+  useEffect(() => {
+    const sections = items.map((i) => document.getElementById(i.anchor)).filter((e): e is HTMLElement => !!e);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-20% 0px -70% 0px" },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [items]);
+
+  return (
+    <nav className="diary-nav" aria-label={label}>
+      <ol ref={listRef} className="diary-nav-days">
+        {items.map((item) => (
+          <li key={item.anchor}>
+            <a href={`#${item.anchor}`} className={active === item.anchor ? "is-active" : undefined} aria-current={active === item.anchor ? "true" : undefined}>
+              {item.label}
+              {item.note ? <span className={`diary-nav-note ${item.live ? "is-live" : ""}`}>{item.note}</span> : null}
+            </a>
+          </li>
+        ))}
+      </ol>
+      <Link href={syllabusHref} className="diary-nav-syllabus">
+        <span className="diary-nav-syllabus-long">{syllabusLabel}</span>
+        <span className="diary-nav-syllabus-short">{shortSyllabusLabel}</span> <span aria-hidden="true">→</span>
+      </Link>
+    </nav>
+  );
 }

@@ -5,6 +5,7 @@ import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
+import { DiaryNav } from "@/components/course/CourseClient";
 import { getCourse, getStory } from "@/lib/courses/load";
 
 export function dayAnchor(locale: Locale, day: number) {
@@ -20,6 +21,9 @@ export function DiaryView({ locale }: { locale: Locale }) {
   const story = getStory(locale);
   const { lessons } = getCourse(locale);
   const courseHref = routePath(locale, "grokBotCourse");
+  const syllabusHref = `${courseHref}#temario`;
+  const firstLessonHref = lessonPath(locale, lessons[0].slug);
+  const shownParts = grokBotCourse.parts.filter((part) => story.some((d) => d.day === part.number) || part.status === "processing");
   const url = new URL(routePath(locale, "grokBotDiary"), site.url).toString();
 
   const jsonLd = {
@@ -45,11 +49,31 @@ export function DiaryView({ locale }: { locale: Locale }) {
             </p>
             <h1 className="lesson-title">{copy.diaryTitle}</h1>
             <p className="lesson-description">{copy.diaryIntro}</p>
+            <div className="diary-actions">
+              <Link href={firstLessonHref} className="course-start-button">
+                {copy.diaryStartCourse} <span aria-hidden="true">→</span>
+              </Link>
+              <Link href={syllabusHref} className="diary-secondary">
+                {copy.diarySeeSyllabus}
+              </Link>
+            </div>
           </header>
 
-          {grokBotCourse.parts.map((part) => {
+          <DiaryNav
+            label={copy.diaryDaysNav}
+            syllabusHref={syllabusHref}
+            syllabusLabel={copy.diarySeeSyllabus}
+            shortSyllabusLabel={copy.syllabus}
+            items={shownParts.map((part) => ({
+              anchor: dayAnchor(locale, part.number),
+              label: `${copy.dayLabel} ${part.number}`,
+              note: part.status === "processing" ? copy.diaryLive : formatDay(locale, part.date),
+              live: part.status === "processing",
+            }))}
+          />
+
+          {shownParts.map((part) => {
             const day = story.find((d) => d.day === part.number);
-            if (!day && part.status !== "processing") return null;
             return (
               <section key={part.number} id={dayAnchor(locale, part.number)} className="diary-day">
                 <p className="diary-day-eyebrow">
@@ -68,17 +92,30 @@ export function DiaryView({ locale }: { locale: Locale }) {
                             {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
                           </h3>
                           <div className="lesson-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
-                          <p className="diary-learn">
-                            {copy.learnIn}{" "}
-                            {related.map((lesson, i) => (
-                              <span key={lesson.id}>
-                                <Link href={lessonPath(locale, lesson.slug)}>
-                                  {lesson.id} {lesson.title}
-                                </Link>
-                                {i < related.length - 1 ? " · " : ""}
-                              </span>
-                            ))}
-                          </p>
+                          {related.length > 0 ? (
+                            <aside className="diary-module-card" aria-label={copy.diaryLearnTitle}>
+                              <p className="diary-module-eyebrow">{copy.diaryLearnTitle}</p>
+                              <p className="diary-module-name">
+                                {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                              </p>
+                              <ol className="diary-module-lessons">
+                                {related.map((lesson) => (
+                                  <li key={lesson.id}>
+                                    <Link href={lessonPath(locale, lesson.slug)}>
+                                      <span className="diary-module-lesson-number">{lesson.id}</span>
+                                      <span className="diary-module-lesson-title">{lesson.title}</span>
+                                      <span className="diary-module-lesson-minutes">
+                                        {lesson.minutes} {copy.minutesLabel}
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ol>
+                              <Link href={lessonPath(locale, related[0].slug)} className="diary-module-start">
+                                {copy.moduleStart} {storyModule.number} <span aria-hidden="true">→</span>
+                              </Link>
+                            </aside>
+                          ) : null}
                         </div>
                       );
                     })}
@@ -93,11 +130,20 @@ export function DiaryView({ locale }: { locale: Locale }) {
             );
           })}
 
-          <p className="diary-back">
-            <Link href={courseHref} className="course-start-button">
-              {copy.start} <span aria-hidden="true">→</span>
-            </Link>
-          </p>
+          <section className="diary-end" aria-labelledby="del-diario-al-curso">
+            <h2 id="del-diario-al-curso" className="diary-end-title">
+              {copy.diaryEndTitle}
+            </h2>
+            <p className="diary-end-text">{copy.diaryEndText}</p>
+            <div className="diary-actions">
+              <Link href={firstLessonHref} className="course-start-button">
+                {copy.diaryStartCourse} <span aria-hidden="true">→</span>
+              </Link>
+              <Link href={syllabusHref} className="diary-secondary">
+                {copy.diarySeeSyllabus}
+              </Link>
+            </div>
+          </section>
         </article>
       </Container>
     </main>

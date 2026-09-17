@@ -5068,7 +5068,8 @@ a {
   margin-top: 4.5rem;
   padding-top: 3rem;
   border-top: 1px solid var(--line);
-  scroll-margin-top: calc(var(--header-h) + 1rem);
+  /* Deja sitio a la barra fija de días al saltar a un ancla. */
+  scroll-margin-top: 5rem;
 }
 
 .diary-day-title {
@@ -5100,30 +5101,12 @@ a {
   margin-top: 0.75rem;
 }
 
-.diary-learn {
-  margin-top: 1.25rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.6;
-}
-
-.diary-learn a {
-  color: var(--foreground);
-  text-decoration: underline;
-  text-decoration-color: var(--line-strong);
-  text-underline-offset: 3px;
-}
-
 .diary-pending {
   display: flex;
   align-items: center;
   gap: 0.625rem;
   margin-top: 1rem;
   color: var(--muted);
-}
-
-.diary-back {
-  margin-top: 3.5rem;
 }
 
 @media (min-width: 768px) {
@@ -5145,4 +5128,256 @@ a {
 .lesson-title,
 .course-subtitle {
   text-wrap: balance;
+}
+
+/* Diario: llegar al curso desde cualquier punto de la historia */
+.diary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.diary-secondary {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  padding: 0 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: border-color var(--dur-rapida) var(--ease), background var(--dur-rapida) var(--ease);
+}
+
+.diary-secondary:hover {
+  border-color: var(--muted-strong);
+  background: var(--panel-strong);
+}
+
+.diary-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2.5rem -22px 0;
+  padding: 0.625rem 22px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+@media (min-width: 640px) {
+  .diary-nav {
+    margin: 2.5rem 0 0;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    top: 0.75rem;
+  }
+}
+
+.diary-nav-days {
+  display: flex;
+  flex: 1;
+  gap: 0.375rem;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.diary-nav-days::-webkit-scrollbar {
+  display: none;
+}
+
+.diary-nav-days li {
+  flex: none;
+}
+
+.diary-nav-days a {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.875rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background var(--dur-rapida) var(--ease), color var(--dur-rapida) var(--ease);
+}
+
+.diary-nav-days a:hover {
+  color: var(--foreground);
+}
+
+.diary-nav-days a.is-active {
+  background: rgba(251, 146, 60, 0.14);
+  color: #fdba74;
+}
+
+.diary-nav-note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--muted-strong);
+}
+
+/* En el móvil la fecha no cabe: los días se reconocen por su número. */
+@media (max-width: 639px) {
+  .diary-nav-note:not(.is-live),
+  .diary-nav-syllabus-long {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .diary-nav-syllabus-short {
+    display: none;
+  }
+}
+
+.diary-nav-note.is-live {
+  color: #f87171;
+}
+
+.diary-nav-days a.is-active .diary-nav-note {
+  color: rgba(253, 186, 116, 0.8);
+}
+
+.diary-nav-syllabus {
+  flex: none;
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.diary-module-card {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.25rem 1.125rem;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  border-radius: var(--radius-card-lg);
+  background: rgba(251, 146, 60, 0.05);
+}
+
+.diary-module-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.diary-module-name {
+  margin-top: 0.375rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.diary-module-lessons {
+  margin-top: 0.75rem;
+}
+
+.diary-module-lessons a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0.375rem 0.625rem;
+  margin: 0 -0.625rem;
+  border-radius: var(--radius-inner);
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: background var(--dur-rapida) var(--ease);
+}
+
+.diary-module-lessons a:hover {
+  background: rgba(251, 146, 60, 0.1);
+}
+
+.diary-module-lesson-number,
+.diary-module-lesson-minutes {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.diary-module-start {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.875rem;
+  padding: 0 1.125rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: opacity var(--dur-rapida) var(--ease);
+}
+
+.diary-module-start:hover {
+  opacity: 0.88;
+}
+
+.diary-end {
+  margin-top: 4.5rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card-lg);
+  background: var(--panel);
+}
+
+.diary-end-title {
+  font-size: clamp(1.625rem, 3vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.diary-end-text {
+  margin-top: 0.75rem;
+  color: #c4c4c4;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Temario de la portada: el nombre del módulo lleva a su primera lección */
+.syllabus-module-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--foreground);
+}
+
+.syllabus-module-start {
+  flex: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--accent-text);
+  transition: transform var(--dur-rapida) var(--ease);
+}
+
+.syllabus-module-link:hover .syllabus-module-start {
+  transform: translateX(3px);
 }
