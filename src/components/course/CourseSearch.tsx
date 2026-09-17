@@ -16,13 +16,22 @@ export function CourseSearch({ entries, labels }: { entries: SearchEntry[]; labe
   const [query, setQuery] = useState("");
   const indexed = useMemo(() => entries.map((e) => ({ ...e, haystack: normalize(`${e.title} ${e.text}`) })), [entries]);
   const words = normalize(query).split(/\s+/).filter((w) => w.length > 1);
+  // Puntúa por palabras encontradas, y más si están en el título: con varias
+  // palabras no hace falta que estén todas para dar algo útil.
   const results =
     words.length === 0
       ? []
       : indexed
-          .filter((e) => words.every((w) => e.haystack.includes(w)))
-          .sort((a, b) => Number(words.some((w) => !normalize(a.title).includes(w))) - Number(words.some((w) => !normalize(b.title).includes(w))))
-          .slice(0, 8);
+          .map((e) => {
+            const title = normalize(e.title);
+            const score = words.reduce((sum, w) => sum + (title.includes(w) ? 3 : e.haystack.includes(w) ? 1 : 0), 0);
+            const all = words.every((w) => e.haystack.includes(w));
+            return { e, score: score + (all ? 10 : 0) };
+          })
+          .filter((r) => r.score > 0)
+          .sort((a, b) => b.score - a.score || Number(a.e.kind !== "lesson") - Number(b.e.kind !== "lesson"))
+          .slice(0, 8)
+          .map((r) => r.e);
 
   return (
     <div className="course-search" role="search">

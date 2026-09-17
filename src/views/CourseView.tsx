@@ -21,7 +21,9 @@ function searchEntries(locale: Locale): SearchEntry[] {
     const href = lessonPath(locale, summary.slug);
     const label = `${copy.lessonLabel} ${lesson.id}`;
     entries.push({ kind: "lesson", title: lesson.title, context: label, href, text: lesson.description });
-    for (const t of lesson.toc) entries.push({ kind: "section", title: t.text, context: `${label} · ${lesson.title}`, href: `${href}#${t.id}`, text: "" });
+    // Una sección también se encuentra por el tema de su lección: «soporte» debe dar las secciones de la 25.
+    for (const t of lesson.toc)
+      entries.push({ kind: "section", title: t.text, context: `${label} · ${lesson.title}`, href: `${href}#${t.id}`, text: `${lesson.title} ${lesson.description}` });
   }
   for (const g of glossary)
     entries.push({ kind: "term", title: g.term[locale], context: copy.glossaryTitle, href: `${routePath(locale, "grokBotGlossary")}#${g.id}`, text: g.definition[locale] });
