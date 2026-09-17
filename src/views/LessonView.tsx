@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Container } from "@/components/ui";
 import { LessonSource } from "@/components/course/CourseStatus";
-import { LessonTracker, ReadingProgress, Syllabus } from "@/components/course/CourseClient";
+import { LessonTracker, NextUp, ReadingProgress, Syllabus } from "@/components/course/CourseClient";
 import { LessonDock } from "@/components/course/LessonDock";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
@@ -171,7 +171,34 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
             />
 
             <footer className="lesson-footer">
-              <LessonTracker courseId={grokBotCourse.id} lessonId={lesson.id} copy={copy} />
+              <NextUp
+                courseId={grokBotCourse.id}
+                lessonId={lesson.id}
+                lessonModule={lesson.ref.module}
+                courseHref={courseHref}
+                copy={copy}
+                next={
+                  next
+                    ? {
+                        href: lessonPath(locale, next.slug),
+                        title: next.title,
+                        description: next.description,
+                        minutes: next.minutes,
+                        id: next.id,
+                        module: next.ref.module,
+                        moduleTitle: `${copy.moduleLabel} ${next.ref.module} · ${grokBotCourse.modules.find((m) => m.number === next.ref.module)!.title[locale]}`,
+                      }
+                    : null
+                }
+              />
+              <div className="lesson-footer-row">
+                <LessonTracker courseId={grokBotCourse.id} lessonId={lesson.id} copy={copy} />
+                {previous ? (
+                  <Link href={lessonPath(locale, previous.slug)} className="lesson-previous">
+                    ← {copy.previous}: {previous.title}
+                  </Link>
+                ) : null}
+              </div>
               <aside className="lesson-follow" aria-label={copy.followTitle}>
                 <div>
                   <p className="lesson-follow-title">{copy.followTitle}</p>
@@ -192,27 +219,6 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   {copy.followButton}
                 </a>
               </aside>
-              <div className="lesson-pager">
-                {previous ? (
-                  <Link href={lessonPath(locale, previous.slug)} className="lesson-pager-link">
-                    <span className="lesson-pager-label">← {copy.previous}</span>
-                    <span className="lesson-pager-title">{previous.title}</span>
-                  </Link>
-                ) : (
-                  <span />
-                )}
-                {next ? (
-                  <Link href={lessonPath(locale, next.slug)} className="lesson-pager-link lesson-pager-link--next">
-                    <span className="lesson-pager-label">{copy.next} →</span>
-                    <span className="lesson-pager-title">{next.title}</span>
-                  </Link>
-                ) : (
-                  <Link href={courseHref} className="lesson-pager-link lesson-pager-link--next">
-                    <span className="lesson-pager-label">{copy.finish}</span>
-                    <span className="lesson-pager-title">{copy.backToCourse}</span>
-                  </Link>
-                )}
-              </div>
             </footer>
           </article>
         </div>
