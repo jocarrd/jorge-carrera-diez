@@ -5381,3 +5381,109 @@ a {
 .syllabus-module-link:hover .syllabus-module-start {
   transform: translateX(3px);
 }
+
+/* 404 de toda la web */
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.not-found-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  margin: 1rem 22px 0;
+  font-weight: 600;
+}
+
+.not-found-brand svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.not-found {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 18vh 22px 6rem;
+}
+
+.not-found-title {
+  margin-top: 0.75rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.not-found-text {
+  margin: 1rem 0 2rem;
+  color: #c4c4c4;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.not-found-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 2rem;
+}
+
+.not-found-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+}
+
+.not-found-links a:hover {
+  color: var(--foreground);
+}
+
+/* Objetivos táctiles de 44 px en los enlaces sueltos del curso */
+.course-diary-link a,
+.course-status-story,
+.course-author-links a,
+.course-unofficial a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+.course-diary-link a {
+  margin-top: 0.75rem;
+}
+
+/* En pantallas táctiles el ancla invisible de los titulares solo estorba al tocar */
+@media (hover: none) {
+  .lesson-anchor {
+    display: none;
+  }
+}
+
+/* Etiquetas en mayúsculas del curso: nunca por debajo de 12 px */
+.course-page .t-eyebrow,
+.lesson-page .t-eyebrow,
+.diary-page .t-eyebrow {
+  font-size: 0.75rem;
+}
+
+/* En el móvil la portada repite el título con letra ilegible: el temario sube */
+@media (max-width: 639px) {
+  .course-cover {
+    display: none;
+  }
+
+  .course-syllabus {
+    margin-top: 3rem;
+  }
+}
