@@ -90,6 +90,9 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
 
             <header className="lesson-header">
               <p className="t-eyebrow">
+                <span className="lesson-eyebrow-module">
+                  {lessonModule.number === 0 ? copy.introModule : `${copy.moduleLabel} ${lessonModule.number}`} ·{" "}
+                </span>
                 {copy.lessonLabel} {lesson.id}
               </p>
               <h1 className="lesson-title">{lesson.title}</h1>
@@ -103,17 +106,31 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
             </header>
 
-            {story.map((segment) => (
-              <section key={segment.day} className="lesson-story" aria-label={copy.storyLabel}>
-                <p className="lesson-story-eyebrow">
-                  {copy.storyLabel} · {copy.dayLabel} {segment.day}
-                </p>
-                <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
-                <Link href={`${diaryHref}#${dayAnchor(locale, segment.day)}`} className="lesson-story-link">
-                  {copy.diaryDayLink} →
-                </Link>
+            {story.length > 0 ? (
+              <section className="lesson-story" aria-label={copy.storyLabel}>
+                <p className="lesson-story-eyebrow">{copy.storyLabel}</p>
+                {story.map((segment) => {
+                  // Se ve el primer párrafo de cada día y el resto se despliega: con dos
+                  // días la historia empujaba la lección varias pantallas hacia abajo.
+                  const cut = segment.html.indexOf("</p>") + 4;
+                  return (
+                    <div key={segment.day} className="lesson-story-day">
+                      <p className="lesson-story-day-label">
+                        {copy.dayLabel} {segment.day}
+                      </p>
+                      <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html.slice(0, cut) }} />
+                      <details className="lesson-story-more">
+                        <summary>{copy.storyMore}</summary>
+                        <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html.slice(cut) }} />
+                        <Link href={`${diaryHref}#${dayAnchor(locale, segment.day)}`} className="lesson-story-link">
+                          {copy.diaryDayLink} →
+                        </Link>
+                      </details>
+                    </div>
+                  );
+                })}
               </section>
-            ))}
+            ) : null}
 
             <section className="lesson-objectives" aria-label={copy.objectives}>
               <p className="lesson-objectives-title">{copy.objectives}</p>
