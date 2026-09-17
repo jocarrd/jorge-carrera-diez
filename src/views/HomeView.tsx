@@ -3,6 +3,7 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { BigStat } from "@/components/home/BigStat";
 import { AiPreview } from "@/components/home/AiPreview";
 import { ContactCta } from "@/components/home/ContactCta";
+import { CoursePreview } from "@/components/home/CoursePreview";
 import { CurrentRoleSection } from "@/components/home/CurrentRoleSection";
 import { ExperiencePreview } from "@/components/home/ExperiencePreview";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -41,6 +42,7 @@ export function HomeView({ locale }: { locale: Locale }) {
       <SnowyShowcase locale={locale} />
       <BigStat locale={locale} />
       <AiPreview locale={locale} />
+      <CoursePreview locale={locale} />
       <ExperiencePreview locale={locale} />
       <AboutSection locale={locale} />
       <ContactCta locale={locale} />

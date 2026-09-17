@@ -5858,3 +5858,186 @@ details.lesson-objectives ul {
 .course-progress-left {
   color: var(--muted-strong);
 }
+
+/* Glosario */
+.glossary-list {
+  margin-top: 2.5rem;
+}
+
+.glossary-entry {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 5rem;
+}
+
+.glossary-entry:target {
+  margin: 0 -1rem;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-card);
+  background: rgba(251, 146, 60, 0.08);
+}
+
+.glossary-entry dt {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.glossary-entry dd p {
+  margin-top: 0.5rem;
+  color: #dedede;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.glossary-lesson {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--accent-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.course-diary-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+}
+
+/* Términos del glosario dentro de las lecciones */
+.lesson-term {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: rgba(251, 146, 60, 0.8);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  cursor: help;
+}
+
+.lesson-term-pop {
+  position: fixed;
+  inset: auto 0.75rem calc(0.75rem + env(safe-area-inset-bottom)) 0.75rem;
+  width: auto;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1.125rem 1.25rem;
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  border-radius: 1rem;
+  background: #16120e;
+  color: #dedede;
+  font-size: 1rem;
+  line-height: 1.55;
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.85);
+}
+
+.lesson-term-pop::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.lesson-term-pop strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #fdba74;
+  font-weight: 600;
+}
+
+.lesson-term-pop a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.syllabus-module {
+  scroll-margin-top: 1.5rem;
+}
+
+.syllabus-module:target {
+  border-color: rgba(251, 146, 60, 0.55);
+}
+
+.diary-segment-title a:hover {
+  color: var(--accent-text);
+}
+
+.diary-moments {
+  display: grid;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.diary-moments a {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-inner);
+  background: rgba(251, 146, 60, 0.1);
+  color: #fdba74;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.diary-moments-label {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* Bloque del curso en la home */
+.home-course {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card-lg);
+  background: var(--panel);
+}
+
+@media (min-width: 768px) {
+  .home-course {
+    grid-template-columns: minmax(0, 420px) 1fr;
+    gap: 2.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.home-course-cover {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.home-course-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-course-title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.625rem, 3vw, 2.125rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.home-course-text {
+  margin-top: 0.75rem;
+  color: #c4c4c4;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.home-course .course-start {
+  margin-top: 1.5rem;
+}

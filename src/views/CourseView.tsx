@@ -81,6 +81,7 @@ export function CourseView({ locale }: { locale: Locale }) {
           <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
           <p className="course-diary-link">
             <Link href={routePath(locale, "grokBotDiary")}>{copy.diaryLink} →</Link>
+            <Link href={routePath(locale, "grokBotGlossary")}>{copy.glossaryLink} →</Link>
           </p>
         </header>
 

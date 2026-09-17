@@ -6,7 +6,25 @@ import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
 import { DiaryNav } from "@/components/course/CourseClient";
-import { getCourse, getStory } from "@/lib/courses/load";
+import { getCourse, getLesson, getStory } from "@/lib/courses/load";
+
+type Moment = { lessonId: string; lessonTitle: string; href: string; section: string };
+
+// Un momento del directo que sale en la historia y también en una lección se
+// enlaza a la sección exacta de esa lección: se reconoce por el mismo enlace al vídeo.
+function momentsByVideoLink(locale: Locale): Map<string, Moment> {
+  const map = new Map<string, Moment>();
+  for (const summary of getCourse(locale).lessons) {
+    const lesson = getLesson(locale, summary.slug)!;
+    let section = { id: "", text: "" };
+    for (const match of lesson.html.matchAll(/<h2 id="([^"]+)">[\s\S]*?<\/h2>|<a class="live-chip" href="([^"]+)"/g)) {
+      if (match[1]) section = { id: match[1], text: lesson.toc.find((t) => t.id === match[1])?.text ?? "" };
+      else if (match[2] && section.id && !map.has(match[2]))
+        map.set(match[2], { lessonId: lesson.id, lessonTitle: lesson.title, href: `${lessonPath(locale, summary.slug)}#${section.id}`, section: section.text });
+    }
+  }
+  return map;
+}
 
 export function dayAnchor(locale: Locale, day: number) {
   return `${locale === "es" ? "dia" : "day"}-${day}`;
@@ -23,6 +41,8 @@ export function DiaryView({ locale }: { locale: Locale }) {
   const courseHref = routePath(locale, "grokBotCourse");
   const syllabusHref = `${courseHref}#temario`;
   const firstLessonHref = lessonPath(locale, lessons[0].slug);
+  const moments = momentsByVideoLink(locale);
+  const moduleAnchor = (n: number) => `${courseHref}#${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${n}`;
   const shownParts = grokBotCourse.parts.filter((part) => story.some((d) => d.day === part.number) || part.status === "processing");
   const url = new URL(routePath(locale, "grokBotDiary"), site.url).toString();
 
@@ -89,7 +109,9 @@ export function DiaryView({ locale }: { locale: Locale }) {
                       return (
                         <div key={segment.module} className="diary-segment">
                           <h3 className="diary-segment-title">
-                            {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                            <Link href={moduleAnchor(storyModule.number)}>
+                              {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                            </Link>
                           </h3>
                           <div className="lesson-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
                           {related.length > 0 ? (
@@ -98,6 +120,23 @@ export function DiaryView({ locale }: { locale: Locale }) {
                               <p className="diary-module-name">
                                 {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
                               </p>
+                              {(() => {
+                                const seen = [...segment.html.matchAll(/<a class="live-chip" href="([^"]+)"/g)]
+                                  .map((m) => moments.get(m[1]))
+                                  .filter((m): m is Moment => !!m);
+                                if (seen.length === 0) return null;
+                                return (
+                                  <ul className="diary-moments">
+                                    {seen.map((moment) => (
+                                      <li key={moment.href}>
+                                        <Link href={moment.href}>
+                                          <span className="diary-moments-label">{copy.momentIn}</span> {moment.lessonId} · {moment.section}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                );
+                              })()}
                               <ol className="diary-module-lessons">
                                 {related.map((lesson) => (
                                   <li key={lesson.id}>

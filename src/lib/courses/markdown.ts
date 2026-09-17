@@ -77,6 +77,8 @@ type RenderOptions = {
   // Enlaces para las menciones a otras lecciones y módulos dentro del texto.
   lessonHref: (id: string) => string | null;
   moduleHref: (module: number) => string | null;
+  // Términos del glosario: la primera aparición en la lección abre su definición.
+  glossary?: { id: string; term: string; forms: string[]; definition: string; href: string; seeLabel: string }[];
   labels: { copy: string; prompt: string; live: string };
   calloutLabels: Record<"NOTE" | "TIP" | "WARNING", string>;
 };
@@ -138,6 +140,7 @@ export function renderLesson(body: string, options: RenderOptions): { html: stri
   let html = marked.parse(body, { async: false }) as string;
 
   html = linkCrossReferences(html, options);
+  if (options.glossary?.length) html = markGlossaryTerms(html, options.glossary);
 
   // Callouts con la sintaxis de GitHub: > [!TIP] en la primera línea de la cita.
   html = html.replace(
@@ -178,6 +181,48 @@ function linkCrossReferences(html: string, options: RenderOptions): string {
           return `${link(options.lessonHref(first), `${word} ${first}`)}${tail}`;
         })
         .replace(MODULE_REF, (whole, word: string, n: string) => link(options.moduleHref(Number(n)), whole));
+    })
+    .join("");
+}
+
+const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// Tampoco se marcan términos en negrita: ahí suelen ser etiquetas de la interfaz.
+const TERM_SKIP = new Set([...SKIP, "strong", "summary"]);
+
+function markGlossaryTerms(html: string, terms: NonNullable<RenderOptions["glossary"]>): string {
+  const pending = new Map(terms.map((t) => [t.id, t]));
+  const open: string[] = [];
+  let bodyStarted = false;
+  return html
+    .split(/(<[^>]+>)/)
+    .map((part) => {
+      const tag = part.match(/^<(\/)?([a-z0-9]+)/i);
+      if (tag) {
+        const name = tag[2].toLowerCase();
+        if (TERM_SKIP.has(name) && !part.endsWith("/>")) {
+          if (tag[1]) open.splice(open.lastIndexOf(name), 1);
+          else open.push(name);
+        }
+        // Lo que va antes del primer titular es la entradilla de la lección: se deja limpia.
+        if (!tag[1] && name === "h2") bodyStarted = true;
+        return part;
+      }
+      if (!bodyStarted || open.length > 0 || !part.trim() || pending.size === 0) return part;
+      let text = part;
+      for (const term of [...pending.values()]) {
+        const re = new RegExp(`(^|[^\\p{L}\\p{N}-])(${term.forms.map(escapeRegex).join("|")})(?=$|[^\\p{L}\\p{N}-])`, "iu");
+        const m = text.match(re);
+        if (!m || m.index === undefined) continue;
+        const start = m.index + m[1].length;
+        const word = m[2];
+        const popId = `termino-${term.id}`;
+        const button = `<button type="button" class="lesson-term" popovertarget="${popId}">${word}</button><span id="${popId}" popover class="lesson-term-pop"><strong>${escapeHtml(term.term)}</strong> ${escapeHtml(term.definition)} <a href="${term.href}">${escapeHtml(term.seeLabel)} →</a></span>`;
+        text = text.slice(0, start) + button + text.slice(start + word.length);
+        pending.delete(term.id);
+        // El texto ya lleva etiquetas: el resto de términos esperan al siguiente trozo.
+        break;
+      }
+      return text;
     })
     .join("");
 }

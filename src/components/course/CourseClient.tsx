@@ -76,6 +76,7 @@ export function Syllabus({
 }) {
   const { progress } = useCourseProgress(courseId);
   const listRef = useRef<HTMLOListElement>(null);
+  const moduleAnchorPrefix = copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   // En la barra lateral, la lección actual tiene que verse sin buscarla: se centra dentro de su caja, sin mover la página.
   useEffect(() => {
@@ -93,7 +94,11 @@ export function Syllabus({
         const items = lessons.filter((l) => l.module === module.number);
         const done = items.filter((l) => progress.completed.includes(l.id)).length;
         return (
-          <li key={module.number} className={`syllabus-module ${module.number === 0 ? "syllabus-module--intro" : ""}`}>
+          <li
+            key={module.number}
+            id={compact ? undefined : `${moduleAnchorPrefix}-${module.number}`}
+            className={`syllabus-module ${module.number === 0 ? "syllabus-module--intro" : ""}`}
+          >
             <div className="syllabus-module-head">
               <span className="syllabus-module-number">
                 {module.number === 0 ? copy.introModule : `${copy.moduleLabel} ${module.number}`}

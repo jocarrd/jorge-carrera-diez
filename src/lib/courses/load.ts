@@ -2,7 +2,8 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Locale } from "@/i18n/config";
 import { grokBotCourse, type CourseLessonRef } from "@/content/courses/grok-bot/meta";
-import { lessonPath } from "@/i18n/routes";
+import { lessonPath, routePath } from "@/i18n/routes";
+import { glossary } from "@/content/courses/grok-bot/glossary";
 import { parseFrontMatter, renderLesson, type LessonFrontMatter, type TocEntry } from "./markdown";
 
 export type LessonSummary = LessonFrontMatter & { slug: string; ref: CourseLessonRef };
@@ -57,6 +58,14 @@ export function getLesson(locale: Locale, slug: string): Lesson | null {
     day: 1,
     dayLabel: copy.dayLabel,
     ...crossLinks(locale),
+    glossary: glossary.map((entry) => ({
+      id: entry.id,
+      term: entry.term[locale],
+      forms: entry.forms[locale],
+      definition: entry.definition[locale],
+      href: `${routePath(locale, "grokBotGlossary")}#${entry.id}`,
+      seeLabel: copy.glossarySee,
+    })),
     labels: { copy: copy.copy, prompt: copy.prompt, live: copy.live },
     calloutLabels: CALLOUTS[locale],
   });
