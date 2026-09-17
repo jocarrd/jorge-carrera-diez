@@ -81,6 +81,7 @@ export function CourseView({ locale }: { locale: Locale }) {
           <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
           <p className="course-diary-link">
             <Link href={routePath(locale, "grokBotDiary")}>{copy.diaryLink} →</Link>
+            <Link href={routePath(locale, "grokBotGlossary")}>{copy.glossaryLink} →</Link>
           </p>
         </header>
 
@@ -95,6 +96,15 @@ export function CourseView({ locale }: { locale: Locale }) {
           />
         </figure>
 
+        <section className="course-syllabus" aria-labelledby="temario">
+          <h2 id="temario" className="t-block">
+            {copy.syllabus}
+          </h2>
+          <Syllabus courseId={grokBotCourse.id} modules={clientModules} lessons={clientLessons} copy={copy} />
+        </section>
+
+        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} diaryHref={routePath(locale, "grokBotDiary")} />
+
         <section className="course-features" aria-labelledby="como-funciona">
           <h2 id="como-funciona" className="t-block">
             {copy.featuresTitle}
@@ -107,15 +117,6 @@ export function CourseView({ locale }: { locale: Locale }) {
               </li>
             ))}
           </ul>
-        </section>
-
-        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} diaryHref={routePath(locale, "grokBotDiary")} />
-
-        <section className="course-syllabus" aria-labelledby="temario">
-          <h2 id="temario" className="t-block">
-            {copy.syllabus}
-          </h2>
-          <Syllabus courseId={grokBotCourse.id} modules={clientModules} lessons={clientLessons} copy={copy} />
         </section>
 
         <section className="course-author" aria-labelledby="autor">

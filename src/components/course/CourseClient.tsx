@@ -1,12 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import { track } from "@vercel/analytics";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { CourseCopy } from "@/content/courses/grok-bot/meta";
 import { useCourseProgress } from "./progress";
 
 export type ClientLesson = { id: string; title: string; href: string; minutes: number; module: number };
 export type ClientModule = { number: number; title: string; level: string };
+
+function formatMinutes(minutes: number) {
+  if (minutes < 60) return `${minutes} min`;
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return rest ? `${hours} h ${rest} min` : `${hours} h`;
+}
 
 function Check({ done }: { done: boolean }) {
   return (
@@ -43,6 +52,7 @@ export function CourseStart({ courseId, lessons, copy }: { courseId: string; les
         </div>
         <p>
           {done}/{lessons.length} {copy.progressLabel}
+          {ready ? <span className="course-progress-left"> · {formatMinutes(lessons.filter((l) => !progress.completed.includes(l.id)).reduce((sum, l) => sum + l.minutes, 0))} {copy.toRead}</span> : null}
         </p>
       </div>
     </div>
@@ -67,6 +77,7 @@ export function Syllabus({
 }) {
   const { progress } = useCourseProgress(courseId);
   const listRef = useRef<HTMLOListElement>(null);
+  const moduleAnchorPrefix = copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   // En la barra lateral, la lección actual tiene que verse sin buscarla: se centra dentro de su caja, sin mover la página.
   useEffect(() => {
@@ -84,7 +95,11 @@ export function Syllabus({
         const items = lessons.filter((l) => l.module === module.number);
         const done = items.filter((l) => progress.completed.includes(l.id)).length;
         return (
-          <li key={module.number} className={`syllabus-module ${module.number === 0 ? "syllabus-module--intro" : ""}`}>
+          <li
+            key={module.number}
+            id={compact ? undefined : `${moduleAnchorPrefix}-${module.number}`}
+            className={`syllabus-module ${module.number === 0 ? "syllabus-module--intro" : ""}`}
+          >
             <div className="syllabus-module-head">
               <span className="syllabus-module-number">
                 {module.number === 0 ? copy.introModule : `${copy.moduleLabel} ${module.number}`}
@@ -137,12 +152,29 @@ export function Syllabus({
 
 /** Registra la visita, marca la lección como completada y activa los botones de copiar. */
 export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; lessonId: string; copy: CourseCopy }) {
-  const { progress, ready, markVisited, toggleCompleted } = useCourseProgress(courseId);
+  const { progress, ready, markVisited, toggleCompleted, markCompleted } = useCourseProgress(courseId);
   const done = progress.completed.includes(lessonId);
 
   useEffect(() => {
     markVisited(lessonId);
+    track("lesson_view", { lesson: lessonId });
   }, [lessonId, markVisited]);
+
+  // Llegar al resumen cuenta como haber leído la lección: nadie vuelve arriba a pulsar un botón.
+  useEffect(() => {
+    const headings = document.querySelectorAll<HTMLElement>(".lesson-body > h2");
+    const recap = headings[headings.length - 1];
+    if (!recap) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        markCompleted(lessonId);
+        track("lesson_complete", { lesson: lessonId });
+        observer.disconnect();
+      }
+    });
+    observer.observe(recap);
+    return () => observer.disconnect();
+  }, [lessonId, markCompleted]);
 
   useEffect(() => {
     const onClick = async (event: MouseEvent) => {
@@ -260,5 +292,77 @@ export function DiaryNav({
         <span className="diary-nav-syllabus-short">{shortSyllabusLabel}</span> <span aria-hidden="true">→</span>
       </Link>
     </nav>
+  );
+}
+
+export type NextLesson = { href: string; title: string; description: string; minutes: number; id: string; module: number; moduleTitle: string };
+
+/** Final de la lección: la siguiente en grande, con un botón que la marca leída y avanza. */
+export function NextUp({
+  courseId,
+  lessonId,
+  lessonModule,
+  next,
+  courseHref,
+  copy,
+}: {
+  courseId: string;
+  lessonId: string;
+  lessonModule: number;
+  next: NextLesson | null;
+  courseHref: string;
+  copy: CourseCopy;
+}) {
+  const router = useRouter();
+  const { progress, markCompleted } = useCourseProgress(courseId);
+  const done = progress.completed.includes(lessonId);
+
+  if (!next) {
+    return (
+      <section className="next-up next-up--finish">
+        <p className="next-up-eyebrow">{copy.finish}</p>
+        <Link href={courseHref} className="next-up-button">
+          {copy.backToCourse} <span aria-hidden="true">→</span>
+        </Link>
+      </section>
+    );
+  }
+
+  const newModule = next.module !== lessonModule;
+  return (
+    <section className="next-up" aria-label={copy.nextUp}>
+      <p className="next-up-eyebrow">
+        {newModule && lessonModule > 0 ? (
+          <>
+            <span className="next-up-done">✓ {copy.moduleDone.replace("{n}", String(lessonModule))}</span> ·{" "}
+            {copy.nextModule.replace("{n}", String(next.module))}
+          </>
+        ) : (
+          copy.nextUp
+        )}
+      </p>
+      <Link href={next.href} className="next-up-title">
+        <span className="next-up-number">{next.id}</span>
+        {next.title}
+      </Link>
+      {newModule ? <p className="next-up-module">{next.moduleTitle}</p> : null}
+      <p className="next-up-description">{next.description}</p>
+      <div className="next-up-actions">
+        <button
+          type="button"
+          className="next-up-button"
+          onClick={() => {
+            markCompleted(lessonId);
+            track("next_lesson", { from: lessonId, to: next.id });
+            router.push(next.href);
+          }}
+        >
+          {done ? copy.continueNext : copy.completeAndContinue} <span aria-hidden="true">→</span>
+        </button>
+        <span className="next-up-minutes">
+          {next.minutes} {copy.minutesLabel}
+        </span>
+      </div>
+    </section>
   );
 }

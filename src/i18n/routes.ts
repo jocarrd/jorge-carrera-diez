@@ -14,6 +14,7 @@ export const routeKeys = [
   "courses",
   "grokBotCourse",
   "grokBotDiary",
+  "grokBotGlossary",
 ] as const;
 
 export type RouteKey = (typeof routeKeys)[number];
@@ -32,6 +33,7 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     courses: "/cursos",
     grokBotCourse: "/cursos/grok-bot",
     grokBotDiary: "/cursos/grok-bot/diario",
+    grokBotGlossary: "/cursos/grok-bot/glosario",
   },
   en: {
     home: "/en",
@@ -45,6 +47,7 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     courses: "/en/courses",
     grokBotCourse: "/en/courses/grok-bot",
     grokBotDiary: "/en/courses/grok-bot/diary",
+    grokBotGlossary: "/en/courses/grok-bot/glossary",
   },
 };
 

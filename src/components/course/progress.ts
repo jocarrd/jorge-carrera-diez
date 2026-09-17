@@ -88,5 +88,13 @@ export function useCourseProgress(courseId: string) {
     [courseId],
   );
 
-  return { progress, ready, markVisited, toggleCompleted };
+  const markCompleted = useCallback(
+    (id: string) => {
+      const current = read(courseId);
+      if (!current.completed.includes(id)) write(courseId, { ...current, completed: [...current.completed, id] });
+    },
+    [courseId],
+  );
+
+  return { progress, ready, markVisited, toggleCompleted, markCompleted };
 }

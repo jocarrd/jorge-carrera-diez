@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     paths: { es: lessonPath("es", lesson.ref.slug.es), en: lessonPath("en", lesson.ref.slug.en) },
     title: lesson.title.includes("Grok Bot") ? lesson.title : `${lesson.title} · Grok Bot`,
     description: lesson.description,
-    image: grokBotCourse.cover[locale],
   });
 }
 
