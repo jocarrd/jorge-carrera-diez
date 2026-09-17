@@ -171,7 +171,7 @@ function linkCrossReferences(html: string, options: RenderOptions): string {
         return part;
       }
       if (open.length > 0 || !part) return part;
-      const link = (href: string | null, text: string) => (href ? `<a href="${href}">${text}</a>` : text);
+      const link = (href: string | null, text: string) => (href ? `<a class="lesson-ref" href="${href}">${text}</a>` : text);
       return part
         .replace(LESSON_REF, (whole, word: string, first: string, rest: string) => {
           const tail = rest.replace(/\d{2}/g, (id) => link(options.lessonHref(id), id));

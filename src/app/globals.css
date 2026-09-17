@@ -4272,19 +4272,41 @@ a {
   color: var(--foreground);
 }
 
-.lesson-body a:not(.live-chip),
-.lesson-story-body a:not(.live-chip) {
+.lesson-body a:not(.live-chip, .lesson-ref),
+.lesson-story-body a:not(.live-chip, .lesson-ref) {
   color: var(--foreground);
   text-decoration: underline;
-  /* Con --line-strong el subrayado apenas se veía sobre negro y el enlace pasaba por texto. */
-  text-decoration-color: rgba(251, 146, 60, 0.55);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  /* Con el gris de las líneas el subrayado apenas se veía sobre negro. */
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color var(--dur-rapida) var(--ease);
 }
 
-.lesson-body a:not(.live-chip):hover,
-.lesson-story-body a:not(.live-chip):hover {
-  text-decoration-color: var(--foreground);
+.lesson-body a:not(.live-chip, .lesson-ref):hover,
+.lesson-story-body a:not(.live-chip, .lesson-ref):hover {
+  color: var(--accent-text);
+}
+
+/* Referencias a otra lección o módulo: una etiqueta que se ve de un vistazo
+   sin romper la línea. Nada de relleno vertical para no mover el interlineado. */
+.lesson-ref {
+  padding: 0.0625rem 0.4375rem;
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  border-radius: 6px;
+  background: rgba(251, 146, 60, 0.1);
+  color: #fdba74;
+  font-weight: 500;
+  white-space: nowrap;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease), color var(--dur-rapida) var(--ease);
+}
+
+.lesson-ref:hover {
+  border-color: var(--accent);
+  background: rgba(251, 146, 60, 0.2);
+  color: #ffedd5;
 }
 
 .lesson-body ul,
