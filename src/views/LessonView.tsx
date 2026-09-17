@@ -97,7 +97,10 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                 </span>
                 {copy.lessonLabel} {lesson.id}
               </p>
-              <h1 className="lesson-title">{lesson.title}</h1>
+              <div className="lesson-title-row">
+                <h1 className="lesson-title">{lesson.title}</h1>
+                <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} iconOnly />
+              </div>
               <p className="lesson-description">{lesson.description}</p>
               <div className="lesson-meta-row">
                 <ul className="lesson-meta">
@@ -107,22 +110,22 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   <li>{copy.levels[lesson.level]}</li>
                 </ul>
                 <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
-                <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} />
               </div>
             </header>
 
             {story.length > 0 ? (
               <section className="lesson-story" aria-label={copy.storyLabel}>
                 <p className="lesson-story-eyebrow">{copy.storyLabel}</p>
-                {story.map((segment) => {
-                  // Se ve el primer párrafo de cada día y el resto se despliega: con dos
-                  // días la historia empujaba la lección varias pantallas hacia abajo.
+                {story.map((segment, i) => {
+                  // Un día abierto cada vez, el más reciente: con tres días la historia
+                  // empujaba la lección varias pantallas hacia abajo.
                   const cut = segment.html.indexOf("</p>") + 4;
+                  const latest = i === story.length - 1;
                   return (
-                    <div key={segment.day} className="lesson-story-day">
-                      <p className="lesson-story-day-label">
+                    <details key={segment.day} name={`historia-${lesson.id}`} open={latest} className="lesson-story-day">
+                      <summary className="lesson-story-day-label">
                         {copy.dayLabel} {segment.day}
-                      </p>
+                      </summary>
                       <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html.slice(0, cut) }} />
                       <details className="lesson-story-more">
                         <summary>{copy.storyMore}</summary>
@@ -131,7 +134,7 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                           {copy.diaryDayLink} →
                         </Link>
                       </details>
-                    </div>
+                    </details>
                   );
                 })}
               </section>
@@ -229,7 +232,6 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   >
                     {copy.followButton}
                   </a>
-                  <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} />
                 </div>
               </aside>
             </footer>

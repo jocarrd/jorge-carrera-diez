@@ -160,6 +160,37 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
     track("lesson_view", { lesson: lessonId });
   }, [lessonId, markVisited]);
 
+  // Un término ya consultado deja de subrayarse: al quinto Bot subrayado solo estorba.
+  useEffect(() => {
+    const key = `curso:${courseId}:terminos`;
+    let seen: string[] = [];
+    try {
+      seen = JSON.parse(window.localStorage.getItem(key) ?? "[]");
+    } catch {
+      seen = [];
+    }
+    const mark = () =>
+      document.querySelectorAll<HTMLButtonElement>(".lesson-term").forEach((b) => {
+        const id = b.getAttribute("popovertarget")?.replace("termino-", "");
+        if (id && seen.includes(id)) b.classList.add("is-seen");
+      });
+    mark();
+    const onToggle = (event: Event) => {
+      const pop = event.target as HTMLElement;
+      if (!pop.classList?.contains("lesson-term-pop") || (event as ToggleEvent).newState !== "open") return;
+      const id = pop.id.replace("termino-", "");
+      if (seen.includes(id)) return;
+      seen = [...seen, id];
+      try {
+        window.localStorage.setItem(key, JSON.stringify(seen));
+      } catch {
+        // Sin almacenamiento, el término sigue subrayado y no pasa nada.
+      }
+    };
+    document.addEventListener("toggle", onToggle, true);
+    return () => document.removeEventListener("toggle", onToggle, true);
+  }, [courseId]);
+
   // Llegar al resumen cuenta como haber leído la lección: nadie vuelve arriba a pulsar un botón.
   useEffect(() => {
     const headings = document.querySelectorAll<HTMLElement>(".lesson-body > h2");

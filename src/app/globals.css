@@ -6085,3 +6085,88 @@ details.lesson-objectives ul {
     color: transparent;
   }
 }
+
+/* Compartir como icono junto al título */
+.lesson-title-row,
+.diary-segment-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.share-button--icon {
+  position: relative;
+  flex: none;
+  justify-content: center;
+  width: 2.75rem;
+  padding: 0;
+}
+
+.share-button--icon.is-copied {
+  border-color: rgba(134, 239, 172, 0.6);
+  color: #86efac;
+}
+
+.share-button-toast:empty {
+  display: none;
+}
+
+.share-button-toast {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  padding: 0.375rem 0.625rem;
+  border-radius: var(--radius-inner);
+  background: #1c1c1c;
+  color: #86efac;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.lesson-title-row .share-button--icon {
+  margin-top: 0.25rem;
+}
+
+/* Historia del módulo: un día abierto cada vez */
+details.lesson-story-day > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.lesson-story-day > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.lesson-story-day > summary::after {
+  content: "+";
+  margin-left: 0.5rem;
+}
+
+details.lesson-story-day[open] > summary::after {
+  content: "−";
+}
+
+.lesson-story-day + .lesson-story-day {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+details.lesson-story-day > summary.lesson-story-day-label {
+  min-height: 2.25rem;
+  align-items: center;
+}
+
+details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
+  background: transparent;
+  border: 1px solid rgba(251, 146, 60, 0.35);
+}
+
+.lesson-term.is-seen {
+  text-decoration-color: transparent;
+}
+
+.lesson-term.is-seen:hover,
+.lesson-term.is-seen:focus-visible {
+  text-decoration-color: rgba(251, 146, 60, 0.8);
+}
