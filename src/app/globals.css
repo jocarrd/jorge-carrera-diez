@@ -6170,3 +6170,100 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
 .lesson-term.is-seen:focus-visible {
   text-decoration-color: rgba(251, 146, 60, 0.8);
 }
+
+/* Buscador del curso */
+.course-search {
+  margin-top: 1.25rem;
+}
+
+.course-search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 3.25rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-card);
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.course-search-field:focus-within {
+  border-color: var(--accent);
+}
+
+.course-search-field input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  color: var(--foreground);
+  font-size: 1rem;
+  outline: none;
+}
+
+.course-search-field input::placeholder {
+  color: var(--muted-strong);
+}
+
+.course-search-results {
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--panel);
+}
+
+.course-search-results li + li {
+  border-top: 1px solid var(--line);
+}
+
+.course-search-results a {
+  display: grid;
+  gap: 0.125rem;
+  min-height: 3rem;
+  padding: 0.625rem 1rem;
+}
+
+.course-search-results a:hover,
+.course-search-results a:focus-visible {
+  background: var(--panel-strong);
+}
+
+.course-search-kind {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.course-search-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.course-search-context {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.course-search-empty {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.lesson-sheet-search {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0.25rem;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

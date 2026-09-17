@@ -172,7 +172,7 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               lessonId={lesson.id}
               toc={lesson.toc}
               minutes={lesson.minutes}
-              labels={{ contents: copy.lessonContents, minutesLeft: copy.minutesLeft, resume: copy.resumeText, resumeButton: copy.resumeButton, close: copy.close }}
+              labels={{ contents: copy.lessonContents, minutesLeft: copy.minutesLeft, resume: copy.resumeText, resumeButton: copy.resumeButton, close: copy.close, search: copy.searchInCourse, searchHref: `${courseHref}#temario` }}
             />
 
             <footer className="lesson-footer">
