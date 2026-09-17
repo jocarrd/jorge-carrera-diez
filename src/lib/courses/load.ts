@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Locale } from "@/i18n/config";
 import { grokBotCourse, type CourseLessonRef } from "@/content/courses/grok-bot/meta";
+import { lessonPath } from "@/i18n/routes";
 import { parseFrontMatter, renderLesson, type LessonFrontMatter, type TocEntry } from "./markdown";
 
 export type LessonSummary = LessonFrontMatter & { slug: string; ref: CourseLessonRef };
@@ -23,6 +24,20 @@ const liveUrls: Record<number, string> = Object.fromEntries(
   grokBotCourse.parts.filter((p) => p.liveUrl).map((p) => [p.number, p.liveUrl!]),
 );
 
+// Una mención a un módulo lleva a su primera lección: es donde empieza a leerse.
+function crossLinks(locale: Locale) {
+  return {
+    lessonHref: (id: string) => {
+      const ref = grokBotCourse.lessons.find((l) => l.id === id);
+      return ref ? lessonPath(locale, ref.slug[locale]) : null;
+    },
+    moduleHref: (module: number) => {
+      const ref = grokBotCourse.lessons.find((l) => l.module === module);
+      return ref ? lessonPath(locale, ref.slug[locale]) : null;
+    },
+  };
+}
+
 const cache = new Map<string, Lesson>();
 
 export function getLesson(locale: Locale, slug: string): Lesson | null {
@@ -41,6 +56,7 @@ export function getLesson(locale: Locale, slug: string): Lesson | null {
     liveUrls,
     day: 1,
     dayLabel: copy.dayLabel,
+    ...crossLinks(locale),
     labels: { copy: copy.copy, prompt: copy.prompt, live: copy.live },
     calloutLabels: CALLOUTS[locale],
   });
@@ -93,6 +109,7 @@ export function getStory(locale: Locale): StoryDay[] {
       liveUrls,
       day,
       dayLabel: copy.dayLabel,
+      ...crossLinks(locale),
       labels: { copy: copy.copy, prompt: copy.prompt, live: copy.live },
       calloutLabels: CALLOUTS[locale],
     }).html;
