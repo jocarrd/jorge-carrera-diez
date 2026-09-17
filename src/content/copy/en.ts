@@ -65,7 +65,6 @@ export const en: Copy = {
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
     availability: "Open to new opportunities",
-    availabilityNote: "Remote, European hours, in Spanish or English.",
     clientsLabel: "Where I have worked",
     capabilities: [
       {

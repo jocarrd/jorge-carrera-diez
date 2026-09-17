@@ -3483,6 +3483,21 @@ a {
   height: auto;
 }
 
+/* La captura de EQx termina en una franja blanca de página —el bloque de
+   rankings—: en la escena se leía como una banda gris que cruzaba por detrás
+   del móvil. Se recorta donde acaba la portada oscura, 700 de las 1000 filas
+   originales, y la ventana cierra sobre su propio contenido.
+
+   Antes esto lo tapaba un degradado al color del fondo sobre toda la escena.
+   Ese degradado acababa en seco a media altura del móvil y dejaba un corte
+   horizontal atravesándolo: el remedio se veía más que la banda. */
+.hero-win--front img {
+  aspect-ratio: 1600 / 700;
+  height: auto;
+  object-fit: cover;
+  object-position: left top;
+}
+
 .hero-bar {
   display: flex;
   align-items: center;
@@ -3532,14 +3547,16 @@ a {
   display: none;
 }
 
-/* Y la de delante se recorta: la captura entera a 390 px de ancho mide 240 px
-   de alto y no se lee nada. Recortada por arriba se reconoce el producto y el
+/* Y la de delante se recorta por arriba: la captura entera a 390 px de ancho
+   mide 240 px de alto y no se lee nada. Recortada se reconoce el producto y el
    móvil, que es la captura hecha para este tamaño, manda en la composición. */
 @media (max-width: 1023px) {
+  /* A 390 px la captura entera se lee como una miniatura: se amplía una vez y
+     media y la ventana se queda con la parte izquierda. El recorte de altura
+     sigue siendo el mismo, así que la franja blanca del pie tampoco entra. */
   .hero-win--front img {
-    height: 19rem;
-    object-fit: cover;
-    object-position: left top;
+    width: 150%;
+    max-width: none;
   }
 
   .hero-device {
@@ -3598,17 +3615,14 @@ a {
     max-width: none;
   }
 
-  /* El pie de la escena se funde con el fondo en vez de cortarse en seco. */
-  .hero-stage::after {
-    content: "";
-    position: absolute;
-    left: -6%;
-    right: 0;
-    bottom: -4.5rem;
-    height: 10rem;
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 0.95) 70%);
-    z-index: 4;
-  }
+  /* La captura de EQx termina en una franja blanca de página (el bloque de
+     rankings): en la escena se leía como una banda gris que cruzaba por detrás
+     del móvil. Se recorta donde acaba la portada oscura —1600x700 de los
+     1600x1000 originales— y la ventana cierra sobre su propio contenido.
+
+     Antes esto lo tapaba un degradado al color del fondo sobre toda la escena.
+     Ese degradado acababa en seco a media altura del móvil y dejaba un corte
+     horizontal atravesándolo: el remedio se veía más que la banda. */
 }
 
 /* ── Movimiento ligado al scroll ─────────────────────────────

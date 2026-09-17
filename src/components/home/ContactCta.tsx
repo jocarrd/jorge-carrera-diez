@@ -25,9 +25,6 @@ export function ContactCta({ locale }: { locale: Locale }) {
         </div>
         <div className="mt-7 flex flex-col items-center gap-3.5">
           <CopyEmail email={site.email} label={copy.footer.contact} />
-          <p className="max-w-[52ch] text-base leading-[1.6] text-[var(--muted)]">
-            {copy.profile.availabilityNote}
-          </p>
         </div>
         </Reveal>
       </Container>

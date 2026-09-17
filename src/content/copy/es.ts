@@ -70,7 +70,6 @@ export const es: Copy = {
     // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
     // convierte una página de portfolio en una a la que se puede responder.
     availability: "Abierto a nuevas oportunidades",
-    availabilityNote: "En remoto y horario europeo, en español o en inglés.",
     clientsLabel: "Dónde he trabajado",
     capabilities: [
       {

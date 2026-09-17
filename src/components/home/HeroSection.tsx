@@ -12,20 +12,12 @@ export function HeroSection({ locale }: { locale: Locale }) {
     <section className="relative overflow-hidden">
       <Container className="relative pb-14 pt-10 sm:pb-20 sm:pt-16 lg:pb-28 lg:pt-20">
         <div className="relative z-10 max-w-[34rem]">
-          <p className="rise rise-1 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--panel-strong)] py-1.5 pl-2.5 pr-3.5 text-[13px] text-[var(--muted)]">
-            <span className="inline-flex items-center gap-2 whitespace-nowrap font-medium text-[var(--foreground)]">
-              <span
-                aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-[#22c55e] ring-[3px] ring-[rgba(34,197,94,0.2)]"
-              />
-              {copy.profile.availability}
-            </span>
-            {/* En 390 px la nota parte la píldora en dos líneas y se come el
-                sitio del titular: ahí basta con que se lea "disponible". */}
-            <span aria-hidden className="hidden sm:inline">
-              ·
-            </span>
-            <span className="hidden sm:inline">{copy.profile.availabilityNote}</span>
+          <p className="rise rise-1 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--line)] bg-[var(--panel-strong)] py-1.5 pl-2.5 pr-3.5 text-[13px] font-medium text-[var(--foreground)]">
+            <span
+              aria-hidden
+              className="h-1.5 w-1.5 rounded-full bg-[#22c55e] ring-[3px] ring-[rgba(34,197,94,0.2)]"
+            />
+            {copy.profile.availability}
           </p>
 
           {/* Tres líneas cortas en vez de un párrafo: el titular se lee entero

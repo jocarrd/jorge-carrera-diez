@@ -165,7 +165,6 @@ export type Copy = {
     taglineSub: string;
     capabilities: { title: string; text: string }[];
     availability: string;
-    availabilityNote: string;
     clientsLabel: string;
     focus: string[];
     summary: RichSegment[];
