@@ -22,10 +22,12 @@ export default function GlobalNotFound() {
   return (
     <html lang="es" className={`h-full antialiased ${fontClass}`}>
       <body className="min-h-full not-found-page">
-        <Link href="/" className="not-found-brand" aria-label={site.name}>
-          <Mark />
-          <span>{site.name}</span>
-        </Link>
+        <header>
+          <Link href="/" className="not-found-brand" aria-label={site.name}>
+            <Mark />
+            <span>{site.name}</span>
+          </Link>
+        </header>
         <NotFoundContent />
       </body>
     </html>

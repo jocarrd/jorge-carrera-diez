@@ -125,7 +125,7 @@ export function DiaryView({ locale }: { locale: Locale }) {
                           </div>
                           <div className="lesson-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
                           {related.length > 0 ? (
-                            <aside className="diary-module-card" aria-label={copy.diaryLearnTitle}>
+                            <aside className="diary-module-card" aria-label={`${copy.diaryLearnTitle} · ${copy.dayLabel} ${part.number} · ${copy.moduleLabel} ${storyModule.number}`}>
                               <p className="diary-module-eyebrow">{copy.diaryLearnTitle}</p>
                               <p className="diary-module-name">
                                 {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
