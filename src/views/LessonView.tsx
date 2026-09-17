@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Container } from "@/components/ui";
 import { LessonSource } from "@/components/course/CourseStatus";
 import { LessonTracker, ReadingProgress, Syllabus } from "@/components/course/CourseClient";
+import { LessonDock } from "@/components/course/LessonDock";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -97,13 +98,15 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               </p>
               <h1 className="lesson-title">{lesson.title}</h1>
               <p className="lesson-description">{lesson.description}</p>
-              <ul className="lesson-meta">
-                <li>
-                  {lesson.minutes} {copy.minutesLabel}
-                </li>
-                <li>{copy.levels[lesson.level]}</li>
-              </ul>
-              <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
+              <div className="lesson-meta-row">
+                <ul className="lesson-meta">
+                  <li>
+                    {lesson.minutes} {copy.minutesLabel}
+                  </li>
+                  <li>{copy.levels[lesson.level]}</li>
+                </ul>
+                <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
+              </div>
             </header>
 
             {story.length > 0 ? (
@@ -132,14 +135,18 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               </section>
             ) : null}
 
-            <section className="lesson-objectives" aria-label={copy.objectives}>
-              <p className="lesson-objectives-title">{copy.objectives}</p>
+            {/* Los objetivos van plegados: en el móvil empujaban la primera línea de la lección fuera de la pantalla. */}
+            <details className="lesson-objectives">
+              <summary className="lesson-objectives-title">
+                {copy.objectives}
+                <span className="lesson-objectives-count">{lesson.objectives.length}</span>
+              </summary>
               <ul>
                 {lesson.objectives.map((o) => (
                   <li key={o}>{o}</li>
                 ))}
               </ul>
-            </section>
+            </details>
 
             {lesson.toc.length > 2 ? (
               <nav className="lesson-toc" aria-label="toc">
@@ -154,6 +161,14 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
             ) : null}
 
             <div className="lesson-body" dangerouslySetInnerHTML={{ __html: lesson.html }} />
+
+            <LessonDock
+              courseId={grokBotCourse.id}
+              lessonId={lesson.id}
+              toc={lesson.toc}
+              minutes={lesson.minutes}
+              labels={{ contents: copy.lessonContents, minutesLeft: copy.minutesLeft, resume: copy.resumeText, resumeButton: copy.resumeButton, close: copy.close }}
+            />
 
             <footer className="lesson-footer">
               <LessonTracker courseId={grokBotCourse.id} lessonId={lesson.id} copy={copy} />
