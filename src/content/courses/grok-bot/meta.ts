@@ -54,7 +54,7 @@ export const grokBotCourse = {
     {
       number: 3,
       date: "2026-09-17",
-      status: "processing",
+      status: "done",
       liveUrl: "https://x.com/i/broadcasts/1YGNrbXEeazGw",
       topics: {
         es: ["Marketing Ops", "Post-venta", "Marketing", "Presentación final"],
@@ -109,6 +109,11 @@ export const grokBotCourse = {
         es: "Ventas y atención al cliente",
         en: "Sales and customer support",
       },
+      level: "advanced",
+    },
+    {
+      number: 9,
+      title: { es: "Después de lanzar", en: "After you launch" },
       level: "advanced",
     },
   ] as CourseModule[],
@@ -224,6 +229,21 @@ export const grokBotCourse = {
       id: "25",
       module: 8,
       slug: { en: "customer-support", es: "atencion-al-cliente" },
+    },
+    {
+      id: "26",
+      module: 9,
+      slug: { en: "the-feedback-loop", es: "el-bucle-de-feedback" },
+    },
+    {
+      id: "27",
+      module: 9,
+      slug: { en: "measuring-after-launch", es: "medir-despues-de-lanzar" },
+    },
+    {
+      id: "28",
+      module: 9,
+      slug: { en: "what-you-take-away", es: "lo-que-te-llevas" },
     },
   ] as CourseLessonRef[],
   copy: {

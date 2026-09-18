@@ -215,3 +215,113 @@ Este módulo recoge esos talleres: el trabajo que esperaba en cuanto el juego tu
 {{live d2 0:24:29 "Un estudio de juegos necesita lo mismo que cualquier empresa"}}
 
 {{live d2 7:35:52 "Gatear, andar y correr con un Bot de soporte"}}
+
+## day 3
+
+El tercer día no se construye, se opera. A las diez de la mañana lanzaron el juego y en minutos había noventa y seis personas en el marcador. A partir de ahí el trabajo fue leer lo que decía la gente, medir lo que hacía y arreglar lo que se rompía, con la fábrica de Bots funcionando sola de fondo. Terminó con más de cuatro mil partidas, unos dos mil usuarios, la base de datos caída un rato y el primer dólar de patrocinio sin cobrar.
+
+{{live d3 7:51:48 "El balance de los tres días"}}
+
+## module 2 · day 3
+
+**Día 3, media mañana.** Una invitada contó cómo enseñarle un oficio a un Bot.
+
+Ponerle el nombre de científico de datos no lo convierte en uno. Lo que hizo ella fue decirle que se fuera a hacer cursos del oficio, de nivel inicial, medio y avanzado. El Bot buscó los cursos, sacó los rasgos que definen a alguien bueno en eso y los guardó como skill permanente. Repitió la jugada con un Bot de diseño cuando algo le pareció feo.
+
+Por la tarde, otra invitada añadió por dónde empezar cuando tienes la página en blanco: grabarse un audio de quince minutos paseando, contando en qué consiste tu trabajo y qué procesos están rotos.
+
+De ahí salen las lecciones de este módulo.
+
+{{live d3 3:08:37 "Manda al Bot a hacer cursos de su oficio"}}
+
+{{live d3 4:22:16 "Quince minutos de audio para empezar de cero"}}
+
+## module 3 · day 3
+
+**Día 3, media tarde.** Apareció un número de teléfono en la web sin avisar.
+
+Matt llamó en directo, dejó su opinión hablando, y el mensaje salió en el canal de Slack al instante. No había escrito nada de código: usó un constructor de flujos de voz con interfaz gráfica y un webhook que recoge la llamada.
+
+Lo interesante fue dónde puso el límite. No pondría un agente a llamar a la gente en su nombre, porque a él mismo le molesta encontrarse un robot al otro lado. Para recoger información sí, y con una pieza obligatoria: una herramienta para pasar la llamada a una persona cuando haga falta.
+
+Conectar herramientas hasta ese punto es de lo que va este módulo.
+
+{{live d3 5:12:08 "Un agente de voz montado sin escribir código"}}
+
+{{live d3 5:15:49 "La herramienta que pasa la llamada a una persona"}}
+
+## module 4 · day 3
+
+**Día 3, primera hora de la tarde.** La invitada de posventa enseñó un equipo de once Bots que ella no gestiona.
+
+Habla solo con uno, su jefe de gabinete, y es él quien coordina a los otros diez. Lo resumió así: yo llevo un equipo de uno o dos, él lleva uno de diez. Los demás no le escriben nunca.
+
+Y enseñó algo que no había salido en los días anteriores: convoca reuniones entre sus propios Bots para decidir en qué gastar la hora que le queda libre. La instrucción que les dio es la que hace que funcione, **que discrepen siempre**, porque con IA no quieres que todos te den la razón.
+
+De ahí sale este módulo.
+
+{{live d3 4:19:19 "Que discrepen siempre"}}
+
+## module 5 · day 3
+
+**Día 3, con el juego ya publicado.** Encadenaron el Bot que clasifica el feedback con el que programa, y se plantearon si atreverse con el piloto automático completo.
+
+Se atrevieron, pero con una condición: ya había gente jugando, así que romper el juego no era una opción. De ahí salieron dos reglas. El agente tiene que reproducir el fallo antes de tocar nada, porque solo así sabes que lo ha entendido. Y otro Bot comprueba que quien leyó el comentario del usuario entendió lo que decía.
+
+Para probar levantan muchos agentes a la vez, cada uno con su ordenador, que abren el juego y lo recorren a clics.
+
+Ese es el nivel al que llega este módulo.
+
+{{live d3 2:28:15 "Con producción en marcha no se puede romper nada"}}
+
+## module 6 · day 3
+
+**Día 3, a mediodía.** Dos charlas enseñaron equipos que llevan tiempo funcionando fuera de una demo.
+
+La de operaciones de marketing contó un Bot que construyó una aplicación interna para que los comerciales revisen sus contactos, y que antes de programar nada se paró a preguntar qué campos debían cambiar. La respuesta la obligó a afinar su propia idea.
+
+La de posventa dio seis usos concretos: el tablero de la mañana, la preparación de llamada quince minutos antes, la mesa de seguimiento, el guardián de promesas, el vigilante de peticiones y el estado de una cuenta. Todos reales, ninguno inventado.
+
+Los casos de este módulo salen de ahí.
+
+{{live d3 4:01:31 "Preparación de llamada quince minutos antes"}}
+
+## module 7 · day 3
+
+**Día 3, turno de preguntas.** Ahí salieron los límites y el dinero.
+
+Sobre coste, la respuesta más concreta de los tres días: que el Bot abra el navegador y rellene un formulario a clics cuesta más que darle los datos a la herramienta. Y el gasto silencioso son las routines, porque es facilísimo poner algo a comprobarse cada quince minutos y olvidarlo. Tres de esas son cientos de mensajes al día.
+
+También puso un freno a su propio sistema: el escaneo que le propone mejoras solo puede mandarle una sugerencia por semana, porque al principio le mandaba diez y sobrecorregía.
+
+Cuánto cuesta y dónde parar es este módulo.
+
+{{live d3 4:31:08 "Donde se va el dinero es en las routines"}}
+
+{{live d3 4:28:47 "Una sola sugerencia de mejora por semana"}}
+
+## module 8 · day 3
+
+**Día 3, primera hora.** La charla de operaciones de marketing empezó con una frase: construye herramientas, no solo normas.
+
+Su argumento: en ventas el trabajo se va en comunicar guías y esperar que cada equipo siga la lista correcta. Con un Bot puedes montar la aplicación interna que ya respeta esas reglas por diseño.
+
+Por la tarde, la sesión de crecimiento separó dos cosas que suelen mezclarse. Marketing es lo de arriba del embudo, que te conozcan. Crecimiento es lo que haces con quien ya ha entrado. Y para el correo en frío dio el criterio: lo único que importa es que lo lean, y lo primero que mira cualquiera es el nombre de quien envía.
+
+De eso va este módulo.
+
+{{live d3 3:00:00 "Lo primero que se mira en un correo es quién lo envía"}}
+
+## module 9 · day 3
+
+**Día 3, diez de la mañana.** Lanzaron el juego con la interfaz sin pulir y en minutos había noventa y seis personas jugando.
+
+Ahí cambió el trabajo. Dejaron de decidir sobre una pizarra y empezaron a decidir sobre lo que hacía la gente: un formulario de feedback que cae en Slack, un Bot que lo clasifica, otro que reproduce cada fallo, y agentes que lo arreglan. Por el camino midieron que el 71 % del feedback eran fallos y que había más jugadores en móvil que en escritorio.
+
+El día terminó con la base de datos caída un rato y un dólar de patrocinio sin cobrar.
+
+Este módulo es ese día.
+
+{{live d3 2:19:19 "El 71% del feedback son fallos"}}
+
+{{live d3 7:57:31 "El primer dólar teórico de patrocinio"}}

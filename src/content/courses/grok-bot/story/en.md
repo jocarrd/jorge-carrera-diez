@@ -215,3 +215,113 @@ This module collects those workshops: the work waiting as soon as the game had p
 {{live d2 0:24:29 "A game studio needs what any company needs"}}
 
 {{live d2 7:35:52 "Crawl, walk, run with a support Bot"}}
+
+## day 3
+
+Day three was not about building, it was about operating. At ten in the morning they launched the game and within minutes ninety-six people were on the leaderboard. From then on the work was reading what people said, measuring what they did and fixing what broke, with the Bot factory running on its own in the background. It ended with over four thousand matches, around two thousand users, the database down for a while and a first sponsorship dollar never collected.
+
+{{live d3 7:51:48 "How the three days went"}}
+
+## module 2 · day 3
+
+**Day 3, mid-morning.** A guest explained how to teach a Bot a craft.
+
+Naming it "data scientist" does not make it one. What she did was tell it to go take courses in the craft, at beginner, intermediate and advanced levels. The Bot found the courses, extracted the traits that define someone good at it and kept them as a permanent skill. She repeated the trick with a design Bot when something looked ugly to her.
+
+In the afternoon, another guest added where to start when you face a blank page: record a fifteen-minute voice memo while pacing around, saying what your job is and which processes are broken.
+
+That is where this module's lessons come from.
+
+{{live d3 3:08:37 "Send the Bot to take courses in its craft"}}
+
+{{live d3 4:22:16 "Fifteen minutes of voice memo to start from zero"}}
+
+## module 3 · day 3
+
+**Day 3, mid-afternoon.** A phone number appeared on the site without warning.
+
+Matt called live, left his feedback by voice, and the message showed up in their Slack channel instantly. He had written no code: he used a voice workflow builder with a graphical interface and a webhook that catches the call.
+
+The interesting part was where he drew the line. He would not have an agent call people on his behalf, because he himself finds it annoying to reach a robot. For collecting information, yes, and with one mandatory piece: a tool to hand the call to a person when needed.
+
+Connecting tools that far is what this module covers.
+
+{{live d3 5:12:08 "A voice agent built without writing code"}}
+
+{{live d3 5:15:49 "The tool that hands the call to a person"}}
+
+## module 4 · day 3
+
+**Day 3, early afternoon.** The post-sales guest showed a team of eleven Bots she does not manage.
+
+She talks to one only, her chief of staff, and he coordinates the other ten. She put it like this: I run a team of one or two, he runs a team of ten. The rest never message her.
+
+And she showed something that had not come up on the previous days: she convenes meetings between her own Bots to decide what to do with the one free hour she has left. The instruction that makes it work is the one worth copying, **always disagree**, because with AI you do not want everyone agreeing with you.
+
+That is where this module comes from.
+
+{{live d3 4:19:19 "Always disagree"}}
+
+## module 5 · day 3
+
+**Day 3, with the game already live.** They chained the Bot that triages feedback to the one that writes code, and wondered whether to dare with full autopilot.
+
+They dared, with one condition: people were already playing, so breaking the game was not an option. Two rules came out of that. The agent has to reproduce the bug before touching anything, because only then do you know it understood. And another Bot checks that whoever read the user's comment understood what it said.
+
+To test, they spin up many agents at once, each with its own computer, that open the game and click their way through it.
+
+That is the level this module reaches.
+
+{{live d3 2:28:15 "With production live, nothing can be broken"}}
+
+## module 6 · day 3
+
+**Day 3, midday.** Two talks showed teams that have been running for a while outside a demo.
+
+The marketing operations one described a Bot that built an internal app for salespeople to review their leads, and that stopped to ask which fields should change before writing any code. The answer forced her to sharpen her own idea.
+
+The post-sales one gave six concrete uses: the morning status board, call prep fifteen minutes ahead, the follow-up desk, the promise keeper, the ask watch and the account reset. All real, none invented.
+
+This module's cases come from there.
+
+{{live d3 4:01:31 "Call prep fifteen minutes before"}}
+
+## module 7 · day 3
+
+**Day 3, questions from the audience.** That is where the limits and the money came out.
+
+On cost, the most concrete answer of the three days: having the Bot open a browser and fill a form by clicking costs more than handing the data to the tool. And the silent spend is routines, because it is so easy to set something checking every fifteen minutes and forget it. Three of those are hundreds of messages a day.
+
+She also put a brake on her own system: the scan that proposes improvements can only send her one suggestion per week, because at first it sent ten and over-corrected.
+
+What it costs and where to stop is this module.
+
+{{live d3 4:31:08 "Where the money goes is routines"}}
+
+{{live d3 4:28:47 "One improvement suggestion per week"}}
+
+## module 8 · day 3
+
+**Day 3, first hour.** The marketing operations talk opened with one line: build tools, not just rules.
+
+Her argument: in sales the work goes into communicating guidelines and hoping each team follows the right checklist. With a Bot you can build the internal app that respects those rules by design.
+
+In the afternoon, the growth session separated two things people tend to mix. Marketing is the top of the funnel, getting known. Growth is what you do with the people who are already in. And for cold email she gave the criterion: the only thing that matters is that it gets read, and the first thing anyone looks at is the sender's name.
+
+That is what this module is about.
+
+{{live d3 3:00:00 "The first thing you look at in an email is who sent it"}}
+
+## module 9 · day 3
+
+**Day 3, ten in the morning.** They launched the game with an unpolished interface, and within minutes ninety-six people were playing.
+
+That is when the work changed. They stopped deciding at a whiteboard and started deciding on what people did: a feedback form landing in Slack, a Bot triaging it, another reproducing every bug, and agents fixing them. Along the way they measured that 71% of the feedback was bugs and that there were more mobile players than desktop ones.
+
+The day ended with the database down for a while and a sponsorship dollar never collected.
+
+This module is that day.
+
+{{live d3 2:19:19 "71% of the feedback is bugs"}}
+
+{{live d3 7:57:31 "The first theoretical sponsorship dollar"}}

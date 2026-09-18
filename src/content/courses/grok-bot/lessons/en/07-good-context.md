@@ -55,6 +55,18 @@ Keep it simple and correct, because a Bot with bad information gives bad results
 
 Give each Bot a clear job (lesson 03). A job like **General Helper** gives the Bot less guidance and makes its saved context harder to reuse. The best roles own an outcome that repeats. When a conversation turns into a different long-lived job, start a thread (a side conversation attached to one message) or a new Bot.
 
+### Fifteen minutes of voice when you don't know where to start
+
+The hard part is not writing a good request, it is the blank page on day one. On the third day of the livestream a guest explained how she solved it, and it is the cheapest way to give a Bot context.
+
+She picked up her phone and recorded **fifteen minutes while pacing around**, saying what her job consists of, which parts she likes, what she is struggling with right now and which processes feel broken to her. She pasted that transcript into her first Bot and asked it to build her a system.
+
+What came back was not generic: protect calendar time for talking to customers, because that was what she said gave her the most, and take Slack watching off her plate, because that was what she said interrupted her most.
+
+Her advice fits in one line: **start with context, because there is so much of it living in your head**. Fifteen minutes of talking produces what an afternoon of writing does not.
+
+{{live d3 4:22:16 "Fifteen minutes of voice memo to start from zero"}}
+
 ### When context gets overloaded
 
 A Bot that juggles too many unrelated tasks starts to lose the thread. Its answers get less coherent or less precise. Each Bot can only keep a limited amount of text in view at once, called its context limit.

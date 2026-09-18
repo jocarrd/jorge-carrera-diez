@@ -55,6 +55,18 @@ Mantenlo sencillo y correcto, porque un Bot con mala información da malos resul
 
 Da a cada Bot un trabajo claro (lección 03). Un puesto como **General Helper** (ayudante general) le da al Bot menos orientación y hace que su contexto guardado sea más difícil de reutilizar. Los mejores papeles se encargan de un resultado que se repite. Cuando una conversación se convierte en otro trabajo de larga duración, abre un hilo (una conversación aparte colgada de un mensaje) o crea un Bot nuevo.
 
+### Quince minutos de audio cuando no sabes por dónde empezar
+
+Lo que más cuesta no es escribir una buena petición, es la página en blanco del primer día. En el tercer día del directo, una invitada contó cómo lo resolvió ella, y es la forma más barata de darle contexto a un Bot.
+
+Cogió el móvil y se grabó **quince minutos paseando**, contando en qué consiste su trabajo, qué parte le gusta, con qué está sufriendo ahora mismo y qué procesos le parecen rotos. Pegó esa transcripción en su primer Bot y le pidió que le montara un sistema.
+
+Lo que volvió no fue genérico: proteger hueco en el calendario para hablar con clientes, porque eso era lo que ella decía que más le aportaba, y quitarle de encima la vigilancia de Slack, que era lo que decía que más la interrumpía.
+
+Su consejo cabe en una frase: **empieza por el contexto, porque hay muchísimo metido en tu cabeza**. Hablando sale en quince minutos lo que escribiendo no sale en una tarde.
+
+{{live d3 4:22:16 "Quince minutos de audio para empezar de cero"}}
+
 ### Cuando el contexto se satura
 
 Un Bot que lleva demasiadas tareas sin relación entre sí empieza a perder el hilo. Sus respuestas se vuelven menos coherentes o menos precisas. Cada Bot solo puede tener a la vista una cantidad limitada de texto, lo que se llama su límite de contexto.
