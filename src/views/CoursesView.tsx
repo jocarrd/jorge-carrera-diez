@@ -28,14 +28,14 @@ export function CoursesView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,34rem)_minmax(0,1fr)] lg:items-center lg:gap-16">
-          <div>
+        <div className="course-intro">
+          <div className="course-intro-head">
             <h1 className="t-section">{copy.heading}</h1>
-            {copy.text.map((paragraph, i) => (
-              <p
-                key={paragraph.slice(0, 24)}
-                className={`text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:text-xl ${i === 0 ? "mt-5 sm:mt-6" : "mt-4 sm:mt-5"}`}
-              >
+            <p className="course-lead">{copy.text[0]}</p>
+          </div>
+          <div className="course-intro-rest">
+            {copy.text.slice(1).map((paragraph) => (
+              <p key={paragraph.slice(0, 24)} className="course-support">
                 {paragraph}
               </p>
             ))}

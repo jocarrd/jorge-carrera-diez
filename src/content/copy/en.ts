@@ -628,9 +628,9 @@ export const en: Copy = {
         "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
       heading: "More knowledge comes out than anyone has time to learn.",
       text: [
-        "AI agents move so fast that nobody keeps up, and much of what gets taught about them happens in an eight-hour livestream that almost nobody watches again and that never gets written down anywhere.",
-        "And that is exactly where you learn the most. Watching someone take a product from nothing to production, with the failures on screen, teaches you things a documentation page cannot: why each decision was made and what got dropped along the way.",
-        "So I started transcribing them for myself, because I work with agents every day and I needed this written down somewhere. A whole course came out of it. Since it was already done, I publish it for free.",
+        "AI agents move so fast that the best teaching about them happens in eight-hour livestreams almost nobody watches twice, and that never get written down anywhere.",
+        "And that is where you learn the most. Watching someone take a product from nothing to production shows you why each decision was made, which is exactly what documentation leaves out.",
+        "I work with agents every day, so I started transcribing them for myself. A whole course came out of it, and I publish it for free.",
       ],
       deviceAlts: [
         "The Grok Bot course on a phone, showing the modules and their lessons",

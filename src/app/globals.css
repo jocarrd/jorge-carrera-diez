@@ -6833,3 +6833,81 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
     gap: 1.5rem;
   }
 }
+
+.course-intro {
+  display: grid;
+  gap: 2rem;
+}
+
+.course-intro-head {
+  order: 1;
+}
+
+.course-intro .course-devices {
+  order: 2;
+}
+
+.course-intro-rest {
+  order: 3;
+}
+
+.course-lead {
+  margin-top: 1.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+  color: var(--foreground);
+}
+
+.course-support {
+  font-size: 1rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.course-support + .course-support {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .course-lead {
+    margin-top: 1.5rem;
+    font-size: 1.375rem;
+  }
+
+  .course-support {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-intro {
+    grid-template-columns: minmax(0, 34rem) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 4rem;
+    row-gap: 1.75rem;
+  }
+
+  .course-intro-head {
+    grid-column: 1;
+    grid-row: 1;
+    order: 0;
+  }
+
+  .course-intro-rest {
+    grid-column: 1;
+    grid-row: 2;
+    order: 0;
+  }
+
+  .course-intro .course-devices {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    order: 0;
+  }
+
+  .course-lead {
+    font-size: 1.5rem;
+  }
+}

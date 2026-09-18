@@ -626,9 +626,9 @@ export const es: Copy = {
         "Cursos gratis sobre agentes de IA, hechos a partir de directos técnicos de muchas horas. Cada afirmación enlaza al minuto exacto del vídeo donde se dijo.",
       heading: "Sale más conocimiento del que da tiempo a aprender.",
       text: [
-        "Los agentes de IA se mueven tan rápido que nadie los sigue del todo, y buena parte de lo que se enseña sobre ellos pasa por un directo de ocho horas que casi nadie vuelve a ver y que no queda escrito en ningún sitio.",
-        "Y ahí es justo donde más se aprende. Ver a alguien levantar un producto de cero hasta producción, con los fallos en pantalla, te enseña cosas que una página de documentación no te puede contar: por qué se tomó cada decisión y qué se descartó por el camino.",
-        "Así que empecé a transcribirlos para mí, porque trabajo con agentes todos los días y necesitaba tener esto ordenado en algún sitio. Acabó saliendo un curso entero. Como ya estaba hecho, lo publico gratis.",
+        "Los agentes de IA van tan rápido que lo mejor que se enseña de ellos pasa por directos de ocho horas que casi nadie vuelve a ver, y que no quedan escritos en ningún sitio.",
+        "Y ahí es donde más se aprende. Ver a alguien levantar un producto de cero hasta producción te enseña por qué se tomó cada decisión, que es justo lo que no cuenta una documentación.",
+        "Trabajo con agentes todos los días, así que empecé a transcribirlos para mí. Acabó saliendo un curso entero y lo publico gratis.",
       ],
       deviceAlts: [
         "El curso de Grok Bot en un móvil, con los módulos y sus lecciones",
