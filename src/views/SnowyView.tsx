@@ -57,8 +57,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader
-          indice="01"
-          eyebrow={copy.convergence.eyebrow}
           title={copy.convergence.title}
           text={copy.convergence.text}
         />
@@ -75,12 +73,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader
-          indice="02"
-          eyebrow={copy.product.eyebrow}
-          title={copy.product.title}
-          text={copy.product.text}
-        />
+        <SectionHeader title={copy.product.title} text={copy.product.text} />
         <div className="mt-12">
           <CapabilityRail items={copy.features} label={copy.product.title} />
         </div>
@@ -116,12 +109,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader
-          indice="03"
-          eyebrow={copy.build.eyebrow}
-          title={copy.build.title}
-          text={copy.build.text}
-        />
+        <SectionHeader title={copy.build.title} text={copy.build.text} />
         <div className="mt-10">
           <ArchitectureStack
             layers={copy.architecture.layers}
@@ -158,8 +146,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
-            indice="04"
-            eyebrow={copy.seo.eyebrow}
             title={copy.seo.title}
             text={copy.seo.text}
             align="left"
@@ -177,8 +163,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeader
-            indice="05"
-            eyebrow={copy.b2b.eyebrow}
             title={copy.b2b.title}
             text={copy.b2b.text}
             align="left"
@@ -211,12 +195,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <StickyShowcase locale={locale} />
 
       <Section>
-        <SectionHeader
-          indice="06"
-          eyebrow={copy.press.eyebrow}
-          title={copy.press.title}
-          text={copy.press.text}
-        />
+        <SectionHeader title={copy.press.title} text={copy.press.text} />
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {copy.press.proof.map((item) => {
             const contenido = (

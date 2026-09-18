@@ -3343,11 +3343,18 @@ a {
 }
 
 @media (max-width: 1023px) {
+  .hero-win--front img {
+    width: 100%;
+    aspect-ratio: 1600 / 1000;
+    object-position: center top;
+  }
+
   .hero-device {
-    left: 6%;
+    left: auto;
+    right: 5%;
     bottom: -1.25rem;
-    width: 34%;
-    max-width: 128px;
+    width: 30%;
+    max-width: 116px;
     border-width: 6px;
     border-radius: 20px;
   }

@@ -17,8 +17,6 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
     <Section id="experiencia" className="section-band">
       <Reveal>
         <SectionHeader
-          indice="05"
-          eyebrow={copy.pages.experience.eyebrow}
           title={copy.cvTimeline.label}
           text={copy.cvTimeline.note}
         />

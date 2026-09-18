@@ -31,12 +31,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
     <section id="proyectos" className="section-band py-16 sm:py-24 lg:py-28">
       <Container>
         <Reveal>
-          <SectionHeader
-            indice="02"
-            eyebrow={preview.eyebrow}
-            title={preview.title}
-            text={preview.text}
-          />
+          <SectionHeader title={preview.title} text={preview.text} />
         </Reveal>
 
         <RevealGroup

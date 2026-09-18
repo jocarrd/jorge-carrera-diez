@@ -13,12 +13,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <SectionHeader
-          eyebrow={copy.eyebrow}
-          title={copy.heading}
-          text={copy.text}
-          level={1}
-        />
+        <SectionHeader title={copy.heading} text={copy.text} level={1} />
 
         <div className="mt-10 sm:mt-12">
           <CareerSpan

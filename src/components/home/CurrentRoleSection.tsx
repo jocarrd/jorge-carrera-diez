@@ -9,12 +9,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
   return (
     <Section id="rol-actual" className="section-band">
       <Reveal>
-        <SectionHeader
-          indice="01"
-          eyebrow={role.eyebrow}
-          title={role.homeTitle}
-          text={role.homeText}
-        />
+        <SectionHeader title={role.homeTitle} text={role.homeText} />
       </Reveal>
 
       <RevealGroup

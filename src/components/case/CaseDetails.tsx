@@ -3,16 +3,15 @@ import { Reveal, Section, SectionHeader } from "@/components/ui";
 import type { TitledText } from "@/types/content";
 
 type CaseDetailsProps = {
-  eyebrow?: string;
   title: string;
   text?: string;
   items: (TitledText & { image: string; alt: string })[];
 };
 
-export function CaseDetails({ eyebrow, title, text, items }: CaseDetailsProps) {
+export function CaseDetails({ title, text, items }: CaseDetailsProps) {
   return (
     <Section className="border-t border-[var(--line)]">
-      <SectionHeader eyebrow={eyebrow} title={title} text={text} />
+      <SectionHeader title={title} text={text} />
       <div className="mt-12 flex flex-col gap-14 sm:mt-16 sm:gap-20">
         {items.map((item, index) => (
           <Reveal key={item.title} delay={index * 60}>

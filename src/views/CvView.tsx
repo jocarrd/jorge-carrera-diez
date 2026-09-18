@@ -22,12 +22,7 @@ export function CvView({ locale }: { locale: Locale }) {
     <main className="cv-document">
       <Section>
         <div className="cv-head">
-          <SectionHeader
-            eyebrow={copy.eyebrow}
-            title={site.name}
-            level={1}
-            align="left"
-          />
+          <SectionHeader title={site.name} level={1} align="left" />
           <p className="cv-role mt-3 text-lg text-[var(--muted)]">
             {content.profile.positioning}
           </p>

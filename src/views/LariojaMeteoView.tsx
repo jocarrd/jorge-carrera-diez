@@ -45,12 +45,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       </section>
 
       <Section>
-        <SectionHeader
-          indice="01"
-          eyebrow={copy.timeline.eyebrow}
-          title={copy.timeline.title}
-          text={copy.timeline.text}
-        />
+        <SectionHeader title={copy.timeline.title} text={copy.timeline.text} />
         <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-4">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
@@ -59,12 +54,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader
-          indice="02"
-          eyebrow={copy.product.eyebrow}
-          title={copy.product.title}
-          text={copy.product.text}
-        />
+        <SectionHeader title={copy.product.title} text={copy.product.text} />
 
         <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
           {copy.product.items.map((item) => (
@@ -93,12 +83,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section>
-        <SectionHeader
-          indice="03"
-          eyebrow={copy.history.eyebrow}
-          title={copy.history.title}
-          text={copy.history.text}
-        />
+        <SectionHeader title={copy.history.title} text={copy.history.text} />
         <div className="mt-14">
           <Timeline milestones={copy.history.milestones} />
         </div>
@@ -106,8 +91,6 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader
-          indice="04"
-          eyebrow={copy.responsibility.eyebrow}
           title={copy.responsibility.title}
           text={copy.responsibility.text}
         />
@@ -125,8 +108,6 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
       <Section>
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
-            indice="05"
-            eyebrow={copy.content.eyebrow}
             title={copy.content.title}
             text={copy.content.text}
             align="left"
