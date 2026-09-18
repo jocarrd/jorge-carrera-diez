@@ -4,6 +4,7 @@ import { glossary } from "@/content/courses/grok-bot/glossary";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
+import { AuthorSignature } from "@/components/courses/AuthorSignature";
 
 export function GlossaryView({ locale }: { locale: Locale }) {
   const copy = grokBotCourse.copy[locale];
@@ -49,6 +50,8 @@ export function GlossaryView({ locale }: { locale: Locale }) {
               ← {copy.backToCourse}
             </Link>
           </p>
+
+          <AuthorSignature locale={locale} />
         </article>
       </Container>
     </main>

@@ -259,7 +259,12 @@ export function CourseView({ locale }: { locale: Locale }) {
                 <a href={site.x} target="_blank" rel="noopener noreferrer">
                   {copy.authorX} →
                 </a>
-                <Link href={routePath(locale, "home")}>{copy.authorWeb} →</Link>
+                <Link href={routePath(locale, "experience")}>
+                  {copy.authorWeb} →
+                </Link>
+                <Link href={routePath(locale, "contact")}>
+                  {copy.authorContact} →
+                </Link>
               </p>
             </div>
           </section>

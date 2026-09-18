@@ -10,6 +10,7 @@ import {
   Syllabus,
 } from "@/components/course/CourseClient";
 import { LessonDock } from "@/components/course/LessonDock";
+import { AuthorSignature } from "@/components/courses/AuthorSignature";
 import { ShareButton } from "@/components/course/ShareButton";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
@@ -312,6 +313,7 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   </a>
                 </div>
               </aside>
+              <AuthorSignature locale={locale} />
             </footer>
           </article>
         </div>

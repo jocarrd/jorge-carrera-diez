@@ -6,6 +6,7 @@ import {
   Section,
   SectionHeader,
 } from "@/components/ui";
+import { AuthorSignature } from "@/components/courses/AuthorSignature";
 import { CourseFlight } from "@/components/courses/CourseFlight";
 import { getCopy, site } from "@/content";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
@@ -97,6 +98,8 @@ export function CoursesView({ locale }: { locale: Locale }) {
             <ButtonLink href={site.x}>{copy.nextButton}</ButtonLink>
           </div>
         </div>
+
+        <AuthorSignature locale={locale} />
       </Section>
     </main>
   );

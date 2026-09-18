@@ -6,6 +6,7 @@ import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
 import { DiaryNav } from "@/components/course/CourseClient";
+import { AuthorSignature } from "@/components/courses/AuthorSignature";
 import { ShareButton } from "@/components/course/ShareButton";
 import { getCourse, getLesson, getStory } from "@/lib/courses/load";
 
@@ -280,6 +281,8 @@ export function DiaryView({ locale }: { locale: Locale }) {
               </Link>
             </div>
           </section>
+
+          <AuthorSignature locale={locale} />
         </article>
       </Container>
     </main>

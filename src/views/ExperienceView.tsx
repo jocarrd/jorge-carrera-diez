@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CompanyMark } from "@/components/experience/CompanyMark";
 import { GenerativeAiSection } from "@/components/experience/GenerativeAiSection";
+import { ContactCta } from "@/components/home/ContactCta";
 import { BrowserFrame, Section, SectionHeader } from "@/components/ui";
 import { CareerSpan } from "@/components/visual/CareerSpan";
 import { getCopy } from "@/content";
@@ -93,6 +94,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
       </Section>
 
       <GenerativeAiSection locale={locale} />
+      <ContactCta locale={locale} />
     </main>
   );
 }

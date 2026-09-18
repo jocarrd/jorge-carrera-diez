@@ -166,6 +166,12 @@ export type Copy = {
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
+    signature: {
+      label: string;
+      text: string;
+      experience: string;
+      contact: string;
+    };
   };
   hero: {
     ctaPrimary: string;

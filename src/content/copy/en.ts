@@ -112,6 +112,12 @@ export const en: Copy = {
       ["Based in", "Logroño"],
       ["Stack", "Full stack"],
     ],
+    signature: {
+      label: "Who writes this",
+      text: "I am Jorge Carrera Diez, a software engineer based in Logroño, Spain. Right now I lead banking and insurance projects as Tech Lead, I took over the technical lead at EQx in Switzerland, and I build Snowy. This course comes out of the same pipeline I use every day to turn hours of livestream into something you can read.",
+      experience: "See what I have worked on",
+      contact: "Get in touch",
+    },
   },
   hero: {
     ctaPrimary: "See experience",

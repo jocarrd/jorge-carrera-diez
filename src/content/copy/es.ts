@@ -106,6 +106,12 @@ export const es: Copy = {
       ["Base", "Logroño"],
       ["Stack", "Full stack"],
     ],
+    signature: {
+      label: "Quién escribe esto",
+      text: "Soy Jorge Carrera Diez, ingeniero de software en Logroño. Ahora mismo llevo proyectos de banca y seguros como Tech Lead, el relevo técnico de EQx en Suiza y el desarrollo de Snowy. Este curso sale de la misma tubería que uso a diario para convertir horas de directo en algo que se pueda leer.",
+      experience: "Ver en qué he trabajado",
+      contact: "Hablemos",
+    },
   },
   hero: {
     ctaPrimary: "Ver experiencia",
