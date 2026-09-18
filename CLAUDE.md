@@ -1,4 +1,4 @@
-# jorge-carrera-diez — Qué hace este repo, en una línea
+# jorge-carrera-diez — La web pública, Next.js en Vercel
 
 Parte del proyecto **personal-brand**.
 

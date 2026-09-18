@@ -1,6 +1,6 @@
 # AGENTS.md — jorge-carrera-diez
 
-Qué hace este repo, en una línea
+La web pública, Next.js en Vercel
 
 Este repo forma parte de **personal-brand**.
 
