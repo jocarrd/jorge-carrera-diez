@@ -37,8 +37,7 @@ export function AboutSection({ locale }: { locale: Locale }) {
           />
         </div>
         <div>
-          <p className="t-eyebrow">{site.name}</p>
-          <h2 className="t-section mt-3">{copy.profile.aboutTitle}</h2>
+          <h2 className="t-section">{copy.profile.aboutTitle}</h2>
           <ProfileSummary
             locale={locale}
             className="prose-links mt-5 text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:mt-6 sm:text-xl"

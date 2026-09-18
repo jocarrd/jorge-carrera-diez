@@ -82,7 +82,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
       <section className="py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="t-eyebrow">{copy.modules.eyebrow}</p>
             <h2 className="t-section">{copy.modules.title}</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
               {copy.modules.text}

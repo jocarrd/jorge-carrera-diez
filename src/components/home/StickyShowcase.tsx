@@ -34,8 +34,7 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
     <section className="section-band border-y border-[var(--line)] py-16 sm:py-24 lg:py-28">
       <Container>
         <div className="max-w-[46rem]">
-          <p className="t-eyebrow">{copy.eyebrow}</p>
-          <h2 className="t-section mt-4">{copy.title}</h2>
+          <h2 className="t-section">{copy.title}</h2>
         </div>
 
         <div className="mt-10 grid gap-10 sm:mt-14 lg:grid-cols-[1fr_1fr] lg:gap-16">

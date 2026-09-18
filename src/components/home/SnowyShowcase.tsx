@@ -22,14 +22,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
       className="section-dark py-20 sm:py-28 lg:py-32"
     >
       <Container>
-        <p className="t-eyebrow">
-          <span className="t-indice">03</span>
-          <span aria-hidden className="t-eyebrow-sep">
-            —
-          </span>
-          Snowy
-        </p>
-        <h2 className="t-section mt-4 max-w-[20ch] text-white">
+        <h2 className="t-section max-w-[20ch] text-white">
           {showcase.title}
         </h2>
         <p className="mt-5 max-w-[60ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[1.1875rem]">
