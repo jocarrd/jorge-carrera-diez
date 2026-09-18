@@ -1,5 +1,4 @@
 import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import type { Locale } from "@/i18n/config";
@@ -8,10 +7,9 @@ import { getCourse, getLesson } from "@/lib/courses/load";
 export const courseOgSize = { width: 1200, height: 630 };
 
 async function fonts() {
-  const raiz = (f: string) => join(process.cwd(), "src/assets/fonts", f);
   const [regular, semibold] = await Promise.all([
-    readFile(raiz("Geist-Regular.woff")),
-    readFile(raiz("Geist-SemiBold.woff")),
+    readFile(new URL("../../assets/fonts/Geist-Regular.woff", import.meta.url)),
+    readFile(new URL("../../assets/fonts/Geist-SemiBold.woff", import.meta.url)),
   ]);
   return [
     {

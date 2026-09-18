@@ -620,6 +620,71 @@ export const es: Copy = {
         "Una plataforma en producción, un cliente internacional y un portal con audiencia.",
       text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx es cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
     },
+    courses: {
+      title: "Cursos",
+      description:
+        "Cursos gratis sobre agentes de IA, hechos a partir de directos técnicos de muchas horas. Cada afirmación enlaza al minuto exacto del vídeo donde se dijo.",
+      heading: "Sale más conocimiento del que da tiempo a aprender.",
+      text: [
+        "Los agentes de IA se mueven tan rápido que nadie los sigue del todo, y buena parte de lo que se enseña sobre ellos pasa por un directo de ocho horas que casi nadie vuelve a ver y que no queda escrito en ningún sitio.",
+        "Y ahí es justo donde más se aprende. Ver a alguien levantar un producto de cero hasta producción, con los fallos en pantalla, te enseña cosas que una página de documentación no te puede contar: por qué se tomó cada decisión y qué se descartó por el camino.",
+        "Así que empecé a transcribirlos para mí, porque trabajo con agentes todos los días y necesitaba tener esto ordenado en algún sitio. Acabó saliendo un curso entero. Como ya estaba hecho, lo publico gratis.",
+      ],
+      deviceAlts: [
+        "El curso de Grok Bot en un móvil, con los módulos y sus lecciones",
+        "Una lección del curso en un móvil, con el contexto del directo y el temario",
+      ],
+      pipelineTitle: "De un directo a una lección",
+      pipeline: [
+        {
+          title: "Capturar",
+          text: "Se descarga la emisión entera. Un día de directo son unas nueve horas y tres gigas y medio de vídeo.",
+          tool: "yt-dlp",
+        },
+        {
+          title: "Transcribir",
+          text: "Whisper corre dentro de un contenedor sobre CPU, leyendo el audio por ventanas para no cargar el fichero entero en memoria. Devuelve cada frase con su segundo.",
+          tool: "faster-whisper · Docker",
+        },
+        {
+          title: "Anotar",
+          text: "Un agente lee la transcripción por tramos de media hora y saca notas fechadas: qué pasó, quién lo dijo y qué merece una lección.",
+          tool: "Claude Code",
+        },
+        {
+          title: "Contrastar",
+          text: "Antes de escribir nada, cada afirmación se comprueba contra la documentación oficial del producto. En un directo se enseña lo que luce, y no siempre coincide con lo que la herramienta hace luego.",
+          tool: "documentación oficial",
+        },
+        {
+          title: "Escribir",
+          text: "Las notas se convierten en lecciones cortas, en castellano y en inglés, con los prompts listos para copiar.",
+          tool: "Markdown",
+        },
+        {
+          title: "Publicar",
+          text: "Van al sistema de cursos de esta web: módulos, glosario, diario y feed. Las marcas de tiempo se convierten en enlaces al segundo exacto del directo.",
+          tool: "Next.js",
+        },
+      ],
+      resultTitle: "En números",
+      resultText:
+        "Las cifras del primero, el de Grok Bot. La parte que más trabajo dio son los enlaces: cada cosa que se afirma en una lección apunta al segundo del directo donde se dijo, para que puedas comprobarla sin fiarte de mí.",
+      resultMetrics: [
+        { value: "3 días", label: "Directo procesado", detail: "casi 25 horas de emisión" },
+        { value: "{lessons}", label: "Lecciones", detail: "repartidas en {modules} módulos" },
+        { value: "122", label: "Enlaces al minuto", detail: "cada afirmación, a su fuente" },
+        { value: "16", label: "Términos de glosario", detail: "la jerga, explicada" },
+        { value: "2", label: "Idiomas", detail: "mismo contenido en los dos" },
+        { value: "0 €", label: "Precio", detail: "sin registro ni cuenta" },
+      ],
+      listTitle: "Los cursos",
+      listMeta: "{lessons} lecciones · {modules} módulos · gratis",
+      nextTitle: "Los siguientes",
+      nextText:
+        "Voy publicando los cursos según termino cada uno. Si quieres enterarte cuando salga el próximo, sígueme en X.",
+      nextButton: "Seguir a @jorgecarrera_es",
+    },
     experience: {
       title: "Experiencia",
       description:

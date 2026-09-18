@@ -622,6 +622,71 @@ export const en: Copy = {
         "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
     },
+    courses: {
+      title: "Courses",
+      description:
+        "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
+      heading: "More knowledge comes out than anyone has time to learn.",
+      text: [
+        "AI agents move so fast that nobody keeps up, and much of what gets taught about them happens in an eight-hour livestream that almost nobody watches again and that never gets written down anywhere.",
+        "And that is exactly where you learn the most. Watching someone take a product from nothing to production, with the failures on screen, teaches you things a documentation page cannot: why each decision was made and what got dropped along the way.",
+        "So I started transcribing them for myself, because I work with agents every day and I needed this written down somewhere. A whole course came out of it. Since it was already done, I publish it for free.",
+      ],
+      deviceAlts: [
+        "The Grok Bot course on a phone, showing the modules and their lessons",
+        "A course lesson on a phone, with the livestream context and the contents",
+      ],
+      pipelineTitle: "From a livestream to a lesson",
+      pipeline: [
+        {
+          title: "Capture",
+          text: "The whole broadcast is downloaded. One day of livestream is about nine hours and three and a half gigabytes of video.",
+          tool: "yt-dlp",
+        },
+        {
+          title: "Transcribe",
+          text: "Whisper runs inside a container on CPU, reading the audio in windows so the whole file never loads into memory. It returns every sentence with its second.",
+          tool: "faster-whisper · Docker",
+        },
+        {
+          title: "Annotate",
+          text: "An agent reads the transcript in half-hour stretches and produces timestamped notes: what happened, who said it and what deserves a lesson.",
+          tool: "Claude Code",
+        },
+        {
+          title: "Check",
+          text: "Before anything is written, every claim is checked against the product's official documentation. A livestream shows what looks good, and that doesn't always match what the tool actually does.",
+          tool: "official docs",
+        },
+        {
+          title: "Write",
+          text: "The notes become short lessons, in Spanish and English, with the prompts ready to copy.",
+          tool: "Markdown",
+        },
+        {
+          title: "Publish",
+          text: "They go into this site's course system: modules, glossary, diary and feed. The timestamps become links to the exact second of the broadcast.",
+          tool: "Next.js",
+        },
+      ],
+      resultTitle: "In numbers",
+      resultText:
+        "The numbers for the first one, on Grok Bot. The links took the most work: everything claimed in a lesson points to the second of the broadcast where it was said, so you can check it without taking my word for it.",
+      resultMetrics: [
+        { value: "3 days", label: "Livestream processed", detail: "almost 25 hours of broadcast" },
+        { value: "{lessons}", label: "Lessons", detail: "across {modules} modules" },
+        { value: "122", label: "Links to the minute", detail: "every claim, to its source" },
+        { value: "16", label: "Glossary terms", detail: "the jargon, explained" },
+        { value: "2", label: "Languages", detail: "same content in both" },
+        { value: "€0", label: "Price", detail: "no signup, no account" },
+      ],
+      listTitle: "The courses",
+      listMeta: "{lessons} lessons · {modules} modules · free",
+      nextTitle: "What's next",
+      nextText:
+        "I publish each course as I finish it. If you want to know when the next one is out, follow me on X.",
+      nextButton: "Follow @jorgecarrera_es",
+    },
     experience: {
       title: "Experience",
       description:

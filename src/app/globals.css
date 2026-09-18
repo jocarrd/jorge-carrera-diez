@@ -6254,3 +6254,582 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   opacity: 0.7;
   filter: none;
 }
+
+.flight {
+  --cruce-antes: 52%;
+  --cruce-despues: 60%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 4.5rem 0 5.5rem;
+}
+
+@media (min-width: 640px) {
+  .flight {
+    padding: 6rem 0 7rem;
+  }
+}
+
+.flight-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    to bottom,
+    var(--background) 0%,
+    #f2f5fa 10%,
+    #dde9f6 20%,
+    #c2d9ef 30%,
+    #a3c4e6 38%,
+    #7fa8d8 46%,
+    #5c82bd calc(var(--cruce-antes) + 2%),
+    #3d5c99 calc(var(--cruce-despues) + 1%),
+    #26407a 64%,
+    #16294f 72%,
+    #0c172f 82%,
+    #050a1a 91%,
+    #02030a 100%
+  );
+}
+
+:root[data-theme="dark"] .flight-sky {
+  background: linear-gradient(
+    to bottom,
+    var(--background) 0%,
+    #0f151f 12%,
+    #131d2e 24%,
+    #16263f 36%,
+    #18304f 46%,
+    #172d4a calc(var(--cruce-antes) + 2%),
+    #142642 calc(var(--cruce-despues) + 1%),
+    #10203c 64%,
+    #0b1730 72%,
+    #070e22 82%,
+    #040814 91%,
+    #02030a 100%
+  );
+}
+
+.flight-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--cruce-antes) - 4%),
+    rgba(0, 0, 0, 0.45) calc(var(--cruce-despues) + 4%),
+    #000 calc(var(--cruce-despues) + 14%)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--cruce-antes) - 4%),
+    rgba(0, 0, 0, 0.45) calc(var(--cruce-despues) + 4%),
+    #000 calc(var(--cruce-despues) + 14%)
+  );
+}
+
+.flight-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 8%,
+    #000 20%,
+    #000 calc(var(--cruce-antes) + 1%),
+    transparent calc(var(--cruce-despues) + 5%)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 8%,
+    #000 20%,
+    #000 calc(var(--cruce-antes) + 1%),
+    transparent calc(var(--cruce-despues) + 5%)
+  );
+}
+
+.flight-cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 38% 38%,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.78) 42%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  filter: blur(18px);
+}
+
+.flight-cloud--1 {
+  top: 26%;
+  left: -8%;
+  width: 46%;
+  height: 16%;
+}
+
+.flight-cloud--2 {
+  top: 31%;
+  left: 24%;
+  width: 36%;
+  height: 12%;
+  opacity: 0.92;
+}
+
+.flight-cloud--3 {
+  top: 36%;
+  right: -6%;
+  width: 44%;
+  height: 15%;
+}
+
+.flight-cloud--4 {
+  top: 43%;
+  left: 8%;
+  width: 40%;
+  height: 12%;
+  opacity: 0.9;
+}
+
+.flight-cloud--5 {
+  top: 46%;
+  right: 6%;
+  width: 38%;
+  height: 12%;
+  opacity: 0.88;
+}
+
+.flight-cloud--6 {
+  top: 40%;
+  left: 42%;
+  width: 30%;
+  height: 10%;
+  opacity: 0.8;
+}
+
+.flight-cloud--7 {
+  top: 17%;
+  left: 30%;
+  width: 38%;
+  height: 12%;
+  opacity: 0.85;
+}
+
+.flight-cloud--8 {
+  top: 21%;
+  right: -4%;
+  width: 34%;
+  height: 11%;
+  opacity: 0.7;
+}
+
+.flight-cloud--9 {
+  top: 50%;
+  left: -4%;
+  width: 42%;
+  height: 13%;
+  opacity: 0.6;
+}
+
+:root[data-theme="dark"] .flight-cloud {
+  background: radial-gradient(
+    circle at 38% 38%,
+    rgba(180, 205, 240, 0.3),
+    rgba(150, 180, 225, 0.18) 42%,
+    rgba(255, 255, 255, 0) 72%
+  );
+}
+
+.flight-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 26% at 50% 104%,
+    rgba(120, 170, 255, 0.5) 0%,
+    rgba(70, 120, 220, 0.22) 38%,
+    rgba(0, 0, 0, 0) 72%
+  );
+}
+
+.flight-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .flight-inner {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flight-inner {
+    padding: 0 2rem;
+  }
+}
+
+.flight-heading {
+  max-width: 24ch;
+  color: var(--foreground);
+}
+
+.flight-track {
+  position: relative;
+  margin-top: 3.5rem;
+}
+
+.flight-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.flight-rail {
+  stroke: color-mix(in srgb, currentColor 22%, transparent);
+  stroke-width: 1;
+  color: var(--foreground);
+}
+
+.flight-trail {
+  stroke: #f97316;
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 7px rgba(249, 115, 22, 0.55));
+}
+
+.flight-rocket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff7ed;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  will-change: transform;
+  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.9))
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
+
+.flight-rocket svg {
+  position: relative;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.flight-plume {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 0.6875rem;
+  height: 5rem;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 237, 213, 0.95) 0%,
+    rgba(249, 115, 22, 0.75) 32%,
+    rgba(234, 88, 12, 0) 100%
+  );
+  filter: blur(3px);
+  border-radius: var(--radius-pill);
+}
+
+.flight-rocket-eye {
+  fill: #ea580c;
+}
+
+.flight-step {
+  position: relative;
+  padding: 0 0 2.5rem 3rem;
+}
+
+.flight-step:last-child {
+  padding-bottom: 0;
+}
+
+.flight-node {
+  position: absolute;
+  top: 0.125rem;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  transition:
+    color 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.flight-card {
+  position: relative;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 1.25rem 1.25rem 1.375rem;
+  backdrop-filter: blur(9px) saturate(1.1);
+  -webkit-backdrop-filter: blur(9px) saturate(1.1);
+}
+
+.flight-card::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  opacity: 0.28;
+}
+
+.flight-step.is-passed .flight-card::before {
+  background: #f97316;
+  opacity: 1;
+}
+
+.flight-step.is-low .flight-card {
+  border-color: rgba(20, 18, 15, 0.14);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+.flight-step.is-high .flight-card {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(7, 13, 31, 0.72);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+:root[data-theme="dark"] .flight-step.is-low .flight-card {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(10, 16, 30, 0.72);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07) inset;
+}
+
+.flight-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+}
+
+.flight-text {
+  margin-top: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.flight-tool {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+.flight-step.is-low .flight-title {
+  color: #14120f;
+}
+
+.flight-step.is-low .flight-text {
+  color: #3d3934;
+}
+
+.flight-step.is-low .flight-tool,
+.flight-step.is-low .flight-node {
+  color: #3f3b36;
+}
+
+.flight-step.is-low.is-passed .flight-node {
+  color: #7c2d12;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.flight-step.is-high .flight-title {
+  color: #f6f7ff;
+}
+
+.flight-step.is-high .flight-text {
+  color: rgba(246, 247, 255, 0.84);
+}
+
+.flight-step.is-high .flight-tool,
+.flight-step.is-high .flight-node {
+  color: rgba(246, 247, 255, 0.72);
+}
+
+.flight-step.is-high.is-passed .flight-node {
+  color: #fdba74;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .flight-step.is-low .flight-title {
+  color: #f2f2f2;
+}
+
+:root[data-theme="dark"] .flight-step.is-low .flight-text {
+  color: rgba(242, 242, 242, 0.82);
+}
+
+:root[data-theme="dark"] .flight-step.is-low .flight-tool,
+:root[data-theme="dark"] .flight-step.is-low .flight-node {
+  color: rgba(242, 242, 242, 0.7);
+}
+
+:root[data-theme="dark"] .flight-step.is-low.is-passed .flight-node {
+  color: #fdba74;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .flight-heading {
+  color: #f2f2f2;
+}
+
+.flight-track.is-armed .flight-card {
+  opacity: 0.42;
+  transition: opacity 0.55s ease;
+}
+
+.flight-track.is-armed .flight-step.is-passed .flight-card {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .flight-step {
+    padding: 0 0 4rem 4.25rem;
+  }
+
+  .flight-card {
+    max-width: 38rem;
+    padding: 1.625rem 1.75rem 1.75rem;
+  }
+
+  .flight-title {
+    font-size: 1.875rem;
+  }
+
+  .flight-text {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 1100px) {
+  .flight-step:nth-child(even) {
+    padding-left: 22rem;
+  }
+
+  .flight-step:nth-child(even) .flight-node {
+    left: 17.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-rocket {
+    display: none;
+  }
+
+  .flight-track.is-armed .flight-card {
+    opacity: 1;
+  }
+}
+
+.course-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.course-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--line-strong);
+  padding: 1.75rem 0;
+}
+
+@media (min-width: 768px) {
+  .course-row {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+}
+
+.course-row-main {
+  display: block;
+  max-width: 44ch;
+}
+
+.course-row-title {
+  display: block;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.course-row-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.course-row-meta {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .course-row:hover .course-row-title {
+    color: var(--accent-text);
+  }
+}
+
+.course-devices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  width: 100%;
+  margin-inline: auto;
+  max-width: 24rem;
+}
+
+.course-devices > :last-child {
+  margin-top: 2.75rem;
+}
+
+@media (min-width: 1024px) {
+  .course-devices {
+    margin-inline: 0;
+    margin-left: auto;
+    max-width: 30rem;
+    gap: 1.5rem;
+  }
+}

@@ -1,5 +1,4 @@
 import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -11,16 +10,14 @@ export const ogSize = {
 
 export const ogContentType = "image/png";
 
-const raiz = (...partes: string[]) => join(process.cwd(), ...partes);
-
 export async function renderOpenGraphImage(locale: Locale) {
   const copy = getCopy(locale).meta;
 
   const [regular, semibold, bold, retrato] = await Promise.all([
-    readFile(raiz("src/assets/fonts/Geist-Regular.woff")),
-    readFile(raiz("src/assets/fonts/Geist-SemiBold.woff")),
-    readFile(raiz("src/assets/fonts/Geist-Bold.woff")),
-    readFile(raiz("src/assets/jorge-og.jpg")),
+    readFile(new URL("../assets/fonts/Geist-Regular.woff", import.meta.url)),
+    readFile(new URL("../assets/fonts/Geist-SemiBold.woff", import.meta.url)),
+    readFile(new URL("../assets/fonts/Geist-Bold.woff", import.meta.url)),
+    readFile(new URL("../assets/jorge-og.jpg", import.meta.url)),
   ]);
   const foto = `data:image/jpeg;base64,${retrato.toString("base64")}`;
 

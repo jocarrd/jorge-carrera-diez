@@ -246,6 +246,21 @@ export type Copy = {
   };
   pages: {
     projects: PageMeta & { eyebrow: string; heading: string; text: string };
+    courses: PageMeta & {
+      heading: string;
+      text: string[];
+      deviceAlts: [string, string];
+      pipelineTitle: string;
+      pipeline: { title: string; text: string; tool: string }[];
+      resultTitle: string;
+      resultText: string;
+      resultMetrics: Metric[];
+      listTitle: string;
+      listMeta: string;
+      nextTitle: string;
+      nextText: string;
+      nextButton: string;
+    };
     experience: PageMeta & {
       eyebrow: string;
       heading: string;
