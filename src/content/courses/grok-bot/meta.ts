@@ -55,6 +55,7 @@ export const grokBotCourse = {
       number: 3,
       date: "2026-09-17",
       status: "processing",
+      liveUrl: "https://x.com/i/broadcasts/1YGNrbXEeazGw",
       topics: {
         es: ["Marketing Ops", "Post-venta", "Marketing", "Presentación final"],
         en: ["Marketing Ops", "Post-Sales", "Marketing", "Final showcase"],
