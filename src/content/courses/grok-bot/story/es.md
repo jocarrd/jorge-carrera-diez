@@ -6,21 +6,25 @@ El primer día fue de arranque. Buscaron una idea entre las propuestas del públ
 
 ## module 1 · day 1
 
-Antes de construir nada, el directo se paró una hora para explicar qué es Grok Bot. Dos personas del equipo de Grok Bot crearon desde cero un Bot llamado Data Dan y le pidieron por voz un formulario de Google con dos preguntas sobre café. El formulario se fue construyendo delante de todos, clic a clic, en el ordenador del propio Bot.
+**Día 1, primera hora.** Antes de construir nada, el directo se paró para explicar qué es Grok Bot.
 
-Luego otro Bot, Email Ethan, redactó un correo con los datos que le pidió a Data Dan sin que nadie se lo dijera. Antes de enviarlo lo frenó una regla escrita en los ajustes, y hubo que darle permiso para ver el borrador. No todo salió bien. El código QR del formulario daba "no access" porque el enlace no era público.
+Dos personas del equipo de producto crearon un Bot desde cero y le pidieron por voz un formulario con dos preguntas sobre café. El formulario se fue construyendo delante de todos, clic a clic, en el ordenador del propio Bot.
 
-Por ahí empieza el curso, con lo que enseñaron en esa hora: qué es un Bot, qué ordenador usa, cómo se crea el primero y qué puede hacer sin preguntarte.
+Luego un segundo Bot redactó un correo con esos datos sin que nadie se lo mandara. Antes de enviarlo lo frenó una regla escrita en los ajustes. Y no todo salió: el código QR del formulario daba error porque el enlace no era público.
+
+De esa hora sale este módulo.
 
 {{live 0:40:49 "Data Dan construye un formulario en directo"}}
 
 ## module 2 · day 1
 
-De vuelta en el estudio tocaba encontrar la idea. El día anterior habían preguntado en X qué empresa debían montar y tenían miles de respuestas. Con el plugin de X ya conectado, crearon un Bot que el chat bautizó "Marky McMarkface" y le pidieron que resumiera lo que proponía la gente. El Bot agrupó las ideas. Pedían "no otra demo de SaaS", algo físico y local, nostalgia de juegos antiguos o una empresa que crea empresas. De ahí salió la dirección elegida, una plataforma para organizar pop-ups de restaurantes en San Francisco.
+**Día 1, media mañana.** Tocaba decidir qué empresa montar.
 
-Para la landing, Lauren no pidió un diseño a la primera. Le pidió al Bot que buscara referencias de webs bien hechas, le dictó la idea durante un par de minutos y le pidió que se la repitiera con sus palabras. El Bot añadió algo que nadie le había preguntado. Antes que la landing, lo difícil iba a ser conseguir local, cocineros y, después, público. Los tres primeros prototipos salieron sosos y la segunda ronda dio con el estilo que se quedaron, "night market pink".
+El día anterior habían preguntado en X y tenían miles de respuestas. Un Bot las agrupó: nada de otra demo de software, algo físico y local, nostalgia de juegos antiguos. De ahí salió la dirección, una plataforma para organizar pop-ups de restaurantes en San Francisco.
 
-Casi todo lo que hizo Lauren fue darle contexto al Bot. Cómo dárselo, qué recuerda y cómo enseñarle a repetir una tarea es lo que viene ahora.
+Para la landing, Lauren, del equipo de Grok Bot, no pidió un diseño a la primera. Pidió referencias de webs bien hechas, dictó la idea un par de minutos y le hizo repetirla con sus palabras. El Bot añadió algo que nadie le había preguntado: lo difícil no era la web, era conseguir local, cocineros y público.
+
+Casi todo su trabajo fue darle contexto al Bot. De eso va este módulo.
 
 {{live 1:43:15 "El Bot resume miles de propuestas del público"}}
 
@@ -28,21 +32,25 @@ Casi todo lo que hizo Lauren fue darle contexto al Bot. Cómo dárselo, qué rec
 
 ## module 3 · day 1
 
-Con la idea y el estilo decididos había que publicar algo. Roshan creó un repositorio vacío en GitHub y lo conectaron a Vercel para que cada cambio saliera a internet solo. Mientras todavía lo estaban configurando, el Bot ya había subido la primera versión de la página.
+**Día 1, mediodía.** Con la idea decidida había que publicar algo.
 
-Conectaron Notion para ir guardando decisiones y pidieron a un Bot nombres de dominio. Salieron stall.run, nightmarket.app y popup.place, y acabaron comprando shipbythurs.day, que le dio nombre a la empresa, Ship by Thursday. Para guardar a quien se apuntara pensaron en una tabla de Notion y cambiaron sobre la marcha a una base de datos de verdad. Las credenciales tardaban en llegar, así que le dijeron al Bot que avanzara todo lo que pudiera sin ellas.
+Roshan, que lleva producto, creó un repositorio vacío y lo conectó a Vercel para que cada cambio saliera solo a internet. Mientras todavía lo configuraban, el Bot ya había subido la primera versión de la página.
 
-En las próximas lecciones conectas tus propias herramientas, dejas sesiones iniciadas y programas trabajo sin dar más acceso del necesario.
+Conectaron Notion para guardar decisiones y pidieron nombres de dominio. Compraron uno que acabó dando nombre a la empresa: Ship by Thursday. Las credenciales de la base de datos tardaban, así que le dijeron al Bot que avanzara todo lo que pudiera sin ellas.
+
+Conectar tus herramientas, dejar sesiones iniciadas y programar trabajo sin dar más acceso del necesario es lo que viene ahora.
 
 {{live 2:35:42 "El Bot sube la página mientras conectan Vercel"}}
 
 ## module 4 · day 1
 
-Poco a poco el estudio se llenó de Bots. Lauren instaló desde el marketplace Dr. Eggbot, un Bot que crea Bots, y con él montó un equipo. Steve pasó a ser su jefe de gabinete, Grokpot se quedó los prototipos rápidos y Tater, con nombre votado por el chat, sería el ingeniero. Matt hizo lo mismo con un Bot de prospección para encontrar restaurantes.
+**Día 1, media tarde.** Ya tenían idea, dominio y la primera página publicada. Tocaba repartir el trabajo.
 
-Entonces llegó el turno de Codie Sanchez, que venía a hablar de negocio y les hizo frenar un poco. Antes de crear más Bots había que decidir qué cifra querían mover, contactos o registros por correo. Les aconsejó intentar vendérselo a tres personas antes de construir, empezar en X sin pagar anuncios y guardar desde el primer día cada comentario bueno sobre el producto.
+Lauren instaló desde el marketplace un Bot que crea otros Bots y con él montó su equipo: uno de jefe de gabinete, otro para prototipos rápidos y un tercero de ingeniero. Matt, que lleva la relación con desarrolladores, se hizo uno de prospección para encontrar restaurantes.
 
-Horas después, cuando Lauren necesitó un Bot para buscar locales, Matt no le explicó cómo hacerlo. Le mandó una plantilla del suyo. Este módulo enseña a montar un equipo así y a compartir los Bots que funcionan.
+Entonces una invitada les hizo frenar. Antes de crear más Bots, ¿qué cifra querían mover? Su consejo fue intentar vendérselo a tres personas antes de construir nada, empezar en X sin pagar anuncios y guardar desde el primer día cada comentario bueno.
+
+Horas después Lauren necesitaba un Bot nuevo y Matt no le explicó cómo hacerlo: le mandó el suyo como plantilla. De ahí sale este módulo.
 
 {{live 2:05:40 "Dr. Eggbot convierte a Steve en jefe de gabinete"}}
 
@@ -50,11 +58,13 @@ Horas después, cuando Lauren necesitó un Bot para buscar locales, Matt no le e
 
 ## module 5 · day 1
 
-A Tater, el Bot ingeniero, le pidieron que pasara la programación a los agentes en la nube de Cursor y que volviera con un vídeo o una captura antes de desplegar nada. Poco después abrió por su cuenta una pull request de unas 2.000 líneas. Le contestaron con una regla clara. Nada de pull requests por ahora, los cambios iban directos a main.
+**Día 1, tarde.** El Bot ingeniero ya estaba programando solo, y ahí empezaron los sustos.
 
-Fuera de cámara, Lauren montó lo que llamó su fábrica de ingeniería. Un Bot llamado Hashbrown revisa lo que abre Tater, y una automatización publica cada cambio en Slack para revisarlo. En el taller de ingeniería que vino después se vio el siguiente nivel: un Bot recién instalado que aprende las reglas del equipo preguntándole a otro Bot, auditorías de código que se ejecutan de madrugada y un flujo definido para los bugs urgentes.
+Le pidieron que trabajara en la nube y que volviera con un vídeo o una captura antes de desplegar nada. Poco después abrió por su cuenta una pull request de unas dos mil líneas. La respuesta fue una regla clara: nada de pull requests por ahora.
 
-Ese camino, de delegar el código a automatizarlo con pruebas de por medio, es el de este módulo.
+Fuera de cámara, Lauren montó lo que llamó su fábrica de ingeniería. Un Bot revisa lo que abre el otro y una automatización publica cada cambio en Slack. En el taller que vino después se vio el siguiente nivel: un Bot recién instalado que aprende las reglas del equipo preguntándole a otro Bot, y auditorías de código de madrugada.
+
+Ese camino, de delegar el código a automatizarlo con verificación de por medio, es el de este módulo.
 
 {{live 2:50:50 "La pull request de 2.000 líneas que nadie pidió"}}
 
@@ -62,11 +72,13 @@ Ese camino, de delegar el código a automatizarlo con pruebas de por medio, es e
 
 ## module 6 · day 1
 
-La siguiente sesión de construcción fue la más caótica del día. Se congeló la pantalla compartida, un Bot no llegaba a los repositorios y otro no apuntó la fecha que habían decidido para el evento. Aun así avanzaron. La landing ya guardaba registros y mandaba un correo de confirmación, un Bot de marketing buscó las 50 mejores esquinas de San Francisco para repartir flyers, otro reunió entre 15 y 20 caterings con su teléfono y uno nuevo se encargó de llevar a Notion solo las decisiones importantes.
+**Día 1, última hora de construcción.** Fue el bloque más caótico del día.
 
-A media sesión cambiaron de plan. El primer pop-up pasaba de restaurante a exposición de arte, y lo primero que hicieron fue decírselo a Steve, el coordinador, para que no siguieran todos trabajando en la idea vieja.
+Se congeló la pantalla compartida, un Bot no llegaba a los repositorios y otro no apuntó la fecha del evento. Aun así avanzaron: la landing ya guardaba registros y mandaba confirmación, un Bot buscó las mejores esquinas de la ciudad para repartir flyers y otro reunió una veintena de caterings con su teléfono.
 
-Entre medias, otras sesiones enseñaron equipos de Bots que ya llevan tiempo funcionando. Uno de producto pasó de una pregunta sobre datos a un prototipo en una aerolínea inventada. Otro, de fundador, preparaba llamadas con clientes y vigilaba a la competencia. Los casos reales del curso salen de esas sesiones y de lo que le pasó a Ship by Thursday.
+A media sesión cambiaron de plan. El primer pop-up pasaba de restaurante a exposición de arte, y lo primero que hicieron fue decírselo al Bot coordinador para que el resto no siguiera con la idea vieja.
+
+En paralelo, otras sesiones enseñaron equipos que ya llevan tiempo funcionando: uno de producto que va de una pregunta sobre datos a un prototipo, otro de fundador que prepara llamadas y vigila a la competencia. Los casos reales del curso salen de ahí.
 
 {{live 5:39:38 "Cambio de plan: del restaurante a la exposición de arte"}}
 
@@ -74,11 +86,13 @@ Entre medias, otras sesiones enseñaron equipos de Bots que ya llevan tiempo fun
 
 ## module 7 · day 1
 
-El día terminó con dos conversaciones sobre lo que no se ve en una demo. En la sesión para fundadores, Shub, del equipo de xAI, explicó cómo evitar que los Bots gasten de más. Aconsejó que las routines se disparen cuando pase algo en vez de cada pocos minutos, que los Bots llamen a la API de una web en lugar de recorrerla a clics y que las preguntas sueltas vayan a un Bot aparte.
+**Día 1, cierre.** El día terminó con dos conversaciones sobre lo que no se ve en una demo.
 
-Después se sentó con el equipo Jenny, que coordina siete negocios con 22 Bots. Les ayudó a escribir el prompt del presupuesto del evento y dijo qué no dejaría en manos de un Bot: el registro de invitados, la seguridad y la lectura final de un contrato. El día 2 iba a ser de ventas y atención al cliente.
+En la sesión para fundadores, alguien del equipo de xAI explicó cómo evitar que los Bots gasten de más: que las routines se disparen cuando pase algo en vez de cada pocos minutos, que los Bots llamen a la API de una web en lugar de recorrerla a clics, y que las preguntas sueltas vayan a un Bot aparte.
 
-El último módulo recoge esas dos conversaciones: cuánto cuesta trabajar así y dónde conviene que siga decidiendo una persona.
+Después se sentó con ellos una invitada que coordina siete negocios con veintidós Bots. Ayudó a escribir el prompt del presupuesto y dijo qué no dejaría en manos de un Bot: el registro de invitados, la seguridad y la lectura final de un contrato.
+
+Cuánto cuesta trabajar así y dónde conviene que siga decidiendo una persona es el último módulo.
 
 {{live 7:55:39 "Usar la API en lugar del navegador para gastar menos"}}
 
@@ -86,15 +100,19 @@ El último módulo recoge esas dos conversaciones: cuánto cuesta trabajar así 
 
 ## day 2
 
-El segundo día empezó con un cambio de planes. Por la noche dejaron a los Bots revisando la idea de los pop-ups con los consejos de los invitados, y a la mañana siguiente la conclusión era que no daba tiempo a montarla en dos días. Pasaron a ser un estudio de videojuegos. El primer juego convierte las plantillas de Bots del público en personajes que se enfrentan entre sí. Al cerrar el día tenían login con X, una tabla de clasificación vacía, música generada, anuncios en vídeo y un tablero de Notion en el que una docena de Bots nuevos se repartían el trabajo. Entre medias hubo cuatro talleres, de preventa, ventas, prospección y atención al cliente.
+El segundo día empezó con un cambio de planes. Por la noche dejaron a los Bots revisando la idea de los pop-ups con los consejos de los invitados, y a la mañana siguiente la conclusión era que no daba tiempo a montarla en dos días. Pasaron a ser un estudio de videojuegos. El primer juego convierte las plantillas de Bots del público en personajes que se enfrentan entre sí. Al cerrar el día tenían login con X, una tabla de clasificación vacía, música generada, anuncios en vídeo y un tablero de Notion en el que una docena de Bots nuevos se repartían el trabajo.
 
 {{live 8:10:34 "El balance del segundo día"}}
 
 ## module 1 · day 2
 
-"Los agentes nos vendieron el cambio de idea", resumió Matt al abrir la emisión. Los invitados del día anterior habían avisado de que en San Francisco un pop-up necesita licencias y permisos, y los Bots, trabajando de noche, llegaron a la misma conclusión. En media hora de pizarra salió la idea nueva. Cada persona sube un Bot que ya usa, el juego le da estadísticas y una habilidad, y lo enfrenta al equipo de otra persona.
+**Día 2, al abrir la emisión.** "Los agentes nos vendieron el cambio de idea", resumió Matt.
 
-Poco después, en el primer taller, una Bot llamada Serena Williams entraba en la web de reservas de Southwest con su propio ordenador para compararla con la de Flylo, la aerolínea inventada de la demo. Nadie le había preparado ninguna integración. Eso es lo que explican las lecciones de este módulo: qué es un Bot, qué ordenador usa y qué puede hacer sin pedirte permiso.
+Los invitados del día anterior habían avisado de que en San Francisco un pop-up necesita licencias y permisos. Los Bots, trabajando de noche, llegaron a la misma conclusión. En media hora de pizarra salió la idea nueva: cada persona sube un Bot que ya usa, el juego le da estadísticas y una habilidad, y lo enfrenta al equipo de otra persona.
+
+Poco después, en el primer taller, un Bot entró con su propio ordenador en la web de reservas de una aerolínea real para compararla con la de la aerolínea inventada de la demo. Nadie le había preparado ninguna integración.
+
+Qué es un Bot, qué ordenador usa y qué puede hacer sin pedirte permiso: eso explican las lecciones de este módulo.
 
 {{live 0:11:08 "Los agentes les venden el cambio de idea"}}
 
@@ -102,11 +120,13 @@ Poco después, en el primer taller, una Bot llamada Serena Williams entraba en l
 
 ## module 2 · day 2
 
-El juego no empezó en código. Lauren escribió el plan con un playbook de planificación mientras los otros dos seguían en la pizarra, y le pidió a su Bot jefe de gabinete que hablara con Dr. Eggbot para crear un ingeniero. Al final del mensaje añadió su frase de siempre: "repítelo con tus palabras antes de empezar". Alguien comentó que a una persona sería raro decírselo así. La respuesta fue que eso es escucha activa.
+**Día 2, primera hora.** El juego no empezó en código, empezó en un plan.
 
-Más tarde, mirando cómo había quedado la descripción del Bot ingeniero, Lauren vio que estaba llena de detalles de un solo problema. Explicó que cuando una regla o una skill nace de un error concreto, el agente tiende a meter en ella todos los detalles de ese caso, y la skill acaba siendo un montón de ejemplos que ya no sirven. Le pidió a Dr. Eggbot que la reescribiera con principios generales.
+Lauren lo escribió mientras los otros dos seguían en la pizarra, y pidió a su Bot jefe de gabinete que hablara con el Bot que crea Bots para fabricar un ingeniero. Al final del mensaje añadió su frase de siempre: que se lo repitiera con sus palabras antes de empezar. Alguien comentó que a una persona sería raro decírselo así. La respuesta fue que eso es escucha activa.
 
-Este módulo va de eso, de lo que recuerda un Bot, de cómo enseñarle una tarea y de cómo darle el contexto justo.
+Más tarde vio que la descripción del Bot ingeniero estaba llena de detalles de un solo problema. Cuando una regla nace de un error concreto, el agente mete dentro todo ese caso y la skill acaba siendo un montón de ejemplos que ya no sirven. Pidió que la reescribiera con principios generales.
+
+De eso va este módulo: qué recuerda un Bot, cómo enseñarle una tarea y cómo darle el contexto justo.
 
 {{live 1:32:28 "Repítelo con tus palabras antes de empezar"}}
 
@@ -114,9 +134,11 @@ Este módulo va de eso, de lo que recuerda un Bot, de cómo enseñarle una tarea
 
 ## module 3 · day 2
 
-La creadora Karen X. Cheng enseñó el uso más comentado del día. Su Bot hace de madrugada un periódico personal con su calendario, sus correos, los paquetes que llegan, un cómic de su día y un crucigrama con pistas de su vida. Luego busca una impresora en la wifi y lo imprime sin preguntar. Contó también que conectar a Grok Bot su pantalla split-flap, la de las letras que giran como en los aeropuertos, le llevó dos minutos: pegó una clave de la API y listo. Hacerlo antes programando le había costado mucho más.
+**Día 2, media mañana.** Una creadora invitada enseñó el uso más comentado del directo.
 
-En el estudio, los Bots empezaron a enterarse solos de lo que pasaba. Un Bot recibía un aviso con cada pull request, otro escuchaba menciones en Slack y otro vigilaba el tablero de Notion. A media tarde el equipo se enteró en directo de que Grok Bot acababa de lanzar una integración con 1Password. "Nos habría venido genial tenerla ayer", comentaron en el estudio. Se habían pasado buena parte del día 1 peleándose con las credenciales.
+Su Bot fabrica de madrugada un periódico personal con su calendario, sus correos, los paquetes que llegan y un crucigrama con pistas de su vida. Luego busca una impresora en la wifi y lo imprime sin preguntar. Contó también que conectar su pantalla de letras giratorias le llevó dos minutos: pegó una clave de API y listo. Programarlo a mano le había costado mucho más.
+
+En el estudio, los Bots empezaron a enterarse solos de lo que pasaba: uno recibía aviso de cada pull request, otro escuchaba menciones en Slack, otro vigilaba el tablero. A media tarde se enteraron en directo de que acababa de salir la integración con 1Password, después de pasarse el día anterior peleando con credenciales.
 
 Conectar herramientas, iniciar sesiones y programar routines que salten con un evento son los temas de este módulo.
 
@@ -126,11 +148,13 @@ Conectar herramientas, iniciar sesiones y programar routines que salten con un e
 
 ## module 4 · day 2
 
-Por la tarde había tantos Bots que hizo falta un sistema. Roshan pidió a su jefe de gabinete una lista de tareas en Notion y luego la convirtió en un tablero. Los tres crearon a la vez, por voz, un Bot para Slack con Dr. Eggbot, y a dos de ellos les salió con el mismo nombre, Ping. Lauren resolvió el desorden con una sola orden a Dr. Eggbot: que todos sus Bots trataran Notion como la fuente de verdad y lo mantuvieran al día.
+**Día 2, por la tarde.** Había tantos Bots que hizo falta un sistema.
 
-Lauren dio un criterio para saber cuándo hacerlo. Si notas que estás dando órdenes sueltas a cada Bot, es hora de parar y organizar el equipo entero. En el taller de preventa se vio el caso contrario: una Bot pidió a otras dos que le dijeran qué Bots les faltaban y los creó ella misma.
+Roshan pidió a su jefe de gabinete una lista de tareas y la convirtió en un tablero. Los tres crearon a la vez, por voz, un Bot para Slack, y a dos de ellos les salió con el mismo nombre. Lauren resolvió el desorden con una sola orden: que todos sus Bots trataran el tablero como la fuente de verdad y lo mantuvieran al día.
 
-Al final del día, Lauren pidió a Dr. Eggbot que leyera las conversaciones de todos sus Bots y buscara dónde se atascaba el trabajo. La respuesta fue que el atasco era ella: "Lauren es el bus de interrupciones".
+Y dio el criterio para saber cuándo hace falta. Si notas que estás dando órdenes sueltas a cada Bot, es hora de parar y organizar el equipo entero.
+
+Al final del día pidió que leyeran las conversaciones de todos sus Bots para buscar dónde se atascaba el trabajo. La respuesta fue que el atasco era ella.
 
 {{live 6:47:16 "Tres personas crean el mismo Bot a la vez"}}
 
@@ -138,11 +162,13 @@ Al final del día, Lauren pidió a Dr. Eggbot que leyera las conversaciones de t
 
 ## module 5 · day 2
 
-El primer prototipo fue HTML desechable, sin login ni base de datos, con paneles de controles deslizantes para cambiar las reglas del juego en tiempo real. "Si el juego no es divertido, lo demás da igual", dijo Lauren. Había que llegar pronto a la parte divertida sin esperar a que el agente acabara cada cambio.
+**Día 2, construcción del juego.** El primer prototipo fue código desechable, sin login ni base de datos, con controles deslizantes para cambiar las reglas en tiempo real.
 
-Hubo tropiezos. Lauren pidió una librería CSS de brillos y todas las cartas salieron iguales y "demasiado brillantes"; admitió que había dirigido mal al agente. También cayeron en que el panel de depuración no podía ir en el navegador de un juego competitivo, porque cualquiera lo usaría para hacer trampas desde la consola. Así que separaron cliente y servidor. Cuando los tests empezaron a fallar, los borraron todos. Los escribirían cuando supieran qué querían probar.
+"Si el juego no es divertido, lo demás da igual", dijo Lauren. La idea era llegar pronto a la parte divertida sin esperar a que el agente terminara cada cambio.
 
-Por la tarde, Lauren tenía un agente coordinador en la nube repartiendo trabajo entre cinco agentes más, con otros que verificaban el resultado, mientras el tablero de Notion se movía solo. Así se trabaja en el módulo de ingeniería, dejando el código a los agentes y comprobando lo que hacen.
+Hubo tropiezos. Pidió una librería de brillos y todas las cartas salieron iguales; admitió que había dirigido mal al agente. Cayeron en que el panel de depuración no podía ir en el navegador de un juego competitivo, porque cualquiera haría trampas desde la consola, así que separaron cliente y servidor. Y cuando los tests empezaron a fallar, los borraron todos: los escribirían cuando supieran qué querían probar.
+
+Por la tarde tenía un agente coordinador repartiendo trabajo entre cinco más, con otros verificando el resultado. Así se trabaja en el módulo de ingeniería.
 
 {{live 1:52:21 "Si el juego no es divertido, lo demás da igual"}}
 
@@ -150,11 +176,13 @@ Por la tarde, Lauren tenía un agente coordinador en la nube repartiendo trabajo
 
 ## module 6 · day 2
 
-Entre bloque y bloque de construcción, el estudio dio paso a gente que ya trabaja así. Marcel, dueño de Icon Coffee, una cafetería con tostadero en Potrero Hill, tiene un Bot jefe de gabinete conectado a la caja. Desde el móvil le pregunta cuánto vendían hace dos años, y le pasó una foto de la carta para ver qué productos apenas salían.
+**Día 2, entre bloques.** El estudio dio paso a gente que ya trabaja así fuera de una demo.
 
-Matthew Berman, que vive de hacer vídeos sobre IA, contó dos casos. Fotografió lo que ya no usaba y dejó que su Bot buscara precios de venta recientes, publicara los anuncios y contestara a los compradores, y así vendió una PlayStation y un MacBook. Otro Bot revisó doce meses de facturas de la luz y le encontró un plan 1.000 dólares más barato al año. Matt Palmer lo resumió así: los problemas personales se parecen mucho a los de una empresa. Regatear en Marketplace es lo mismo que negociar con un proveedor.
+El dueño de una cafetería con tostadero tiene un Bot jefe de gabinete conectado a la caja. Desde el móvil le pregunta cuánto vendían hace dos años, y le pasó una foto de la carta para ver qué productos apenas salían.
 
-Mientras tanto, Ship by Thursday seguía sin clientes. Los casos reales de este módulo salen de esas conversaciones.
+Un creador que vive de hacer vídeos sobre IA contó dos casos. Fotografió lo que ya no usaba y dejó que su Bot buscara precios recientes, publicara los anuncios y contestara a los compradores: así vendió una consola y un portátil. Otro Bot revisó doce meses de facturas de la luz y le encontró un plan mil dólares más barato al año.
+
+Matt lo resumió: los problemas personales se parecen mucho a los de una empresa. Regatear en un mercadillo es lo mismo que negociar con un proveedor. Los casos reales de este módulo salen de ahí.
 
 {{live d2 4:52:04 "El Bot que vende lo que ya no usas"}}
 
@@ -162,11 +190,13 @@ Mientras tanto, Ship by Thursday seguía sin clientes. Los casos reales de este 
 
 ## module 7 · day 2
 
-Los números llegaron con las preguntas del público. Una baraja entera de diapositivas costó entre 20 y 30 dólares frente a cuatro o cinco horas de trabajo. Responder un ticket de soporte de dificultad media costaba 1 o 2 dólares, y agrupando los sencillos con un script bajó a unos 20 céntimos. El consejo más repetido para gastar menos fue lanzar menos routines y decirle al Bot exactamente qué ticket o qué cuenta mirar.
+**Día 2, turno de preguntas.** Ahí salieron los números y los límites.
 
-También salieron los límites. Si una herramienta no tiene MCP y no funciona en Linux, un Bot no puede usarla. Algunas webs detectan que es un Bot y lo bloquean. Y Matthew Berman confesó el problema que casi nadie cuenta: "hago más trabajo que nunca y estoy más ocupado que nunca".
+Una baraja entera de diapositivas costó entre veinte y treinta dólares, frente a cuatro o cinco horas de trabajo. Responder un ticket de soporte de dificultad media salía por uno o dos dólares, y agrupando los sencillos con un script bajaba a unos veinte céntimos. El consejo más repetido para gastar menos fue lanzar menos routines y decirle al Bot exactamente qué mirar.
 
-El día acabó con el juego conectado a su servidor y el login con X funcionando, aunque todavía no se podían añadir Bots por un fallo. El día 3 tocaba desplegarlo, ponerle nombre y conseguir que jugara el público.
+También salieron los límites. Si una herramienta no funciona en Linux, un Bot no puede usarla. Algunas webs detectan que es un Bot y lo bloquean. Y uno de los invitados confesó el problema que casi nadie cuenta: hace más trabajo que nunca y está más ocupado que nunca.
+
+Cuánto cuesta y dónde conviene parar es de lo que va este módulo.
 
 {{live 8:00:40 "Cuánto cuesta responder un ticket"}}
 
@@ -174,11 +204,13 @@ El día acabó con el juego conectado a su servidor y el login con X funcionando
 
 ## module 8 · day 2
 
-La primera pizarra del día no hablaba solo del juego. Matt apuntó lo que necesitaría el estudio para ser una empresa de verdad: que la gente descubriera el juego, un correo o incluso un teléfono para atender a los jugadores y quizá leer directamente el chat de X. Por la tarde le preguntaron al becario del equipo, un estudiante de Stanford, qué hace viral un juego. Contestó que el boca a boca y publicar sin parar, en X para los primeros jugadores y en subreddits pequeños pidiendo opinión.
+**Día 2, primera pizarra.** No hablaba del juego, hablaba de la empresa.
 
-Esas piezas de empresa se vieron a fondo en cuatro talleres del mismo día. En preventa, una Bot probaba la competencia en su ordenador mientras otro leía el código. En prospección, una "tropa" de Bots investigaba 200 empresas en paralelo. En atención al cliente, un Bot respondía tickets, devolvía pagos y avisaba en Slack de lo urgente.
+Matt apuntó lo que hacía falta para serlo: que la gente descubriera el juego, un correo o incluso un teléfono para atender a los jugadores, y quizá leer directamente el chat de X. Por la tarde preguntaron al becario del equipo qué hace viral un juego. Contestó que el boca a boca y publicar sin parar, en X para los primeros jugadores y en foros pequeños pidiendo opinión.
 
-Este módulo recoge esos talleres. Es el trabajo que le esperaba a Ship by Thursday en cuanto el juego tuviera jugadores.
+Esas piezas se vieron a fondo en cuatro talleres del mismo día. En preventa, un Bot probaba la competencia en su ordenador mientras otro leía el código. En prospección, un grupo de Bots investigaba doscientas empresas en paralelo. En atención al cliente, un Bot respondía tickets, devolvía pagos y avisaba en Slack de lo urgente.
+
+Este módulo recoge esos talleres: el trabajo que esperaba en cuanto el juego tuviera jugadores.
 
 {{live d2 0:24:29 "Un estudio de juegos necesita lo mismo que cualquier empresa"}}
 

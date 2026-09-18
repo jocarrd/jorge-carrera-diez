@@ -1,26 +1,30 @@
 ## day 1
 
-The first day was about getting started. They looked for an idea in the audience's suggestions, turned it into a landing page with its own domain and put together their first team of Bots. Along the way came an introduction to Grok Bot, an engineering workshop, two sessions on teams of Bots that already work, and several guests with business advice. It ended with the talks done, the Bots connected to Notion, GitHub and Vercel, and the first landing page online.
+Day one was about getting started. They picked an idea from the audience's suggestions, turned it into a landing page with its own domain and assembled the first team of Bots. Along the way came an introduction to Grok Bot, an engineering workshop, two sessions on Bot teams already in production and several guests offering business advice. It ended with pitches done, the Bots wired to Notion, GitHub and Vercel, and the first landing page live.
 
 {{live 8:42:23 "How the first day went"}}
 
 ## module 1 · day 1
 
-Before building anything, the livestream paused for an hour to explain what Grok Bot is. Two people from the Grok Bot team created a Bot called Data Dan from scratch and asked it, by voice, for a Google Form with two questions about coffee. The form came together in front of everyone, click by click, on the Bot's own computer.
+**Day 1, first hour.** Before building anything, the stream stopped to explain what Grok Bot is.
 
-Then another Bot, Email Ethan, drafted an email using data it asked Data Dan for without being told to. A rule written in the settings stopped it before sending, and it needed permission before it could show the draft. Not everything worked. The form's QR code said "no access" because the link wasn't public.
+Two people from the product team created a Bot from scratch and asked it out loud for a form with two questions about coffee. The form was built in front of everyone, click by click, on the Bot's own computer.
 
-That's where the course starts, with what they taught in that hour: what a Bot is, which computer it uses, how to create your first one and what it can do without asking you.
+Then a second Bot drafted an email with that data without anyone asking. A rule written into its settings stopped it before it sent. And not everything worked: the form's QR code errored out because the link was not public.
+
+This module comes out of that hour.
 
 {{live 0:40:49 "Data Dan builds a form live"}}
 
 ## module 2 · day 1
 
-Back in the studio, it was time to find the idea. The day before, they had asked on X what company they should build and had thousands of replies. With the X plugin already connected, they created a Bot the chat named "Marky McMarkface" and asked it to summarise what people were suggesting. The Bot grouped the ideas. People wanted "not another SaaS demo", something physical and local, nostalgia for old games, or a company that builds companies. That gave them their direction, a platform for running restaurant pop-ups in San Francisco.
+**Day 1, mid-morning.** It was time to decide what company to build.
 
-For the landing page, Lauren didn't ask for a design straight away. The Bot was asked to find references from well-made websites, then got a couple of minutes of dictated thinking about the idea and a request to repeat it back in its own words. The Bot added something nobody had asked about. The landing page would be the easy part; finding a venue, cooks and then guests would be hard. The first three prototypes came out dull, and the second round found the style they kept, "night market pink".
+The day before they had asked on X and had thousands of replies. A Bot grouped them: no more software demos, something physical and local, nostalgia for old games. That gave them the direction, a platform for running restaurant pop-ups in San Francisco.
 
-Almost everything Lauren did was give the Bot context. How to give it, what a Bot remembers and how to teach it to repeat a task is what comes next.
+For the landing page, Lauren, from the Grok Bot team, did not ask for a design straight away. She asked for references to well-made sites, dictated the idea for a couple of minutes and made the Bot repeat it in its own words. The Bot added something nobody had asked about: the hard part was not the website, it was finding a venue, cooks and an audience.
+
+Almost all her work was giving the Bot context. That is what this module covers.
 
 {{live 1:43:15 "The Bot summarises thousands of audience ideas"}}
 
@@ -28,21 +32,25 @@ Almost everything Lauren did was give the Bot context. How to give it, what a Bo
 
 ## module 3 · day 1
 
-With the idea and the style decided, they needed something online. Roshan created an empty GitHub repository and they connected it to Vercel so every change would go live on its own. While they were still setting it up, the Bot had already pushed the first version of the page.
+**Day 1, midday.** With the idea settled, something had to go live.
 
-They connected Notion to keep track of decisions and asked a Bot for domain names. It came up with stall.run, nightmarket.app and popup.place, and they ended up buying shipbythurs.day, which gave the company its name, Ship by Thursday. To store sign-ups they considered a Notion table and switched on the fly to a real database. The credentials were slow to arrive, so they told the Bot to get as far as it could without them.
+Roshan, who runs product, created an empty repository and wired it to Vercel so every change shipped on its own. While they were still configuring it, the Bot had already pushed the first version of the page.
 
-In the next lessons you connect your own tools, leave logins in place and schedule work without giving more access than needed.
+They connected Notion to store decisions and asked for domain names. They bought one that ended up naming the company: Ship by Thursday. The database credentials were slow to arrive, so they told the Bot to get as far as it could without them.
+
+Connecting your tools, leaving sessions signed in and scheduling work without handing over more access than needed is what comes next.
 
 {{live 2:35:42 "The Bot pushes the page while they connect Vercel"}}
 
 ## module 4 · day 1
 
-Little by little the studio filled up with Bots. Lauren installed Dr. Eggbot from the marketplace, a Bot that creates Bots, and used it to build a team. Steve became the chief of staff, Grokpot took the quick prototypes and Tater, named by a chat vote, would be the engineer. Matt did the same with a prospecting Bot to find restaurants.
+**Day 1, late afternoon.** They had an idea, a domain and a first page live. Time to split up the work.
 
-Then it was Codie Sanchez's turn, there to talk business, and the team had to slow down a little. Before creating more Bots, they had to decide which number they wanted to move, leads or email sign-ups. The advice was to try selling it to three people before building, to start on X without paying for ads, and to save every good comment about the product from day one.
+Lauren installed a Bot from the marketplace that creates other Bots and used it to build her team: one chief of staff, one for quick prototypes and a third engineer. Matt, who runs developer relations, made himself a prospecting Bot to find restaurants.
 
-Hours later, when Lauren needed a Bot to search for venues, Matt didn't explain how to build one. A template of Matt's own Bot arrived instead. This module teaches you to build a team like that and share the Bots that work.
+Then a guest made them stop. Before creating more Bots, what number were they trying to move? Her advice was to try selling it to three people before building anything, start on X without paying for ads, and save every good comment from day one.
+
+Hours later Lauren needed a new Bot and Matt did not explain how to make one: he sent her his as a template. That is where this module comes from.
 
 {{live 2:05:40 "Dr. Eggbot turns Steve into a chief of staff"}}
 
@@ -50,11 +58,13 @@ Hours later, when Lauren needed a Bot to search for venues, Matt didn't explain 
 
 ## module 5 · day 1
 
-Tater, the engineer Bot, was asked to hand the coding to Cursor's cloud agents and come back with a video or a screenshot before deploying anything. Soon after, it opened a pull request of about 2,000 lines that nobody had asked for. The answer was a clear rule. No pull requests for now, changes go straight to main.
+**Day 1, afternoon.** The engineering Bot was already coding on its own, and that is where the scares began.
 
-Off camera, Lauren built what was called an engineering factory. A Bot called Hashbrown reviews whatever Tater opens, and an automation posts every change to Slack for review. The engineering workshop that followed showed the next level: a newly installed Bot learning the team's rules by asking another Bot, code audits that run overnight and a defined flow for urgent bugs.
+They told it to work in the cloud and come back with a video or a screenshot before deploying anything. Soon after, it opened a pull request of some two thousand lines on its own. The answer was a clear rule: no pull requests for now.
 
-That path, from handing off code to automating it with proof along the way, is what this module covers.
+Off camera, Lauren set up what she called her engineering factory. One Bot reviews what the other opens and an automation posts every change to Slack. The workshop that followed showed the next level: a freshly installed Bot that learns the team's rules by asking another Bot, and code audits running overnight.
+
+That path, from delegating the code to automating it with verification in between, is this module.
 
 {{live 2:50:50 "The 2,000-line pull request nobody asked for"}}
 
@@ -62,11 +72,13 @@ That path, from handing off code to automating it with proof along the way, is w
 
 ## module 6 · day 1
 
-The next build session was the most chaotic of the day. The screen share froze, one Bot couldn't reach the repositories and another didn't record the date they had picked for the event. They still made progress. The landing page now stored sign-ups and sent a confirmation email, a marketing Bot found the 50 best street corners in San Francisco for handing out flyers, another gathered 15 to 20 caterers with phone numbers, and a new one took charge of putting only the important decisions into Notion.
+**Day 1, last build block.** It was the messiest stretch of the day.
 
-Halfway through, they changed plans. The first pop-up went from restaurant to art exhibition, and the first thing they did was tell Steve, the coordinator, so the other Bots wouldn't keep working on the old idea.
+The shared screen froze, one Bot could not reach the repositories and another failed to note the event date. They still moved forward: the landing page was storing signups and sending confirmations, one Bot found the best street corners for handing out flyers and another pulled together twenty-odd caterers with phone numbers.
 
-In between, other sessions showed teams of Bots that have been running for a while. A product team went from a question about data to a prototype for a made-up airline. A founder's team prepared customer calls and kept an eye on competitors. The real-world cases in the course come from those sessions and from what happened to Ship by Thursday.
+Halfway through they changed plan. The first pop-up went from restaurant to art exhibition, and the first thing they did was tell the coordinating Bot so the rest would stop working on the old idea.
+
+In parallel, other sessions showed teams that have been running for a while: a product one that goes from a data question to a prototype, a founder one that preps calls and watches competitors. The real cases in this course come from there.
 
 {{live 5:39:38 "Change of plan: from restaurant to art exhibition"}}
 
@@ -74,11 +86,13 @@ In between, other sessions showed teams of Bots that have been running for a whi
 
 ## module 7 · day 1
 
-The day ended with two conversations about what you don't see in a demo. In the session for founders, Shub, from the xAI team, explained how to stop Bots from overspending. The advice was to trigger routines when something happens instead of every few minutes, to have Bots call a website's API instead of clicking through it, and to send one-off questions to a separate Bot.
+**Day 1, closing.** The day ended with two conversations about what a demo never shows.
 
-Then Jenny, who runs seven businesses with 22 Bots, sat down with the team. Jenny helped them write the prompt for the event budget and named what a Bot shouldn't handle alone: guest registration, security and the final read of a contract. Day 2 would be about sales and customer support.
+In the founders' session, someone from xAI explained how to keep Bots from overspending: fire routines when something happens instead of every few minutes, have Bots call a site's API rather than clicking through it, and send one-off questions to a separate Bot.
 
-The last module gathers those two conversations: what it costs to work this way and where a person should keep making the call.
+Then a guest who runs seven businesses with twenty-two Bots sat down with them. She helped write the budget prompt and said what she would not hand to a Bot: the guest list, security and the final read of a contract.
+
+What this way of working costs, and where a person should keep deciding, is the last module.
 
 {{live 7:55:39 "Using the API instead of the browser to spend less"}}
 
@@ -86,15 +100,19 @@ The last module gathers those two conversations: what it costs to work this way 
 
 ## day 2
 
-Day 2 opened with a change of plan. Overnight the team had left their Bots going over the pop-up idea and the guests' advice, and by morning the verdict was that it couldn't be built in two days. They became a video game studio. Their first game turns the audience's Bot templates into characters that fight each other. By the end of the day they had sign-in with X, an empty leaderboard, generated music, video ads and a Notion board where a dozen new Bots were splitting up the work. In between came four workshops, on sales engineering, sales, prospecting and customer support.
+Day two opened with a change of plan. Overnight they had left the Bots reviewing the pop-up idea against the guests' advice, and by morning the conclusion was that it could not be built in two days. They became a game studio instead. The first game turns the audience's Bot templates into characters that fight each other. By the end of the day they had login with X, an empty leaderboard, generated music, video ads and a Notion board where a dozen new Bots divided the work.
 
 {{live 8:10:34 "How day 2 ended"}}
 
 ## module 1 · day 2
 
-"The agents sold us a pivot," Matt said as the stream opened. The previous day's guests had warned that a pop-up in San Francisco needs licences and permits, and the Bots, working through the night, reached the same conclusion. Half an hour at the whiteboard produced the new idea. Each person uploads a Bot they already use, the game gives it stats and an ability, and it takes on someone else's team.
+**Day 2, as the stream opened.** "The agents sold us on the pivot," was how Matt put it.
 
-Soon after, in the first workshop, a Bot called Serena Williams went through Southwest's booking site on her own computer to compare it with Flylo, the made-up airline in the demo. Nobody had set up an integration for her. That is what this module's lessons explain: what a Bot is, what computer it uses and what it can do without asking you.
+The previous day's guests had warned that a pop-up in San Francisco needs licences and permits. The Bots, working overnight, reached the same conclusion. Half an hour at the whiteboard produced the new idea: everyone uploads a Bot they already use, the game gives it stats and an ability, and pits it against someone else's team.
+
+Soon after, in the first workshop, a Bot went into a real airline's booking site on its own computer to compare it with the made-up airline in the demo. Nobody had set up any integration for it.
+
+What a Bot is, what computer it uses and what it can do without asking you first: that is what the lessons in this module explain.
 
 {{live 0:11:08 "The agents sell them a pivot"}}
 
@@ -102,11 +120,13 @@ Soon after, in the first workshop, a Bot called Serena Williams went through Sou
 
 ## module 2 · day 2
 
-The game didn't start as code. Lauren wrote the plan with a planning playbook while the other two stayed at the whiteboard, and asked her chief of staff Bot to get Dr. Eggbot to create an engineer. At the end of the message she added her usual line: "restate this in your own words before you start". Someone said it would be odd to say that to a person. The answer was that it's called active listening.
+**Day 2, first hour.** The game did not start in code, it started in a plan.
 
-Later, looking at the engineer Bot's description, Lauren saw it was full of details from a single problem. She explained that when a rule or a skill comes out of one specific mistake, the agent tends to pack in every detail of that case, and the skill ends up as a pile of examples that no longer help. She asked Dr. Eggbot to rewrite it as general principles.
+Lauren wrote it while the other two stayed at the whiteboard, and asked her chief of staff Bot to talk to the Bot that creates Bots and have it build an engineer. At the end of the message she added her usual line: restate this in your own words before you start. Someone said it would be strange to talk to a person that way. Her answer was that this is active listening.
 
-That is what this module covers: what a Bot remembers, how to teach it a task and how to give it the right context.
+Later she saw that the engineering Bot's description was full of details from a single problem. When a rule is born from one specific mistake, the agent packs that whole case into it and the skill ends up a pile of examples that no longer apply. She asked it to rewrite the rule as general principles.
+
+That is this module: what a Bot remembers, how to teach it a task and how to give it the right amount of context.
 
 {{live 1:32:28 "Restate this in your own words before you start"}}
 
@@ -114,11 +134,13 @@ That is what this module covers: what a Bot remembers, how to teach it a task an
 
 ## module 3 · day 2
 
-Creator Karen X. Cheng showed the most talked-about use of the day. Her Bot makes a personal newspaper overnight from her calendar, her email, the parcels arriving, a comic of her day and a crossword with clues from her life. Then it finds a printer on the wifi and prints it without asking. She also said that connecting her split-flap display, the kind with flipping letters you see in airports, took two minutes: she pasted an API key and that was it. Doing it with code before had taken her much longer.
+**Day 2, mid-morning.** A guest creator showed the most talked-about use of the whole stream.
 
-In the studio, the Bots started finding out what was happening on their own. One Bot got a notice for every pull request, another listened for mentions in Slack and another watched the Notion board. Mid-afternoon the team learned live that Grok Bot had just launched a 1Password integration. "This would have been super helpful" the day before, they said in the studio. They had spent a good part of day 1 fighting with credentials.
+Her Bot builds a personal newspaper overnight with her calendar, her email, the parcels arriving and a crossword with clues from her life. Then it finds a printer on the wifi and prints it without asking. She also said that wiring up her split-flap display took two minutes: she pasted an API key and that was it. Coding it by hand had taken far longer.
 
-Connecting tools, staying logged in and scheduling routines that fire on an event are the topics of this module.
+In the studio, the Bots started finding things out for themselves: one got notified of every pull request, another listened for Slack mentions, another watched the board. Mid-afternoon they learned live that the 1Password integration had just shipped, after spending the previous day fighting with credentials.
+
+Connecting tools, signing in and scheduling routines that fire on an event are what this module covers.
 
 {{live 2:46:13 "The newspaper that prints itself"}}
 
@@ -126,11 +148,13 @@ Connecting tools, staying logged in and scheduling routines that fire on an even
 
 ## module 4 · day 2
 
-By the afternoon there were so many Bots that they needed a system. Roshan asked his chief of staff for a to-do list in Notion and then turned it into a board. All three created a Slack Bot at the same time, by voice, with Dr. Eggbot, and two of them got the same name, Ping. Lauren fixed the mess with a single instruction to Dr. Eggbot: all her Bots should treat Notion as the source of truth and keep it up to date.
+**Day 2, afternoon.** There were so many Bots that a system became necessary.
 
-Lauren gave a rule for when to do this. If you notice you're giving each Bot one-off orders, it's time to stop and organise the whole team. The sales engineering workshop showed the other end: a Bot asked two others which Bots they were missing and created them herself.
+Roshan asked his chief of staff for a task list and turned it into a board. All three created a Slack Bot at the same time, by voice, and two of them came out with the same name. Lauren fixed the mess with a single instruction: every one of her Bots should treat the board as the source of truth and keep it current.
 
-At the end of the day, Lauren asked Dr. Eggbot to read the conversations of all her Bots and find where the work got stuck. The answer was that she was the bottleneck: "Lauren is the interrupt bus".
+And she gave the test for knowing when you need one. If you notice you are issuing one-off orders to each Bot, it is time to stop and organise the whole team.
+
+At the end of the day she asked it to read every one of her Bots' conversations and find where the work was getting stuck. The answer was that the bottleneck was her.
 
 {{live 6:47:16 "Three people create the same Bot at once"}}
 
@@ -138,11 +162,13 @@ At the end of the day, Lauren asked Dr. Eggbot to read the conversations of all 
 
 ## module 5 · day 2
 
-The first prototype was throwaway HTML, with no sign-in or database, and panels of sliders to change the game's rules in real time. "The point of the game is that it's fun," Lauren said, and everything else matters only after that. They needed to reach the fun part fast without waiting for the agent to finish each change.
+**Day 2, building the game.** The first prototype was throwaway code, no login and no database, with sliders to change the rules in real time.
 
-There were stumbles. Lauren asked for a CSS shine library and every card came out the same and "way too shiny"; she admitted she had steered the agent badly. They also realised the debug panel couldn't ship in the browser of a competitive game, because anyone could use it to cheat from the console. So they split client and server. When the tests started failing, they deleted all of them. They would write tests once they knew what they wanted to test.
+"If the game isn't fun, nothing else matters," Lauren said. The point was to reach the fun part early without waiting for the agent to finish each change.
 
-By the afternoon, Lauren had a coordinator agent in the cloud handing work to five more agents, with others checking the results, while the Notion board moved on its own. That's how the engineering module works: you hand the code to agents and check what they do.
+There were stumbles. She asked for a glow library and every card came out identical; she admitted she had briefed the agent badly. They realised the debug panel could not live in the browser of a competitive game, because anyone would cheat from the console, so they split client and server. And when the tests started failing, they deleted them all: they would write them once they knew what they wanted to test.
+
+By the afternoon she had a coordinating agent handing work to five more, with others verifying the result. That is how the engineering module works.
 
 {{live 1:52:21 "If the game isn't fun, nothing else matters"}}
 
@@ -150,11 +176,13 @@ By the afternoon, Lauren had a coordinator agent in the cloud handing work to fi
 
 ## module 6 · day 2
 
-Between building sessions, the studio handed over to people who already work this way. Marcel, co-owner of Icon Coffee, a café and roastery in Potrero Hill, has a chief of staff Bot connected to the till. From his phone he asks how sales compared two years ago, and he sent it a photo of the menu to find the items that hardly sold.
+**Day 2, between blocks.** The studio handed over to people already working this way outside a demo.
 
-Matthew Berman, who makes videos about AI for a living, told two stories. He photographed things he no longer used and let his Bot look up recent sale prices, post the listings and answer buyers, and that way he sold a PlayStation and a MacBook. Another Bot went through twelve months of electricity bills and found him a plan $1,000 a year cheaper. Matt Palmer put it this way: personal problems look a lot like business ones. Haggling on Marketplace is the same as negotiating with a supplier.
+The owner of a coffee shop with its own roastery has a chief of staff Bot wired to the till. From his phone he asks it what they were selling two years ago, and he sent it a photo of the menu to see which products barely moved.
 
-Meanwhile, Ship by Thursday still had no customers. This module's real use cases come from those conversations.
+A creator who makes a living from videos about AI told two stories. He photographed the things he no longer used and let his Bot look up recent prices, post the listings and answer buyers: that is how he sold a console and a laptop. Another Bot went through twelve months of electricity bills and found him a plan a thousand dollars a year cheaper.
+
+Matt summed it up: personal problems look a lot like company ones. Haggling at a flea market is the same as negotiating with a supplier. The real cases in this module come from there.
 
 {{live d2 4:52:04 "The Bot that sells what you no longer use"}}
 
@@ -162,11 +190,13 @@ Meanwhile, Ship by Thursday still had no customers. This module's real use cases
 
 ## module 7 · day 2
 
-The numbers came with the audience's questions. A whole slide deck cost between $20 and $30, against four or five hours of work. Answering a medium support ticket cost $1 to $2, and batching the simple ones with a script brought it down to about 20 cents. The most repeated advice for spending less was to run fewer routines and tell the Bot exactly which ticket or account to look at.
+**Day 2, questions from the audience.** That is where the numbers and the limits came out.
 
-The limits came up too. If a tool has no MCP and doesn't run on Linux, a Bot can't use it. Some websites detect that it's a Bot and block it. And Matthew Berman admitted the problem few people mention: "I am getting more work done than ever. I'm also busier than ever."
+A whole slide deck cost between twenty and thirty dollars, against four or five hours of work. Answering a medium-difficulty support ticket came to one or two dollars, and batching the easy ones with a script brought it down to about twenty cents. The most repeated advice for spending less was to fire fewer routines and tell the Bot exactly what to look at.
 
-The day ended with the game connected to its server and sign-in with X working, although a bug still stopped anyone adding Bots. Day 3 was for deploying it, giving it a name and getting the audience to play.
+The limits came out too. If a tool does not run on Linux, a Bot cannot use it. Some sites detect that it is a Bot and block it. And one of the guests admitted the problem almost nobody mentions: he gets more done than ever and is busier than ever.
+
+What it costs and where to stop is what this module is about.
 
 {{live 8:00:40 "What it costs to answer a ticket"}}
 
@@ -174,11 +204,13 @@ The day ended with the game connected to its server and sign-in with X working, 
 
 ## module 8 · day 2
 
-The first whiteboard of the day wasn't only about the game. Matt listed what the studio would need to be a real company: people discovering the game, an email or even a phone number to support players, and maybe reading the X chat directly. In the afternoon the team asked their intern, a Stanford student, what makes a game go viral. He said word of mouth and posting constantly, on X for early players and in small subreddits asking for feedback.
+**Day 2, first whiteboard.** It was not about the game, it was about the company.
 
-Those company pieces were covered in depth by four workshops the same day. In sales engineering, one Bot tried competitors' products on her computer while another read the code. In prospecting, an "army" of Bots researched 200 companies in parallel. In customer support, a Bot answered tickets, refunded payments and flagged urgent cases in Slack.
+Matt listed what being one would take: people discovering the game, an email or even a phone line to handle players, and maybe reading the X chat directly. In the afternoon they asked the team's intern what makes a game go viral. He said word of mouth and posting constantly, on X for the first players and in small forums asking for feedback.
 
-This module collects those workshops. It's the work waiting for Ship by Thursday as soon as the game had players.
+Those pieces got a thorough look in four workshops the same day. In pre-sales, one Bot tried out competitors on its own computer while another read the code. In prospecting, a group of Bots researched two hundred companies in parallel. In support, a Bot answered tickets, issued refunds and flagged the urgent ones in Slack.
+
+This module collects those workshops: the work waiting as soon as the game had players.
 
 {{live d2 0:24:29 "A game studio needs what any company needs"}}
 

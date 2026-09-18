@@ -153,7 +153,9 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               <section className="lesson-story" aria-label={copy.storyLabel}>
                 <p className="lesson-story-eyebrow">{copy.storyLabel}</p>
                 {story.map((segment, i) => {
-                  const cut = segment.html.indexOf("</p>") + 4;
+                  const first = segment.html.indexOf("</p>") + 4;
+                  const second = segment.html.indexOf("</p>", first);
+                  const cut = second === -1 ? first : second + 4;
                   const latest = i === story.length - 1;
                   return (
                     <details
