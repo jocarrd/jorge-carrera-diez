@@ -1,4 +1,9 @@
-import { Section, SectionHeader, Reveal } from "@/components/ui";
+import {
+  Section,
+  SectionHeader,
+  Reveal,
+  RevealChildren,
+} from "@/components/ui";
 import { DeliveryCycle } from "@/components/home/DeliveryCycle";
 import { AgentHub } from "@/components/visual/AgentHub";
 import { TileGraphic } from "@/components/visual/TileGraphic";
@@ -23,7 +28,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
         />
       </Reveal>
 
-      <Reveal
+      <RevealChildren
         delay={80}
         className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-4"
       >
@@ -63,7 +68,7 @@ export function AiPreview({ locale }: { locale: Locale }) {
             </div>
           </article>
         ))}
-      </Reveal>
+      </RevealChildren>
 
       <Reveal delay={120}>
         <div className="mt-3 grid gap-6 rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel)] p-5 sm:mt-4 sm:gap-8 sm:p-9 lg:grid-cols-[1fr_22rem] lg:items-center lg:gap-14">

@@ -19,7 +19,8 @@
   --cta-bg: #c2410c;
   --cta-text: #ffffff;
   --peligro: #b91c1c;
-  --exito: #15803d;
+  --exito: #137a39;
+  --exito-fill: #128a3f;
 
   --ink-dark: #0a0a0a;
   --ink-dark-panel: #151515;
@@ -69,10 +70,11 @@
   --accent-text: #fb923c;
   --accent-dark: #fb923c;
   --accent-hover: #fdba74;
-  --cta-bg: #fb923c;
-  --cta-text: #0a0a0a;
+  --cta-bg: #c2410c;
+  --cta-text: #ffffff;
   --peligro: #fca5a5;
   --exito: #4ade80;
+  --exito-fill: #128a3f;
 
   --ink-dark: #000000;
   --ink-dark-panel: #0c0c0c;
@@ -3050,27 +3052,13 @@ a {
   height: calc(100% - 52px);
   background: linear-gradient(var(--accent), #f59e0b);
   transform-origin: top;
-  animation: cycle-fill 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes cycle-fill {
-  0% {
+  from {
     transform: scaleY(0);
   }
-  10% {
-    transform: scaleY(0.1);
-  }
-  22% {
-    transform: scaleY(0.34);
-  }
-  34% {
-    transform: scaleY(0.58);
-  }
-  46% {
-    transform: scaleY(0.82);
-  }
-  56%,
-  100% {
+  to {
     transform: scaleY(1);
   }
 }
@@ -3092,40 +3080,77 @@ a {
   width: 26px;
   height: 26px;
   border-radius: 999px;
-  border: 2px solid var(--line-strong);
+  border: 2px solid var(--exito-fill);
+  background: var(--exito-fill);
+  color: #ffffff;
+}
+
+.cycle-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 1.5px solid var(--exito-fill);
+  opacity: 0;
+}
+
+.cycle.is-armed .cycle-dot {
+  border-color: var(--line-strong);
   background: var(--panel-strong);
-  color: var(--panel-strong);
-  animation: cycle-mark 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: var(--d);
+}
+
+.cycle.is-armed .cycle-dot svg {
+  opacity: 0;
+}
+
+.cycle.is-armed .cycle-steps::after {
+  transform: scaleY(0);
+}
+
+.cycle.is-running .cycle-steps::after {
+  animation: cycle-fill 2.4s cubic-bezier(0.32, 0.72, 0, 1) 0.1s 1 both;
+}
+
+.cycle.is-running .cycle-dot {
+  animation: cycle-mark 0.26s cubic-bezier(0.32, 0.72, 0, 1) var(--d) 1 both;
+}
+
+.cycle.is-running .cycle-dot::after {
+  animation: cycle-registro 0.6s ease-out var(--d) 1 both;
+}
+
+.cycle.is-running .cycle-dot svg {
+  animation: cycle-tick 0.28s cubic-bezier(0.32, 0.72, 0, 1) var(--d) 1 both;
 }
 
 @keyframes cycle-mark {
-  0%,
-  13% {
+  from {
     border-color: var(--line-strong);
     background: var(--panel-strong);
   }
-  19%,
-  100% {
-    border-color: #15803d;
-    background: #15803d;
+  to {
+    border-color: var(--exito-fill);
+    background: var(--exito-fill);
   }
 }
 
-.cycle-dot svg {
-  opacity: 0;
-  animation: cycle-tick 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: var(--d);
+@keyframes cycle-registro {
+  from {
+    opacity: 0.8;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.55);
+  }
 }
 
 @keyframes cycle-tick {
-  0%,
-  14% {
+  from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.5);
   }
-  20%,
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
   }
@@ -3761,8 +3786,9 @@ a {
 }
 
 .course-check.is-done {
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--cta-bg);
+  background: var(--cta-bg);
+  color: var(--cta-text);
 }
 
 .reading-progress {
@@ -4529,9 +4555,9 @@ a {
 }
 
 .course-status-icon.is-done {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: #0a0a0a;
+  border-color: var(--cta-bg);
+  background: var(--cta-bg);
+  color: var(--cta-text);
 }
 
 .course-status-icon.is-processing {
@@ -5173,8 +5199,8 @@ a {
   margin-top: 0.875rem;
   padding: 0 1.125rem;
   border-radius: var(--radius-pill);
-  background: var(--accent);
-  color: #0a0a0a;
+  background: var(--cta-bg);
+  color: var(--cta-text);
   font-size: 0.9375rem;
   font-weight: 600;
   transition: opacity var(--dur-rapida) var(--ease);
@@ -5543,10 +5569,10 @@ details.lesson-objectives ul {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.25rem 0.5rem 1rem;
-  border: 1px solid rgba(251, 146, 60, 0.4);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
   border-radius: 1rem;
-  background: rgba(24, 18, 12, 0.96);
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+  background: color-mix(in srgb, var(--panel-strong) 96%, transparent);
+  box-shadow: var(--sombra-3);
 }
 
 @media (min-width: 640px) {
@@ -5577,8 +5603,8 @@ details.lesson-objectives ul {
   align-items: center;
   padding: 0 0.875rem;
   border-radius: var(--radius-pill);
-  background: var(--accent);
-  color: #0a0a0a;
+  background: var(--cta-bg);
+  color: var(--cta-text);
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -5660,8 +5686,8 @@ details.lesson-objectives ul {
   gap: 0.625rem;
   padding: 0 1.375rem;
   border-radius: var(--radius-pill);
-  background: var(--accent);
-  color: #0a0a0a;
+  background: var(--cta-bg);
+  color: var(--cta-text);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;

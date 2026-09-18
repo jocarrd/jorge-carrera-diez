@@ -63,10 +63,36 @@ export async function renderOpenGraphImage(locale: Locale) {
             flexDirection: "column",
             justifyContent: "space-between",
             width: 748,
-            padding: "62px 56px 58px 68px",
+            padding: "44px 56px 52px 68px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              paddingBottom: 34,
+            }}
+          >
+            <svg
+              width="44"
+              height="44"
+              viewBox="0 0 40 40"
+              fill="none"
+              style={{ marginBottom: 22 }}
+            >
+              <path
+                d="M31.4 13.4a13.4 13.4 0 1 0 0 13.2"
+                stroke="#f2f2f2"
+                strokeWidth="4.6"
+                strokeLinecap="round"
+              />
+              <path
+                d="M22.6 12.6v9.2a4.7 4.7 0 0 1-8.8 2.3"
+                stroke="#fb923c"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
             <div
               style={{
                 display: "flex",
@@ -81,8 +107,8 @@ export async function renderOpenGraphImage(locale: Locale) {
             </div>
             <div
               style={{
-                marginTop: 26,
-                fontSize: 82,
+                marginTop: 22,
+                fontSize: 74,
                 lineHeight: 1.02,
                 fontWeight: 600,
                 letterSpacing: -3.4,
