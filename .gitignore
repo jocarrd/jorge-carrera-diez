@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Material de origen del curso.
+# Las transcripciones de los directos y la documentacion descargada de xAI se
+# quedan solo en local: son de otros y este repo es publico.
+/curso/datos/
+/curso/docs-oficiales/
+/curso/video/node_modules/
+/curso/video/out/
