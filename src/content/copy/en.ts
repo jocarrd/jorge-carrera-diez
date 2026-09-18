@@ -786,7 +786,7 @@ export const en: Copy = {
     snowy: {
       title: "Snowy",
       description:
-        "Snowy, the weather platform built by Jorge Carrera Diez with Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, weather data and AI.",
+        "How Snowy is built, a weather platform in production: architecture, real-time data, radar, SEO and AI, told from the inside.",
       eyebrow: "In production",
       heading: "Snowy: a weather platform with maps, real-time data and AI.",
       facts: [

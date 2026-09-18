@@ -784,7 +784,7 @@ export const es: Copy = {
     snowy: {
       title: "Snowy",
       description:
-        "Snowy, plataforma meteorológica creada por Jorge Carrera Diez con Next.js, NestJS, Redis, MySQL, Docker, SEO, radar, datos meteorológicos e IA.",
+        "Cómo está construida Snowy, plataforma meteorológica en producción: arquitectura, datos en tiempo real, radar, SEO e IA, contado por dentro.",
       eyebrow: "En producción",
       heading:
         "Snowy: plataforma meteorológica con mapas, datos en tiempo real e IA.",
