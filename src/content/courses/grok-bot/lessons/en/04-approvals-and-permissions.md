@@ -115,11 +115,11 @@ Draft a reply to the latest email from our supplier confirming Thursday's delive
 
 ## Approving without looking
 
-- **Approving without reading the target.** The Bot acts on the wrong account or recipient. *Fix:* check target, scope and values, and ask for a plain-language explanation if unsure.
-- **Writing broad rules like "allow everything in the browser".** Risky actions go through without a stop. *Fix:* write narrow rules for one action and scope.
-- **Choosing Always allow on the first try.** A one-off approval becomes permanent. *Fix:* use **Allow once** until you know the pattern well.
-- **Expecting an approval to undo work already done.** An approval only controls the proposed action. *Fix:* keep irreversible steps behind **Ask first**.
-- **Setting local execution to always allowed.** A Bot can run commands on your own machine without asking. *Fix:* keep **Never allowed** or **Ask every time**.
+- **Approving without reading the target.** The Bot acts on the wrong account or recipient. _Fix:_ check target, scope and values, and ask for a plain-language explanation if unsure.
+- **Writing broad rules like "allow everything in the browser".** Risky actions go through without a stop. _Fix:_ write narrow rules for one action and scope.
+- **Choosing Always allow on the first try.** A one-off approval becomes permanent. _Fix:_ use **Allow once** until you know the pattern well.
+- **Expecting an approval to undo work already done.** An approval only controls the proposed action. _Fix:_ keep irreversible steps behind **Ask first**.
+- **Setting local execution to always allowed.** A Bot can run commands on your own machine without asking. _Fix:_ keep **Never allowed** or **Ask every time**.
 
 ## Allow once while you learn
 

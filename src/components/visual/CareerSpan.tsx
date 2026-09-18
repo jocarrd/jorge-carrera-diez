@@ -6,15 +6,16 @@ type CareerSpanProps = {
   className?: string;
 };
 
-// Una lista de puestos esconde lo que mejor se ve en una barra: que hay dos
-// tracks corriendo a la vez —el enterprise y el freelance— y desde cuándo. Las
-// fechas ya estaban en el contenido; aquí solo se dibujan.
 const mes = (valor: string) => {
   const [anio, m] = valor.split("-").map(Number);
   return anio * 12 + (m - 1);
 };
 
-export function CareerSpan({ items, currentLabel, className = "" }: CareerSpanProps) {
+export function CareerSpan({
+  items,
+  currentLabel,
+  className = "",
+}: CareerSpanProps) {
   const ahora = new Date();
   const fin = ahora.getFullYear() * 12 + ahora.getMonth();
   const inicios = items.map((item) => mes(item.start));
@@ -30,7 +31,11 @@ export function CareerSpan({ items, currentLabel, className = "" }: CareerSpanPr
     <div className={`span ${className}`}>
       <div className="span-grid" aria-hidden>
         {anios.map((a) => (
-          <span key={a} className="span-year" style={{ left: `${((a * 12 - desde) / total) * 100}%` }}>
+          <span
+            key={a}
+            className="span-year"
+            style={{ left: `${((a * 12 - desde) / total) * 100}%` }}
+          >
             {a}
           </span>
         ))}
@@ -43,11 +48,7 @@ export function CareerSpan({ items, currentLabel, className = "" }: CareerSpanPr
           const enCurso = !item.end;
           const izquierda = ((ini - desde) / total) * 100;
           const ancho = Math.max(((acaba - ini) / total) * 100, 2.5);
-          // El rótulo va siempre fuera de la barra, nunca encima. Dentro habría
-          // que cambiarle el color según el relleno, y en las barras cortas no
-          // cabe: se quedaba en una letra. Fuera se lee siempre igual.
-          // Si la barra acaba pegada al borde, el rótulo va por delante para no
-          // salirse de la tarjeta.
+
           const alBorde = izquierda + ancho > 62;
 
           return (

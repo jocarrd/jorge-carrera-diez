@@ -3,14 +3,24 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { Container } from "@/components/ui";
 import { LessonSource } from "@/components/course/CourseStatus";
-import { LessonTracker, NextUp, ReadingProgress, Syllabus } from "@/components/course/CourseClient";
+import {
+  LessonTracker,
+  NextUp,
+  ReadingProgress,
+  Syllabus,
+} from "@/components/course/CourseClient";
 import { LessonDock } from "@/components/course/LessonDock";
 import { ShareButton } from "@/components/course/ShareButton";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
-import { getCourse, getLesson, neighbours, storyForModule } from "@/lib/courses/load";
+import {
+  getCourse,
+  getLesson,
+  neighbours,
+  storyForModule,
+} from "@/lib/courses/load";
 import { dayAnchor } from "./DiaryView";
 import { courseClientData } from "./CourseView";
 
@@ -20,11 +30,18 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
 
   const { copy, clientLessons, clientModules } = courseClientData(locale);
   const { previous, next, index, total } = neighbours(locale, lesson.id);
-  const lessonModule = grokBotCourse.modules.find((m) => m.number === lesson.ref.module)!;
+  const lessonModule = grokBotCourse.modules.find(
+    (m) => m.number === lesson.ref.module,
+  )!;
   const courseHref = routePath(locale, "grokBotCourse");
-  // El tramo de la historia se cuenta al abrir el módulo, en su primera lección.
-  const firstOfModule = getCourse(locale).lessons.find((l) => l.ref.module === lesson.ref.module)?.id === lesson.id;
-  const story = firstOfModule && lesson.ref.module > 0 ? storyForModule(locale, lesson.ref.module) : [];
+
+  const firstOfModule =
+    getCourse(locale).lessons.find((l) => l.ref.module === lesson.ref.module)
+      ?.id === lesson.id;
+  const story =
+    firstOfModule && lesson.ref.module > 0
+      ? storyForModule(locale, lesson.ref.module)
+      : [];
   const diaryHref = routePath(locale, "grokBotDiary");
 
   const jsonLd = {
@@ -38,7 +55,11 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
     timeRequired: `PT${lesson.minutes}M`,
     dateModified: lesson.updated,
     url: new URL(lessonPath(locale, slug), site.url).toString(),
-    isPartOf: { "@type": "Course", name: copy.title, url: new URL(courseHref, site.url).toString() },
+    isPartOf: {
+      "@type": "Course",
+      name: copy.title,
+      url: new URL(courseHref, site.url).toString(),
+    },
     author: { "@type": "Person", name: site.name, url: site.url },
   };
 
@@ -85,21 +106,32 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               <Link href={courseHref}>{copy.title}</Link>
               <span aria-hidden="true">/</span>
               <span>
-                {lessonModule.number === 0 ? copy.introModule : `${copy.moduleLabel} ${lessonModule.number}`} ·{" "}
-                {lessonModule.title[locale]}
+                {lessonModule.number === 0
+                  ? copy.introModule
+                  : `${copy.moduleLabel} ${lessonModule.number}`}{" "}
+                · {lessonModule.title[locale]}
               </span>
             </nav>
 
             <header className="lesson-header">
               <p className="t-eyebrow">
                 <span className="lesson-eyebrow-module">
-                  {lessonModule.number === 0 ? copy.introModule : `${copy.moduleLabel} ${lessonModule.number}`} ·{" "}
+                  {lessonModule.number === 0
+                    ? copy.introModule
+                    : `${copy.moduleLabel} ${lessonModule.number}`}{" "}
+                  ·{" "}
                 </span>
                 {copy.lessonLabel} {lesson.id}
               </p>
               <div className="lesson-title-row">
                 <h1 className="lesson-title">{lesson.title}</h1>
-                <ShareButton url={lessonPath(locale, slug)} title={lesson.title} label={copy.share} copiedLabel={copy.linkCopied} iconOnly />
+                <ShareButton
+                  url={lessonPath(locale, slug)}
+                  title={lesson.title}
+                  label={copy.share}
+                  copiedLabel={copy.linkCopied}
+                  iconOnly
+                />
               </div>
               <p className="lesson-description">{lesson.description}</p>
               <div className="lesson-meta-row">
@@ -109,7 +141,11 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   </li>
                   <li>{copy.levels[lesson.level]}</li>
                 </ul>
-                <LessonSource parts={grokBotCourse.parts} copy={copy} href={`${courseHref}#estado`} />
+                <LessonSource
+                  parts={grokBotCourse.parts}
+                  copy={copy}
+                  href={`${courseHref}#estado`}
+                />
               </div>
             </header>
 
@@ -117,20 +153,36 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               <section className="lesson-story" aria-label={copy.storyLabel}>
                 <p className="lesson-story-eyebrow">{copy.storyLabel}</p>
                 {story.map((segment, i) => {
-                  // Un día abierto cada vez, el más reciente: con tres días la historia
-                  // empujaba la lección varias pantallas hacia abajo.
                   const cut = segment.html.indexOf("</p>") + 4;
                   const latest = i === story.length - 1;
                   return (
-                    <details key={segment.day} name={`historia-${lesson.id}`} open={latest} className="lesson-story-day">
+                    <details
+                      key={segment.day}
+                      name={`historia-${lesson.id}`}
+                      open={latest}
+                      className="lesson-story-day"
+                    >
                       <summary className="lesson-story-day-label">
                         {copy.dayLabel} {segment.day}
                       </summary>
-                      <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html.slice(0, cut) }} />
+                      <div
+                        className="lesson-story-body"
+                        dangerouslySetInnerHTML={{
+                          __html: segment.html.slice(0, cut),
+                        }}
+                      />
                       <details className="lesson-story-more">
                         <summary>{copy.storyMore}</summary>
-                        <div className="lesson-story-body" dangerouslySetInnerHTML={{ __html: segment.html.slice(cut) }} />
-                        <Link href={`${diaryHref}#${dayAnchor(locale, segment.day)}`} className="lesson-story-link">
+                        <div
+                          className="lesson-story-body"
+                          dangerouslySetInnerHTML={{
+                            __html: segment.html.slice(cut),
+                          }}
+                        />
+                        <Link
+                          href={`${diaryHref}#${dayAnchor(locale, segment.day)}`}
+                          className="lesson-story-link"
+                        >
                           {copy.diaryDayLink} →
                         </Link>
                       </details>
@@ -140,11 +192,12 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               </section>
             ) : null}
 
-            {/* Los objetivos van plegados: en el móvil empujaban la primera línea de la lección fuera de la pantalla. */}
             <details className="lesson-objectives">
               <summary className="lesson-objectives-title">
                 {copy.objectives}
-                <span className="lesson-objectives-count">{lesson.objectives.length}</span>
+                <span className="lesson-objectives-count">
+                  {lesson.objectives.length}
+                </span>
               </summary>
               <ul>
                 {lesson.objectives.map((o) => (
@@ -165,14 +218,25 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
               </nav>
             ) : null}
 
-            <div className="lesson-body" dangerouslySetInnerHTML={{ __html: lesson.html }} />
+            <div
+              className="lesson-body"
+              dangerouslySetInnerHTML={{ __html: lesson.html }}
+            />
 
             <LessonDock
               courseId={grokBotCourse.id}
               lessonId={lesson.id}
               toc={lesson.toc}
               minutes={lesson.minutes}
-              labels={{ contents: copy.lessonContents, minutesLeft: copy.minutesLeft, resume: copy.resumeText, resumeButton: copy.resumeButton, close: copy.close, search: copy.searchInCourse, searchHref: `${courseHref}#temario` }}
+              labels={{
+                contents: copy.lessonContents,
+                minutesLeft: copy.minutesLeft,
+                resume: copy.resumeText,
+                resumeButton: copy.resumeButton,
+                close: copy.close,
+                search: copy.searchInCourse,
+                searchHref: `${courseHref}#temario`,
+              }}
             />
 
             <footer className="lesson-footer">
@@ -197,9 +261,16 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                 }
               />
               <div className="lesson-footer-row">
-                <LessonTracker courseId={grokBotCourse.id} lessonId={lesson.id} copy={copy} />
+                <LessonTracker
+                  courseId={grokBotCourse.id}
+                  lessonId={lesson.id}
+                  copy={copy}
+                />
                 {previous ? (
-                  <Link href={lessonPath(locale, previous.slug)} className="lesson-previous">
+                  <Link
+                    href={lessonPath(locale, previous.slug)}
+                    className="lesson-previous"
+                  >
                     ← {copy.previous}: {previous.title}
                   </Link>
                 ) : null}
@@ -216,7 +287,12 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                     rel="noopener noreferrer"
                     className="lesson-follow-button"
                   >
-                    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="14"
+                      height="14"
+                      aria-hidden="true"
+                    >
                       <path
                         fill="currentColor"
                         d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"

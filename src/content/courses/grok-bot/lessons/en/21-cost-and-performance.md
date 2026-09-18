@@ -36,11 +36,11 @@ This course doesn't quote prices. They depend on your plan and change over time.
 
 **Routines that run too often.** Each run is a full piece of Bot work, even when nothing has changed. The numbers add up fast:
 
-| Schedule | Runs per day | Runs per week |
-| -- | -- | -- |
-| Every 15 minutes | 96 | 672 |
-| Every hour | 24 | 168 |
-| Every weekday at 8:00 AM | 1 on weekdays | 5 |
+| Schedule                 | Runs per day  | Runs per week |
+| ------------------------ | ------------- | ------------- |
+| Every 15 minutes         | 96            | 672           |
+| Every hour               | 24            | 168           |
+| Every weekday at 8:00 AM | 1 on weekdays | 5             |
 
 Before you pick a schedule, ask how often the answer can really change.
 
@@ -107,11 +107,11 @@ Forget all things about how we generated your profile picture.
 
 ## Routines every few minutes just in case
 
-- **Scheduling every 5 or 15 minutes "to be safe".** Hundreds of runs a day that mostly find nothing. *Fix:* use the slowest schedule that works, or an event trigger.
-- **Broad event listeners.** Every message in a busy channel starts a run. *Fix:* match on a specific channel, phrase or link.
-- **Letting a Bot click through the same site every day.** It is slow, fragile and costly. *Fix:* use a connector, or have the Bot find an API the site allows you to use.
-- **One Bot for everything.** Its context grows and quality drops. *Fix:* split by role and keep a catch-all Bot for loose questions.
-- **Routing coordination through a large group chat.** Bots answer each other and repeat work. *Fix:* use direct handoffs with one owner per stage.
+- **Scheduling every 5 or 15 minutes "to be safe".** Hundreds of runs a day that mostly find nothing. _Fix:_ use the slowest schedule that works, or an event trigger.
+- **Broad event listeners.** Every message in a busy channel starts a run. _Fix:_ match on a specific channel, phrase or link.
+- **Letting a Bot click through the same site every day.** It is slow, fragile and costly. _Fix:_ use a connector, or have the Bot find an API the site allows you to use.
+- **One Bot for everything.** Its context grows and quality drops. _Fix:_ split by role and keep a catch-all Bot for loose questions.
+- **Routing coordination through a large group chat.** Bots answer each other and repeat work. _Fix:_ use direct handoffs with one owner per stage.
 
 ## Fewer runs, better aimed
 

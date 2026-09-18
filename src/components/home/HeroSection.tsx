@@ -1,4 +1,4 @@
-import { ButtonLink, Container } from "@/components/ui";
+import { ButtonLink, Container, RevealChildren } from "@/components/ui";
 import { ClientsStrip } from "@/components/home/ClientsStrip";
 import { HeroStage } from "@/components/home/HeroStage";
 import { getCopy } from "@/content";
@@ -20,9 +20,6 @@ export function HeroSection({ locale }: { locale: Locale }) {
             {copy.profile.availability}
           </p>
 
-          {/* Tres líneas cortas en vez de un párrafo: el titular se lee entero
-              antes de que a nadie le dé tiempo a decidir que no le interesa. La
-              última va en el acento, que es donde está la promesa. */}
           <h1 className="rise rise-2 mt-6 text-[2.5rem] font-semibold leading-[1.0] tracking-[-0.045em] sm:text-[3.5rem] lg:text-[4rem]">
             {copy.profile.tagline.map((line, index) => (
               <span
@@ -39,7 +36,9 @@ export function HeroSection({ locale }: { locale: Locale }) {
           </p>
 
           <div className="rise rise-4 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-x-4">
-            <ButtonLink href={routePath(locale, "experience")}>{copy.hero.ctaPrimary}</ButtonLink>
+            <ButtonLink href={routePath(locale, "experience")}>
+              {copy.hero.ctaPrimary}
+            </ButtonLink>
             <ButtonLink href={routePath(locale, "contact")} variant="secondary">
               {copy.hero.ctaContact}
             </ButtonLink>
@@ -51,17 +50,20 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
       <ClientsStrip label={copy.profile.clientsLabel} />
 
-      {/* Tres capacidades justo bajo la tira: es lo que hace que "IA" se lea
-          sin hacer scroll, sin llenar el titular de palabras. */}
       <Container className="py-12 sm:py-16">
-        <ul className="grid gap-8 text-left sm:grid-cols-3 sm:gap-10">
+        <RevealChildren
+          as="ul"
+          className="grid gap-8 text-left sm:grid-cols-3 sm:gap-10"
+        >
           {copy.profile.capabilities.map((item) => (
             <li key={item.title}>
               <h2 className="t-item">{item.title}</h2>
-              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">{item.text}</p>
+              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">
+                {item.text}
+              </p>
             </li>
           ))}
-        </ul>
+        </RevealChildren>
       </Container>
     </section>
   );

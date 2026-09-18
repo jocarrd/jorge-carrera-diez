@@ -9,10 +9,11 @@ type CapabilityRailProps = {
   className?: string;
 };
 
-// Seis tarjetas blancas en rejilla decian lo que hace el producto sin que se
-// notara ninguna. En oscuro y en carril: contrastan con las superficies claras
-// que vienen justo despues, y se recorren en vez de ocupar tres filas.
-export function CapabilityRail({ items, label, className = "" }: CapabilityRailProps) {
+export function CapabilityRail({
+  items,
+  label,
+  className = "",
+}: CapabilityRailProps) {
   return (
     <Rail label={label} className={className}>
       {items.map((item, index) => (

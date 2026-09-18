@@ -109,12 +109,12 @@ The Bot's summary did more than repeat what they said. It pointed out that the r
 
 ## Asking for something more appealing and other vague requests
 
-- **Vague quality words.** "make it cooler" gives the Bot nothing to aim for. *Fix:* say what should change and show an example.
-- **One huge unchecked message.** The Bot acts on a misunderstanding. *Fix:* ask for a restate before it starts.
-- **Repeating the same background to every Bot.** The versions drift apart. *Fix:* keep one short shared document in `/workspace`.
-- **A shared document that grows forever.** Bots pick up outdated or noisy details. *Fix:* keep it short and update it when things change.
-- **One Bot for everything.** Answers get less precise over time. *Fix:* give each Bot one job and move side topics elsewhere.
-- **Loose questions in a working Bot.** Trivia sits in its context next to real work. *Fix:* ask a catch-all Bot instead.
+- **Vague quality words.** "make it cooler" gives the Bot nothing to aim for. _Fix:_ say what should change and show an example.
+- **One huge unchecked message.** The Bot acts on a misunderstanding. _Fix:_ ask for a restate before it starts.
+- **Repeating the same background to every Bot.** The versions drift apart. _Fix:_ keep one short shared document in `/workspace`.
+- **A shared document that grows forever.** Bots pick up outdated or noisy details. _Fix:_ keep it short and update it when things change.
+- **One Bot for everything.** Answers get less precise over time. _Fix:_ give each Bot one job and move side topics elsewhere.
+- **Loose questions in a working Bot.** Trivia sits in its context next to real work. _Fix:_ ask a catch-all Bot instead.
 
 ## A well-built request
 

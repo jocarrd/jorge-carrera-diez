@@ -72,11 +72,11 @@ Cada vez que Reply trabaja, escribe una traza en una tabla de Postgres, una base
 
 ## Riesgos de dejar el soporte a un Bot
 
-- **Responder sin base de conocimiento.** El Bot se inventa una política con buena intención. *Qué hacer:* que pase el ticket a una persona cuando no encuentre la fuente.
-- **Mezclar políticas internas con la ayuda pública.** El cliente recibe detalles que no debía ver. *Qué hacer:* sepáralas y di en el proceso del Bot que las internas solo sirven para decidir.
-- **Dejar que el Bot cambie la base de conocimiento solo.** Una respuesta mala se repite en cien tickets. *Qué hacer:* que pida permiso, o que proponga el cambio como pull request si la base vive en GitHub.
-- **Mensajes vagos.** "Responde a Alex" obliga al Bot a buscar entre todos los tickets y gasta más. *Qué hacer:* dale el identificador del ticket o del cliente.
-- **Dar la plantilla a todo el equipo sin límites.** Alguien sin contexto técnico pide "reembolsa a todos los que lo pidan". *Qué hacer:* comparte una plantilla que no pueda editar la base ni ejecutar acciones de cobro sin aprobación.
+- **Responder sin base de conocimiento.** El Bot se inventa una política con buena intención. _Qué hacer:_ que pase el ticket a una persona cuando no encuentre la fuente.
+- **Mezclar políticas internas con la ayuda pública.** El cliente recibe detalles que no debía ver. _Qué hacer:_ sepáralas y di en el proceso del Bot que las internas solo sirven para decidir.
+- **Dejar que el Bot cambie la base de conocimiento solo.** Una respuesta mala se repite en cien tickets. _Qué hacer:_ que pida permiso, o que proponga el cambio como pull request si la base vive en GitHub.
+- **Mensajes vagos.** "Responde a Alex" obliga al Bot a buscar entre todos los tickets y gasta más. _Qué hacer:_ dale el identificador del ticket o del cliente.
+- **Dar la plantilla a todo el equipo sin límites.** Alguien sin contexto técnico pide "reembolsa a todos los que lo pidan". _Qué hacer:_ comparte una plantilla que no pueda editar la base ni ejecutar acciones de cobro sin aprobación.
 
 ## De un par de dólares a veinte céntimos
 

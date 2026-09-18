@@ -9,19 +9,33 @@ import { DiaryNav } from "@/components/course/CourseClient";
 import { ShareButton } from "@/components/course/ShareButton";
 import { getCourse, getLesson, getStory } from "@/lib/courses/load";
 
-type Moment = { lessonId: string; lessonTitle: string; href: string; section: string };
+type Moment = {
+  lessonId: string;
+  lessonTitle: string;
+  href: string;
+  section: string;
+};
 
-// Un momento del directo que sale en la historia y también en una lección se
-// enlaza a la sección exacta de esa lección: se reconoce por el mismo enlace al vídeo.
 function momentsByVideoLink(locale: Locale): Map<string, Moment> {
   const map = new Map<string, Moment>();
   for (const summary of getCourse(locale).lessons) {
     const lesson = getLesson(locale, summary.slug)!;
     let section = { id: "", text: "" };
-    for (const match of lesson.html.matchAll(/<h2 id="([^"]+)">[\s\S]*?<\/h2>|<a class="live-chip" href="([^"]+)"/g)) {
-      if (match[1]) section = { id: match[1], text: lesson.toc.find((t) => t.id === match[1])?.text ?? "" };
+    for (const match of lesson.html.matchAll(
+      /<h2 id="([^"]+)">[\s\S]*?<\/h2>|<a class="live-chip" href="([^"]+)"/g,
+    )) {
+      if (match[1])
+        section = {
+          id: match[1],
+          text: lesson.toc.find((t) => t.id === match[1])?.text ?? "",
+        };
       else if (match[2] && section.id && !map.has(match[2]))
-        map.set(match[2], { lessonId: lesson.id, lessonTitle: lesson.title, href: `${lessonPath(locale, summary.slug)}#${section.id}`, section: section.text });
+        map.set(match[2], {
+          lessonId: lesson.id,
+          lessonTitle: lesson.title,
+          href: `${lessonPath(locale, summary.slug)}#${section.id}`,
+          section: section.text,
+        });
     }
   }
   return map;
@@ -32,7 +46,10 @@ export function dayAnchor(locale: Locale, day: number) {
 }
 
 function formatDay(locale: Locale, iso: string) {
-  return new Intl.DateTimeFormat(locale === "es" ? "es-ES" : "en-GB", { day: "numeric", month: "long" }).format(new Date(iso));
+  return new Intl.DateTimeFormat(locale === "es" ? "es-ES" : "en-GB", {
+    day: "numeric",
+    month: "long",
+  }).format(new Date(iso));
 }
 
 export function DiaryView({ locale }: { locale: Locale }) {
@@ -43,8 +60,15 @@ export function DiaryView({ locale }: { locale: Locale }) {
   const syllabusHref = `${courseHref}#temario`;
   const firstLessonHref = lessonPath(locale, lessons[0].slug);
   const moments = momentsByVideoLink(locale);
-  const moduleAnchor = (n: number) => `${courseHref}#${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${n}`;
-  const shownParts = grokBotCourse.parts.filter((part) => story.some((d) => d.day === part.number) || part.status === "processing");
+  const moduleAnchor = (n: number) =>
+    `${courseHref}#${copy.moduleLabel
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")}-${n}`;
+  const shownParts = grokBotCourse.parts.filter(
+    (part) =>
+      story.some((d) => d.day === part.number) || part.status === "processing",
+  );
   const url = new URL(routePath(locale, "grokBotDiary"), site.url).toString();
 
   const jsonLd = {
@@ -56,7 +80,11 @@ export function DiaryView({ locale }: { locale: Locale }) {
     url,
     dateModified: grokBotCourse.updated,
     author: { "@type": "Person", name: site.name, url: site.url },
-    isPartOf: { "@type": "Course", name: copy.title, url: new URL(courseHref, site.url).toString() },
+    isPartOf: {
+      "@type": "Course",
+      name: copy.title,
+      url: new URL(courseHref, site.url).toString(),
+    },
   };
 
   return (
@@ -88,7 +116,10 @@ export function DiaryView({ locale }: { locale: Locale }) {
             items={shownParts.map((part) => ({
               anchor: dayAnchor(locale, part.number),
               label: `${copy.dayLabel} ${part.number}`,
-              note: part.status === "processing" ? copy.diaryLive : formatDay(locale, part.date),
+              note:
+                part.status === "processing"
+                  ? copy.diaryLive
+                  : formatDay(locale, part.date),
               live: part.status === "processing",
             }))}
           />
@@ -96,42 +127,85 @@ export function DiaryView({ locale }: { locale: Locale }) {
           {shownParts.map((part) => {
             const day = story.find((d) => d.day === part.number);
             return (
-              <section key={part.number} id={dayAnchor(locale, part.number)} className="diary-day">
+              <section
+                key={part.number}
+                id={dayAnchor(locale, part.number)}
+                className="diary-day"
+              >
                 <p className="diary-day-eyebrow">
                   {copy.dayLabel} {part.number} · {formatDay(locale, part.date)}
                 </p>
-                <h2 className="diary-day-title">{part.topics[locale].join(" · ")}</h2>
+                <h2 className="diary-day-title">
+                  {part.topics[locale].join(" · ")}
+                </h2>
                 {day ? (
                   <>
-                    <div className="lesson-body diary-summary" dangerouslySetInnerHTML={{ __html: day.html }} />
+                    <div
+                      className="lesson-body diary-summary"
+                      dangerouslySetInnerHTML={{ __html: day.html }}
+                    />
                     {day.segments.map((segment) => {
-                      const storyModule = grokBotCourse.modules.find((m) => m.number === segment.module)!;
-                      const related = lessons.filter((l) => l.ref.module === segment.module);
+                      const storyModule = grokBotCourse.modules.find(
+                        (m) => m.number === segment.module,
+                      )!;
+                      const related = lessons.filter(
+                        (l) => l.ref.module === segment.module,
+                      );
                       return (
-                        <div key={segment.module} id={`${dayAnchor(locale, part.number)}-${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${segment.module}`} className="diary-segment">
+                        <div
+                          key={segment.module}
+                          id={`${dayAnchor(locale, part.number)}-${copy.moduleLabel
+                            .toLowerCase()
+                            .normalize("NFD")
+                            .replace(
+                              /[\u0300-\u036f]/g,
+                              "",
+                            )}-${segment.module}`}
+                          className="diary-segment"
+                        >
                           <div className="diary-segment-head">
                             <h3 className="diary-segment-title">
                               <Link href={moduleAnchor(storyModule.number)}>
-                                {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                                {copy.moduleLabel} {storyModule.number} ·{" "}
+                                {storyModule.title[locale]}
                               </Link>
                             </h3>
                             <ShareButton
-                              url={`${routePath(locale, "grokBotDiary")}#${dayAnchor(locale, part.number)}-${copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}-${segment.module}`}
+                              url={`${routePath(locale, "grokBotDiary")}#${dayAnchor(locale, part.number)}-${copy.moduleLabel
+                                .toLowerCase()
+                                .normalize("NFD")
+                                .replace(
+                                  /[\u0300-\u036f]/g,
+                                  "",
+                                )}-${segment.module}`}
                               title={`${copy.diaryTitle} · ${copy.dayLabel} ${part.number}`}
                               label={copy.share}
                               copiedLabel={copy.linkCopied}
                               iconOnly
                             />
                           </div>
-                          <div className="lesson-body" dangerouslySetInnerHTML={{ __html: segment.html }} />
+                          <div
+                            className="lesson-body"
+                            dangerouslySetInnerHTML={{ __html: segment.html }}
+                          />
                           {related.length > 0 ? (
-                            <aside className="diary-module-card" aria-label={`${copy.diaryLearnTitle} · ${copy.dayLabel} ${part.number} · ${copy.moduleLabel} ${storyModule.number}`}>
-                              <p className="diary-module-eyebrow">{copy.diaryLearnTitle}</p>
+                            <aside
+                              className="diary-module-card"
+                              aria-label={`${copy.diaryLearnTitle} · ${copy.dayLabel} ${part.number} · ${copy.moduleLabel} ${storyModule.number}`}
+                            >
+                              <p className="diary-module-eyebrow">
+                                {copy.diaryLearnTitle}
+                              </p>
                               <p className="diary-module-name">
-                                {copy.moduleLabel} {storyModule.number} · {storyModule.title[locale]}
+                                {copy.moduleLabel} {storyModule.number} ·{" "}
+                                {storyModule.title[locale]}
                               </p>
                               {(() => {
-                                const seen = [...segment.html.matchAll(/<a class="live-chip" href="([^"]+)"/g)]
+                                const seen = [
+                                  ...segment.html.matchAll(
+                                    /<a class="live-chip" href="([^"]+)"/g,
+                                  ),
+                                ]
                                   .map((m) => moments.get(m[1]))
                                   .filter((m): m is Moment => !!m);
                                 if (seen.length === 0) return null;
@@ -140,7 +214,10 @@ export function DiaryView({ locale }: { locale: Locale }) {
                                     {seen.map((moment) => (
                                       <li key={moment.href}>
                                         <Link href={moment.href}>
-                                          <span className="diary-moments-label">{copy.momentIn}</span> {moment.lessonId} · {moment.section}
+                                          <span className="diary-moments-label">
+                                            {copy.momentIn}
+                                          </span>{" "}
+                                          {moment.lessonId} · {moment.section}
                                         </Link>
                                       </li>
                                     ))}
@@ -150,9 +227,15 @@ export function DiaryView({ locale }: { locale: Locale }) {
                               <ol className="diary-module-lessons">
                                 {related.map((lesson) => (
                                   <li key={lesson.id}>
-                                    <Link href={lessonPath(locale, lesson.slug)}>
-                                      <span className="diary-module-lesson-number">{lesson.id}</span>
-                                      <span className="diary-module-lesson-title">{lesson.title}</span>
+                                    <Link
+                                      href={lessonPath(locale, lesson.slug)}
+                                    >
+                                      <span className="diary-module-lesson-number">
+                                        {lesson.id}
+                                      </span>
+                                      <span className="diary-module-lesson-title">
+                                        {lesson.title}
+                                      </span>
                                       <span className="diary-module-lesson-minutes">
                                         {lesson.minutes} {copy.minutesLabel}
                                       </span>
@@ -160,8 +243,12 @@ export function DiaryView({ locale }: { locale: Locale }) {
                                   </li>
                                 ))}
                               </ol>
-                              <Link href={lessonPath(locale, related[0].slug)} className="diary-module-start">
-                                {copy.moduleStart} {storyModule.number} <span aria-hidden="true">→</span>
+                              <Link
+                                href={lessonPath(locale, related[0].slug)}
+                                className="diary-module-start"
+                              >
+                                {copy.moduleStart} {storyModule.number}{" "}
+                                <span aria-hidden="true">→</span>
                               </Link>
                             </aside>
                           ) : null}

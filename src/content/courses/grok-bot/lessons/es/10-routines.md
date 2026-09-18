@@ -120,13 +120,13 @@ Un contraejemplo del mismo día. A un Bot de ingeniería se le pidió una routin
 
 ## Automatizar lo que nunca salió bien
 
-- **Automatizar una tarea que nunca salió bien a mano.** La routine repite los mismos errores cada día. *Qué hacer:* consigue un buen resultado, guárdalo como skill y después prográmalo.
-- **Olvidar la regla para datos que faltan.** El Bot rellena el hueco con datos antiguos y nadie se da cuenta. *Qué hacer:* indica qué hacer si la fuente está vacía, desactualizada o caída.
-- **Tomar Test run por un ensayo.** La prueba hace cambios reales. *Qué hacer:* usa datos sin riesgo y deja las acciones de escritura detrás de una aprobación.
-- **Disparar con cada mensaje.** El Bot trabaja sobre ruido y gasta uso. *Qué hacer:* limítalo a un canal, una frase o un tipo de enlace concretos.
-- **Avisar en cada ejecución.** Te acostumbras a ignorar los mensajes, incluido el que importa. *Qué hacer:* dile al Bot que no avise si nada ha cambiado.
-- **Ocultar un Bot para detener sus routines.** Los Bots ocultos las siguen ejecutando. *Qué hacer:* pausa la routine, y bórrala solo si lo tienes claro, porque no se puede deshacer.
-- **No volver a probar tras un cambio.** Cambia una web, un connector o el formato de un archivo y la routine falla sin que nadie lo note. *Qué hacer:* lanza **Test run** otra vez cuando cambie una fuente.
+- **Automatizar una tarea que nunca salió bien a mano.** La routine repite los mismos errores cada día. _Qué hacer:_ consigue un buen resultado, guárdalo como skill y después prográmalo.
+- **Olvidar la regla para datos que faltan.** El Bot rellena el hueco con datos antiguos y nadie se da cuenta. _Qué hacer:_ indica qué hacer si la fuente está vacía, desactualizada o caída.
+- **Tomar Test run por un ensayo.** La prueba hace cambios reales. _Qué hacer:_ usa datos sin riesgo y deja las acciones de escritura detrás de una aprobación.
+- **Disparar con cada mensaje.** El Bot trabaja sobre ruido y gasta uso. _Qué hacer:_ limítalo a un canal, una frase o un tipo de enlace concretos.
+- **Avisar en cada ejecución.** Te acostumbras a ignorar los mensajes, incluido el que importa. _Qué hacer:_ dile al Bot que no avise si nada ha cambiado.
+- **Ocultar un Bot para detener sus routines.** Los Bots ocultos las siguen ejecutando. _Qué hacer:_ pausa la routine, y bórrala solo si lo tienes claro, porque no se puede deshacer.
+- **No volver a probar tras un cambio.** Cambia una web, un connector o el formato de un archivo y la routine falla sin que nadie lo note. _Qué hacer:_ lanza **Test run** otra vez cuando cambie una fuente.
 
 ## Qué necesita una routine fiable
 

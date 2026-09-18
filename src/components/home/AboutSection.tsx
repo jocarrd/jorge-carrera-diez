@@ -4,9 +4,6 @@ import { Section, Reveal } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
-// La cara va antes de pedir el contacto, no en la primera pantalla: arriba
-// competiría con el lema, y aquí es lo que hace que escribir a un desconocido
-// deje de parecerlo. Retrato grande, sin recortar en círculo.
 export function AboutSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const labels = copy.aboutFacts;
@@ -15,7 +12,9 @@ export function AboutSection({ locale }: { locale: Locale }) {
     { label: labels.location, value: copy.meta.location },
     {
       label: labels.languages,
-      value: copy.languages.map((lang) => `${lang.name} (${lang.level.toLowerCase()})`).join(", "),
+      value: copy.languages
+        .map((lang) => `${lang.name} (${lang.level.toLowerCase()})`)
+        .join(", "),
     },
     { label: labels.education, value: copy.education[0]?.title ?? "" },
   ];
@@ -23,13 +22,6 @@ export function AboutSection({ locale }: { locale: Locale }) {
   return (
     <Section id="sobre-mi">
       <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        {/* A 280 px de ancho el retrato ocupaba una pantalla entera de móvil antes
-            de llegar a una sola línea de texto. A 200 se reconoce la cara y el
-            texto asoma debajo.
-
-            El retrato está recortado sobre fondo claro y contra el negro de la
-            página deja un canto duro por abajo. El degradado lo apoya en el
-            fondo en vez de pegarlo encima. */}
         <div className="relative mx-auto max-w-[200px] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] sm:max-w-none">
           <Image
             src={site.photo}
@@ -46,20 +38,18 @@ export function AboutSection({ locale }: { locale: Locale }) {
         </div>
         <div>
           <p className="t-eyebrow">{site.name}</p>
-          <h2 className="t-section mt-3">
-            {copy.profile.aboutTitle}
-          </h2>
+          <h2 className="t-section mt-3">{copy.profile.aboutTitle}</h2>
           <ProfileSummary
             locale={locale}
             className="prose-links mt-5 text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:mt-6 sm:text-xl"
           />
 
-          {/* La ficha de datos: base, idiomas y formación estaban sólo en el CV
-              y son lo primero que se busca antes de escribir a alguien. De paso
-              la columna de texto deja de quedarse corta frente al retrato. */}
           <dl className="mt-9 grid gap-px overflow-hidden rounded-[var(--radius-card)] bg-[var(--line)] sm:grid-cols-3">
             {facts.map((fact) => (
-              <div key={fact.label} className="bg-[var(--background)] px-5 py-4">
+              <div
+                key={fact.label}
+                className="bg-[var(--background)] px-5 py-4"
+              >
                 <dt className="text-[13px] font-medium uppercase tracking-[0.02em] text-[var(--muted)]">
                   {fact.label}
                 </dt>

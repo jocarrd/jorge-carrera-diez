@@ -7,7 +7,13 @@ import { useEffect, useRef, useState } from "react";
 import type { CourseCopy } from "@/content/courses/grok-bot/meta";
 import { useCourseProgress } from "./progress";
 
-export type ClientLesson = { id: string; title: string; href: string; minutes: number; module: number };
+export type ClientLesson = {
+  id: string;
+  title: string;
+  href: string;
+  minutes: number;
+  module: number;
+};
 export type ClientModule = { number: number; title: string; level: string };
 
 function formatMinutes(minutes: number) {
@@ -19,26 +25,54 @@ function formatMinutes(minutes: number) {
 
 function Check({ done }: { done: boolean }) {
   return (
-    <span className={`course-check ${done ? "is-done" : ""}`} aria-hidden="true">
+    <span
+      className={`course-check ${done ? "is-done" : ""}`}
+      aria-hidden="true"
+    >
       {done ? (
         <svg viewBox="0 0 12 12" width="10" height="10">
-          <path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M2.5 6.2l2.3 2.3 4.7-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       ) : null}
     </span>
   );
 }
 
-/** Botón principal del temario: empezar, continuar o repasar según el progreso. */
-export function CourseStart({ courseId, lessons, copy }: { courseId: string; lessons: ClientLesson[]; copy: CourseCopy }) {
+export function CourseStart({
+  courseId,
+  lessons,
+  copy,
+}: {
+  courseId: string;
+  lessons: ClientLesson[];
+  copy: CourseCopy;
+}) {
   const { progress, ready } = useCourseProgress(courseId);
-  const done = progress.completed.filter((id) => lessons.some((l) => l.id === id)).length;
+  const done = progress.completed.filter((id) =>
+    lessons.some((l) => l.id === id),
+  ).length;
   const lastIndex = lessons.findIndex((l) => l.id === progress.last);
   const nextPending = lessons.find((l) => !progress.completed.includes(l.id));
   const target = lastIndex >= 0 ? lessons[lastIndex] : lessons[0];
   const allDone = done === lessons.length;
-  const label = !ready || (done === 0 && lastIndex < 0) ? copy.start : allDone ? copy.review : copy.continue;
-  const href = allDone ? lessons[0].href : lastIndex >= 0 ? target.href : (nextPending ?? lessons[0]).href;
+  const label =
+    !ready || (done === 0 && lastIndex < 0)
+      ? copy.start
+      : allDone
+        ? copy.review
+        : copy.continue;
+  const href = allDone
+    ? lessons[0].href
+    : lastIndex >= 0
+      ? target.href
+      : (nextPending ?? lessons[0]).href;
 
   return (
     <div className="course-start">
@@ -47,19 +81,36 @@ export function CourseStart({ courseId, lessons, copy }: { courseId: string; les
         <span aria-hidden="true">→</span>
       </Link>
       <div className="course-progress" aria-live="polite">
-        <div className="course-progress-bar" role="progressbar" aria-label={`${done}/${lessons.length} ${copy.progressLabel}`} aria-valuemin={0} aria-valuemax={lessons.length} aria-valuenow={done}>
+        <div
+          className="course-progress-bar"
+          role="progressbar"
+          aria-label={`${done}/${lessons.length} ${copy.progressLabel}`}
+          aria-valuemin={0}
+          aria-valuemax={lessons.length}
+          aria-valuenow={done}
+        >
           <span style={{ width: `${(done / lessons.length) * 100}%` }} />
         </div>
         <p>
           {done}/{lessons.length} {copy.progressLabel}
-          {ready ? <span className="course-progress-left"> · {formatMinutes(lessons.filter((l) => !progress.completed.includes(l.id)).reduce((sum, l) => sum + l.minutes, 0))} {copy.toRead}</span> : null}
+          {ready ? (
+            <span className="course-progress-left">
+              {" "}
+              ·{" "}
+              {formatMinutes(
+                lessons
+                  .filter((l) => !progress.completed.includes(l.id))
+                  .reduce((sum, l) => sum + l.minutes, 0),
+              )}{" "}
+              {copy.toRead}
+            </span>
+          ) : null}
         </p>
       </div>
     </div>
   );
 }
 
-/** El temario completo con la marca de cada lección leída. */
 export function Syllabus({
   courseId,
   modules,
@@ -77,23 +128,31 @@ export function Syllabus({
 }) {
   const { progress } = useCourseProgress(courseId);
   const listRef = useRef<HTMLOListElement>(null);
-  const moduleAnchorPrefix = copy.moduleLabel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const moduleAnchorPrefix = copy.moduleLabel
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
-  // En la barra lateral, la lección actual tiene que verse sin buscarla: se centra dentro de su caja, sin mover la página.
   useEffect(() => {
     const list = listRef.current;
     const box = list?.closest<HTMLElement>(".lesson-aside-desktop");
     const current = list?.querySelector<HTMLElement>(".is-current");
     if (!box || !current) return;
-    const offset = current.getBoundingClientRect().top - box.getBoundingClientRect().top;
+    const offset =
+      current.getBoundingClientRect().top - box.getBoundingClientRect().top;
     box.scrollTop += offset - box.clientHeight / 2 + current.offsetHeight / 2;
   }, [currentId]);
 
   return (
-    <ol ref={listRef} className={`syllabus ${compact ? "syllabus--compact" : ""}`}>
+    <ol
+      ref={listRef}
+      className={`syllabus ${compact ? "syllabus--compact" : ""}`}
+    >
       {modules.map((module) => {
         const items = lessons.filter((l) => l.module === module.number);
-        const done = items.filter((l) => progress.completed.includes(l.id)).length;
+        const done = items.filter((l) =>
+          progress.completed.includes(l.id),
+        ).length;
         return (
           <li
             key={module.number}
@@ -102,15 +161,22 @@ export function Syllabus({
           >
             <div className="syllabus-module-head">
               <span className="syllabus-module-number">
-                {module.number === 0 ? copy.introModule : `${copy.moduleLabel} ${module.number}`}
+                {module.number === 0
+                  ? copy.introModule
+                  : `${copy.moduleLabel} ${module.number}`}
               </span>
-              {!compact ? <span className="syllabus-level">{module.level}</span> : null}
+              {!compact ? (
+                <span className="syllabus-level">{module.level}</span>
+              ) : null}
               <span className="syllabus-module-count">
                 {done}/{items.length}
               </span>
             </div>
             {!compact && items[0] ? (
-              <Link href={items[0].href} className="syllabus-module-title syllabus-module-link">
+              <Link
+                href={items[0].href}
+                className="syllabus-module-title syllabus-module-link"
+              >
                 {module.title}
                 <span className="syllabus-module-start">
                   {copy.syllabusStart} <span aria-hidden="true">→</span>
@@ -131,8 +197,12 @@ export function Syllabus({
                       aria-current={isCurrent ? "page" : undefined}
                     >
                       <Check done={isDone} />
-                      <span className="syllabus-lesson-number">{lesson.id}</span>
-                      <span className="syllabus-lesson-title">{lesson.title}</span>
+                      <span className="syllabus-lesson-number">
+                        {lesson.id}
+                      </span>
+                      <span className="syllabus-lesson-title">
+                        {lesson.title}
+                      </span>
                       {!compact ? (
                         <span className="syllabus-lesson-minutes">
                           {lesson.minutes} {copy.minutesLabel}
@@ -150,9 +220,17 @@ export function Syllabus({
   );
 }
 
-/** Registra la visita, marca la lección como completada y activa los botones de copiar. */
-export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; lessonId: string; copy: CourseCopy }) {
-  const { progress, ready, markVisited, toggleCompleted, markCompleted } = useCourseProgress(courseId);
+export function LessonTracker({
+  courseId,
+  lessonId,
+  copy,
+}: {
+  courseId: string;
+  lessonId: string;
+  copy: CourseCopy;
+}) {
+  const { progress, ready, markVisited, toggleCompleted, markCompleted } =
+    useCourseProgress(courseId);
   const done = progress.completed.includes(lessonId);
 
   useEffect(() => {
@@ -160,7 +238,6 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
     track("lesson_view", { lesson: lessonId });
   }, [lessonId, markVisited]);
 
-  // Un término ya consultado deja de subrayarse: al quinto Bot subrayado solo estorba.
   useEffect(() => {
     const key = `curso:${courseId}:terminos`;
     let seen: string[] = [];
@@ -170,30 +247,34 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
       seen = [];
     }
     const mark = () =>
-      document.querySelectorAll<HTMLButtonElement>(".lesson-term").forEach((b) => {
-        const id = b.getAttribute("popovertarget")?.replace("termino-", "");
-        if (id && seen.includes(id)) b.classList.add("is-seen");
-      });
+      document
+        .querySelectorAll<HTMLButtonElement>(".lesson-term")
+        .forEach((b) => {
+          const id = b.getAttribute("popovertarget")?.replace("termino-", "");
+          if (id && seen.includes(id)) b.classList.add("is-seen");
+        });
     mark();
     const onToggle = (event: Event) => {
       const pop = event.target as HTMLElement;
-      if (!pop.classList?.contains("lesson-term-pop") || (event as ToggleEvent).newState !== "open") return;
+      if (
+        !pop.classList?.contains("lesson-term-pop") ||
+        (event as ToggleEvent).newState !== "open"
+      )
+        return;
       const id = pop.id.replace("termino-", "");
       if (seen.includes(id)) return;
       seen = [...seen, id];
       try {
         window.localStorage.setItem(key, JSON.stringify(seen));
-      } catch {
-        // Sin almacenamiento, el término sigue subrayado y no pasa nada.
-      }
+      } catch {}
     };
     document.addEventListener("toggle", onToggle, true);
     return () => document.removeEventListener("toggle", onToggle, true);
   }, [courseId]);
 
-  // Llegar al resumen cuenta como haber leído la lección: nadie vuelve arriba a pulsar un botón.
   useEffect(() => {
-    const headings = document.querySelectorAll<HTMLElement>(".lesson-body > h2");
+    const headings =
+      document.querySelectorAll<HTMLElement>(".lesson-body > h2");
     const recap = headings[headings.length - 1];
     if (!recap) return;
     const observer = new IntersectionObserver((entries) => {
@@ -209,16 +290,18 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
 
   useEffect(() => {
     const onClick = async (event: MouseEvent) => {
-      const button = (event.target as HTMLElement).closest<HTMLButtonElement>("[data-copy]");
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>(
+        "[data-copy]",
+      );
       if (!button) return;
-      const code = button.closest(".lesson-prompt")?.querySelector("code")?.textContent ?? "";
+      const code =
+        button.closest(".lesson-prompt")?.querySelector("code")?.textContent ??
+        "";
       try {
         await navigator.clipboard.writeText(code);
         button.textContent = copy.copied;
         window.setTimeout(() => (button.textContent = copy.copy), 1600);
-      } catch {
-        // Sin portapapeles el texto sigue ahí para seleccionarlo a mano.
-      }
+      } catch {}
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
@@ -238,7 +321,6 @@ export function LessonTracker({ courseId, lessonId, copy }: { courseId: string; 
   );
 }
 
-/** Barra fina arriba que dice cuánto queda de la lección. */
 export function ReadingProgress() {
   const [value, setValue] = useState(0);
   useEffect(() => {
@@ -263,12 +345,22 @@ export function ReadingProgress() {
       cancelAnimationFrame(frame);
     };
   }, []);
-  return <div className="reading-progress" style={{ transform: `scaleX(${value})` }} aria-hidden="true" />;
+  return (
+    <div
+      className="reading-progress"
+      style={{ transform: `scaleX(${value})` }}
+      aria-hidden="true"
+    />
+  );
 }
 
-export type DiaryNavItem = { anchor: string; label: string; note?: string; live?: boolean };
+export type DiaryNavItem = {
+  anchor: string;
+  label: string;
+  note?: string;
+  live?: boolean;
+};
 
-/** Barra fija del diario: saltar entre días y volver al temario sin subir hasta arriba. */
 export function DiaryNav({
   items,
   label,
@@ -285,7 +377,6 @@ export function DiaryNav({
   const [active, setActive] = useState(items[0]?.anchor);
   const listRef = useRef<HTMLOListElement>(null);
 
-  // En el móvil la fila de días se desliza: el día activo tiene que quedar a la vista.
   useEffect(() => {
     const link = listRef.current?.querySelector<HTMLElement>(".is-active");
     const list = listRef.current;
@@ -294,10 +385,14 @@ export function DiaryNav({
   }, [active]);
 
   useEffect(() => {
-    const sections = items.map((i) => document.getElementById(i.anchor)).filter((e): e is HTMLElement => !!e);
+    const sections = items
+      .map((i) => document.getElementById(i.anchor))
+      .filter((e): e is HTMLElement => !!e);
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
         if (visible[0]) setActive(visible[0].target.id);
       },
       { rootMargin: "-20% 0px -70% 0px" },
@@ -311,24 +406,44 @@ export function DiaryNav({
       <ol ref={listRef} className="diary-nav-days">
         {items.map((item) => (
           <li key={item.anchor}>
-            <a href={`#${item.anchor}`} className={active === item.anchor ? "is-active" : undefined} aria-current={active === item.anchor ? "true" : undefined}>
+            <a
+              href={`#${item.anchor}`}
+              className={active === item.anchor ? "is-active" : undefined}
+              aria-current={active === item.anchor ? "true" : undefined}
+            >
               {item.label}
-              {item.note ? <span className={`diary-nav-note ${item.live ? "is-live" : ""}`}>{item.note}</span> : null}
+              {item.note ? (
+                <span
+                  className={`diary-nav-note ${item.live ? "is-live" : ""}`}
+                >
+                  {item.note}
+                </span>
+              ) : null}
             </a>
           </li>
         ))}
       </ol>
       <Link href={syllabusHref} className="diary-nav-syllabus">
         <span className="diary-nav-syllabus-long">{syllabusLabel}</span>
-        <span className="diary-nav-syllabus-short">{shortSyllabusLabel}</span> <span aria-hidden="true">→</span>
+        <span className="diary-nav-syllabus-short">
+          {shortSyllabusLabel}
+        </span>{" "}
+        <span aria-hidden="true">→</span>
       </Link>
     </nav>
   );
 }
 
-export type NextLesson = { href: string; title: string; description: string; minutes: number; id: string; module: number; moduleTitle: string };
+export type NextLesson = {
+  href: string;
+  title: string;
+  description: string;
+  minutes: number;
+  id: string;
+  module: number;
+  moduleTitle: string;
+};
 
-/** Final de la lección: la siguiente en grande, con un botón que la marca leída y avanza. */
 export function NextUp({
   courseId,
   lessonId,
@@ -365,8 +480,10 @@ export function NextUp({
       <p className="next-up-eyebrow">
         {newModule && lessonModule > 0 ? (
           <>
-            <span className="next-up-done">✓ {copy.moduleDone.replace("{n}", String(lessonModule))}</span> ·{" "}
-            {copy.nextModule.replace("{n}", String(next.module))}
+            <span className="next-up-done">
+              ✓ {copy.moduleDone.replace("{n}", String(lessonModule))}
+            </span>{" "}
+            · {copy.nextModule.replace("{n}", String(next.module))}
           </>
         ) : (
           copy.nextUp
@@ -388,7 +505,8 @@ export function NextUp({
             router.push(next.href);
           }}
         >
-          {done ? copy.continueNext : copy.completeAndContinue} <span aria-hidden="true">→</span>
+          {done ? copy.continueNext : copy.completeAndContinue}{" "}
+          <span aria-hidden="true">→</span>
         </button>
         <span className="next-up-minutes">
           {next.minutes} {copy.minutesLabel}

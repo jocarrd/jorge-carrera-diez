@@ -2,9 +2,6 @@ import { Section } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
-// El diagrama se dibuja con CSS y toma los textos del copy: la web es bilingue
-// y un SVG con el texto dentro obliga a mantener dos ficheros, no lo indexa
-// Google y no lo lee un lector de pantalla.
 function Columna({
   label,
   children,

@@ -9,9 +9,6 @@ type CaseDetailsProps = {
   items: (TitledText & { image: string; alt: string })[];
 };
 
-/* Recortes grandes de la interfaz, no capturas de pantalla completas. Una
-   captura entera enseña que existe; un recorte a este tamaño enseña cómo está
-   resuelto, que es lo que mira quien va a contratarte. */
 export function CaseDetails({ eyebrow, title, text, items }: CaseDetailsProps) {
   return (
     <Section className="border-t border-[var(--line)]">

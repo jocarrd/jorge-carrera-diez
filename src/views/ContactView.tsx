@@ -31,9 +31,7 @@ export function ContactView({ locale }: { locale: Locale }) {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <h1 className="t-section max-w-3xl">
-              {copy.title}
-            </h1>
+            <h1 className="t-section max-w-3xl">{copy.title}</h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-xl sm:leading-9">
               {copy.lead}
             </p>
@@ -41,9 +39,6 @@ export function ContactView({ locale }: { locale: Locale }) {
               {copy.detail}
             </p>
 
-            {/* Era una caja con contorno colgando del texto, y competía con la
-                tarjeta de al lado sin ser tan importante. Un filete separa
-                igual y no pesa. */}
             <div className="mt-10 border-t border-[var(--line)] pt-6">
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
                 {copy.availabilityLabel}
@@ -54,9 +49,6 @@ export function ContactView({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          {/* El destino de la página pesaba lo mismo que la tarjeta de al lado.
-              El peso lo da la superficie, no el halo de neón que llevaba: ese
-              resplandor no salía en ninguna otra parte de la web. */}
           <div className="rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-7 sm:p-10">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
               {copy.emailLabel}
@@ -67,9 +59,13 @@ export function ContactView({ locale }: { locale: Locale }) {
             >
               {site.email}
             </a>
-            <p className="mt-5 max-w-md text-base leading-7 text-[var(--muted)]">{copy.emailHint}</p>
+            <p className="mt-5 max-w-md text-base leading-7 text-[var(--muted)]">
+              {copy.emailHint}
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`mailto:${site.email}`}>{copy.ctaPrimary}</ButtonLink>
+              <ButtonLink href={`mailto:${site.email}`}>
+                {copy.ctaPrimary}
+              </ButtonLink>
               <ButtonLink href={routePath(locale, "cv")} variant="secondary">
                 {copy.ctaSecondary}
               </ButtonLink>
@@ -105,13 +101,11 @@ export function ContactView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="t-block">
-              {copy.linksTitle}
-            </h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">{copy.linksText}</p>
+            <h2 className="t-block">{copy.linksTitle}</h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
+              {copy.linksText}
+            </p>
           </div>
-          {/* Cinco contornos en la esquina de una caja pesaban más que el
-              titular. Enlaces subrayados, que es lo que son. */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {copy.links.map((link) => {
               const href = hrefFor(link.key);

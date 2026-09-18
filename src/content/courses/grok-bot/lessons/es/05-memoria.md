@@ -99,12 +99,12 @@ Escribe las reglas de trabajo de nuestro equipo en /workspace/equipo/reglas.md. 
 
 ## Fiarse de un recuerdo viejo
 
-- **Tratar la memoria como el registro oficial.** El Bot cita la cifra del mes pasado como si fuera la de hoy. *Qué hacer:* mantén los datos en su sistema de origen y pide al Bot que lo vuelva a abrir antes de decidir.
-- **Corregir de pasada.** Arreglas un borrador a mano y la semana siguiente el Bot repite el error. *Qué hacer:* dile al Bot qué estaba mal y que el cambio es permanente.
-- **Dejar las reglas de seguridad solo en la conversación.** Un límite que dijiste una vez queda enterrado bajo el trabajo posterior. *Qué hacer:* pon "nunca envíes nada sin aprobación" en la descripción.
-- **Esperar que un Bot sepa lo que aprendió otro.** El Bot de correo no sabe nada del hallazgo del Bot de investigación. *Qué hacer:* pásaselo con un archivo en `/workspace` o con un mensaje directo.
-- **Creer que una copia es un clon.** La copia hace preguntas que el original dejó de hacer hace tiempo. *Qué hacer:* dale su nuevo alcance y el contexto clave antes de encargarle trabajo.
-- **Borrar un Bot del que dependen otros.** Al Bot que le pasaba trabajo nadie le avisa del borrado, así que puede seguir intentándolo. *Qué hacer:* diles a esos Bots explícitamente que ya no existe y quién se encarga ahora.
+- **Tratar la memoria como el registro oficial.** El Bot cita la cifra del mes pasado como si fuera la de hoy. _Qué hacer:_ mantén los datos en su sistema de origen y pide al Bot que lo vuelva a abrir antes de decidir.
+- **Corregir de pasada.** Arreglas un borrador a mano y la semana siguiente el Bot repite el error. _Qué hacer:_ dile al Bot qué estaba mal y que el cambio es permanente.
+- **Dejar las reglas de seguridad solo en la conversación.** Un límite que dijiste una vez queda enterrado bajo el trabajo posterior. _Qué hacer:_ pon "nunca envíes nada sin aprobación" en la descripción.
+- **Esperar que un Bot sepa lo que aprendió otro.** El Bot de correo no sabe nada del hallazgo del Bot de investigación. _Qué hacer:_ pásaselo con un archivo en `/workspace` o con un mensaje directo.
+- **Creer que una copia es un clon.** La copia hace preguntas que el original dejó de hacer hace tiempo. _Qué hacer:_ dale su nuevo alcance y el contexto clave antes de encargarle trabajo.
+- **Borrar un Bot del que dependen otros.** Al Bot que le pasaba trabajo nadie le avisa del borrado, así que puede seguir intentándolo. _Qué hacer:_ diles a esos Bots explícitamente que ya no existe y quién se encarga ahora.
 
 ## La memoria ayuda, la fuente decide
 

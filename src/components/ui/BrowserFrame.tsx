@@ -7,10 +7,6 @@ type BrowserFrameProps = {
   className?: string;
 };
 
-// El equivalente de escritorio del marco de móvil: la captura deja de flotar
-// como imagen y pasa a ser una ventana. La barra lleva el dominio real, que
-// hace de prueba —se puede teclear y comprobar— y ahorra la coletilla de "está
-// en producción" debajo.
 export function BrowserFrame({
   children,
   label,

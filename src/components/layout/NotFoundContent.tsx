@@ -30,13 +30,15 @@ const COPY = {
   },
 } as const;
 
-/** La 404 no recibe la ruta: el idioma se deduce en el navegador por el prefijo /en. */
 export function NotFoundContent() {
   const [locale, setLocale] = useState<Locale>("es");
   useEffect(() => {
-    // Tras el primer pintado: el servidor no conoce la ruta que ha fallado.
     const frame = requestAnimationFrame(() => {
-      if (window.location.pathname === "/en" || window.location.pathname.startsWith("/en/")) setLocale("en");
+      if (
+        window.location.pathname === "/en" ||
+        window.location.pathname.startsWith("/en/")
+      )
+        setLocale("en");
     });
     return () => cancelAnimationFrame(frame);
   }, []);

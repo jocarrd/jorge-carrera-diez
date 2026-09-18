@@ -128,12 +128,12 @@ Lo mismo sirve para trabajo largo y repetitivo en herramientas de empresa, como 
 
 ## Skills guardadas antes de tiempo
 
-- **Guardar la skill demasiado pronto.** La skill copia un proceso que todavía tiene fallos. *Qué hacer:* repite la tarea hasta que el resultado esté bien y guárdala después.
-- **Dar por terminada la skill aprendida.** Falla la primera vez que pasa algo inesperado. *Qué hacer:* añade al borrador reglas de decisión, qué hacer ante un fallo y los límites de aprobación.
-- **Enseñar una contraseña durante la demostración.** El secreto queda en la grabación. *Qué hacer:* usa el flujo de entrega segura para las credenciales (lección 09), nunca la grabación.
-- **Grabar una sesión larga y con rodeos.** La grabación se corta a los diez minutos y el Bot aprende tus desvíos. *Qué hacer:* ensaya antes y enseña solo el camino limpio.
-- **Programarla sin probarla.** Una routine repite cada día una skill mal hecha. *Qué hacer:* pruébala antes con un ejemplo sin riesgo.
-- **La skill no sale en el menú de `/`.** Crees que se ha perdido. *Qué hacer:* actívala para este Bot en **Settings → Plugins → Yours**.
+- **Guardar la skill demasiado pronto.** La skill copia un proceso que todavía tiene fallos. _Qué hacer:_ repite la tarea hasta que el resultado esté bien y guárdala después.
+- **Dar por terminada la skill aprendida.** Falla la primera vez que pasa algo inesperado. _Qué hacer:_ añade al borrador reglas de decisión, qué hacer ante un fallo y los límites de aprobación.
+- **Enseñar una contraseña durante la demostración.** El secreto queda en la grabación. _Qué hacer:_ usa el flujo de entrega segura para las credenciales (lección 09), nunca la grabación.
+- **Grabar una sesión larga y con rodeos.** La grabación se corta a los diez minutos y el Bot aprende tus desvíos. _Qué hacer:_ ensaya antes y enseña solo el camino limpio.
+- **Programarla sin probarla.** Una routine repite cada día una skill mal hecha. _Qué hacer:_ pruébala antes con un ejemplo sin riesgo.
+- **La skill no sale en el menú de `/`.** Crees que se ha perdido. _Qué hacer:_ actívala para este Bot en **Settings → Plugins → Yours**.
 
 ## Una buena skill se revisa y se prueba
 

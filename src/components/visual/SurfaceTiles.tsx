@@ -12,10 +12,6 @@ type SurfaceTilesProps = {
   className?: string;
 };
 
-// El tinte de cada superficie no es una eleccion de gusto: sale del color
-// dominante de su propia interfaz, muestreado de la captura. El asistente es
-// morado, los embalses cian, el clima rojo, los terremotos ambar y las
-// estaciones azul. Asi la seccion tiene color sin inventarselo.
 const TINTES: Record<string, string> = {
   "snowy-ai-assistant": "#8640ee",
   "snowy-reservoirs": "#62cfed",
@@ -24,7 +20,11 @@ const TINTES: Record<string, string> = {
   "snowy-station-detail": "#5ba5be",
 };
 
-const clave = (ruta: string) => ruta.split("/").pop()?.replace(/\.\w+$/, "") ?? "";
+const clave = (ruta: string) =>
+  ruta
+    .split("/")
+    .pop()
+    ?.replace(/\.\w+$/, "") ?? "";
 
 export function SurfaceTiles({ items, className = "" }: SurfaceTilesProps) {
   const [hero, ...resto] = items;
@@ -42,7 +42,13 @@ export function SurfaceTiles({ items, className = "" }: SurfaceTilesProps) {
   );
 }
 
-function SurfaceTile({ item, hero = false }: { item: Surface; hero?: boolean }) {
+function SurfaceTile({
+  item,
+  hero = false,
+}: {
+  item: Surface;
+  hero?: boolean;
+}) {
   const tinte = TINTES[clave(item.image)] ?? "#c2410c";
 
   return (
@@ -54,8 +60,6 @@ function SurfaceTile({ item, hero = false }: { item: Surface; hero?: boolean }) 
         <h3 className="tile-title">{item.title}</h3>
         <p className="tile-text">{item.text}</p>
       </div>
-      {/* La captura se sale por el borde en vez de terminar dentro: recortada
-          contra el canto parece una ventana al producto; encajada, una foto. */}
       <div className="tile-shot">
         <Image
           src={item.image}
@@ -63,7 +67,11 @@ function SurfaceTile({ item, hero = false }: { item: Surface; hero?: boolean }) 
           width={1200}
           height={1000}
           className="h-auto w-full"
-          sizes={hero ? "(min-width: 1024px) 44rem, 90vw" : "(min-width: 1024px) 26rem, 90vw"}
+          sizes={
+            hero
+              ? "(min-width: 1024px) 44rem, 90vw"
+              : "(min-width: 1024px) 26rem, 90vw"
+          }
         />
       </div>
     </article>

@@ -107,12 +107,12 @@ Si una web te pide volver a iniciar sesión o te muestra una comprobación de ve
 
 ## Secretos pegados en el chat
 
-- **Pegar una contraseña o un código de un solo uso en el chat.** El secreto queda en el historial y le llega al modelo. *Qué hacer:* toma el control o usa la petición segura de secreto, y cambia la contraseña si ya ha ocurrido.
-- **Repartir el trabajo entre varios Bots para que una sesión sea privada.** Todos los Bots de tu cuenta pueden usar todas las sesiones del ordenador. *Qué hacer:* no abras esa sesión en el ordenador, o usa otro usuario de Cursor para ese trabajo.
-- **Devolver el control antes de tiempo.** El Bot sigue en una página a medio cargar y vuelve a toparse con el inicio de sesión. *Qué hacer:* espera a ver la página con la sesión iniciada antes de devolver el control.
-- **Iniciar sesión con tu cuenta con más permisos.** El Bot puede hacer todo lo que puede hacer esa cuenta. *Qué hacer:* usa una cuenta a la medida de la tarea, o una cuenta de servicio con permisos limitados (una cuenta pensada para un programa y no para una persona) si el sistema lo admite.
-- **Enseñar secretos mientras grabas con Teach a task.** La grabación recoge lo que aparece en pantalla (lección 06). *Qué hacer:* inicia sesión antes de empezar a grabar y toma el control para meter las credenciales.
-- **Borrar un Bot y dar por hecho que sus accesos desaparecen.** Borrar un Bot no elimina las sesiones del navegador ni los archivos. *Qué hacer:* al cerrar el proyecto, deja en pausa o borra sus routines (tareas programadas, lección 10) y cierra sesión en sus webs del ordenador. Después desinstala sus plugins, revócalos en cada servicio y elimina los archivos sensibles de `/workspace`, la carpeta compartida del ordenador.
+- **Pegar una contraseña o un código de un solo uso en el chat.** El secreto queda en el historial y le llega al modelo. _Qué hacer:_ toma el control o usa la petición segura de secreto, y cambia la contraseña si ya ha ocurrido.
+- **Repartir el trabajo entre varios Bots para que una sesión sea privada.** Todos los Bots de tu cuenta pueden usar todas las sesiones del ordenador. _Qué hacer:_ no abras esa sesión en el ordenador, o usa otro usuario de Cursor para ese trabajo.
+- **Devolver el control antes de tiempo.** El Bot sigue en una página a medio cargar y vuelve a toparse con el inicio de sesión. _Qué hacer:_ espera a ver la página con la sesión iniciada antes de devolver el control.
+- **Iniciar sesión con tu cuenta con más permisos.** El Bot puede hacer todo lo que puede hacer esa cuenta. _Qué hacer:_ usa una cuenta a la medida de la tarea, o una cuenta de servicio con permisos limitados (una cuenta pensada para un programa y no para una persona) si el sistema lo admite.
+- **Enseñar secretos mientras grabas con Teach a task.** La grabación recoge lo que aparece en pantalla (lección 06). _Qué hacer:_ inicia sesión antes de empezar a grabar y toma el control para meter las credenciales.
+- **Borrar un Bot y dar por hecho que sus accesos desaparecen.** Borrar un Bot no elimina las sesiones del navegador ni los archivos. _Qué hacer:_ al cerrar el proyecto, deja en pausa o borra sus routines (tareas programadas, lección 10) y cierra sesión en sus webs del ordenador. Después desinstala sus plugins, revócalos en cada servicio y elimina los archivos sensibles de `/workspace`, la carpeta compartida del ordenador.
 
 ## Tú escribes la contraseña, el Bot usa la sesión
 

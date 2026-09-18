@@ -1,8 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content";
 
-/** Rastreadores de modelos de lenguaje: se listan aparte para dejar el permiso
- *  explícito, porque algunos ignoran la regla comodín. */
 const aiUserAgents = [
   "GPTBot",
   "OAI-SearchBot",

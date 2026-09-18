@@ -3,14 +3,6 @@ import { DatoEnVivo } from "./DatoEnVivo";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 
-/* Una pantalla, un número. Antes esto eran cuatro tarjetas del mismo tamaño, y
-   cuatro datos con el mismo peso no jerarquizan: el visitante no sabe cuál
-   tenía que recordar. Aquí hay uno grande y tres de apoyo.
- *
- * El número iba a 11 rem y centrado, que es la diapositiva de una
- * presentación de producto. A 7 rem y alineado con el resto de la página, el
- * dato sigue siendo lo primero que se ve y deja de pedir su propia pantalla;
- * los tres de apoyo pasan a la derecha, separados por filetes. */
 export function BigStat({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).bigStat;
 
@@ -29,12 +21,12 @@ export function BigStat({ locale }: { locale: Locale }) {
               </p>
             </div>
 
-            {/* En móvil eran tres columnas de 115 px con la etiqueta partida en tres
-                líneas. Ahí cada dato es una fila, cifra a la izquierda y etiqueta
-                a la derecha, que se lee de un golpe. */}
             <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-card)] border border-white/[0.1] bg-white/[0.1] sm:grid-cols-3 lg:w-[26rem]">
               {copy.support.map((dato) => (
-                <div key={dato.label} className="bg-[var(--ink-dark)] px-5 py-4 sm:px-4 sm:py-5">
+                <div
+                  key={dato.label}
+                  className="bg-[var(--ink-dark)] px-5 py-4 sm:px-4 sm:py-5"
+                >
                   <dt className="sr-only">{dato.label}</dt>
                   <dd className="flex items-baseline justify-between gap-4 sm:block">
                     <span className="block text-[1.5rem] font-semibold leading-none tracking-[-0.035em] text-white sm:text-[1.875rem]">
@@ -50,8 +42,6 @@ export function BigStat({ locale }: { locale: Locale }) {
           </div>
         </Reveal>
 
-        {/* Arriba, noventa dias de historico. Aqui debajo, lo que la API acaba
-            de devolver: el mismo sistema, en directo. */}
         <Reveal delay={200}>
           <DatoEnVivo locale={locale} />
         </Reveal>

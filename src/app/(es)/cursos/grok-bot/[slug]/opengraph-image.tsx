@@ -11,7 +11,11 @@ export function generateStaticParams() {
   return grokBotCourse.lessons.map((lesson) => ({ slug: lesson.slug[locale] }));
 }
 
-export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Image({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   return renderLessonOg(locale, slug);
 }

@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 
-// Un `mailto:` en un móvil o en un escritorio sin cliente de correo no hace
-// nada al pulsarlo, y ahí se pierde el contacto. El correo se enseña escrito y
-// se puede copiar de un toque; el enlace queda como atajo, no como única vía.
 export function CopyEmail({ email, label }: { email: string; label: string }) {
   const [copied, setCopied] = useState(false);
 

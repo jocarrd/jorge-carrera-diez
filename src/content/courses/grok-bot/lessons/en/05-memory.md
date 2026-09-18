@@ -99,12 +99,12 @@ Write our team's working rules to /workspace/team/rules.md. Then message the Rep
 
 ## Trusting an old memory
 
-- **Treating memory as the record.** The Bot quotes last month's figure as if it were today's. *Fix:* keep facts in the source system and ask the Bot to reopen it before decisions.
-- **Correcting in passing.** You fix a draft by hand and the Bot repeats the mistake next week. *Fix:* tell the Bot what was wrong and that the change is permanent.
-- **Keeping safety rules only in conversation.** A boundary said once gets buried under later work. *Fix:* put "never send without approval" in the description.
-- **Expecting one Bot to know what another learned.** The Email Bot has never heard of the insight the Research Bot found. *Fix:* pass it on with a file in `/workspace` or a direct message.
-- **Assuming a duplicate is a clone.** The copy asks questions the original stopped asking long ago. *Fix:* give the copy its new scope and the key context before assigning work.
-- **Deleting a Bot that others depend on.** A Bot that used to hand it work is not told it was deleted, so it may keep trying. *Fix:* tell those Bots explicitly that it is gone and who takes over.
+- **Treating memory as the record.** The Bot quotes last month's figure as if it were today's. _Fix:_ keep facts in the source system and ask the Bot to reopen it before decisions.
+- **Correcting in passing.** You fix a draft by hand and the Bot repeats the mistake next week. _Fix:_ tell the Bot what was wrong and that the change is permanent.
+- **Keeping safety rules only in conversation.** A boundary said once gets buried under later work. _Fix:_ put "never send without approval" in the description.
+- **Expecting one Bot to know what another learned.** The Email Bot has never heard of the insight the Research Bot found. _Fix:_ pass it on with a file in `/workspace` or a direct message.
+- **Assuming a duplicate is a clone.** The copy asks questions the original stopped asking long ago. _Fix:_ give the copy its new scope and the key context before assigning work.
+- **Deleting a Bot that others depend on.** A Bot that used to hand it work is not told it was deleted, so it may keep trying. _Fix:_ tell those Bots explicitly that it is gone and who takes over.
 
 ## Memory helps, the source decides
 

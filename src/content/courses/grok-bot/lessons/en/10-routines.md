@@ -120,13 +120,13 @@ A counterexample from the same day: an engineering Bot was asked for a routine t
 
 ## Automating what never worked
 
-- **Automating a task that never worked by hand.** The routine repeats the same errors every day. *Fix:* get one good result, save it as a skill, then schedule it.
-- **Leaving out the missing-data rule.** The Bot fills the gap with old data and nobody notices. *Fix:* say what to do when the source is empty, stale or down.
-- **Treating Test run as a rehearsal.** It makes real changes. *Fix:* use safe inputs and keep write actions behind approval.
-- **Triggering on every message.** The Bot runs on noise and burns usage. *Fix:* match a specific channel, phrase or link.
-- **Reporting on every run.** You learn to ignore the messages, including the one that matters. *Fix:* tell the Bot to stay quiet when nothing changed.
-- **Hiding a Bot to stop its routines.** Hidden Bots keep running them. *Fix:* pause the routine, and delete it only if you are sure, because there is no undo.
-- **Not re-testing after a change.** A website, connector or file format changes and the routine breaks without anyone noticing. *Fix:* run **Test run** again after any change to a source.
+- **Automating a task that never worked by hand.** The routine repeats the same errors every day. _Fix:_ get one good result, save it as a skill, then schedule it.
+- **Leaving out the missing-data rule.** The Bot fills the gap with old data and nobody notices. _Fix:_ say what to do when the source is empty, stale or down.
+- **Treating Test run as a rehearsal.** It makes real changes. _Fix:_ use safe inputs and keep write actions behind approval.
+- **Triggering on every message.** The Bot runs on noise and burns usage. _Fix:_ match a specific channel, phrase or link.
+- **Reporting on every run.** You learn to ignore the messages, including the one that matters. _Fix:_ tell the Bot to stay quiet when nothing changed.
+- **Hiding a Bot to stop its routines.** Hidden Bots keep running them. _Fix:_ pause the routine, and delete it only if you are sure, because there is no undo.
+- **Not re-testing after a change.** A website, connector or file format changes and the routine breaks without anyone noticing. _Fix:_ run **Test run** again after any change to a source.
 
 ## What a reliable routine needs
 

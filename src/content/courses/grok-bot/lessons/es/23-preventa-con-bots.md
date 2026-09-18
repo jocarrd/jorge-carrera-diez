@@ -79,11 +79,11 @@ Para el caso de cliente, el ejemplo fue un artículo de Salesforce sobre cómo r
 
 ## Fallos al montar la preventa con Bots
 
-- **Dejar que el experto técnico hable directamente con clientes.** Puede citar detalles internos del código. *Qué hacer:* que redacte la respuesta para ti y que la regla de no revelar propiedad intelectual esté en su descripción.
-- **Pedir diapositivas sin plantilla.** Cada una sale distinta y con aspecto genérico. *Qué hacer:* dale una diapositiva modelo y un orden fijo de bloques.
-- **Aceptar todos los Bots que proponen tus Bots.** Acabas con dos haciendo lo mismo y más uso gastado. *Qué hacer:* compara cada propuesta con los Bots que ya tienes.
-- **Probar productos de la competencia sin leer sus condiciones.** El Bot se registra o automatiza donde no está permitido. *Qué hacer:* revisa las condiciones y deja que el Bot te pase los pasos bloqueados (lección 19).
-- **Fiarse de una comparación sin fuentes.** Una diferencia inventada acaba en una presentación. *Qué hacer:* pide la fuente de cada fila: una captura, un enlace o el fichero del código.
+- **Dejar que el experto técnico hable directamente con clientes.** Puede citar detalles internos del código. _Qué hacer:_ que redacte la respuesta para ti y que la regla de no revelar propiedad intelectual esté en su descripción.
+- **Pedir diapositivas sin plantilla.** Cada una sale distinta y con aspecto genérico. _Qué hacer:_ dale una diapositiva modelo y un orden fijo de bloques.
+- **Aceptar todos los Bots que proponen tus Bots.** Acabas con dos haciendo lo mismo y más uso gastado. _Qué hacer:_ compara cada propuesta con los Bots que ya tienes.
+- **Probar productos de la competencia sin leer sus condiciones.** El Bot se registra o automatiza donde no está permitido. _Qué hacer:_ revisa las condiciones y deja que el Bot te pase los pasos bloqueados (lección 19).
+- **Fiarse de una comparación sin fuentes.** Una diferencia inventada acaba en una presentación. _Qué hacer:_ pide la fuente de cada fila: una captura, un enlace o el fichero del código.
 
 ## Preventa que no espera a ingeniería
 

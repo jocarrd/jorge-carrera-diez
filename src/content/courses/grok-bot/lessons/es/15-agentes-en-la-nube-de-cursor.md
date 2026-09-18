@@ -108,11 +108,11 @@ El día 2 el estudio de videojuegos llevó esto más lejos. Lauren pidió a Dr. 
 
 ## Código grande escrito por el propio Bot
 
-- **Pedir al Bot que escriba él mismo cambios grandes de código.** Puede que lo consiga, pero sin las herramientas pensadas para programar. *Qué hacer:* que delegue en un agente en la nube y revise el resultado.
-- **Vigilar cada paso del agente.** Te pasas el tiempo leyendo registros. *Qué hacer:* pregunta al Bot cómo va y pide pruebas en la pull request.
-- **No decir cómo debe volver el trabajo.** Te llega por sorpresa una pull request de 2.000 líneas. *Qué hacer:* fija en la descripción del Bot el tamaño, el formato y quién puede fusionar.
-- **El agente no llega al repositorio.** El lanzamiento falla antes de escribir una línea. En el directo, un Bot había usado el conector equivocado para GitHub. *Qué hacer:* comprueba el acceso al repositorio antes del primer lanzamiento; vuelve a autenticar GitHub o instala la herramienta de línea de comandos de GitHub.
-- **Dar por hecho que el agente ve el ordenador de tu Bot.** Los agentes delegados trabajan en ordenadores separados, con la configuración de red de Cloud Agent. *Qué hacer:* dales acceso desde la configuración de Cloud Agent, no con las sesiones de tu Bot.
+- **Pedir al Bot que escriba él mismo cambios grandes de código.** Puede que lo consiga, pero sin las herramientas pensadas para programar. _Qué hacer:_ que delegue en un agente en la nube y revise el resultado.
+- **Vigilar cada paso del agente.** Te pasas el tiempo leyendo registros. _Qué hacer:_ pregunta al Bot cómo va y pide pruebas en la pull request.
+- **No decir cómo debe volver el trabajo.** Te llega por sorpresa una pull request de 2.000 líneas. _Qué hacer:_ fija en la descripción del Bot el tamaño, el formato y quién puede fusionar.
+- **El agente no llega al repositorio.** El lanzamiento falla antes de escribir una línea. En el directo, un Bot había usado el conector equivocado para GitHub. _Qué hacer:_ comprueba el acceso al repositorio antes del primer lanzamiento; vuelve a autenticar GitHub o instala la herramienta de línea de comandos de GitHub.
+- **Dar por hecho que el agente ve el ordenador de tu Bot.** Los agentes delegados trabajan en ordenadores separados, con la configuración de red de Cloud Agent. _Qué hacer:_ dales acceso desde la configuración de Cloud Agent, no con las sesiones de tu Bot.
 
 ## Quién planifica y quién programa
 

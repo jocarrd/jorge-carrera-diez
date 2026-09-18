@@ -22,14 +22,23 @@ export function CvView({ locale }: { locale: Locale }) {
     <main className="cv-document">
       <Section>
         <div className="cv-head">
-          <SectionHeader eyebrow={copy.eyebrow} title={site.name} level={1} align="left" />
-          <p className="cv-role mt-3 text-lg text-[var(--muted)]">{content.profile.positioning}</p>
+          <SectionHeader
+            eyebrow={copy.eyebrow}
+            title={site.name}
+            level={1}
+            align="left"
+          />
+          <p className="cv-role mt-3 text-lg text-[var(--muted)]">
+            {content.profile.positioning}
+          </p>
           <ProfileSummary
             locale={locale}
             className="cv-summary prose-links mt-5 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:leading-7"
           />
           <div className="cv-contact mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            <span className="cv-chip text-[var(--muted)]">{content.meta.location}</span>
+            <span className="cv-chip text-[var(--muted)]">
+              {content.meta.location}
+            </span>
             {contactLinks.map((link) => (
               <a
                 key={link.href}
@@ -43,23 +52,18 @@ export function CvView({ locale }: { locale: Locale }) {
             ))}
           </div>
           <div className="mt-8">
-            <DownloadCvButton locale={locale} label={copy.downloadCta} hint={copy.printHint} />
+            <DownloadCvButton
+              locale={locale}
+              label={copy.downloadCta}
+              hint={copy.printHint}
+            />
           </div>
         </div>
       </Section>
 
       <Section className="cv-section section-band">
-        <h2 className="cv-section-title t-block">
-          {copy.experienceTitle}
-        </h2>
+        <h2 className="cv-section-title t-block">{copy.experienceTitle}</h2>
 
-        {/* Aquí había dos gráficas de lo mismo, una en la cabecera y esta: la
-            misma trayectoria contada dos veces seguidas, con dos formas
-            distintas. Se queda la barra, que es la que enseña los dos tracks
-            corriendo a la vez.
-
-            Solo en pantalla: en el PDF la lista ya va en orden y una gráfica
-            gastaría media página sin decir nada que no diga el texto. */}
         <div className="cv-screen-only mt-10">
           <CareerSpan
             items={content.experience}
@@ -69,13 +73,20 @@ export function CvView({ locale }: { locale: Locale }) {
 
         <div className="cv-entries cv-timeline mt-12">
           {content.experience.map((item) => (
-            <article key={`${item.company}-${item.period}`} className="cv-entry">
-              <p className="cv-period text-sm text-[var(--muted)]">{item.period}</p>
+            <article
+              key={`${item.company}-${item.period}`}
+              className="cv-entry"
+            >
+              <p className="cv-period text-sm text-[var(--muted)]">
+                {item.period}
+              </p>
               <h3 className="cv-entry-title t-card mt-2">
                 {item.headline ?? `${item.role} - ${item.company}`}
               </h3>
               <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
-                {item.client ? `${item.client} · ${item.company}` : item.context}
+                {item.client
+                  ? `${item.client} · ${item.company}`
+                  : item.context}
               </p>
               <p className="cv-entry-summary mt-5 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
                 {item.summary}
@@ -96,15 +107,11 @@ export function CvView({ locale }: { locale: Locale }) {
       <Section className="cv-section pb-0 sm:pb-0 lg:pb-0">
         <div className="grid gap-14 sm:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="cv-section-title t-block">
-              {copy.educationTitle}
-            </h2>
+            <h2 className="cv-section-title t-block">{copy.educationTitle}</h2>
             <div className="cv-entries mt-8">
               {content.education.map((item) => (
                 <div key={item.title} className="cv-entry">
-                  <h3 className="cv-entry-title t-card">
-                    {item.title}
-                  </h3>
+                  <h3 className="cv-entry-title t-card">{item.title}</h3>
                   <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
                     {item.url ? (
                       <a
@@ -130,16 +137,16 @@ export function CvView({ locale }: { locale: Locale }) {
           </div>
 
           <div>
-            <h2 className="cv-section-title t-block">
-              {copy.languagesTitle}
-            </h2>
+            <h2 className="cv-section-title t-block">{copy.languagesTitle}</h2>
             <dl className="cv-langs mt-8 space-y-3">
               {content.languages.map((lang) => (
                 <div
                   key={lang.name}
                   className="cv-lang flex items-baseline justify-between gap-4 border-b border-[var(--line)] pb-3"
                 >
-                  <dt className="text-base font-medium text-[var(--foreground)]">{lang.name}</dt>
+                  <dt className="text-base font-medium text-[var(--foreground)]">
+                    {lang.name}
+                  </dt>
                   <dd className="text-sm text-[var(--muted)]">{lang.level}</dd>
                 </div>
               ))}
@@ -149,9 +156,7 @@ export function CvView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="cv-section">
-        <h2 className="cv-section-title t-block">
-          {copy.stackTitle}
-        </h2>
+        <h2 className="cv-section-title t-block">{copy.stackTitle}</h2>
         <p className="cv-section-text mt-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:leading-7">
           {copy.stackText}
         </p>

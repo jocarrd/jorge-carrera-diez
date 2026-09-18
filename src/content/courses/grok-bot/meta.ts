@@ -6,13 +6,11 @@ export type CourseLessonRef = {
   slug: Record<Locale, string>;
 };
 
-// Estado de cada día del directo en el curso: "done" ya está transcrito y volcado
-// en las lecciones, "processing" se está grabando o transcribiendo, "upcoming" aún no ha salido.
 export type LivePart = {
   number: number;
   date: string;
   status: "done" | "processing" | "upcoming";
-  // Emisión del día en X; los {{live}} de ese día enlazan aquí.
+
   liveUrl?: string;
   topics: Record<Locale, string[]>;
 };
@@ -23,9 +21,6 @@ export type CourseModule = {
   level: "beginner" | "intermediate" | "advanced";
 };
 
-// El orden, los módulos y los slugs viven aquí y no en el front matter de cada
-// lección: son lo que enlaza un idioma con el otro y lo que usan las rutas, y
-// no pueden depender de que 44 ficheros escriban lo mismo.
 export const grokBotCourse = {
   id: "grok-bot",
   slug: { es: "grok-bot", en: "grok-bot" } as Record<Locale, string>,
@@ -67,54 +62,181 @@ export const grokBotCourse = {
     },
   ] as LivePart[],
   modules: [
-    { number: 0, title: { es: "La historia", en: "The story" }, level: "beginner" },
-    { number: 1, title: { es: "Fundamentos", en: "Fundamentals" }, level: "beginner" },
-    { number: 2, title: { es: "Enseñar a tu Bot", en: "Teaching your Bot" }, level: "beginner" },
-    { number: 3, title: { es: "Conectar tus herramientas", en: "Connecting your tools" }, level: "intermediate" },
-    { number: 4, title: { es: "Equipos de Bots", en: "Teams of Bots" }, level: "intermediate" },
-    { number: 5, title: { es: "Grok Bot para ingeniería", en: "Grok Bot for engineering" }, level: "advanced" },
-    { number: 6, title: { es: "Casos reales", en: "Real use cases" }, level: "advanced" },
-    { number: 7, title: { es: "Nivel experto", en: "Expert level" }, level: "advanced" },
-    { number: 8, title: { es: "Ventas y atención al cliente", en: "Sales and customer support" }, level: "advanced" },
+    {
+      number: 0,
+      title: { es: "La historia", en: "The story" },
+      level: "beginner",
+    },
+    {
+      number: 1,
+      title: { es: "Fundamentos", en: "Fundamentals" },
+      level: "beginner",
+    },
+    {
+      number: 2,
+      title: { es: "Enseñar a tu Bot", en: "Teaching your Bot" },
+      level: "beginner",
+    },
+    {
+      number: 3,
+      title: { es: "Conectar tus herramientas", en: "Connecting your tools" },
+      level: "intermediate",
+    },
+    {
+      number: 4,
+      title: { es: "Equipos de Bots", en: "Teams of Bots" },
+      level: "intermediate",
+    },
+    {
+      number: 5,
+      title: { es: "Grok Bot para ingeniería", en: "Grok Bot for engineering" },
+      level: "advanced",
+    },
+    {
+      number: 6,
+      title: { es: "Casos reales", en: "Real use cases" },
+      level: "advanced",
+    },
+    {
+      number: 7,
+      title: { es: "Nivel experto", en: "Expert level" },
+      level: "advanced",
+    },
+    {
+      number: 8,
+      title: {
+        es: "Ventas y atención al cliente",
+        en: "Sales and customer support",
+      },
+      level: "advanced",
+    },
   ] as CourseModule[],
   lessons: [
     { id: "00", module: 0, slug: { en: "the-story", es: "la-historia" } },
-    { id: "01", module: 1, slug: { en: "what-is-grok-bot", es: "que-es-grok-bot" } },
-    { id: "02", module: 1, slug: { en: "the-bots-computer", es: "el-ordenador-de-los-bots" } },
-    { id: "03", module: 1, slug: { en: "your-first-bot", es: "tu-primer-bot" } },
-    { id: "04", module: 1, slug: { en: "approvals-and-permissions", es: "aprobaciones-y-permisos" } },
+    {
+      id: "01",
+      module: 1,
+      slug: { en: "what-is-grok-bot", es: "que-es-grok-bot" },
+    },
+    {
+      id: "02",
+      module: 1,
+      slug: { en: "the-bots-computer", es: "el-ordenador-de-los-bots" },
+    },
+    {
+      id: "03",
+      module: 1,
+      slug: { en: "your-first-bot", es: "tu-primer-bot" },
+    },
+    {
+      id: "04",
+      module: 1,
+      slug: { en: "approvals-and-permissions", es: "aprobaciones-y-permisos" },
+    },
     { id: "05", module: 2, slug: { en: "memory", es: "memoria" } },
-    { id: "06", module: 2, slug: { en: "skills-and-teach-a-task", es: "skills-y-teach-a-task" } },
+    {
+      id: "06",
+      module: 2,
+      slug: { en: "skills-and-teach-a-task", es: "skills-y-teach-a-task" },
+    },
     { id: "07", module: 2, slug: { en: "good-context", es: "buen-contexto" } },
-    { id: "08", module: 3, slug: { en: "connectors-and-plugins", es: "conectores-y-plugins" } },
-    { id: "09", module: 3, slug: { en: "logins-and-credentials", es: "sesiones-y-credenciales" } },
+    {
+      id: "08",
+      module: 3,
+      slug: { en: "connectors-and-plugins", es: "conectores-y-plugins" },
+    },
+    {
+      id: "09",
+      module: 3,
+      slug: { en: "logins-and-credentials", es: "sesiones-y-credenciales" },
+    },
     { id: "10", module: 3, slug: { en: "routines", es: "routines" } },
-    { id: "11", module: 4, slug: { en: "one-bot-per-role", es: "un-bot-por-rol" } },
-    { id: "12", module: 4, slug: { en: "bots-working-together", es: "bots-que-trabajan-juntos" } },
-    { id: "13", module: 4, slug: { en: "orchestrating-a-team", es: "orquestar-un-equipo" } },
+    {
+      id: "11",
+      module: 4,
+      slug: { en: "one-bot-per-role", es: "un-bot-por-rol" },
+    },
+    {
+      id: "12",
+      module: 4,
+      slug: { en: "bots-working-together", es: "bots-que-trabajan-juntos" },
+    },
+    {
+      id: "13",
+      module: 4,
+      slug: { en: "orchestrating-a-team", es: "orquestar-un-equipo" },
+    },
     { id: "14", module: 4, slug: { en: "sharing-bots", es: "compartir-bots" } },
-    { id: "15", module: 5, slug: { en: "cursor-cloud-agents", es: "agentes-en-la-nube-de-cursor" } },
-    { id: "16", module: 5, slug: { en: "verification", es: "que-verifique-su-trabajo" } },
-    { id: "17", module: 5, slug: { en: "engineering-automations", es: "automatizaciones-de-ingenieria" } },
-    { id: "18", module: 6, slug: { en: "product-and-data", es: "producto-y-datos" } },
-    { id: "19", module: 6, slug: { en: "founders-and-sales", es: "fundadores-y-ventas" } },
-    { id: "20", module: 6, slug: { en: "running-a-business-with-bots", es: "montar-un-negocio-con-bots" } },
-    { id: "21", module: 7, slug: { en: "cost-and-performance", es: "coste-y-rendimiento" } },
+    {
+      id: "15",
+      module: 5,
+      slug: { en: "cursor-cloud-agents", es: "agentes-en-la-nube-de-cursor" },
+    },
+    {
+      id: "16",
+      module: 5,
+      slug: { en: "verification", es: "que-verifique-su-trabajo" },
+    },
+    {
+      id: "17",
+      module: 5,
+      slug: {
+        en: "engineering-automations",
+        es: "automatizaciones-de-ingenieria",
+      },
+    },
+    {
+      id: "18",
+      module: 6,
+      slug: { en: "product-and-data", es: "producto-y-datos" },
+    },
+    {
+      id: "19",
+      module: 6,
+      slug: { en: "founders-and-sales", es: "fundadores-y-ventas" },
+    },
+    {
+      id: "20",
+      module: 6,
+      slug: {
+        en: "running-a-business-with-bots",
+        es: "montar-un-negocio-con-bots",
+      },
+    },
+    {
+      id: "21",
+      module: 7,
+      slug: { en: "cost-and-performance", es: "coste-y-rendimiento" },
+    },
     { id: "22", module: 7, slug: { en: "limits", es: "limites" } },
-    { id: "23", module: 8, slug: { en: "sales-engineering-with-bots", es: "preventa-con-bots" } },
-    { id: "24", module: 8, slug: { en: "sales-and-prospecting", es: "ventas-y-prospeccion" } },
-    { id: "25", module: 8, slug: { en: "customer-support", es: "atencion-al-cliente" } },
+    {
+      id: "23",
+      module: 8,
+      slug: { en: "sales-engineering-with-bots", es: "preventa-con-bots" },
+    },
+    {
+      id: "24",
+      module: 8,
+      slug: { en: "sales-and-prospecting", es: "ventas-y-prospeccion" },
+    },
+    {
+      id: "25",
+      module: 8,
+      slug: { en: "customer-support", es: "atencion-al-cliente" },
+    },
   ] as CourseLessonRef[],
   copy: {
     es: {
       title: "Grok Bot: una empresa en 72 horas",
       seoTitle: "Curso de Grok Bot: una empresa en 72 horas",
-      subtitle: "Aprende a usar Grok Bot desde cero siguiendo cómo tres personas de xAI montan una empresa en directo.",
+      subtitle:
+        "Aprende a usar Grok Bot desde cero siguiendo cómo tres personas de xAI montan una empresa en directo.",
       description:
         "Curso gratis para aprender a usar Grok Bot desde cero. Lecciones cortas en español, con ejemplos reales y prompts que puedes copiar.",
       intro:
         "xAI presentó Grok Bot con un directo de tres días, de casi nueve horas cada uno. Casi nadie tiene tiempo de verlo. Yo lo he transcrito, lo he cruzado con la documentación oficial y lo he ordenado en lecciones cortas que se leen en el móvil.",
       eyebrow: "Curso gratis",
+      aboutProduct: "Sobre Grok Bot, de SpaceXAI",
       featuresTitle: "Cómo funciona",
       features: [
         {
@@ -134,13 +256,14 @@ export const grokBotCourse = {
           text: "Marca lo que terminas y vuelve otro día donde lo dejaste. Sin cuentas ni registros, todo se guarda en tu navegador.",
         },
       ],
-      authorTitle: "Quién está detrás",
+      authorTitle: "El autor",
       authorText:
         "Soy Jorge Carrera, ingeniero de software y tech lead. Trabajo con agentes de IA a diario en mis proyectos. Hice este curso para aprender Grok Bot a fondo y lo publico por si a ti también te ahorra las horas de vídeo.",
       authorX: "Sígueme en X",
       authorWeb: "Más sobre mí",
       followTitle: "¿Te está sirviendo?",
-      followText: "Cada día añado lo nuevo del directo y lo cuento en X. Sígueme y te enteras en cuanto salga.",
+      followText:
+        "Cada día añado lo nuevo del directo y lo cuento en X. Sígueme y te enteras en cuanto salga.",
       followButton: "Seguir a @jorgecarrera_es",
       introModule: "Antes de empezar",
       storyLabel: "En el directo",
@@ -148,23 +271,26 @@ export const grokBotCourse = {
       lessonContents: "Índice",
       glossaryTitle: "Glosario",
       searchPlaceholder: "Buscar en el curso: skills, routines, soporte…",
-      searchEmpty: "No hay nada con esas palabras. Prueba con otra o mira el glosario.",
+      searchEmpty:
+        "No hay nada con esas palabras. Prueba con otra o mira el glosario.",
       searchSection: "Sección",
       whatsNewTitle: "Novedades desde tu última visita",
       whatsNewAdded: "Lecciones nuevas",
       whatsNewUpdated: "Lecciones actualizadas",
-      feedLink: "RSS de novedades",
       searchInCourse: "Buscar en el curso",
       searchTerm: "Glosario",
       share: "Compartir",
       linkCopied: "Enlace copiado",
-      askTitle: "¿Te ha quedado alguna duda?",
-      askText: "Pregúntamela en X y te respondo. Si ayuda a más gente, la añado a la lección.",
+      askTitle: "Dudas",
+      askText:
+        "Pregúntamela en X y te respondo. Si ayuda a más gente, la añado a la lección.",
       askButton: "Preguntar en X",
       askTweet: "@jorgecarrera_es tengo una duda sobre «{title}»: ",
       momentIn: "Este momento, en la lección",
-      glossaryDescription: "Los términos de Grok Bot explicados en una frase: Bot, skill, routine, connector, MCP, agente en la nube y el resto, con la lección donde se explica cada uno.",
-      glossaryIntro: "Las palabras que aparecen en el curso y que conviene tener claras. Cada una enlaza a la lección donde se explica a fondo. Dentro de las lecciones, los términos subrayados con puntos abren su definición.",
+      glossaryDescription:
+        "Los términos de Grok Bot explicados en una frase: Bot, skill, routine, connector, MCP, agente en la nube y el resto, con la lección donde se explica cada uno.",
+      glossaryIntro:
+        "Las palabras que aparecen en el curso y que conviene tener claras. Cada una enlaza a la lección donde se explica a fondo. Dentro de las lecciones, los términos subrayados con puntos abren su definición.",
       glossaryLink: "Glosario de términos",
       glossaryLearn: "Se explica en la lección",
       glossarySee: "Ver en el glosario",
@@ -180,8 +306,10 @@ export const grokBotCourse = {
       close: "Cerrar",
       dayLabel: "Día",
       diaryTitle: "Diario del directo",
-      diaryDescription: "Lo que pasó cada día en el directo de lanzamiento de Grok Bot, en orden: la empresa que montaron en 72 horas, los Bots que crearon y lo que salió mal.",
-      diaryIntro: "Tres personas de xAI se propusieron montar una empresa en 72 horas con Grok Bot, en directo. Aquí está la historia día a día, con el enlace al minuto de cada momento y a la lección donde aprendes a hacerlo tú.",
+      diaryDescription:
+        "Lo que pasó cada día en el directo de lanzamiento de Grok Bot, en orden: la empresa que montaron en 72 horas, los Bots que crearon y lo que salió mal.",
+      diaryIntro:
+        "Tres personas de xAI se propusieron montar una empresa en 72 horas con Grok Bot, en directo. Aquí está la historia día a día, con el enlace al minuto de cada momento y a la lección donde aprendes a hacerlo tú.",
       diaryLink: "Leer la historia del directo día a día",
       diaryDayLink: "Leer el diario del día",
       diaryPending: "Se emite hoy. Su historia se añade cuando termine.",
@@ -192,13 +320,14 @@ export const grokBotCourse = {
       diaryLearnTitle: "Apréndelo en el curso",
       moduleStart: "Empezar el módulo",
       diaryEndTitle: "Del diario al curso",
-      diaryEndText: "El curso ordena todo lo que pasó en el directo en lecciones cortas, de lo básico a lo avanzado. Empieza desde cero o entra directamente al módulo que te interese.",
+      diaryEndText:
+        "El curso ordena todo lo que pasó en el directo en lecciones cortas, de lo básico a lo avanzado. Empieza desde cero o entra directamente al módulo que te interese.",
       syllabusStart: "Empezar",
       partStoryLink: "Qué pasó",
       learnIn: "Lo aprendes en",
       unofficial:
         "Este curso no es de xAI. Está hecho a partir de su documentación y del directo de lanzamiento.",
-      statusTitle: "Qué hay ya dentro",
+      statusTitle: "Las tres partes",
       statusIntro:
         "El curso crece con el directo. Cuando termina la parte de cada día, la transcribo y añado lo nuevo a las lecciones.",
       partLabel: "Parte",
@@ -206,7 +335,7 @@ export const grokBotCourse = {
       statusProcessing: "Se emite hoy. La añado cuando termine",
       statusUpcoming: "Pendiente",
       lessonSource: "Basado en la parte {done} de {total} del directo",
-      lessonSourceMore: "Qué falta",
+      lessonSourceMore: "Pendiente",
       start: "Empezar el curso",
       continue: "Seguir donde lo dejaste",
       review: "Volver a empezar",
@@ -217,9 +346,13 @@ export const grokBotCourse = {
       progressLabel: "completadas",
       moduleLabel: "Módulo",
       lessonLabel: "Lección",
-      levels: { beginner: "Principiante", intermediate: "Intermedio", advanced: "Avanzado" },
+      levels: {
+        beginner: "Principiante",
+        intermediate: "Intermedio",
+        advanced: "Avanzado",
+      },
       syllabus: "Temario",
-      objectives: "Qué vas a aprender",
+      objectives: "Temario",
       markComplete: "Marcar como completada",
       completed: "Completada",
       previous: "Anterior",
@@ -237,12 +370,14 @@ export const grokBotCourse = {
     en: {
       title: "Grok Bot: a company in 72 hours",
       seoTitle: "Grok Bot course: a company in 72 hours",
-      subtitle: "Learn Grok Bot from scratch by following three people from xAI as they build a company live.",
+      subtitle:
+        "Learn Grok Bot from scratch by following three people from xAI as they build a company live.",
       description:
         "A free course to learn Grok Bot from scratch. Short lessons with real examples and prompts you can copy.",
       intro:
         "xAI launched Grok Bot with a three-day livestream, almost nine hours each day. Hardly anyone has time to watch it. I transcribed it, checked it against the official docs and turned it into short lessons you can read on your phone.",
       eyebrow: "Free course",
+      aboutProduct: "About Grok Bot, by SpaceXAI",
       featuresTitle: "How it works",
       features: [
         {
@@ -262,13 +397,14 @@ export const grokBotCourse = {
           text: "Mark what you finish and come back to where you left off. No account needed, everything stays in your browser.",
         },
       ],
-      authorTitle: "Who made it",
+      authorTitle: "The author",
       authorText:
         "I'm Jorge Carrera, a software engineer and tech lead. I work with AI agents every day on my projects. I made this course to learn Grok Bot properly, and I'm sharing it in case it saves you the hours of video too.",
       authorX: "Follow me on X",
       authorWeb: "More about me",
       followTitle: "Finding this useful?",
-      followText: "I add what's new from the livestream every day and post about it on X. Follow along to catch it as soon as it's out.",
+      followText:
+        "I add what's new from the livestream every day and post about it on X. Follow along to catch it as soon as it's out.",
       followButton: "Follow @jorgecarrera_es",
       introModule: "Before you start",
       storyLabel: "In the livestream",
@@ -276,23 +412,26 @@ export const grokBotCourse = {
       lessonContents: "Contents",
       glossaryTitle: "Glossary",
       searchPlaceholder: "Search the course: skills, routines, support…",
-      searchEmpty: "Nothing matches those words. Try another or check the glossary.",
+      searchEmpty:
+        "Nothing matches those words. Try another or check the glossary.",
       searchSection: "Section",
       whatsNewTitle: "New since your last visit",
       whatsNewAdded: "New lessons",
       whatsNewUpdated: "Updated lessons",
-      feedLink: "Updates RSS feed",
       searchInCourse: "Search the course",
       searchTerm: "Glossary",
       share: "Share",
       linkCopied: "Link copied",
-      askTitle: "Anything unclear?",
-      askText: "Ask me on X and I'll reply. If it helps other people too, I'll add it to the lesson.",
+      askTitle: "Questions",
+      askText:
+        "Ask me on X and I'll reply. If it helps other people too, I'll add it to the lesson.",
       askButton: "Ask on X",
-      askTweet: "@jorgecarrera_es I have a question about \"{title}\": ",
+      askTweet: '@jorgecarrera_es I have a question about "{title}": ',
       momentIn: "This moment, in lesson",
-      glossaryDescription: "Grok Bot terms explained in one sentence: Bot, skill, routine, connector, MCP, cloud agent and the rest, with the lesson that covers each one.",
-      glossaryIntro: "The words that come up in the course and are worth having clear. Each one links to the lesson that explains it in depth. Inside lessons, terms with a dotted underline open their definition.",
+      glossaryDescription:
+        "Grok Bot terms explained in one sentence: Bot, skill, routine, connector, MCP, cloud agent and the rest, with the lesson that covers each one.",
+      glossaryIntro:
+        "The words that come up in the course and are worth having clear. Each one links to the lesson that explains it in depth. Inside lessons, terms with a dotted underline open their definition.",
       glossaryLink: "Glossary of terms",
       glossaryLearn: "Explained in lesson",
       glossarySee: "See in the glossary",
@@ -308,8 +447,10 @@ export const grokBotCourse = {
       close: "Close",
       dayLabel: "Day",
       diaryTitle: "Livestream diary",
-      diaryDescription: "What happened each day of the Grok Bot launch livestream, in order: the company built in 72 hours, the Bots created along the way and what went wrong.",
-      diaryIntro: "Three people from xAI set out to build a company in 72 hours with Grok Bot, live. Here's the story day by day, with a link to the minute of each moment and to the lesson where you learn to do it yourself.",
+      diaryDescription:
+        "What happened each day of the Grok Bot launch livestream, in order: the company built in 72 hours, the Bots created along the way and what went wrong.",
+      diaryIntro:
+        "Three people from xAI set out to build a company in 72 hours with Grok Bot, live. Here's the story day by day, with a link to the minute of each moment and to the lesson where you learn to do it yourself.",
       diaryLink: "Read the livestream story day by day",
       diaryDayLink: "Read the diary for this day",
       diaryPending: "Airing today. Its story is added once it ends.",
@@ -320,13 +461,14 @@ export const grokBotCourse = {
       diaryLearnTitle: "Learn it in the course",
       moduleStart: "Start module",
       diaryEndTitle: "From the diary to the course",
-      diaryEndText: "The course turns everything that happened in the livestream into short lessons, from the basics to advanced. Start from the beginning or go straight to the module you're interested in.",
+      diaryEndText:
+        "The course turns everything that happened in the livestream into short lessons, from the basics to advanced. Start from the beginning or go straight to the module you're interested in.",
       syllabusStart: "Start",
       partStoryLink: "What happened",
       learnIn: "Learn it in",
       unofficial:
         "This course is not made by xAI. It is based on their docs and the launch livestream.",
-      statusTitle: "What's in so far",
+      statusTitle: "The three parts",
       statusIntro:
         "The course grows with the livestream. When each day's part ends, I transcribe it and add what's new to the lessons.",
       partLabel: "Part",
@@ -334,7 +476,7 @@ export const grokBotCourse = {
       statusProcessing: "Airing today. Added once it ends",
       statusUpcoming: "Not yet",
       lessonSource: "Based on part {done} of {total} of the livestream",
-      lessonSourceMore: "What's missing",
+      lessonSourceMore: "Pending",
       start: "Start the course",
       continue: "Pick up where you left off",
       review: "Start again",
@@ -345,9 +487,13 @@ export const grokBotCourse = {
       progressLabel: "completed",
       moduleLabel: "Module",
       lessonLabel: "Lesson",
-      levels: { beginner: "Beginner", intermediate: "Intermediate", advanced: "Advanced" },
+      levels: {
+        beginner: "Beginner",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+      },
       syllabus: "Syllabus",
-      objectives: "What you'll learn",
+      objectives: "Contents",
       markComplete: "Mark as complete",
       completed: "Completed",
       previous: "Previous",

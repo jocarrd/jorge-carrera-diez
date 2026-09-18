@@ -3,19 +3,10 @@ import type { Locale } from "@/i18n/config";
 import { leerEstadoRed } from "@/lib/snowy-live";
 import { EscalaTemperatura } from "./EscalaTemperatura";
 
-// El resto de la portada cuenta lo que he construido. Esto lo enseña
-// funcionando: arriba, en la misma banda, van noventa días de histórico; aquí
-// debajo, lo que la red está midiendo en este momento.
-//
-// Es un componente de servidor a propósito: la clave del engine no puede llegar
-// al navegador, la petición se hace una vez cada diez minutos para todo el
-// mundo y no hay salto de contenido al hidratar.
 export async function DatoEnVivo({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).enVivo;
   const red = await leerEstadoRed();
 
-  // Sin lectura no hay bloque. Una sección que dice "no se ha podido cargar" es
-  // peor que no estar: cuenta justo lo contrario de lo que viene a decir.
   if (!red) return null;
 
   const idioma = locale === "es" ? "es-ES" : "en-GB";

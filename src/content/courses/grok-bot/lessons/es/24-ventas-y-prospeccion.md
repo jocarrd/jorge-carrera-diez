@@ -79,11 +79,11 @@ como skill "Correos de prospección". No envíes nada.
 
 ## Errores del equipo comercial
 
-- **Correos que solo cambian el nombre.** El cliente nota la plantilla y no contesta. *Qué hacer:* pide ejemplos, critica cada uno y exige que ninguno se parezca a otro.
-- **Pedirle al Bot enlaces en vez de trabajo.** Sigues leyendo tú los webinars. *Qué hacer:* pídele que los vea y te entregue el borrador.
-- **Crear un Bot nuevo para cada idea.** El equipo se vuelve un caos y el uso se dispara. *Qué hacer:* antes de crear otro, pregúntate por qué no puede hacerlo uno que ya tienes o una routine.
-- **Routines cada pocos minutos.** Ruido y gasto sin resultado. *Qué hacer:* una o dos al día, o una routine que salte con un evento del CRM.
-- **Enviar sin revisar mientras entrenas la voz.** Un correo malo llega a un cliente. *Qué hacer:* borradores hasta que confíes en ellos, y aun así revisa los importantes.
+- **Correos que solo cambian el nombre.** El cliente nota la plantilla y no contesta. _Qué hacer:_ pide ejemplos, critica cada uno y exige que ninguno se parezca a otro.
+- **Pedirle al Bot enlaces en vez de trabajo.** Sigues leyendo tú los webinars. _Qué hacer:_ pídele que los vea y te entregue el borrador.
+- **Crear un Bot nuevo para cada idea.** El equipo se vuelve un caos y el uso se dispara. _Qué hacer:_ antes de crear otro, pregúntate por qué no puede hacerlo uno que ya tienes o una routine.
+- **Routines cada pocos minutos.** Ruido y gasto sin resultado. _Qué hacer:_ una o dos al día, o una routine que salte con un evento del CRM.
+- **Enviar sin revisar mientras entrenas la voz.** Un correo malo llega a un cliente. _Qué hacer:_ borradores hasta que confíes en ellos, y aun así revisa los importantes.
 
 ## Ventas con Bots, en corto
 

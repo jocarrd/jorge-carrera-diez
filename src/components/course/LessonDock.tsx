@@ -4,9 +4,18 @@ import { track } from "@vercel/analytics";
 import { useEffect, useRef, useState } from "react";
 import type { TocEntry } from "@/lib/courses/markdown";
 
-type Labels = { contents: string; minutesLeft: string; resume: string; resumeButton: string; close: string; search: string; searchHref: string };
+type Labels = {
+  contents: string;
+  minutesLeft: string;
+  resume: string;
+  resumeButton: string;
+  close: string;
+  search: string;
+  searchHref: string;
+};
 
-const positionKey = (courseId: string, lessonId: string) => `curso:${courseId}:posicion:${lessonId}`;
+const positionKey = (courseId: string, lessonId: string) =>
+  `curso:${courseId}:posicion:${lessonId}`;
 
 function readPosition(key: string): string | null {
   try {
@@ -20,16 +29,22 @@ function writePosition(key: string, id: string | null) {
   try {
     if (id) window.localStorage.setItem(key, id);
     else window.localStorage.removeItem(key);
-  } catch {
-    // Sin almacenamiento no se recuerda la posición, y la lección se lee igual.
-  }
+  } catch {}
 }
 
-/**
- * Barra inferior de lectura en el móvil: en qué sección vas, cuánto queda y el
- * índice a mano. Recuerda la sección y, al volver a la lección, ofrece seguir ahí.
- */
-export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { courseId: string; lessonId: string; toc: TocEntry[]; minutes: number; labels: Labels }) {
+export function LessonDock({
+  courseId,
+  lessonId,
+  toc,
+  minutes,
+  labels,
+}: {
+  courseId: string;
+  lessonId: string;
+  toc: TocEntry[];
+  minutes: number;
+  labels: Labels;
+}) {
   const [visible, setVisible] = useState(false);
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -50,11 +65,14 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
       if (!body) return;
       const rect = body.getBoundingClientRect();
       const footerTop = footer?.getBoundingClientRect().top ?? Infinity;
-      setVisible(rect.top < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.85);
+      setVisible(
+        rect.top < window.innerHeight * 0.4 &&
+          footerTop > window.innerHeight * 0.85,
+      );
       const total = rect.height - window.innerHeight * 0.6;
       const value = Math.min(1, Math.max(0, -rect.top / Math.max(total, 1)));
       setProgress(value);
-      // Mitad de la lección leída: sirve para ver dónde abandona la gente.
+
       if (value >= 0.5 && !halfTracked.current) {
         halfTracked.current = true;
         track("lesson_half", { lesson: lessonId });
@@ -62,10 +80,12 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
       let index = 0;
       toc.forEach((entry, i) => {
         const el = document.getElementById(entry.id);
-        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.35) index = i;
+        if (el && el.getBoundingClientRect().top < window.innerHeight * 0.35)
+          index = i;
       });
       setCurrent(index);
-      if (resumeChecked.current && rect.top < 0) writePosition(key, index > 0 ? toc[index].id : null);
+      if (resumeChecked.current && rect.top < 0)
+        writePosition(key, index > 0 ? toc[index].id : null);
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
@@ -80,26 +100,27 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
     };
   }, [toc, key, lessonId]);
 
-  // Al abrir la lección desde arriba, si la última vez se quedó a mitad, se ofrece volver.
   useEffect(() => {
-    // Se lee tras el primer pintado: el almacenamiento no existe en el servidor.
     const frame = requestAnimationFrame(() => {
       const saved = readPosition(key);
       const entry = toc.find((t) => t.id === saved);
-      if (entry && window.scrollY < 200 && !window.location.hash) setResume(entry);
+      if (entry && window.scrollY < 200 && !window.location.hash)
+        setResume(entry);
       resumeChecked.current = true;
     });
     return () => cancelAnimationFrame(frame);
   }, [key, toc]);
 
-  // La hoja se comporta como un diálogo: el foco entra en ella, no se escapa con
-  // el tabulador y vuelve al botón que la abrió al cerrarla.
   useEffect(() => {
     if (!open) return;
     const panel = panelRef.current;
     const opener = openerRef.current;
-    const focusables = () => [...(panel?.querySelectorAll<HTMLElement>("a, button") ?? [])];
-    (panel?.querySelector<HTMLElement>(".is-current") ?? focusables()[0])?.focus();
+    const focusables = () => [
+      ...(panel?.querySelectorAll<HTMLElement>("a, button") ?? []),
+    ];
+    (
+      panel?.querySelector<HTMLElement>(".is-current") ?? focusables()[0]
+    )?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
       if (e.key !== "Tab") return;
@@ -138,15 +159,33 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
           >
             {labels.resumeButton} ↓
           </a>
-          <button type="button" className="lesson-resume-close" aria-label={labels.close} onClick={() => setResume(null)}>
+          <button
+            type="button"
+            className="lesson-resume-close"
+            aria-label={labels.close}
+            onClick={() => setResume(null)}
+          >
             ×
           </button>
         </div>
       ) : null}
 
-      <div className={`lesson-dock ${visible ? "is-visible" : ""}`} aria-hidden={!visible}>
-        <div className="lesson-dock-progress" style={{ transform: `scaleX(${progress})` }} />
-        <button ref={openerRef} type="button" className="lesson-dock-main" onClick={() => setOpen(true)} tabIndex={visible ? 0 : -1} aria-haspopup="dialog">
+      <div
+        className={`lesson-dock ${visible ? "is-visible" : ""}`}
+        aria-hidden={!visible}
+      >
+        <div
+          className="lesson-dock-progress"
+          style={{ transform: `scaleX(${progress})` }}
+        />
+        <button
+          ref={openerRef}
+          type="button"
+          className="lesson-dock-main"
+          onClick={() => setOpen(true)}
+          tabIndex={visible ? 0 : -1}
+          aria-haspopup="dialog"
+        >
           <span className="lesson-dock-count">
             {current + 1}/{toc.length}
           </span>
@@ -158,21 +197,39 @@ export function LessonDock({ courseId, lessonId, toc, minutes, labels }: { cours
       </div>
 
       {open ? (
-        <div className="lesson-sheet" role="dialog" aria-modal="true" aria-label={labels.contents} onClick={() => setOpen(false)}>
-          <div ref={panelRef} className="lesson-sheet-panel" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="lesson-sheet"
+          role="dialog"
+          aria-modal="true"
+          aria-label={labels.contents}
+          onClick={() => setOpen(false)}
+        >
+          <div
+            ref={panelRef}
+            className="lesson-sheet-panel"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="lesson-sheet-head">
               <p>{labels.contents}</p>
               <a href={labels.searchHref} className="lesson-sheet-search">
                 {labels.search}
               </a>
-              <button type="button" onClick={() => setOpen(false)} aria-label={labels.close}>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={labels.close}
+              >
                 ×
               </button>
             </div>
             <ol>
               {toc.map((entry, i) => (
                 <li key={entry.id}>
-                  <a href={`#${entry.id}`} className={i === current ? "is-current" : undefined} onClick={() => setOpen(false)}>
+                  <a
+                    href={`#${entry.id}`}
+                    className={i === current ? "is-current" : undefined}
+                    onClick={() => setOpen(false)}
+                  >
                     <span>{i + 1}</span>
                     {entry.text}
                   </a>

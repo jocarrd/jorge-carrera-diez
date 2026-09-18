@@ -115,11 +115,11 @@ Redacta una respuesta al último correo de nuestro proveedor confirmando la entr
 
 ## Aprobar sin mirar
 
-- **Aprobar sin leer el destino.** El Bot actúa sobre la cuenta o el destinatario equivocados. *Qué hacer:* revisa destino, alcance y valores, y pide una explicación sencilla si dudas.
-- **Escribir reglas amplias como "permite todo en el navegador".** Las acciones de riesgo pasan sin pararse. *Qué hacer:* escribe reglas concretas para una acción y un alcance.
-- **Elegir Always allow a la primera.** Una aprobación puntual se vuelve permanente. *Qué hacer:* usa **Allow once** hasta que conozcas bien el patrón.
-- **Esperar que una aprobación deshaga lo ya hecho.** La aprobación solo controla la acción propuesta. *Qué hacer:* deja los pasos irreversibles detrás de **Ask first**.
-- **Permitir siempre la ejecución local.** Un Bot puede ejecutar comandos en tu propia máquina sin preguntar. *Qué hacer:* quédate con **Never allowed** o **Ask every time**.
+- **Aprobar sin leer el destino.** El Bot actúa sobre la cuenta o el destinatario equivocados. _Qué hacer:_ revisa destino, alcance y valores, y pide una explicación sencilla si dudas.
+- **Escribir reglas amplias como "permite todo en el navegador".** Las acciones de riesgo pasan sin pararse. _Qué hacer:_ escribe reglas concretas para una acción y un alcance.
+- **Elegir Always allow a la primera.** Una aprobación puntual se vuelve permanente. _Qué hacer:_ usa **Allow once** hasta que conozcas bien el patrón.
+- **Esperar que una aprobación deshaga lo ya hecho.** La aprobación solo controla la acción propuesta. _Qué hacer:_ deja los pasos irreversibles detrás de **Ask first**.
+- **Permitir siempre la ejecución local.** Un Bot puede ejecutar comandos en tu propia máquina sin preguntar. _Qué hacer:_ quédate con **Never allowed** o **Ask every time**.
 
 ## Allow once mientras aprendes
 

@@ -103,11 +103,11 @@ as a skill called "Write like me". Do not send anything.
 
 ## Messages that go out unreviewed
 
-- **Letting a Bot send outreach on day one.** A wrong name or claim reaches a customer and can't be taken back. *Fix:* keep drafts and approval until you have reviewed many good ones. An approval doesn't reverse work already completed.
-- **Giving a voice Bot every account you have.** Every other Bot on your account can now use those sessions. *Fix:* sign in only to what the job needs, and sign out when you stop.
-- **Automating competitor research without reading the terms.** The Bot breaks a site's rules in your name. *Fix:* check the terms first and let the Bot hand blocked steps to you.
-- **Sending feedback straight into merged code.** A single loud complaint changes the product. *Fix:* have the Bot open a pull request and review it like any other change (lesson 16).
-- **Asking random questions to specialist Bots.** Their context fills with noise. *Fix:* use a catch-all Bot and pass on only what matters.
+- **Letting a Bot send outreach on day one.** A wrong name or claim reaches a customer and can't be taken back. _Fix:_ keep drafts and approval until you have reviewed many good ones. An approval doesn't reverse work already completed.
+- **Giving a voice Bot every account you have.** Every other Bot on your account can now use those sessions. _Fix:_ sign in only to what the job needs, and sign out when you stop.
+- **Automating competitor research without reading the terms.** The Bot breaks a site's rules in your name. _Fix:_ check the terms first and let the Bot hand blocked steps to you.
+- **Sending feedback straight into merged code.** A single loud complaint changes the product. _Fix:_ have the Bot open a pull request and review it like any other change (lesson 16).
+- **Asking random questions to specialist Bots.** Their context fills with noise. _Fix:_ use a catch-all Bot and pass on only what matters.
 
 ## Drafts always, sends with approval
 

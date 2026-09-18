@@ -1,4 +1,3 @@
-/** Datos que no cambian con el idioma: identidad, URLs y perfiles. */
 export const site = {
   name: "Jorge Carrera Diez",
   domain: "jorge-carrera-diez.com",
@@ -14,24 +13,25 @@ export const site = {
   university: "Universidad de La Rioja",
   universityUrl: "https://www.unirioja.es/",
   snowy: "https://snowy.es",
-  /** El mapa de Snowy. La ruta es /map, no /mapa: el sitio no está traducido. */
+
   snowyMapa: "https://snowy.es/map",
-  /** Sin protocolo: es lo que se enseña en la barra del marco de ventana. */
+
   snowyDomain: "snowy.es",
   eqx: "https://elitequality.org/",
   lariojameteo: "https://lariojameteo.es",
-  eqxIndex: "https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/",
+  eqxIndex:
+    "https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/",
   openData: "https://datos.gob.es/es/aplicaciones/snowy",
 };
 
-/** Organizaciones a las que el perfil está vinculado, para el grafo de entidades. */
 export const organizations = {
   capgemini: { name: "Capgemini", url: "https://www.capgemini.com/es-es/" },
-  eqx: { name: "Foundation for Value Creation", url: "https://elitequality.org/" },
+  eqx: {
+    name: "Foundation for Value Creation",
+    url: "https://elitequality.org/",
+  },
 } as const;
 
-/** El dominio que va en la barra del marco de ventana, sin protocolo ni barra
- *  final: se saca de la URL para no mantener la misma cadena en dos sitios. */
 export function domainOf(url: string): string {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }

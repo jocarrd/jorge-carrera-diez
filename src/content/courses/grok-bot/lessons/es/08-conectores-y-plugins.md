@@ -110,11 +110,11 @@ Lee las respuestas a mis tres últimas publicaciones. Agrupa las propuestas por 
 
 ## Clics donde había connector
 
-- **Moverse con clics por una web que tiene connector.** El trabajo va más lento y se rompe más. *Qué hacer:* mira primero en el **Marketplace**.
-- **Iniciar sesión con la cuenta equivocada.** El Bot ve datos que no son o no ve nada. *Qué hacer:* vuelve a conectar con la cuenta correcta.
-- **Dejar todas las herramientas activadas.** El Bot tiene permisos de escritura que nunca necesitó. *Qué hacer:* apaga en **Yours** las que no uses.
-- **Mantener conexiones viejas para siempre.** El acceso sigue abierto mucho después de acabar el proyecto. *Qué hacer:* revisa los plugins instalados de vez en cuando y revoca lo que no uses.
-- **Un plugin que no conecta.** Las tareas fallan en la primera llamada. En el directo, un Bot no llegaba a los repositorios de GitHub del equipo (las carpetas donde viven los proyectos de código), al parecer porque se había usado el connector equivocado. *Qué hacer:* ábrelo en **Settings → Plugins** y vuelve a iniciar sesión con la cuenta correcta, o quítalo y conéctalo de nuevo. Con GitHub, el equipo sugirió también instalar la herramienta de línea de comandos de GitHub (un programa que se maneja escribiendo órdenes) en el ordenador del Bot. {{live 5:06:25 "Un Bot que no llegaba a GitHub"}}
+- **Moverse con clics por una web que tiene connector.** El trabajo va más lento y se rompe más. _Qué hacer:_ mira primero en el **Marketplace**.
+- **Iniciar sesión con la cuenta equivocada.** El Bot ve datos que no son o no ve nada. _Qué hacer:_ vuelve a conectar con la cuenta correcta.
+- **Dejar todas las herramientas activadas.** El Bot tiene permisos de escritura que nunca necesitó. _Qué hacer:_ apaga en **Yours** las que no uses.
+- **Mantener conexiones viejas para siempre.** El acceso sigue abierto mucho después de acabar el proyecto. _Qué hacer:_ revisa los plugins instalados de vez en cuando y revoca lo que no uses.
+- **Un plugin que no conecta.** Las tareas fallan en la primera llamada. En el directo, un Bot no llegaba a los repositorios de GitHub del equipo (las carpetas donde viven los proyectos de código), al parecer porque se había usado el connector equivocado. _Qué hacer:_ ábrelo en **Settings → Plugins** y vuelve a iniciar sesión con la cuenta correcta, o quítalo y conéctalo de nuevo. Con GitHub, el equipo sugirió también instalar la herramienta de línea de comandos de GitHub (un programa que se maneja escribiendo órdenes) en el ordenador del Bot. {{live 5:06:25 "Un Bot que no llegaba a GitHub"}}
 
 ## Connectors primero, clics después
 

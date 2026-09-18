@@ -79,11 +79,11 @@ length, tone and how I ask for the meeting. Save it as a skill called
 
 ## Sales team mistakes
 
-- **Emails that only change the name.** The customer spots the template and doesn't reply. *Fix:* ask for examples, criticise each one and require that none looks like another.
-- **Asking the Bot for links instead of work.** You're still the one watching the webinars. *Fix:* ask it to watch them and hand you the draft.
-- **Creating a new Bot for every idea.** The team gets chaotic and usage climbs. *Fix:* before creating another, ask why an existing Bot or a routine can't do it.
-- **Routines every few minutes.** Noise and spend with no result. *Fix:* one or two a day, or a routine that fires on a CRM event.
-- **Sending unreviewed while you train the voice.** A bad email reaches a customer. *Fix:* drafts until you trust them, and still review the important ones.
+- **Emails that only change the name.** The customer spots the template and doesn't reply. _Fix:_ ask for examples, criticise each one and require that none looks like another.
+- **Asking the Bot for links instead of work.** You're still the one watching the webinars. _Fix:_ ask it to watch them and hand you the draft.
+- **Creating a new Bot for every idea.** The team gets chaotic and usage climbs. _Fix:_ before creating another, ask why an existing Bot or a routine can't do it.
+- **Routines every few minutes.** Noise and spend with no result. _Fix:_ one or two a day, or a routine that fires on a CRM event.
+- **Sending unreviewed while you train the voice.** A bad email reaches a customer. _Fix:_ drafts until you trust them, and still review the important ones.
 
 ## Selling with Bots, in short
 

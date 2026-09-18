@@ -16,8 +16,6 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-// Sirve a toda la web, currículum incluido: la salida principal es la home y el
-// resto son las secciones del currículum.
 export default function GlobalNotFound() {
   return (
     <html lang="es" className={`h-full antialiased ${fontClass}`}>

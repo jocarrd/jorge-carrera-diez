@@ -1,29 +1,34 @@
 import Image from "next/image";
-import { BrowserFrame, ButtonLink, Container, DeviceFrame, Rail, Reveal } from "@/components/ui";
+import {
+  BrowserFrame,
+  ButtonLink,
+  Container,
+  DeviceFrame,
+  Rail,
+  Reveal,
+} from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
-// La sección oscura reservada para Snowy: es lo que debe recordarse y si todo
-// destacara, no destacaría nada.
-//
-// Eran tres capturas de 330 px en fila donde no se leía nada de la interfaz, y
-// las tres compartían el mismo alt. Ahora es una galería: cada superficie a un
-// tamaño en el que se distingue, con su nombre y su alt propio, y se recorren
-// de lado en vez de competir por el mismo ancho.
 export function SnowyShowcase({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
   const showcase = copy.snowyShowcase;
   const snowy = copy.projects.find((project) => project.slug === "snowy");
 
   return (
-    <section id="snowy-showcase" className="section-dark py-20 sm:py-28 lg:py-32">
-      {/* Estaba centrada: titular corto en medio y párrafo debajo, que es la
-          forma de una página de producto de catálogo. Alineada a la izquierda
-          entra en la misma retícula que el resto y el carril de capturas ya no
-          cuelga de un eje que no comparte con nada. */}
+    <section
+      id="snowy-showcase"
+      className="section-dark py-20 sm:py-28 lg:py-32"
+    >
       <Container>
-        <p className="t-eyebrow"><span className="t-indice">03</span><span aria-hidden className="t-eyebrow-sep">—</span>Snowy</p>
+        <p className="t-eyebrow">
+          <span className="t-indice">03</span>
+          <span aria-hidden className="t-eyebrow-sep">
+            —
+          </span>
+          Snowy
+        </p>
         <h2 className="t-section mt-4 max-w-[20ch] text-white">
           {showcase.title}
         </h2>
@@ -31,13 +36,20 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
           {showcase.detail}
         </p>
 
-        {/* Abrir el producto es la acción real; el caso técnico es para quien
-            quiera el detalle. Dos enlaces iguales no lo decían. */}
         <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-x-4">
-          <ButtonLink href={site.snowy} tone="dark" target="_blank" rel="noreferrer">
+          <ButtonLink
+            href={site.snowy}
+            tone="dark"
+            target="_blank"
+            rel="noreferrer"
+          >
             {showcase.ctaSecondary}
           </ButtonLink>
-          <ButtonLink href={routePath(locale, "snowy")} variant="quiet" tone="dark">
+          <ButtonLink
+            href={routePath(locale, "snowy")}
+            variant="quiet"
+            tone="dark"
+          >
             {showcase.ctaPrimary}
           </ButtonLink>
         </div>
@@ -47,11 +59,10 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         <Reveal delay={80}>
           <Rail label="Snowy">
             {showcase.gallery.map((shot) => (
-              <figure key={shot.image} className="rail-item w-[62vw] max-w-[42rem] sm:w-[86vw]">
-                {/* En un móvil de 390 px una captura de escritorio se reduce
-                    tanto que no se lee nada. Snowy es responsive, así que en el
-                    móvil se enseña el móvil: la misma superficie, capturada en
-                    un teléfono de verdad. */}
+              <figure
+                key={shot.image}
+                className="rail-item w-[62vw] max-w-[42rem] sm:w-[86vw]"
+              >
                 <div className="sm:hidden">
                   <DeviceFrame src={shot.imageMobile} alt={shot.alt} />
                 </div>
@@ -91,9 +102,6 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
             </a>
           </p>
 
-          {/* Igual que en la portada de proyectos: en texto separado por puntos.
-              Diez contornos seguidos pesaban más que el titular que llevan
-              debajo, y la pila es un pie de página, no una llamada. */}
           <p className="mt-8 max-w-2xl font-mono text-[12px] leading-[1.7] text-[var(--ink-dark-muted)]">
             {(snowy.stack ?? []).join(" · ")}
           </p>

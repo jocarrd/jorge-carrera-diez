@@ -6,12 +6,18 @@ import { useEffect, useState } from "react";
 type Item = { id: string; title: string; href: string; updated: string };
 type Visit = { at: string; lessons: string[] };
 
-/**
- * Qué ha cambiado desde la última visita a la portada: lecciones nuevas y
- * lecciones actualizadas. Solo se ve si ya habías estado y hay algo.
- */
-export function WhatsNew({ courseId, lessons, labels }: { courseId: string; lessons: Item[]; labels: { title: string; added: string; updated: string } }) {
-  const [found, setFound] = useState<{ added: Item[]; updated: Item[] } | null>(null);
+export function WhatsNew({
+  courseId,
+  lessons,
+  labels,
+}: {
+  courseId: string;
+  lessons: Item[];
+  labels: { title: string; added: string; updated: string };
+}) {
+  const [found, setFound] = useState<{ added: Item[]; updated: Item[] } | null>(
+    null,
+  );
 
   useEffect(() => {
     const key = `curso:${courseId}:visita`;
@@ -24,14 +30,22 @@ export function WhatsNew({ courseId, lessons, labels }: { courseId: string; less
       }
       if (previous) {
         const added = lessons.filter((l) => !previous!.lessons.includes(l.id));
-        const updated = lessons.filter((l) => previous!.lessons.includes(l.id) && l.updated > previous!.at.slice(0, 10));
+        const updated = lessons.filter(
+          (l) =>
+            previous!.lessons.includes(l.id) &&
+            l.updated > previous!.at.slice(0, 10),
+        );
         if (added.length || updated.length) setFound({ added, updated });
       }
       try {
-        window.localStorage.setItem(key, JSON.stringify({ at: new Date().toISOString(), lessons: lessons.map((l) => l.id) }));
-      } catch {
-        // Sin almacenamiento no hay «qué hay nuevo», y el curso se lee igual.
-      }
+        window.localStorage.setItem(
+          key,
+          JSON.stringify({
+            at: new Date().toISOString(),
+            lessons: lessons.map((l) => l.id),
+          }),
+        );
+      } catch {}
     });
     return () => cancelAnimationFrame(frame);
   }, [courseId, lessons]);

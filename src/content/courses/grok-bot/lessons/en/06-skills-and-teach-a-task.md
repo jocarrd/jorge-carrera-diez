@@ -128,12 +128,12 @@ The same approach suits long, repetitive work in business tools, such as a sales
 
 ## Skills saved too early
 
-- **Saving a skill too early.** The skill copies a process that still has errors. *Fix:* run the task until the output is right, then save it.
-- **Treating the learned skill as finished.** It breaks the first time something unexpected happens. *Fix:* add decision rules, failure handling and approval boundaries to the draft.
-- **Showing a password during a demonstration.** The secret ends up in the recording. *Fix:* use the secure handoff flow for credentials (lesson 09), never the recording.
-- **Demonstrating a long, wandering session.** The recording stops at ten minutes and the Bot learns your detours. *Fix:* rehearse first and show only the clean path.
-- **Scheduling before testing.** A routine repeats a bad skill every day. *Fix:* test on a safe example first.
-- **The skill isn't in the `/` menu.** You think it was lost. *Fix:* enable it for this Bot under **Settings → Plugins → Yours**.
+- **Saving a skill too early.** The skill copies a process that still has errors. _Fix:_ run the task until the output is right, then save it.
+- **Treating the learned skill as finished.** It breaks the first time something unexpected happens. _Fix:_ add decision rules, failure handling and approval boundaries to the draft.
+- **Showing a password during a demonstration.** The secret ends up in the recording. _Fix:_ use the secure handoff flow for credentials (lesson 09), never the recording.
+- **Demonstrating a long, wandering session.** The recording stops at ten minutes and the Bot learns your detours. _Fix:_ rehearse first and show only the clean path.
+- **Scheduling before testing.** A routine repeats a bad skill every day. _Fix:_ test on a safe example first.
+- **The skill isn't in the `/` menu.** You think it was lost. _Fix:_ enable it for this Bot under **Settings → Plugins → Yours**.
 
 ## A good skill gets reviewed and tested
 

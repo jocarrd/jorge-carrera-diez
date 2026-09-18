@@ -110,12 +110,12 @@ For a group's first message, the docs' example names one owner per step:
 
 ## Handoffs with no owner
 
-- **Copying answers between Bots yourself.** You become the messenger, and context gets lost on the way. *Fix:* ask the owning Bot to message the other one.
-- **No fallback when the other Bot can't deliver.** The Bot improvises, as Ethan did with sample data. *Fix:* say whether to wait, ask you or stop.
-- **Two owners for one step.** Both Bots do the work and you get duplicate updates. *Fix:* name a single owner per stage.
-- **A group chat for everything.** Every Bot replies and usage climbs. *Fix:* use direct handoffs, and keep groups for work where the handoff must be visible.
-- **Posting an image in a group handoff.** A Bot's handoff to the group is text-only. *Fix:* have the Bot send the image directly to the teammate.
-- **Answering with a reaction when the instruction changed.** A reaction is only an acknowledgement. *Fix:* write a reply to the specific message.
+- **Copying answers between Bots yourself.** You become the messenger, and context gets lost on the way. _Fix:_ ask the owning Bot to message the other one.
+- **No fallback when the other Bot can't deliver.** The Bot improvises, as Ethan did with sample data. _Fix:_ say whether to wait, ask you or stop.
+- **Two owners for one step.** Both Bots do the work and you get duplicate updates. _Fix:_ name a single owner per stage.
+- **A group chat for everything.** Every Bot replies and usage climbs. _Fix:_ use direct handoffs, and keep groups for work where the handoff must be visible.
+- **Posting an image in a group handoff.** A Bot's handoff to the group is text-only. _Fix:_ have the Bot send the image directly to the teammate.
+- **Answering with a reaction when the instruction changed.** A reaction is only an acknowledgement. _Fix:_ write a reply to the specific message.
 
 ## Every handoff with an owner
 

@@ -99,12 +99,12 @@ In the day 2 studio these automations carried the work of three people at once. 
 
 ## Triggers that listen to everything
 
-- **A trigger that listens to everything.** You get noise, wasted usage and actions on the wrong input. *Fix:* match one channel and one phrase or event.
-- **Letting automations merge anything.** A bad change reaches production at 3 a.m. *Fix:* auto-merge only low-risk changes with passing checks and proof, and add **Ask first** rules for production.
-- **No escalation.** The Bot keeps retrying while the site is down. *Fix:* set a time limit and name who gets called.
-- **Saying "urgent" without defining it.** The agent cuts corners. *Fix:* define what urgent means once and keep it in the playbook.
-- **Leaving frequent routines on.** A five-minute check keeps spending after the incident is over. *Fix:* pause or delete it when the work is done.
-- **Skipping the test.** Your first real run becomes the test. *Fix:* use **Test run** with safe inputs, then check that it stopped at the approval point.
+- **A trigger that listens to everything.** You get noise, wasted usage and actions on the wrong input. _Fix:_ match one channel and one phrase or event.
+- **Letting automations merge anything.** A bad change reaches production at 3 a.m. _Fix:_ auto-merge only low-risk changes with passing checks and proof, and add **Ask first** rules for production.
+- **No escalation.** The Bot keeps retrying while the site is down. _Fix:_ set a time limit and name who gets called.
+- **Saying "urgent" without defining it.** The agent cuts corners. _Fix:_ define what urgent means once and keep it in the playbook.
+- **Leaving frequent routines on.** A five-minute check keeps spending after the incident is over. _Fix:_ pause or delete it when the work is done.
+- **Skipping the test.** Your first real run becomes the test. _Fix:_ use **Test run** with safe inputs, then check that it stopped at the approval point.
 
 ## Narrow, tested triggers
 

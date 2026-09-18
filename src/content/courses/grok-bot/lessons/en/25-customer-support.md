@@ -72,11 +72,11 @@ Every time Reply works, it writes a trace to a table in Postgres, a database. Th
 
 ## Risks of handing support to a Bot
 
-- **Replying without a knowledge base.** The Bot invents a policy with good intentions. *Fix:* have it hand off to a person when it can't find a source.
-- **Mixing internal policies with public help.** The customer gets details they shouldn't see. *Fix:* keep them apart, and state in the Bot's process that internal ones are only for deciding.
-- **Letting the Bot change the knowledge base on its own.** One bad answer repeats across a hundred tickets. *Fix:* have it ask first, or propose the change as a pull request if the base lives in GitHub.
-- **Vague messages.** "Reply to Alex" makes the Bot search every ticket and costs more. *Fix:* give it the ticket or customer ID.
-- **Sharing the template with the whole team without limits.** Someone without technical context asks it to "refund everyone who asked". *Fix:* share a template that can't edit the base or run billing actions without approval.
+- **Replying without a knowledge base.** The Bot invents a policy with good intentions. _Fix:_ have it hand off to a person when it can't find a source.
+- **Mixing internal policies with public help.** The customer gets details they shouldn't see. _Fix:_ keep them apart, and state in the Bot's process that internal ones are only for deciding.
+- **Letting the Bot change the knowledge base on its own.** One bad answer repeats across a hundred tickets. _Fix:_ have it ask first, or propose the change as a pull request if the base lives in GitHub.
+- **Vague messages.** "Reply to Alex" makes the Bot search every ticket and costs more. _Fix:_ give it the ticket or customer ID.
+- **Sharing the template with the whole team without limits.** Someone without technical context asks it to "refund everyone who asked". _Fix:_ share a template that can't edit the base or run billing actions without approval.
 
 ## From a couple of dollars to twenty cents
 

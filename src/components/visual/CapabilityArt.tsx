@@ -1,12 +1,5 @@
 type CapabilityArtProps = { kind: number };
 
-// Apple no pone capturas en estas tarjetas: pone el objeto —el portatil, el
-// chip— renderizado y brillando sobre un fondo. El equivalente aqui es dibujar
-// aquello de lo que habla cada capacidad, no ensenar un pantallazo reducido.
-//
-// Seis dibujos de trazo sobre el fondo oscuro de la tarjeta, con halo: los
-// modelos abriendose, el barrido del radar, el campo de estaciones, el indice
-// de paginas, el agente con sus conexiones y una base que se ramifica.
 export function CapabilityArt({ kind }: CapabilityArtProps) {
   return (
     <span className="cap-art" aria-hidden>
@@ -21,7 +14,6 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 0 ? (
           <>
-            {/* Los modelos se abren con el alcance y una linea responde. */}
             {[-30, -18, -7, 7, 18, 30].map((d) => (
               <path
                 key={d}
@@ -36,7 +28,6 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 1 ? (
           <>
-            {/* Barrido de radar sobre una mancha de precipitacion. */}
             {[20, 34, 48].map((r) => (
               <circle key={r} cx="100" cy="66" r={r} className="ca-soft" />
             ))}
@@ -51,10 +42,19 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 2 ? (
           <>
-            {/* Campo de estaciones: unas reportando, otras no. */}
             {[
-              [40, 34], [72, 52], [58, 88], [100, 30], [96, 70], [124, 46],
-              [140, 84], [166, 40], [158, 66], [116, 98], [82, 24], [176, 92],
+              [40, 34],
+              [72, 52],
+              [58, 88],
+              [100, 30],
+              [96, 70],
+              [124, 46],
+              [140, 84],
+              [166, 40],
+              [158, 66],
+              [116, 98],
+              [82, 24],
+              [176, 92],
             ].map(([x, y], i) => (
               <circle
                 key={`${x}-${y}`}
@@ -71,7 +71,6 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 3 ? (
           <>
-            {/* Un indice: paginas apiladas en fuga. */}
             {[0, 1, 2].map((i) => (
               <rect
                 key={i}
@@ -90,8 +89,12 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 4 ? (
           <>
-            {/* El agente y lo que toca. */}
-            {[[46, 30], [154, 30], [46, 102], [154, 102]].map(([x, y]) => (
+            {[
+              [46, 30],
+              [154, 30],
+              [46, 102],
+              [154, 102],
+            ].map(([x, y]) => (
               <g key={`${x}-${y}`}>
                 <path d={`M 100 66 L ${x} ${y}`} className="ca-soft" />
                 <circle cx={x} cy={y} r="6" className="ca-soft-dot" />
@@ -104,13 +107,29 @@ export function CapabilityArt({ kind }: CapabilityArtProps) {
 
         {kind === 5 ? (
           <>
-            {/* Una base que se ramifica en productos. */}
-            <rect x="18" y="52" width="52" height="28" rx="10" className="ca-bold-rect" />
+            <rect
+              x="18"
+              y="52"
+              width="52"
+              height="28"
+              rx="10"
+              className="ca-bold-rect"
+            />
             <path d="M 70 66 h 22" className="ca-soft" />
             {[26, 66, 106].map((y) => (
               <g key={y}>
-                <path d={`M 92 66 C 108 66, 108 ${y}, 124 ${y}`} className="ca-soft" />
-                <rect x="124" y={y - 11} width="56" height="22" rx="9" className="ca-soft" />
+                <path
+                  d={`M 92 66 C 108 66, 108 ${y}, 124 ${y}`}
+                  className="ca-soft"
+                />
+                <rect
+                  x="124"
+                  y={y - 11}
+                  width="56"
+                  height="22"
+                  rx="9"
+                  className="ca-soft"
+                />
               </g>
             ))}
           </>

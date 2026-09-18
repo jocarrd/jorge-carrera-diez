@@ -11,13 +11,6 @@ const W = 960;
 const H = 340;
 const BASE = H * 0.58;
 
-// Cuanto más lejos se mira, más se separan los modelos entre sí: la banda es
-// esa distancia y la línea es la respuesta que hay que dar igualmente. Es la
-// forma real del problema —la misma que tiene un cono de incertidumbre—, no un
-// adorno.
-//
-// Todo sale de funciones del avance horizontal, sin aleatoriedad: el dibujo es
-// idéntico en servidor y cliente y no cambia entre recargas.
 const curve = (t: number) => BASE - Math.sin(t * 2.1) * H * 0.1 - t * H * 0.06;
 const halfWidth = (t: number) => Math.pow(t, 1.55) * H * 0.42;
 
@@ -47,25 +40,28 @@ function line(): string {
   return `M ${points.join(" L ")}`;
 }
 
-// Unas pocas trayectorias sueltas dentro de la banda: sin ellas la banda es una
-// mancha, y lo que se cuenta es que ahí dentro hay modelos que no coinciden.
 function member(k: number): string {
   const bias = (k - 1.5) / 1.5;
   const points: string[] = [];
   for (let i = 0; i <= 48; i++) {
     const t = i / 48;
-    const drift = bias * halfWidth(t) * 0.82 + Math.sin(t * 6 + k * 1.7) * halfWidth(t) * 0.16;
+    const drift =
+      bias * halfWidth(t) * 0.82 +
+      Math.sin(t * 6 + k * 1.7) * halfWidth(t) * 0.16;
     points.push(`${(t * W).toFixed(1)} ${(curve(t) + drift).toFixed(1)}`);
   }
   return `M ${points.join(" L ")}`;
 }
 
-export function SpreadCone({ ticks, spreadLabel, answerLabel, className = "" }: SpreadConeProps) {
+export function SpreadCone({
+  ticks,
+  spreadLabel,
+  answerLabel,
+  className = "",
+}: SpreadConeProps) {
   return (
     <figure className={`cone ${className}`}>
       <div className="cone-stage">
-        {/* Antes del dibujo: en móvil es leyenda y tiene que leerse primero; en
-            escritorio se posiciona encima y el orden del marcado da igual. */}
         <span className="cone-tag is-spread">{spreadLabel}</span>
         <span className="cone-tag is-answer">{answerLabel}</span>
 
@@ -105,7 +101,6 @@ export function SpreadCone({ ticks, spreadLabel, answerLabel, className = "" }: 
             </span>
           ))}
         </div>
-
       </div>
     </figure>
   );

@@ -78,11 +78,11 @@ For the customer case, the example was a Salesforce post about cutting legacy co
 
 ## Mistakes when setting up sales engineering with Bots
 
-- **Letting the technical expert talk to customers directly.** It may quote internal details from the code. *Fix:* have it draft the answer for you, and keep the rule against revealing intellectual property in its description.
-- **Asking for slides without a template.** Each one comes out different and generic-looking. *Fix:* give it a model slide and a fixed order of blocks.
-- **Accepting every Bot your Bots propose.** You end up with two doing the same thing and more usage spent. *Fix:* compare each proposal with the Bots you already have.
-- **Testing competitors' products without reading their terms.** The Bot signs up or automates where it isn't allowed. *Fix:* check the terms and let the Bot hand blocked steps to you (lesson 19).
-- **Trusting a comparison without sources.** An invented difference ends up in a deck. *Fix:* ask for the source of every row: a screenshot, a link or the code file.
+- **Letting the technical expert talk to customers directly.** It may quote internal details from the code. _Fix:_ have it draft the answer for you, and keep the rule against revealing intellectual property in its description.
+- **Asking for slides without a template.** Each one comes out different and generic-looking. _Fix:_ give it a model slide and a fixed order of blocks.
+- **Accepting every Bot your Bots propose.** You end up with two doing the same thing and more usage spent. _Fix:_ compare each proposal with the Bots you already have.
+- **Testing competitors' products without reading their terms.** The Bot signs up or automates where it isn't allowed. _Fix:_ check the terms and let the Bot hand blocked steps to you (lesson 19).
+- **Trusting a comparison without sources.** An invented difference ends up in a deck. _Fix:_ ask for the source of every row: a screenshot, a link or the code file.
 
 ## Sales engineering that doesn't wait for engineering
 

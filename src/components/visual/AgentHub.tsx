@@ -1,8 +1,3 @@
-// La pieza central del bento tenía fondo y nada más. Las otras cuatro llevan su
-// diagrama, así que esta lleva el suyo: un núcleo conectado a cuatro nodos, que
-// es exactamente lo que dice la sección —el agente no es un paso de una cola,
-// es el centro que habla con la interfaz, las herramientas, los datos y el
-// control—. Los cuatro nodos son las cuatro tarjetas de al lado.
 const NODES = [
   { x: 34, y: 26 },
   { x: 146, y: 26 },
@@ -32,7 +27,13 @@ export function AgentHub() {
         ))}
 
         {NODES.map((node) => (
-          <circle key={`n-${node.x}-${node.y}`} cx={node.x} cy={node.y} r="7" className="hub-node" />
+          <circle
+            key={`n-${node.x}-${node.y}`}
+            cx={node.x}
+            cy={node.y}
+            r="7"
+            className="hub-node"
+          />
         ))}
 
         <circle cx="90" cy="72" r="26" className="hub-ring" />

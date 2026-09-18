@@ -101,11 +101,11 @@ Las oportunidades son las posibles ventas en curso. Una secuencia activa es una 
 
 ## Fallos típicos del primer día
 
-- **Crear un Bot nuevo para cada tarea.** Cada uno empieza sin contexto y nunca mejora. *Qué hacer:* crea un Bot por trabajo y vuelve siempre a él.
-- **Crear un único "General Helper" (ayudante general) para todo.** Un trabajo vago orienta menos al Bot y hace más difícil reutilizar su contexto. *Qué hacer:* dale a cada Bot un trabajo claro.
-- **Dejar el portátil abierto para que el Bot termine.** El trabajo ya corre en la nube. *Qué hacer:* cierra la tapa y mira el resultado más tarde.
-- **Esperar solo una respuesta en texto.** Desaprovechas el ordenador. *Qué hacer:* pide el trabajo terminado en la herramienta real, como un borrador guardado en tu correo o una hoja de cálculo con los datos.
-- **Tomar la memoria como fuente de verdad.** Un Bot puede guardar datos desfasados. *Qué hacer:* para decisiones importantes, pídele que consulte la fuente actual.
+- **Crear un Bot nuevo para cada tarea.** Cada uno empieza sin contexto y nunca mejora. _Qué hacer:_ crea un Bot por trabajo y vuelve siempre a él.
+- **Crear un único "General Helper" (ayudante general) para todo.** Un trabajo vago orienta menos al Bot y hace más difícil reutilizar su contexto. _Qué hacer:_ dale a cada Bot un trabajo claro.
+- **Dejar el portátil abierto para que el Bot termine.** El trabajo ya corre en la nube. _Qué hacer:_ cierra la tapa y mira el resultado más tarde.
+- **Esperar solo una respuesta en texto.** Desaprovechas el ordenador. _Qué hacer:_ pide el trabajo terminado en la herramienta real, como un borrador guardado en tu correo o una hoja de cálculo con los datos.
+- **Tomar la memoria como fuente de verdad.** Un Bot puede guardar datos desfasados. _Qué hacer:_ para decisiones importantes, pídele que consulte la fuente actual.
 
 ## Un Bot en pocas líneas
 

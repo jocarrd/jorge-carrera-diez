@@ -7,7 +7,10 @@ type ProfileSummaryProps = {
   className?: string;
 };
 
-export function ProfileSummary({ locale, className = "" }: ProfileSummaryProps) {
+export function ProfileSummary({
+  locale,
+  className = "",
+}: ProfileSummaryProps) {
   const copy = getCopy(locale);
 
   return (

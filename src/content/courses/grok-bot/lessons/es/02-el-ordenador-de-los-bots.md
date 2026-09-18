@@ -110,11 +110,11 @@ Abre Google Forms y crea un formulario llamado "Comida de equipo". Añade dos pr
 
 ## Contraseñas en el chat y otros descuidos
 
-- **Pegar una contraseña o un código de un solo uso en el chat.** Queda en la conversación. *Qué hacer:* toma el control del ordenador y escríbelo ahí, o usa la petición segura de secreto cuando una conexión compatible la ofrezca. Esa petición no deja el valor en la conversación.
-- **Usar Bots distintos para separar datos.** Todos comparten archivos y sesiones. *Qué hacer:* no pongas en el ordenador nada que alguno de tus Bots no deba usar.
-- **Pedirle al Bot que se salte un CAPTCHA o un inicio de sesión bloqueado.** Las webs esperan a una persona en esos pasos. *Qué hacer:* dile que se detenga y te avise.
-- **Forzar el navegador cuando existe un connector.** Ir haciendo clic por una web suele ser menos fiable. *Qué hacer:* mira antes en **Settings → Plugins**.
-- **Dejar la única copia de un resultado en una carpeta temporal.** Puede perderse en una recuperación. *Qué hacer:* pide al Bot que lo guarde en `/workspace` o lo adjunte a la conversación.
+- **Pegar una contraseña o un código de un solo uso en el chat.** Queda en la conversación. _Qué hacer:_ toma el control del ordenador y escríbelo ahí, o usa la petición segura de secreto cuando una conexión compatible la ofrezca. Esa petición no deja el valor en la conversación.
+- **Usar Bots distintos para separar datos.** Todos comparten archivos y sesiones. _Qué hacer:_ no pongas en el ordenador nada que alguno de tus Bots no deba usar.
+- **Pedirle al Bot que se salte un CAPTCHA o un inicio de sesión bloqueado.** Las webs esperan a una persona en esos pasos. _Qué hacer:_ dile que se detenga y te avise.
+- **Forzar el navegador cuando existe un connector.** Ir haciendo clic por una web suele ser menos fiable. _Qué hacer:_ mira antes en **Settings → Plugins**.
+- **Dejar la única copia de un resultado en una carpeta temporal.** Puede perderse en una recuperación. _Qué hacer:_ pide al Bot que lo guarde en `/workspace` o lo adjunte a la conversación.
 
 ## Un ordenador para todos, una pantalla por Bot
 

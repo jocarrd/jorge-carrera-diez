@@ -8,7 +8,9 @@ import { lessonPath, routePath } from "@/i18n/routes";
 export function GlossaryView({ locale }: { locale: Locale }) {
   const copy = grokBotCourse.copy[locale];
   const courseHref = routePath(locale, "grokBotCourse");
-  const entries = [...glossary].sort((a, b) => a.term[locale].localeCompare(b.term[locale], locale));
+  const entries = [...glossary].sort((a, b) =>
+    a.term[locale].localeCompare(b.term[locale], locale),
+  );
 
   return (
     <main className="diary-page">
@@ -23,13 +25,18 @@ export function GlossaryView({ locale }: { locale: Locale }) {
           </header>
           <dl className="glossary-list">
             {entries.map((entry) => {
-              const ref = grokBotCourse.lessons.find((l) => l.id === entry.lesson)!;
+              const ref = grokBotCourse.lessons.find(
+                (l) => l.id === entry.lesson,
+              )!;
               return (
                 <div key={entry.id} id={entry.id} className="glossary-entry">
                   <dt>{entry.term[locale]}</dt>
                   <dd>
                     <p>{entry.definition[locale]}</p>
-                    <Link href={lessonPath(locale, ref.slug[locale])} className="glossary-lesson">
+                    <Link
+                      href={lessonPath(locale, ref.slug[locale])}
+                      className="glossary-lesson"
+                    >
                       {copy.glossaryLearn} {entry.lesson} →
                     </Link>
                   </dd>

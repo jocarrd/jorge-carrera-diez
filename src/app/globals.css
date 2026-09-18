@@ -1,63 +1,51 @@
 @import "tailwindcss";
 
-/* Paleta oscura: el fondo es la tinta y el producto pone el color. Las
-   capturas de Snowy y EQx son claras y llenas de azul y verde; sobre negro
-   brillan solas y no hay que rodearlas de nada para que destaquen.
-
-   Tres superficies: el fondo, la banda que separa secciones y la tarjeta. Se
-   distinguen por dos o tres puntos de luminancia y por el borde de 1 px, no
-   por sombras: en oscuro una sombra no se ve. */
 :root {
-  --background: #0a0a0a;
-  --foreground: #f2f2f2;
-  /* En claro el terciario podía quedarse en 3,7:1 porque sólo lo llevaban
-     etiquetas grandes. En oscuro esas mismas etiquetas son mono de 11,5 px, y
-     axe las marcaba: 3,73 sobre la banda. Los dos grises suben hasta que el
-     terciario pasa el 4,5 sobre las tres superficies.
+  --background: #fbfaf9;
+  --foreground: #14120f;
 
-     Medido sobre la banda (#101010): --muted 9,4:1 y --muted-strong 5,9:1.
-     Sobre la tarjeta (#151515), 9,0:1 y 5,7:1. */
-  --muted: #b0b0b0;
-  --muted-strong: #8f8f8f;
-  --panel: #101010;
-  --panel-strong: #151515;
-  --line: #222222;
-  --line-strong: #2e2e2e;
-  /* El ámbar mide 9,4:1 sobre el fondo. El teja de la versión clara se hundía
-     en negro, así que el acento sube de luminosidad y mantiene la temperatura:
-     es el mismo color de marca a otra altura. */
-  --accent: #fb923c;
-  --accent-text: #fb923c;
-  --accent-dark: #fb923c;
-  /* Las secciones que antes eran "la oscura" ahora son el negro puro, que
-     sigue separándolas del fondo general. */
-  --ink-dark: #000000;
-  --ink-dark-panel: #0c0c0c;
+  --muted: #57534e;
+  --muted-strong: #6f6b65;
+  --panel: #f4f2ef;
+  --panel-strong: #ffffff;
+  --line: #e6e3de;
+  --line-strong: #d4d0c9;
+
+  --accent: #ea580c;
+  --accent-text: #c2410c;
+  --accent-dark: #9a3412;
+
+  --accent-hover: #c2410c;
+  --cta-bg: #c2410c;
+  --cta-text: #ffffff;
+  --peligro: #b91c1c;
+  --exito: #15803d;
+
+  --ink-dark: #0a0a0a;
+  --ink-dark-panel: #151515;
   --ink-dark-muted: #a0a0a0;
+
+  --hover-surface: color-mix(in oklab, var(--foreground) 9%, transparent);
+  --hover-border: var(--muted-strong);
+  --hover-lift: -2px;
+  --hover-lift-card: -4px;
+
+  --on-dark: #f2f2f2;
+  --on-dark-muted: #a0a0a0;
+
   --header-h: 56px;
+
+  --radius-pill: 999px;
   --radius-inner: 8px;
   --radius-card: 12px;
-  --radius-card-lg: 14px;
+  --radius-card-lg: 16px;
 
-  /* Una sola curva y tres duraciones para todo el movimiento de la web. La
-     curva por defecto de las utilidades era cubic-bezier(0.4, 0, 0.2, 1) —la de
-     Material Design— en 214 sitios: la web se movia como una de Google. Esta
-     arranca de golpe y frena largo, que es como se mueven las cosas que pesan.
-
-     Y habia siete duraciones conviviendo. 0.15 s en un hover no se percibe como
-     transicion sino como un salto; el minimo util son 0.25. */
-  /* Tres alturas y el anillo. Había ocho sombras distintas, cada una inventada
-     donde hizo falta. Van en negro neutro porque el fondo ya no tiene
-     temperatura: cuando el gris estaba tintado, una sombra gris desentonaba. */
   --sombra-1:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 8px 24px -12px rgba(0, 0, 0, 0.10);
+    0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -12px rgba(0, 0, 0, 0.1);
   --sombra-2:
-    0 2px 6px rgba(0, 0, 0, 0.05),
-    0 20px 48px -20px rgba(0, 0, 0, 0.14);
+    0 2px 6px rgba(0, 0, 0, 0.05), 0 20px 48px -20px rgba(0, 0, 0, 0.14);
   --sombra-3:
-    0 4px 12px rgba(0, 0, 0, 0.06),
-    0 40px 90px -32px rgba(0, 0, 0, 0.20);
+    0 4px 12px rgba(0, 0, 0, 0.06), 0 40px 90px -32px rgba(0, 0, 0, 0.2);
   --anillo: 0 0 0 1px var(--line);
 
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -66,20 +54,45 @@
   --dur-lenta: 0.7s;
 }
 
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+
+  --muted: #b0b0b0;
+  --muted-strong: #8f8f8f;
+  --panel: #101010;
+  --panel-strong: #151515;
+  --line: #222222;
+  --line-strong: #2e2e2e;
+
+  --accent: #fb923c;
+  --accent-text: #fb923c;
+  --accent-dark: #fb923c;
+  --accent-hover: #fdba74;
+  --cta-bg: #fb923c;
+  --cta-text: #0a0a0a;
+  --peligro: #fca5a5;
+  --exito: #4ade80;
+
+  --ink-dark: #000000;
+  --ink-dark-panel: #0c0c0c;
+  --ink-dark-muted: #a0a0a0;
+
+  --sombra-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --sombra-2: 0 2px 8px rgba(0, 0, 0, 0.55);
+  --sombra-3: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Geist primero y la pila del sistema de respaldo, no al reves. Con
-     -apple-system delante, en macOS e iOS esto se renderizaba con San
-     Francisco: la letra de Apple. */
-  --font-sans: var(--font-sans-geist), -apple-system, BlinkMacSystemFont,
-    "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: var(--font-mono-geist), "SFMono-Regular", Consolas, Menlo, monospace;
 
-  /* Los valores por defecto de las utilidades de transicion. Van literales:
-     dentro de @theme, una var() propia no llega a emitirse como custom
-     property y la declaracion queda invalida. Son los mismos que --dur-rapida
-     y --ease de :root. */
+  --font-sans:
+    var(--font-sans-geist), -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:
+    var(--font-mono-geist), "SFMono-Regular", Consolas, Menlo, monospace;
+
   --default-transition-duration: 0.25s;
   --default-transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -91,9 +104,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--background);
-  /* Sin esto el navegador sigue pintando en claro lo que no controla la hoja:
-     la barra de scroll, los selectores nativos y el fondo del sobredesplazamiento
-     en iOS, que aparecía como una franja blanca al llegar al final. */
+
   color-scheme: dark;
 }
 
@@ -117,9 +128,6 @@ a {
   background: rgba(251, 146, 60, 0.22);
 }
 
-/* ── Superficies ─────────────────────────────────────────────
-   Tres niveles y ninguno lleva borde salvo el más marcado: en una interfaz
-   clara el borde compite con el texto, y el gris ya separa por sí solo. */
 .lvl-1 {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -144,19 +152,13 @@ a {
     box-shadow var(--dur-media) var(--ease);
 }
 
-.lvl-hover:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    var(--sombra-2),
-    var(--anillo);
+@media (hover: hover) and (pointer: fine) {
+  .lvl-hover:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--sombra-2), var(--anillo);
+  }
 }
 
-/* La barra nativa parte la tarjeta por abajo y en escritorio no aporta: el
-   estado lo dan los botones y el contador. El scroll sigue siendo el del
-   sistema, así que el gesto táctil y el del trackpad no cambian. */
-/* La captura fijada cruza de una a otra en vez de saltar: el corte seco se lee
-   como un fallo de carga. Solo opacidad, que es lo que el compositor anima sin
-   repintar. */
 .sticky-shot {
   transition: opacity var(--dur-media) var(--ease);
 }
@@ -167,11 +169,6 @@ a {
   }
 }
 
-/* ── Piezas del bento de IA ───────────────────────────────
-   Blanco con filo en vez de gris plano: sobre un fondo blanco el gris no se
-   despega y las cuatro quedaban lavadas al lado de la focal negra. El icono en
-   su cuadrado teal es lo unico con color de la tarjeta, y ancla la mirada
-   arriba mientras el texto vive abajo, como en la focal. */
 .ai-tile {
   min-height: 11.5rem;
 }
@@ -195,8 +192,6 @@ a {
   }
 }
 
-/* El icono se cambia por un diagrama: ocupa el ancho de la tarjeta y cuenta
-   algo, en vez de decir solo de que va. */
 .tile-graphic {
   display: block;
   width: 100%;
@@ -229,21 +224,20 @@ a {
   stroke-linejoin: round;
 }
 
-/* ── Pieza focal del bento de IA ──────────────────────────
-   Negro con una veladura teal arriba a la derecha: dentro de una seccion clara
-   el contraste hace de foco sin abrir otra seccion oscura, que ya hay dos.
-   La rejilla de puntos es la unica textura tecnica de la pagina y se queda
-   muy por debajo del texto para no competir con el. */
-/* La pieza central se distingue por el fondo, no solo por ser mas grande: dos
-   veladuras teal cruzadas sobre el negro, una arriba a la derecha y otra abajo
-   a la izquierda, para que la superficie tenga profundidad en vez de ser una
-   caja negra plana. */
 .ai-focal {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(105% 80% at 82% 6%, rgba(45, 212, 191, 0.3) 0%, transparent 55%),
-    radial-gradient(90% 70% at 8% 96%, rgba(15, 118, 110, 0.42) 0%, transparent 58%),
+    radial-gradient(
+      105% 80% at 82% 6%,
+      rgba(45, 212, 191, 0.3) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 70% at 8% 96%,
+      rgba(15, 118, 110, 0.42) 0%,
+      transparent 58%
+    ),
     linear-gradient(160deg, #0d2b2c 0%, var(--ink-dark) 46%, #06181a 100%);
   min-height: 15rem;
 }
@@ -291,7 +285,10 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.16) 1px,
+    transparent 1px
+  );
   background-size: 22px 22px;
   mask-image: linear-gradient(to bottom left, #000, transparent 62%);
   -webkit-mask-image: linear-gradient(to bottom left, #000, transparent 62%);
@@ -301,14 +298,6 @@ a {
   position: relative;
 }
 
-/* ── Tarjetas de proyecto ─────────────────────────────────
-   El movil se recorta contra el borde inferior en vez de terminar dentro: es
-   lo que hace que la tarjeta parezca una ventana al producto y no una foto
-   pegada. De ahi el overflow y el desplazamiento hacia abajo.
-
-   Los degradados salen del color de marca de cada producto —el cian de Snowy,
-   el verde azulado de EQx, el ambar de LaRiojaMeteo—, no de la paleta de esta
-   web: son tres cosas distintas y en tres cajas iguales no lo parecian. */
 .proj-card {
   position: relative;
   display: flex;
@@ -317,7 +306,8 @@ a {
   min-height: 30rem;
   padding: 2rem 1.75rem 0;
   border-radius: var(--radius-card-lg);
-  color: var(--foreground);
+
+  color: var(--on-dark);
   isolation: isolate;
   transition: transform var(--dur-media) var(--ease);
 }
@@ -329,8 +319,10 @@ a {
   }
 }
 
-.proj-card:hover {
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .proj-card:hover {
+    transform: translateY(var(--hover-lift-card));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -338,21 +330,23 @@ a {
     transition: none;
   }
 
-  .proj-card:hover {
-    transform: none;
+  @media (hover: hover) and (pointer: fine) {
+    .proj-card:hover {
+      transform: none;
+    }
   }
 }
 
 .proj-card--snowy {
   background: linear-gradient(168deg, #0d1b28 0%, #0b1420 52%, #080d14 100%);
+  color: var(--on-dark);
 }
 
 .proj-card--lariojameteo {
   background: linear-gradient(168deg, #241705 0%, #1a1005 52%, #100a04 100%);
+  color: var(--on-dark);
 }
 
-/* La oscura rompe la fila. El texto va en blanco (10,8:1 sobre la parada mas
-   clara del degradado) y el kicker en el teal, que ahi mide 5,8:1. */
 .proj-card--eqx {
   background: linear-gradient(168deg, #0c2f34 0%, #071f24 52%, #04161a 100%);
   color: #ffffff;
@@ -363,8 +357,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  /* Al 62 % se quedaba en 4,42:1 sobre el degradado claro, justo por debajo
-     del 4,5 que pide texto de 13 px. */
+
   color: color-mix(in srgb, currentColor 74%, transparent);
 }
 
@@ -380,8 +373,6 @@ a {
   letter-spacing: -0.025em;
 }
 
-/* Medido en apple.com: la frase de tarjeta va a 17 px con peso 600 en gris,
-   no a 15 en regular. Es lo que la hace sonar afirmativa en vez de pie de foto. */
 .proj-card-pitch {
   margin-top: 0.75rem;
   font-size: 17px;
@@ -390,8 +381,6 @@ a {
   color: color-mix(in srgb, currentColor 72%, transparent);
 }
 
-/* margin-top:auto empuja el movil al fondo; el translate lo saca por el borde
-   para que lo recorte el overflow de la tarjeta. */
 .proj-card-device {
   margin-top: auto;
   width: 63%;
@@ -400,18 +389,16 @@ a {
   transform: translateY(16%);
 }
 
-/* ── Infografia: cono de dispersion ───────────────────────
-   La banda es cuanto se separan los modelos entre si y se abre con el alcance;
-   la linea es la respuesta que hay que dar igualmente. Es la forma real del
-   problema, no un adorno.
-
-   Fondo con la misma gramatica que las tarjetas: gris del sistema, radio 28 y
-   sin borde. Medido en apple.com. */
 .cone-stage {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card-lg);
-  background: linear-gradient(170deg, #121212 0%, var(--panel) 60%, #0b0b0b 100%);
+  background: linear-gradient(
+    170deg,
+    #121212 0%,
+    var(--panel) 60%,
+    #0b0b0b 100%
+  );
   padding: 1.5rem 1.25rem 2rem;
 }
 
@@ -435,8 +422,6 @@ a {
   opacity: 0.7;
 }
 
-/* Los modelos sueltos dentro de la banda: sin ellos la banda es una mancha y
-   lo que se cuenta es que ahi dentro hay pronosticos que no coinciden. */
 .cone-member {
   fill: none;
   stroke: var(--accent);
@@ -454,7 +439,7 @@ a {
 
 .cone-head {
   fill: var(--accent);
-  stroke: #fff;
+  stroke: var(--background);
   stroke-width: 3;
 }
 
@@ -475,7 +460,6 @@ a {
   white-space: nowrap;
 }
 
-/* El primero y el ultimo se pegarian al borde de la caja. */
 .cone-ticks span:first-child {
   transform: none;
 }
@@ -484,9 +468,6 @@ a {
   transform: translateX(-100%);
 }
 
-/* En movil los rotulos flotantes se salian de la tarjeta por la derecha y se
-   pisaban con las marcas de tiempo. Ahi van como leyenda encima del dibujo, con
-   su muestra de color; flotan solo cuando hay ancho para que no choquen. */
 .cone-tag {
   display: flex;
   align-items: center;
@@ -500,7 +481,7 @@ a {
   content: "";
   width: 1.125rem;
   height: 0.5rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
@@ -537,12 +518,6 @@ a {
   }
 }
 
-/* ── Infografia: escala ───────────────────────────────────
-   Cuatro areas -> doce pilares -> ciento cuarenta y ocho indicadores -> ciento
-   cincuenta y un paises. La escala se entiende viendola: las piezas encogen y
-   se multiplican de un peldano al siguiente.
-
-   El tamano de pieza va por peldano con --rung, no una clase por cada uno. */
 .ladder {
   display: grid;
   gap: 2.25rem;
@@ -560,8 +535,6 @@ a {
   padding-top: 1.25rem;
 }
 
-/* Altura fija y no minima: con min-height los peldanos de mas piezas empujaban
-   su numero hacia abajo y las cuatro columnas dejaban de alinear. */
 .ladder-pieces {
   display: flex;
   flex-wrap: wrap;
@@ -580,12 +553,11 @@ a {
   opacity: calc(0.95 - var(--rung) * 0.13);
 }
 
-/* La muestra se corta: la ultima pieza a medias dice que hay mas de las que
-   caben, sin fingir que se han dibujado todas. */
 .ladder-more {
   width: calc(0.75rem - var(--rung) * 0.1rem);
   height: calc(1.5rem - var(--rung) * 0.31rem);
-  border-radius: calc(0.45rem - var(--rung) * 0.1rem) 0 0 calc(0.45rem - var(--rung) * 0.1rem);
+  border-radius: calc(0.45rem - var(--rung) * 0.1rem) 0 0
+    calc(0.45rem - var(--rung) * 0.1rem);
   background: var(--accent-dark);
   opacity: calc(0.5 - var(--rung) * 0.08);
 }
@@ -596,11 +568,9 @@ a {
   line-height: 1;
   letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
-  color: #fff;
+  color: var(--foreground);
 }
 
-/* --ink-dark-muted (#a1a1a6) se queda en 4,19:1 sobre la parada mas clara del
-   degradado, por debajo del 4,5 que pide texto de 11 px. Este gris da 5,4. */
 .ladder-label {
   margin-top: 0.625rem;
   font-family: var(--font-mono);
@@ -622,11 +592,6 @@ a {
   }
 }
 
-/* ── Tarjetas de prensa ───────────────────────────────────
-   Las fotos son la prueba —una entrevista de radio, un periodico en la mano—,
-   asi que son la tarjeta entera y no una miniatura encima de una caja blanca.
-   El texto va sobre un velo que arranca a media altura: por debajo hay negro
-   suficiente para que el blanco pase de sobra, y por arriba la foto se ve. */
 .press-card {
   position: relative;
   display: block;
@@ -637,8 +602,10 @@ a {
   transition: transform var(--dur-media) var(--ease);
 }
 
-.press-card.is-link:hover {
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .press-card.is-link:hover {
+    transform: translateY(var(--hover-lift-card));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -646,8 +613,10 @@ a {
     transition: none;
   }
 
-  .press-card.is-link:hover {
-    transform: none;
+  @media (hover: hover) and (pointer: fine) {
+    .press-card.is-link:hover {
+      transform: none;
+    }
   }
 }
 
@@ -660,8 +629,6 @@ a {
   object-position: center;
 }
 
-/* El velo tiene que cubrir tambien el rotulo, no solo el titular: medido en
-   pantalla, el rotulo caia sobre una zona verdosa de la foto a 2,52:1. */
 .press-body {
   position: absolute;
   inset: auto 0 0 0;
@@ -681,9 +648,6 @@ a {
   }
 }
 
-/* En blanco y no en teal: el rotulo cae sobre la foto, que cambia en cada
-   tarjeta, y un color de marca no puede garantizar contraste sobre cualquier
-   imagen. La jerarquia la dan el tamano y el espaciado. */
 .press-source {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -701,8 +665,6 @@ a {
   color: #fff;
 }
 
-
-
 .press-text {
   margin-top: 0.75rem;
   font-size: 1rem;
@@ -710,10 +672,6 @@ a {
   color: #d8d8dc;
 }
 
-/* ── Fuentes de datos ─────────────────────────────────────
-   Tipografia y aire. Siete tarjetas con borde y barrita de color parecian un
-   panel de control; siete etiquetas grises no decian nada. El nombre grande y
-   lo que aporta debajo basta, y deja respirar la seccion. */
 .sources {
   display: grid;
   gap: 1.75rem 2rem;
@@ -745,10 +703,6 @@ a {
   color: var(--muted);
 }
 
-/* ── Capacidades del producto ─────────────────────────────
-   En oscuro a proposito: van justo antes de las superficies, que son claras y
-   con color. Seis tarjetas blancas seguidas de cinco tarjetas de color no se
-   distinguian entre si. */
 .cap {
   display: flex;
   flex-direction: column;
@@ -758,7 +712,11 @@ a {
   border-radius: var(--radius-card-lg);
   padding: 1.75rem;
   background:
-    radial-gradient(90% 70% at 88% 6%, rgba(45, 212, 191, 0.16) 0%, transparent 60%),
+    radial-gradient(
+      90% 70% at 88% 6%,
+      rgba(45, 212, 191, 0.16) 0%,
+      transparent 60%
+    ),
     linear-gradient(158deg, #14312f 0%, var(--ink-dark) 52%, #06181a 100%);
 }
 
@@ -776,8 +734,6 @@ a {
   color: var(--accent-dark);
 }
 
-/* El dibujo ocupa el centro de la tarjeta y el texto se apoya abajo, como la
-   pieza renderizada de una tarjeta de Apple. */
 .cap-art {
   display: block;
   margin: 0.5rem auto auto;
@@ -833,7 +789,7 @@ a {
   font-weight: 600;
   line-height: 1.16;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .cap-text {
@@ -844,10 +800,6 @@ a {
   color: var(--ink-dark-muted);
 }
 
-/* ── Areas de trabajo ─────────────────────────────────────
-   Sin contorno: siete cajas iguales eran una rejilla de bordes compitiendo con
-   el texto, y la ultima fila dejaba dos huecos. Con filete arriba, la fila se
-   alinea sola y sobra o falta contenido sin que se note. */
 .area {
   border-top: 1px solid var(--line-strong);
   padding-top: 1.5rem;
@@ -876,15 +828,13 @@ a {
   color: var(--accent-text);
 }
 
-.area-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+@media (hover: hover) and (pointer: fine) {
+  .area-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
-/* ── Diagrama de arquitectura ─────────────────────────────
-   Siete cajas iguales no cuentan como esta hecho algo. Aqui se ve: el front y
-   el engine uno encima del otro, la cache y la base colgando del engine, y las
-   piezas que viven aparte porque su carga no se parece a la del resto. */
 .arch {
   border-radius: var(--radius-card-lg);
   background: var(--panel);
@@ -935,8 +885,6 @@ a {
   color: var(--muted);
 }
 
-/* Los conectores: una linea vertical entre bandas y una horquilla hacia los
-   dos almacenes. Sin ellos serian tarjetas apiladas, no un diagrama. */
 .arch-link {
   display: block;
   width: 2px;
@@ -953,9 +901,6 @@ a {
   background: var(--line-strong);
 }
 
-/* El conector bajaba por todo el bloque y se quedaba colgando por abajo sin
-   llegar a nada. Ahora baja hasta la altura de los almacenes y entra en ellos:
-   una L, que es lo que dibujaria cualquiera a mano. */
 .arch-stores {
   position: relative;
   display: grid;
@@ -1007,8 +952,6 @@ a {
   margin-top: 0.75rem;
 }
 
-/* Tres contornos en fila para nombrar tres servicios: mismo criterio que en el
-   resto de la web, texto separado por puntos. */
 .arch-services li {
   font-family: var(--font-mono);
   font-size: 14px;
@@ -1029,13 +972,6 @@ a {
   color: var(--muted);
 }
 
-/* ── Superficies de Snowy ─────────────────────────────────
-   Misma gramatica que las tarjetas de proyecto —superficie propia con color,
-   tipografia grande dentro y la captura sangrando por el borde— pero con el
-   tinte de cada superficie sacado del color dominante de su interfaz.
-
-   Cinco tarjetas iguales en dos columnas eran 2.490 px de pared. Una grande y
-   cuatro medianas dan jerarquia y bajan el alto. */
 .tiles {
   display: grid;
   gap: 1.25rem;
@@ -1085,7 +1021,6 @@ a {
   }
 }
 
-/* 17 px con peso 600 en gris, como las frases de tarjeta de apple.com. */
 .tile-text {
   margin-top: 0.75rem;
   max-width: 42ch;
@@ -1102,12 +1037,10 @@ a {
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.06),
     var(--sombra-2);
-  /* Se sale por abajo: el overflow de la tarjeta la recorta. */
+
   margin-bottom: -3.5rem;
 }
 
-/* La grande reparte texto e imagen en dos columnas y la captura se va por el
-   lado, no por abajo: asi la fila no crece de alto. */
 @media (min-width: 900px) {
   .tile.is-hero {
     display: grid;
@@ -1129,11 +1062,6 @@ a {
   }
 }
 
-/* ── Recortes de prensa ───────────────────────────────────
-   Cada tarjeta ensena el titular tal como se publico: es la prueba, y ninguna
-   parafrasis nuestra vale lo mismo. Las portadas estan capturadas de la propia
-   publicacion y verificadas una a una —una URL mal copiada me llevo a capturar
-   un 404 de Diario de Leon—. */
 .clip {
   display: block;
 }
@@ -1148,8 +1076,10 @@ a {
   transition: transform var(--dur-media) var(--ease);
 }
 
-.clip:hover .clip-cover {
-  transform: translateY(-3px);
+@media (hover: hover) and (pointer: fine) {
+  .clip:hover .clip-cover {
+    transform: translateY(var(--hover-lift-card));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1183,13 +1113,13 @@ a {
   color: var(--foreground);
 }
 
-.clip:hover .clip-title {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+@media (hover: hover) and (pointer: fine) {
+  .clip:hover .clip-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
-/* ── Ficha en el portal de datos abiertos ─────────────────
-   La unica prueba institucional: va sola, no mezclada entre recortes. */
 .opendata {
   display: grid;
   gap: 1.5rem;
@@ -1224,10 +1154,6 @@ a {
   color: var(--foreground);
 }
 
-/* ── Infografia: barras de trayectoria ────────────────────
-   Una lista de puestos esconde lo que aqui se ve de un vistazo: que hay dos
-   frentes a la vez. Las barras se colocan por fecha sobre un eje de anios; el
-   ancho es tiempo, no relleno. */
 .span {
   position: relative;
   border-radius: var(--radius-card-lg);
@@ -1276,25 +1202,19 @@ a {
   height: 2.25rem;
 }
 
-/* El ámbar al 14 % sobre papel era un beige claro; sobre negro se convierte en
-   un marrón que no se distingue del fondo. Lo pasado se pinta en gris y el
-   contraste lo pone la barra en curso, que sigue en ámbar lleno. */
 .span-bar {
   position: absolute;
   top: 0;
   height: 100%;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--foreground) 20%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--foreground) 26%, transparent);
 }
 
-/* Lo que sigue en marcha se marca en lleno: es la diferencia que importa. */
 .span-bar.is-live {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-dark);
 }
 
-/* El rotulo va suelto y no dentro de la barra: asi puede salirse cuando la
-   barra es demasiado corta para contenerlo. */
 .span-name {
   position: absolute;
   top: 50%;
@@ -1305,14 +1225,7 @@ a {
   color: var(--foreground);
 }
 
-
-
-/* En movil ninguna etiqueta cabe al lado de una barra de 70 px: el nombre sube
-   encima y la barra queda debajo, a lo ancho de la fila. */
 @media (max-width: 767px) {
-  /* El rotulo va delante de la barra en el marcado para que se lea antes; en
-     escritorio se posiciona encima y el orden da igual. Aqui se invierte con
-     order para no duplicar el marcado. */
   .span-row {
     display: flex;
     flex-direction: column;
@@ -1351,14 +1264,10 @@ a {
 .span-chip {
   width: 1.5rem;
   height: 0.625rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent);
 }
 
-/* ── Infografia: linea de tiempo ──────────────────────────
-   La linea vive en el ::before del carril y los hitos se colocan encima con
-   --at, en fraccion del recorrido. En movil la linea se pone vertical, que es
-   la unica orientacion que cabe sin encoger el texto. */
 .timeline-track {
   position: relative;
   display: grid;
@@ -1422,8 +1331,6 @@ a {
   color: var(--muted);
 }
 
-/* En escritorio la linea se tumba y los hitos se reparten por --at, que es
-   donde se ve cuanto tiempo separa a unos de otros. */
 @media (min-width: 900px) {
   .timeline-track {
     display: block;
@@ -1467,9 +1374,6 @@ a {
   }
 }
 
-/* ── Ficha de metricas ────────────────────────────────────
-   Sin contorno: el filete superior alinea la fila y deja el peso visual en la
-   cifra. Es como presenta Apple las especificaciones. */
 .metric-cell {
   border-top: 1px solid var(--line-strong);
   padding-top: 0.875rem;
@@ -1519,14 +1423,6 @@ a {
   color: var(--ink-dark-muted);
 }
 
-/* ── Bloques de proyecto (pagina /proyectos) ──────────────
-   Mismo lenguaje que las tarjetas de la portada —superficie con el color de la
-   marca y la captura sangrando— pero a ancho completo, porque aqui caben las
-   metricas y el stack. Los degradados y los colores de texto se heredan de las
-   clases .proj-card--<slug>, que ya los definen. */
-/* Sin `color` aqui: esta regla va despues de .proj-card--eqx en el fichero y
-   con la misma especificidad le pisaba el blanco, dejando la tarjeta oscura con
-   el texto casi invisible. El color lo pone la clase de marca. */
 .proj-feature {
   position: relative;
   overflow: hidden;
@@ -1544,20 +1440,11 @@ a {
   color: color-mix(in srgb, currentColor 74%, transparent);
 }
 
-/* Al 58 % se quedaba en 3,92:1 sobre el degradado claro, por debajo del 4,5
-   que pide texto de 12 px. */
 .proj-feature-stack {
   color: color-mix(in srgb, currentColor 76%, transparent);
 }
 
-/* Sangrado: en escritorio la captura se ensancha por encima de su columna y se
-   desplaza hacia el borde exterior, donde el overflow de la tarjeta la corta.
-   En movil no hay borde exterior al que salir, asi que se queda dentro. */
 @media (min-width: 1024px) {
-  /* Con margen y no con transform: el porcentaje del margen se resuelve contra
-     la columna, asi que los dos lados sangran exactamente lo mismo (34 %). Con
-     translate el porcentaje va contra el ancho del propio elemento y salian
-     asimetricos. */
   .proj-feature-shot {
     width: 128%;
     margin-left: 6%;
@@ -1572,17 +1459,12 @@ a {
   }
 }
 
-/* Con la captura a la izquierda el texto necesita el aire por el otro lado. */
 @media (min-width: 1024px) {
   .proj-feature:has(.proj-feature-shot.is-left) {
     padding: 3.25rem 3.25rem 3.25rem 0;
   }
 }
 
-/* ── Marco de ventana ─────────────────────────────────────
-   Barra de 38 px con los tres puntos y el dominio centrado, como una ventana
-   de macOS. El radio interior es el exterior menos el grosor del borde, si no
-   la captura asoma por las esquinas de la ventana. */
 .browser-frame {
   border-radius: var(--radius-card-lg);
   overflow: hidden;
@@ -1613,13 +1495,6 @@ a {
   background: var(--line-strong);
 }
 
-/* Aquí iban #ff5f57, #febc2e y #28c840: los tres colores exactos del semáforo
-   de macOS, en ocho marcos de la web. Era la cita más literal que quedaba.
-
-   El marco sigue haciendo su trabajo —decir que eso es una web de verdad, con
-   su dominio tecleable— sin el guiño. Los tres puntos se quedan en gris, que es
-   lo que hace cualquier navegador que no sea el de Apple. */
-
 .browser-url {
   position: absolute;
   left: 50%;
@@ -1629,8 +1504,7 @@ a {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 12px;
-  /* Sobre --panel-strong, --muted se queda en 4,27:1, justo por debajo del
-     4,5 que pide texto de 12 px. --foreground con algo de mezcla lo sube. */
+
   color: color-mix(in srgb, var(--foreground) 72%, var(--panel-strong));
 }
 
@@ -1658,22 +1532,6 @@ a {
   background: #000;
 }
 
-/* ── Marco de portatil ────────────────────────────────────
-   Medidas reales del MacBook Pro de 14 pulgadas. Ojo: ni una comilla doble en
-   este comentario, que abre una cadena que no se cierra hasta el content de
-   mas abajo y se lleva por delante todo el bloque. Ya paso con el movil.
-     tapa      312,6 x 221,2 mm       -> proporcion 1,4132
-     pantalla  302,4 x 196,4 mm       (3024x1964 px, 14,2 pulgadas diagonal)
-     marco     5,1 mm a los lados     -> 1,631 % del ancho de la tapa
-     ceja      8,4 mm arriba          -> 2,687 %
-     menton    16,4 mm abajo          -> 5,246 %   (8,4 + 196,4 + 16,4 = 221,2)
-   Todo en cqw, igual que el movil: un border-radius en porcentaje se resuelve
-   por eje y deja las esquinas elipticas.
-
-   La base va un 3 % mas ancha que la tapa. Eso no es ortografico —de frente
-   miden lo mismo— pero es como se ve en cualquier foto de producto, donde la
-   base se enseña con algo de perspectiva. Sin ese saliente el portatil parece
-   una tapa flotando. */
 .laptop {
   container-type: inline-size;
   width: 100%;
@@ -1684,7 +1542,13 @@ a {
   aspect-ratio: 312.6 / 221.2;
   padding: 2.687cqw 1.631cqw 5.246cqw;
   border-radius: 3.5cqw 3.5cqw 0.5cqw 0.5cqw;
-  background: linear-gradient(158deg, #55555a 0%, #2a2a2e 22%, #1b1b1f 60%, #3d3d42 100%);
+  background: linear-gradient(
+    158deg,
+    #55555a 0%,
+    #2a2a2e 22%,
+    #1b1b1f 60%,
+    #3d3d42 100%
+  );
   box-shadow: var(--sombra-3);
 }
 
@@ -1708,8 +1572,6 @@ a {
   background: #000;
 }
 
-/* 5,6 % del ancho de la tapa: es lo que hace que el hueco de debajo quede en
-   1,6904, la proporcion de una captura de viewport. Ver LaptopFrame.tsx. */
 .laptop-bar {
   position: relative;
   flex: 0 0 auto;
@@ -1732,7 +1594,6 @@ a {
   border-radius: 999px;
 }
 
-/* Mismo criterio que en .browser-dots: fuera el semáforo de macOS. */
 .laptop-dots span {
   background: var(--line-strong);
 }
@@ -1769,8 +1630,6 @@ a {
   box-shadow: var(--sombra-2);
 }
 
-/* El hueco para abrir la tapa. Es el detalle que hace que se lea como portatil
-   y no como un monitor sobre una barra. */
 .laptop-groove {
   position: absolute;
   top: 0;
@@ -1782,17 +1641,6 @@ a {
   background: rgba(0, 0, 0, 0.28);
 }
 
-/* ── Marco de dispositivo ─────────────────────────────────
-   Medidas reales del iPhone 15 Pro, no aproximadas de memoria:
-     cuerpo    70,60 x 146,60 mm  -> proporcion 2,0765
-     pantalla  65,10 x 141,14 mm  (1179x2556 px a 460 ppi)
-     bisel     2,75 mm por lado   -> 3,895 % del ancho del cuerpo
-     esquina   9,11 mm de pantalla + bisel = 11,86 mm -> 16,80 % del ancho
-   Todo en cqw sobre el contenedor: un border-radius en % se resuelve por eje
-   (% del ancho en horizontal, % del alto en vertical) y en un cuerpo que es el
-   doble de alto que ancho eso da esquinas elipticas en vez de circulares.
-   Sin comillas dobles en este comentario: una suelta abre una cadena que no se
-   cierra hasta el content de abajo y se lleva por delante el bloque. */
 .device {
   container-type: inline-size;
   width: 100%;
@@ -1804,14 +1652,18 @@ a {
   aspect-ratio: 70.6 / 146.6;
   padding: 3.895cqw;
   border-radius: 16.8cqw;
-  background: linear-gradient(150deg, #4a4a4f 0%, #17171a 28%, #0b0b0d 62%, #3a3a3f 100%);
+  background: linear-gradient(
+    150deg,
+    #4a4a4f 0%,
+    #17171a 28%,
+    #0b0b0d 62%,
+    #3a3a3f 100%
+  );
   box-shadow:
     0 2px 3px rgba(0, 0, 0, 0.35),
     0 26px 50px -18px rgba(0, 0, 0, 0.4);
 }
 
-/* El filo claro sobre el canto oscuro es lo que da el metal: sin el, el marco
-   parece un borde negro plano pegado encima de la captura. */
 .device-frame::after {
   content: "";
   position: absolute;
@@ -1841,8 +1693,6 @@ a {
   background: #000;
 }
 
-/* La barra de estado ocupa la franja que la captura trae vacia arriba: 59 pt
-   sobre 852 de pantalla, un 6,9 % del alto. */
 .device-status {
   position: absolute;
   top: 0;
@@ -1881,8 +1731,6 @@ a {
   height: auto;
 }
 
-/* La pila es un rectangulo con borde y relleno: dibujarla en SVG a este tamano
-   se emborrona, y con bordes reales se mantiene limpia al escalar. */
 .device-battery {
   position: relative;
   width: 6.4cqw;
@@ -1915,10 +1763,7 @@ a {
   scrollbar-width: none;
   scroll-padding-left: 22px;
   overscroll-behavior-x: contain;
-  /* La máscara recorta el carril, no la ventana: lo que asoma se apaga en vez
-     de cortarse en seco a media palabra. Los dos extremos se abren cuando ya no
-     queda nada por ese lado, para que la primera y la última no salgan
-     desvaídas. */
+
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0,
@@ -1943,8 +1788,6 @@ a {
   --rail-fade-fin: 0px;
 }
 
-/* Con el carril enfocado la máscara se quita: recorta lo que pinta el propio
-   elemento, y el aro de foco es lo primero que se comía por los bordes. */
 .rail-track:focus-visible {
   -webkit-mask-image: none;
   mask-image: none;
@@ -1966,15 +1809,10 @@ a {
   }
 }
 
-/* Los controles se pintan aqui y no en clases de utilidad porque tienen que
-   invertirse dentro de .section-dark, y una variante por tono en el componente
-   duplicaria el marcado de los dos botones. */
 .rail-counter {
   color: var(--muted);
 }
 
-/* La barra tambien es texto que se lee: en --line-strong se quedaba en 1,38:1
-   y desaparecia entre los dos numeros. */
 .rail-counter-sep {
   color: var(--muted);
 }
@@ -1984,16 +1822,16 @@ a {
   color: var(--foreground);
 }
 
-.rail-btn:hover:not(:disabled) {
-  background: var(--line-strong);
+@media (hover: hover) and (pointer: fine) {
+  .rail-btn:hover:not(:disabled) {
+    background: var(--line-strong);
+  }
 }
 
 .section-dark .rail-counter {
   color: var(--ink-dark-muted);
 }
 
-/* Al 25 % se queda en 2,02:1 sobre el negro y la barra desaparece entre los
-   dos numeros, igual que pasaba en claro. */
 .section-dark .rail-counter-sep {
   color: var(--ink-dark-muted);
 }
@@ -2003,8 +1841,10 @@ a {
   color: #fff;
 }
 
-.section-dark .rail-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.22);
+@media (hover: hover) and (pointer: fine) {
+  .section-dark .rail-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.22);
+  }
 }
 
 .section-dark .rail-track:focus-visible {
@@ -2016,9 +1856,6 @@ a {
   flex: 0 0 auto;
 }
 
-/* En una pantalla táctil las flechas sobran —se arrastra con el dedo— y encima
-   ocupan sitio. El contador sí se queda: dice cuántas tarjetas hay, que es lo
-   que no se ve cuando sólo asoma media. */
 .rail-controls {
   display: none;
 }
@@ -2033,8 +1870,6 @@ a {
   background: var(--panel);
 }
 
-/* Los rieles de la retícula. Por debajo de 1200 px la caja toca los bordes de
-   la pantalla y dos líneas ahí no marcan nada, sólo enmarcan. */
 @media (min-width: 1200px) {
   .contenedor {
     border-left: 1px solid var(--line);
@@ -2046,16 +1881,29 @@ a {
   }
 }
 
-.section-dark {
-  background: var(--ink-dark);
-  color: #f5f5f7;
+.section-dark,
+.proj-card,
+.proj-feature,
+.on-dark {
+  --background: var(--ink-dark);
+  --foreground: var(--on-dark);
+  --muted: #b0b0b0;
+  --muted-strong: #8f8f8f;
+  --panel: var(--ink-dark-panel);
+  --panel-strong: #151515;
+  --line: #222222;
+  --line-strong: #2e2e2e;
+  --accent: #fb923c;
+  --accent-text: #fb923c;
+  --accent-dark: #fb923c;
+  --accent-hover: #fdba74;
 }
 
-/* ── Enlaces dentro de prosa ─────────────────────────────────
-   El subrayado va siempre, no al pasar por encima: sobre el gris del párrafo
-   el acento solo llega a 1,07:1 y el enlace quedaría distinguible únicamente
-   por color. Este selector pesa más que la utilidad `underline`, así que
-   ponerlo en `none` aquí la anulaba en toda la prosa del sitio. */
+.section-dark {
+  background: var(--ink-dark);
+  color: var(--on-dark);
+}
+
 .prose-links a {
   color: var(--accent-text);
   text-decoration: underline;
@@ -2068,11 +1916,6 @@ a {
   text-decoration-color: var(--foreground);
 }
 
-/* ── Cabecera ────────────────────────────────────────────────
-   Una barra fina a todo el ancho, no una píldora. Arriba del todo no tiene
-   fondo ni línea: forma parte del hero. En cuanto hay scroll se vuelve opaca,
-   y al bajar se esconde para dejar leer; al subir un poco vuelve, que es
-   justo cuando alguien busca la navegación. */
 .site-header {
   border-bottom: 1px solid transparent;
   background: transparent;
@@ -2090,17 +1933,16 @@ a {
   gap: 1rem;
 }
 
-/* Casi opaca a propósito: el desenfoque puede declararse soportado y no
-   pintarse (sin GPU, modo de ahorro), y entonces un titular blanco que pasa
-   por debajo se lee encima de los enlaces. Legible antes que bonita. */
 .site-header[data-scrolled="true"] {
   border-bottom-color: var(--line);
-  background: rgba(10, 10, 10, 0.97);
+  background: color-mix(in srgb, var(--background) 97%, transparent);
   backdrop-filter: saturate(160%) blur(16px);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
 }
 
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
   .site-header[data-scrolled="true"] {
     background: var(--background);
   }
@@ -2110,8 +1952,6 @@ a {
   transform: translateY(-100%);
 }
 
-/* Si alguien llega con el tabulador a un enlace de la barra, la barra tiene
-   que verse aunque el scroll la hubiera escondido. */
 .site-header:focus-within {
   transform: none;
 }
@@ -2138,8 +1978,6 @@ a {
   color: var(--foreground);
 }
 
-/* "Menú" en texto y no tres rayas: el icono de hamburguesa era lo que más
-   sonaba a plantilla, y la palabra se entiende igual y pesa menos. */
 .header-menu-button {
   display: inline-flex;
   min-height: 2.75rem;
@@ -2171,7 +2009,6 @@ a {
     --header-h: 64px;
   }
 
-  /* La clase propia va después de las utilidades y pisaría el `md:hidden`. */
   .header-menu-button {
     display: none;
   }
@@ -2183,7 +2020,6 @@ a {
   }
 }
 
-/* ── Capturas de producto ────────────────────────────────── */
 .shot-frame {
   position: relative;
   border-radius: var(--radius-card-lg);
@@ -2201,19 +2037,17 @@ a {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* ── Trayectoria ─────────────────────────────────────────── */
 .tl-entry .tl-dot {
   background: var(--line-strong);
   transition: background var(--dur-rapida) var(--ease);
 }
 
-.tl-entry:hover .tl-dot {
-  background: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+  .tl-entry:hover .tl-dot {
+    background: var(--accent);
+  }
 }
 
-/* ── Detalles heredados de la versión oscura ─────────────────
-   Se conservan los nombres porque siguen usándose en las páginas de caso;
-   aquí sólo cambian los valores para que funcionen sobre fondo claro. */
 .space-border {
   position: relative;
   border-radius: var(--radius-card-lg);
@@ -2230,7 +2064,12 @@ a {
 }
 
 .scanline {
-  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line-strong),
+    transparent
+  );
 }
 
 .orbital-ring {
@@ -2241,7 +2080,12 @@ a {
 }
 
 .ai-pipeline-line {
-  background: linear-gradient(90deg, transparent, var(--line-strong) 45%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line-strong) 45%,
+    transparent
+  );
 }
 
 .ai-node-glow {
@@ -2257,9 +2101,6 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
-/* ── Entrada de contenido ────────────────────────────────────
-   Un solo movimiento, corto y suave. Nada se mueve si el sistema pide
-   reducir movimiento. */
 @media (prefers-reduced-motion: no-preference) {
   .rise {
     animation: rise var(--dur-lenta) var(--ease) both;
@@ -2294,11 +2135,6 @@ a {
   }
 }
 
-/* ── Revelado al entrar en pantalla ─────────────────────────
-   El estado de partida lo pone el propio componente al montarse, así que sin
-   JavaScript nunca llega a aplicarse y el contenido se ve desde el principio.
-   Un desplazamiento corto y una curva lenta al final: el movimiento tiene que
-   notarse acabando, no empezando. */
 .reveal-init {
   opacity: 0;
   transform: translateY(22px);
@@ -2321,12 +2157,6 @@ a {
   }
 }
 
-/* ── Hoja de navegación (móvil) ──────────────────────────────
-   No es un desplegable ni un panel lateral: la hoja ocupa todo lo que queda
-   bajo la barra, en opaco, y los enlaces entran escalonados. El escalonado va
-   por variable `--i` en cada elemento, así el orden lo pone el marcado y no
-   hay una regla por posición. Cerrada no se desmonta —para que la salida se
-   anime—, así que se saca del foco con `inert` y con `visibility`. */
 .nav-sheet {
   position: fixed;
   inset: var(--header-h) 0 0 0;
@@ -2360,8 +2190,6 @@ a {
   transform: translateY(14px);
 }
 
-/* El retardo sólo se aplica al entrar. Al cerrar, la hoja entera se desvanece
-   de una vez: escalonar también la salida se percibe como lentitud. */
 .nav-sheet[data-open="true"] .nav-sheet-item {
   opacity: 1;
   transform: none;
@@ -2416,23 +2244,11 @@ a {
   }
 }
 
-/* El CV en papel es otro documento, no la web encogida. La web usa aire y
-   tarjetas para separar ideas; en A4 ese mismo aire se come páginas enteras y
-   parte las fichas por la mitad. Aquí se recupera el ancho útil, se quita todo
-   lo que sólo sirve en pantalla y se prohíbe cortar una experiencia en dos. */
 @page {
   size: A4;
   margin: 13mm 12mm 14mm;
 }
 
-/* ── La lectura en vivo ──────────────────────────────────────
-   Vive dentro de la banda oscura, debajo de la cifra grande. La relación entre
-   las dos es el argumento: arriba noventa días de histórico, aquí lo que la red
-   está midiendo ahora.
-
-   Empezó siendo una tabla de dos filas y quedaba plana: decía los números sin
-   enseñar lo que tienen de interesante, que es la distancia entre los dos
-   extremos de España en un mismo instante. Un rango se dibuja como un rango. */
 .vivo {
   margin-top: 4.5rem;
   padding-top: 2.75rem;
@@ -2457,12 +2273,9 @@ a {
   font-size: 0.8125rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.56);
 }
 
-/* El punto que late. Es el único movimiento en bucle de la web y se lo puede
-   permitir porque significa algo: hay una lectura viva detrás. Con movimiento
-   reducido se queda encendido y fijo, que dice lo mismo sin parpadear. */
 .vivo-pulso {
   display: inline-block;
   width: 7px;
@@ -2526,19 +2339,12 @@ a {
   text-decoration-color: rgba(45, 212, 191, 0.4);
 }
 
-.vivo-texto a:hover {
-  text-decoration-color: var(--accent-dark);
+@media (hover: hover) and (pointer: fine) {
+  .vivo-texto a:hover {
+    text-decoration-color: var(--accent-dark);
+  }
 }
 
-/* ── La escala de temperatura ────────────────────────────────
-   La rampa es la de Snowy: azul, cian, esmeralda, ámbar y rojo con los cortes
-   en 0, 10, 20 y 30. Las paradas del degradado son esos mismos grados llevados
-   al rango que dibuja la barra, de -5 a 45, para que la posición de un marcador
-   signifique una temperatura y no un porcentaje cualquiera.
-
-   Encima de la barra, el reparto: una columna por grado con las estaciones que
-   caen en él. Es lo que convierte el bloque en un gráfico —se ve dónde está hoy
-   el país— en vez de en dos cifras sueltas. */
 .escala {
   --rampa: linear-gradient(
     90deg,
@@ -2575,7 +2381,7 @@ a {
 .escala-barra {
   position: relative;
   height: 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background-image: var(--rampa);
 }
 
@@ -2609,11 +2415,9 @@ a {
   transform: translateX(-50%);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.58);
 }
 
-/* En pantalla estrecha los dos rótulos van en dos columnas debajo de la barra:
-   colgando de su punto se pisaban en cuanto los extremos se acercaban. */
 .escala-leyenda {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2626,7 +2430,7 @@ a {
   font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .escala-valor {
@@ -2649,14 +2453,9 @@ a {
 
 .escala-zona {
   display: block;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.58);
 }
 
-/* Con sitio, cada rótulo sube a colgar de su punto. El de la mínima crece hacia
-   la derecha y el de la máxima hacia la izquierda, así que aunque los extremos
-   se junten los textos se alejan y no se solapan. */
-/* El corte no es 800 sino 1000: a 800 los dos rotulos ya caben en absoluto pero
-   se tocan, porque cada uno puede medir hasta 17rem y la barra ahi mide 736. */
 @media (min-width: 1000px) {
   .escala {
     padding-top: 9rem;
@@ -2702,14 +2501,6 @@ a {
   }
 }
 
-/* ── La entrada de la escala ─────────────────────────────────
-   El movimiento cuelga del `reveal-in` que ya pone el observador del bloque, así
-   que no hace falta JavaScript nuevo. Y va como animación y no como transición
-   a propósito: el estado final es el natural, de modo que sin JavaScript o con
-   movimiento reducido la gráfica se ve completa desde el primer pintado.
-
-   El orden cuenta el dato en el orden en que se lee: primero la escala, después
-   el reparto creciendo de frío a caliente, y al final los dos extremos. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal-in .escala-barra {
     animation: escala-abrir 0.9s var(--ease) both;
@@ -2718,8 +2509,7 @@ a {
   .reveal-in .escala-columna {
     transform-origin: bottom;
     animation: escala-crecer 0.55s var(--ease) both;
-    /* 12 ms por grado: cincuenta columnas recorren la escala en 0,6 s, que es
-       lo que tarda el ojo en seguirla sin que parezca que va sola. */
+
     animation-delay: calc(0.18s + var(--i) * 12ms);
   }
 
@@ -2766,24 +2556,71 @@ a {
   }
 }
 
-/* ── Escala de titulares ─────────────────────────────────────
-   Peso 600 y no 700, y el tracking a la mitad: 700 con -0.035em es el ajuste
-   optico exacto de los titulares de apple.com, y con el apreton las formas
-   propias de Instrument Sans —la a, la g, la R— se pierden y la letra pasa por
-   San Francisco. Sigue leyendose rotundo, pero ya se nota que no es la suya.
+.boton {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0 1.375rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  transition:
+    background-color var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease),
+    color var(--dur-rapida) var(--ease);
+}
 
-   Cada componente traía su propio tamaño y sólo en la portada había cuatro
-   medidas distintas de h2 —58, 52, 48 y 44 px— y ocho en la página de Snowy.
-   Un titular de sección tiene que medir siempre lo mismo: es lo que hace que
-   dos secciones seguidas se lean como parte de la misma página y no como dos
-   plantillas pegadas.
+.boton-flecha {
+  width: 1rem;
+  height: 0.625rem;
+  flex-shrink: 0;
+  transition: transform var(--dur-rapida) var(--ease);
+}
 
-   Tres escalones y ya: el de sección, el de bloque dentro de una sección y el
-   de ficha. El titular del hero no entra aquí, es único por página. */
-/* Sin color: estas clases son tamaño, peso y tracking. El color lo pone el
-   contexto —hay secciones oscuras— y además estas reglas van sin capa, así que
-   un `text-white` de utilidad perdería contra ellas y el titular saldría negro
-   sobre negro. */
+.boton-solido {
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.boton-contorno {
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--foreground);
+}
+
+.boton-contorno--dark {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--on-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .boton:hover .boton-flecha {
+    transform: translateX(0.25rem);
+  }
+
+  .boton-solido:hover {
+    background: transparent;
+    color: var(--foreground);
+  }
+
+  .boton-contorno:hover {
+    border-color: var(--foreground);
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  .boton-contorno--dark:hover {
+    border-color: var(--on-dark);
+    background: var(--on-dark);
+    color: #000;
+  }
+}
+
 .t-section {
   font-size: 2.125rem;
   font-weight: 600;
@@ -2812,18 +2649,6 @@ a {
   letter-spacing: -0.022em;
 }
 
-/* El renglón que va encima del titular. Un eyebrow dice de qué sección se
-   trata: es un metadato, y en esta web el metadato vive en la monoespaciada.
-   Antes iba en la sans a 20 px, que es exactamente como lo pone Apple —el
-   nombre del producto encima del titular, mismo alfabeto, más pequeño y en
-   gris—, y era de las cosas que más los delataba una vez cambiada la paleta.
-
-   El índice numérico es lo que convierte una sucesión de secciones en un
-   recorrido. Va en el color de marca; el resto del renglón, en gris. */
-/* El tracking de 0.14em en versalitas grises era de catálogo: mucho aire entre
-   letras y ningún color. El eyebrow pasa a ser una etiqueta de sistema —mono
-   pequeña, poco tracking y en el acento—, que es lo que separa una sección de
-   la siguiente sin necesidad de centrarla. */
 .t-eyebrow {
   display: block;
   margin-bottom: 0.875rem;
@@ -2841,7 +2666,7 @@ a {
 
 .t-eyebrow-sep {
   margin: 0 0.5rem;
-  color: var(--line-strong);
+  color: var(--muted-strong);
 }
 
 .section-dark .t-eyebrow {
@@ -2856,9 +2681,6 @@ a {
   color: rgba(255, 255, 255, 0.22);
 }
 
-/* 52 px de titular de sección es escala de catálogo: pide un párrafo centrado
-   debajo y mucho aire alrededor. A 40 px el titular cabe en la misma retícula
-   que el texto y la sección se puede alinear a la izquierda. */
 @media (min-width: 640px) {
   .t-section {
     font-size: 2.5rem;
@@ -2869,15 +2691,6 @@ a {
   }
 }
 
-/* La página del CV en pantalla: fuera las cajas. Eran seis contornos
-   redondeados uno encima de otro, pegados, con las líneas llegando a los 120
-   caracteres. La forma buena es la de una ficha: la fecha en una columna
-   estrecha a la izquierda, el contenido en otra que no pasa de 62 caracteres, y
-   un filete separando cada puesto en vez de un contorno cerrado.
-
-   Todo va bajo @media screen porque el papel ya estaba resuelto: el bloque de
-   impresión quita bordes y rellenos de todo lo que empieza por cv-, y el PDF no
-   se puede tocar. */
 @media screen {
   .cv-entry {
     border-top: 1px solid var(--line);
@@ -2894,8 +2707,6 @@ a {
     padding-bottom: 0.75rem;
   }
 
-  /* La fecha es un dato, no prosa: va en la mono, que es donde vive todo lo
-     que es metadato en esta web. */
   .cv-timeline .cv-period {
     font-family: var(--font-mono);
     font-size: 0.8125rem;
@@ -2955,8 +2766,6 @@ a {
     font-size: 10pt;
   }
 
-  /* Los fondos de sección y las sombras no imprimen bien y gastan tóner sin
-     aportar jerarquía: en papel la jerarquía la da el tamaño del texto. */
   .site-header,
   footer,
   .no-print,
@@ -2976,8 +2785,6 @@ a {
     padding-bottom: 0;
   }
 
-  /* La caja de 1120 px y su padding lateral sobran: el margen del papel lo
-     pone @page, y si no se anulan el texto queda en una columna estrecha. */
   .cv-document [class*="max-w-"] {
     max-width: none !important;
   }
@@ -2987,21 +2794,16 @@ a {
     padding-right: 0 !important;
   }
 
-  /* Cabecera: el nombre manda, el resto se reduce a una línea de datos. */
   .cv-head {
     margin-bottom: 6mm;
   }
 
-  /* En pantalla el titular va centrado, que funciona cuando hay aire alrededor.
-     En A4 deja el nombre flotando sobre un texto alineado a la izquierda. */
   .cv-head > div:first-of-type {
     max-width: none !important;
     margin-left: 0 !important;
     text-align: left !important;
   }
 
-  /* El eyebrow dice "CV" encima del nombre: en pantalla ubica, en el papel
-     sobra porque el documento ya es el CV. */
   .cv-head > div:first-of-type > p:first-child {
     display: none;
   }
@@ -3023,7 +2825,6 @@ a {
     line-height: 1.45 !important;
   }
 
-  /* Los datos de contacto dejan de ser botones táctiles: en papel son texto. */
   .cv-contact {
     margin-top: 3mm !important;
     gap: 0 !important;
@@ -3062,8 +2863,6 @@ a {
     font-size: 9.5pt !important;
   }
 
-  /* Lo que el navegador partía por la mitad. Una experiencia entera o pasa a
-     la página siguiente: media ficha a pie de página no se lee. */
   .cv-entries {
     margin-top: 0 !important;
   }
@@ -3111,8 +2910,6 @@ a {
     background: #000 !important;
   }
 
-  /* Dos columnas de verdad: en pantalla dependen de sm:, que en print no
-     entra, y las competencias caían apiladas ocupando una página entera. */
   .cv-skills {
     margin-top: 0 !important;
     display: grid !important;
@@ -3120,8 +2917,6 @@ a {
     gap: 3mm 6mm !important;
   }
 
-  /* Formación e idiomas comparten fila en papel: son cuatro líneas cada una y
-     en columna se comían un tercio de la segunda página. */
   .cv-langs {
     margin-top: 0 !important;
   }
@@ -3141,23 +2936,12 @@ a {
     line-height: 1.4 !important;
   }
 
-  /* Los enlaces en papel se quedan sin destino; el dominio ya va en la
-     cabecera, así que basta con que no parezcan pulsables. */
   .cv-document a {
     color: #000 !important;
     text-decoration: none !important;
   }
 }
 
-/* ── Ciclo de entrega ────────────────────────────────────────
-   El objeto del hero. El borde lleva un haz que gira: el degradado cónico se
-   pinta en un pseudoelemento cuadrado más grande que la tarjeta y el
-   `overflow: hidden` lo recorta, que es la única forma de girar un borde sin
-   animar el propio `background` del elemento.
-
-   Los tiempos están medidos para que la línea vaya siempre por delante del
-   check que le toca: si el check se adelanta, el conjunto se lee como una
-   lista que se enciende sola en vez de como un progreso. */
 .cycle {
   position: relative;
   overflow: hidden;
@@ -3220,7 +3004,7 @@ a {
   gap: 0.4375rem;
   font-family: var(--font-mono);
   font-size: 11.5px;
-  color: #15803d;
+  color: var(--exito);
 }
 
 .cycle-led {
@@ -3369,7 +3153,7 @@ a {
 }
 
 .cycle-steps li:last-child .cycle-tag {
-  color: #15803d;
+  color: var(--exito);
 }
 
 .cycle-foot {
@@ -3391,16 +3175,14 @@ a {
 .cycle-badge {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: #15803d;
+  color: var(--exito);
   background: rgba(21, 128, 61, 0.08);
   border: 1px solid rgba(21, 128, 61, 0.2);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   padding: 0.25rem 0.625rem;
   white-space: nowrap;
 }
 
-/* En un móvil el subtítulo de cada paso duplica lo que ya dice el título y
-   obliga a hacer la tarjeta el doble de alta. */
 @media (max-width: 639px) {
   .cycle-in {
     padding: 0.9375rem 1rem 1rem;
@@ -3443,10 +3225,6 @@ a {
   }
 }
 
-/* ── Hero: la escena de superficies ──────────────────────────
-   Tres capturas escalonadas y un resplandor detrás. El conjunto sangra por la
-   derecha a propósito: cortado se lee como una ventana a algo más grande, y
-   entero se leería como una foto de producto pegada en la página. */
 .hero-stage {
   position: relative;
   margin: 2.5rem -22px 0;
@@ -3483,19 +3261,6 @@ a {
   height: auto;
 }
 
-/* La captura de EQx termina en una franja blanca de página —el bloque de
-   rankings—: en la escena se leía como una banda gris que cruzaba por detrás
-   del móvil. Se recorta donde acaba la portada oscura, 700 de las 1000 filas
-   originales, y la ventana cierra sobre su propio contenido.
-
-   Antes esto lo tapaba un degradado al color del fondo sobre toda la escena.
-   Ese degradado acababa en seco a media altura del móvil y dejaba un corte
-   horizontal atravesándolo: el remedio se veía más que la banda.
-
-   El recorte por sí solo deja una ventana muy baja, casi una tira. Ampliando
-   la captura una vez y media, la ventana recupera altura y el contenido se
-   lee: entran el titular, la entradilla y los tres números. Lo que se pierde
-   es la parte derecha del mapa, que no dice nada. */
 .hero-win--front img {
   width: 150%;
   max-width: none;
@@ -3526,7 +3291,7 @@ a {
   margin-left: 0.5rem;
   font-family: var(--font-mono);
   font-size: 10.5px;
-  color: var(--muted-strong);
+  color: var(--on-dark-muted);
 }
 
 .hero-device {
@@ -3548,15 +3313,10 @@ a {
   height: auto;
 }
 
-/* En móvil la ventana de detrás no aporta —se ve una franja de 20 px— y en
-   cambio roba altura al titular. */
 .hero-win--back {
   display: none;
 }
 
-/* Y la de delante se recorta por arriba: la captura entera a 390 px de ancho
-   mide 240 px de alto y no se lee nada. Recortada se reconoce el producto y el
-   móvil, que es la captura hecha para este tamaño, manda en la composición. */
 @media (max-width: 1023px) {
   .hero-device {
     left: 6%;
@@ -3613,17 +3373,8 @@ a {
     width: 152px;
     max-width: none;
   }
-
 }
 
-/* ── Movimiento ligado al scroll ─────────────────────────────
-   Las superficies del hero suben un poco mientras se baja: no es un adorno,
-   es lo que da la sensación de profundidad entre las tres capas, que de otro
-   modo se leen como un collage plano.
-
-   Va con `animation-timeline`, así que no hay JavaScript escuchando scroll ni
-   nada que recalcular en cada fotograma; donde no está soportado, no pasa
-   nada. */
 @supports (animation-timeline: view()) {
   @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
     .hero-win--back {
@@ -3652,9 +3403,6 @@ a {
   }
 }
 
-/* El brillo que cruza una tarjeta al pasar por encima. Es el único efecto de
-   hover con movimiento de la página: en las tarjetas de producto, que son las
-   que se quiere que se pulsen. */
 .proj-card::after {
   content: "";
   position: absolute;
@@ -3672,8 +3420,10 @@ a {
   transition: background-position var(--dur-lenta) var(--ease);
 }
 
-.proj-card:hover::after {
-  background-position: 0 0;
+@media (hover: hover) and (pointer: fine) {
+  .proj-card:hover::after {
+    background-position: 0 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3682,23 +3432,50 @@ a {
   }
 }
 
-/* ── Cursos ──────────────────────────────────────────────────
-   Una página de lectura larga. La medida de línea manda: 68 caracteres en
-   escritorio, el cuerpo a 17 px con interlineado amplio, y todo lo demás
-   (índice, progreso, navegación) se aparta para no competir con el texto. */
-
 .course-page,
 .lesson-page {
   padding-bottom: 5rem;
 }
 
-/* El -0,01em del body junta las palabras de Geist en párrafos largos: en el
-   curso se lee texto corrido, así que vuelve al espaciado de la fuente. Los
-   titulares mantienen su tracking propio. */
 .course-page,
 .lesson-page,
 .diary-page {
   letter-spacing: 0;
+}
+
+.grok-bot-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.grok-bot-mark__head {
+  fill: var(--foreground);
+}
+
+.grok-bot-mark__eye {
+  fill: var(--background);
+}
+
+.course-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.course-brand-mark {
+  width: 2.25rem;
+  flex-shrink: 0;
+}
+
+.course-brand-text {
+  font-family: var(--font-mono);
+  font-size: 0.71875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .course-hero {
@@ -3706,8 +3483,10 @@ a {
   padding-top: 3.5rem;
 }
 
-.course-hero .t-eyebrow a:hover {
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .course-hero .t-eyebrow a:hover {
+    text-decoration: underline;
+  }
 }
 
 .course-title {
@@ -3722,7 +3501,7 @@ a {
   max-width: 38rem;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: #c4c4c4;
+  color: var(--muted);
 }
 
 .course-meta,
@@ -3738,7 +3517,6 @@ a {
   color: var(--muted);
 }
 
-/* El punto separador solo cuando todo cabe en una línea: si salta, abriría la segunda línea. */
 @media (min-width: 640px) {
   .course-meta li + li::before,
   .lesson-meta li + li::before {
@@ -3762,16 +3540,20 @@ a {
   align-items: center;
   gap: 0.625rem;
   padding: 0 1.375rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--foreground);
   color: var(--background);
   font-size: 0.9375rem;
   font-weight: 600;
-  transition: transform var(--dur-rapida) var(--ease), opacity var(--dur-rapida) var(--ease);
+  transition:
+    transform var(--dur-rapida) var(--ease),
+    opacity var(--dur-rapida) var(--ease);
 }
 
-.course-start-button:hover {
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .course-start-button:hover {
+    transform: translateY(var(--hover-lift));
+  }
 }
 
 .course-progress {
@@ -3782,11 +3564,30 @@ a {
   color: var(--muted);
 }
 
+@media (max-width: 30rem) {
+  .course-start {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-progress {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .course-progress-bar {
+    width: 100%;
+    order: 2;
+  }
+}
+
 .course-progress-bar {
   width: 8rem;
   height: 4px;
   overflow: hidden;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--line-strong);
 }
 
@@ -3828,8 +3629,6 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
-/* Temario */
 
 .syllabus {
   display: grid;
@@ -3920,11 +3719,13 @@ a {
 .syllabus--compact .syllabus-lesson {
   min-height: 2.5rem;
   font-size: 0.875rem;
-  color: #c4c4c4;
+  color: var(--muted);
 }
 
-.syllabus-lesson:hover {
-  background: var(--panel-strong);
+@media (hover: hover) and (pointer: fine) {
+  .syllabus-lesson:hover {
+    background: var(--hover-surface);
+  }
 }
 
 .syllabus-lesson.is-current {
@@ -3954,15 +3755,15 @@ a {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: var(--background);
-  transition: background var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease);
 }
 
 .course-check.is-done {
   border-color: var(--accent);
   background: var(--accent);
 }
-
-/* Lección */
 
 .reading-progress {
   position: fixed;
@@ -4052,13 +3853,12 @@ a {
   color: var(--muted);
 }
 
-.lesson-aside-course:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-aside-course:hover {
+    color: var(--foreground);
+  }
 }
 
-/* La columna de lectura se mide en caracteres: entre 45 y 75 por línea, con
-   66 como objetivo (Bringhurst, Butterick, WCAG 1.4.8 pone el techo en 80).
-   Con 680 px y 18 px salían 62-80, así que la columna estrecha y la letra sube. */
 .lesson-article {
   min-width: 0;
   max-width: 40rem;
@@ -4082,8 +3882,10 @@ a {
   }
 }
 
-.lesson-breadcrumb a:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-breadcrumb a:hover {
+    color: var(--foreground);
+  }
 }
 
 .lesson-header {
@@ -4107,7 +3909,7 @@ a {
   margin-top: 1.25rem;
   font-size: 1.125rem;
   line-height: 1.5;
-  color: #c4c4c4;
+  color: var(--muted);
 }
 
 @media (min-width: 768px) {
@@ -4189,26 +3991,22 @@ a {
   align-items: center;
   padding: 0 0.75rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--muted);
 }
 
-.lesson-toc a:hover {
-  border-color: var(--line-strong);
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-toc a:hover {
+    border-color: var(--line-strong);
+    color: var(--foreground);
+  }
 }
 
-/* Cuerpo */
-
-/* Escala del curso: cuerpo 17/19 px, texto de apoyo 16-17, etiquetas 12 en
-   mayúsculas con un 6-8 % de espaciado. Interlineado 1,6 en el cuerpo: por
-   encima de 1,5 (WCAG) y sin el 1,75 que separaba tanto las líneas que el ojo
-   perdía la siguiente. Blanco roto sobre el negro para que no deslumbre. */
 .lesson-body {
   margin-top: 2.5rem;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: #dedede;
+  color: var(--foreground);
 }
 
 @media (min-width: 768px) {
@@ -4222,8 +4020,6 @@ a {
   margin-top: 1.25em;
 }
 
-/* Cada sección de la lección abre con una raya: en una página larga es lo que
-   deja ver dónde empieza la siguiente sin leer el titular. */
 .lesson-body h2 {
   position: relative;
   margin-top: 3.5rem;
@@ -4281,7 +4077,7 @@ a {
 .lesson-story-body a:not(.live-chip, .lesson-ref) {
   color: var(--foreground);
   text-decoration: underline;
-  /* Con el gris de las líneas el subrayado apenas se veía sobre negro. */
+
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -4293,25 +4089,28 @@ a {
   color: var(--accent-text);
 }
 
-/* Referencias a otra lección o módulo: una etiqueta que se ve de un vistazo
-   sin romper la línea. Nada de relleno vertical para no mover el interlineado. */
 .lesson-ref {
   padding: 0.0625rem 0.4375rem;
   border: 1px solid rgba(251, 146, 60, 0.45);
   border-radius: 6px;
   background: rgba(251, 146, 60, 0.1);
-  color: #fdba74;
+  color: var(--accent-text);
   font-weight: 500;
   white-space: nowrap;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease), color var(--dur-rapida) var(--ease);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease),
+    color var(--dur-rapida) var(--ease);
 }
 
-.lesson-ref:hover {
-  border-color: var(--accent);
-  background: rgba(251, 146, 60, 0.2);
-  color: #ffedd5;
+@media (hover: hover) and (pointer: fine) {
+  .lesson-ref:hover {
+    border-color: var(--accent);
+    background: rgba(251, 146, 60, 0.2);
+    color: #ffedd5;
+  }
 }
 
 .lesson-body ul,
@@ -4329,7 +4128,6 @@ a {
   list-style: decimal;
 }
 
-/* Los hijos de un grid no se encogen por debajo de su contenido: sin esto, un prompt dentro de una lista desborda el móvil. */
 .lesson-body li {
   min-width: 0;
 }
@@ -4363,7 +4161,6 @@ a {
   white-space: pre-wrap;
 }
 
-/* Un prompt es lenguaje natural: se lee en la letra del texto, no en la de código. */
 .lesson-prompt pre code {
   padding: 0;
   background: none;
@@ -4428,7 +4225,7 @@ a {
   min-height: 2rem;
   padding: 0 0.75rem;
   border: 1px solid var(--line-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   text-transform: uppercase;
@@ -4436,11 +4233,16 @@ a {
   cursor: pointer;
 }
 
-.lesson-copy:hover {
-  background: var(--panel-strong);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-copy:hover {
+    background: var(--hover-surface);
+  }
 }
 
 .lesson-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
   padding: 1.125rem 1.25rem;
   border: 1px solid var(--line);
   border-left: 3px solid var(--muted-strong);
@@ -4459,7 +4261,21 @@ a {
 }
 
 .lesson-callout--warning {
-  border-left-color: #f87171;
+  border-left-color: var(--peligro);
+}
+
+.lesson-callout-mark {
+  width: 1.75rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.lesson-callout-body {
+  min-width: 0;
+}
+
+.lesson-callout-body > p:first-child {
+  margin-top: 0;
 }
 
 .lesson-callout-title {
@@ -4475,7 +4291,7 @@ a {
 }
 
 .lesson-callout--warning .lesson-callout-title {
-  color: #fca5a5;
+  color: var(--peligro);
 }
 
 .live-chip {
@@ -4493,12 +4309,16 @@ a {
   line-height: 1.3;
   color: var(--foreground);
   vertical-align: middle;
-  transition: border-color var(--dur-rapida) var(--ease), background var(--dur-rapida) var(--ease);
+  transition:
+    border-color var(--dur-rapida) var(--ease),
+    background var(--dur-rapida) var(--ease);
 }
 
-.live-chip:hover {
-  border-color: var(--muted-strong);
-  background: var(--panel-strong);
+@media (hover: hover) and (pointer: fine) {
+  .live-chip:hover {
+    border-color: var(--muted-strong);
+    background: var(--hover-surface);
+  }
 }
 
 .live-chip-dot {
@@ -4551,16 +4371,20 @@ a {
   gap: 0.625rem;
   padding: 0 1.25rem;
   border: 1px solid var(--line-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--foreground);
   cursor: pointer;
-  transition: background var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease);
 }
 
-.lesson-complete:hover {
-  background: var(--panel-strong);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-complete:hover {
+    background: var(--hover-surface);
+  }
 }
 
 .lesson-complete.is-done {
@@ -4590,8 +4414,10 @@ a {
   transition: border-color var(--dur-rapida) var(--ease);
 }
 
-.lesson-pager-link:hover {
-  border-color: var(--line-strong);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-pager-link:hover {
+    border-color: var(--line-strong);
+  }
 }
 
 .lesson-pager-link--next {
@@ -4619,7 +4445,6 @@ a {
   }
 }
 
-/* Estado del curso: qué partes del directo están ya dentro */
 .course-status {
   margin-top: 3rem;
   padding: 1.5rem;
@@ -4662,7 +4487,7 @@ a {
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.875rem;
-  background: color-mix(in srgb, var(--panel) 60%, #000);
+  background: var(--panel-strong);
 }
 
 .course-status-part.is-done {
@@ -4685,7 +4510,7 @@ a {
 }
 
 .course-status-number {
-  color: var(--text, #fff);
+  color: var(--foreground);
 }
 
 .course-status-date {
@@ -4765,14 +4590,16 @@ a {
   margin-top: 1rem;
   padding: 0.375rem 0.75rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--muted);
   font-size: 0.8125rem;
   text-decoration: none;
 }
 
-.lesson-source:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+@media (hover: hover) and (pointer: fine) {
+  .lesson-source:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  }
 }
 
 .lesson-source-dot {
@@ -4801,7 +4628,6 @@ a {
   }
 }
 
-/* Foco de teclado en el curso, con el mismo acento que el resto de la web */
 .course-page :is(a, button, summary):focus-visible,
 .lesson-page :is(a, button, summary):focus-visible {
   outline: 2px solid var(--accent);
@@ -4809,7 +4635,6 @@ a {
   border-radius: 6px;
 }
 
-/* Landing del curso: cómo funciona y autor */
 .course-features {
   margin-top: 4rem;
 }
@@ -4845,7 +4670,7 @@ a {
 
 .course-features-list p {
   margin-top: 0.625rem;
-  color: #c4c4c4;
+  color: var(--muted);
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -4898,7 +4723,6 @@ a {
   color: var(--accent-text);
 }
 
-/* Llamada a seguir en X al final de cada lección */
 .lesson-follow {
   display: flex;
   flex-wrap: wrap;
@@ -4930,7 +4754,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0 1.125rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--foreground);
   color: var(--background);
   font-size: 0.9375rem;
@@ -4939,11 +4763,12 @@ a {
   transition: opacity var(--dur-rapida) var(--ease);
 }
 
-.lesson-follow-button:hover {
-  opacity: 0.85;
+@media (hover: hover) and (pointer: fine) {
+  .lesson-follow-button:hover {
+    background: color-mix(in oklab, var(--foreground) 86%, var(--background));
+  }
 }
 
-/* Historia del directo: tramo al abrir cada módulo, enlaces y diario */
 .lesson-story {
   margin-top: 2rem;
   padding: 1.25rem 1.125rem 1.25rem;
@@ -4962,7 +4787,7 @@ a {
   display: inline-flex;
   margin-top: 1rem;
   padding: 0.125rem 0.625rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--accent) 14%, transparent);
   color: var(--accent-text);
   font-size: 0.8125rem;
@@ -5006,6 +4831,14 @@ a {
   margin-top: 1rem;
 }
 
+.lesson-story .lesson-story-eyebrow,
+.lesson-story .lesson-story-day-label,
+.lesson-story a,
+.diary-nav-days a.is-active,
+.diary-nav-days a.is-active .diary-nav-note {
+  color: var(--accent-dark);
+}
+
 .lesson-story-eyebrow,
 .diary-day-eyebrow {
   font-family: var(--font-mono);
@@ -5027,7 +4860,7 @@ a {
 
 .lesson-story-body p {
   margin-top: 1rem;
-  color: #dedede;
+  color: var(--foreground);
   font-size: 1.0625rem;
   line-height: 1.65;
 }
@@ -5073,7 +4906,7 @@ a {
   margin-top: 4.5rem;
   padding-top: 3rem;
   border-top: 1px solid var(--line);
-  /* Deja sitio a la barra fija de días al saltar a un ancla. */
+
   scroll-margin-top: 5rem;
 }
 
@@ -5135,7 +4968,6 @@ a {
   text-wrap: balance;
 }
 
-/* Diario: llegar al curso desde cualquier punto de la historia */
 .diary-actions {
   display: flex;
   flex-wrap: wrap;
@@ -5150,16 +4982,20 @@ a {
   align-items: center;
   padding: 0 1.25rem;
   border: 1px solid var(--line-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--foreground);
   font-size: 0.9375rem;
   font-weight: 600;
-  transition: border-color var(--dur-rapida) var(--ease), background var(--dur-rapida) var(--ease);
+  transition:
+    border-color var(--dur-rapida) var(--ease),
+    background var(--dur-rapida) var(--ease);
 }
 
-.diary-secondary:hover {
-  border-color: var(--muted-strong);
-  background: var(--panel-strong);
+@media (hover: hover) and (pointer: fine) {
+  .diary-secondary:hover {
+    border-color: var(--muted-strong);
+    background: var(--hover-surface);
+  }
 }
 
 .diary-nav {
@@ -5172,7 +5008,7 @@ a {
   margin: 2.5rem -22px 0;
   padding: 0.625rem 22px;
   border-bottom: 1px solid var(--line);
-  background: rgba(10, 10, 10, 0.92);
+  background: color-mix(in srgb, var(--background) 92%, transparent);
   backdrop-filter: blur(12px);
 }
 
@@ -5181,7 +5017,7 @@ a {
     margin: 2.5rem 0 0;
     padding: 0.625rem 0.75rem;
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     top: 0.75rem;
   }
 }
@@ -5209,21 +5045,25 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0 0.875rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--muted);
   font-size: 0.9375rem;
   font-weight: 600;
   white-space: nowrap;
-  transition: background var(--dur-rapida) var(--ease), color var(--dur-rapida) var(--ease);
+  transition:
+    background var(--dur-rapida) var(--ease),
+    color var(--dur-rapida) var(--ease);
 }
 
-.diary-nav-days a:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .diary-nav-days a:hover {
+    color: var(--foreground);
+  }
 }
 
 .diary-nav-days a.is-active {
   background: rgba(251, 146, 60, 0.14);
-  color: #fdba74;
+  color: var(--accent-dark);
 }
 
 .diary-nav-note {
@@ -5234,7 +5074,6 @@ a {
   color: var(--muted-strong);
 }
 
-/* En el móvil la fecha no cabe: los días se reconocen por su número. */
 @media (max-width: 639px) {
   .diary-nav-note:not(.is-live),
   .diary-nav-syllabus-long {
@@ -5249,11 +5088,11 @@ a {
 }
 
 .diary-nav-note.is-live {
-  color: #f87171;
+  color: var(--peligro);
 }
 
 .diary-nav-days a.is-active .diary-nav-note {
-  color: rgba(253, 186, 116, 0.8);
+  color: var(--accent-dark);
 }
 
 .diary-nav-syllabus {
@@ -5263,7 +5102,7 @@ a {
   align-items: center;
   gap: 0.375rem;
   padding: 0 1rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--foreground);
   color: var(--background);
   font-size: 0.875rem;
@@ -5313,8 +5152,10 @@ a {
   transition: background var(--dur-rapida) var(--ease);
 }
 
-.diary-module-lessons a:hover {
-  background: rgba(251, 146, 60, 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .diary-module-lessons a:hover {
+    background: rgba(251, 146, 60, 0.1);
+  }
 }
 
 .diary-module-lesson-number,
@@ -5331,7 +5172,7 @@ a {
   gap: 0.5rem;
   margin-top: 0.875rem;
   padding: 0 1.125rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent);
   color: #0a0a0a;
   font-size: 0.9375rem;
@@ -5339,8 +5180,10 @@ a {
   transition: opacity var(--dur-rapida) var(--ease);
 }
 
-.diary-module-start:hover {
-  opacity: 0.88;
+@media (hover: hover) and (pointer: fine) {
+  .diary-module-start:hover {
+    background: var(--accent-hover);
+  }
 }
 
 .diary-end {
@@ -5360,12 +5203,11 @@ a {
 
 .diary-end-text {
   margin-top: 0.75rem;
-  color: #c4c4c4;
+  color: var(--muted);
   font-size: 1.0625rem;
   line-height: 1.6;
 }
 
-/* Temario de la portada: el nombre del módulo lleva a su primera lección */
 .syllabus-module-link {
   display: flex;
   align-items: baseline;
@@ -5383,11 +5225,12 @@ a {
   transition: transform var(--dur-rapida) var(--ease);
 }
 
-.syllabus-module-link:hover .syllabus-module-start {
-  transform: translateX(3px);
+@media (hover: hover) and (pointer: fine) {
+  .syllabus-module-link:hover .syllabus-module-start {
+    transform: translateX(3px);
+  }
 }
 
-/* 404 de toda la web */
 .not-found-page {
   display: flex;
   flex-direction: column;
@@ -5427,7 +5270,7 @@ a {
 
 .not-found-text {
   margin: 1rem 0 2rem;
-  color: #c4c4c4;
+  color: var(--muted);
   font-size: 1.125rem;
   line-height: 1.6;
 }
@@ -5450,11 +5293,12 @@ a {
   text-underline-offset: 4px;
 }
 
-.not-found-links a:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .not-found-links a:hover {
+    color: var(--foreground);
+  }
 }
 
-/* Objetivos táctiles de 44 px en los enlaces sueltos del curso */
 .course-diary-link a,
 .course-status-story,
 .course-author-links a,
@@ -5468,21 +5312,18 @@ a {
   margin-top: 0.75rem;
 }
 
-/* En pantallas táctiles el ancla invisible de los titulares solo estorba al tocar */
 @media (hover: none) {
   .lesson-anchor {
     display: none;
   }
 }
 
-/* Etiquetas en mayúsculas del curso: nunca por debajo de 12 px */
 .course-page .t-eyebrow,
 .lesson-page .t-eyebrow,
 .diary-page .t-eyebrow {
   font-size: 0.75rem;
 }
 
-/* En el móvil la portada repite el título con letra ilegible: el temario sube */
 @media (max-width: 639px) {
   .course-cover {
     display: none;
@@ -5493,7 +5334,6 @@ a {
   }
 }
 
-/* Cabecera de lección compacta */
 .lesson-meta-row {
   display: flex;
   flex-wrap: wrap;
@@ -5552,7 +5392,6 @@ details.lesson-objectives ul {
   padding: 0 1.25rem 1.25rem;
 }
 
-/* Barra inferior de lectura (móvil y tableta) */
 .lesson-dock {
   position: fixed;
   left: 0.75rem;
@@ -5562,13 +5401,15 @@ details.lesson-objectives ul {
   overflow: hidden;
   border: 1px solid var(--line-strong);
   border-radius: 1rem;
-  background: rgba(18, 18, 18, 0.94);
+  background: color-mix(in srgb, var(--panel-strong) 94%, transparent);
   backdrop-filter: blur(14px);
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+  box-shadow: var(--sombra-3);
   opacity: 0;
   transform: translateY(130%);
   pointer-events: none;
-  transition: transform var(--dur-media) var(--ease), opacity var(--dur-media) var(--ease);
+  transition:
+    transform var(--dur-media) var(--ease),
+    opacity var(--dur-media) var(--ease);
 }
 
 .lesson-dock.is-visible {
@@ -5674,7 +5515,7 @@ details.lesson-objectives ul {
   gap: 0.875rem;
   padding: 0.5rem 0.625rem;
   border-radius: var(--radius-inner);
-  color: #dedede;
+  color: var(--foreground);
   font-size: 1rem;
   line-height: 1.35;
 }
@@ -5689,10 +5530,9 @@ details.lesson-objectives ul {
 
 .lesson-sheet ol a.is-current {
   background: rgba(251, 146, 60, 0.12);
-  color: #fdba74;
+  color: var(--accent-text);
 }
 
-/* Aviso para volver a la sección donde se dejó la lección */
 .lesson-resume {
   position: fixed;
   left: 0.75rem;
@@ -5722,7 +5562,7 @@ details.lesson-objectives ul {
   min-width: 0;
   font-size: 0.875rem;
   line-height: 1.35;
-  color: #c4c4c4;
+  color: var(--muted);
 }
 
 .lesson-resume strong {
@@ -5736,19 +5576,22 @@ details.lesson-objectives ul {
   min-height: 2.75rem;
   align-items: center;
   padding: 0 0.875rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent);
   color: #0a0a0a;
   font-size: 0.875rem;
   font-weight: 600;
 }
 
-/* Final de lección: la siguiente en grande */
 .next-up {
   padding: 1.5rem 1.25rem;
   border: 1px solid rgba(251, 146, 60, 0.35);
   border-radius: var(--radius-card-lg);
-  background: linear-gradient(180deg, rgba(251, 146, 60, 0.09), rgba(251, 146, 60, 0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(251, 146, 60, 0.09),
+    rgba(251, 146, 60, 0.02)
+  );
 }
 
 @media (min-width: 640px) {
@@ -5797,7 +5640,7 @@ details.lesson-objectives ul {
 
 .next-up-description {
   margin-top: 0.75rem;
-  color: #c4c4c4;
+  color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -5816,7 +5659,7 @@ details.lesson-objectives ul {
   align-items: center;
   gap: 0.625rem;
   padding: 0 1.375rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--accent);
   color: #0a0a0a;
   font-size: 1rem;
@@ -5829,8 +5672,10 @@ details.lesson-objectives ul {
   margin-top: 1rem;
 }
 
-.next-up-button:hover {
-  opacity: 0.9;
+@media (hover: hover) and (pointer: fine) {
+  .next-up-button:hover {
+    background: var(--accent-hover);
+  }
 }
 
 .next-up-minutes {
@@ -5856,15 +5701,16 @@ details.lesson-objectives ul {
   font-size: 0.9375rem;
 }
 
-.lesson-previous:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-previous:hover {
+    color: var(--foreground);
+  }
 }
 
 .course-progress-left {
   color: var(--muted-strong);
 }
 
-/* Glosario */
 .glossary-list {
   margin-top: 2.5rem;
 }
@@ -5890,7 +5736,7 @@ details.lesson-objectives ul {
 
 .glossary-entry dd p {
   margin-top: 0.5rem;
-  color: #dedede;
+  color: var(--foreground);
   font-size: 1.0625rem;
   line-height: 1.6;
 }
@@ -5910,7 +5756,6 @@ details.lesson-objectives ul {
   gap: 0 1.5rem;
 }
 
-/* Términos del glosario dentro de las lecciones */
 .lesson-term {
   padding: 0;
   border: 0;
@@ -5934,7 +5779,7 @@ details.lesson-objectives ul {
   border: 1px solid rgba(251, 146, 60, 0.45);
   border-radius: 1rem;
   background: #16120e;
-  color: #dedede;
+  color: var(--foreground);
   font-size: 1rem;
   line-height: 1.55;
   box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.85);
@@ -5947,7 +5792,7 @@ details.lesson-objectives ul {
 .lesson-term-pop strong {
   display: block;
   margin-bottom: 0.25rem;
-  color: #fdba74;
+  color: var(--accent-text);
   font-weight: 600;
 }
 
@@ -5967,8 +5812,10 @@ details.lesson-objectives ul {
   border-color: rgba(251, 146, 60, 0.55);
 }
 
-.diary-segment-title a:hover {
-  color: var(--accent-text);
+@media (hover: hover) and (pointer: fine) {
+  .diary-segment-title a:hover {
+    color: var(--accent-text);
+  }
 }
 
 .diary-moments {
@@ -5985,7 +5832,7 @@ details.lesson-objectives ul {
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius-inner);
   background: rgba(251, 146, 60, 0.1);
-  color: #fdba74;
+  color: var(--accent-dark);
   font-size: 0.9375rem;
   font-weight: 500;
   line-height: 1.35;
@@ -5996,8 +5843,6 @@ details.lesson-objectives ul {
   font-weight: 400;
 }
 
-
-/* Compartir y preguntar */
 .share-button {
   display: inline-flex;
   min-height: 2.75rem;
@@ -6005,17 +5850,21 @@ details.lesson-objectives ul {
   gap: 0.5rem;
   padding: 0 0.875rem;
   border: 1px solid var(--line-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--muted);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: color var(--dur-rapida) var(--ease), border-color var(--dur-rapida) var(--ease);
+  transition:
+    color var(--dur-rapida) var(--ease),
+    border-color var(--dur-rapida) var(--ease);
 }
 
-.share-button:hover {
-  border-color: var(--muted-strong);
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .share-button:hover {
+    border-color: var(--muted-strong);
+    color: var(--foreground);
+  }
 }
 
 .lesson-meta-row .share-button {
@@ -6061,8 +5910,10 @@ details.lesson-objectives ul {
   text-underline-offset: 4px;
 }
 
-.lesson-follow-secondary:hover {
-  color: var(--foreground);
+@media (hover: hover) and (pointer: fine) {
+  .lesson-follow-secondary:hover {
+    color: var(--foreground);
+  }
 }
 
 .diary-moments a {
@@ -6079,7 +5930,6 @@ details.lesson-objectives ul {
   letter-spacing: 0.02em;
 }
 
-/* En el móvil, «en directo» se queda en un punto rojo para que quepan los días */
 @media (max-width: 639px) {
   .diary-nav-note.is-live {
     width: 0.5rem;
@@ -6091,7 +5941,6 @@ details.lesson-objectives ul {
   }
 }
 
-/* Compartir como icono junto al título */
 .lesson-title-row,
 .diary-segment-head {
   display: flex;
@@ -6133,7 +5982,6 @@ details.lesson-objectives ul {
   margin-top: 0.25rem;
 }
 
-/* Historia del módulo: un día abierto cada vez */
 details.lesson-story-day > summary {
   cursor: pointer;
   list-style: none;
@@ -6176,7 +6024,6 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   text-decoration-color: rgba(251, 146, 60, 0.8);
 }
 
-/* Buscador del curso */
 .course-search {
   margin-top: 1.25rem;
 }
@@ -6273,7 +6120,6 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   text-underline-offset: 4px;
 }
 
-/* Novedades desde la última visita */
 .whats-new {
   margin-top: 1.5rem;
   padding: 1rem 1.25rem;
@@ -6312,7 +6158,6 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   color: var(--muted);
 }
 
-/* Esquemas dentro de las lecciones */
 .lesson-figure {
   margin: 1.75em 0;
 }
@@ -6325,4 +6170,59 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   margin: 0 auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-card-lg);
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color var(--dur-rapida) var(--ease),
+    background-color var(--dur-rapida) var(--ease);
+}
+
+.theme-switch__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-switch:hover {
+    color: var(--foreground);
+    background: color-mix(in oklab, var(--foreground) 7%, transparent);
+  }
+}
+
+.theme-switch:active {
+  background: color-mix(in oklab, var(--foreground) 12%, transparent);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.client-logo {
+  opacity: 0.62;
+  filter: brightness(0);
+}
+
+[data-theme="dark"] .client-logo {
+  opacity: 0.7;
+  filter: none;
+}
+
+.section-dark .client-logo {
+  opacity: 0.7;
+  filter: none;
 }

@@ -9,6 +9,8 @@ export { MetricCard } from "./MetricCard";
 export { ProductShot } from "./ProductShot";
 export { Rail } from "./Rail";
 export { Reveal } from "./Reveal";
+export { RevealGroup } from "./RevealGroup";
+export { RevealChildren } from "./RevealChildren";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";

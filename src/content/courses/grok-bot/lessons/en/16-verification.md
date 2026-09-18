@@ -47,10 +47,10 @@ For consequential work, the docs also suggest asking the Bot to separate facts, 
 
 For code, make it a team rule: **every pull request comes with proof**. A pull request, as you saw in lesson 15, is a proposed code change waiting for review. The right proof depends on the change:
 
-| Change | Proof |
-| -- | -- |
-| Interface (what the user sees) | Screenshots, or a video of the flow |
-| Performance (speed) | Metrics before and after |
+| Change                                         | Proof                                            |
+| ---------------------------------------------- | ------------------------------------------------ |
+| Interface (what the user sees)                 | Screenshots, or a video of the flow              |
+| Performance (speed)                            | Metrics before and after                         |
 | Backend or logic (what runs behind the screen) | A video or log of the feature working end to end |
 
 With that rule, you review **proof** instead of **traces**. A trace is the step-by-step log of what an agent did. Reading it tells you how hard the agent worked. The proof tells you whether the change works.
@@ -113,11 +113,11 @@ In the day 2 game, verification changed with the phase. For the prototype, what 
 
 ## Missing proof
 
-- **Accepting "done" without proof.** Errors reach you, or your users, later. *Fix:* make proof a standing rule in the description or playbook instead of something you remember to ask for.
-- **Reading the agent's trace to judge the result.** You spend an hour and still don't know if it works. *Fix:* look at screenshots, metrics and video first.
-- **Letting each Bot improvise its own checks.** Results can't be compared and tokens are wasted. *Fix:* one verification skill with a standard script and a feature map.
-- **Expecting agents to add video unprompted.** In the livestream they didn't, until the skill said so. *Fix:* name every kind of proof you want.
-- **Only telling the Bot when it fails.** It learns less. *Fix:* tell it when the proof was exactly right, too.
+- **Accepting "done" without proof.** Errors reach you, or your users, later. _Fix:_ make proof a standing rule in the description or playbook instead of something you remember to ask for.
+- **Reading the agent's trace to judge the result.** You spend an hour and still don't know if it works. _Fix:_ look at screenshots, metrics and video first.
+- **Letting each Bot improvise its own checks.** Results can't be compared and tokens are wasted. _Fix:_ one verification skill with a standard script and a feature map.
+- **Expecting agents to add video unprompted.** In the livestream they didn't, until the skill said so. _Fix:_ name every kind of proof you want.
+- **Only telling the Bot when it fails.** It learns less. _Fix:_ tell it when the proof was exactly right, too.
 
 ## Evidence you can review
 

@@ -13,23 +13,22 @@ export function ExperienceView({ locale }: { locale: Locale }) {
   return (
     <main>
       <Section>
-        <SectionHeader eyebrow={copy.eyebrow} title={copy.heading} text={copy.text} level={1} />
+        <SectionHeader
+          eyebrow={copy.eyebrow}
+          title={copy.heading}
+          text={copy.text}
+          level={1}
+        />
 
-        {/* La lista de puestos, por completa que sea, esconde que hay dos
-            frentes a la vez. En barras se ve en un vistazo. */}
         <div className="mt-10 sm:mt-12">
-          <CareerSpan items={content.experience} currentLabel={copy.spanLegend} />
+          <CareerSpan
+            items={content.experience}
+            currentLabel={copy.spanLegend}
+          />
         </div>
 
         <div className="mt-12 sm:mt-16">
           <div className="relative">
-            {/* La columna del carril medía 12rem y solo llevaba un punto: el
-                contenido empezaba a un tercio del ancho y quedaba un hueco
-                muerto a la izquierda. Ahora el carril ocupa lo que ocupa. */}
-            {/* El carril arranca en el primer punto y muere en el último, no
-                en los bordes del contenedor: antes salía una línea suelta por
-                encima de la primera entrada, desalineada con su texto. Y el
-                degradado venía en cian, del acento anterior. */}
             <div className="absolute bottom-10 left-[7px] top-9 w-px bg-gradient-to-b from-[var(--accent)]/70 via-[var(--line-strong)] to-transparent md:top-10" />
             {content.experience.map((item) => (
               <article
@@ -47,8 +46,12 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                   <div className="grid gap-6 lg:grid-cols-[13rem_1fr]">
                     <div>
                       <CompanyMark logo={item.logo} />
-                      <p className="mt-4 font-mono text-xs leading-5 text-[var(--accent-text)] sm:mt-5 sm:text-sm">{item.period}</p>
-                      <p className="mt-2 text-sm text-[var(--muted)]">{item.context}</p>
+                      <p className="mt-4 font-mono text-xs leading-5 text-[var(--accent-text)] sm:mt-5 sm:text-sm">
+                        {item.period}
+                      </p>
+                      <p className="mt-2 text-sm text-[var(--muted)]">
+                        {item.context}
+                      </p>
                     </div>
 
                     <div>
@@ -60,19 +63,21 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                           {item.client} · {item.company}
                         </p>
                       ) : null}
-                      <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7">{item.summary}</p>
+                      <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
+                        {item.summary}
+                      </p>
                       {item.image ? (
                         <div className="mt-5">
                           <BrowserFrame>
-                          <Image
-                            src={item.image}
-                            alt={item.imageAlt ?? ""}
-                            width={1600}
-                            height={1000}
-                            className="h-auto w-full"
-                            sizes="(min-width: 1024px) 640px, 100vw"
-                          />
-                        </BrowserFrame>
+                            <Image
+                              src={item.image}
+                              alt={item.imageAlt ?? ""}
+                              width={1600}
+                              height={1000}
+                              className="h-auto w-full"
+                              sizes="(min-width: 1024px) 640px, 100vw"
+                            />
+                          </BrowserFrame>
                         </div>
                       ) : null}
                       <ul className="mt-5 grid gap-2.5 text-base leading-[1.6] text-[var(--muted)]">

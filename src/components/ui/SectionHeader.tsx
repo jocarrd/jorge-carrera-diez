@@ -10,19 +10,6 @@ type SectionHeaderProps = {
   align?: "center" | "left";
 };
 
-// Alineada a la izquierda por defecto. Centrar todas las cabeceras es la
-// retórica de Apple —una idea por sección, anunciada en el centro— y era lo que
-// más quedaba de ellos después de cambiar la paleta. A la izquierda la página
-// se lee como una publicación y no como una página de producto.
-//
-// Centradas se quedan sólo los cuatro momentos de impacto, que llevan su propio
-// titular y no pasan por aquí: el hero de la portada, la banda de Snowy, la
-// cifra grande y el cierre. Eso conserva el golpe y quita la cadencia.
-//
-// El renglón superior va en la mono: un eyebrow es un metadato —dice de qué
-// sección se trata—, y en esta web el metadato vive en la monoespaciada. El
-// índice es opcional y se pasa a mano donde las secciones se leen como un
-// recorrido; en el CV no, que es un documento y no un itinerario.
 export function SectionHeader({
   indice,
   eyebrow,
@@ -32,8 +19,8 @@ export function SectionHeader({
   align = "left",
 }: SectionHeaderProps) {
   const Heading = headingTags[level];
-  const alignClassName = align === "center" ? "mx-auto text-center" : "text-left";
-
+  const alignClassName =
+    align === "center" ? "mx-auto text-center" : "text-left";
   return (
     <div className={`max-w-[46rem] ${alignClassName}`}>
       {indice || eyebrow ? (

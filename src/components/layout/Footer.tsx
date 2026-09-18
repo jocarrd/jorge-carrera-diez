@@ -8,7 +8,11 @@ export function Footer({ locale }: { locale: Locale }) {
     { label: "LinkedIn", href: site.linkedin, external: true },
     { label: "GitHub", href: site.github, external: true },
     { label: "Snowy", href: site.snowy, external: true },
-    { label: copy.footer.contact, href: `mailto:${site.email}`, external: false },
+    {
+      label: copy.footer.contact,
+      href: `mailto:${site.email}`,
+      external: false,
+    },
   ];
 
   return (

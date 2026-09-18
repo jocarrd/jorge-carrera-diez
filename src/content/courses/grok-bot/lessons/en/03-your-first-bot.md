@@ -112,11 +112,11 @@ Compare that with a live demo. The xAI team asked a new Bot to create a Google F
 
 ## Vague Bots and tasks with no finish line
 
-- **Giving a Bot a vague job like "General Helper".** It gets less guidance and its context is harder to reuse. *Fix:* give it one specific job.
-- **Sending a one-line request.** The Bot guesses the sources, the format and when to stop. *Fix:* cover the five parts of a strong task.
-- **Writing a standing rule in a message.** The rule only applies to that task. *Fix:* put rules that must always hold in the description.
-- **Saying "it doesn't work" when a result is wrong.** The Bot has nothing to fix. *Fix:* say what is wrong, what you expected and what was already right.
-- **Starting with a task that changes things.** Mistakes land in real tools. *Fix:* start with read-only tasks and drafts, as lesson 04 explains.
+- **Giving a Bot a vague job like "General Helper".** It gets less guidance and its context is harder to reuse. _Fix:_ give it one specific job.
+- **Sending a one-line request.** The Bot guesses the sources, the format and when to stop. _Fix:_ cover the five parts of a strong task.
+- **Writing a standing rule in a message.** The rule only applies to that task. _Fix:_ put rules that must always hold in the description.
+- **Saying "it doesn't work" when a result is wrong.** The Bot has nothing to fix. _Fix:_ say what is wrong, what you expected and what was already right.
+- **Starting with a task that changes things.** Mistakes land in real tools. _Fix:_ start with read-only tasks and drafts, as lesson 04 explains.
 
 ## Before you create the next Bot
 

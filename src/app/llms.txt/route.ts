@@ -10,7 +10,8 @@ const routeLabels: Record<string, string> = {
   lariojameteo: "LaRiojaMeteo — portal regional / regional portal",
   experience: "Experiencia / Experience",
   cv: "Currículum / CV",
-  contact: "Trabajemos juntos — servicios y contratación / Work with me — services and hiring",
+  contact:
+    "Trabajemos juntos — servicios y contratación / Work with me — services and hiring",
 };
 
 export const dynamic = "force-static";
@@ -30,7 +31,9 @@ function section(locale: (typeof locales)[number]) {
     "",
     ...copy.profile.focus.map((item) => `- ${item}`),
     "",
-    ...routeKeys.map((key) => `- [${routeLabels[key]}](${absolute(allPathsFor(key)[locale])})`),
+    ...routeKeys.map(
+      (key) => `- [${routeLabels[key]}](${absolute(allPathsFor(key)[locale])})`,
+    ),
   ].join("\n");
 }
 

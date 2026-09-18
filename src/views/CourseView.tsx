@@ -1,15 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { Container } from "@/components/ui";
+import { Container, Reveal, RevealGroup } from "@/components/ui";
 import { CourseStatus } from "@/components/course/CourseStatus";
-import { CourseStart, Syllabus, type ClientLesson, type ClientModule } from "@/components/course/CourseClient";
+import { GrokBotMark } from "@/components/course/GrokBotMark";
+import {
+  CourseStart,
+  Syllabus,
+  type ClientLesson,
+  type ClientModule,
+} from "@/components/course/CourseClient";
 import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 import { site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
 import { getCourse, getLesson } from "@/lib/courses/load";
-import { CourseSearch, type SearchEntry } from "@/components/course/CourseSearch";
+import {
+  CourseSearch,
+  type SearchEntry,
+} from "@/components/course/CourseSearch";
 import { glossary } from "@/content/courses/grok-bot/glossary";
 import { WhatsNew } from "@/components/course/WhatsNew";
 
@@ -20,13 +29,31 @@ function searchEntries(locale: Locale): SearchEntry[] {
     const lesson = getLesson(locale, summary.slug)!;
     const href = lessonPath(locale, summary.slug);
     const label = `${copy.lessonLabel} ${lesson.id}`;
-    entries.push({ kind: "lesson", title: lesson.title, context: label, href, text: lesson.description });
-    // Una sección también se encuentra por el tema de su lección: «soporte» debe dar las secciones de la 25.
+    entries.push({
+      kind: "lesson",
+      title: lesson.title,
+      context: label,
+      href,
+      text: lesson.description,
+    });
+
     for (const t of lesson.toc)
-      entries.push({ kind: "section", title: t.text, context: `${label} · ${lesson.title}`, href: `${href}#${t.id}`, text: `${lesson.title} ${lesson.description}` });
+      entries.push({
+        kind: "section",
+        title: t.text,
+        context: `${label} · ${lesson.title}`,
+        href: `${href}#${t.id}`,
+        text: `${lesson.title} ${lesson.description}`,
+      });
   }
   for (const g of glossary)
-    entries.push({ kind: "term", title: g.term[locale], context: copy.glossaryTitle, href: `${routePath(locale, "grokBotGlossary")}#${g.id}`, text: g.definition[locale] });
+    entries.push({
+      kind: "term",
+      title: g.term[locale],
+      context: copy.glossaryTitle,
+      href: `${routePath(locale, "grokBotGlossary")}#${g.id}`,
+      text: g.definition[locale],
+    });
   return entries;
 }
 
@@ -49,15 +76,21 @@ export function courseClientData(locale: Locale) {
 }
 
 function formatDate(locale: Locale, iso: string) {
-  return new Intl.DateTimeFormat(locale === "es" ? "es-ES" : "en-GB", { day: "numeric", month: "long", year: "numeric" }).format(
-    new Date(iso),
-  );
+  return new Intl.DateTimeFormat(locale === "es" ? "es-ES" : "en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(iso));
 }
 
 export function CourseView({ locale }: { locale: Locale }) {
-  const { copy, lessons, clientLessons, clientModules, totalMinutes } = courseClientData(locale);
+  const { copy, lessons, clientLessons, clientModules, totalMinutes } =
+    courseClientData(locale);
   const hours = Math.round((totalMinutes / 60) * 10) / 10;
-  const courseUrl = new URL(routePath(locale, "grokBotCourse"), site.url).toString();
+  const courseUrl = new URL(
+    routePath(locale, "grokBotCourse"),
+    site.url,
+  ).toString();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -68,7 +101,11 @@ export function CourseView({ locale }: { locale: Locale }) {
     inLanguage: locale,
     isAccessibleForFree: true,
     provider: { "@type": "Person", name: site.name, url: site.url },
-    hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: `PT${totalMinutes}M` },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      courseWorkload: `PT${totalMinutes}M`,
+    },
     hasPart: lessons.map((l) => ({
       "@type": "LearningResource",
       name: l.title,
@@ -83,6 +120,14 @@ export function CourseView({ locale }: { locale: Locale }) {
       <JsonLd data={jsonLd} />
       <Container>
         <header className="course-hero">
+          <p className="course-brand">
+            <GrokBotMark
+              shape="circle"
+              className="course-brand-mark"
+              title="Grok Bot"
+            />
+            <span className="course-brand-text">{copy.aboutProduct}</span>
+          </p>
           <p className="t-eyebrow">{copy.eyebrow}</p>
           <h1 className="course-title">{copy.title}</h1>
           <p className="course-subtitle">{copy.subtitle}</p>
@@ -92,22 +137,41 @@ export function CourseView({ locale }: { locale: Locale }) {
               {lessons.length} {copy.lessonsLabel}
             </li>
             <li>
-              {new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(hours)} h {copy.readingTime}
+              {new Intl.NumberFormat(locale, {
+                maximumFractionDigits: 1,
+              }).format(hours)}{" "}
+              h {copy.readingTime}
             </li>
             <li>
               {copy.updatedLabel} {formatDate(locale, grokBotCourse.updated)}
             </li>
           </ul>
-          <CourseStart courseId={grokBotCourse.id} lessons={clientLessons} copy={copy} />
+          <CourseStart
+            courseId={grokBotCourse.id}
+            lessons={clientLessons}
+            copy={copy}
+          />
           <WhatsNew
             courseId={grokBotCourse.id}
-            lessons={lessons.map((l) => ({ id: l.id, title: l.title, href: lessonPath(locale, l.slug), updated: l.updated }))}
-            labels={{ title: copy.whatsNewTitle, added: copy.whatsNewAdded, updated: copy.whatsNewUpdated }}
+            lessons={lessons.map((l) => ({
+              id: l.id,
+              title: l.title,
+              href: lessonPath(locale, l.slug),
+              updated: l.updated,
+            }))}
+            labels={{
+              title: copy.whatsNewTitle,
+              added: copy.whatsNewAdded,
+              updated: copy.whatsNewUpdated,
+            }}
           />
           <p className="course-diary-link">
-            <Link href={routePath(locale, "grokBotDiary")}>{copy.diaryLink} →</Link>
-            <Link href={routePath(locale, "grokBotGlossary")}>{copy.glossaryLink} →</Link>
-            <a href={`${routePath(locale, "grokBotCourse")}/feed.xml`}>{copy.feedLink}</a>
+            <Link href={routePath(locale, "grokBotDiary")}>
+              {copy.diaryLink} →
+            </Link>
+            <Link href={routePath(locale, "grokBotGlossary")}>
+              {copy.glossaryLink} →
+            </Link>
           </p>
         </header>
 
@@ -122,58 +186,92 @@ export function CourseView({ locale }: { locale: Locale }) {
           />
         </figure>
 
-        <section className="course-syllabus" aria-labelledby="temario">
-          <h2 id="temario" className="t-block">
-            {copy.syllabus}
-          </h2>
-          <CourseSearch
-            entries={searchEntries(locale)}
-            labels={{ placeholder: copy.searchPlaceholder, empty: copy.searchEmpty, kinds: { lesson: copy.lessonLabel, section: copy.searchSection, term: copy.searchTerm } }}
-          />
-          <Syllabus courseId={grokBotCourse.id} modules={clientModules} lessons={clientLessons} copy={copy} />
-        </section>
+        <Reveal>
+          <section className="course-syllabus" aria-labelledby="temario">
+            <h2 id="temario" className="t-block">
+              {copy.syllabus}
+            </h2>
+            <CourseSearch
+              entries={searchEntries(locale)}
+              labels={{
+                placeholder: copy.searchPlaceholder,
+                empty: copy.searchEmpty,
+                kinds: {
+                  lesson: copy.lessonLabel,
+                  section: copy.searchSection,
+                  term: copy.searchTerm,
+                },
+              }}
+            />
+            <Syllabus
+              courseId={grokBotCourse.id}
+              modules={clientModules}
+              lessons={clientLessons}
+              copy={copy}
+            />
+          </section>
+        </Reveal>
 
-        <CourseStatus locale={locale} parts={grokBotCourse.parts} copy={copy} diaryHref={routePath(locale, "grokBotDiary")} />
+        <CourseStatus
+          locale={locale}
+          parts={grokBotCourse.parts}
+          copy={copy}
+          diaryHref={routePath(locale, "grokBotDiary")}
+        />
 
         <section className="course-features" aria-labelledby="como-funciona">
-          <h2 id="como-funciona" className="t-block">
-            {copy.featuresTitle}
-          </h2>
-          <ul className="course-features-list">
+          <Reveal>
+            <h2 id="como-funciona" className="t-block">
+              {copy.featuresTitle}
+            </h2>
+          </Reveal>
+          <RevealGroup
+            as="ul"
+            itemAs="li"
+            className="course-features-list"
+            step={60}
+            delay={60}
+          >
             {copy.features.map((feature) => (
-              <li key={feature.title}>
+              <div key={feature.title}>
                 <h3>{feature.title}</h3>
                 <p>{feature.text}</p>
-              </li>
+              </div>
             ))}
-          </ul>
+          </RevealGroup>
         </section>
 
-        <section className="course-author" aria-labelledby="autor">
-          <Image
-            src={site.photo}
-            alt={site.name}
-            width={96}
-            height={96}
-            className="course-author-photo"
-          />
-          <div>
-            <h2 id="autor" className="course-author-title">
-              {copy.authorTitle}
-            </h2>
-            <p className="course-author-text">{copy.authorText}</p>
-            <p className="course-author-links">
-              <a href={site.x} target="_blank" rel="noopener noreferrer">
-                {copy.authorX} →
-              </a>
-              <Link href={routePath(locale, "home")}>{copy.authorWeb} →</Link>
-            </p>
-          </div>
-        </section>
+        <Reveal>
+          <section className="course-author" aria-labelledby="autor">
+            <Image
+              src={site.photo}
+              alt={site.name}
+              width={96}
+              height={96}
+              className="course-author-photo"
+            />
+            <div>
+              <h2 id="autor" className="course-author-title">
+                {copy.authorTitle}
+              </h2>
+              <p className="course-author-text">{copy.authorText}</p>
+              <p className="course-author-links">
+                <a href={site.x} target="_blank" rel="noopener noreferrer">
+                  {copy.authorX} →
+                </a>
+                <Link href={routePath(locale, "home")}>{copy.authorWeb} →</Link>
+              </p>
+            </div>
+          </section>
+        </Reveal>
 
         <p className="course-unofficial">
           {copy.unofficial}{" "}
-          <a href={grokBotCourse.docsUrl} target="_blank" rel="noopener noreferrer">
+          <a
+            href={grokBotCourse.docsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             docs.x.ai
           </a>
         </p>

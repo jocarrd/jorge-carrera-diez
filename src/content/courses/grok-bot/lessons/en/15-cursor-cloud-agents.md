@@ -109,11 +109,11 @@ On day 2 the game studio took this further. Lauren asked Dr. Eggbot for an engin
 
 ## Large code changes written by the Bot itself
 
-- **Asking the Bot to write large code changes itself.** It may get there, but without the tools built for code. *Fix:* have it delegate to a cloud agent and review the result.
-- **Watching the agent's every step.** You spend your time reading logs. *Fix:* ask the Bot for status, and ask for proof in the pull request.
-- **No rule for how work comes back.** A surprise 2,000-line pull request lands on you. *Fix:* state the size, the format and who may merge in the Bot's description.
-- **The agent can't reach the repository.** The launch fails before any code is written. In the livestream, a Bot had used the wrong connector for GitHub. *Fix:* check repository access before the first launch; re-authenticate GitHub or install the GitHub command-line tool.
-- **Assuming the agent sees your Bot's computer.** Delegated agents run on separate computers under Cloud Agent network settings. *Fix:* give them access through the Cloud Agent setup, not through your Bot's logins.
+- **Asking the Bot to write large code changes itself.** It may get there, but without the tools built for code. _Fix:_ have it delegate to a cloud agent and review the result.
+- **Watching the agent's every step.** You spend your time reading logs. _Fix:_ ask the Bot for status, and ask for proof in the pull request.
+- **No rule for how work comes back.** A surprise 2,000-line pull request lands on you. _Fix:_ state the size, the format and who may merge in the Bot's description.
+- **The agent can't reach the repository.** The launch fails before any code is written. In the livestream, a Bot had used the wrong connector for GitHub. _Fix:_ check repository access before the first launch; re-authenticate GitHub or install the GitHub command-line tool.
+- **Assuming the agent sees your Bot's computer.** Delegated agents run on separate computers under Cloud Agent network settings. _Fix:_ give them access through the Cloud Agent setup, not through your Bot's logins.
 
 ## Who plans and who codes
 

@@ -115,12 +115,12 @@ Nombra el resultado, la fuente, lo que entrega, a quién se lo pasa y el límite
 
 ## El General Helper y los Bots duplicados
 
-- **Un General Helper para todo.** El contexto de un trabajo se cuela en otro y las indicaciones se vuelven difusas. *Qué hacer:* separa según las cinco señales.
-- **Un Bot por tarea.** El equipo crece y ningún Bot acumula trabajo suficiente para aprender. *Qué hacer:* crea Bots para trabajos duraderos y manda las tareas como mensajes.
-- **Un equipo completo el primer día.** No sabes a qué Bot preguntar y ninguno se ha ganado su rol. *Qué hacer:* empieza con un responsable y añade especialistas cuando la necesidad se repita.
-- **Un nombre de puesto sin descripción.** "Marketing" no dice nada de fuentes, entregas ni límites. *Qué hacer:* escribe el rol en términos operativos.
-- **Separar Bots para separar accesos.** Todos los Bots usan el mismo ordenador y las mismas sesiones. *Qué hacer:* mantén las sesiones delicadas fuera del ordenador (lección 09).
-- **Esperar que un duplicado recuerde.** La copia empieza sin historial ni memoria aprendida. *Qué hacer:* explícale su nuevo ámbito antes de darle trabajo.
+- **Un General Helper para todo.** El contexto de un trabajo se cuela en otro y las indicaciones se vuelven difusas. _Qué hacer:_ separa según las cinco señales.
+- **Un Bot por tarea.** El equipo crece y ningún Bot acumula trabajo suficiente para aprender. _Qué hacer:_ crea Bots para trabajos duraderos y manda las tareas como mensajes.
+- **Un equipo completo el primer día.** No sabes a qué Bot preguntar y ninguno se ha ganado su rol. _Qué hacer:_ empieza con un responsable y añade especialistas cuando la necesidad se repita.
+- **Un nombre de puesto sin descripción.** "Marketing" no dice nada de fuentes, entregas ni límites. _Qué hacer:_ escribe el rol en términos operativos.
+- **Separar Bots para separar accesos.** Todos los Bots usan el mismo ordenador y las mismas sesiones. _Qué hacer:_ mantén las sesiones delicadas fuera del ordenador (lección 09).
+- **Esperar que un duplicado recuerde.** La copia empieza sin historial ni memoria aprendida. _Qué hacer:_ explícale su nuevo ámbito antes de darle trabajo.
 
 ## Cuándo crear otro Bot
 

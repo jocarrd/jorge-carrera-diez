@@ -105,11 +105,11 @@ envíes nada.
 
 ## Mensajes que salen sin revisar
 
-- **Dejar que un Bot envíe mensajes de prospección el primer día.** Un nombre o un dato equivocado llega a un cliente y no hay vuelta atrás. *Qué hacer:* mantén borradores y aprobación hasta haber revisado muchos buenos. Una aprobación no deshace el trabajo ya hecho.
-- **Darle al Bot que escribe como tú todas tus cuentas.** Cualquier otro Bot de tu cuenta puede usar ahora esas sesiones. *Qué hacer:* inicia sesión solo en lo que el trabajo necesita y cierra la sesión cuando termines.
-- **Automatizar el análisis de la competencia sin leer las condiciones.** El Bot incumple las normas de una web en tu nombre. *Qué hacer:* revisa antes las condiciones y deja que el Bot te pase los pasos bloqueados.
-- **Llevar los comentarios directamente a código fusionado.** Una sola queja ruidosa cambia el producto. *Qué hacer:* haz que el Bot abra una pull request y revísala como cualquier otro cambio (lección 16).
-- **Hacer preguntas sueltas a los Bots especialistas.** Su contexto se llena de ruido. *Qué hacer:* usa un Bot cajón de sastre y pasa solo lo que importa.
+- **Dejar que un Bot envíe mensajes de prospección el primer día.** Un nombre o un dato equivocado llega a un cliente y no hay vuelta atrás. _Qué hacer:_ mantén borradores y aprobación hasta haber revisado muchos buenos. Una aprobación no deshace el trabajo ya hecho.
+- **Darle al Bot que escribe como tú todas tus cuentas.** Cualquier otro Bot de tu cuenta puede usar ahora esas sesiones. _Qué hacer:_ inicia sesión solo en lo que el trabajo necesita y cierra la sesión cuando termines.
+- **Automatizar el análisis de la competencia sin leer las condiciones.** El Bot incumple las normas de una web en tu nombre. _Qué hacer:_ revisa antes las condiciones y deja que el Bot te pase los pasos bloqueados.
+- **Llevar los comentarios directamente a código fusionado.** Una sola queja ruidosa cambia el producto. _Qué hacer:_ haz que el Bot abra una pull request y revísala como cualquier otro cambio (lección 16).
+- **Hacer preguntas sueltas a los Bots especialistas.** Su contexto se llena de ruido. _Qué hacer:_ usa un Bot cajón de sastre y pasa solo lo que importa.
 
 ## Borradores siempre, envíos con aprobación
 

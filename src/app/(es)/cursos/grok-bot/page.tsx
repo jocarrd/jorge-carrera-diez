@@ -18,7 +18,12 @@ const base = createPageMetadata({
 
 export const metadata: Metadata = {
   ...base,
-  alternates: { ...base.alternates, types: { "application/rss+xml": `${allPathsFor("grokBotCourse")[locale]}/feed.xml` } },
+  alternates: {
+    ...base.alternates,
+    types: {
+      "application/rss+xml": `${allPathsFor("grokBotCourse")[locale]}/feed.xml`,
+    },
+  },
 };
 
 export default function Page() {

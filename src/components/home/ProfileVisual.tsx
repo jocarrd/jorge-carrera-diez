@@ -29,15 +29,24 @@ export function ProfileVisual({ locale }: { locale: Locale }) {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent-text)]">
               {site.name}
             </p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{copy.profile.positioning}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              {copy.profile.positioning}
+            </p>
           </div>
         </div>
 
         <div className="mt-3 hidden grid-cols-2 gap-3 sm:grid">
           {copy.profile.visualStats.map(([label, value]) => (
-            <div key={label} className="rounded-[var(--radius-inner)] lvl-3 p-4">
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
-              <p className="mt-2 font-mono text-sm text-[var(--foreground)]">{value}</p>
+            <div
+              key={label}
+              className="rounded-[var(--radius-inner)] lvl-3 p-4"
+            >
+              <p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)]">
+                {label}
+              </p>
+              <p className="mt-2 font-mono text-sm text-[var(--foreground)]">
+                {value}
+              </p>
             </div>
           ))}
         </div>

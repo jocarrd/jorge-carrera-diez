@@ -4,9 +4,13 @@ import type { Locale } from "@/i18n/config";
 import { lessonPath, routePath } from "@/i18n/routes";
 import { getCourse } from "@/lib/courses/load";
 
-const escapeXml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const escapeXml = (s: string) =>
+  s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 
-/** RSS de novedades del curso: cada día del directo que entra y cada lección con su fecha. */
 export function courseFeed(locale: Locale): Response {
   const copy = grokBotCourse.copy[locale];
   const abs = (path: string) => new URL(path, site.url).toString();
@@ -15,7 +19,9 @@ export function courseFeed(locale: Locale): Response {
       .filter((p) => p.status === "done")
       .map((p) => ({
         title: `${copy.diaryTitle} · ${copy.dayLabel} ${p.number}: ${p.topics[locale].join(" · ")}`,
-        link: abs(`${routePath(locale, "grokBotDiary")}#${locale === "es" ? "dia" : "day"}-${p.number}`),
+        link: abs(
+          `${routePath(locale, "grokBotDiary")}#${locale === "es" ? "dia" : "day"}-${p.number}`,
+        ),
         description: copy.diaryDescription,
         date: p.date,
       })),
@@ -38,10 +44,13 @@ export function courseFeed(locale: Locale): Response {
 <lastBuildDate>${new Date(grokBotCourse.updated).toUTCString()}</lastBuildDate>
 ${items
   .map(
-    (i) => `<item><title>${escapeXml(i.title)}</title><link>${i.link}</link><guid isPermaLink="false">${escapeXml(`${i.link}@${i.date}`)}</guid><pubDate>${new Date(i.date).toUTCString()}</pubDate><description>${escapeXml(i.description)}</description></item>`,
+    (i) =>
+      `<item><title>${escapeXml(i.title)}</title><link>${i.link}</link><guid isPermaLink="false">${escapeXml(`${i.link}@${i.date}`)}</guid><pubDate>${new Date(i.date).toUTCString()}</pubDate><description>${escapeXml(i.description)}</description></item>`,
   )
   .join("\n")}
 </channel>
 </rss>`;
-  return new Response(xml, { headers: { "Content-Type": "application/rss+xml; charset=utf-8" } });
+  return new Response(xml, {
+    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
+  });
 }

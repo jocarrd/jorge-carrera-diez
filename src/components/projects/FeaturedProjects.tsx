@@ -13,23 +13,12 @@ type FeaturedProjectsProps = {
   level?: HeadingLevel;
 };
 
-/* Los tres proyectos tienen página propia, así que el slug es también la clave
-   de ruta. */
 const caseRoutes: Record<string, RouteKey> = {
   snowy: "snowy",
   eqx: "eqx",
   lariojameteo: "lariojameteo",
 };
 
-// Antes eran cajas blancas con filo: la captura flotaba dentro con hueco muerto
-// alrededor y las tecnologías eran píldoras de contorno. Ahora comparten
-// gramática con las tarjetas de la portada —superficie propia con el color de
-// la marca y la captura sangrando por el borde— pero a ancho completo, porque
-// esta página sí tiene que caber las métricas y el stack.
-//
-// El lado de la captura alterna. Con tres bloques del mismo alto y la misma
-// composición, la página se lee como una lista; alternando se lee como tres
-// cosas distintas.
 export function FeaturedProjects({ locale, level = 3 }: FeaturedProjectsProps) {
   const copy = getCopy(locale);
   const projects = copy.projects.filter((project) => caseRoutes[project.slug]);
@@ -76,9 +65,7 @@ function FeatureCard({
       >
         <div className="proj-feature-body">
           <p className="proj-card-kicker">{project.label}</p>
-          <Heading className="t-block mt-3">
-            {project.name}
-          </Heading>
+          <Heading className="t-block mt-3">{project.name}</Heading>
           <p className="proj-feature-text mt-4 max-w-[46ch] text-[17px] leading-[1.5]">
             {project.description}
           </p>
@@ -101,8 +88,6 @@ function FeatureCard({
             </dl>
           ) : null}
 
-          {/* En texto separado por puntos y no en píldoras: seis contornos
-              seguidos pesaban más que las métricas, que es lo que importa. */}
           <p className="proj-feature-stack mt-7 font-mono text-[12px] leading-[1.6]">
             {project.stack.slice(0, 7).join(" · ")}
           </p>
@@ -117,9 +102,6 @@ function FeatureCard({
           </div>
         </div>
 
-        {/* La captura se sale de la tarjeta por el lado exterior: recortada
-            contra el borde parece una ventana al producto, terminada dentro
-            parece una foto pegada. */}
         <div className={`proj-feature-shot ${reversed ? "is-left" : ""}`}>
           <BrowserFrame
             label={project.url ? domainOf(project.url) : undefined}

@@ -2,16 +2,14 @@ import type { Locale } from "@/i18n/config";
 
 export type GlossaryEntry = {
   id: string;
-  // Lección donde se explica a fondo.
+
   lesson: string;
   term: Record<Locale, string>;
-  // Formas en las que aparece en el texto, sin distinguir mayúsculas.
+
   forms: Record<Locale, string[]>;
   definition: Record<Locale, string>;
 };
 
-// Los términos que un lector que empieza de cero se encuentra sin saber qué
-// son. La definición es corta a propósito: la lección enlazada lo explica.
 export const glossary: GlossaryEntry[] = [
   {
     id: "bot",
@@ -67,7 +65,10 @@ export const glossary: GlossaryEntry[] = [
     id: "auto-review",
     lesson: "04",
     term: { es: "Auto-review", en: "Auto-review" },
-    forms: { es: ["Auto-review", "Auto Review"], en: ["Auto-review", "Auto Review"] },
+    forms: {
+      es: ["Auto-review", "Auto Review"],
+      en: ["Auto-review", "Auto Review"],
+    },
     definition: {
       es: "La revisión automática que decide qué acciones de un Bot necesitan tu aprobación antes de hacerse.",
       en: "The automatic review that decides which of a Bot's actions need your approval before they happen.",
@@ -87,7 +88,10 @@ export const glossary: GlossaryEntry[] = [
     id: "cloud-agent",
     lesson: "15",
     term: { es: "Agente en la nube", en: "Cloud agent" },
-    forms: { es: ["agentes en la nube", "agente en la nube"], en: ["cloud agents", "cloud agent"] },
+    forms: {
+      es: ["agentes en la nube", "agente en la nube"],
+      en: ["cloud agents", "cloud agent"],
+    },
     definition: {
       es: "Un agente de programación de Cursor que trabaja en su propio ordenador sobre una copia del código y devuelve el cambio para revisarlo.",
       en: "A Cursor coding agent that works on its own computer on a copy of the code and returns the change for review.",
@@ -107,7 +111,10 @@ export const glossary: GlossaryEntry[] = [
     id: "pull-request",
     lesson: "15",
     term: { es: "Pull request", en: "Pull request" },
-    forms: { es: ["pull requests", "pull request"], en: ["pull requests", "pull request"] },
+    forms: {
+      es: ["pull requests", "pull request"],
+      en: ["pull requests", "pull request"],
+    },
     definition: {
       es: "Una propuesta de cambio en el código, empaquetada para que alguien la revise antes de aceptarla.",
       en: "A proposed change to the code, packaged so someone can review it before it's accepted.",

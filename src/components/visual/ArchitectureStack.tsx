@@ -9,10 +9,6 @@ type ArchitectureStackProps = {
   className?: string;
 };
 
-// La seccion se llama "Como esta hecho" y lo contaba en siete cajas iguales.
-// Una arquitectura desacoplada se entiende viendola: que el front y el engine
-// van uno encima del otro, que la cache y la base cuelgan del engine, y que
-// hay piezas que viven aparte porque su carga no se parece a la del resto.
 export function ArchitectureStack({
   layers,
   stores,
@@ -30,7 +26,9 @@ export function ArchitectureStack({
             <span className="arch-name">{layer.name}</span>
             <span className="arch-role">{layer.role}</span>
           </div>
-          {index < layers.length - 1 ? <span aria-hidden className="arch-link" /> : null}
+          {index < layers.length - 1 ? (
+            <span aria-hidden className="arch-link" />
+          ) : null}
         </div>
       ))}
 

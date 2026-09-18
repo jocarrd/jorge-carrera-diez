@@ -9,17 +9,12 @@ type ProductShotProps = {
   tone?: "light" | "dark";
   className?: string;
   crop?: boolean;
-  /** Captura tomada en un móvil real. Sin ella, en pantallas estrechas se
-   *  encoge una pantalla de escritorio y no se lee nada de lo que enseña. */
+
   srcMobile?: string;
   mobileWidth?: number;
   mobileHeight?: number;
 };
 
-// El encuadre es siempre el mismo: esquina muy redondeada, un filo claro que
-// simula el canto del cristal y la sombra proyectada debajo, no alrededor.
-// `crop` deja la captura asomando por el borde inferior en vez de terminarla,
-// que es lo que da sensación de que hay producto más allá del recorte.
 export function ProductShot({
   src,
   alt,
@@ -54,7 +49,9 @@ export function ProductShot({
             sizes="100vw"
           />
         </div>
-        <div className={`hidden ${frame} sm:block ${crop ? "sm:max-h-[560px]" : ""}`}>
+        <div
+          className={`hidden ${frame} sm:block ${crop ? "sm:max-h-[560px]" : ""}`}
+        >
           <Image
             src={src}
             alt={alt}

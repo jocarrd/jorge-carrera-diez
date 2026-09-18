@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Mark } from "@/components/brand/Mark";
 import { LocaleSwitch } from "@/components/layout/LocaleSwitch";
+import { ThemeSwitch } from "@/components/layout/ThemeSwitch";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath, sectionPath } from "@/i18n/routes";
@@ -21,9 +22,6 @@ export function Header({ locale }: { locale: Locale }) {
 
   const closeMenu = () => setIsOpen(false);
 
-  /* Se esconde al bajar y vuelve al subir. Hace falta un recorrido mínimo en
-     cada sentido: sin él, el rebote del scroll táctil la hace parpadear. Cerca
-     del principio siempre se ve, porque ahí forma parte del hero. */
   useEffect(() => {
     let lastY = window.scrollY;
     let frame = 0;
@@ -64,9 +62,6 @@ export function Header({ locale }: { locale: Locale }) {
     };
   }, []);
 
-  /* La hoja tapa la página entera: si el documento sigue desplazándose detrás,
-     al cerrarla se vuelve a otro sitio. Se compensa el ancho de la barra para
-     que el contenido no dé un salto lateral al bloquearla. */
   useEffect(() => {
     if (!isOpen) {
       return;
@@ -74,7 +69,10 @@ export function Header({ locale }: { locale: Locale }) {
 
     const { body, documentElement } = document;
     const gap = window.innerWidth - documentElement.clientWidth;
-    const previous = { overflow: body.style.overflow, paddingRight: body.style.paddingRight };
+    const previous = {
+      overflow: body.style.overflow,
+      paddingRight: body.style.paddingRight,
+    };
 
     body.style.overflow = "hidden";
     if (gap > 0) {
@@ -111,30 +109,44 @@ export function Header({ locale }: { locale: Locale }) {
           onClick={closeMenu}
         >
           <Mark className="h-7 w-7 shrink-0" />
-          <span className="text-sm font-semibold tracking-[-0.01em] text-[var(--foreground)]">Jorge Carrera Diez</span>
+          <span className="text-sm font-semibold tracking-[-0.01em] text-[var(--foreground)]">
+            Jorge Carrera Diez
+          </span>
         </Link>
-        <nav aria-label={copy.mainNavLabel} className="hidden items-center md:flex">
-          {copy.items.map((item) => {
-            const href = routePath(locale, item.key);
-            return (
-              <Link
-                key={item.key}
-                href={href}
-                aria-current={pathname === href ? "page" : undefined}
-                className="header-link"
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <nav
+          aria-label={copy.mainNavLabel}
+          className="hidden items-center md:flex"
+        >
+          {copy.items
+            .filter((item) => item.key !== "contact")
+            .map((item) => {
+              const href = routePath(locale, item.key);
+              return (
+                <Link
+                  key={item.key}
+                  href={href}
+                  aria-current={pathname === href ? "page" : undefined}
+                  className="header-link"
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
         </nav>
-        <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <LocaleSwitch locale={locale} onNavigate={closeMenu} />
+        <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1">
+            <ThemeSwitch locale={locale} />
+            <div className="hidden md:block">
+              <LocaleSwitch locale={locale} onNavigate={closeMenu} />
+            </div>
           </div>
+          <span
+            aria-hidden
+            className="hidden h-5 w-px bg-[var(--line)] md:block"
+          />
           <a
             href={`mailto:${site.email}`}
-            className="hidden min-h-9 items-center rounded-full bg-[var(--accent)] px-4 text-xs font-medium text-white transition hover:brightness-110 md:inline-flex"
+            className="hidden min-h-9 items-center rounded-full bg-[var(--cta-bg)] px-4 text-xs font-medium text-[var(--cta-text)] transition hover:brightness-110 md:inline-flex"
           >
             {copy.contact}
           </a>
@@ -146,7 +158,9 @@ export function Header({ locale }: { locale: Locale }) {
             onClick={() => setIsOpen((current) => !current)}
             className="header-menu-button md:hidden"
           >
-            <span aria-hidden>{isOpen ? copy.closeButton : copy.menuButton}</span>
+            <span aria-hidden>
+              {isOpen ? copy.closeButton : copy.menuButton}
+            </span>
             <span aria-hidden className="header-menu-dot" />
           </button>
         </div>
@@ -162,11 +176,30 @@ export function Header({ locale }: { locale: Locale }) {
         <div className="nav-sheet-inner">
           <ul className="flex flex-col">
             {copy.items.map((item, index) => (
-              <li key={item.key} className="nav-sheet-item" style={{ "--i": index } as React.CSSProperties}>
-                <Link href={routePath(locale, item.key)} onClick={closeMenu} className="nav-sheet-link">
+              <li
+                key={item.key}
+                className="nav-sheet-item"
+                style={{ "--i": index } as React.CSSProperties}
+              >
+                <Link
+                  href={routePath(locale, item.key)}
+                  onClick={closeMenu}
+                  className="nav-sheet-link"
+                >
                   <span>{item.label}</span>
-                  <svg viewBox="0 0 8 14" aria-hidden className="nav-sheet-chevron">
-                    <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    viewBox="0 0 8 14"
+                    aria-hidden
+                    className="nav-sheet-chevron"
+                  >
+                    <path
+                      d="M1 1l6 6-6 6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </Link>
               </li>
@@ -183,7 +216,11 @@ export function Header({ locale }: { locale: Locale }) {
             <ul className="mt-4 flex flex-col gap-1">
               {copy.sections.map((item) => (
                 <li key={item.anchor}>
-                  <Link href={sectionPath(locale, item.anchor)} onClick={closeMenu} className="nav-sheet-sublink">
+                  <Link
+                    href={sectionPath(locale, item.anchor)}
+                    onClick={closeMenu}
+                    className="nav-sheet-sublink"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -199,7 +236,7 @@ export function Header({ locale }: { locale: Locale }) {
             <a
               href={`mailto:${site.email}`}
               onClick={closeMenu}
-              className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-[15px] font-medium text-white transition active:brightness-110"
+              className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-[var(--cta-bg)] px-5 text-[15px] font-medium text-[var(--cta-text)] transition active:brightness-110"
             >
               {copy.writeToMe}
             </a>

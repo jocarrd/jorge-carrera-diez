@@ -30,7 +30,7 @@ Piensa en una oficina pequeña. Una persona organiza la semana. Reparte el traba
 
 La documentación oficial recomienda empezar con poco (lección 11). Da a un Bot la responsabilidad de un resultado completo y añade otro solo cuando el trabajo tenga un rol especialista estable. En un grupo, "el coordinador puede asignar trabajo, mientras el grupo conserva los traspasos en una sola conversación" ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)).
 
-Al coordinador se le suele llamar *chief of staff* (jefe de gabinete). Tiene tres tareas:
+Al coordinador se le suele llamar _chief of staff_ (jefe de gabinete). Tiene tres tareas:
 
 - Recibe tus peticiones y pasa cada una al especialista adecuado.
 - Recoge el estado del equipo y te cuenta solo lo que necesita tu atención.
@@ -110,12 +110,12 @@ Ese mismo día, antes, otra persona del equipo usó Dr. Eggbot, un Bot que crea 
 
 ## El coordinador que trabaja en vez de coordinar
 
-- **El coordinador hace el trabajo él mismo.** Llena su contexto de detalles de especialista y deja de coordinar. *Qué hacer:* escribe "delega siempre en tu equipo" en su descripción.
-- **Copiar la misma regla en cada Bot.** Las copias se van separando y no sabes cuál es la buena. *Qué hacer:* ten un solo playbook con un responsable, y haz pasar los cambios por él.
-- **Pedir a varios Bots que hagan la misma fase.** Recibes trabajo duplicado y avisos que solo hacen ruido. *Qué hacer:* nombra un responsable por fase.
-- **Meter a todo el equipo en un chat de grupo para todo.** Contestan todos los Bots, lo que genera ruido y dispara el coste (lección 12). *Qué hacer:* usa un grupo solo cuando el propio traspaso tenga que verse.
-- **Borrar un Bot en el que el coordinador todavía delega.** Nadie avisa al coordinador del borrado, así que sigue intentando mandarle trabajo. *Qué hacer:* dile al coordinador que deje de usar ese Bot y actualiza el playbook.
-- **Dejar que un Bot cree Bots sin control.** El número de Bots crece más rápido de lo que puedes revisar. *Qué hacer:* pídele que proponga los Bots nuevos y espere tu sí.
+- **El coordinador hace el trabajo él mismo.** Llena su contexto de detalles de especialista y deja de coordinar. _Qué hacer:_ escribe "delega siempre en tu equipo" en su descripción.
+- **Copiar la misma regla en cada Bot.** Las copias se van separando y no sabes cuál es la buena. _Qué hacer:_ ten un solo playbook con un responsable, y haz pasar los cambios por él.
+- **Pedir a varios Bots que hagan la misma fase.** Recibes trabajo duplicado y avisos que solo hacen ruido. _Qué hacer:_ nombra un responsable por fase.
+- **Meter a todo el equipo en un chat de grupo para todo.** Contestan todos los Bots, lo que genera ruido y dispara el coste (lección 12). _Qué hacer:_ usa un grupo solo cuando el propio traspaso tenga que verse.
+- **Borrar un Bot en el que el coordinador todavía delega.** Nadie avisa al coordinador del borrado, así que sigue intentando mandarle trabajo. _Qué hacer:_ dile al coordinador que deje de usar ese Bot y actualiza el playbook.
+- **Dejar que un Bot cree Bots sin control.** El número de Bots crece más rápido de lo que puedes revisar. _Qué hacer:_ pídele que proponga los Bots nuevos y espere tu sí.
 
 ## Un equipo que se organiza solo
 

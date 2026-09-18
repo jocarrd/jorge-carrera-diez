@@ -30,7 +30,7 @@ Think of a small office. One person runs the week. They hand out work, chase upd
 
 The official docs recommend starting small (lesson 11). Give one Bot ownership of an end-to-end outcome, and add another only when the work has a stable specialist role. In a group, "the coordinator can assign work, while the group preserves the handoffs in one conversation" ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)).
 
-A coordinator is often called a *chief of staff*. It has three duties:
+A coordinator is often called a _chief of staff_. It has three duties:
 
 - It takes your requests and passes each one to the right specialist.
 - It collects status from the team and tells you only what needs your attention.
@@ -111,12 +111,12 @@ Earlier the same day, another presenter used Dr. Eggbot, a Bot that creates Bots
 
 ## A coordinator that works instead of coordinating
 
-- **The coordinator does the work itself.** It fills its context with specialist detail and stops coordinating. *Fix:* write "always delegate to your team" in its description.
-- **Copying the same rule into every Bot.** The copies drift apart and you can't tell which is current. *Fix:* keep one playbook with one owner, and send changes through the owner.
-- **Asking several Bots to handle the same step.** You get duplicate work and noisy updates. *Fix:* name one owner for each stage.
-- **Putting the whole team in a group chat for everything.** Every Bot answers, which is noisy and expensive (lesson 12). *Fix:* use a group only when the handoff itself needs to be visible.
-- **Deleting a Bot the coordinator still delegates to.** The coordinator isn't told about the deletion and keeps trying to send it work. *Fix:* tell the coordinator to stop using that Bot, and update the playbook.
-- **Letting a Bot create Bots freely.** The roster grows faster than you can review it. *Fix:* ask it to propose new Bots and wait for your yes.
+- **The coordinator does the work itself.** It fills its context with specialist detail and stops coordinating. _Fix:_ write "always delegate to your team" in its description.
+- **Copying the same rule into every Bot.** The copies drift apart and you can't tell which is current. _Fix:_ keep one playbook with one owner, and send changes through the owner.
+- **Asking several Bots to handle the same step.** You get duplicate work and noisy updates. _Fix:_ name one owner for each stage.
+- **Putting the whole team in a group chat for everything.** Every Bot answers, which is noisy and expensive (lesson 12). _Fix:_ use a group only when the handoff itself needs to be visible.
+- **Deleting a Bot the coordinator still delegates to.** The coordinator isn't told about the deletion and keeps trying to send it work. _Fix:_ tell the coordinator to stop using that Bot, and update the playbook.
+- **Letting a Bot create Bots freely.** The roster grows faster than you can review it. _Fix:_ ask it to propose new Bots and wait for your yes.
 
 ## A team that organises itself
 

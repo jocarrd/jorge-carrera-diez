@@ -101,11 +101,11 @@ The "pipeline" is the list of possible deals, an "active sequence" is a series o
 
 ## First-day mistakes
 
-- **Opening a new Bot for every task.** Each one starts with no context and never improves. *Fix:* create one Bot per job and keep returning to it.
-- **Creating a single "General Helper" for everything.** A vague job gives the Bot less guidance and makes its saved context harder to reuse. *Fix:* give each Bot one clear job.
-- **Keeping your laptop open so the Bot can finish.** The work already runs in the cloud. *Fix:* close the lid and check the result later.
-- **Expecting only a text answer.** You miss the point of the computer. *Fix:* ask for finished work in the real tool, such as a draft saved in your email or a spreadsheet with the data.
-- **Treating memory as the source of truth.** A Bot can hold stale facts. *Fix:* for important decisions, ask it to check the current source.
+- **Opening a new Bot for every task.** Each one starts with no context and never improves. _Fix:_ create one Bot per job and keep returning to it.
+- **Creating a single "General Helper" for everything.** A vague job gives the Bot less guidance and makes its saved context harder to reuse. _Fix:_ give each Bot one clear job.
+- **Keeping your laptop open so the Bot can finish.** The work already runs in the cloud. _Fix:_ close the lid and check the result later.
+- **Expecting only a text answer.** You miss the point of the computer. _Fix:_ ask for finished work in the real tool, such as a draft saved in your email or a spreadsheet with the data.
+- **Treating memory as the source of truth.** A Bot can hold stale facts. _Fix:_ for important decisions, ask it to check the current source.
 
 ## A Bot in a few lines
 

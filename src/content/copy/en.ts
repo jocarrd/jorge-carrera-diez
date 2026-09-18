@@ -57,9 +57,7 @@ export const en: Copy = {
     positioning: "Software engineer · Product · Architecture",
     positioningLong:
       "Software engineer. Web product from architecture through to production.",
-    // "Sobre mí" repetía palabra por palabra el titular del hero; en móvil,
-    // a nueve pantallas de distancia, se leía como un error. Aquí va lo que
-    // el hero no dice: la titulación, la colegiación y desde dónde trabaja.
+
     aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
@@ -123,10 +121,26 @@ export const en: Copy = {
       label: "Delivery cycle",
       state: "running",
       steps: [
-        { title: "Architecture", caption: "the decision gets written down", tag: "ADR" },
-        { title: "Implementation", caption: "in an isolated workspace", tag: "branch" },
-        { title: "Review and tests", caption: "nothing lands unverified", tag: "tests" },
-        { title: "Build and deploy", caption: "container and cache", tag: "CI" },
+        {
+          title: "Architecture",
+          caption: "the decision gets written down",
+          tag: "ADR",
+        },
+        {
+          title: "Implementation",
+          caption: "in an isolated workspace",
+          tag: "branch",
+        },
+        {
+          title: "Review and tests",
+          caption: "nothing lands unverified",
+          tag: "tests",
+        },
+        {
+          title: "Build and deploy",
+          caption: "container and cache",
+          tag: "CI",
+        },
         { title: "In production", caption: "with real users", tag: "live" },
       ],
       foot: "snowy.es · eqx",

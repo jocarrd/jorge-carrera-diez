@@ -116,10 +116,10 @@ The Bot still reads the request, gathers the order data and drafts the reply. Th
 
 ## False safety zones
 
-- **Treating separate Bots as separate security zones.** A login for one Bot is available to all of them. *Fix:* keep sensitive sessions off the computer, or give that work its own Cursor user.
-- **Asking the Bot to get past a CAPTCHA or a blocked site.** It shouldn't, and trying can break the site's rules. *Fix:* take over and do the human step yourself.
-- **Relying on the model for rules.** The same case gets different answers on different days. *Fix:* write the rule as code or as explicit criteria.
-- **Assuming "Stop now" undoes work.** Completed actions stay done. *Fix:* put approval before the action, not after it.
+- **Treating separate Bots as separate security zones.** A login for one Bot is available to all of them. _Fix:_ keep sensitive sessions off the computer, or give that work its own Cursor user.
+- **Asking the Bot to get past a CAPTCHA or a blocked site.** It shouldn't, and trying can break the site's rules. _Fix:_ take over and do the human step yourself.
+- **Relying on the model for rules.** The same case gets different answers on different days. _Fix:_ write the rule as code or as explicit criteria.
+- **Assuming "Stop now" undoes work.** Completed actions stay done. _Fix:_ put approval before the action, not after it.
 
 ## Where not to use a Bot
 

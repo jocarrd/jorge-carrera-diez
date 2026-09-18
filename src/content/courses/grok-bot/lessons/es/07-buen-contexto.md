@@ -109,12 +109,12 @@ El resumen del Bot fue más allá de repetir. Señaló que el verdadero cuello d
 
 ## Pedir que quede más atractivo y otros mensajes vagos
 
-- **Pedir calidad con palabras vagas.** "hazlo más atractivo" no le da al Bot ningún objetivo. *Qué hacer:* di qué debe cambiar y enséñale un ejemplo.
-- **Un mensaje enorme sin comprobar.** El Bot trabaja sobre un malentendido. *Qué hacer:* pídele que lo repita antes de empezar.
-- **Repetir el mismo contexto a cada Bot.** Las versiones se van separando. *Qué hacer:* mantén un documento breve y común en `/workspace`.
-- **Un documento común que no para de crecer.** Los Bots se quedan con detalles viejos o irrelevantes. *Qué hacer:* mantenlo corto y actualízalo cuando algo cambie.
-- **Un Bot para todo.** Las respuestas pierden precisión con el tiempo. *Qué hacer:* da a cada Bot un solo trabajo y lleva los temas secundarios a otro sitio.
-- **Preguntas sueltas en un Bot de trabajo.** La curiosidad del momento se queda en su contexto junto al trabajo real. *Qué hacer:* házsela a un Bot para preguntas sueltas.
+- **Pedir calidad con palabras vagas.** "hazlo más atractivo" no le da al Bot ningún objetivo. _Qué hacer:_ di qué debe cambiar y enséñale un ejemplo.
+- **Un mensaje enorme sin comprobar.** El Bot trabaja sobre un malentendido. _Qué hacer:_ pídele que lo repita antes de empezar.
+- **Repetir el mismo contexto a cada Bot.** Las versiones se van separando. _Qué hacer:_ mantén un documento breve y común en `/workspace`.
+- **Un documento común que no para de crecer.** Los Bots se quedan con detalles viejos o irrelevantes. _Qué hacer:_ mantenlo corto y actualízalo cuando algo cambie.
+- **Un Bot para todo.** Las respuestas pierden precisión con el tiempo. _Qué hacer:_ da a cada Bot un solo trabajo y lleva los temas secundarios a otro sitio.
+- **Preguntas sueltas en un Bot de trabajo.** La curiosidad del momento se queda en su contexto junto al trabajo real. _Qué hacer:_ házsela a un Bot para preguntas sueltas.
 
 ## Una petición bien armada
 

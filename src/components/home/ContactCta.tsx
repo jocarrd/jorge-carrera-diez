@@ -11,21 +11,19 @@ export function ContactCta({ locale }: { locale: Locale }) {
     <section id="contacto" className="py-20 sm:py-28 lg:py-32">
       <Container className="text-center">
         <Reveal>
-        <h2 className="t-section mx-auto max-w-[18ch]">
-          {cta.title}
-        </h2>
-        <p className="mx-auto mt-5 max-w-[56ch] text-[1.0625rem] leading-[1.5] text-[var(--muted)] sm:text-[1.3125rem]">
-          {cta.text}
-        </p>
-        <div className="mt-8 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-center sm:justify-center sm:gap-3.5">
-          <ButtonLink href={`mailto:${site.email}`}>{cta.cta}</ButtonLink>
-          <ButtonLink href={routePath(locale, "cv")} variant="secondary">
-            {copy.pages.cv.downloadCta}
-          </ButtonLink>
-        </div>
-        <div className="mt-7 flex flex-col items-center gap-3.5">
-          <CopyEmail email={site.email} label={copy.footer.contact} />
-        </div>
+          <h2 className="t-section mx-auto max-w-[18ch]">{cta.title}</h2>
+          <p className="mx-auto mt-5 max-w-[56ch] text-[1.0625rem] leading-[1.5] text-[var(--muted)] sm:text-[1.3125rem]">
+            {cta.text}
+          </p>
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:items-center sm:justify-center sm:gap-3.5">
+            <ButtonLink href={`mailto:${site.email}`}>{cta.cta}</ButtonLink>
+            <ButtonLink href={routePath(locale, "cv")} variant="secondary">
+              {copy.pages.cv.downloadCta}
+            </ButtonLink>
+          </div>
+          <div className="mt-7 flex flex-col items-center gap-3.5">
+            <CopyEmail email={site.email} label={copy.footer.contact} />
+          </div>
         </Reveal>
       </Container>
     </section>

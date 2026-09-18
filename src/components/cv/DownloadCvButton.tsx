@@ -1,8 +1,5 @@
 import type { Locale } from "@/i18n/config";
 
-// El PDF se sirve como fichero, no por el dialogo de impresion: quien viene a
-// evaluar un perfil tiene veinte pestanas abiertas y no va a imprimir a mano.
-// Los ficheros se regeneran con `npm run cv:pdf`.
 const files: Record<Locale, string> = {
   es: "/cv.pdf",
   en: "/cv-en.pdf",
@@ -26,7 +23,9 @@ export function DownloadCvButton({
       >
         {label}
       </a>
-      <p className="mt-3 text-[14px] leading-[1.5] text-[var(--muted)]">{hint}</p>
+      <p className="mt-3 text-[14px] leading-[1.5] text-[var(--muted)]">
+        {hint}
+      </p>
     </div>
   );
 }

@@ -13,19 +13,32 @@ export function generateStaticParams() {
   return grokBotCourse.lessons.map((lesson) => ({ slug: lesson.slug[locale] }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const lesson = getLesson(locale, slug);
   if (!lesson) return {};
   return createPageMetadata({
     locale,
-    paths: { es: lessonPath("es", lesson.ref.slug.es), en: lessonPath("en", lesson.ref.slug.en) },
-    title: lesson.title.includes("Grok Bot") ? lesson.title : `${lesson.title} · Grok Bot`,
+    paths: {
+      es: lessonPath("es", lesson.ref.slug.es),
+      en: lessonPath("en", lesson.ref.slug.en),
+    },
+    title: lesson.title.includes("Grok Bot")
+      ? lesson.title
+      : `${lesson.title} · Grok Bot`,
     description: lesson.description,
   });
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   return <LessonView locale={locale} slug={slug} />;
 }

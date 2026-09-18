@@ -2,18 +2,12 @@ type TileGraphicProps = {
   kind: string;
 };
 
-// Un icono generico dice "aqui hay algo de interfaz"; un diagrama dice que la
-// respuesta llega escribiendose, que las herramientas son contratos, que de
-// varios documentos se elige uno, y que el control es un limite con un margen.
-// Son cuatro dibujos de trazo, sin relleno, para que compartan peso con el
-// resto de la pagina.
 export function TileGraphic({ kind }: TileGraphicProps) {
   return (
     <span className="tile-graphic" aria-hidden>
       <svg viewBox="0 0 120 72" fill="none">
         {kind === "skills" ? (
           <>
-            {/* Un procedimiento escrito: lineas de texto y el cursor donde sigue. */}
             <rect
               x="8"
               y="16"
@@ -51,7 +45,6 @@ export function TileGraphic({ kind }: TileGraphicProps) {
 
         {kind === "parallel" ? (
           <>
-            {/* Dos espacios separados que no se tocan, unidos por lo que comparten. */}
             <rect
               x="7"
               y="22"
@@ -76,7 +69,6 @@ export function TileGraphic({ kind }: TileGraphicProps) {
 
         {kind === "signal" ? (
           <>
-            {/* Lo medido: unas barras usan y otras no, que es lo que se poda. */}
             <rect
               x="10"
               y="40"
@@ -122,7 +114,6 @@ export function TileGraphic({ kind }: TileGraphicProps) {
 
         {kind === "gate" ? (
           <>
-            {/* Una puerta: el avance llega hasta el tope y no pasa de ahi. */}
             <rect
               x="8"
               y="30"

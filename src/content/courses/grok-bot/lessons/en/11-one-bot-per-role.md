@@ -115,12 +115,12 @@ It names the outcome, the source, the output, the handoff and the boundary. A se
 
 ## The General Helper and duplicate Bots
 
-- **One General Helper for everything.** Context from one job leaks into another and guidance gets vague. *Fix:* split along the five signals.
-- **One Bot per task.** The roster grows and no Bot keeps enough work to learn from. *Fix:* create Bots for long-lived jobs and send tasks as messages.
-- **A full team on day one.** You don't know which Bot to ask, and none has earned its role. *Fix:* start with one owner and add specialists when the need repeats.
-- **A job title with no description.** "Marketing" says nothing about sources, output or limits. *Fix:* write the role in operational terms.
-- **Splitting Bots to separate access.** Every Bot uses the same computer and sessions. *Fix:* keep sensitive logins off the computer instead (lesson 09).
-- **Expecting a duplicate to remember.** The copy starts without history or learned memory. *Fix:* give it its new scope before assigning work.
+- **One General Helper for everything.** Context from one job leaks into another and guidance gets vague. _Fix:_ split along the five signals.
+- **One Bot per task.** The roster grows and no Bot keeps enough work to learn from. _Fix:_ create Bots for long-lived jobs and send tasks as messages.
+- **A full team on day one.** You don't know which Bot to ask, and none has earned its role. _Fix:_ start with one owner and add specialists when the need repeats.
+- **A job title with no description.** "Marketing" says nothing about sources, output or limits. _Fix:_ write the role in operational terms.
+- **Splitting Bots to separate access.** Every Bot uses the same computer and sessions. _Fix:_ keep sensitive logins off the computer instead (lesson 09).
+- **Expecting a duplicate to remember.** The copy starts without history or learned memory. _Fix:_ give it its new scope before assigning work.
 
 ## When to create another Bot
 

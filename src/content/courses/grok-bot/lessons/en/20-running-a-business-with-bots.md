@@ -108,10 +108,10 @@ Changing business didn't throw away day 1's work. The Bots, the connections and 
 
 ## Ten Bots without a goal
 
-- **Creating ten Bots before choosing a goal.** Each one works hard in a different direction. *Fix:* write the company document and pick the one number first.
-- **Vague search requests** ("find a cool venue"). You get long lists you can't use. *Fix:* give the size, date, budget and exclusions, with the reason for each.
-- **Letting Bots buy, sign or send.** A domain, a deposit or an email goes out without a person deciding. *Fix:* keep **Ask first** rules on purchases and external messages.
-- **Changing plans without telling the Bots.** They keep producing work for the old idea. *Fix:* tell the coordinator Bot and ask it to update the others.
+- **Creating ten Bots before choosing a goal.** Each one works hard in a different direction. _Fix:_ write the company document and pick the one number first.
+- **Vague search requests** ("find a cool venue"). You get long lists you can't use. _Fix:_ give the size, date, budget and exclusions, with the reason for each.
+- **Letting Bots buy, sign or send.** A domain, a deposit or an email goes out without a person deciding. _Fix:_ keep **Ask first** rules on purchases and external messages.
+- **Changing plans without telling the Bots.** They keep producing work for the old idea. _Fix:_ tell the coordinator Bot and ask it to update the others.
 
 ## Bots prepare, you decide
 

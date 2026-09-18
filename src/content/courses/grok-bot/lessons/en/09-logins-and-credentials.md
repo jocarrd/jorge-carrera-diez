@@ -107,12 +107,12 @@ If a website asks you to sign in again or shows a verification check, stop and a
 
 ## Secrets pasted into chat
 
-- **Pasting a password or one-time code into the chat.** The secret lands in the history and reaches the model. *Fix:* take over the computer or use the secure secret request, and change the password if it already happened.
-- **Using separate Bots to keep a login private.** Every Bot on your account can use every session on the computer. *Fix:* keep that login off the computer, or use a separate Cursor user for that work.
-- **Giving control back too early.** The Bot resumes on a half-loaded page and hits the login again. *Fix:* wait for the signed-in page before giving control back.
-- **Signing in with your most powerful account.** The Bot can do everything that account can do. *Fix:* use an account sized to the task, or a service account with limited permissions (an account made for a program, not a person) where the system supports one.
-- **Showing secrets while recording with Teach a task.** The recording captures what is on screen (lesson 06). *Fix:* sign in before you start recording, and use a takeover for credentials.
-- **Deleting a Bot and assuming its access is gone.** Deleting a Bot does not remove browser sessions or files. *Fix:* when a project ends, pause or delete its routines (scheduled jobs, lesson 10) and sign out of its websites on the computer. Then uninstall its plugins, revoke them in each service, and remove sensitive files from `/workspace`, the shared folder on the computer.
+- **Pasting a password or one-time code into the chat.** The secret lands in the history and reaches the model. _Fix:_ take over the computer or use the secure secret request, and change the password if it already happened.
+- **Using separate Bots to keep a login private.** Every Bot on your account can use every session on the computer. _Fix:_ keep that login off the computer, or use a separate Cursor user for that work.
+- **Giving control back too early.** The Bot resumes on a half-loaded page and hits the login again. _Fix:_ wait for the signed-in page before giving control back.
+- **Signing in with your most powerful account.** The Bot can do everything that account can do. _Fix:_ use an account sized to the task, or a service account with limited permissions (an account made for a program, not a person) where the system supports one.
+- **Showing secrets while recording with Teach a task.** The recording captures what is on screen (lesson 06). _Fix:_ sign in before you start recording, and use a takeover for credentials.
+- **Deleting a Bot and assuming its access is gone.** Deleting a Bot does not remove browser sessions or files. _Fix:_ when a project ends, pause or delete its routines (scheduled jobs, lesson 10) and sign out of its websites on the computer. Then uninstall its plugins, revoke them in each service, and remove sensitive files from `/workspace`, the shared folder on the computer.
 
 ## You type the password, the Bot uses the session
 

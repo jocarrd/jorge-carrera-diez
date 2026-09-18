@@ -15,15 +15,13 @@ export function ArchitectureField() {
       return;
     }
 
-    // Una escena WebGL con antialias, 64 nodos y bucle de render se creaba en
-    // todos los teléfonos: solo se miraba prefers-reduced-motion. Es lo que más
-    // memoria consume de la página y encaja con las secciones que se quedaban en
-    // blanco al hacer scroll. En pantalla pequeña no se monta.
     if (window.matchMedia("(max-width: 767px), (pointer: coarse)").matches) {
       return;
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
     camera.position.set(0, 0, 7);
@@ -148,7 +146,10 @@ export function ArchitectureField() {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
       <div ref={mountRef} className="absolute inset-0 opacity-80" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_43%,transparent_0%,rgba(2,4,10,0.45)_45%,rgba(2,4,10,0.92)_82%)]" />
     </div>

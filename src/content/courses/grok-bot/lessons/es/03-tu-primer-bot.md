@@ -112,11 +112,11 @@ Compáralo con una demostración en directo. El equipo de xAI pidió a un Bot nu
 
 ## Bots vagos y tareas sin final
 
-- **Darle a un Bot un trabajo vago como "General Helper".** Recibe menos orientación y su contexto cuesta más reutilizarlo. *Qué hacer:* dale un trabajo concreto.
-- **Enviar una petición de una línea.** El Bot adivina las fuentes, el formato y cuándo parar. *Qué hacer:* cubre las cinco partes de una buena tarea.
-- **Escribir una regla permanente en un mensaje.** Solo vale para esa tarea. *Qué hacer:* pon en la descripción las reglas que deben cumplirse siempre.
-- **Decir "no funciona" cuando un resultado está mal.** El Bot no sabe qué arreglar. *Qué hacer:* explica qué falla, qué esperabas y qué estaba bien.
-- **Empezar con una tarea que cambia cosas.** Los errores llegan a herramientas reales. *Qué hacer:* empieza con tareas de solo lectura y borradores, como verás en la lección 04.
+- **Darle a un Bot un trabajo vago como "General Helper".** Recibe menos orientación y su contexto cuesta más reutilizarlo. _Qué hacer:_ dale un trabajo concreto.
+- **Enviar una petición de una línea.** El Bot adivina las fuentes, el formato y cuándo parar. _Qué hacer:_ cubre las cinco partes de una buena tarea.
+- **Escribir una regla permanente en un mensaje.** Solo vale para esa tarea. _Qué hacer:_ pon en la descripción las reglas que deben cumplirse siempre.
+- **Decir "no funciona" cuando un resultado está mal.** El Bot no sabe qué arreglar. _Qué hacer:_ explica qué falla, qué esperabas y qué estaba bien.
+- **Empezar con una tarea que cambia cosas.** Los errores llegan a herramientas reales. _Qué hacer:_ empieza con tareas de solo lectura y borradores, como verás en la lección 04.
 
 ## Antes de crear el siguiente Bot
 

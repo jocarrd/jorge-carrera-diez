@@ -99,12 +99,12 @@ En el estudio del día 2 estas automatizaciones sostenían el trabajo de tres pe
 
 ## Disparadores que escuchan todo
 
-- **Un disparador que escucha todo.** Recibes ruido, gastas uso y el Bot actúa sobre información equivocada. *Qué hacer:* que coincida con un canal y una frase o un evento concretos.
-- **Dejar que las automatizaciones fusionen cualquier cosa.** Un cambio malo llega a producción a las tres de la madrugada. *Qué hacer:* fusión automática solo para cambios de bajo riesgo con comprobaciones en verde y pruebas, y reglas **Ask first** para producción.
-- **No escalar.** El Bot sigue reintentando mientras la web está caída. *Qué hacer:* pon un tiempo límite y di a quién hay que avisar.
-- **Decir "urgente" sin definirlo.** El agente toma atajos. *Qué hacer:* define una vez qué significa urgente y guárdalo en el playbook.
-- **Dejar activas routines muy frecuentes.** Una revisión cada cinco minutos sigue gastando cuando la incidencia ya pasó. *Qué hacer:* páusala o bórrala cuando termine el trabajo.
-- **Saltarte la prueba.** Tu primera ejecución real se convierte en la prueba. *Qué hacer:* usa **Test run** con datos seguros y mira si se detuvo donde tenía que pedir aprobación.
+- **Un disparador que escucha todo.** Recibes ruido, gastas uso y el Bot actúa sobre información equivocada. _Qué hacer:_ que coincida con un canal y una frase o un evento concretos.
+- **Dejar que las automatizaciones fusionen cualquier cosa.** Un cambio malo llega a producción a las tres de la madrugada. _Qué hacer:_ fusión automática solo para cambios de bajo riesgo con comprobaciones en verde y pruebas, y reglas **Ask first** para producción.
+- **No escalar.** El Bot sigue reintentando mientras la web está caída. _Qué hacer:_ pon un tiempo límite y di a quién hay que avisar.
+- **Decir "urgente" sin definirlo.** El agente toma atajos. _Qué hacer:_ define una vez qué significa urgente y guárdalo en el playbook.
+- **Dejar activas routines muy frecuentes.** Una revisión cada cinco minutos sigue gastando cuando la incidencia ya pasó. _Qué hacer:_ páusala o bórrala cuando termine el trabajo.
+- **Saltarte la prueba.** Tu primera ejecución real se convierte en la prueba. _Qué hacer:_ usa **Test run** con datos seguros y mira si se detuvo donde tenía que pedir aprobación.
 
 ## Disparadores acotados y probados
 

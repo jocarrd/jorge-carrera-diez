@@ -25,7 +25,9 @@ export function EqxView({ locale }: { locale: Locale }) {
         facts={copy.facts}
         actions={
           <>
-            <ButtonLink href={organizations.eqx.url}>{copy.ctaPrimary}</ButtonLink>
+            <ButtonLink href={organizations.eqx.url}>
+              {copy.ctaPrimary}
+            </ButtonLink>
             <ButtonLink href={`mailto:${site.email}`} variant="secondary">
               {copy.ctaSecondary}
             </ButtonLink>
@@ -47,8 +49,6 @@ export function EqxView({ locale }: { locale: Locale }) {
               />
             </BrowserFrame>
           </Reveal>
-          {/* La tabla es una tira ancha y baja: recortarla a 16/10 la dejaba
-              con bandas. Va a su proporción, sobre blanco, que es su fondo. */}
           <Reveal delay={80}>
             <div className="mt-5">
               <BrowserFrame label={domainOf(site.eqx)}>
@@ -67,9 +67,12 @@ export function EqxView({ locale }: { locale: Locale }) {
       </section>
 
       <Section>
-        <SectionHeader indice="01" eyebrow={copy.client.eyebrow} title={copy.client.title} text={copy.client.text} />
-        {/* Sin caja: era el unico caso que seguia con rejilla de contornos
-            mientras el resto de la web usa ficha con filete. */}
+        <SectionHeader
+          indice="01"
+          eyebrow={copy.client.eyebrow}
+          title={copy.client.title}
+          text={copy.client.text}
+        />
         <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
           {copy.client.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 70}>
@@ -82,8 +85,6 @@ export function EqxView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      {/* La escala va antes de las cifras sueltas: primero se entiende que el
-          indice es una cadena de medicion y luego los numeros significan algo. */}
       <Section>
         <SectionHeader
           indice="02"
@@ -95,28 +96,37 @@ export function EqxView({ locale }: { locale: Locale }) {
           <div className="ladder-stage">
             <ScaleLadder rungs={copy.scale.rungs} />
           </div>
-          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">{copy.scale.note}</p>
+          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">
+            {copy.scale.note}
+          </p>
         </div>
       </Section>
 
       <Section className="section-band">
-        <SectionHeader indice="03" eyebrow={copy.index.eyebrow} title={copy.index.title} text={copy.index.text} />
+        <SectionHeader
+          indice="03"
+          eyebrow={copy.index.eyebrow}
+          title={copy.index.title}
+          text={copy.index.text}
+        />
         <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-4">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
         </div>
-        {/* La jerarquía se lee de arriba abajo: un nivel por fila, con el número
-            del nivel a la izquierda haciendo de columna guía. */}
         <ol className="mt-10 divide-y divide-[var(--line)] border-t border-[var(--line)]">
           {copy.index.levels.map((level, index) => (
             <li key={level.level}>
               <Reveal delay={index * 60}>
                 <div className="grid gap-2 py-6 sm:grid-cols-[8rem_1fr] sm:gap-8 sm:py-7">
-                  <p className="font-mono text-sm text-[var(--accent-text)]">{level.level}</p>
+                  <p className="font-mono text-sm text-[var(--accent-text)]">
+                    {level.level}
+                  </p>
                   <div>
                     <h3 className="t-item">{level.title}</h3>
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">{level.text}</p>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+                      {level.text}
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -126,7 +136,12 @@ export function EqxView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section>
-        <SectionHeader indice="04" eyebrow={copy.work.eyebrow} title={copy.work.title} text={copy.work.text} />
+        <SectionHeader
+          indice="04"
+          eyebrow={copy.work.eyebrow}
+          title={copy.work.title}
+          text={copy.work.text}
+        />
         <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
           {copy.work.items.map((item, index) => (
             <Reveal key={item.title} delay={index * 60}>
@@ -138,8 +153,6 @@ export function EqxView({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        {/* Los grupos de tecnologia vivian en una seccion propia al final;
-            aqui van con el trabajo que describen. */}
         <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
           {copy.stack.groups.map((group) => (
             <div key={group.label}>
@@ -166,16 +179,20 @@ export function EqxView({ locale }: { locale: Locale }) {
           <div>
             <ul className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
               {copy.vcr.items.map((item) => (
-                <li key={item} className="py-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
+                <li
+                  key={item}
+                  className="py-4 text-base leading-relaxed text-[var(--muted)] sm:leading-7"
+                >
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm leading-6 text-[var(--muted)]">{copy.vcr.note}</p>
+            <p className="mt-6 text-sm leading-6 text-[var(--muted)]">
+              {copy.vcr.note}
+            </p>
           </div>
         </div>
       </Section>
-
 
       <CaseCta locale={locale} />
     </main>

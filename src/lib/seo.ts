@@ -16,7 +16,12 @@ function absolute(path: string) {
   return new URL(path, site.url).toString();
 }
 
-export function createMetadata({ locale, route, title, description }: SeoInput): Metadata {
+export function createMetadata({
+  locale,
+  route,
+  title,
+  description,
+}: SeoInput): Metadata {
   const copy = getCopy(locale);
   const url = absolute(routePath(locale, route));
   const resolvedTitle = title ? `${title} | ${site.name}` : copy.meta.siteTitle;
@@ -54,7 +59,6 @@ export function createMetadata({ locale, route, title, description }: SeoInput):
   };
 }
 
-/** Metadatos de una página que no es una ruta fija: las lecciones de un curso. */
 export function createPageMetadata({
   locale,
   paths,
@@ -91,7 +95,9 @@ export function createPageMetadata({
       siteName: site.name,
       locale: openGraphLocale[locale],
       type,
-      ...(image ? { images: [{ url: absolute(image), width: 1600, height: 900 }] } : {}),
+      ...(image
+        ? { images: [{ url: absolute(image), width: 1600, height: 900 }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
@@ -122,11 +128,13 @@ export function personJsonLd(locale: Locale) {
       addressRegion: "La Rioja",
       addressCountry: "ES",
     },
-    worksFor: [organizations.capgemini, organizations.eqx].map((organization) => ({
-      "@type": "Organization",
-      name: organization.name,
-      url: organization.url,
-    })),
+    worksFor: [organizations.capgemini, organizations.eqx].map(
+      (organization) => ({
+        "@type": "Organization",
+        name: organization.name,
+        url: organization.url,
+      }),
+    ),
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: site.university,
@@ -137,7 +145,13 @@ export function personJsonLd(locale: Locale) {
       name: site.college,
       url: site.collegeUrl,
     },
-    sameAs: [site.linkedin, site.github, site.malt, site.snowy, site.lariojameteo],
+    sameAs: [
+      site.linkedin,
+      site.github,
+      site.malt,
+      site.snowy,
+      site.lariojameteo,
+    ],
     knowsLanguage: [
       { "@type": "Language", name: "Spanish", alternateName: "es" },
       { "@type": "Language", name: "English", alternateName: "en" },
@@ -158,8 +172,6 @@ export function personJsonLd(locale: Locale) {
   };
 }
 
-/** Servicios que se pueden contratar. Sin esto un agente lee el perfil como una
- *  biografía y no como alguien a quien se le puede proponer un proyecto. */
 function freelanceOffers(locale: Locale) {
   const es = locale === "es";
 
@@ -181,7 +193,9 @@ function freelanceOffers(locale: Locale) {
         : "Applications with React, Next.js, TypeScript and NestJS, from frontend to backend and infrastructure.",
     },
     {
-      name: es ? "Arquitectura frontend y acompañamiento técnico" : "Frontend architecture and technical advisory",
+      name: es
+        ? "Arquitectura frontend y acompañamiento técnico"
+        : "Frontend architecture and technical advisory",
       description: es
         ? "Decisiones de arquitectura, estándares de desarrollo y revisión de código para equipos que ya están construyendo."
         : "Architecture decisions, development standards and code review for teams already building.",
@@ -195,13 +209,14 @@ function freelanceOffers(locale: Locale) {
       name: service.name,
       description: service.description,
       provider: { "@id": `${site.url}/#person` },
-      areaServed: { "@type": "Place", name: es ? "Remoto, horario europeo" : "Remote, European hours" },
+      areaServed: {
+        "@type": "Place",
+        name: es ? "Remoto, horario europeo" : "Remote, European hours",
+      },
     },
   }));
 }
 
-/** La página de contacto es donde se cierra el trato: se declara como tal y se
- *  repiten los servicios para que web y datos estructurados digan lo mismo. */
 export function contactPageJsonLd(locale: Locale) {
   const copy = getCopy(locale);
 

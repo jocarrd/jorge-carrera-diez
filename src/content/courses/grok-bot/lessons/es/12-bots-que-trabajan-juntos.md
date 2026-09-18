@@ -110,12 +110,12 @@ Para el primer mensaje de un grupo, el ejemplo de la documentación nombra un re
 
 ## Traspasos sin responsable
 
-- **Copiar tú las respuestas de un Bot a otro.** Haces de mensajero y el contexto se pierde por el camino. *Qué hacer:* pide al Bot responsable que escriba al otro.
-- **No decir qué hacer si el otro Bot no puede responder.** El Bot improvisa, como Ethan con los datos de ejemplo. *Qué hacer:* indica si debe esperar, preguntarte o parar.
-- **Dos responsables para un mismo paso.** Los dos Bots hacen el trabajo y recibes avisos duplicados. *Qué hacer:* nombra un único responsable por fase.
-- **Un chat de grupo para todo.** Todos los Bots responden y el uso se dispara. *Qué hacer:* usa traspasos directos y deja los grupos para cuando el traspaso tenga que verse.
-- **Publicar una imagen en un traspaso al grupo.** El traspaso de un Bot al grupo es solo de texto. *Qué hacer:* pide al Bot que envíe la imagen directamente a su compañero.
-- **Responder con una reacción cuando cambia la instrucción.** Una reacción solo confirma. *Qué hacer:* responde por escrito al mensaje concreto.
+- **Copiar tú las respuestas de un Bot a otro.** Haces de mensajero y el contexto se pierde por el camino. _Qué hacer:_ pide al Bot responsable que escriba al otro.
+- **No decir qué hacer si el otro Bot no puede responder.** El Bot improvisa, como Ethan con los datos de ejemplo. _Qué hacer:_ indica si debe esperar, preguntarte o parar.
+- **Dos responsables para un mismo paso.** Los dos Bots hacen el trabajo y recibes avisos duplicados. _Qué hacer:_ nombra un único responsable por fase.
+- **Un chat de grupo para todo.** Todos los Bots responden y el uso se dispara. _Qué hacer:_ usa traspasos directos y deja los grupos para cuando el traspaso tenga que verse.
+- **Publicar una imagen en un traspaso al grupo.** El traspaso de un Bot al grupo es solo de texto. _Qué hacer:_ pide al Bot que envíe la imagen directamente a su compañero.
+- **Responder con una reacción cuando cambia la instrucción.** Una reacción solo confirma. _Qué hacer:_ responde por escrito al mensaje concreto.
 
 ## Cada traspaso con un responsable
 

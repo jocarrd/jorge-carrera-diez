@@ -16,7 +16,7 @@ updated: "2026-09-16"
 
 Has pasado semanas afinando un Bot. Su descripción es precisa, sus skills funcionan y sus routines se ejecutan a su hora. Una compañera te pide "lo mismo". Montarlo desde cero le llevaría las mismas semanas.
 
-Compartirlo lo resuelve, pero abre dos preguntas. ¿Qué sale con el enlace y qué se queda contigo? Y cuando alguien te manda un Bot a *ti*, ¿cómo sabes que hace lo que promete antes de que toque tus cuentas?
+Compartirlo lo resuelve, pero abre dos preguntas. ¿Qué sale con el enlace y qué se queda contigo? Y cuando alguien te manda un Bot a _ti_, ¿cómo sabes que hace lo que promete antes de que toque tus cuentas?
 
 ## Pasar la receta, no la cocina
 
@@ -26,12 +26,12 @@ Compartir un Bot se parece a pasarle a alguien una copia de tu receta. Recibe la
 
 Cada Bot tiene un enlace para compartirlo. La documentación oficial precisa qué expone ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)):
 
-| Va con el enlace | Se queda contigo |
-| -- | -- |
-| Identidad | Historial de la conversación |
-| Descripción | Sesiones iniciadas |
-| Skills | Tu ordenador y sus archivos |
-| Routines | |
+| Va con el enlace | Se queda contigo             |
+| ---------------- | ---------------------------- |
+| Identidad        | Historial de la conversación |
+| Descripción      | Sesiones iniciadas           |
+| Skills           | Tu ordenador y sus archivos  |
+| Routines         |                              |
 
 Quien lo recibe abre una vista previa en x.ai y elige **Add to Grok Bot** (añadir a Grok Bot). Necesita la app de Grok Bot para terminar. Al añadirlo se crea una **copia** en su cuenta. A partir de ahí es su Bot. Aprende de esa persona, trabaja en su ordenador y sus routines gastan su uso.
 
@@ -108,11 +108,11 @@ Para los Bots del marketplace, el consejo del equipo de xAI coincide con los pas
 
 ## Enlaces con datos de clientes
 
-- **Compartir tal cual un Bot que usas con clientes.** Sus skills y routines pueden mostrar nombres de clientes y enlaces internos a cualquiera que tenga la URL. *Qué hacer:* revísalo, cambia lo sensible por marcadores y después compártelo.
-- **Esperar que la copia sepa lo que sabe tu Bot.** El historial no viaja, así que la copia empieza sin tus conversaciones. *Qué hacer:* antes de compartir, pon lo importante en la descripción o en una skill.
-- **Ejecutar enseguida las routines de un Bot compartido.** Una routine puede actuar sobre tus cuentas a las tres de la madrugada. *Qué hacer:* pausa las routines, prueba una tarea y después actívalas.
-- **Usar un Bot compartido como barrera de seguridad.** Trabaja en el mismo ordenador que tus otros Bots, con las mismas sesiones. *Qué hacer:* dale solo el acceso que necesite la tarea y cierra las sesiones que ya no use.
-- **Tratar un duplicado como un Bot nuevo.** Conserva las routines y el ámbito del original. *Qué hacer:* cámbiale el nombre y el ámbito, y revisa antes las routines copiadas.
+- **Compartir tal cual un Bot que usas con clientes.** Sus skills y routines pueden mostrar nombres de clientes y enlaces internos a cualquiera que tenga la URL. _Qué hacer:_ revísalo, cambia lo sensible por marcadores y después compártelo.
+- **Esperar que la copia sepa lo que sabe tu Bot.** El historial no viaja, así que la copia empieza sin tus conversaciones. _Qué hacer:_ antes de compartir, pon lo importante en la descripción o en una skill.
+- **Ejecutar enseguida las routines de un Bot compartido.** Una routine puede actuar sobre tus cuentas a las tres de la madrugada. _Qué hacer:_ pausa las routines, prueba una tarea y después actívalas.
+- **Usar un Bot compartido como barrera de seguridad.** Trabaja en el mismo ordenador que tus otros Bots, con las mismas sesiones. _Qué hacer:_ dale solo el acceso que necesite la tarea y cierra las sesiones que ya no use.
+- **Tratar un duplicado como un Bot nuevo.** Conserva las routines y el ámbito del original. _Qué hacer:_ cámbiale el nombre y el ámbito, y revisa antes las routines copiadas.
 
 ## Qué viaja en un enlace compartido
 

@@ -108,11 +108,11 @@ Pixel delivered options A and B. The audience picked A, and the design went to E
 
 ## Charts without the query
 
-- **Trusting a chart without the query.** A wrong join (the way two tables are combined) or date filter looks just as convincing as a right one. *Fix:* ask for the query and the source link with every number, and spot-check the first answers.
-- **Letting your hypothesis steer the analysis.** The Bot may confirm what you said instead of what the data shows. *Fix:* ask the data Bot to check your reading, as Ashley did with the seat-selection guess.
-- **Scheduling a report with no missing-data rule.** The routine posts old numbers as if they were current. *Fix:* state what the Bot should do when the source is empty or stale.
-- **Skipping the spec review.** Designs and prototypes pile up on top of a wrong requirement. *Fix:* review the P0 list before any design work starts.
-- **Asking the data Bot to change things.** A dashboard, alert or production setting gets modified during an "investigation". *Fix:* keep the data Bot read-only and put changes behind approval.
+- **Trusting a chart without the query.** A wrong join (the way two tables are combined) or date filter looks just as convincing as a right one. _Fix:_ ask for the query and the source link with every number, and spot-check the first answers.
+- **Letting your hypothesis steer the analysis.** The Bot may confirm what you said instead of what the data shows. _Fix:_ ask the data Bot to check your reading, as Ashley did with the seat-selection guess.
+- **Scheduling a report with no missing-data rule.** The routine posts old numbers as if they were current. _Fix:_ state what the Bot should do when the source is empty or stale.
+- **Skipping the spec review.** Designs and prototypes pile up on top of a wrong requirement. _Fix:_ review the P0 list before any design work starts.
+- **Asking the data Bot to change things.** A dashboard, alert or production setting gets modified during an "investigation". _Fix:_ keep the data Bot read-only and put changes behind approval.
 
 ## Every stage ends in something you can check
 

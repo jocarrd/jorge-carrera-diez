@@ -110,10 +110,10 @@ Cambiar de negocio no tiró el trabajo del día 1. Los Bots, las conexiones y la
 
 ## Diez Bots sin objetivo
 
-- **Crear diez Bots antes de elegir un objetivo.** Cada uno trabaja mucho en una dirección distinta. *Qué hacer:* escribe primero el documento de empresa y elige la cifra que quieres mover.
-- **Hacer búsquedas vagas** ("búscame un local chulo"). Recibes listas largas que no sirven. *Qué hacer:* da el tamaño, la fecha, el presupuesto y las exclusiones, con el motivo de cada una.
-- **Dejar que los Bots compren, firmen o envíen.** Un dominio, una señal o un correo salen sin que decida una persona. *Qué hacer:* mantén reglas **Ask first** para compras y mensajes externos.
-- **Cambiar de plan sin avisar a los Bots.** Siguen produciendo trabajo para la idea anterior. *Qué hacer:* avisa al Bot coordinador y pídele que actualice a los demás.
+- **Crear diez Bots antes de elegir un objetivo.** Cada uno trabaja mucho en una dirección distinta. _Qué hacer:_ escribe primero el documento de empresa y elige la cifra que quieres mover.
+- **Hacer búsquedas vagas** ("búscame un local chulo"). Recibes listas largas que no sirven. _Qué hacer:_ da el tamaño, la fecha, el presupuesto y las exclusiones, con el motivo de cada una.
+- **Dejar que los Bots compren, firmen o envíen.** Un dominio, una señal o un correo salen sin que decida una persona. _Qué hacer:_ mantén reglas **Ask first** para compras y mensajes externos.
+- **Cambiar de plan sin avisar a los Bots.** Siguen produciendo trabajo para la idea anterior. _Qué hacer:_ avisa al Bot coordinador y pídele que actualice a los demás.
 
 ## Los Bots preparan, tú decides
 

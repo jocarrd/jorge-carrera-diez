@@ -36,11 +36,11 @@ Este curso no da precios. Dependen de tu plan y cambian con el tiempo.
 
 **Routines que se ejecutan demasiado a menudo.** Cada ejecución es un trabajo completo del Bot, aunque no haya cambiado nada. Las cuentas suben rápido:
 
-| Horario | Ejecuciones al día | Ejecuciones a la semana |
-| -- | -- | -- |
-| Cada 15 minutos | 96 | 672 |
-| Cada hora | 24 | 168 |
-| De lunes a viernes a las 8:00 | 1 en días laborables | 5 |
+| Horario                       | Ejecuciones al día   | Ejecuciones a la semana |
+| ----------------------------- | -------------------- | ----------------------- |
+| Cada 15 minutos               | 96                   | 672                     |
+| Cada hora                     | 24                   | 168                     |
+| De lunes a viernes a las 8:00 | 1 en días laborables | 5                       |
 
 Antes de elegir un horario, pregúntate cada cuánto puede cambiar de verdad la respuesta.
 
@@ -108,11 +108,11 @@ Olvida todo lo relacionado con cómo generamos tu foto de perfil.
 
 ## Routines cada pocos minutos por si acaso
 
-- **Programar cada 5 o 15 minutos "por si acaso".** Cientos de ejecuciones al día que casi nunca encuentran nada. *Qué hacer:* usa el horario más lento que funcione, o un disparador por evento.
-- **Disparadores por evento demasiado amplios.** Cada mensaje de un canal concurrido lanza una ejecución. *Qué hacer:* filtra por un canal, una frase o un enlace concretos.
-- **Dejar que un Bot recorra la misma web cada día.** Es lento, se rompe con facilidad y sale caro. *Qué hacer:* usa un connector, o haz que el Bot encuentre una API que la web permita usar.
-- **Un solo Bot para todo.** Su contexto crece y la calidad baja. *Qué hacer:* separa por roles y ten un Bot cajón de sastre para preguntas sueltas.
-- **Coordinar a través de un chat de grupo grande.** Los Bots se responden entre sí y repiten trabajo. *Qué hacer:* usa traspasos directos con un único responsable por etapa.
+- **Programar cada 5 o 15 minutos "por si acaso".** Cientos de ejecuciones al día que casi nunca encuentran nada. _Qué hacer:_ usa el horario más lento que funcione, o un disparador por evento.
+- **Disparadores por evento demasiado amplios.** Cada mensaje de un canal concurrido lanza una ejecución. _Qué hacer:_ filtra por un canal, una frase o un enlace concretos.
+- **Dejar que un Bot recorra la misma web cada día.** Es lento, se rompe con facilidad y sale caro. _Qué hacer:_ usa un connector, o haz que el Bot encuentre una API que la web permita usar.
+- **Un solo Bot para todo.** Su contexto crece y la calidad baja. _Qué hacer:_ separa por roles y ten un Bot cajón de sastre para preguntas sueltas.
+- **Coordinar a través de un chat de grupo grande.** Los Bots se responden entre sí y repiten trabajo. _Qué hacer:_ usa traspasos directos con un único responsable por etapa.
 
 ## Menos ejecuciones, mejor enfocadas
 

@@ -1,36 +1,29 @@
-/**
- * La marca. Un cuadrado redondeado como las tarjetas del sitio, las iniciales en
- * la voz monoespaciada que ya usan las fechas y los datos, y un nodo conectado
- * que remite al campo de arquitectura del fondo. El círculo con iniciales y
- * brillo anterior no decía nada que no dijera cualquier otra marca personal.
- */
-export function Mark({ className = "" }: { className?: string }) {
+type MarkProps = {
+  className?: string;
+  tone?: "duo" | "solid";
+};
+
+export function Mark({ className = "", tone = "duo" }: MarkProps) {
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden focusable="false">
-      <rect x="1" y="1" width="38" height="38" rx="11" fill="#061420" />
-      <rect
-        x="1"
-        y="1"
-        width="38"
-        height="38"
-        rx="11"
-        fill="none"
-        stroke="#67e8f9"
-        strokeOpacity="0.28"
+    <svg
+      viewBox="0 0 40 40"
+      className={className}
+      aria-hidden
+      focusable="false"
+      fill="none"
+    >
+      <path
+        d="M31.4 13.4a13.4 13.4 0 1 0 0 13.2"
+        stroke="var(--foreground)"
+        strokeWidth="4.6"
+        strokeLinecap="round"
       />
-      <text
-        x="20"
-        y="25.5"
-        textAnchor="middle"
-        fill="#f8fafc"
-        fontSize="15"
-        fontWeight="500"
-        letterSpacing="0.5"
-        style={{ fontFamily: "var(--font-mono-geist), ui-monospace, monospace" }}
-      >
-        jc
-      </text>
-      <circle cx="31.5" cy="9.5" r="2.4" fill="#67e8f9" />
+      <path
+        d="M22.6 12.6v9.2a4.7 4.7 0 0 1-8.8 2.3"
+        stroke={tone === "duo" ? "var(--accent)" : "var(--foreground)"}
+        strokeWidth={tone === "duo" ? 5 : 4.6}
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

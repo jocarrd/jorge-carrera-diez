@@ -49,7 +49,7 @@ export type SkillGroup = {
 
 export type GalleryShot = {
   image: string;
-  /** La misma superficie capturada en un móvil real. */
+
   imageMobile: string;
   title: string;
   caption: string;
@@ -76,14 +76,13 @@ export type Metric = {
 
 export type MediaMention = {
   outlet: string;
-  /** Portada del artículo, capturada de la publicación y verificada. */
+
   cover?: string;
   date: string;
   title: string;
   url?: string;
 };
 
-/** Texto con enlaces embebidos: un segmento con `href` se renderiza como <a>. */
 export type RichSegment = {
   text: string;
   href?: string;
@@ -106,7 +105,6 @@ export type PageMeta = {
   description: string;
 };
 
-/** Dato de cabecera de un caso: rol, periodo, ámbito, cliente. */
 export type CaseFact = {
   label: string;
   value: string;
@@ -117,7 +115,6 @@ export type CaseStackGroup = {
   items: string[];
 };
 
-/** Lo que toda página de caso comparte por encima de su contenido propio. */
 export type CaseIntro = {
   eyebrow: string;
   heading: string;
@@ -338,7 +335,6 @@ export type Copy = {
           openDataTag: string;
           openDataTitle: string;
           proof: {
-            /** El medio, que va como rótulo sobre el titular. */
             source: string;
             title: string;
             text: string;

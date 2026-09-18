@@ -110,11 +110,11 @@ Read the replies to my last three posts. Group the suggestions into themes, coun
 
 ## Clicking where a connector existed
 
-- **Clicking through a site that has a connector.** The work is slower and breaks more often. *Fix:* check the **Marketplace** first.
-- **Signing in with the wrong account.** The Bot sees the wrong data or none at all. *Fix:* reconnect with the intended account.
-- **Leaving every tool enabled.** The Bot has write access it never needed. *Fix:* turn off unused tools under **Yours**.
-- **Keeping old connections forever.** Access stays open long after the project ends. *Fix:* review installed plugins regularly and revoke what you don't use.
-- **A plugin that won't connect.** Tasks fail at the first call. In the livestream, a Bot couldn't reach the team's GitHub repositories (the folders where code projects live) apparently because the wrong connector had been used. *Fix:* reopen it in **Settings → Plugins** and sign in again with the right account, or remove it and reconnect. For GitHub, the team also suggested installing GitHub's command-line tool (a program you run by typing commands) on the Bot's computer. {{live 5:06:25 "A Bot that couldn't reach GitHub"}}
+- **Clicking through a site that has a connector.** The work is slower and breaks more often. _Fix:_ check the **Marketplace** first.
+- **Signing in with the wrong account.** The Bot sees the wrong data or none at all. _Fix:_ reconnect with the intended account.
+- **Leaving every tool enabled.** The Bot has write access it never needed. _Fix:_ turn off unused tools under **Yours**.
+- **Keeping old connections forever.** Access stays open long after the project ends. _Fix:_ review installed plugins regularly and revoke what you don't use.
+- **A plugin that won't connect.** Tasks fail at the first call. In the livestream, a Bot couldn't reach the team's GitHub repositories (the folders where code projects live) apparently because the wrong connector had been used. _Fix:_ reopen it in **Settings → Plugins** and sign in again with the right account, or remove it and reconnect. For GitHub, the team also suggested installing GitHub's command-line tool (a program you run by typing commands) on the Bot's computer. {{live 5:06:25 "A Bot that couldn't reach GitHub"}}
 
 ## Connectors first, clicks second
 

@@ -6,12 +6,6 @@ type RichTextProps = {
   linkClassName?: string;
 };
 
-// Sobre gris, el azul solo no llega a 3:1 contra el texto que lo rodea, así que
-// el enlace se marcaría únicamente por color: el subrayado permanente es el que
-// lo hace distinguible, y el color queda como refuerzo.
-// Un subrayado al 35 % no cuenta como distinción: axe lo mide y el enlace
-// queda separado del texto que lo rodea solo por color, a 1,07:1. Sólido y a
-// dos píxeles, se ve sin depender de distinguir el tono.
 const defaultLinkClassName =
   "text-[var(--accent-text)] underline decoration-[var(--accent-text)] decoration-2 underline-offset-4 transition-colors hover:decoration-[var(--foreground)]";
 

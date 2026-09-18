@@ -55,9 +55,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      {/* La infografia va antes de las superficies: primero se entiende el
-          problema —dieciseis fuentes que no coinciden— y luego se enseña que
-          se construyo encima. Al reves, las capturas no significan nada. */}
       <Section>
         <SectionHeader
           indice="01"
@@ -71,7 +68,9 @@ export function SnowyView({ locale }: { locale: Locale }) {
             spreadLabel={copy.convergence.spreadLabel}
             answerLabel={copy.convergence.answerLabel}
           />
-          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">{copy.convergence.note}</p>
+          <p className="mt-6 text-[14px] leading-[1.5] text-[var(--muted)]">
+            {copy.convergence.note}
+          </p>
         </div>
       </Section>
 
@@ -82,9 +81,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.product.title}
           text={copy.product.text}
         />
-        {/* En carril y en oscuro: seis tarjetas blancas en rejilla iban justo
-            antes de cinco superficies claras con color, y no se distinguian
-            unas de otras. */}
         <div className="mt-12">
           <CapabilityRail items={copy.features} label={copy.product.title} />
         </div>
@@ -126,9 +122,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.build.title}
           text={copy.build.text}
         />
-        {/* El diagrama primero: dice como esta hecho. Las areas de trabajo van
-            debajo como ficha, sin contorno: siete cajas iguales competian entre
-            si y dejaban dos huecos vacios al final de la rejilla. */}
         <div className="mt-10">
           <ArchitectureStack
             layers={copy.architecture.layers}
@@ -139,9 +132,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           />
         </div>
 
-        {/* Los grupos de tecnologia vivian en una seccion propia al final que
-            repetia lo que ya dice el diagrama. Aqui, debajo, es donde
-            significan algo. */}
         <div className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
           {copy.stack.groups.map((group) => (
             <div key={group.label}>
@@ -174,21 +164,18 @@ export function SnowyView({ locale }: { locale: Locale }) {
             text={copy.seo.text}
             align="left"
           />
-          {/* Siete etiquetas grises no decian quien es cada fuente ni que
-              aporta. Ahora cada una lleva su sigla, su nombre y el dato que
-              pone, y el color viene del dominio: tiempo, agua, sismo o aire. */}
           <div>
             <h2 className="t-card">{copy.seo.sourcesTitle}</h2>
             <SourceGrid sources={copy.seo.sources} className="mt-6" />
-            <p className="mt-6 text-base leading-[1.6] text-[var(--muted)]">{copy.seo.sourcesText}</p>
+            <p className="mt-6 text-base leading-[1.6] text-[var(--muted)]">
+              {copy.seo.sourcesText}
+            </p>
           </div>
         </div>
       </Section>
 
       <Section className="section-band">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          {/* Centrado dentro de una rejilla de dos columnas: el titular quedaba
-              centrado y las tarjetas a la izquierda. */}
           <SectionHeader
             indice="05"
             eyebrow={copy.b2b.eyebrow}
@@ -197,8 +184,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
             align="left"
           />
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-1 lg:gap-y-7">
-            {/* Cada linea enlaza a su pagina viva: sin eso son tres
-                afirmaciones que nadie puede comprobar. */}
             {copy.b2b.lines.map((line) => (
               <div key={line.title} className="area">
                 <h2 className="area-title">{line.title}</h2>
@@ -222,9 +207,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      {/* Estos dos venían de la portada, donde eran la tercera y la cuarta
-          pantalla seguidas del mismo producto. Aquí, dentro del caso, llegan
-          cuando alguien ya ha decidido que quiere el detalle. */}
       <RadarScrub locale={locale} />
       <StickyShowcase locale={locale} />
 
@@ -235,9 +217,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           title={copy.press.title}
           text={copy.press.text}
         />
-        {/* Las fotos son la prueba: una entrevista de radio y un periódico en
-            la mano. Antes iban de miniatura encima de una caja blanca. Ahora
-            son la tarjeta entera y el texto va sobre un velo, como una portada. */}
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {copy.press.proof.map((item) => {
             const contenido = (
@@ -278,10 +257,12 @@ export function SnowyView({ locale }: { locale: Locale }) {
             );
           })}
         </div>
-        {/* La ficha del portal nacional de datos abiertos es la unica prueba
-            institucional: va sola y con su captura, no mezclada entre recortes
-            de prensa. */}
-        <a href={site.openData} target="_blank" rel="noreferrer" className="opendata mt-5">
+        <a
+          href={site.openData}
+          target="_blank"
+          rel="noreferrer"
+          className="opendata mt-5"
+        >
           <Image
             src="/images/prensa/datos-gob.webp"
             alt={copy.press.openDataTitle}
@@ -297,8 +278,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           </div>
         </a>
 
-        {/* Siete recortes en dos columnas serian una pared: en carril se
-            recorren, y cada uno ensena el titular tal como se publico. */}
         <div className="mt-12">
           <Rail label={copy.press.title}>
             {copy.mediaMentions.map((mention) => (
@@ -327,8 +306,6 @@ export function SnowyView({ locale }: { locale: Locale }) {
           </Rail>
         </div>
       </Section>
-
-
 
       <CaseCta locale={locale} />
     </main>

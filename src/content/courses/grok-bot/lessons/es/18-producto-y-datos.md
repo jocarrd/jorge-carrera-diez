@@ -110,11 +110,11 @@ Pixel entregó dos opciones, A y B. El público eligió la A y el diseño pasó 
 
 ## Gráficos sin consulta
 
-- **Fiarte de un gráfico sin ver la consulta.** Un cruce de tablas o un filtro de fechas mal puesto convence igual que uno bueno. *Qué hacer:* pide la consulta y el enlace a la fuente con cada cifra, y comprueba las primeras respuestas.
-- **Dejar que tu hipótesis dirija el análisis.** El Bot puede confirmar lo que dijiste en vez de lo que dicen los datos. *Qué hacer:* pide al Bot de datos que contraste tu lectura, como hizo Ashley con lo de los asientos.
-- **Programar un informe sin regla para datos que faltan.** La routine publica cifras antiguas como si fueran actuales. *Qué hacer:* indica qué debe hacer el Bot si la fuente está vacía o desactualizada.
-- **Saltarte la revisión del PRD.** Diseños y prototipos se acumulan sobre un requisito equivocado. *Qué hacer:* revisa la lista de P0 antes de que empiece el diseño.
-- **Pedir cambios al Bot de datos.** Un panel, una alerta o un ajuste de producción cambia durante una "investigación". *Qué hacer:* mantén al Bot de datos en solo lectura y deja los cambios detrás de una aprobación.
+- **Fiarte de un gráfico sin ver la consulta.** Un cruce de tablas o un filtro de fechas mal puesto convence igual que uno bueno. _Qué hacer:_ pide la consulta y el enlace a la fuente con cada cifra, y comprueba las primeras respuestas.
+- **Dejar que tu hipótesis dirija el análisis.** El Bot puede confirmar lo que dijiste en vez de lo que dicen los datos. _Qué hacer:_ pide al Bot de datos que contraste tu lectura, como hizo Ashley con lo de los asientos.
+- **Programar un informe sin regla para datos que faltan.** La routine publica cifras antiguas como si fueran actuales. _Qué hacer:_ indica qué debe hacer el Bot si la fuente está vacía o desactualizada.
+- **Saltarte la revisión del PRD.** Diseños y prototipos se acumulan sobre un requisito equivocado. _Qué hacer:_ revisa la lista de P0 antes de que empiece el diseño.
+- **Pedir cambios al Bot de datos.** Un panel, una alerta o un ajuste de producción cambia durante una "investigación". _Qué hacer:_ mantén al Bot de datos en solo lectura y deja los cambios detrás de una aprobación.
 
 ## Cada etapa termina en algo comprobable
 

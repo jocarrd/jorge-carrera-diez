@@ -11,20 +11,18 @@ type CaseHeroProps = {
   actions?: ReactNode;
 };
 
-/* Cabecera común a las tres páginas de caso. Antes cada una abría a su manera
-   —una con dos botones, otra con uno y ninguna decía en qué papel entro— y
-   leídas seguidas no parecían el mismo sitio. La fila de datos es lo que
-   contesta de un vistazo lo que un cliente pregunta: qué eres aquí, cuándo, y
-   sobre qué. */
-export function CaseHero({ eyebrow, heading, lead, detail, facts, actions }: CaseHeroProps) {
+export function CaseHero({
+  eyebrow,
+  heading,
+  lead,
+  detail,
+  facts,
+  actions,
+}: CaseHeroProps) {
   return (
     <Section className="pb-8 sm:pb-12 lg:pb-14">
-      <p className="t-eyebrow">
-        {eyebrow}
-      </p>
-      <h1 className="t-section mt-4 max-w-4xl">
-        {heading}
-      </h1>
+      <p className="t-eyebrow">{eyebrow}</p>
+      <h1 className="t-section mt-4 max-w-4xl">{heading}</h1>
       <p className="mt-5 max-w-2xl text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:mt-6 sm:text-[1.3125rem] sm:leading-[1.5]">
         {lead}
       </p>
@@ -34,7 +32,9 @@ export function CaseHero({ eyebrow, heading, lead, detail, facts, actions }: Cas
         </p>
       ) : null}
 
-      {actions ? <div className="mt-9 flex flex-col gap-3 sm:flex-row">{actions}</div> : null}
+      {actions ? (
+        <div className="mt-9 flex flex-col gap-3 sm:flex-row">{actions}</div>
+      ) : null}
 
       <Reveal>
         <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--line)] pt-7 sm:mt-12 sm:grid-cols-4 sm:gap-x-8">

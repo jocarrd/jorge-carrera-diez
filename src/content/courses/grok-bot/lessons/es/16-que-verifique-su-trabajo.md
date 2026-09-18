@@ -47,10 +47,10 @@ Para trabajo con consecuencias, la documentación sugiere además pedir al Bot q
 
 Para el código, conviértelo en norma del equipo: **cada pull request llega con pruebas**. Una pull request, como viste en la lección 15, es una propuesta de cambio de código pendiente de revisión. La prueba adecuada depende del cambio:
 
-| Cambio | Prueba |
-| -- | -- |
-| Interfaz (lo que ve el usuario) | Capturas, o un vídeo del recorrido |
-| Rendimiento (velocidad) | Métricas de antes y después |
+| Cambio                                                   | Prueba                                                                    |
+| -------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Interfaz (lo que ve el usuario)                          | Capturas, o un vídeo del recorrido                                        |
+| Rendimiento (velocidad)                                  | Métricas de antes y después                                               |
 | Backend o lógica (lo que funciona detrás de la pantalla) | Un vídeo o un registro de la funcionalidad funcionando de principio a fin |
 
 Con esa norma revisas **pruebas** en lugar de **trazas**. Una traza es el registro paso a paso de lo que hizo un agente. Leerla te dice cuánto se esforzó. La prueba te dice si el cambio funciona.
@@ -113,11 +113,11 @@ En el juego del día 2 la verificación cambió según la fase. Con el prototipo
 
 ## Pruebas que faltan
 
-- **Aceptar un "hecho" sin pruebas.** Los errores te llegan más tarde a ti o a tus usuarios. *Qué hacer:* convierte las pruebas en una norma fija de la descripción o del playbook, en lugar de algo que pides cuando te acuerdas.
-- **Leer la traza del agente para juzgar el resultado.** Pasas una hora y sigues sin saber si funciona. *Qué hacer:* mira primero las capturas, las métricas y el vídeo.
-- **Dejar que cada Bot improvise sus comprobaciones.** Los resultados no se pueden comparar y se gastan tokens. *Qué hacer:* crea una skill de verificación con un script estándar y un mapa de funcionalidades.
-- **Esperar que los agentes añadan vídeo sin pedírselo.** En el directo no lo hicieron hasta que la skill lo indicó. *Qué hacer:* nombra cada tipo de prueba que quieres.
-- **Decirle al Bot solo cuándo falla.** Aprende menos. *Qué hacer:* dile también cuándo la prueba era justo lo que querías.
+- **Aceptar un "hecho" sin pruebas.** Los errores te llegan más tarde a ti o a tus usuarios. _Qué hacer:_ convierte las pruebas en una norma fija de la descripción o del playbook, en lugar de algo que pides cuando te acuerdas.
+- **Leer la traza del agente para juzgar el resultado.** Pasas una hora y sigues sin saber si funciona. _Qué hacer:_ mira primero las capturas, las métricas y el vídeo.
+- **Dejar que cada Bot improvise sus comprobaciones.** Los resultados no se pueden comparar y se gastan tokens. _Qué hacer:_ crea una skill de verificación con un script estándar y un mapa de funcionalidades.
+- **Esperar que los agentes añadan vídeo sin pedírselo.** En el directo no lo hicieron hasta que la skill lo indicó. _Qué hacer:_ nombra cada tipo de prueba que quieres.
+- **Decirle al Bot solo cuándo falla.** Aprende menos. _Qué hacer:_ dile también cuándo la prueba era justo lo que querías.
 
 ## Pruebas que puedes revisar
 

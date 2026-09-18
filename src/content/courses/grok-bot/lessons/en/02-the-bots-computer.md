@@ -110,11 +110,11 @@ Open Google Forms and create a form called "Team lunch". Add two questions: a mu
 
 ## Passwords in chat and other slips
 
-- **Pasting a password or one-time code into the chat.** It ends up in the conversation. *Fix:* take over the computer and type it there, or use the secure secret request when a supported connection offers one. It hides the value from the conversation.
-- **Using separate Bots to keep data apart.** All Bots share files and logins. *Fix:* do not place anything on the computer that any of your Bots should not use.
-- **Asking the Bot to get around a CAPTCHA or blocked login.** Sites expect a human for those steps. *Fix:* tell it to pause and notify you instead.
-- **Forcing browser work when a connector exists.** Clicking through a site is often less reliable. *Fix:* check **Settings → Plugins** first.
-- **Leaving the only copy of a result in a temporary folder.** It can be lost during recovery. *Fix:* ask the Bot to save it in `/workspace` or attach it to the conversation.
+- **Pasting a password or one-time code into the chat.** It ends up in the conversation. _Fix:_ take over the computer and type it there, or use the secure secret request when a supported connection offers one. It hides the value from the conversation.
+- **Using separate Bots to keep data apart.** All Bots share files and logins. _Fix:_ do not place anything on the computer that any of your Bots should not use.
+- **Asking the Bot to get around a CAPTCHA or blocked login.** Sites expect a human for those steps. _Fix:_ tell it to pause and notify you instead.
+- **Forcing browser work when a connector exists.** Clicking through a site is often less reliable. _Fix:_ check **Settings → Plugins** first.
+- **Leaving the only copy of a result in a temporary folder.** It can be lost during recovery. _Fix:_ ask the Bot to save it in `/workspace` or attach it to the conversation.
 
 ## One computer for all, one screen per Bot
 

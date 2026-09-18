@@ -58,12 +58,6 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      {/* El recorrido va antes de qué se hace: sin saber que el sitio llevaba
-          doce años publicando, "rendimiento y SEO" no significa lo mismo. */}
-      {/* Faltaba lo mas sustancial del encargo: el rediseño y el plugin propio
-          que trae los datos de Snowy. La pagina decia que el trabajo "no es
-          funcionalidad nueva", y con un plugin a medida de por medio eso se
-          quedaba corto. */}
       <Section className="section-band">
         <SectionHeader
           indice="02"
@@ -81,13 +75,13 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        {/* El portal se lee casi siempre en el movil, asi que se ensena en el
-            movil: portada, una seccion y la categoria donde se ven los datos
-            que trae el plugin. */}
         <div className="mt-14">
           <Rail label={copy.product.title}>
             {copy.product.shots.map((shot) => (
-              <figure key={shot.image} className="rail-item w-[62vw] max-w-[16rem]">
+              <figure
+                key={shot.image}
+                className="rail-item w-[62vw] max-w-[16rem]"
+              >
                 <DeviceFrame src={shot.image} alt={shot.alt} />
                 <figcaption className="mt-5 text-base font-semibold leading-[1.4] text-[var(--muted)]">
                   {shot.title}
@@ -150,7 +144,11 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <CaseStack title={copy.stack.title} text={copy.stack.text} groups={copy.stack.groups} />
+      <CaseStack
+        title={copy.stack.title}
+        text={copy.stack.text}
+        groups={copy.stack.groups}
+      />
 
       <CaseCta locale={locale} />
     </main>

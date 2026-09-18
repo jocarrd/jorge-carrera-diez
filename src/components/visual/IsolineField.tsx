@@ -2,23 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-/**
- * Campo de isolíneas, como una carta de presión.
- *
- * El fondo anterior —rejilla de puntos, anillos, degradados— es el fondo por
- * defecto de cualquier portfolio oscuro: no dice nada de quien lo usa. Esto sí:
- * Snowy son dieciséis modelos meteorológicos y un radar, y EQx es un índice que
- * mide países. El lenguaje de la casa es el de los instrumentos, no el de "tech".
- *
- * El campo escalar es una suma de gaussianas que derivan despacio; las curvas
- * salen por marching squares sobre esa malla. Una de cada cuatro va más marcada,
- * como las isohipsas maestras de una carta real.
- */
 const CELL = 22;
 const LEVELS = 16;
 const FRAME_MS = 1000 / 30;
 
-type Blob = { x: number; y: number; vx: number; vy: number; r: number; a: number };
+type Blob = {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  r: number;
+  a: number;
+};
 
 export function IsolineField({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -30,15 +25,9 @@ export function IsolineField({ className = "" }: { className?: string }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Medido con la CPU limitada 10x —un móvil de gama media— el bucle bajaba a
-    // 16 fps y la página se siente colgada. En teléfono y en máquinas cortas se
-    // pinta un fotograma y se acaba: sigue siendo una carta de presión y cuesta
-    // cero. Es el mismo patrón que usa la portada del EQx con su malla.
-    // En teléfono no se dibuja nada. Pintar un solo fotograma parecía barato,
-    // pero el bitmap del héroe a densidad 2 se queda en memoria y añade una capa
-    // que el compositor arrastra en cada scroll. Con la página trabándose al
-    // entrar y secciones quedándose en blanco al bajar, el efecto no compensa.
-    const small = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    const small = window.matchMedia(
+      "(max-width: 767px), (pointer: coarse)",
+    ).matches;
     if (small) return;
 
     const reduced =
@@ -62,13 +51,11 @@ export function IsolineField({ className = "" }: { className?: string }) {
       cols = Math.ceil(width / CELL) + 1;
       rows = Math.ceil(height / CELL) + 1;
 
-      // Radios pequeños: el gradiente es más pronunciado y las curvas salen
-      // juntas, como en una carta real. Con radios grandes salían cuatro arcos.
       const base = Math.min(width, height);
       blobs = Array.from({ length: 9 }, (_, i) => ({
         x: width * (0.08 + 0.11 * i),
         y: height * (0.18 + 0.62 * ((i * 0.37) % 1)),
-        vx: (i % 2 ? 1 : -1) * (0.06 + i * 0.010),
+        vx: (i % 2 ? 1 : -1) * (0.06 + i * 0.01),
         vy: (i % 3 ? -1 : 1) * (0.045 + i * 0.007),
         r: base * (0.11 + (i % 4) * 0.045),
         a: i % 2 ? 1 : -1,
@@ -91,7 +78,8 @@ export function IsolineField({ className = "" }: { className?: string }) {
       const grid: number[][] = [];
       for (let r = 0; r <= rows; r += 1) {
         const row: number[] = [];
-        for (let c = 0; c <= cols; c += 1) row.push(valueAt(c * CELL, r * CELL));
+        for (let c = 0; c <= cols; c += 1)
+          row.push(valueAt(c * CELL, r * CELL));
         grid.push(row);
       }
 
@@ -118,7 +106,10 @@ export function IsolineField({ className = "" }: { className?: string }) {
             const br = grid[r + 1][c + 1];
             const bl = grid[r + 1][c];
             const idx =
-              (tl > t ? 8 : 0) | (tr > t ? 4 : 0) | (br > t ? 2 : 0) | (bl > t ? 1 : 0);
+              (tl > t ? 8 : 0) |
+              (tr > t ? 4 : 0) |
+              (br > t ? 2 : 0) |
+              (bl > t ? 1 : 0);
             if (idx === 0 || idx === 15) continue;
 
             const ip = (a: number, b: number) => (t - a) / (b - a || 1e-6);
@@ -127,26 +118,56 @@ export function IsolineField({ className = "" }: { className?: string }) {
             const bottom = { x: x + CELL * ip(bl, br), y: y + CELL };
             const left = { x, y: y + CELL * ip(tl, bl) };
 
-            const seg = (a: { x: number; y: number }, b: { x: number; y: number }) => {
+            const seg = (
+              a: { x: number; y: number },
+              b: { x: number; y: number },
+            ) => {
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(b.x, b.y);
             };
 
             switch (idx) {
-              case 1: case 14: seg(left, bottom); break;
-              case 2: case 13: seg(bottom, right); break;
-              case 3: case 12: seg(left, right); break;
-              case 4: case 11: seg(top, right); break;
-              case 6: case 9: seg(top, bottom); break;
-              case 7: case 8: seg(left, top); break;
-              case 5: seg(left, top); seg(bottom, right); break;
-              case 10: seg(left, bottom); seg(top, right); break;
-              default: break;
+              case 1:
+              case 14:
+                seg(left, bottom);
+                break;
+              case 2:
+              case 13:
+                seg(bottom, right);
+                break;
+              case 3:
+              case 12:
+                seg(left, right);
+                break;
+              case 4:
+              case 11:
+                seg(top, right);
+                break;
+              case 6:
+              case 9:
+                seg(top, bottom);
+                break;
+              case 7:
+              case 8:
+                seg(left, top);
+                break;
+              case 5:
+                seg(left, top);
+                seg(bottom, right);
+                break;
+              case 10:
+                seg(left, bottom);
+                seg(top, right);
+                break;
+              default:
+                break;
             }
           }
         }
 
-        ctx.strokeStyle = master ? "rgba(103, 232, 249, 0.30)" : "rgba(103, 232, 249, 0.13)";
+        ctx.strokeStyle = master
+          ? "rgba(103, 232, 249, 0.30)"
+          : "rgba(103, 232, 249, 0.13)";
         ctx.lineWidth = master ? 1.1 : 0.75;
         ctx.stroke();
       }
@@ -154,7 +175,6 @@ export function IsolineField({ className = "" }: { className?: string }) {
 
     let last = 0;
     const tick = (now: number) => {
-      // 30 fps bastan para una deriva lenta y ahorran la mitad del trabajo.
       if (now - last < FRAME_MS) {
         frame = requestAnimationFrame(tick);
         return;

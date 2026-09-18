@@ -57,18 +57,13 @@ export const es: Copy = {
     positioning: "Ingeniero de software · Producto · Arquitectura",
     positioningLong:
       "Ingeniero de software. Producto web, de la arquitectura a producción.",
-    // "Sobre mí" repetía palabra por palabra el titular del hero; en móvil,
-    // a nueve pantallas de distancia, se leía como un error. Aquí va lo que
-    // el hero no dice: la titulación, la colegiación y desde dónde trabaja.
+
     aboutTitle: "Ingeniero informático colegiado, desde Logroño.",
-    // Tres líneas que dicen el oficio, no quién lo hace: antes eran "lo diseño,
-    // lo construyo, lo mantengo" y sonaban a currículum recitado en voz alta.
-    // Lo que hay que entender en dos segundos es el alcance del trabajo.
+
     tagline: ["Producto web,", "de la arquitectura", "a producción."],
     taglineSub:
       "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
-    // Sin esto, quien entra no sabe si molesta escribiendo. Es la frase que
-    // convierte una página de portfolio en una a la que se puede responder.
+
     availability: "Abierto a nuevas oportunidades",
     clientsLabel: "Dónde he trabajado",
     capabilities: [
@@ -116,17 +111,31 @@ export const es: Copy = {
     ctaPrimary: "Ver experiencia",
     ctaSecondary: "CV",
     ctaContact: "Hablemos",
-    // El titular dice "de la arquitectura a producción": esto es esa frase
-    // convertida en objeto. Cada paso es una puerta real del trabajo, no una
-    // metáfora, y el último no se enciende hasta que hay algo desplegado.
+
     cycle: {
       label: "Ciclo de entrega",
       state: "en curso",
       steps: [
-        { title: "Arquitectura", caption: "la decisión queda escrita", tag: "ADR" },
-        { title: "Implementación", caption: "en un espacio aislado", tag: "rama" },
-        { title: "Revisión y pruebas", caption: "nada entra sin verificar", tag: "tests" },
-        { title: "Build y despliegue", caption: "contenedor y caché", tag: "CI" },
+        {
+          title: "Arquitectura",
+          caption: "la decisión queda escrita",
+          tag: "ADR",
+        },
+        {
+          title: "Implementación",
+          caption: "en un espacio aislado",
+          tag: "rama",
+        },
+        {
+          title: "Revisión y pruebas",
+          caption: "nada entra sin verificar",
+          tag: "tests",
+        },
+        {
+          title: "Build y despliegue",
+          caption: "contenedor y caché",
+          tag: "CI",
+        },
         { title: "En producción", caption: "con usuarios reales", tag: "live" },
       ],
       foot: "snowy.es · eqx",
@@ -134,10 +143,6 @@ export const es: Copy = {
     },
   },
   currentRole: {
-    // Eran tres tarjetas al mismo nivel —VidaCaixa, EQx, Snowy— y tres cosas
-    // al mismo nivel se leen como dispersión, no como alcance. Ahora hay un
-    // solo trabajo contado en tres partes, y lo demás baja a una línea que lo
-    // respalda.
     homeTitle: "Tech Lead en banca y seguros.",
     homeText:
       "Llevo la arquitectura frontend de un producto con requisitos de seguridad, trazabilidad y mantenimiento a años vista. El trabajo es decidir cómo se construye y que el equipo pueda sostenerlo.",

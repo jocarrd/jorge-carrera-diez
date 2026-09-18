@@ -118,10 +118,10 @@ El Bot sigue leyendo la solicitud, reuniendo los datos del pedido y redactando l
 
 ## Falsas zonas de seguridad
 
-- **Tratar Bots distintos como zonas de seguridad separadas.** Un inicio de sesión de un Bot está disponible para todos. *Qué hacer:* no dejes sesiones delicadas en el ordenador, o dale a ese trabajo su propio usuario de Cursor.
-- **Pedirle al Bot que supere un CAPTCHA o una web bloqueada.** No debe hacerlo, e intentarlo puede incumplir las normas de la web. *Qué hacer:* toma el control y haz tú el paso humano.
-- **Confiar al modelo las reglas.** El mismo caso recibe respuestas distintas en días distintos. *Qué hacer:* escribe la regla como código o como criterios explícitos.
-- **Dar por hecho que "Stop now" deshace el trabajo.** Lo que ya está hecho sigue hecho. *Qué hacer:* pon la aprobación antes de la acción y no después.
+- **Tratar Bots distintos como zonas de seguridad separadas.** Un inicio de sesión de un Bot está disponible para todos. _Qué hacer:_ no dejes sesiones delicadas en el ordenador, o dale a ese trabajo su propio usuario de Cursor.
+- **Pedirle al Bot que supere un CAPTCHA o una web bloqueada.** No debe hacerlo, e intentarlo puede incumplir las normas de la web. _Qué hacer:_ toma el control y haz tú el paso humano.
+- **Confiar al modelo las reglas.** El mismo caso recibe respuestas distintas en días distintos. _Qué hacer:_ escribe la regla como código o como criterios explícitos.
+- **Dar por hecho que "Stop now" deshace el trabajo.** Lo que ya está hecho sigue hecho. _Qué hacer:_ pon la aprobación antes de la acción y no después.
 
 ## Dónde no usar un Bot
 

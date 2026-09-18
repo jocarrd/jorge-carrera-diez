@@ -16,7 +16,7 @@ updated: "2026-09-16"
 
 You spent weeks shaping a Bot. Its description is precise, its skills work and its routines run on time. A colleague asks for "the same thing". Rebuilding it from scratch would take them the same weeks.
 
-Sharing solves that, but it raises two questions. What goes out with the link, and what stays with you? And when someone sends *you* a Bot, how do you know it does what it claims before it touches your accounts?
+Sharing solves that, but it raises two questions. What goes out with the link, and what stays with you? And when someone sends _you_ a Bot, how do you know it does what it claims before it touches your accounts?
 
 ## Share the recipe, not the kitchen
 
@@ -26,12 +26,12 @@ Sharing a Bot is like handing someone a copy of your recipe. They get the instru
 
 Every Bot has a share link. The official docs are precise about what it exposes ([Create and manage Bots](https://docs.x.ai/grok-bot/bots)):
 
-| Goes with the link | Stays with you |
-| -- | -- |
-| Identity | Conversation history |
-| Description | Logins |
-| Skills | Your computer and its files |
-| Routines | |
+| Goes with the link | Stays with you              |
+| ------------------ | --------------------------- |
+| Identity           | Conversation history        |
+| Description        | Logins                      |
+| Skills             | Your computer and its files |
+| Routines           |                             |
 
 The recipient opens a preview on x.ai and chooses **Add to Grok Bot**. They need the Grok Bot app to finish. Adding it creates a **copy** on their account. From then on it is their Bot. It learns from them, runs on their computer, and its routines count against their usage.
 
@@ -108,11 +108,11 @@ For Bots from the marketplace, the xAI team's advice matched the steps above. Tr
 
 ## Links that expose customer data
 
-- **Sharing a Bot you use for client work as it is.** Its skills and routines can expose client names and internal links to anyone with the URL. *Fix:* audit it, replace sensitive details with placeholders, then share.
-- **Expecting the copy to know what your Bot knows.** Conversation history doesn't travel, so the copy starts without your conversations. *Fix:* put what matters in the description or a skill before you share.
-- **Running a shared Bot's routines straight away.** A routine can act on your accounts at 3 a.m. *Fix:* pause the routines, test one task, then turn them on.
-- **Using a shared Bot as a security boundary.** It runs on the same computer as your other Bots, with the same logins. *Fix:* add only the access the task needs, and sign out of what it no longer uses.
-- **Treating a duplicate like a new Bot.** It keeps the old routines and scope. *Fix:* rename it, change its scope and review the copied routines first.
+- **Sharing a Bot you use for client work as it is.** Its skills and routines can expose client names and internal links to anyone with the URL. _Fix:_ audit it, replace sensitive details with placeholders, then share.
+- **Expecting the copy to know what your Bot knows.** Conversation history doesn't travel, so the copy starts without your conversations. _Fix:_ put what matters in the description or a skill before you share.
+- **Running a shared Bot's routines straight away.** A routine can act on your accounts at 3 a.m. _Fix:_ pause the routines, test one task, then turn them on.
+- **Using a shared Bot as a security boundary.** It runs on the same computer as your other Bots, with the same logins. _Fix:_ add only the access the task needs, and sign out of what it no longer uses.
+- **Treating a duplicate like a new Bot.** It keeps the old routines and scope. _Fix:_ rename it, change its scope and review the copied routines first.
 
 ## What travels in a share link
 

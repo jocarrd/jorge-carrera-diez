@@ -9,9 +9,6 @@ type RailProps = {
   className?: string;
 };
 
-// Tres tarjetas apiladas son tres pantallas de scroll; en fila son una. El
-// carril mantiene el gesto nativo (dedo en móvil, trackpad en escritorio) y
-// añade los controles sólo donde el ratón no puede arrastrar.
 export function Rail({ children, label, className = "" }: RailProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
@@ -23,8 +20,6 @@ export function Rail({ children, label, className = "" }: RailProps) {
     const track = trackRef.current;
     if (!track) return;
 
-    // 1px de holgura: con zoom o pantallas HiDPI el scrollLeft máximo queda en
-    // decimales y el botón "siguiente" nunca llegaba a desactivarse.
     const max = track.scrollWidth - track.clientWidth;
     setAtStart(track.scrollLeft <= 1);
     setAtEnd(track.scrollLeft >= max - 1);
@@ -67,8 +62,13 @@ export function Rail({ children, label, className = "" }: RailProps) {
     const target = items[index + direction];
     if (!target) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    track.scrollTo({ left: target.offsetLeft, behavior: reduced ? "auto" : "smooth" });
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    track.scrollTo({
+      left: target.offsetLeft,
+      behavior: reduced ? "auto" : "smooth",
+    });
   };
 
   const hasControls = count > 1;
@@ -99,13 +99,6 @@ export function Rail({ children, label, className = "" }: RailProps) {
         </div>
       ) : null}
 
-      {/* tabIndex hace el carril enfocable: sin él, quien navega con teclado no
-          puede desplazarlo con las flechas porque no hay nada que reciba foco.
-
-          El desvanecido de los bordes es lo que separa "asoma la siguiente" de
-          "esto está mal maquetado": sin él, el pie de la tarjeta que asoma se
-          cortaba a mitad de palabra contra el borde de la ventana. Se apaga en
-          los extremos para no ensuciar la primera ni la última. */}
       <div
         ref={trackRef}
         role="group"
