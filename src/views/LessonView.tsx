@@ -313,8 +313,8 @@ export function LessonView({ locale, slug }: { locale: Locale; slug: string }) {
                   </a>
                 </div>
               </aside>
-              <AuthorSignature locale={locale} />
             </footer>
+            <AuthorSignature locale={locale} />
           </article>
         </div>
       </Container>
