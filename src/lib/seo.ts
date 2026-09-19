@@ -148,8 +148,9 @@ export function personJsonLd(locale: Locale) {
     sameAs: [
       site.linkedin,
       site.github,
+      site.x,
       site.malt,
-      site.snowy,
+      site.snowyAuthor,
       site.lariojameteo,
     ],
     knowsLanguage: [
