@@ -13,6 +13,7 @@ export const site = {
   university: "Universidad de La Rioja",
   universityUrl: "https://www.unirioja.es/",
   snowy: "https://snowy.es",
+  snowyAuthor: "https://snowy.es/noticias/autor/jorge-carrera-diez",
 
   snowyMapa: "https://snowy.es/map",
 
