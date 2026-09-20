@@ -723,9 +723,9 @@ export const en: Copy = {
       title: "Let's work together",
       description:
         "Jorge Carrera Diez, freelance software engineer. Technical handover of products already in production, React and Next.js development, and frontend architecture advisory.",
-      lead: "I step into products that already exist, understand them, and keep building without anything grinding to a halt.",
+      lead: "I step into products that already exist and keep building them, or take them from zero to production.",
       detail:
-        "It is what I am doing right now for a Swiss foundation: I took over from their previous developer and picked up both of their digital products without interrupting operations.",
+        "Software architecture, product decisions and agents put where they actually save hours. Right now I run the two digital products of a Swiss foundation, which I took over without stopping the operation.",
       availabilityLabel: "how we start",
       availabilityText:
         "We talk for half an hour, agree what is in and what is out, and you get the budget and the working rhythm in writing before I touch anything.",
