@@ -632,7 +632,14 @@ export const en: Copy = {
       title: "Courses",
       description:
         "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
-      heading: "More knowledge comes out than anyone has time to learn.",
+      heading: "Courses rebuilt from experts taking a real product from zero to production.",
+      collectionLead:
+        "The livestreams where the people who built the tool ship something real, transcribed, checked against the official docs and cut into eight-minute lessons. Free, no sign-up.",
+      collectionMeta: "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
+      featuredEyebrow: "Available now",
+      featuredCta: "Start with the first lesson",
+      featuredSyllabus: "Syllabus · lessons per module",
+      whyTitle: "Why I write them",
       text: [
         "AI agents move so fast that the best teaching about them happens in eight-hour livestreams almost nobody watches twice, and that never get written down anywhere.",
         "And that is where you learn the most. Watching someone take a product from nothing to production shows you why each decision was made, which is exactly what documentation leaves out.",

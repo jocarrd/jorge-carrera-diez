@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
   ButtonLink,
-  DeviceFrame,
   MetricCard,
+  RevealChildren,
   Section,
   SectionHeader,
 } from "@/components/ui";
@@ -18,48 +18,58 @@ export function CoursesView({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).pages.courses;
   const { lessons, modules } = getCourse(locale);
   const courseCopy = grokBotCourse.copy[locale];
+  const cursoHref = routePath(locale, "grokBotCourse");
 
   const fill = (text: string) =>
     text
+      .replace("{courses}", "1")
       .replace("{lessons}", String(lessons.length))
       .replace("{modules}", String(modules.length));
-
-  const meta = fill(copy.listMeta);
 
   return (
     <main>
       <Section>
-        <div className="course-intro">
-          <div className="course-intro-head">
-            <h1 className="t-section">{copy.heading}</h1>
-            <p className="course-lead">{copy.text[0]}</p>
-          </div>
-          <div className="course-intro-rest">
-            {copy.text.slice(1).map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="course-support">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-          <div className="course-devices">
-            <DeviceFrame
-              src="/images/cursos/curso-modulos-movil.webp"
-              alt={copy.deviceAlts[0]}
-              priority
-            />
-            <DeviceFrame
-              src="/images/cursos/curso-leccion-movil.webp"
-              alt={copy.deviceAlts[1]}
-            />
-          </div>
+        <div className="courses-hero">
+          <h1 className="t-section">{copy.heading}</h1>
+          <p className="course-lead">{copy.collectionLead}</p>
+          <p className="courses-hero-meta">{fill(copy.collectionMeta)}</p>
         </div>
+
+        <article className="course-featured">
+          <p className="course-featured-eyebrow">{copy.featuredEyebrow}</p>
+          <h2 className="course-featured-title">
+            <Link href={cursoHref}>{courseCopy.title}</Link>
+          </h2>
+          <p className="course-featured-text">{courseCopy.subtitle}</p>
+
+          <p className="course-featured-syllabus">{copy.featuredSyllabus}</p>
+          <RevealChildren as="ol" className="course-featured-modules" step={55}>
+            {modules.map((module) => (
+              <li key={module.number}>
+                <span className="course-featured-module-number">
+                  {String(module.number).padStart(2, "0")}
+                </span>
+                <span className="course-featured-module-title">
+                  {module.title[locale]}
+                </span>
+                <span className="course-featured-module-count">
+                  {module.lessons.length}
+                </span>
+              </li>
+            ))}
+          </RevealChildren>
+
+          <div className="course-featured-cta">
+            <ButtonLink href={cursoHref}>{copy.featuredCta}</ButtonLink>
+          </div>
+        </article>
       </Section>
 
       <CourseFlight title={copy.pipelineTitle} steps={copy.pipeline} />
 
       <Section>
         <SectionHeader title={copy.resultTitle} text={copy.resultText} />
-        <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-9 lg:grid-cols-3">
+        <RevealChildren className="mt-10 grid grid-cols-2 gap-x-8 gap-y-9 lg:grid-cols-3">
           {copy.resultMetrics.map((metric) => (
             <MetricCard
               key={metric.label}
@@ -70,33 +80,18 @@ export function CoursesView({ locale }: { locale: Locale }) {
               }}
             />
           ))}
-        </div>
+        </RevealChildren>
       </Section>
 
       <Section className="section-band">
-        <SectionHeader title={copy.listTitle} />
-        <ul className="course-list mt-10">
-          <li>
-            <Link
-              href={routePath(locale, "grokBotCourse")}
-              className="course-row"
-            >
-              <span className="course-row-main">
-                <span className="course-row-title">{courseCopy.title}</span>
-                <span className="course-row-text">{courseCopy.subtitle}</span>
-              </span>
-              <span className="course-row-meta">{meta}</span>
-            </Link>
-          </li>
-        </ul>
-        <div className="mt-10 max-w-[46rem]">
-          <h3 className="t-block">{copy.nextTitle}</h3>
-          <p className="mt-3 text-[1.0625rem] leading-[1.6] text-[var(--muted)]">
-            {copy.nextText}
-          </p>
-          <div className="mt-7">
-            <ButtonLink href={site.x}>{copy.nextButton}</ButtonLink>
-          </div>
+        <SectionHeader title={copy.whyTitle} />
+        <div className="course-why mt-10">
+          {copy.text.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="mt-9">
+          <ButtonLink href={site.x}>{copy.nextButton}</ButtonLink>
         </div>
 
         <AuthorSignature locale={locale} />
