@@ -724,12 +724,29 @@ export const es: Copy = {
       lead: "Entro en productos que ya existen, los entiendo y sigo construyéndolos sin que se pare nada.",
       detail:
         "Es lo que hago ahora mismo para una fundación suiza: asumí el relevo de su desarrollador anterior y me hice cargo de sus dos productos digitales sin interrumpir la operativa.",
-      availabilityLabel: "disponibilidad",
+      availabilityLabel: "cómo empezamos",
       availabilityText:
-        "En remoto y horario europeo, en español o en inglés. Cada encargo se acota antes de empezar, para poder comprometerme de verdad con lo que acepto.",
+        "Hablamos media hora, acotamos qué entra y qué se queda fuera, y te paso presupuesto y ritmo de trabajo por escrito antes de tocar nada.",
+      stepsTitle: "Cómo empezamos",
+      stepsText:
+        "Sin propuestas de veinte páginas ni reuniones para preparar otra reunión.",
+      steps: [
+        {
+          title: "Una llamada de media hora",
+          text: "Me cuentas qué producto es, en qué estado está y qué necesitas.",
+        },
+        {
+          title: "Acotamos el encargo",
+          text: "Qué entra, qué se queda fuera y en cuánto tiempo. Si no encaja, te lo digo ahí.",
+        },
+        {
+          title: "Presupuesto y ritmo por escrito",
+          text: "Precio cerrado y cada cuánto vas a ver algo funcionando, antes de empezar.",
+        },
+      ],
       servicesTitle: "En qué puedo ayudarte",
       servicesText:
-        "Tres formas de trabajo que ya están funcionando con clientes reales, no una lista de tecnologías.",
+        "Cuatro formas de trabajo que ya están funcionando con clientes reales, no una lista de tecnologías.",
       services: [
         {
           title: "Relevo técnico de un producto en marcha",
@@ -742,6 +759,10 @@ export const es: Copy = {
         {
           title: "Arquitectura y acompañamiento del equipo",
           text: "Decisiones de arquitectura, estándares y revisión de código para equipos que ya están construyendo y quieren no arrepentirse dentro de un año.",
+        },
+        {
+          title: "IA donde de verdad ahorra horas",
+          text: "Automatizo tareas que hoy hace alguien a mano y meto agentes donde el equipo pierde el tiempo. Es como trabajo yo todos los días, también en mis propios proyectos.",
         },
       ],
       clientsTitle: "Dónde he trabajado",
