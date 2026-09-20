@@ -297,6 +297,9 @@ export type Copy = {
       detail: string;
       availabilityLabel: string;
       availabilityText: string;
+      stepsTitle: string;
+      stepsText: string;
+      steps: TitledText[];
       servicesTitle: string;
       servicesText: string;
       services: TitledText[];

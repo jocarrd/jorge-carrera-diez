@@ -7173,3 +7173,79 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
     animation: none;
   }
 }
+
+/* Los pasos de un encargo: el número manda, y en el móvil el texto cae
+   debajo en vez de pelearse con él por el ancho. */
+.contact-steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.contact-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.contact-step-number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent-text);
+}
+
+.contact-step-body {
+  display: block;
+}
+
+.contact-step-title {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.contact-step-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* El estado de disponibilidad abre la página de contacto: es lo primero
+   que quiere saber quien llega, y el punto lo dice antes que el texto. */
+.contact-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.contact-status::before {
+  content: "";
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 999px;
+  background: var(--accent);
+  animation: course-status-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-status::before {
+    animation: none;
+  }
+}

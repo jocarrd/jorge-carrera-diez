@@ -730,15 +730,32 @@ export const en: Copy = {
       title: "Let's work together",
       description:
         "Jorge Carrera Diez, freelance software engineer. Technical handover of products already in production, React and Next.js development, and frontend architecture advisory.",
-      lead: "I step into products that already exist, understand them, and keep building without anything grinding to a halt.",
+      lead: "I step into products that already exist and keep building them, or take them from zero to production.",
       detail:
-        "It is what I am doing right now for a Swiss foundation: I took over from their previous developer and picked up both of their digital products without interrupting operations.",
-      availabilityLabel: "availability",
+        "Software architecture, product decisions and agents put where they actually save hours. Right now I run the two digital products of a Swiss foundation, which I took over without stopping the operation.",
+      availabilityLabel: "how we start",
       availabilityText:
-        "Remote, European hours, in Spanish or English. Every engagement is scoped before it starts, so I can genuinely commit to what I take on.",
+        "We talk for half an hour, agree what is in and what is out, and you get the budget and the working rhythm in writing before I touch anything.",
+      stepsTitle: "How we start",
+      stepsText:
+        "No twenty-page proposals, no meetings to prepare another meeting.",
+      steps: [
+        {
+          title: "A half-hour call",
+          text: "You tell me what the product is, where it stands and what you need.",
+        },
+        {
+          title: "We scope the work",
+          text: "What is in, what is out and how long it takes. If it does not fit, I say so there.",
+        },
+        {
+          title: "Budget and rhythm in writing",
+          text: "Fixed price and how often you will see something running, before we start.",
+        },
+      ],
       servicesTitle: "How I can help",
       servicesText:
-        "Three ways of working that are already running with real clients, not a list of technologies.",
+        "Four ways of working that are already running with real clients, not a list of technologies.",
       services: [
         {
           title: "Taking over a product in flight",
@@ -751,6 +768,10 @@ export const en: Copy = {
         {
           title: "Architecture and team support",
           text: "Architecture decisions, standards and code review for teams already building who would rather not regret it a year from now.",
+        },
+        {
+          title: "AI where it actually saves hours",
+          text: "I automate work someone still does by hand and put agents where the team loses time. It is how I work every day, including on my own projects.",
         },
       ],
       clientsTitle: "Where I have worked",
