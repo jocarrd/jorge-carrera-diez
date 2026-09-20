@@ -7036,6 +7036,144 @@ details.lesson-story-day:not([open]) > summary.lesson-story-day-label {
   }
 }
 
+/* Landing de cursos: el catálogo se presenta por el formato, y el curso
+   disponible ocupa el sitio en vez de quedar en una rejilla de uno. */
+.courses-hero {
+  max-width: 44rem;
+}
+
+.course-lead {
+  margin-top: 1.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.courses-hero-meta {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+}
+
+.course-featured {
+  margin-top: 3rem;
+  padding: 1.75rem 1.5rem 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-outer);
+  background: var(--panel);
+}
+
+@media (min-width: 768px) {
+  .course-featured {
+    padding: 2.5rem 2.5rem 2.75rem;
+  }
+}
+
+.course-featured-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.course-featured-title {
+  margin-top: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .course-featured-title {
+    font-size: 2.25rem;
+  }
+}
+
+.course-featured-text {
+  margin-top: 0.875rem;
+  max-width: 34rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.course-featured-syllabus {
+  margin-top: 2.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted-strong);
+}
+
+.course-featured-modules {
+  margin-top: 0.75rem;
+}
+
+.course-featured-modules li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 0.875rem;
+  padding: 0.6875rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.course-featured-module-number {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted-strong);
+}
+
+.course-featured-module-count {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted-strong);
+}
+
+.course-featured-cta {
+  margin-top: 2rem;
+}
+
+.course-why {
+  max-width: 38rem;
+}
+
+.course-why p + p {
+  margin-top: 1.125rem;
+}
+
+.course-why p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.course-featured-eyebrow::before {
+  content: "";
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 999px;
+  background: var(--accent);
+  animation: course-status-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-featured-eyebrow::before {
+    animation: none;
+  }
+}
+
 /* Los pasos de un encargo: el número manda, y en el móvil el texto cae
    debajo en vez de pelearse con él por el ancho. */
 .contact-steps {

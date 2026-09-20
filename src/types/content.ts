@@ -254,6 +254,12 @@ export type Copy = {
     projects: PageMeta & { eyebrow: string; heading: string; text: string };
     courses: PageMeta & {
       heading: string;
+      collectionLead: string;
+      collectionMeta: string;
+      featuredEyebrow: string;
+      featuredCta: string;
+      featuredSyllabus: string;
+      whyTitle: string;
       text: string[];
       deviceAlts: [string, string];
       pipelineTitle: string;

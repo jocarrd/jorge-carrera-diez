@@ -630,7 +630,14 @@ export const es: Copy = {
       title: "Cursos",
       description:
         "Cursos gratis sobre agentes de IA, hechos a partir de directos técnicos de muchas horas. Cada afirmación enlaza al minuto exacto del vídeo donde se dijo.",
-      heading: "Sale más conocimiento del que da tiempo a aprender.",
+      heading: "Cursos reconstruidos de expertos levantando un producto real, de cero hasta producción.",
+      collectionLead:
+        "Los directos en los que sus creadores construyen algo de verdad, transcritos, contrastados con la documentación oficial y partidos en lecciones de ocho minutos. Gratis y sin registro.",
+      collectionMeta: "{courses} curso · {lessons} lecciones · {modules} módulos · 2 idiomas",
+      featuredEyebrow: "Disponible ahora",
+      featuredCta: "Empezar por la primera lección",
+      featuredSyllabus: "El temario · lecciones por módulo",
+      whyTitle: "Por qué los escribo",
       text: [
         "Los agentes de IA van tan rápido que lo mejor que se enseña de ellos pasa por directos de ocho horas que casi nadie vuelve a ver, y que no quedan escritos en ningún sitio.",
         "Y ahí es donde más se aprende. Ver a alguien levantar un producto de cero hasta producción te enseña por qué se tomó cada decisión, que es justo lo que no cuenta una documentación.",
