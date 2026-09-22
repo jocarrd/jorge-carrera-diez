@@ -612,6 +612,17 @@ export const en: Copy = {
       stack: ["SEO", "WordPress", "Performance", "UX", "Analytics"],
     },
   ],
+  sideProjects: [
+    {
+      slug: "mac-o-menos",
+      name: "Mac o menos",
+      url: "https://macs.jorge-carrera-diez.com/",
+      host: "macs.jorge-carrera-diez.com",
+      description:
+        "Every morning it compares the price of 110 Mac configurations across nine Spanish stores and Apple, and flags where each one is cheapest.",
+      stack: ["Python", "Astro", "TypeScript", "GitHub Actions"],
+    },
+  ],
   featuredProjects: {
     leadCta: "See the case",
     secondaryCta: "See the case",
@@ -627,6 +638,8 @@ export const en: Copy = {
       heading:
         "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
+      sideTitle: "Side projects",
+      sideText: "Tools I build on my own, to solve a problem of mine or to test an idea.",
     },
     courses: {
       title: "Courses",
