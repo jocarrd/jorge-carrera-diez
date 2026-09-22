@@ -37,6 +37,15 @@ export type Project = {
   pitch?: string;
 };
 
+export type SideProject = {
+  slug: string;
+  name: string;
+  url: string;
+  host: string;
+  description: string;
+  stack: string[];
+};
+
 export type Capability = {
   title: string;
   text: string;
@@ -244,6 +253,7 @@ export type Copy = {
   languages: LanguageEntry[];
   skills: SkillGroup[];
   projects: Project[];
+  sideProjects: SideProject[];
   featuredProjects: {
     leadCta: string;
     secondaryCta: string;
@@ -251,7 +261,13 @@ export type Copy = {
     secondaryImageAlt: string;
   };
   pages: {
-    projects: PageMeta & { eyebrow: string; heading: string; text: string };
+    projects: PageMeta & {
+      eyebrow: string;
+      heading: string;
+      text: string;
+      sideTitle: string;
+      sideText: string;
+    };
     courses: PageMeta & {
       heading: string;
       collectionLead: string;
