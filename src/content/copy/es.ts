@@ -644,10 +644,12 @@ export const es: Copy = {
       title: "Cursos",
       description:
         "Cursos gratis sobre agentes de IA, hechos a partir de directos técnicos de muchas horas. Cada afirmación enlaza al minuto exacto del vídeo donde se dijo.",
-      heading: "Cursos reconstruidos de expertos levantando un producto real, de cero hasta producción.",
+      heading:
+        "Cursos reconstruidos de expertos levantando un producto real, de cero hasta producción.",
       collectionLead:
         "Los directos en los que sus creadores construyen algo de verdad, transcritos, contrastados con la documentación oficial y partidos en lecciones de ocho minutos. Gratis y sin registro.",
-      collectionMeta: "{courses} curso · {lessons} lecciones · {modules} módulos · 2 idiomas",
+      collectionMeta:
+        "{courses} curso · {lessons} lecciones · {modules} módulos · 2 idiomas",
       featuredEyebrow: "Disponible ahora",
       featuredCta: "Empezar por la primera lección",
       featuredSyllabus: "El temario · lecciones por módulo",
@@ -698,10 +700,26 @@ export const es: Copy = {
       resultText:
         "Las cifras del primero, el de Grok Bot. La parte que más trabajo dio son los enlaces: cada cosa que se afirma en una lección apunta al segundo del directo donde se dijo, para que puedas comprobarla sin fiarte de mí.",
       resultMetrics: [
-        { value: "3 días", label: "Directo procesado", detail: "casi 25 horas de emisión" },
-        { value: "{lessons}", label: "Lecciones", detail: "repartidas en {modules} módulos" },
-        { value: "122", label: "Enlaces al minuto", detail: "cada afirmación, a su fuente" },
-        { value: "16", label: "Términos de glosario", detail: "la jerga, explicada" },
+        {
+          value: "3 días",
+          label: "Directo procesado",
+          detail: "casi 25 horas de emisión",
+        },
+        {
+          value: "{lessons}",
+          label: "Lecciones",
+          detail: "repartidas en {modules} módulos",
+        },
+        {
+          value: "122",
+          label: "Enlaces al minuto",
+          detail: "cada afirmación, a su fuente",
+        },
+        {
+          value: "16",
+          label: "Términos de glosario",
+          detail: "la jerga, explicada",
+        },
         { value: "2", label: "Idiomas", detail: "mismo contenido en los dos" },
         { value: "0 €", label: "Precio", detail: "sin registro ni cuenta" },
       ],
@@ -744,7 +762,7 @@ export const es: Copy = {
         "Jorge Carrera Diez, ingeniero de software freelance. Relevo técnico de productos en producción, desarrollo con React y Next.js y acompañamiento de arquitectura frontend.",
       lead: "Entro en productos que ya existen y sigo construyéndolos, o los levanto de cero hasta producción.",
       detail:
-        "Arquitectura de software, decisiones de producto y agentes metidos donde ahorran horas de verdad. Ahora mismo llevo los dos productos digitales de una fundación suiza, de los que asumí el relevo sin parar la operativa.",
+        "Arquitectura de software, decisiones de producto y agentes metidos donde ahorran horas de verdad. Escríbeme y te contesto yo, sin formularios de por medio.",
       availabilityLabel: "cómo empezamos",
       availabilityText:
         "Hablamos media hora, acotamos qué entra y qué se queda fuera, y te paso presupuesto y ritmo de trabajo por escrito antes de tocar nada.",
@@ -812,6 +830,10 @@ export const es: Copy = {
         "Cuéntame el contexto en cuatro líneas: qué producto es, en qué estado está y qué necesitas. Te respondo si encaja, y también si no.",
       ctaPrimary: "Enviar correo",
       ctaSecondary: "Ver CV",
+      servicesCtaTitle: "Qué puedes encargarme",
+      servicesCtaText:
+        "Las formas de trabajo y la dedicación semanal están en la página de servicios.",
+      servicesCtaButton: "Ver servicios",
       linksTitle: "Antes de escribir",
       linksText:
         "Si prefieres tener más contexto, aquí está lo relevante de mi perfil y dónde ver mi trabajo.",
@@ -822,6 +844,118 @@ export const es: Copy = {
         { key: "cv", label: "CV web" },
         { key: "snowy", label: "Snowy" },
       ],
+    },
+    services: {
+      title: "Qué puedes encargarme",
+      description:
+        "Servicios de Jorge Carrera Diez, ingeniero de software freelance en Logroño: relevo técnico de productos en producción, desarrollo web con React, Next.js y TypeScript, arquitectura frontend e integración de agentes.",
+      lead: "Desarrollo producto web con React, Next.js, TypeScript y Node. Me ocupo también del despliegue, del rendimiento y del mantenimiento de después.",
+      detail:
+        "Llevo cinco años trabajando sobre código que ya estaba en producción, en banca, seguros y retail, con equipos que tenían que seguir entregando mientras tanto. En paralelo mantengo Snowy, una plataforma meteorológica propia que en los últimos tres meses acumuló 14,7 millones de impresiones orgánicas y 1.400 usuarios registrados.",
+      engagementTitle: "Cómo trabajo",
+      engagementText:
+        "El método es el mismo en todos los encargos, y es lo que me deja entregar con pocas horas a la semana.",
+      engagement: [
+        {
+          title: "Las decisiones quedan escritas",
+          text: "Antes de tocar código anoto qué se decidió y por qué. Quien retome el proyecto dentro de un año lo tiene ahí.",
+        },
+        {
+          title: "De cuatro a seis horas por semana",
+          text: "Es lo que puedo comprometer sin dejar de entregar. Si el encargo pide más dedicación, lo digo en la primera llamada.",
+        },
+        {
+          title: "Cada semana algo en producción",
+          text: "Rama propia, tests, integración continua y despliegue. Abres la web y lo ves funcionando.",
+        },
+      ],
+      stackTitle: "Con qué trabajo",
+      stackText:
+        "Lo que uso a diario en proyectos con usuarios reales, no una lista de todo lo que he tocado alguna vez.",
+      stack: [
+        {
+          group: "Frontend",
+          items: "React · Next.js · TypeScript · Tailwind · SSR · SEO técnico",
+        },
+        {
+          group: "Backend",
+          items: "Node · NestJS · Java · Spring Boot · APIs · autenticación",
+        },
+        {
+          group: "Datos e infraestructura",
+          items: "MySQL · PostgreSQL · Redis · Prisma · Docker · AWS · Vercel",
+        },
+        {
+          group: "Agentes e IA",
+          items: "Vercel AI SDK · RAG · MCP · herramientas · evaluaciones",
+        },
+      ],
+      metrics: [
+        {
+          value: 14687005,
+          label: "impresiones orgánicas",
+          detail: "en Snowy, los últimos 90 días",
+        },
+        {
+          value: 242000,
+          label: "clics desde búsqueda",
+          detail: "en ese mismo periodo",
+        },
+        {
+          value: 1400,
+          suffix: "+",
+          label: "usuarios registrados",
+          detail: "en un producto propio",
+        },
+      ],
+      faqTitle: "Preguntas frecuentes",
+      faqText: "Lo que me suelen preguntar antes de la primera llamada.",
+      faq: [
+        {
+          question: "¿Trabajas en remoto?",
+          answer:
+            "Sí. Vivo en Logroño, en La Rioja, y trabajo en remoto en horario europeo para clientes de España y de fuera. No hace falta que el cliente esté en mi ciudad ni en mi país.",
+        },
+        {
+          question: "¿Cuántas horas a la semana puedes dedicar?",
+          answer:
+            "Entre cuatro y seis horas semanales por cliente, repartidas según lo que haga falta esa semana. Si el encargo necesita más dedicación, lo digo en la primera llamada en lugar de aceptarlo y quedarme corto.",
+        },
+        {
+          question: "¿Puedes entrar en un producto que ya está construido?",
+          answer:
+            "Es la mayor parte de lo que hago. He asumido el relevo técnico de productos que estaban en producción, con usuarios dentro, sin parar la operativa durante el traspaso.",
+        },
+        {
+          question: "¿Con qué tecnologías trabajas?",
+          answer:
+            "React, Next.js y TypeScript en el frontend. Node, NestJS, Java y Spring Boot en el backend. MySQL, PostgreSQL, Redis, Docker y AWS en datos e infraestructura. Para agentes e IA, Vercel AI SDK, RAG, MCP y evaluaciones.",
+        },
+        {
+          question: "¿Cómo facturas?",
+          answer:
+            "Como autónomo dado de alta en España, con factura mensual. El alcance se acuerda por escrito antes de empezar y el precio se habla en la primera llamada, cuando ya sé qué hay que hacer.",
+        },
+        {
+          question: "¿En qué idiomas trabajas?",
+          answer:
+            "Español, que es mi lengua materna, e inglés con nivel profesional. Los proyectos que llevo hoy se reparten entre los dos.",
+        },
+      ],
+      formTitle: "Cuéntame el contexto",
+      formText:
+        "Rellena estos campos y se abre tu programa de correo con el mensaje ya escrito. Lo revisas y lo envías tú.",
+      form: {
+        name: "Nombre",
+        email: "Correo",
+        product: "Producto",
+        productHint: "Nombre o dirección web, si ya existe",
+        need: "Qué necesitas",
+        needHint: "En qué estado está y qué te hace falta",
+        formSubject: "Encargo desde la web",
+        submit: "Abrir el correo",
+        note: "No se guarda nada aquí. El mensaje sale de tu cuenta.",
+      },
     },
     snowy: {
       title: "Snowy",

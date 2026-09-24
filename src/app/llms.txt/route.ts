@@ -1,6 +1,6 @@
 import { getCopy, organizations, site } from "@/content";
 import { locales } from "@/i18n/config";
-import { allPathsFor, routeKeys } from "@/i18n/routes";
+import { allPathsFor, routeKeys, routePath } from "@/i18n/routes";
 
 const routeLabels: Record<string, string> = {
   home: "Inicio / Home",
@@ -10,8 +10,10 @@ const routeLabels: Record<string, string> = {
   lariojameteo: "LaRiojaMeteo — portal regional / regional portal",
   experience: "Experiencia / Experience",
   cv: "Currículum / CV",
+  services:
+    "Qué puedes encargarme — servicios, dedicación y cómo se contrata / What you can hire me for — services, dedication and how hiring works",
   contact:
-    "Trabajemos juntos — servicios y contratación / Work with me — services and hiring",
+    "Trabajemos juntos — contacto directo / Work with me — direct contact",
 };
 
 export const dynamic = "force-static";
@@ -50,6 +52,7 @@ export function GET() {
     "",
     "## Contratar / Hiring",
     "",
+    `- Servicios / Services: ${absolute(routePath("es", "services"))}`,
     `- Correo / Email: ${site.email}`,
     `- Perfil de Malt / Malt profile: ${site.malt}`,
     `- LinkedIn: ${site.linkedin}`,

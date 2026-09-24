@@ -1,10 +1,16 @@
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
 export function Footer({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
 
   const links = [
+    {
+      label: copy.pages.services.title,
+      href: routePath(locale, "services"),
+      external: false,
+    },
     { label: "LinkedIn", href: site.linkedin, external: true },
     { label: "GitHub", href: site.github, external: true },
     { label: "Snowy", href: site.snowy, external: true },

@@ -1,10 +1,5 @@
 import { JsonLd } from "@/components/JsonLd";
-import {
-  ButtonLink,
-  RevealChildren,
-  Section,
-  SectionHeader,
-} from "@/components/ui";
+import { ButtonLink, Section } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -29,8 +24,6 @@ export function ContactView({ locale }: { locale: Locale }) {
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
               {copy.detail}
             </p>
-
-
           </div>
 
           <div className="rounded-[var(--radius-card-lg)] bg-[var(--panel)] p-7 sm:p-10">
@@ -59,34 +52,18 @@ export function ContactView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader title={copy.servicesTitle} text={copy.servicesText} />
-        <RevealChildren className="mt-10 grid gap-x-12 gap-y-10 sm:mt-14 sm:grid-cols-2">
-          {copy.services.map((service) => (
-            <div key={service.title} className="area">
-              <h3 className="area-title">{service.title}</h3>
-              <p className="area-text">{service.text}</p>
-            </div>
-          ))}
-        </RevealChildren>
+        <div className="max-w-2xl">
+          <h2 className="t-section">{copy.servicesCtaTitle}</h2>
+          <p className="mt-5 text-lg leading-relaxed text-[var(--muted)] sm:leading-8">
+            {copy.servicesCtaText}
+          </p>
+          <div className="mt-8">
+            <ButtonLink href={routePath(locale, "services")}>
+              {copy.servicesCtaButton}
+            </ButtonLink>
+          </div>
+        </div>
       </Section>
-
-      <Section className="border-t border-[var(--line)]">
-        <SectionHeader title={copy.stepsTitle} text={copy.stepsText} />
-        <RevealChildren as="ol" className="contact-steps mt-10 sm:mt-14">
-          {copy.steps.map((step, index) => (
-            <li key={step.title}>
-              <span className="contact-step-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="contact-step-body">
-                <span className="contact-step-title">{step.title}</span>
-                <span className="contact-step-text">{step.text}</span>
-              </span>
-            </li>
-          ))}
-        </RevealChildren>
-      </Section>
-
     </main>
   );
 }

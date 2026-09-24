@@ -18,10 +18,10 @@ export function HomeView({ locale }: { locale: Locale }) {
       <JsonLd data={websiteJsonLd(locale)} />
       <HeroSection locale={locale} />
       <CurrentRoleSection locale={locale} />
+      <AiPreview locale={locale} />
       <ProjectsPreview locale={locale} />
       <SnowyShowcase locale={locale} />
       <BigStat locale={locale} />
-      <AiPreview locale={locale} />
       <ExperiencePreview locale={locale} />
       <AboutSection locale={locale} />
       <ContactCta locale={locale} />

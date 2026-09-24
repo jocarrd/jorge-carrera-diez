@@ -639,16 +639,19 @@ export const en: Copy = {
         "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
       sideTitle: "Side projects",
-      sideText: "Tools I build on my own, to solve a problem of mine or to test an idea.",
+      sideText:
+        "Tools I build on my own, to solve a problem of mine or to test an idea.",
     },
     courses: {
       title: "Courses",
       description:
         "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
-      heading: "Courses rebuilt from experts taking a real product from zero to production.",
+      heading:
+        "Courses rebuilt from experts taking a real product from zero to production.",
       collectionLead:
         "The livestreams where the people who built the tool ship something real, transcribed, checked against the official docs and cut into eight-minute lessons. Free, no sign-up.",
-      collectionMeta: "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
+      collectionMeta:
+        "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
       featuredEyebrow: "Available now",
       featuredCta: "Start with the first lesson",
       featuredSyllabus: "Syllabus · lessons per module",
@@ -699,10 +702,26 @@ export const en: Copy = {
       resultText:
         "The numbers for the first one, on Grok Bot. The links took the most work: everything claimed in a lesson points to the second of the broadcast where it was said, so you can check it without taking my word for it.",
       resultMetrics: [
-        { value: "3 days", label: "Livestream processed", detail: "almost 25 hours of broadcast" },
-        { value: "{lessons}", label: "Lessons", detail: "across {modules} modules" },
-        { value: "122", label: "Links to the minute", detail: "every claim, to its source" },
-        { value: "16", label: "Glossary terms", detail: "the jargon, explained" },
+        {
+          value: "3 days",
+          label: "Livestream processed",
+          detail: "almost 25 hours of broadcast",
+        },
+        {
+          value: "{lessons}",
+          label: "Lessons",
+          detail: "across {modules} modules",
+        },
+        {
+          value: "122",
+          label: "Links to the minute",
+          detail: "every claim, to its source",
+        },
+        {
+          value: "16",
+          label: "Glossary terms",
+          detail: "the jargon, explained",
+        },
         { value: "2", label: "Languages", detail: "same content in both" },
         { value: "€0", label: "Price", detail: "no signup, no account" },
       ],
@@ -745,7 +764,7 @@ export const en: Copy = {
         "Jorge Carrera Diez, freelance software engineer. Technical handover of products already in production, React and Next.js development, and frontend architecture advisory.",
       lead: "I step into products that already exist and keep building them, or take them from zero to production.",
       detail:
-        "Software architecture, product decisions and agents put where they actually save hours. Right now I run the two digital products of a Swiss foundation, which I took over without stopping the operation.",
+        "Software architecture, product decisions and agents put where they actually save hours. Write to me and I answer myself, with no forms in between.",
       availabilityLabel: "how we start",
       availabilityText:
         "We talk for half an hour, agree what is in and what is out, and you get the budget and the working rhythm in writing before I touch anything.",
@@ -813,6 +832,10 @@ export const en: Copy = {
         "Tell me the context in four lines: what the product is, what state it is in, and what you need. I will reply if it fits, and also if it does not.",
       ctaPrimary: "Send an email",
       ctaSecondary: "See CV",
+      servicesCtaTitle: "What you can hire me for",
+      servicesCtaText:
+        "The ways of working and the weekly dedication are on the services page.",
+      servicesCtaButton: "See services",
       linksTitle: "Before you write",
       linksText:
         "If you would rather have more context first, here is the relevant part of my profile and where to see my work.",
@@ -823,6 +846,119 @@ export const en: Copy = {
         { key: "cv", label: "Web CV" },
         { key: "snowy", label: "Snowy" },
       ],
+    },
+    services: {
+      title: "What you can hire me for",
+      description:
+        "Services by Jorge Carrera Diez, freelance software engineer in Logroño, Spain: taking over products already in production, web development with React, Next.js and TypeScript, frontend architecture and agent integration.",
+      lead: "I build web products with React, Next.js, TypeScript and Node. I also handle deployment, performance and the maintenance that comes afterwards.",
+      detail:
+        "I have spent five years working on code that was already in production, in banking, insurance and retail, with teams that had to keep shipping meanwhile. Alongside that I run Snowy, my own weather platform, which gathered 14.7 million organic impressions and 1,400 registered users over the last three months.",
+      engagementTitle: "How I work",
+      engagementText:
+        "The method is the same on every engagement, and it is what lets me deliver on few hours a week.",
+      engagement: [
+        {
+          title: "Decisions are written down",
+          text: "Before touching code I record what was decided and why. Whoever picks the project up a year from now has it there.",
+        },
+        {
+          title: "Four to six hours a week",
+          text: "It is what I can commit to while still delivering. If the work needs more, I say so on the first call.",
+        },
+        {
+          title: "Something in production every week",
+          text: "Own branch, tests, continuous integration and deployment. You open the site and see it running.",
+        },
+      ],
+      stackTitle: "What I work with",
+      stackText:
+        "What I use daily on projects with real users, rather than a list of everything I have touched once.",
+      stack: [
+        {
+          group: "Frontend",
+          items:
+            "React · Next.js · TypeScript · Tailwind · SSR · technical SEO",
+        },
+        {
+          group: "Backend",
+          items: "Node · NestJS · Java · Spring Boot · APIs · authentication",
+        },
+        {
+          group: "Data and infrastructure",
+          items: "MySQL · PostgreSQL · Redis · Prisma · Docker · AWS · Vercel",
+        },
+        {
+          group: "Agents and AI",
+          items: "Vercel AI SDK · RAG · MCP · tools · evaluations",
+        },
+      ],
+      metrics: [
+        {
+          value: 14687005,
+          label: "organic impressions",
+          detail: "on Snowy, over the last 90 days",
+        },
+        {
+          value: 242000,
+          label: "clicks from search",
+          detail: "over that same period",
+        },
+        {
+          value: 1400,
+          suffix: "+",
+          label: "registered users",
+          detail: "on a product of my own",
+        },
+      ],
+      faqTitle: "Frequently asked questions",
+      faqText: "What people usually ask me before the first call.",
+      faq: [
+        {
+          question: "Do you work remotely?",
+          answer:
+            "Yes. I live in Logroño, in La Rioja, Spain, and I work remotely on European hours for clients in Spain and abroad. The client does not need to be in my city or my country.",
+        },
+        {
+          question: "How many hours a week can you commit?",
+          answer:
+            "Four to six hours a week per client, spread according to what that week needs. If the work requires more, I say so on the first call instead of accepting and falling short.",
+        },
+        {
+          question: "Can you step into a product that is already built?",
+          answer:
+            "That is most of what I do. I have taken over products that were already in production, with users inside, without stopping their operation during the handover.",
+        },
+        {
+          question: "What technologies do you work with?",
+          answer:
+            "React, Next.js and TypeScript on the frontend. Node, NestJS, Java and Spring Boot on the backend. MySQL, PostgreSQL, Redis, Docker and AWS for data and infrastructure. For agents and AI, the Vercel AI SDK, RAG, MCP and evaluations.",
+        },
+        {
+          question: "How do you invoice?",
+          answer:
+            "As a self-employed professional registered in Spain, invoicing monthly. The scope is agreed in writing before we start and the price is discussed on the first call, once I know what the work is.",
+        },
+        {
+          question: "What languages do you work in?",
+          answer:
+            "Spanish, my native language, and English at a professional level. The projects I run today are split between the two.",
+        },
+      ],
+      formTitle: "Tell me the context",
+      formText:
+        "Fill these in and your mail client opens with the message already written. You review it and send it yourself.",
+      form: {
+        name: "Name",
+        email: "Email",
+        product: "Product",
+        productHint: "Name or web address, if it already exists",
+        need: "What you need",
+        needHint: "What state it is in and what you are missing",
+        formSubject: "Enquiry from the website",
+        submit: "Open my email",
+        note: "Nothing is stored here. The message goes out from your own account.",
+      },
     },
     snowy: {
       title: "Snowy",
