@@ -1,9 +1,14 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
-import { RevealChildren, Section, SectionHeader } from "@/components/ui";
+import {
+  MetricCard,
+  RevealChildren,
+  Section,
+  SectionHeader,
+} from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
-import { contactPageJsonLd } from "@/lib/seo";
+import { faqJsonLd, servicesPageJsonLd } from "@/lib/seo";
 
 export function ServicesView({ locale }: { locale: Locale }) {
   const page = getCopy(locale).pages.services;
@@ -11,7 +16,8 @@ export function ServicesView({ locale }: { locale: Locale }) {
 
   return (
     <main>
-      <JsonLd data={contactPageJsonLd(locale)} />
+      <JsonLd data={servicesPageJsonLd(locale)} />
+      <JsonLd data={faqJsonLd(locale)} />
 
       <Section>
         <h1 className="t-section max-w-3xl">{page.title}</h1>
@@ -21,6 +27,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
           {page.detail}
         </p>
+        <RevealChildren className="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-card)] bg-[var(--line)] sm:mt-12 sm:grid-cols-3">
+          {page.metrics.map((metric) => (
+            <MetricCard key={metric.label} metric={metric} />
+          ))}
+        </RevealChildren>
       </Section>
 
       <Section className="section-band">
@@ -83,6 +94,18 @@ export function ServicesView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
+        <SectionHeader title={page.faqTitle} text={page.faqText} />
+        <RevealChildren as="dl" className="faq mt-10 sm:mt-14">
+          {page.faq.map((item) => (
+            <div key={item.question} className="faq-item">
+              <dt className="faq-question">{item.question}</dt>
+              <dd className="faq-answer">{item.answer}</dd>
+            </div>
+          ))}
+        </RevealChildren>
+      </Section>
+
+      <Section className="border-t border-[var(--line)]">
         <div className="mx-auto max-w-2xl">
           <SectionHeader title={page.formTitle} text={page.formText} />
           <ContactForm locale={locale} />

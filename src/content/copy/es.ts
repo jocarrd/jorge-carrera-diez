@@ -890,6 +890,54 @@ export const es: Copy = {
           items: "Vercel AI SDK · RAG · MCP · herramientas · evaluaciones",
         },
       ],
+      metrics: [
+        {
+          value: "14,7 M",
+          label: "impresiones orgánicas en Snowy en los últimos 90 días",
+        },
+        {
+          value: "1.400+",
+          label: "usuarios registrados en un producto propio",
+        },
+        {
+          value: "5 años",
+          label: "sobre código en producción en banca, seguros y retail",
+        },
+      ],
+      faqTitle: "Preguntas frecuentes",
+      faqText: "Lo que me suelen preguntar antes de la primera llamada.",
+      faq: [
+        {
+          question: "¿Trabajas en remoto?",
+          answer:
+            "Sí. Vivo en Logroño, en La Rioja, y trabajo en remoto en horario europeo para clientes de España y de fuera. No hace falta que el cliente esté en mi ciudad ni en mi país.",
+        },
+        {
+          question: "¿Cuántas horas a la semana puedes dedicar?",
+          answer:
+            "Entre cuatro y seis horas semanales por cliente, repartidas según lo que haga falta esa semana. Si el encargo necesita más dedicación, lo digo en la primera llamada en lugar de aceptarlo y quedarme corto.",
+        },
+        {
+          question: "¿Puedes entrar en un producto que ya está construido?",
+          answer:
+            "Es la mayor parte de lo que hago. He asumido el relevo técnico de productos que estaban en producción, con usuarios dentro, sin parar la operativa durante el traspaso.",
+        },
+        {
+          question: "¿Con qué tecnologías trabajas?",
+          answer:
+            "React, Next.js y TypeScript en el frontend. Node, NestJS, Java y Spring Boot en el backend. MySQL, PostgreSQL, Redis, Docker y AWS en datos e infraestructura. Para agentes e IA, Vercel AI SDK, RAG, MCP y evaluaciones.",
+        },
+        {
+          question: "¿Cómo facturas?",
+          answer:
+            "Como autónomo dado de alta en España, con factura mensual. El alcance se acuerda por escrito antes de empezar y el precio se habla en la primera llamada, cuando ya sé qué hay que hacer.",
+        },
+        {
+          question: "¿En qué idiomas trabajas?",
+          answer:
+            "Español, que es mi lengua materna, e inglés con nivel profesional. Los proyectos que llevo hoy se reparten entre los dos.",
+        },
+      ],
       formTitle: "Cuéntame el contexto",
       formText:
         "Rellena estos campos y se abre tu programa de correo con el mensaje ya escrito. Lo revisas y lo envías tú.",

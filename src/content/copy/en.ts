@@ -893,6 +893,51 @@ export const en: Copy = {
           items: "Vercel AI SDK · RAG · MCP · tools · evaluations",
         },
       ],
+      metrics: [
+        {
+          value: "14.7 M",
+          label: "organic impressions on Snowy over the last 90 days",
+        },
+        { value: "1,400+", label: "registered users on a product of my own" },
+        {
+          value: "5 years",
+          label: "on production code in banking, insurance and retail",
+        },
+      ],
+      faqTitle: "Frequently asked questions",
+      faqText: "What people usually ask me before the first call.",
+      faq: [
+        {
+          question: "Do you work remotely?",
+          answer:
+            "Yes. I live in Logroño, in La Rioja, Spain, and I work remotely on European hours for clients in Spain and abroad. The client does not need to be in my city or my country.",
+        },
+        {
+          question: "How many hours a week can you commit?",
+          answer:
+            "Four to six hours a week per client, spread according to what that week needs. If the work requires more, I say so on the first call instead of accepting and falling short.",
+        },
+        {
+          question: "Can you step into a product that is already built?",
+          answer:
+            "That is most of what I do. I have taken over products that were already in production, with users inside, without stopping their operation during the handover.",
+        },
+        {
+          question: "What technologies do you work with?",
+          answer:
+            "React, Next.js and TypeScript on the frontend. Node, NestJS, Java and Spring Boot on the backend. MySQL, PostgreSQL, Redis, Docker and AWS for data and infrastructure. For agents and AI, the Vercel AI SDK, RAG, MCP and evaluations.",
+        },
+        {
+          question: "How do you invoice?",
+          answer:
+            "As a self-employed professional registered in Spain, invoicing monthly. The scope is agreed in writing before we start and the price is discussed on the first call, once I know what the work is.",
+        },
+        {
+          question: "What languages do you work in?",
+          answer:
+            "Spanish, my native language, and English at a professional level. The projects I run today are split between the two.",
+        },
+      ],
       formTitle: "Tell me the context",
       formText:
         "Fill these in and your mail client opens with the message already written. You review it and send it yourself.",

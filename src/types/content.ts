@@ -346,6 +346,10 @@ export type Copy = {
       stackTitle: string;
       stackText: string;
       stack: { group: string; items: string }[];
+      metrics: Metric[];
+      faqTitle: string;
+      faqText: string;
+      faq: { question: string; answer: string }[];
       formTitle: string;
       formText: string;
       form: {

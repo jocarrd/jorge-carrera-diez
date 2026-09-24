@@ -201,6 +201,14 @@ function freelanceOffers(locale: Locale) {
         ? "Decisiones de arquitectura, estándares de desarrollo y revisión de código para equipos que ya están construyendo."
         : "Architecture decisions, development standards and code review for teams already building.",
     },
+    {
+      name: es
+        ? "Automatización con agentes e IA generativa"
+        : "Automation with agents and generative AI",
+      description: es
+        ? "Agentes y modelos integrados en flujos que ya están en producción, con sus límites, su coste y su mantenimiento."
+        : "Agents and models integrated into flows already in production, with their limits, cost and maintenance.",
+    },
   ];
 
   return services.map((service) => ({
@@ -216,6 +224,46 @@ function freelanceOffers(locale: Locale) {
       },
     },
   }));
+}
+
+export function servicesPageJsonLd(locale: Locale) {
+  const copy = getCopy(locale);
+  const page = copy.pages.services;
+  const url = absolute(routePath(locale, "services"));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#page`,
+    url,
+    name: page.title,
+    description: page.description,
+    inLanguage: htmlLang[locale],
+    about: { "@id": `${site.url}/#person` },
+    mainEntity: {
+      "@type": "OfferCatalog",
+      name: page.title,
+      itemListElement: freelanceOffers(locale),
+      provider: { "@id": `${site.url}/#person` },
+    },
+  };
+}
+
+export function faqJsonLd(locale: Locale) {
+  const page = getCopy(locale).pages.services;
+  const url = absolute(routePath(locale, "services"));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    inLanguage: htmlLang[locale],
+    mainEntity: page.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
 }
 
 export function contactPageJsonLd(locale: Locale) {
