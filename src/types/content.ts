@@ -343,6 +343,9 @@ export type Copy = {
       engagementTitle: string;
       engagementText: string;
       engagement: TitledText[];
+      stackTitle: string;
+      stackText: string;
+      stack: { group: string; items: string }[];
       formTitle: string;
       formText: string;
       form: {
@@ -352,11 +355,9 @@ export type Copy = {
         productHint: string;
         need: string;
         needHint: string;
+        formSubject: string;
         submit: string;
-        sending: string;
-        ok: string;
-        error: string;
-        fallbackLabel: string;
+        note: string;
       };
     };
     snowy: PageMeta &

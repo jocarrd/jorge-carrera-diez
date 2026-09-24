@@ -644,10 +644,12 @@ export const es: Copy = {
       title: "Cursos",
       description:
         "Cursos gratis sobre agentes de IA, hechos a partir de directos técnicos de muchas horas. Cada afirmación enlaza al minuto exacto del vídeo donde se dijo.",
-      heading: "Cursos reconstruidos de expertos levantando un producto real, de cero hasta producción.",
+      heading:
+        "Cursos reconstruidos de expertos levantando un producto real, de cero hasta producción.",
       collectionLead:
         "Los directos en los que sus creadores construyen algo de verdad, transcritos, contrastados con la documentación oficial y partidos en lecciones de ocho minutos. Gratis y sin registro.",
-      collectionMeta: "{courses} curso · {lessons} lecciones · {modules} módulos · 2 idiomas",
+      collectionMeta:
+        "{courses} curso · {lessons} lecciones · {modules} módulos · 2 idiomas",
       featuredEyebrow: "Disponible ahora",
       featuredCta: "Empezar por la primera lección",
       featuredSyllabus: "El temario · lecciones por módulo",
@@ -698,10 +700,26 @@ export const es: Copy = {
       resultText:
         "Las cifras del primero, el de Grok Bot. La parte que más trabajo dio son los enlaces: cada cosa que se afirma en una lección apunta al segundo del directo donde se dijo, para que puedas comprobarla sin fiarte de mí.",
       resultMetrics: [
-        { value: "3 días", label: "Directo procesado", detail: "casi 25 horas de emisión" },
-        { value: "{lessons}", label: "Lecciones", detail: "repartidas en {modules} módulos" },
-        { value: "122", label: "Enlaces al minuto", detail: "cada afirmación, a su fuente" },
-        { value: "16", label: "Términos de glosario", detail: "la jerga, explicada" },
+        {
+          value: "3 días",
+          label: "Directo procesado",
+          detail: "casi 25 horas de emisión",
+        },
+        {
+          value: "{lessons}",
+          label: "Lecciones",
+          detail: "repartidas en {modules} módulos",
+        },
+        {
+          value: "122",
+          label: "Enlaces al minuto",
+          detail: "cada afirmación, a su fuente",
+        },
+        {
+          value: "16",
+          label: "Términos de glosario",
+          detail: "la jerga, explicada",
+        },
         { value: "2", label: "Idiomas", detail: "mismo contenido en los dos" },
         { value: "0 €", label: "Precio", detail: "sin registro ni cuenta" },
       ],
@@ -830,30 +848,51 @@ export const es: Copy = {
     services: {
       title: "Qué puedes encargarme",
       description:
-        "Servicios de Jorge Carrera Diez, ingeniero de software freelance: relevo técnico de productos en producción, desarrollo con React y Next.js, arquitectura frontend y automatización con agentes.",
-      lead: "Entro en productos que ya funcionan y sigo construyéndolos. También los levanto de cero hasta producción.",
+        "Servicios de Jorge Carrera Diez, ingeniero de software freelance en Logroño: relevo técnico de productos en producción, desarrollo web con React, Next.js y TypeScript, arquitectura frontend e integración de agentes.",
+      lead: "Desarrollo producto web con React, Next.js, TypeScript y Node. Me ocupo también del despliegue, del rendimiento y del mantenimiento de después.",
       detail:
-        "Arquitectura, desarrollo y puesta en producción, con la automatización de lo que hoy alguien hace a mano. Entro donde ya hay código y usuarios, y sigo sin parar la operativa.",
-      engagementTitle: "Cómo se trabaja",
+        "Llevo cinco años trabajando sobre código que ya estaba en producción, en banca, seguros y retail, con equipos que tenían que seguir entregando mientras tanto. En paralelo mantengo Snowy, una plataforma meteorológica propia que en los últimos tres meses acumuló 14,7 millones de impresiones orgánicas y 1.400 usuarios registrados.",
+      engagementTitle: "Cómo trabajo",
       engagementText:
-        "Encargo continuado, con el alcance acordado por escrito antes de empezar.",
+        "El método es el mismo en todos los encargos, y es lo que me deja entregar con pocas horas a la semana.",
       engagement: [
         {
-          title: "Alcance acordado por escrito",
-          text: "Antes de empezar queda claro qué entra y qué se queda fuera. Eso lo hablamos en la primera llamada.",
+          title: "Las decisiones quedan escritas",
+          text: "Antes de tocar código anoto qué se decidió y por qué. Quien retome el proyecto dentro de un año lo tiene ahí.",
         },
         {
           title: "De cuatro a seis horas por semana",
-          text: "Es la dedicación que puedo sostener sin bajar el listón. Si el encargo pide más, te lo digo en la primera llamada.",
+          text: "Es lo que puedo comprometer sin dejar de entregar. Si el encargo pide más dedicación, lo digo en la primera llamada.",
         },
         {
-          title: "El primer mes es de prueba",
-          text: "Sirve para los dos. Si no funciona, se deja ahí y no hay permanencia que cumplir.",
+          title: "Cada semana algo en producción",
+          text: "Rama propia, tests, integración continua y despliegue. Abres la web y lo ves funcionando.",
+        },
+      ],
+      stackTitle: "Con qué trabajo",
+      stackText:
+        "Lo que uso a diario en proyectos con usuarios reales, no una lista de todo lo que he tocado alguna vez.",
+      stack: [
+        {
+          group: "Frontend",
+          items: "React · Next.js · TypeScript · Tailwind · SSR · SEO técnico",
+        },
+        {
+          group: "Backend",
+          items: "Node · NestJS · Java · Spring Boot · APIs · autenticación",
+        },
+        {
+          group: "Datos e infraestructura",
+          items: "MySQL · PostgreSQL · Redis · Prisma · Docker · AWS · Vercel",
+        },
+        {
+          group: "Agentes e IA",
+          items: "Vercel AI SDK · RAG · MCP · herramientas · evaluaciones",
         },
       ],
       formTitle: "Cuéntame el contexto",
       formText:
-        "Con cuatro líneas me vale para saber si encaja. Te respondo aunque la respuesta sea que no.",
+        "Rellena estos campos y se abre tu programa de correo con el mensaje ya escrito. Lo revisas y lo envías tú.",
       form: {
         name: "Nombre",
         email: "Correo",
@@ -861,11 +900,9 @@ export const es: Copy = {
         productHint: "Nombre o dirección web, si ya existe",
         need: "Qué necesitas",
         needHint: "En qué estado está y qué te hace falta",
-        submit: "Enviar",
-        sending: "Enviando",
-        ok: "Recibido. Te contesto en menos de 48 horas.",
-        error: "No ha salido. Escríbeme directamente a",
-        fallbackLabel: "correo",
+        formSubject: "Encargo desde la web",
+        submit: "Abrir el correo",
+        note: "No se guarda nada aquí. El mensaje sale de tu cuenta.",
       },
     },
     snowy: {

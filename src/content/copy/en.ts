@@ -639,16 +639,19 @@ export const en: Copy = {
         "A platform in production, an international client and a portal with an audience.",
       text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
       sideTitle: "Side projects",
-      sideText: "Tools I build on my own, to solve a problem of mine or to test an idea.",
+      sideText:
+        "Tools I build on my own, to solve a problem of mine or to test an idea.",
     },
     courses: {
       title: "Courses",
       description:
         "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
-      heading: "Courses rebuilt from experts taking a real product from zero to production.",
+      heading:
+        "Courses rebuilt from experts taking a real product from zero to production.",
       collectionLead:
         "The livestreams where the people who built the tool ship something real, transcribed, checked against the official docs and cut into eight-minute lessons. Free, no sign-up.",
-      collectionMeta: "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
+      collectionMeta:
+        "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
       featuredEyebrow: "Available now",
       featuredCta: "Start with the first lesson",
       featuredSyllabus: "Syllabus · lessons per module",
@@ -699,10 +702,26 @@ export const en: Copy = {
       resultText:
         "The numbers for the first one, on Grok Bot. The links took the most work: everything claimed in a lesson points to the second of the broadcast where it was said, so you can check it without taking my word for it.",
       resultMetrics: [
-        { value: "3 days", label: "Livestream processed", detail: "almost 25 hours of broadcast" },
-        { value: "{lessons}", label: "Lessons", detail: "across {modules} modules" },
-        { value: "122", label: "Links to the minute", detail: "every claim, to its source" },
-        { value: "16", label: "Glossary terms", detail: "the jargon, explained" },
+        {
+          value: "3 days",
+          label: "Livestream processed",
+          detail: "almost 25 hours of broadcast",
+        },
+        {
+          value: "{lessons}",
+          label: "Lessons",
+          detail: "across {modules} modules",
+        },
+        {
+          value: "122",
+          label: "Links to the minute",
+          detail: "every claim, to its source",
+        },
+        {
+          value: "16",
+          label: "Glossary terms",
+          detail: "the jargon, explained",
+        },
         { value: "2", label: "Languages", detail: "same content in both" },
         { value: "€0", label: "Price", detail: "no signup, no account" },
       ],
@@ -831,30 +850,52 @@ export const en: Copy = {
     services: {
       title: "What you can hire me for",
       description:
-        "Services by Jorge Carrera Diez, freelance software engineer: taking over products already in production, React and Next.js development, frontend architecture and automation with agents.",
-      lead: "I step into products that already work and keep building them. I also take them from zero to production.",
+        "Services by Jorge Carrera Diez, freelance software engineer in Logroño, Spain: taking over products already in production, web development with React, Next.js and TypeScript, frontend architecture and agent integration.",
+      lead: "I build web products with React, Next.js, TypeScript and Node. I also handle deployment, performance and the maintenance that comes afterwards.",
       detail:
-        "Architecture, development and shipping to production, plus automating what someone does by hand today. I step into products that already have code and users, and keep them running.",
+        "I have spent five years working on code that was already in production, in banking, insurance and retail, with teams that had to keep shipping meanwhile. Alongside that I run Snowy, my own weather platform, which gathered 14.7 million organic impressions and 1,400 registered users over the last three months.",
       engagementTitle: "How I work",
       engagementText:
-        "Continuous work, with the scope agreed in writing before we start.",
+        "The method is the same on every engagement, and it is what lets me deliver on few hours a week.",
       engagement: [
         {
-          title: "Scope agreed in writing",
-          text: "Before we start it is clear what is in and what is out. We settle that on the first call.",
+          title: "Decisions are written down",
+          text: "Before touching code I record what was decided and why. Whoever picks the project up a year from now has it there.",
         },
         {
           title: "Four to six hours a week",
-          text: "It is the dedication I can sustain without lowering the bar. If the work needs more, I say so on the first call.",
+          text: "It is what I can commit to while still delivering. If the work needs more, I say so on the first call.",
         },
         {
-          title: "The first month is a trial",
-          text: "It works for both sides. If it does not fit, we stop there and there is no minimum term to serve.",
+          title: "Something in production every week",
+          text: "Own branch, tests, continuous integration and deployment. You open the site and see it running.",
+        },
+      ],
+      stackTitle: "What I work with",
+      stackText:
+        "What I use daily on projects with real users, rather than a list of everything I have touched once.",
+      stack: [
+        {
+          group: "Frontend",
+          items:
+            "React · Next.js · TypeScript · Tailwind · SSR · technical SEO",
+        },
+        {
+          group: "Backend",
+          items: "Node · NestJS · Java · Spring Boot · APIs · authentication",
+        },
+        {
+          group: "Data and infrastructure",
+          items: "MySQL · PostgreSQL · Redis · Prisma · Docker · AWS · Vercel",
+        },
+        {
+          group: "Agents and AI",
+          items: "Vercel AI SDK · RAG · MCP · tools · evaluations",
         },
       ],
       formTitle: "Tell me the context",
       formText:
-        "Four lines are enough for me to know whether it fits. I reply even when the answer is no.",
+        "Fill these in and your mail client opens with the message already written. You review it and send it yourself.",
       form: {
         name: "Name",
         email: "Email",
@@ -862,11 +903,9 @@ export const en: Copy = {
         productHint: "Name or web address, if it already exists",
         need: "What you need",
         needHint: "What state it is in and what you are missing",
-        submit: "Send",
-        sending: "Sending",
-        ok: "Got it. I will reply within 48 hours.",
-        error: "That did not go through. Write to me directly at",
-        fallbackLabel: "email",
+        formSubject: "Enquiry from the website",
+        submit: "Open my email",
+        note: "Nothing is stored here. The message goes out from your own account.",
       },
     },
     snowy: {

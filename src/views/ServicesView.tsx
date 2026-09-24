@@ -70,6 +70,18 @@ export function ServicesView({ locale }: { locale: Locale }) {
         </RevealChildren>
       </Section>
 
+      <Section className="border-t border-[var(--line)]">
+        <SectionHeader title={page.stackTitle} text={page.stackText} />
+        <RevealChildren className="mt-10 grid gap-x-12 gap-y-9 sm:mt-14 sm:grid-cols-2">
+          {page.stack.map((row) => (
+            <div key={row.group} className="area">
+              <h3 className="area-title">{row.group}</h3>
+              <p className="area-text">{row.items}</p>
+            </div>
+          ))}
+        </RevealChildren>
+      </Section>
+
       <Section className="section-band">
         <div className="mx-auto max-w-2xl">
           <SectionHeader title={page.formTitle} text={page.formText} />
