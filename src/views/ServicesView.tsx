@@ -1,11 +1,7 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
-import {
-  MetricCard,
-  RevealChildren,
-  Section,
-  SectionHeader,
-} from "@/components/ui";
+import { ServiceStats } from "@/components/services/ServiceStats";
+import { RevealChildren, Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { faqJsonLd, servicesPageJsonLd } from "@/lib/seo";
@@ -27,11 +23,7 @@ export function ServicesView({ locale }: { locale: Locale }) {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
           {page.detail}
         </p>
-        <RevealChildren className="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-card)] bg-[var(--line)] sm:mt-12 sm:grid-cols-3">
-          {page.metrics.map((metric) => (
-            <MetricCard key={metric.label} metric={metric} />
-          ))}
-        </RevealChildren>
+        <ServiceStats locale={locale} />
       </Section>
 
       <Section className="section-band">

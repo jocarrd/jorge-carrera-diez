@@ -892,16 +892,20 @@ export const es: Copy = {
       ],
       metrics: [
         {
-          value: "14,7 M",
-          label: "impresiones orgánicas en Snowy en los últimos 90 días",
+          value: 14687005,
+          label: "impresiones orgánicas",
+          detail: "en Snowy, los últimos 90 días",
         },
         {
-          value: "1.400+",
-          label: "usuarios registrados en un producto propio",
+          value: 242000,
+          label: "clics desde búsqueda",
+          detail: "en ese mismo periodo",
         },
         {
-          value: "5 años",
-          label: "sobre código en producción en banca, seguros y retail",
+          value: 1400,
+          suffix: "+",
+          label: "usuarios registrados",
+          detail: "en un producto propio",
         },
       ],
       faqTitle: "Preguntas frecuentes",

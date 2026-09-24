@@ -895,13 +895,20 @@ export const en: Copy = {
       ],
       metrics: [
         {
-          value: "14.7 M",
-          label: "organic impressions on Snowy over the last 90 days",
+          value: 14687005,
+          label: "organic impressions",
+          detail: "on Snowy, over the last 90 days",
         },
-        { value: "1,400+", label: "registered users on a product of my own" },
         {
-          value: "5 years",
-          label: "on production code in banking, insurance and retail",
+          value: 242000,
+          label: "clicks from search",
+          detail: "over that same period",
+        },
+        {
+          value: 1400,
+          suffix: "+",
+          label: "registered users",
+          detail: "on a product of my own",
         },
       ],
       faqTitle: "Frequently asked questions",
