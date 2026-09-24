@@ -812,6 +812,10 @@ export const es: Copy = {
         "Cuéntame el contexto en cuatro líneas: qué producto es, en qué estado está y qué necesitas. Te respondo si encaja, y también si no.",
       ctaPrimary: "Enviar correo",
       ctaSecondary: "Ver CV",
+      servicesCtaTitle: "Qué puedes encargarme",
+      servicesCtaText:
+        "Las formas de trabajo y la dedicación semanal están en la página de servicios.",
+      servicesCtaButton: "Ver servicios",
       linksTitle: "Antes de escribir",
       linksText:
         "Si prefieres tener más contexto, aquí está lo relevante de mi perfil y dónde ver mi trabajo.",
@@ -822,6 +826,47 @@ export const es: Copy = {
         { key: "cv", label: "CV web" },
         { key: "snowy", label: "Snowy" },
       ],
+    },
+    services: {
+      title: "Qué puedes encargarme",
+      description:
+        "Servicios de Jorge Carrera Diez, ingeniero de software freelance: relevo técnico de productos en producción, desarrollo con React y Next.js, arquitectura frontend y automatización con agentes.",
+      lead: "Entro en productos que ya funcionan y sigo construyéndolos. También los levanto de cero hasta producción.",
+      detail:
+        "Arquitectura, desarrollo y puesta en producción, con la automatización de lo que hoy alguien hace a mano. Entro donde ya hay código y usuarios, y sigo sin parar la operativa.",
+      engagementTitle: "Cómo se trabaja",
+      engagementText:
+        "Encargo continuado, con el alcance acordado por escrito antes de empezar.",
+      engagement: [
+        {
+          title: "Alcance acordado por escrito",
+          text: "Antes de empezar queda claro qué entra y qué se queda fuera. Eso lo hablamos en la primera llamada.",
+        },
+        {
+          title: "De cuatro a seis horas por semana",
+          text: "Es la dedicación que puedo sostener sin bajar el listón. Si el encargo pide más, te lo digo en la primera llamada.",
+        },
+        {
+          title: "El primer mes es de prueba",
+          text: "Sirve para los dos. Si no funciona, se deja ahí y no hay permanencia que cumplir.",
+        },
+      ],
+      formTitle: "Cuéntame el contexto",
+      formText:
+        "Con cuatro líneas me vale para saber si encaja. Te respondo aunque la respuesta sea que no.",
+      form: {
+        name: "Nombre",
+        email: "Correo",
+        product: "Producto",
+        productHint: "Nombre o dirección web, si ya existe",
+        need: "Qué necesitas",
+        needHint: "En qué estado está y qué te hace falta",
+        submit: "Enviar",
+        sending: "Enviando",
+        ok: "Recibido. Te contesto en menos de 48 horas.",
+        error: "No ha salido. Escríbeme directamente a",
+        fallbackLabel: "correo",
+      },
     },
     snowy: {
       title: "Snowy",

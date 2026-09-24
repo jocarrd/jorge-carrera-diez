@@ -326,12 +326,38 @@ export type Copy = {
       emailHint: string;
       ctaPrimary: string;
       ctaSecondary: string;
+      servicesCtaTitle: string;
+      servicesCtaText: string;
+      servicesCtaButton: string;
       linksTitle: string;
       linksText: string;
       links: {
         key: "linkedin" | "github" | "malt" | "cv" | "snowy";
         label: string;
       }[];
+    };
+    services: PageMeta & {
+      title: string;
+      lead: string;
+      detail: string;
+      engagementTitle: string;
+      engagementText: string;
+      engagement: TitledText[];
+      formTitle: string;
+      formText: string;
+      form: {
+        name: string;
+        email: string;
+        product: string;
+        productHint: string;
+        need: string;
+        needHint: string;
+        submit: string;
+        sending: string;
+        ok: string;
+        error: string;
+        fallbackLabel: string;
+      };
     };
     snowy: PageMeta &
       CaseIntro & {

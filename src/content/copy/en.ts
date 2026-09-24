@@ -813,6 +813,10 @@ export const en: Copy = {
         "Tell me the context in four lines: what the product is, what state it is in, and what you need. I will reply if it fits, and also if it does not.",
       ctaPrimary: "Send an email",
       ctaSecondary: "See CV",
+      servicesCtaTitle: "What you can hire me for",
+      servicesCtaText:
+        "The ways of working and the weekly dedication are on the services page.",
+      servicesCtaButton: "See services",
       linksTitle: "Before you write",
       linksText:
         "If you would rather have more context first, here is the relevant part of my profile and where to see my work.",
@@ -823,6 +827,47 @@ export const en: Copy = {
         { key: "cv", label: "Web CV" },
         { key: "snowy", label: "Snowy" },
       ],
+    },
+    services: {
+      title: "What you can hire me for",
+      description:
+        "Services by Jorge Carrera Diez, freelance software engineer: taking over products already in production, React and Next.js development, frontend architecture and automation with agents.",
+      lead: "I step into products that already work and keep building them. I also take them from zero to production.",
+      detail:
+        "Architecture, development and shipping to production, plus automating what someone does by hand today. I step into products that already have code and users, and keep them running.",
+      engagementTitle: "How I work",
+      engagementText:
+        "Continuous work, with the scope agreed in writing before we start.",
+      engagement: [
+        {
+          title: "Scope agreed in writing",
+          text: "Before we start it is clear what is in and what is out. We settle that on the first call.",
+        },
+        {
+          title: "Four to six hours a week",
+          text: "It is the dedication I can sustain without lowering the bar. If the work needs more, I say so on the first call.",
+        },
+        {
+          title: "The first month is a trial",
+          text: "It works for both sides. If it does not fit, we stop there and there is no minimum term to serve.",
+        },
+      ],
+      formTitle: "Tell me the context",
+      formText:
+        "Four lines are enough for me to know whether it fits. I reply even when the answer is no.",
+      form: {
+        name: "Name",
+        email: "Email",
+        product: "Product",
+        productHint: "Name or web address, if it already exists",
+        need: "What you need",
+        needHint: "What state it is in and what you are missing",
+        submit: "Send",
+        sending: "Sending",
+        ok: "Got it. I will reply within 48 hours.",
+        error: "That did not go through. Write to me directly at",
+        fallbackLabel: "email",
+      },
     },
     snowy: {
       title: "Snowy",
