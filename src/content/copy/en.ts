@@ -791,7 +791,7 @@ export const en: Copy = {
       services: [
         {
           title: "Taking over a product in flight",
-          text: "Whoever built it is leaving and the work has to continue. I pick up the code, the infrastructure and the product judgement, and keep things running meanwhile.",
+          text: "Whoever built it is leaving and the product has to go on. I take on the code, the infrastructure and the product judgement, and hold the operation together through the handover.",
         },
         {
           title: "Web product development",
@@ -851,9 +851,9 @@ export const en: Copy = {
       title: "What you can hire me for",
       description:
         "Services by Jorge Carrera Diez, freelance software engineer in Logroño, Spain: taking over products already in production, web development with React, Next.js and TypeScript, frontend architecture and agent integration.",
-      lead: "I build web products with React, Next.js, TypeScript and Node. I also handle deployment, performance and the maintenance that comes afterwards.",
+      lead: "I lead web product development with React, Next.js, TypeScript and Node, from architecture through to deployment and performance in production.",
       detail:
-        "I have spent five years working on code that was already in production, in banking, insurance and retail, with teams that had to keep shipping meanwhile. Alongside that I run Snowy, my own weather platform, which gathered 14.7 million organic impressions and 1,400 registered users over the last three months.",
+        "Five years on production systems in banking, insurance and retail, with teams that could not pause delivery while the ground was rebuilt underneath. Alongside that I run Snowy, my own weather platform, which gathered 14.7 million organic impressions and 1,400 registered users over the last three months.",
       engagementTitle: "How I work",
       engagementText:
         "The method is the same on every engagement, and it is what lets me deliver on few hours a week.",
@@ -868,7 +868,7 @@ export const en: Copy = {
         },
         {
           title: "Something in production every week",
-          text: "Own branch, tests, continuous integration and deployment. You open the site and see it running.",
+          text: "Every delivery goes through its own branch, tests, continuous integration and deployment. By the end of the week there is something in production you can open.",
         },
       ],
       stackTitle: "What I work with",

@@ -789,7 +789,7 @@ export const es: Copy = {
       services: [
         {
           title: "Relevo técnico de un producto en marcha",
-          text: "Se va quien lo construyó y hay que seguir. Cojo el código, la infraestructura y el criterio de producto, y mantengo la operativa mientras tanto.",
+          text: "Se va quien lo construyó y el producto tiene que seguir. Asumo el código, la infraestructura y el criterio de producto, y sostengo la operativa durante el traspaso.",
         },
         {
           title: "Desarrollo de producto web",
@@ -849,9 +849,9 @@ export const es: Copy = {
       title: "Qué puedes encargarme",
       description:
         "Servicios de Jorge Carrera Diez, ingeniero de software freelance en Logroño: relevo técnico de productos en producción, desarrollo web con React, Next.js y TypeScript, arquitectura frontend e integración de agentes.",
-      lead: "Desarrollo producto web con React, Next.js, TypeScript y Node. Me ocupo también del despliegue, del rendimiento y del mantenimiento de después.",
+      lead: "Lidero el desarrollo de producto web con React, Next.js, TypeScript y Node, desde la arquitectura hasta el despliegue y el rendimiento en producción.",
       detail:
-        "Llevo cinco años trabajando sobre código que ya estaba en producción, en banca, seguros y retail, con equipos que tenían que seguir entregando mientras tanto. En paralelo mantengo Snowy, una plataforma meteorológica propia que en los últimos tres meses acumuló 14,7 millones de impresiones orgánicas y 1.400 usuarios registrados.",
+        "Cinco años sobre sistemas en producción en banca, seguros y retail, en equipos que no podían detener la entrega mientras se reconstruía por debajo. En paralelo dirijo Snowy, una plataforma meteorológica propia que en los últimos tres meses acumuló 14,7 millones de impresiones orgánicas y 1.400 usuarios registrados.",
       engagementTitle: "Cómo trabajo",
       engagementText:
         "El método es el mismo en todos los encargos, y es lo que me deja entregar con pocas horas a la semana.",
@@ -866,7 +866,7 @@ export const es: Copy = {
         },
         {
           title: "Cada semana algo en producción",
-          text: "Rama propia, tests, integración continua y despliegue. Abres la web y lo ves funcionando.",
+          text: "Cada entrega pasa por rama propia, tests, integración continua y despliegue. Al final de la semana hay algo en producción que puedes abrir.",
         },
       ],
       stackTitle: "Con qué trabajo",

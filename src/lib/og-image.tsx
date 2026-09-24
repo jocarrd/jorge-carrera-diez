@@ -10,8 +10,23 @@ export const ogSize = {
 
 export const ogContentType = "image/png";
 
-export async function renderOpenGraphImage(locale: Locale) {
-  const copy = getCopy(locale).meta;
+type OpenGraphOverrides = {
+  eyebrow?: string;
+  tagline?: string;
+  stats?: [string, string][];
+};
+
+export async function renderOpenGraphImage(
+  locale: Locale,
+  overrides: OpenGraphOverrides = {},
+) {
+  const base = getCopy(locale).meta;
+  const copy = {
+    ...base,
+    ogEyebrow: overrides.eyebrow ?? base.ogEyebrow,
+    ogTagline: overrides.tagline ?? base.ogTagline,
+    ogStats: overrides.stats ?? base.ogStats,
+  };
 
   const [regular, semibold, bold, retrato] = await Promise.all([
     readFile(new URL("../assets/fonts/Geist-Regular.woff", import.meta.url)),
