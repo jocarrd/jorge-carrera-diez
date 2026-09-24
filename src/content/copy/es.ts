@@ -762,7 +762,7 @@ export const es: Copy = {
         "Jorge Carrera Diez, ingeniero de software freelance. Relevo técnico de productos en producción, desarrollo con React y Next.js y acompañamiento de arquitectura frontend.",
       lead: "Entro en productos que ya existen y sigo construyéndolos, o los levanto de cero hasta producción.",
       detail:
-        "Arquitectura de software, decisiones de producto y agentes metidos donde ahorran horas de verdad. Ahora mismo llevo los dos productos digitales de una fundación suiza, de los que asumí el relevo sin parar la operativa.",
+        "Arquitectura de software, decisiones de producto y agentes metidos donde ahorran horas de verdad. Escríbeme y te contesto yo, sin formularios de por medio.",
       availabilityLabel: "cómo empezamos",
       availabilityText:
         "Hablamos media hora, acotamos qué entra y qué se queda fuera, y te paso presupuesto y ritmo de trabajo por escrito antes de tocar nada.",
