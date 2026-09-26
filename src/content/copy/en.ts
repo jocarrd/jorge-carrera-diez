@@ -581,7 +581,7 @@ export const en: Copy = {
       description:
         "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and a private assessment platform.",
       impact:
-        "I picked up a project already in production and now keep it running: the index site, the rating platform and the documentation that did not exist before.",
+        "I rebuilt elitequality.org on a design system, built the Value Creation Rating website from scratch and maintain the private platform where companies take their assessment.",
       metrics: [
         { value: "151", label: "countries ranked" },
         { value: "148", label: "indicators" },
@@ -1917,159 +1917,83 @@ export const en: Copy = {
       },
     },
     eqx: {
-      title: "EQx",
+      title: "EQx and VCr",
       description:
-        "EQx project case: Jorge Carrera Diez took over the technical lead of the Elite Quality Index for the Foundation for Value Creation in St. Gallen, Switzerland.",
+        "Jorge Carrera Diez builds the websites of the Elite Quality Index and the Value Creation Rating, and the private platform where companies take their assessment, for the Foundation for Value Creation in St. Gallen, Switzerland.",
       eyebrow: "Client · Switzerland",
       heading:
-        "EQx: the index that measures elite quality across 151 countries.",
-      lead: "I took over the technical lead of the Elite Quality Index, a project of the Foundation for Value Creation under the academic leadership of three University of St. Gallen institutes. I came in to pick up a project already in production and keep it running on my own.",
+        "Websites and assessment platform for the Foundation for Value Creation",
+      lead: "The foundation, based in St. Gallen, publishes two indices: the Elite Quality Index (EQx), which scores 151 countries, and the Value Creation Rating (VCr), which scores companies. Since July 2026 I have been the project's developer, in charge of its three parts: the website of each index and the private platform where companies take their assessment.",
       detail:
-        "This is the engagement that best shows how I work with a client: nobody handed me the context, it had to be rebuilt by reading the code and measuring what was actually deployed. Today I maintain both the public index site and the private assessment platform, and the client has in writing what used to live in one person's head.",
+        "I work remotely and in English with the foundation's leadership and the project's designer. I gather what they ask for, write it down as requirements and take it to production.",
       ctaPrimary: "Visit elitequality.org",
-      ctaSecondary: "Get in touch",
+      ctaSecondary: "Let's talk",
       facts: [
         { label: "Client", value: "Foundation for Value Creation" },
-        { label: "Role", value: "Technical handover and development" },
-        { label: "Period", value: "Since July 2026" },
-        { label: "Scope", value: "Public site and assessment platform" },
+        { label: "Role", value: "Development and requirements" },
+        { label: "Since", value: "July 2026" },
+        { label: "Scope", value: "Two websites and a private platform" },
       ],
       imageAlts: {
-        home: "elitequality.org homepage with the Elite Quality Index world map",
-        rankings: "EQx country ranking table and interactive map",
+        home: "elitequality.org home page with the Elite Quality Index world map",
       },
-      client: {
-        eyebrow: "The client",
-        title: "A Swiss foundation publishing an annual academic index.",
-        text: "The Foundation for Value Creation is a non-profit based in St. Gallen, supervised by the Swiss federal authority for foundations. It publishes the Elite Quality Index, which measures how far a country's elites create value rather than extract it.",
+      products: {
+        title: "What I built",
         items: [
           {
-            title: "Academic leadership",
-            text: "Three University of St. Gallen institutes — IIDM, ERP and SBF — plus an international network of academic partners.",
+            name: "elitequality.org",
+            status: "Live",
+            text: "The public website of the EQx, built with Astro. When I joined I defined a design system with the designer and rebuilt all ten pages with it, from the world map and the rankings table to the methodology and downloads. The new version has been live since 21 September 2026.",
+            href: "https://elitequality.org/",
           },
           {
-            title: "Two products",
-            text: "The country index, public at elitequality.org, and the Value Creation Ratings for firms, computed on a private platform.",
+            name: "VCr website",
+            status: "Prototype",
+            text: "The public website of the company rating, which I built from scratch with Astro on the same design system. It has eleven pages, including a page per company, the directory and the comparison tool, and loads the real VCr2026 data from the spreadsheet the foundation provides. It is waiting for approval before going live.",
           },
           {
-            title: "Working in English",
-            text: "All coordination is remote and in English, on European hours. The assessment platform ships in English, Spanish and Chinese.",
-          },
-        ],
-      },
-      metrics: [
-        { value: "151", label: "countries ranked" },
-        { value: "148", label: "indicators" },
-        { value: "12", label: "pillars across 4 areas" },
-        { value: "7th", label: "annual edition" },
-      ],
-      scale: {
-        eyebrow: "How it is measured",
-        title: "From four areas to a hundred and fifty-one countries.",
-        text: "The index is not a survey: it is a measurement chain. Each area opens into pillars, each pillar is measured with indicators, and each country's position falls out of that. Keeping it running in production is the engagement.",
-        rungs: [
-          { count: 4, value: "4", label: "areas" },
-          { count: 12, value: "12", label: "pillars" },
-          { count: 148, value: "148", label: "indicators" },
-          { count: 151, value: "151", label: "countries" },
-        ],
-        note: "The last rows draw a sample: the real figure is in the number.",
-      },
-      index: {
-        eyebrow: "The index",
-        title: "Four levels, from a single number to 148 indicators.",
-        text: "The shape of the EQx drives the whole interface: every view on the site — the map, the table, the comparison tool — is a way into and out of this hierarchy.",
-        levels: [
-          {
-            level: "Level 1",
-            title: "The index",
-            text: "One score and a global rank per country, plus the Power and Value sub-indexes.",
-          },
-          {
-            level: "Level 2",
-            title: "Four areas",
-            text: "The first breakdown, used to compare countries without going into detail.",
-          },
-          {
-            level: "Level 3",
-            title: "Twelve pillars",
-            text: "The level where you see where a country's score actually comes from.",
-          },
-          {
-            level: "Level 4",
-            title: "148 indicators",
-            text: "The source data. This is what has to be auditable when someone disputes a result.",
+            name: "self-VCr",
+            status: "Live · private",
+            text: "The platform where a company answers the assessment survey in English, Spanish or Chinese and receives its rating and the official PDF report. The foundation manages clients and teams from its admin console. It is built with Next.js; I inherited it in production, I maintain it and I am bringing the new design to it. There are no screenshots because access is by invitation only.",
           },
         ],
       },
       work: {
-        eyebrow: "What I do",
-        title: "Pick up a running project and make it sustainable.",
-        text: "The job was not to build from scratch but to take ownership: understand what was there, write it down, and keep shipping without breaking what was already published.",
+        title: "Way of working",
         items: [
           {
-            title: "Map the ground first",
-            text: "Measure what is actually deployed instead of trusting inherited documentation. Much of what the repo described was no longer what was in production.",
+            title: "Written requirements",
+            text: "Requests come in through meetings and email. Before writing code I turn them into a document stating what is in scope and what is not.",
           },
           {
-            title: "Public index site",
-            text: "A static site with interactive islands: world map, rankings table, country comparison tool and rank evolution over time.",
+            title: "Official data",
+            text: "The rankings come from the foundation's data books. Every import is checked against the source, and if a number does not match, the importer gets fixed.",
           },
           {
-            title: "Assessment platform",
-            text: "A private application where a firm answers the survey, its rating is computed and the official four-page report is generated.",
+            title: "Documentation",
+            text: "Each repository documents how it is deployed and which decisions were made. The documentation I inherited no longer matched what was in production, so I rewrote it from the code.",
           },
           {
-            title: "Data that has to add up",
-            text: "Rankings come from the foundation's official workbooks. The import is validated against the source: if it does not match, you fix the importer, not the output.",
-          },
-          {
-            title: "Continuous delivery",
-            text: "Every change ships on merge, and the project moved into the client's own organisation rather than mine.",
-          },
-          {
-            title: "Handover documentation",
-            text: "What I learn gets written down. If someone else comes in tomorrow, they do not repeat the archaeology I had to do.",
+            title: "Continuous deployment",
+            text: "Every approved change goes live on merge, from the foundation's GitHub organisation.",
           },
         ],
-      },
-      vcr: {
-        eyebrow: "self-VCr",
-        title: "The other half: rating firms.",
-        text: "Alongside the country index, the foundation computes a Value Creation Rating for firms. The tool is private and invitation-only, so there are no screenshots here — but I can say what it is made of.",
-        items: [
-          "A multilingual survey with saved progress, so it can be answered across several sessions.",
-          "A scoring engine turning answers into the sustainable value creation score.",
-          "The official four-page report, server-rendered and always faithful to its design.",
-          "An admin console for clients, teams and access links.",
-        ],
-        note: "This is work under client agreement. The specifics belong in a conversation, not on a web page.",
       },
       stack: {
         eyebrow: "Stack",
-        title: "Two different applications, one person responsible.",
-        text: "The index site and the assessment platform are two independent systems, with no code or technology in common, and I maintain both.",
+        title: "Stack",
         groups: [
           {
-            label: "Index site",
-            items: ["Astro", "React", "Tailwind", "TypeScript"],
+            label: "EQx and VCr websites",
+            items: ["Astro", "React", "Tailwind", "TypeScript", "D3"],
           },
           {
-            label: "Visualisation",
-            items: ["D3", "TopoJSON", "TanStack Table"],
-          },
-          {
-            label: "Platform",
+            label: "self-VCr platform",
             items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
           },
           {
             label: "Delivery",
-            items: [
-              "GitHub Actions",
-              "Continuous deploy",
-              "Vitest",
-              "Playwright",
-            ],
+            items: ["GitHub Actions", "Vitest", "Playwright"],
           },
         ],
       },

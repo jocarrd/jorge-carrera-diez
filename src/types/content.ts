@@ -580,21 +580,16 @@ export type Copy = {
         detail: string;
         ctaPrimary: string;
         ctaSecondary: string;
-        imageAlts: { home: string; rankings: string };
-        client: SectionCopy & { items: TitledText[] };
-        scale: {
-          eyebrow: string;
-          title: string;
-          text: string;
-          rungs: { count: number; value: string; label: string }[];
-          note: string;
+        imageAlts: { home: string };
+        products: SectionCopy & {
+          items: {
+            name: string;
+            status: string;
+            text: string;
+            href?: string;
+          }[];
         };
-        metrics: Metric[];
         work: SectionCopy & { items: TitledText[] };
-        index: SectionCopy & {
-          levels: { level: string; title: string; text: string }[];
-        };
-        vcr: SectionCopy & { items: string[]; note: string };
       };
   };
   radarScrub: {

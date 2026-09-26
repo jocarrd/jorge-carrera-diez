@@ -579,7 +579,7 @@ export const es: Copy = {
       description:
         "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y plataforma privada de evaluación.",
       impact:
-        "Recogí un proyecto ya en producción y hoy lo sostengo yo: la web del índice, la plataforma de rating y la documentación que antes no existía.",
+        "Rehice elitequality.org con un design system, hice desde cero la web del Value Creation Rating y mantengo el panel privado donde las empresas se evalúan.",
       metrics: [
         { value: "151", label: "países en el ranking" },
         { value: "148", label: "indicadores" },
@@ -1929,159 +1929,83 @@ export const es: Copy = {
       },
     },
     eqx: {
-      title: "EQx",
+      title: "EQx y VCr",
       description:
-        "Caso de proyecto EQx: Jorge Carrera Diez lleva el relevo técnico del Elite Quality Index de la Foundation for Value Creation, en St. Gallen (Suiza).",
+        "Jorge Carrera Diez desarrolla las webs del Elite Quality Index y del Value Creation Rating, y el panel privado donde las empresas se evalúan, para la Foundation for Value Creation de St. Gallen (Suiza).",
       eyebrow: "Cliente · Suiza",
       heading:
-        "EQx: el índice que mide la calidad de las élites de 151 países.",
-      lead: "Llevo el relevo técnico del Elite Quality Index, el proyecto de la Foundation for Value Creation con dirección académica de tres institutos de la Universidad de St. Gallen. Entré para recoger un proyecto ya en producción y sostenerlo yo solo.",
+        "Las webs y el panel de evaluación de la Foundation for Value Creation",
+      lead: "La fundación, con sede en St. Gallen, publica dos índices: el Elite Quality Index (EQx), que puntúa a 151 países, y el Value Creation Rating (VCr), que puntúa a empresas. Desde julio de 2026 soy el desarrollador del proyecto y llevo sus tres piezas: la web de cada índice y el panel privado donde las empresas hacen su evaluación.",
       detail:
-        "Es el encargo que mejor explica cómo trabajo con un cliente: nadie me pasó el contexto, había que reconstruirlo leyendo el código y midiendo lo que había levantado. Hoy mantengo tanto la web pública del índice como la plataforma privada de evaluación, y el cliente tiene por escrito lo que antes solo estaba en la cabeza de una persona.",
+        "Trabajo en remoto y en inglés con la dirección de la fundación y con la diseñadora del proyecto. Recojo lo que piden, lo paso a requisitos por escrito y lo llevo hasta producción.",
       ctaPrimary: "Ver elitequality.org",
       ctaSecondary: "Hablemos",
       facts: [
         { label: "Cliente", value: "Foundation for Value Creation" },
-        { label: "Rol", value: "Relevo técnico y desarrollo" },
-        { label: "Periodo", value: "Desde julio de 2026" },
-        { label: "Ámbito", value: "Web pública y plataforma de evaluación" },
+        { label: "Rol", value: "Desarrollo y requisitos" },
+        { label: "Desde", value: "Julio de 2026" },
+        { label: "Piezas", value: "Dos webs y un panel privado" },
       ],
       imageAlts: {
         home: "Portada de elitequality.org con el mapa mundial del Elite Quality Index",
-        rankings: "Tabla y mapa interactivo del ranking de países del EQx",
       },
-      client: {
-        eyebrow: "El cliente",
-        title: "Una fundación suiza que publica un índice académico anual.",
-        text: "La Foundation for Value Creation es una fundación sin ánimo de lucro con sede en St. Gallen, supervisada por la autoridad federal suiza de fundaciones. Publica el Elite Quality Index, que mide en qué medida las élites de un país crean valor en vez de extraerlo.",
+      products: {
+        title: "Qué he hecho",
         items: [
           {
-            title: "Dirección académica",
-            text: "Tres institutos de la Universidad de St. Gallen —IIDM, ERP y SBF— más una red internacional de socios académicos.",
+            name: "elitequality.org",
+            status: "En producción",
+            text: "La web pública del EQx, hecha con Astro. Al entrar definí con la diseñadora un design system y rehice con él las diez páginas, del mapa mundial y la tabla de rankings a la metodología y las descargas. La versión nueva está publicada desde el 21 de septiembre de 2026.",
+            href: "https://elitequality.org/",
           },
           {
-            title: "Dos productos",
-            text: "El índice de países, público en elitequality.org, y las Value Creation Ratings de empresas, que se calculan en una plataforma privada.",
+            name: "Web del VCr",
+            status: "Prototipo",
+            text: "La web pública del rating de empresas, que hice desde cero con Astro sobre el mismo design system. Tiene once páginas, entre ellas la ficha de cada empresa, el directorio y el comparador, y carga los datos reales del VCr2026 desde el Excel que entrega la fundación. Está pendiente de aprobación para publicarse.",
           },
           {
-            title: "Trabajo en inglés",
-            text: "Toda la coordinación es en inglés y en remoto, con horario europeo. La plataforma de evaluación está en inglés, español y chino.",
-          },
-        ],
-      },
-      metrics: [
-        { value: "151", label: "países en el ranking" },
-        { value: "148", label: "indicadores" },
-        { value: "12", label: "pilares en 4 áreas" },
-        { value: "7ª", label: "edición anual" },
-      ],
-      scale: {
-        eyebrow: "Cómo se mide",
-        title: "De cuatro áreas a ciento cincuenta y un países.",
-        text: "El índice no es una encuesta: es una cadena de medición. Cada área se abre en pilares, cada pilar se mide con indicadores, y de ahí sale la posición de cada país. Sostener eso en producción es el encargo.",
-        rungs: [
-          { count: 4, value: "4", label: "áreas" },
-          { count: 12, value: "12", label: "pilares" },
-          { count: 148, value: "148", label: "indicadores" },
-          { count: 151, value: "151", label: "países" },
-        ],
-        note: "La última fila dibuja una muestra: la cifra real la dice el número.",
-      },
-      index: {
-        eyebrow: "El índice",
-        title: "Cuatro niveles, de un número a 148 indicadores.",
-        text: "La estructura del EQx es lo que condiciona toda la interfaz: cualquier vista de la web —el mapa, la tabla, el comparador— es una forma de entrar y salir de esta jerarquía.",
-        levels: [
-          {
-            level: "Nivel 1",
-            title: "El índice",
-            text: "Una puntuación y un puesto global por país, más los subíndices de Poder y Valor.",
-          },
-          {
-            level: "Nivel 2",
-            title: "Cuatro áreas",
-            text: "El primer desglose, el que se usa para comparar países entre sí sin bajar al detalle.",
-          },
-          {
-            level: "Nivel 3",
-            title: "Doce pilares",
-            text: "El nivel donde se ve de qué le viene a un país su puntuación.",
-          },
-          {
-            level: "Nivel 4",
-            title: "148 indicadores",
-            text: "El dato de origen. Es lo que hay que poder auditar cuando alguien discute un resultado.",
+            name: "self-VCr",
+            status: "En producción · privado",
+            text: "El panel donde una empresa responde la encuesta de evaluación en inglés, español o chino y recibe su rating y el informe oficial en PDF. La fundación gestiona desde su consola a los clientes y los equipos. Está hecho con Next.js; lo heredé en producción, lo mantengo y le estoy llevando el nuevo diseño. No hay capturas porque solo se entra por invitación.",
           },
         ],
       },
       work: {
-        eyebrow: "Qué hago",
-        title: "Recoger un proyecto en marcha y dejarlo sostenible.",
-        text: "El encargo no era construir de cero, sino hacerse cargo: entender lo que había, ponerlo por escrito y seguir sacando versiones sin romper lo que ya estaba publicado.",
+        title: "Método de trabajo",
         items: [
           {
-            title: "Levantar el mapa del terreno",
-            text: "Medir lo que hay levantado en vez de creerme la documentación heredada. Buena parte de lo que describía el repo ya no era lo que estaba en producción.",
+            title: "Requisitos por escrito",
+            text: "Las peticiones llegan en reuniones y por correo. Antes de programar las paso a un documento con lo que entra y lo que se queda fuera.",
           },
           {
-            title: "Web pública del índice",
-            text: "Sitio estático con islas interactivas: mapa mundial, tabla de rankings, comparador de países y visualización de la evolución de puestos.",
+            title: "Datos oficiales",
+            text: "Los rankings salen de los libros de datos de la fundación. La importación se comprueba contra el original, y si un número no cuadra se corrige el importador.",
           },
           {
-            title: "Plataforma de evaluación",
-            text: "Aplicación privada donde una empresa responde la encuesta, se calcula su rating y se genera el informe oficial de cuatro páginas.",
-          },
-          {
-            title: "Datos que tienen que cuadrar",
-            text: "Los rankings salen de los libros oficiales de la fundación. La importación se valida contra el origen: si no cuadra, se arregla el importador, no el resultado.",
+            title: "Documentación",
+            text: "Cada repositorio tiene escrito cómo se despliega y qué decisiones se tomaron. La documentación que heredé ya no coincidía con lo que había en producción, así que la rehice leyendo el código.",
           },
           {
             title: "Despliegue continuo",
-            text: "Cada cambio se publica solo al integrarse, y el proyecto pasó a vivir en la organización del cliente, no en la mía.",
-          },
-          {
-            title: "Documentación de traspaso",
-            text: "Lo que aprendí queda escrito. Si mañana entra otra persona, no repite la arqueología que tuve que hacer yo.",
+            text: "Cada cambio aprobado se publica solo al integrarse, desde la organización de GitHub de la fundación.",
           },
         ],
-      },
-      vcr: {
-        eyebrow: "self-VCr",
-        title: "La otra mitad: el rating de empresas.",
-        text: "Junto al índice de países, la fundación calcula el Value Creation Rating de empresas. La herramienta es privada y solo se entra por invitación, así que aquí no hay capturas: lo que sí puedo contar es de qué se compone.",
-        items: [
-          "Encuesta multilingüe con el progreso guardado, para poder responder en varias sesiones.",
-          "Motor de cálculo que convierte las respuestas en la puntuación de creación de valor.",
-          "Informe oficial de cuatro páginas, generado en servidor y siempre idéntico a su diseño.",
-          "Consola de administración para gestionar clientes, equipos y enlaces de acceso.",
-        ],
-        note: "Es trabajo bajo acuerdo con el cliente. Los detalles concretos los cuento en una conversación, no en una página web.",
       },
       stack: {
-        eyebrow: "Stack",
-        title: "Dos aplicaciones distintas, un mismo responsable.",
-        text: "La web del índice y la plataforma de evaluación son dos sistemas independientes, sin código ni tecnología en común, y llevo el mantenimiento de las dos.",
+        eyebrow: "Tecnologías",
+        title: "Tecnologías",
         groups: [
           {
-            label: "Web del índice",
-            items: ["Astro", "React", "Tailwind", "TypeScript"],
+            label: "Webs del EQx y del VCr",
+            items: ["Astro", "React", "Tailwind", "TypeScript", "D3"],
           },
           {
-            label: "Visualización",
-            items: ["D3", "TopoJSON", "TanStack Table"],
-          },
-          {
-            label: "Plataforma",
+            label: "Panel self-VCr",
             items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
           },
           {
             label: "Entrega",
-            items: [
-              "GitHub Actions",
-              "Despliegue continuo",
-              "Vitest",
-              "Playwright",
-            ],
+            items: ["GitHub Actions", "Vitest", "Playwright"],
           },
         ],
       },
