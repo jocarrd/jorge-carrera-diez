@@ -187,8 +187,8 @@ function freelanceOffers(locale: Locale) {
     },
     {
       name: es
-        ? "Desarrollo de producto web con React y Next.js"
-        : "Web product development with React and Next.js",
+        ? "Desarrollo de producto digital de cero a producción"
+        : "Digital product development from zero to production",
       description: es
         ? "Aplicaciones con React, Next.js, TypeScript y NestJS, del frontend al backend y la infraestructura."
         : "Applications with React, Next.js, TypeScript and NestJS, from frontend to backend and infrastructure.",
@@ -208,6 +208,14 @@ function freelanceOffers(locale: Locale) {
       description: es
         ? "Agentes y modelos integrados en flujos que ya están en producción, con sus límites, su coste y su mantenimiento."
         : "Agents and models integrated into flows already in production, with their limits, cost and maintenance.",
+    },
+    {
+      name: es
+        ? "SEO técnico y búsqueda con IA"
+        : "Technical SEO and AI search",
+      description: es
+        ? "Revisión del SEO técnico de una web y su adaptación a Google, a sus resúmenes con IA y a asistentes como ChatGPT o Perplexity: indexación, rendimiento, datos estructurados y páginas por búsqueda."
+        : "Review of a website's technical SEO and its adaptation to Google, its AI summaries and assistants such as ChatGPT or Perplexity: indexing, performance, structured data and per-search pages.",
     },
   ];
 
@@ -252,6 +260,45 @@ export function servicesPageJsonLd(locale: Locale) {
 export function faqJsonLd(locale: Locale) {
   const page = getCopy(locale).pages.services;
   const url = absolute(routePath(locale, "services"));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    inLanguage: htmlLang[locale],
+    mainEntity: page.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
+export function seoServiceJsonLd(locale: Locale) {
+  const page = getCopy(locale).pages.seoService;
+  const url = absolute(routePath(locale, "seoService"));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    url,
+    name: page.heading,
+    description: page.description,
+    serviceType: page.heading,
+    inLanguage: htmlLang[locale],
+    provider: { "@id": `${site.url}/#person` },
+    areaServed: {
+      "@type": "Place",
+      name:
+        locale === "es" ? "Remoto, horario europeo" : "Remote, European hours",
+    },
+  };
+}
+
+export function seoServiceFaqJsonLd(locale: Locale) {
+  const page = getCopy(locale).pages.seoService;
+  const url = absolute(routePath(locale, "seoService"));
 
   return {
     "@context": "https://schema.org",

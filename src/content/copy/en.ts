@@ -62,7 +62,7 @@ export const en: Copy = {
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
       "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
-    availability: "Open to new opportunities",
+    availability: "Available for projects and teams",
     clientsLabel: "Where I have worked",
     capabilities: [
       {
@@ -120,6 +120,13 @@ export const en: Copy = {
     },
   },
   hero: {
+    paths: {
+      team: { question: "Hiring for your team?", label: "See CV" },
+      product: {
+        question: "Need help with your product?",
+        label: "See services",
+      },
+    },
     ctaPrimary: "See experience",
     ctaSecondary: "CV",
     ctaContact: "Get in touch",
@@ -786,16 +793,15 @@ export const en: Copy = {
         },
       ],
       servicesTitle: "How I can help",
-      servicesText:
-        "Four ways of working that are already running with real clients, not a list of technologies.",
+      servicesText: "Five ways of working, each with a real project behind it.",
       services: [
         {
           title: "Taking over a product in flight",
           text: "Whoever built it is leaving and the product has to go on. I take on the code, the infrastructure and the product judgement, and hold the operation together through the handover.",
         },
         {
-          title: "Web product development",
-          text: "React, Next.js, TypeScript and NestJS, from frontend to backend and infrastructure. Including the boring part: deployment, performance and search visibility.",
+          title: "Products from zero to production",
+          text: "I take a founder's idea and turn it into a product in production, with React, Next.js, TypeScript and NestJS, from the frontend to the infrastructure. Including the boring part: deployment, performance and search visibility.",
         },
         {
           title: "Architecture and team support",
@@ -804,6 +810,11 @@ export const en: Copy = {
         {
           title: "AI where it actually saves hours",
           text: "I automate work someone still does by hand and put agents where the team loses time. It is how I work every day, including on my own projects.",
+        },
+        {
+          title: "Technical SEO and AI search",
+          route: "seoService",
+          text: "I review the technical SEO of your website and adapt it to how people search now: on Google, in its AI summaries and in assistants such as ChatGPT or Perplexity. Indexing, performance, structured data and pages that answer specific searches. It is the work behind Snowy's organic traffic.",
         },
       ],
       clientsTitle: "Where I have worked",
@@ -848,23 +859,82 @@ export const en: Copy = {
       ],
     },
     services: {
-      title: "What you can hire me for",
+      title: "Digital product development, from idea to production",
       description:
-        "Services by Jorge Carrera Diez, freelance software engineer in Logroño, Spain: taking over products already in production, web development with React, Next.js and TypeScript, frontend architecture and agent integration.",
-      lead: "I lead web product development with React, Next.js, TypeScript and Node, from architecture through to deployment and performance in production.",
+        "Jorge Carrera Diez, freelance product engineer: I take digital products from idea to production, join teams that are already building, and do technical SEO. React, Next.js, TypeScript, NestJS and AWS.",
+      eyebrow: "What you can hire me for",
+      heading: "Digital products, from idea to production",
+      lead: "I take a founder's idea all the way to a product in production, or join a team that is already building and improve what is there. From the infrastructure to the frontend, with a product mindset.",
       detail:
-        "Five years on production systems in banking, insurance and retail, with teams that could not pause delivery while the ground was rebuilt underneath. Alongside that I run Snowy, my own weather platform, which gathered 14.7 million organic impressions and 1,400 registered users over the last three months.",
+        "Five years on production systems in banking, insurance and retail, with teams that could not pause delivery while the ground was rebuilt underneath. Alongside that I develop Snowy, a weather platform that gathered 16.8 million organic impressions and 257,000 clicks from Google over the last three months.",
+      ctaCall: "Book a call",
+      ctaCase: "Read the Snowy SEO case",
+      caseLink: "See the technical SEO service",
+      pricingTitle: "How pricing works",
+      pricingText:
+        "There is no published rate because every engagement is different. There are two ways of working, and the price goes in writing in the proposal before we start.",
+      pricing: [
+        {
+          title: "Fixed engagement",
+          text: "An audit, an MVP or a migration with a defined scope. A fixed price for the whole engagement, with deliveries and deadlines in writing.",
+        },
+        {
+          title: "Monthly dedication",
+          text: "A technical handover or support for a team. A monthly fee for an agreed dedication, reviewed if what is needed changes.",
+        },
+        {
+          title: "What moves the price",
+          text: "The size and state of the product, and whether the work is only diagnosis or implementation as well. That is why the call comes first.",
+        },
+      ],
+      chart: {
+        title: "Daily clicks from Google on Snowy",
+        ariaLabel:
+          "Daily clicks from Google on Snowy between 26 June and 24 September 2026, peaking at 27,351 on 12 August, the day of the eclipse.",
+        peakLabel: "27,351 clicks on eclipse day",
+        startLabel: "26 Jun",
+        endLabel: "24 Sep",
+        caption: "Source: Google Search Console, 91 days.",
+      },
+      productionTitle: "In production",
+      productionText: "Products I run or have run, with real users inside.",
+      productionLink: "See the case",
+      production: [
+        {
+          name: "Snowy",
+          text: "Weather intelligence platform: multi-model forecast, radar and an AI assistant.",
+          domain: "snowy.es",
+          image: "/images/snowy-home.webp",
+          alt: "Snowy homepage with the station map and the forecast",
+          route: "snowy",
+        },
+        {
+          name: "EQx",
+          text: "The index that ranks 151 countries by the quality of their elites, for a Swiss foundation.",
+          domain: "elitequality.org",
+          image: "/images/eqx-home.webp",
+          alt: "Elite Quality Index homepage with the world map",
+          route: "eqx",
+        },
+        {
+          name: "La Rioja Meteo",
+          text: "The reference weather portal in La Rioja since 2012.",
+          domain: "lariojameteo.es",
+          image: "/images/lariojameteo-home.webp",
+          alt: "La Rioja Meteo homepage",
+          route: "lariojameteo",
+        },
+      ],
       engagementTitle: "How I work",
-      engagementText:
-        "The method is the same on every engagement, and it is what lets me deliver on few hours a week.",
+      engagementText: "The method is the same on every engagement.",
       engagement: [
         {
           title: "Decisions are written down",
           text: "Before touching code I record what was decided and why. Whoever picks the project up a year from now has it there.",
         },
         {
-          title: "Four to six hours a week",
-          text: "It is what I can commit to while still delivering. If the work needs more, I say so on the first call.",
+          title: "Dedication is agreed per engagement",
+          text: "How many hours each week depends on the work. We set them on the first call and they go in writing in the proposal.",
         },
         {
           title: "Something in production every week",
@@ -895,12 +965,12 @@ export const en: Copy = {
       ],
       metrics: [
         {
-          value: 14687005,
+          value: 16830175,
           label: "organic impressions",
           detail: "on Snowy, over the last 90 days",
         },
         {
-          value: 242000,
+          value: 257346,
           label: "clicks from search",
           detail: "over that same period",
         },
@@ -908,7 +978,7 @@ export const en: Copy = {
           value: 1400,
           suffix: "+",
           label: "registered users",
-          detail: "on a product of my own",
+          detail: "on Snowy",
         },
       ],
       faqTitle: "Frequently asked questions",
@@ -920,9 +990,9 @@ export const en: Copy = {
             "Yes. I live in Logroño, in La Rioja, Spain, and I work remotely on European hours for clients in Spain and abroad. The client does not need to be in my city or my country.",
         },
         {
-          question: "How many hours a week can you commit?",
+          question: "How much time can you commit?",
           answer:
-            "Four to six hours a week per client, spread according to what that week needs. If the work requires more, I say so on the first call instead of accepting and falling short.",
+            "It depends on the work. On the first call we look at how much there is and I tell you what I can commit to. If I cannot do it properly, I say so there instead of accepting and falling short.",
         },
         {
           question: "Can you step into a product that is already built?",
@@ -937,7 +1007,7 @@ export const en: Copy = {
         {
           question: "How do you invoice?",
           answer:
-            "As a self-employed professional registered in Spain, invoicing monthly. The scope is agreed in writing before we start and the price is discussed on the first call, once I know what the work is.",
+            "As a self-employed professional registered in Spain, invoicing monthly. After the first call I send you a fixed written proposal with scope, timeline and price, and you decide on that.",
         },
         {
           question: "What languages do you work in?",
@@ -945,9 +1015,9 @@ export const en: Copy = {
             "Spanish, my native language, and English at a professional level. The projects I run today are split between the two.",
         },
       ],
-      formTitle: "Tell me the context",
+      formTitle: "First, a half-hour call",
       formText:
-        "Fill these in and your mail client opens with the message already written. You review it and send it yourself.",
+        "You tell me what the product is and what you need. Afterwards I send you a fixed written proposal, price included. Fill these in and your mail client opens with the request already written.",
       form: {
         name: "Name",
         email: "Email",
@@ -955,10 +1025,335 @@ export const en: Copy = {
         productHint: "Name or web address, if it already exists",
         need: "What you need",
         needHint: "What state it is in and what you are missing",
-        formSubject: "Enquiry from the website",
-        submit: "Open my email",
+        formSubject: "30-minute call",
+        submit: "Request the call",
         note: "Nothing is stored here. The message goes out from your own account.",
+        emailAlt: "Rather write without a form?",
       },
+    },
+    seoService: {
+      title: "Technical SEO consultant: audit and implementation",
+      description:
+        "Freelance technical SEO consultant: a technical SEO audit of your website and implementation of the changes. Indexing, Core Web Vitals, JavaScript rendering and AI search, specialising in React and Next.js.",
+      eyebrow: "Services · Technical SEO",
+      heading: "Technical SEO consultant",
+      lead: "I review your website's technical SEO and get it ready for Google and for AI search. Since I am also a developer, I can implement the changes myself in your repository.",
+      detail:
+        "It is the work behind Snowy, a weather intelligence platform that gathered 16.8 million impressions and 257,000 organic clicks in 90 days. It works for any website, and where I add the most is on products built with React or Next.js.",
+      facts: [
+        { label: "Impressions on Snowy", value: "16.8 M" },
+        { label: "Clicks in 90 days", value: "257,346" },
+        { label: "Average position", value: "8.1" },
+        { label: "Speciality", value: "React and Next.js" },
+      ],
+      ctaPrimary: "Book a call",
+      ctaSecondary: "See the Snowy case",
+      forWhomTitle: "When it makes sense",
+      forWhomText: "Situations where the problem is usually technical.",
+      forWhom: [
+        {
+          title: "Google does not show your website",
+          text: "The product is good, but the pages are not indexed or rank below the competition.",
+        },
+        {
+          title: "You are about to migrate",
+          text: "A change of domain, CMS or framework. A well-built redirect map keeps the traffic you already have.",
+        },
+        {
+          title: "Your website is built with React or Next.js",
+          text: "If the content depends on JavaScript, Google and AI bots may not see what your users see.",
+        },
+        {
+          title: "You want to show up in AI answers",
+          text: "ChatGPT, Perplexity and Google's AI summaries cite pages they can read and that bring data of their own.",
+        },
+      ],
+      auditTitle: "What the technical SEO audit covers",
+      auditText:
+        "The areas I review, with the terms you will find in the report.",
+      audit: [
+        {
+          title: "Crawling and indexing",
+          text: "robots.txt, meta robots, indexing status in Search Console, discovered but not indexed pages, soft 404s and status codes.",
+        },
+        {
+          title: "Architecture and internal linking",
+          text: "Click depth, orphan pages, URL parameters and pagination.",
+        },
+        {
+          title: "JavaScript rendering",
+          text: "What Googlebot sees in the initial HTML and after rendering, and whether the canonical and noindex come from the server.",
+        },
+        {
+          title: "Core Web Vitals",
+          text: "LCP, INP and CLS with field data from real users, as well as lab tests.",
+        },
+        {
+          title: "Duplicates, canonicals and hreflang",
+          text: "Which version of each page counts for Google, and whether language or country versions are linked correctly.",
+        },
+        {
+          title: "Redirects and sitemaps",
+          text: "Chains, loops and 302s that should be 301s. XML sitemaps that only include indexable, canonical URLs.",
+        },
+        {
+          title: "Structured data",
+          text: "Markup that is valid and says the same as the page.",
+        },
+        {
+          title: "Log file analysis",
+          text: "What Googlebot, Bingbot and AI bots actually crawl, and how often.",
+        },
+        {
+          title: "AI search",
+          text: "Access for the ChatGPT and Perplexity bots in robots.txt and at the CDN, content available without JavaScript, and data of your own that can be cited.",
+        },
+        {
+          title: "Migrations",
+          text: "A URL-to-URL redirect map before the change, and follow-up in Search Console afterwards.",
+        },
+      ],
+      deliverablesTitle: "What you get",
+      deliverablesText:
+        "A diagnosis with the cause of each problem and the order in which to fix them.",
+      deliverables: [
+        {
+          title: "Report",
+          text: "Each problem with its cause, where it appears and how to fix it.",
+        },
+        {
+          title: "Prioritised backlog",
+          text: "Tasks ordered by impact and effort, ready to go into the sprint.",
+        },
+        {
+          title: "Walkthrough session",
+          text: "We go through the report together, with your team if you have one.",
+        },
+        {
+          title: "Implementation, if you want it",
+          text: "I do it in your repository, with changes your team can review, and then validate it in Search Console and Bing Webmaster Tools.",
+        },
+      ],
+      jsTitle: "SEO for React and Next.js",
+      jsText: "Where it shows most that the reviewer also writes code.",
+      js: [
+        {
+          title: "Server rendering",
+          text: "SSR, SSG or ISR depending on how quickly each page goes stale, so Google and AI bots get the content in the first HTML.",
+        },
+        {
+          title: "Performance",
+          text: "Hydration, JavaScript weight and images. It is the first thing I look at when LCP or INP come out badly.",
+        },
+        {
+          title: "Metadata and linking from the code",
+          text: "Titles, canonicals, hreflang and links with a real href generated by the product itself, without relying on someone filling them in by hand.",
+        },
+      ],
+      search: {
+        title: "Where Google has no answer of its own",
+        text: "One page for each specific search. This is the one that performs best on Snowy.",
+        query: "bandera playa guardamar del segura hoy",
+        domain: "snowy.es",
+        path: "playas › guardamar-centro",
+        resultTitle:
+          "Playa Centro de Guardamar hoy: estado del mar, oleaje y banderas",
+        resultSnippet:
+          "Hoy en Playa Centro de Guardamar (Guardamar del Segura, Alicante): mar marejadilla, bandera verde prevista por oleaje, olas de 0,5 m, agua a 26°.",
+        badge: "Position 1.8 · 41% click through",
+        caption:
+          "The page's real title and description, in Spanish. Position and click-through rate from Search Console, 90 days.",
+      },
+      chart: {
+        title: "Daily clicks from Google on Snowy",
+        ariaLabel:
+          "Daily clicks from Google on Snowy between 26 June and 24 September 2026, peaking at 27,351 on 12 August, the day of the eclipse.",
+        peakLabel: "27,351 clicks on eclipse day",
+        startLabel: "26 Jun",
+        endLabel: "24 Sep",
+        caption: "Source: Google Search Console, 91 days.",
+      },
+      render: {
+        before: {
+          label: "A website that depends on JavaScript",
+          caption:
+            "The bot gets an empty page. The content appears when the JavaScript runs, and AI bots do not run it.",
+        },
+        after: {
+          label: "Snowy, rendered on the server",
+          caption:
+            "What OAI-SearchBot, ChatGPT's search bot, received on 26 September 2026.",
+        },
+      },
+      vitalsTitle: "Core Web Vitals",
+      vitalsText:
+        "The three metrics Google uses to measure loading experience, with the thresholds it publishes.",
+      vitals: [
+        {
+          name: "LCP",
+          full: "Largest Contentful Paint",
+          good: "≤ 2.5 s",
+          poor: "> 4 s",
+          text: "How long the main content takes to render.",
+        },
+        {
+          name: "INP",
+          full: "Interaction to Next Paint",
+          good: "≤ 200 ms",
+          poor: "> 500 ms",
+          text: "How long the page takes to respond when you tap something.",
+        },
+        {
+          name: "CLS",
+          full: "Cumulative Layout Shift",
+          good: "≤ 0.1",
+          poor: "> 0.25",
+          text: "How much the content moves while it loads.",
+        },
+      ],
+      vitalsScale: { good: "Good", improve: "Needs work", poor: "Poor" },
+      faqTitle: "Frequently asked questions",
+      faqText: "What people usually ask before ordering an audit.",
+      faq: [
+        {
+          question: "How is this different from an SEO agency?",
+          answer:
+            "I focus on the technical side and, being a developer, I can implement the changes in your code instead of handing your team a list. I do not run campaigns or write content.",
+        },
+        {
+          question: "What is SEO for AI, or GEO?",
+          answer:
+            "Getting your website ready for AI search engines to understand and cite it, such as Google's AI summaries or ChatGPT. The basis is the same as technical SEO, with two additions: letting their bots in and serving content without relying on JavaScript.",
+        },
+        {
+          question: "Do I need an llms.txt?",
+          answer:
+            "Google has said it does not use it and that no special files are needed for AI. You can publish one, but it is not what will make you show up. What counts is content that is accessible and brings data of its own.",
+        },
+        {
+          question: "Do you implement the changes?",
+          answer:
+            "If you want, yes. The audit and the implementation are quoted separately, so you can order just the diagnosis.",
+        },
+        {
+          question: "How much does it cost?",
+          answer:
+            "It depends on the size of the website and whether implementation is included. After a half-hour call I send you a fixed written proposal.",
+        },
+        {
+          question: "Do you only work with Next.js?",
+          answer:
+            "No. I review any website. React and Next.js are where I add the most because it is the stack I develop with every day.",
+        },
+      ],
+      closingTitle: "Shall we review your website's SEO?",
+      closingText:
+        "A half-hour call to look at your case. Afterwards I send you in writing what I would do and what it would cost.",
+      closingCta: "Book a call",
+      closingSecondary: "See services",
+    },
+    snowySeo: {
+      title: "Case study: Snowy's technical SEO",
+      description:
+        "The technical SEO that took Snowy to 16.8 million impressions and 257,000 organic clicks in 90 days, measured in Search Console, and how I apply it to other websites, including for AI search.",
+      eyebrow: "Case study · Snowy",
+      heading: "Snowy's technical SEO: 257,000 clicks in 90 days",
+      lead: "16.8 million impressions on Google in three months, without spending a euro on advertising. This is the technical work behind it, and the same work I apply when I review another website.",
+      detail:
+        "Snowy is a weather platform built with Next.js. I lead its development, and the technical SEO comes with it. Figures are from Search Console, 26 June to 24 September 2026.",
+      facts: [
+        { label: "Impressions", value: "16.8 M" },
+        { label: "Clicks", value: "257,346" },
+        { label: "Average position", value: "8.1" },
+        { label: "URLs in the sitemap", value: "7,538" },
+      ],
+      ctaPrimary: "Review my website's SEO",
+      ctaSecondary: "See the Snowy case",
+      workTitle: "What was done",
+      workText:
+        "The technical work, from what weighs most on the result to what weighs least.",
+      work: [
+        {
+          title: "One page per specific search",
+          text: "Every beach has its own page with the day's flag, every eclipse viewing spot has its own, and every earthquake its own record. That is more than 200 beaches and around 300 spots for the 2026 eclipse, with over 500 pages already set up for 2027. Someone searching for today's flag at Gandia beach lands on a page that answers exactly that.",
+        },
+        {
+          title: "Caching at the pace of each piece of data",
+          text: "Each page type is regenerated according to how long its content takes to go stale: the sitemap once a day, the eclipse spots once a week, pages about a past event once a month. Google finds fresh content and the server does not rebuild everything on every visit.",
+        },
+        {
+          title: "Sitemaps and structured data",
+          text: "A sitemap of 7,538 addresses, a news sitemap with consistent modification dates, and structured data on the pages, including the FAQs in articles.",
+        },
+        {
+          title: "Fewer pages competing with each other",
+          text: "Several earthquake pages were fighting for the same searches. One was declared the hub, the others were consolidated, and retired addresses redirect with a 301 so nothing gained is lost.",
+        },
+        {
+          title: "Readable by AI search",
+          text: "The ChatGPT and Perplexity bots do not run JavaScript. Snowy serves every page already rendered on the server, so ChatGPT's search bot gets the day's flag for each beach in the first HTML. The robots.txt lets them in and the structured data tells them what each page is.",
+        },
+        {
+          title: "Deciding with Search Console",
+          text: "Traffic is measured by section every few weeks, and that decides where to invest and what to leave alone. The repository has 138 changes tagged as SEO.",
+        },
+      ],
+      resultTitle: "Where the traffic came from",
+      resultText: "Clicks over the 90 days, grouped by section.",
+      shares: [
+        {
+          label: "Beaches",
+          value: "35.8%",
+          detail: "92,288 clicks, almost all looking for the day's flag",
+        },
+        {
+          label: "Eclipse",
+          value: "32.6%",
+          detail: "83,988 clicks, 27,351 on 12 August alone",
+        },
+        {
+          label: "Earthquakes",
+          value: "15.7%",
+          detail: "40,461 clicks, the section that holds up best out of season",
+        },
+        {
+          label: "WikiMeteo",
+          value: "7.2%",
+          detail: "18,468 clicks on the weather glossary",
+        },
+      ],
+      resultNote:
+        "The best-performing query is today's flag at Guardamar del Segura beach: position 1.8, and 41% of the people who see it click through.",
+      lessonsTitle: "What I apply when reviewing your website",
+      lessonsText: "What these numbers teach before a single page is touched.",
+      lessons: [
+        {
+          title: "Go for the searches that can be won",
+          text: "For “weather in…” Google puts its own panel at the top and those Snowy pages convert at 0.1%. For today's flag at Guardamar beach it has none, and 41% of the people who see it click through. Before creating pages I check which searches really have room.",
+        },
+        {
+          title: "Get there before the peak",
+          text: "The eclipse brought 27,351 clicks in a single day because the page for each city had been indexed for weeks when the date came. Whatever your business knows is coming gets prepared in advance.",
+        },
+      ],
+      closingTitle: "Your website does not show up on Google or in AI answers?",
+      closingText:
+        "We look at it on a half-hour call, and afterwards I send you in writing what I would change and what it would cost.",
+      closingCta: "Book a call",
+      closingSecondary: "See services",
+      source:
+        "Source: Google Search Console, snowy.es property, 26-06-2026 to 24-09-2026. Clicks by section, grouped by URL.",
+      chart: {
+        title: "Daily clicks from Google",
+        ariaLabel:
+          "Daily clicks from Google on Snowy between 26 June and 24 September 2026, peaking at 27,351 on 12 August, the day of the eclipse.",
+        peakLabel: "27,351 clicks on 12 August",
+        startLabel: "26 Jun",
+        endLabel: "24 Sep",
+        caption: "Source: Google Search Console, 91 days.",
+      },
+      phoneAlt:
+        "Snowy's page for Playa Centro de Guardamar, with a green flag and 0.5 metre waves",
     },
     snowy: {
       title: "Snowy",

@@ -34,14 +34,30 @@ export function HeroSection({ locale }: { locale: Locale }) {
           <p className="rise rise-3 mt-6 max-w-[42ch] text-[1.0625rem] leading-[1.58] text-[var(--muted)] sm:text-[1.125rem]">
             {copy.profile.taglineSub}
           </p>
-
-          <div className="rise rise-4 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-x-4">
-            <ButtonLink href={routePath(locale, "experience")}>
-              {copy.hero.ctaPrimary}
-            </ButtonLink>
-            <ButtonLink href={routePath(locale, "contact")} variant="secondary">
-              {copy.hero.ctaContact}
-            </ButtonLink>
+          <div className="rise rise-4 mt-8 grid gap-5 sm:grid-cols-2 sm:gap-4">
+            <div className="hero-path">
+              <p className="hero-path-question">
+                {copy.hero.paths.team.question}
+              </p>
+              <ButtonLink
+                href={routePath(locale, "cv")}
+                className="sm:self-start"
+              >
+                {copy.hero.paths.team.label}
+              </ButtonLink>
+            </div>
+            <div className="hero-path">
+              <p className="hero-path-question">
+                {copy.hero.paths.product.question}
+              </p>
+              <ButtonLink
+                href={routePath(locale, "services")}
+                variant="secondary"
+                className="sm:self-start"
+              >
+                {copy.hero.paths.product.label}
+              </ButtonLink>
+            </div>
           </div>
         </div>
 

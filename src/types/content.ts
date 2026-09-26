@@ -114,6 +114,15 @@ export type PageMeta = {
   description: string;
 };
 
+export type ChartCopy = {
+  title: string;
+  ariaLabel: string;
+  peakLabel: string;
+  startLabel: string;
+  endLabel: string;
+  caption: string;
+};
+
 export type CaseFact = {
   label: string;
   value: string;
@@ -183,6 +192,10 @@ export type Copy = {
     };
   };
   hero: {
+    paths: {
+      team: { question: string; label: string };
+      product: { question: string; label: string };
+    };
     ctaPrimary: string;
     ctaSecondary: string;
     ctaContact: string;
@@ -318,7 +331,7 @@ export type Copy = {
       steps: TitledText[];
       servicesTitle: string;
       servicesText: string;
-      services: TitledText[];
+      services: (TitledText & { route?: "seoService" })[];
       clientsTitle: string;
       clientsText: string;
       clients: TitledText[];
@@ -338,6 +351,8 @@ export type Copy = {
     };
     services: PageMeta & {
       title: string;
+      eyebrow: string;
+      heading: string;
       lead: string;
       detail: string;
       engagementTitle: string;
@@ -355,6 +370,24 @@ export type Copy = {
       faqTitle: string;
       faqText: string;
       faq: { question: string; answer: string }[];
+      ctaCall: string;
+      ctaCase: string;
+      caseLink: string;
+      pricingTitle: string;
+      pricingText: string;
+      pricing: TitledText[];
+      chart: ChartCopy;
+      productionTitle: string;
+      productionText: string;
+      productionLink: string;
+      production: {
+        name: string;
+        text: string;
+        domain: string;
+        image: string;
+        alt: string;
+        route: "snowy" | "eqx" | "lariojameteo";
+      }[];
       formTitle: string;
       formText: string;
       form: {
@@ -367,7 +400,88 @@ export type Copy = {
         formSubject: string;
         submit: string;
         note: string;
+        emailAlt: string;
       };
+    };
+    seoService: PageMeta & {
+      eyebrow: string;
+      heading: string;
+      lead: string;
+      detail: string;
+      facts: CaseFact[];
+      ctaPrimary: string;
+      ctaSecondary: string;
+      forWhomTitle: string;
+      forWhomText: string;
+      forWhom: TitledText[];
+      auditTitle: string;
+      auditText: string;
+      audit: TitledText[];
+      deliverablesTitle: string;
+      deliverablesText: string;
+      deliverables: TitledText[];
+      jsTitle: string;
+      jsText: string;
+      js: TitledText[];
+      search: {
+        title: string;
+        text: string;
+        query: string;
+        domain: string;
+        path: string;
+        resultTitle: string;
+        resultSnippet: string;
+        badge: string;
+        caption: string;
+      };
+      chart: ChartCopy;
+      render: {
+        before: { label: string; caption: string };
+        after: { label: string; caption: string };
+      };
+      vitalsTitle: string;
+      vitalsText: string;
+      vitals: {
+        name: string;
+        full: string;
+        good: string;
+        poor: string;
+        text: string;
+      }[];
+      vitalsScale: { good: string; improve: string; poor: string };
+      faqTitle: string;
+      faqText: string;
+      faq: { question: string; answer: string }[];
+      closingTitle: string;
+      closingText: string;
+      closingCta: string;
+      closingSecondary: string;
+    };
+    snowySeo: PageMeta & {
+      eyebrow: string;
+      heading: string;
+      lead: string;
+      detail: string;
+      facts: CaseFact[];
+      ctaPrimary: string;
+      ctaSecondary: string;
+      workTitle: string;
+      workText: string;
+      work: TitledText[];
+      resultTitle: string;
+      resultText: string;
+      shares: { label: string; value: string; detail: string }[];
+      resultNote: string;
+      lessonsTitle: string;
+      lessonsText: string;
+      lessons: TitledText[];
+      closingTitle: string;
+      closingText: string;
+      closingCta: string;
+      closingSecondary: string;
+      source: string;
+      chart: ChartCopy;
+      phoneAlt: string;
     };
     snowy: PageMeta &
       CaseIntro & {

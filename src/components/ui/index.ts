@@ -14,3 +14,4 @@ export { RevealChildren } from "./RevealChildren";
 export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";
+export { PlayOnView } from "./PlayOnView";
