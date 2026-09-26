@@ -6,12 +6,15 @@ const routeLabels: Record<string, string> = {
   home: "Inicio / Home",
   projects: "Proyectos / Projects",
   snowy: "Snowy — plataforma meteorológica / weather platform",
+  snowySeo: "Snowy — caso de SEO técnico / technical SEO case study",
   eqx: "EQx — Elite Quality Index, cliente en Suiza / client in Switzerland",
   lariojameteo: "LaRiojaMeteo — portal regional / regional portal",
   experience: "Experiencia / Experience",
   cv: "Currículum / CV",
   services:
     "Qué puedes encargarme — servicios, dedicación y cómo se contrata / What you can hire me for — services, dedication and how hiring works",
+  seoService:
+    "Consultor SEO técnico — auditoría e implementación / Technical SEO consultant — audit and implementation",
   contact:
     "Trabajemos juntos — contacto directo / Work with me — direct contact",
 };
