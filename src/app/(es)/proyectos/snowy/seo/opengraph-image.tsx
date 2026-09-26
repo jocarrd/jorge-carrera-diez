@@ -3,18 +3,19 @@ import { ogContentType, ogSize, renderOpenGraphImage } from "@/lib/og-image";
 
 const locale = "es" as const;
 
-export const alt = getCopy(locale).pages.services.title;
+export const alt = getCopy(locale).pages.snowySeo.title;
 export const size = ogSize;
 export const contentType = ogContentType;
 
 export default async function OpenGraphImage() {
   return renderOpenGraphImage(locale, {
-    eyebrow: "Servicios",
-    tagline: getCopy(locale).pages.services.lead,
+    eyebrow: "Caso técnico · SEO",
+    tagline:
+      "SEO técnico de Snowy: 257.000 clics desde Google en 90 días, sin publicidad.",
     stats: [
-      ["Experiencia", "5 años en producción"],
-      ["Alcance", "16,8 M de impresiones"],
-      ["Dónde", "Remoto · España"],
+      ["impresiones", "16,8 M"],
+      ["clics", "257.346"],
+      ["fuente", "Search Console"],
     ],
   });
 }
