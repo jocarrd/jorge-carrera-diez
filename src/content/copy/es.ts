@@ -577,9 +577,9 @@ export const es: Copy = {
       label: "Cliente · Suiza",
       image: "/images/eqx-home.webp",
       description:
-        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y plataforma privada de evaluación.",
+        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y panel de evaluación.",
       impact:
-        "Rehice elitequality.org con un design system, hice desde cero la web del Value Creation Rating y mantengo el panel privado donde las empresas se evalúan.",
+        "Rehice elitequality.org con un design system, hice desde cero la web del Value Creation Rating y mantengo el panel donde las empresas hacen su evaluación.",
       metrics: [
         { value: "151", label: "países en el ranking" },
         { value: "148", label: "indicadores" },
@@ -1931,20 +1931,20 @@ export const es: Copy = {
     eqx: {
       title: "EQx y VCr",
       description:
-        "Jorge Carrera Diez desarrolla las webs del Elite Quality Index y del Value Creation Rating, y el panel privado donde las empresas se evalúan, para la Foundation for Value Creation de St. Gallen (Suiza).",
+        "Jorge Carrera Diez desarrolla las webs del Elite Quality Index y del Value Creation Rating, y el panel donde las empresas hacen su evaluación, para la Foundation for Value Creation de St. Gallen (Suiza).",
       eyebrow: "Cliente · Suiza",
       heading:
         "Las webs y el panel de evaluación de la Foundation for Value Creation",
-      lead: "La fundación, con sede en St. Gallen, publica dos índices: el Elite Quality Index (EQx), que puntúa a 151 países, y el Value Creation Rating (VCr), que puntúa a empresas. Desde julio de 2026 soy el desarrollador del proyecto y llevo sus tres piezas: la web de cada índice y el panel privado donde las empresas hacen su evaluación.",
+      lead: "La fundación, con sede en St. Gallen, publica dos índices: el Elite Quality Index (EQx), que puntúa a 151 países, y el Value Creation Rating (VCr), que puntúa a empresas. Desde julio de 2026 soy el desarrollador del proyecto y llevo sus tres piezas: la web de cada índice y el panel donde las empresas hacen su evaluación.",
       detail:
-        "Trabajo en remoto y en inglés con la dirección de la fundación y con la diseñadora del proyecto. Recojo lo que piden, lo paso a requisitos por escrito y lo llevo hasta producción.",
+        "Trabajo en remoto y en inglés con los equipos de negocio y de diseño de la fundación. Recojo lo que piden, lo paso a requisitos por escrito y lo llevo hasta producción.",
       ctaPrimary: "Ver elitequality.org",
       ctaSecondary: "Hablemos",
       facts: [
         { label: "Cliente", value: "Foundation for Value Creation" },
         { label: "Rol", value: "Desarrollo y requisitos" },
         { label: "Desde", value: "Julio de 2026" },
-        { label: "Piezas", value: "Dos webs y un panel privado" },
+        { label: "Piezas", value: "Dos webs y un panel de evaluación" },
       ],
       imageAlts: {
         home: "Portada de elitequality.org con el mapa mundial del Elite Quality Index",
@@ -1954,19 +1954,19 @@ export const es: Copy = {
         items: [
           {
             name: "elitequality.org",
-            status: "En producción",
-            text: "La web pública del EQx, hecha con Astro. Al entrar definí con la diseñadora un design system y rehice con él las diez páginas, del mapa mundial y la tabla de rankings a la metodología y las descargas. La versión nueva está publicada desde el 21 de septiembre de 2026.",
+            tech: "Astro · React · D3",
+            text: "La web pública del EQx. Definí con el equipo de diseño el design system y rehice con él las diez páginas, entre ellas el mapa mundial interactivo, la tabla de rankings y el comparador de países.",
             href: "https://elitequality.org/",
           },
           {
             name: "Web del VCr",
-            status: "Prototipo",
-            text: "La web pública del rating de empresas, que hice desde cero con Astro sobre el mismo design system. Tiene once páginas, entre ellas la ficha de cada empresa, el directorio y el comparador, y carga los datos reales del VCr2026 desde el Excel que entrega la fundación. Está pendiente de aprobación para publicarse.",
+            tech: "Astro · React",
+            text: "La web del rating de empresas, que estoy construyendo desde cero sobre el mismo design system. Incluye la ficha de cada empresa, el directorio y el comparador, con los datos oficiales del VCr2026.",
           },
           {
             name: "self-VCr",
-            status: "En producción · privado",
-            text: "El panel donde una empresa responde la encuesta de evaluación en inglés, español o chino y recibe su rating y el informe oficial en PDF. La fundación gestiona desde su consola a los clientes y los equipos. Está hecho con Next.js; lo heredé en producción, lo mantengo y le estoy llevando el nuevo diseño. No hay capturas porque solo se entra por invitación.",
+            tech: "Next.js · Prisma · PostgreSQL",
+            text: "El panel donde las empresas hacen su evaluación. Responden la encuesta, obtienen su rating y descargan el informe oficial en PDF. Lo mantengo y le estoy llevando el nuevo design system.",
           },
         ],
       },

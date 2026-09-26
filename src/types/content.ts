@@ -584,7 +584,7 @@ export type Copy = {
         products: SectionCopy & {
           items: {
             name: string;
-            status: string;
+            tech: string;
             text: string;
             href?: string;
           }[];
