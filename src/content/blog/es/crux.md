@@ -107,7 +107,7 @@ solo suyo, y al lado está lo transversal: la arquitectura que los une, cómo se
 despliegan y las decisiones que afectan a varios a la vez.
 
 Con mi marca personal hago lo mismo. Su repositorio de documentación agrupa la
-web, los cursos y las herramientas de mi cuenta de X, y cada proyecto nuevo que
+web, el blog y las herramientas de mi cuenta de X, y cada proyecto nuevo que
 sale de ahí entra como una carpeta más.
 
 Cada proyecto declara su configuración en un fichero, `crux.json`: qué
