@@ -1,15 +1,15 @@
 ---
 title: "Cómo trabajo con agentes de IA en varios proyectos a la vez"
-description: "crux, el sistema con el que organizo el trabajo de mis agentes de IA: la documentación de cada proyecto en git, un ciclo fijo para cada tarea y una puerta de calidad que el agente no puede saltarse."
+description: "Crux, el sistema con el que organizo el trabajo de mis agentes de IA: la documentación de cada proyecto en git, un ciclo fijo para cada tarea y una puerta de calidad que el agente no puede saltarse."
 date: 2026-09-27
 cover: /blog/crux/portada.webp
 preview: /blog/crux/rojo.webp
 previewAlt: "Terminal: crux se niega a abrir la propuesta porque una comprobación ha fallado"
 coverAlt: "Banner de crux: un grafo de nodos entre carpetas y líneas de circuito sobre fondo oscuro"
 tags:
-  - agentes de IA
-  - crux
-  - flujo de trabajo
+  - Agentes de IA
+  - Crux
+  - Flujo de trabajo
 ---
 
 > [!SUMMARY] En resumen
@@ -66,7 +66,7 @@ que estaba verificado.
 
 ## Qué es crux
 
-crux es el *kernel* con el que trabajan mis agentes. Se instala una vez en el
+Crux es el *kernel* con el que trabajan mis agentes. Se instala una vez en el
 ordenador y todos mis proyectos dependen de él. Marca el ámbito en el que se
 mueve un agente: dónde está la información de cada proyecto, qué pasos sigue una
 tarea de principio a fin y qué tiene que comprobar antes de dar nada por
@@ -191,8 +191,8 @@ Las reglas de cada proyecto también dejan de ser una recomendación. Cada
 `crux.json` declara las suyas, y la puerta rechaza el cambio que las incumple.
 Hay además *hooks* de git:
 
-- uno impide subir directamente a la rama principal;
-- otro rechaza el commit cuyo mensaje no está en el idioma del proyecto.
+- Uno impide subir directamente a la rama principal.
+- Otro rechaza el commit cuyo mensaje no está en el idioma del proyecto.
 
 La puerta solo se puede saltar con una opción explícita, y solo cuando lo pido yo.
 
@@ -237,7 +237,7 @@ o la quito.
 
 ## Qué viene ahora
 
-crux sigue creciendo casi cada semana, normalmente a raíz de algo que echo en
+Crux sigue creciendo casi cada semana, normalmente a raíz de algo que echo en
 falta mientras trabajo.
 
 Si veo que a más gente le interesa y le puede ayudar, me plantearé abrirlo.
