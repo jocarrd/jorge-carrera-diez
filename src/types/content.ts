@@ -548,6 +548,23 @@ export type Copy = {
         responsibility: SectionCopy & { items: string[] };
         content: SectionCopy & { items: string[] };
       };
+    blog: PageMeta & {
+      eyebrow: string;
+      heading: string;
+      lead: string;
+      latestLabel: string;
+      moreLabel: string;
+      readLabel: string;
+      minutesLabel: string;
+      backLabel: string;
+      tocLabel: string;
+      shareLabel: string;
+      authorRole: string;
+      endTitle: string;
+      endText: string;
+      endCta: string;
+      feedLabel: string;
+    };
     eqx: PageMeta &
       CaseIntro & {
         detail: string;

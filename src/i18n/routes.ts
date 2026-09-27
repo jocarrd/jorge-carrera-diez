@@ -4,6 +4,7 @@ import { locales } from "@/i18n/config";
 export const routeKeys = [
   "home",
   "projects",
+  "blog",
   "snowy",
   "snowySeo",
   "lariojameteo",
@@ -21,6 +22,7 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
   es: {
     home: "/",
     projects: "/proyectos",
+    blog: "/blog",
     snowy: "/proyectos/snowy",
     snowySeo: "/proyectos/snowy/seo",
     lariojameteo: "/proyectos/lariojameteo",
@@ -34,6 +36,7 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
   en: {
     home: "/en",
     projects: "/en/projects",
+    blog: "/en/blog",
     snowy: "/en/projects/snowy",
     snowySeo: "/en/projects/snowy/seo",
     lariojameteo: "/en/projects/lariojameteo",
@@ -55,6 +58,10 @@ export function sectionPath(locale: Locale, anchor: string): string {
   return `${home === "/" ? "" : home}/#${anchor}`.replace("//#", "/#");
 }
 
+export function blogPostPath(locale: Locale, slug: string): string {
+  return `${paths[locale].blog}/${slug}`;
+}
+
 export function allPathsFor(key: RouteKey): Record<Locale, string> {
   return Object.fromEntries(
     locales.map((locale) => [locale, paths[locale][key]]),
@@ -63,6 +70,13 @@ export function allPathsFor(key: RouteKey): Record<Locale, string> {
 
 export function translatePath(pathname: string, target: Locale): string {
   const clean = pathname.replace(/\/$/, "") || "/";
+
+  for (const locale of locales) {
+    const base = `${paths[locale].blog}/`;
+    if (clean.startsWith(base)) {
+      return blogPostPath(target, clean.slice(base.length));
+    }
+  }
 
   for (const locale of locales) {
     for (const key of routeKeys) {
