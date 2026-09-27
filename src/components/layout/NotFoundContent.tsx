@@ -49,7 +49,7 @@ export function NotFoundContent() {
       <p className="t-eyebrow">{copy.eyebrow}</p>
       <h1 className="not-found-title">{copy.title}</h1>
       <p className="not-found-text">{copy.text}</p>
-      <Link href={routePath(locale, "home")} className="course-start-button">
+      <Link href={routePath(locale, "home")} className="not-found-button">
         {copy.home} <span aria-hidden="true">→</span>
       </Link>
       <ul className="not-found-links">

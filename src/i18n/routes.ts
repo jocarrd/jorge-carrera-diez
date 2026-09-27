@@ -1,6 +1,5 @@
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
-import { grokBotCourse } from "@/content/courses/grok-bot/meta";
 
 export const routeKeys = [
   "home",
@@ -14,10 +13,6 @@ export const routeKeys = [
   "contact",
   "services",
   "seoService",
-  "courses",
-  "grokBotCourse",
-  "grokBotDiary",
-  "grokBotGlossary",
 ] as const;
 
 export type RouteKey = (typeof routeKeys)[number];
@@ -35,10 +30,6 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     contact: "/contacto",
     services: "/servicios",
     seoService: "/servicios/seo-tecnico",
-    courses: "/cursos",
-    grokBotCourse: "/cursos/grok-bot",
-    grokBotDiary: "/cursos/grok-bot/diario",
-    grokBotGlossary: "/cursos/grok-bot/glosario",
   },
   en: {
     home: "/en",
@@ -52,10 +43,6 @@ const paths: Record<Locale, Record<RouteKey, string>> = {
     contact: "/en/contact",
     services: "/en/services",
     seoService: "/en/services/technical-seo",
-    courses: "/en/courses",
-    grokBotCourse: "/en/courses/grok-bot",
-    grokBotDiary: "/en/courses/grok-bot/diary",
-    grokBotGlossary: "/en/courses/grok-bot/glossary",
   },
 };
 
@@ -68,10 +55,6 @@ export function sectionPath(locale: Locale, anchor: string): string {
   return `${home === "/" ? "" : home}/#${anchor}`.replace("//#", "/#");
 }
 
-export function lessonPath(locale: Locale, slug: string): string {
-  return `${paths[locale].grokBotCourse}/${slug}`;
-}
-
 export function allPathsFor(key: RouteKey): Record<Locale, string> {
   return Object.fromEntries(
     locales.map((locale) => [locale, paths[locale][key]]),
@@ -80,16 +63,6 @@ export function allPathsFor(key: RouteKey): Record<Locale, string> {
 
 export function translatePath(pathname: string, target: Locale): string {
   const clean = pathname.replace(/\/$/, "") || "/";
-
-  for (const locale of locales) {
-    const base = `${paths[locale].grokBotCourse}/`;
-    if (clean.startsWith(base)) {
-      const lesson = grokBotCourse.lessons.find(
-        (l) => l.slug[locale] === clean.slice(base.length),
-      );
-      if (lesson) return lessonPath(target, lesson.slug[target]);
-    }
-  }
 
   for (const locale of locales) {
     for (const key of routeKeys) {
