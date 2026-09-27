@@ -184,12 +184,6 @@ export type Copy = {
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
-    signature: {
-      label: string;
-      text: string;
-      experience: string;
-      contact: string;
-    };
   };
   hero: {
     paths: {
@@ -280,27 +274,6 @@ export type Copy = {
       text: string;
       sideTitle: string;
       sideText: string;
-    };
-    courses: PageMeta & {
-      heading: string;
-      collectionLead: string;
-      collectionMeta: string;
-      featuredEyebrow: string;
-      featuredCta: string;
-      featuredSyllabus: string;
-      whyTitle: string;
-      text: string[];
-      deviceAlts: [string, string];
-      pipelineTitle: string;
-      pipeline: { title: string; text: string; tool: string }[];
-      resultTitle: string;
-      resultText: string;
-      resultMetrics: Metric[];
-      listTitle: string;
-      listMeta: string;
-      nextTitle: string;
-      nextText: string;
-      nextButton: string;
     };
     experience: PageMeta & {
       eyebrow: string;

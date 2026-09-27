@@ -39,7 +39,6 @@ export const en: Copy = {
       { key: "home", label: "Home" },
       { key: "experience", label: "Experience" },
       { key: "projects", label: "Projects" },
-      { key: "courses", label: "Courses" },
       { key: "snowy", label: "Snowy" },
       { key: "cv", label: "CV" },
       { key: "contact", label: "Contact" },
@@ -112,12 +111,6 @@ export const en: Copy = {
       ["Based in", "Logroño"],
       ["Stack", "Full stack"],
     ],
-    signature: {
-      label: "The author",
-      text: "I am Jorge Carrera Diez, a software engineer based in Logroño, Spain. Right now I lead banking and insurance projects as Tech Lead, I took over the technical lead at EQx in Switzerland, and I build Snowy. This course comes out of the same pipeline I use every day to turn hours of livestream into something you can read.",
-      experience: "See what I have worked on",
-      contact: "Get in touch",
-    },
   },
   hero: {
     paths: {
@@ -648,96 +641,6 @@ export const en: Copy = {
       sideTitle: "Side projects",
       sideText:
         "Tools I build on my own, to solve a problem of mine or to test an idea.",
-    },
-    courses: {
-      title: "Courses",
-      description:
-        "Free courses on AI agents, built from technical livestreams that run for hours. Every claim links to the exact minute of the video where it was said.",
-      heading:
-        "Courses rebuilt from experts taking a real product from zero to production.",
-      collectionLead:
-        "The livestreams where the people who built the tool ship something real, transcribed, checked against the official docs and cut into eight-minute lessons. Free, no sign-up.",
-      collectionMeta:
-        "{courses} course · {lessons} lessons · {modules} modules · 2 languages",
-      featuredEyebrow: "Available now",
-      featuredCta: "Start with the first lesson",
-      featuredSyllabus: "Syllabus · lessons per module",
-      whyTitle: "Why I write them",
-      text: [
-        "AI agents move so fast that the best teaching about them happens in eight-hour livestreams almost nobody watches twice, and that never get written down anywhere.",
-        "And that is where you learn the most. Watching someone take a product from nothing to production shows you why each decision was made, which is exactly what documentation leaves out.",
-        "I work with agents every day, so I started transcribing them for myself. A whole course came out of it, and I publish it for free.",
-      ],
-      deviceAlts: [
-        "The Grok Bot course on a phone, showing the modules and their lessons",
-        "A course lesson on a phone, with the livestream context and the contents",
-      ],
-      pipelineTitle: "From a livestream to a lesson",
-      pipeline: [
-        {
-          title: "Capture",
-          text: "The whole broadcast is downloaded. One day of livestream is about nine hours and three and a half gigabytes of video.",
-          tool: "yt-dlp",
-        },
-        {
-          title: "Transcribe",
-          text: "Whisper runs inside a container on CPU, reading the audio in windows so the whole file never loads into memory. It returns every sentence with its second.",
-          tool: "faster-whisper · Docker",
-        },
-        {
-          title: "Annotate",
-          text: "An agent reads the transcript in half-hour stretches and produces timestamped notes: what happened, who said it and what deserves a lesson.",
-          tool: "Claude Code",
-        },
-        {
-          title: "Check",
-          text: "Before anything is written, every claim is checked against the product's official documentation. A livestream shows what looks good, and that doesn't always match what the tool actually does.",
-          tool: "official docs",
-        },
-        {
-          title: "Write",
-          text: "The notes become short lessons, in Spanish and English, with the prompts ready to copy.",
-          tool: "Markdown",
-        },
-        {
-          title: "Publish",
-          text: "They go into this site's course system: modules, glossary, diary and feed. The timestamps become links to the exact second of the broadcast.",
-          tool: "Next.js",
-        },
-      ],
-      resultTitle: "In numbers",
-      resultText:
-        "The numbers for the first one, on Grok Bot. The links took the most work: everything claimed in a lesson points to the second of the broadcast where it was said, so you can check it without taking my word for it.",
-      resultMetrics: [
-        {
-          value: "3 days",
-          label: "Livestream processed",
-          detail: "almost 25 hours of broadcast",
-        },
-        {
-          value: "{lessons}",
-          label: "Lessons",
-          detail: "across {modules} modules",
-        },
-        {
-          value: "122",
-          label: "Links to the minute",
-          detail: "every claim, to its source",
-        },
-        {
-          value: "16",
-          label: "Glossary terms",
-          detail: "the jargon, explained",
-        },
-        { value: "2", label: "Languages", detail: "same content in both" },
-        { value: "€0", label: "Price", detail: "no signup, no account" },
-      ],
-      listTitle: "The courses",
-      listMeta: "{lessons} lessons · {modules} modules · free",
-      nextTitle: "What's next",
-      nextText:
-        "I publish each course as I finish it. If you want to know when the next one is out, follow me on X.",
-      nextButton: "Follow @jorgecarrera_es",
     },
     experience: {
       title: "Experience",
