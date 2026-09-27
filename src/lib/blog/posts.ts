@@ -12,6 +12,7 @@ export type PostFrontMatter = {
   preview: string;
   previewAlt: string;
   tags: string[];
+  xUrl?: string;
 };
 
 export type PostSummary = PostFrontMatter & {

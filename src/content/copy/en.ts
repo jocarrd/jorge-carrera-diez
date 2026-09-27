@@ -1834,6 +1834,10 @@ export const en: Copy = {
       backLabel: "All articles",
       tocLabel: "In this article",
       shareLabel: "Share on X",
+      commentLabel: "Comment on X",
+      copyLinkLabel: "Copy link",
+      copiedLabel: "Link copied",
+      closeLabel: "Close",
       authorRole: "Software engineer",
       endTitle: "Was it useful?",
       endText:

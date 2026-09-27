@@ -1846,6 +1846,10 @@ export const es: Copy = {
       backLabel: "Todos los artículos",
       tocLabel: "En este artículo",
       shareLabel: "Compartir en X",
+      commentLabel: "Comentar en X",
+      copyLinkLabel: "Copiar enlace",
+      copiedLabel: "Enlace copiado",
+      closeLabel: "Cerrar",
       authorRole: "Ingeniero de software",
       endTitle: "¿Te ha servido?",
       endText:
