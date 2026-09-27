@@ -112,9 +112,7 @@ website, the blog and the tools for my X account, and each new project that
 comes out of it goes in as one more folder.
 
 Each project declares its configuration in a file, `crux.json`: which
-repositories it has, what is checked before a commit and how it is deployed. If
-the code belongs to a client, a different profile makes sure my tooling never
-shows up in anything they see.
+repositories it has, what is checked before a commit and how it is deployed.
 
 ## Principles
 
