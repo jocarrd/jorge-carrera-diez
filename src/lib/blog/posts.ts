@@ -91,6 +91,25 @@ const escapeHtml = (s: string) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+const CALLOUT = /^> \[!(SUMMARY|NOTE)\] ?(.*)\n((?:>.*\n?)*)/gm;
+
+function expandCallouts(body: string) {
+  return body.replace(
+    CALLOUT,
+    (_match, kind: string, title: string, rest: string) => {
+      const inner = rest
+        .split("\n")
+        .map((line) => line.replace(/^> ?/, ""))
+        .join("\n")
+        .trim();
+      const heading = title
+        ? `<p class="post-callout-title">${escapeHtml(title)}</p>`
+        : "";
+      return `<aside class="post-callout post-callout--${kind.toLowerCase()}">${heading}\n\n${inner}\n\n</aside>\n`;
+    },
+  );
+}
+
 function render(body: string) {
   const toc: TocEntry[] = [];
   const marked = new Marked({ gfm: true });
@@ -122,7 +141,7 @@ function render(body: string) {
       },
     },
   });
-  return { html: marked.parse(body) as string, toc };
+  return { html: marked.parse(expandCallouts(body)) as string, toc };
 }
 
 function readPost(

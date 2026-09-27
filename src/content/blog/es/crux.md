@@ -12,6 +12,11 @@ tags:
   - flujo de trabajo
 ---
 
+> [!SUMMARY] En resumen
+> - La documentación de cada proyecto vive en un repositorio de git, que hace de memoria para los agentes.
+> - Cada tarea sigue el mismo ciclo, desde entender el proyecto hasta cerrar la sesión.
+> - Una puerta de calidad registra las comprobaciones reales y no deja proponer un cambio sin ellas.
+
 Soy Jorge, ingeniero de software en Logroño. Trabajo como Tech Lead en
 proyectos de banca, colaboro como freelance con un cliente internacional y tengo
 varios proyectos propios en producción.
@@ -24,7 +29,7 @@ sobre todo del trabajo repetitivo que antes hacía a mano.
 El problema era que todo lo que le explicaba al agente se acababa perdiendo. No
 lo retenía de una sesión a otra.
 
-Sé que existen varios frameworks que resuelven parte de esto, y me sirvieron de
+Sé que existen varios *frameworks* que resuelven parte de esto, y me sirvieron de
 base. Pero quería uno que cubriera todo lo que necesitan mis proyectos freelance
 y los personales, así que monté el mío.
 
@@ -36,7 +41,11 @@ Junto al código no me convencía, porque llenaba los repositorios de ruido.
 Tampoco quería montar un RAG ni una base de datos, con lo que cuestan de pagar y
 de mantener. Y lo quería todo en la nube.
 
-Entonces caí en que un repositorio de git también es una base de datos. Si cada
+Hasta que caí en la cuenta de una cosa.
+
+> Un repositorio de git también es una base de datos.
+
+Si cada
 proyecto tiene un repositorio solo para su documentación, al lado de los de
 código, el contexto queda versionado y en la nube, no cuesta nada más y es fácil
 de mantener y de entender, para mí y para cualquier agente.
@@ -57,17 +66,20 @@ que estaba verificado.
 
 ## Qué es crux
 
-crux es el kernel con el que trabajan mis agentes. Se instala una vez en el
+crux es el *kernel* con el que trabajan mis agentes. Se instala una vez en el
 ordenador y todos mis proyectos dependen de él. Marca el ámbito en el que se
 mueve un agente: dónde está la información de cada proyecto, qué pasos sigue una
 tarea de principio a fin y qué tiene que comprobar antes de dar nada por
-terminado. El agente trabaja dentro de ese marco y no puede saltárselo por su
-cuenta.
+terminado. **El agente trabaja dentro de ese marco y no puede saltárselo por su
+cuenta.**
 
-Para eso tiene tres piezas. Un estándar que dice cómo se organiza la
-documentación de cada proyecto. Un conjunto de skills, que son procedimientos
-escritos para las tareas que se repiten. Y un comando, `crux`, que hace cumplir
-las reglas y no deja seguir si falta un paso.
+Para eso tiene tres piezas:
+
+- **Un estándar** que dice cómo se organiza la documentación de cada proyecto.
+- **Un conjunto de *skills***, procedimientos escritos para las tareas que se
+  repiten.
+- **Un comando, `crux`**, que hace cumplir las reglas y no deja seguir si falta
+  un paso.
 
 Lo empecé en agosto y lo llamé crux, que en escalada es el paso clave de una
 vía, el que decide si la subes o no. Funciona con Claude Code y con Codex, lo
@@ -81,8 +93,8 @@ El kernel tiene lo que es igual en todos los proyectos. Cada proyecto tiene su
 repositorio de documentación: cómo se despliega, qué hay construido, qué se
 decidió y por qué. Y cada repositorio de código solo lleva dos ficheros cortos,
 `AGENTS.md` y `CLAUDE.md`, que crux genera y que llevan al agente hasta esa
-documentación. Para decidir dónde va cada cosa hay una sola regla: si cambia al
-cambiar de proyecto, no es del kernel.
+documentación. Para decidir dónde va cada cosa hay una sola regla: **si cambia al
+cambiar de proyecto, no es del kernel**.
 
 Un repositorio de documentación agrupa todos los repositorios de código de un
 proyecto. En [Snowy](https://snowy.es), la plataforma meteorológica en la que
@@ -100,16 +112,18 @@ sale de ahí entra como una carpeta más.
 
 Cada proyecto declara su configuración en un fichero, `crux.json`: qué
 repositorios tiene, qué se comprueba antes de un commit y cómo se despliega. Si
-el código es de un cliente, un perfil distinto se asegura de que mi tooling no
+el código es de un cliente, un perfil distinto se asegura de que mi *tooling* no
 aparezca en nada que él vea.
 
 ## Principios
 
-De ahí salen dos reglas de fondo. Cada proyecto tiene un inventario de lo que ya existe
-de cara al usuario, que el agente lee antes de proponer nada para no construir
-otra vez lo que ya está hecho. Y el código y la documentación se actualizan en
-el mismo turno: si cambio el código y no la documentación, el siguiente agente
-trabaja con información desactualizada.
+De ahí salen dos reglas de fondo:
+
+- **Un inventario de lo que ya existe.** Cada proyecto tiene uno, con lo que hay
+  de cara al usuario, y el agente lo lee antes de proponer nada para no
+  construir otra vez lo que ya está hecho.
+- **Código y documentación, en el mismo turno.** Si cambio el código y no la
+  documentación, el siguiente agente trabaja con información desactualizada.
 
 ## El ciclo de una tarea
 
@@ -119,7 +133,7 @@ Toda tarea sigue el mismo recorrido, también las pequeñas.
 
 **Entender.** Leer la documentación del proyecto antes de tocar nada.
 
-**Aislar.** `crux workspace new` crea una rama y un worktree propios, reserva un
+**Aislar.** `crux workspace new` crea una rama y un *worktree* propios, reserva un
 rango de puertos y separa la base de datos y el fichero de entorno. Así puedo
 tener tres tareas del mismo repositorio en paralelo sin que se pisen.
 
@@ -166,7 +180,7 @@ También cambió cómo se registra. Antes, el agente escribía el hash del commi
 en un fichero después de decir que había verificado, y yo no tenía forma de
 saber si lo había hecho de verdad. Ahora cada comprobación se ejecuta a través de `crux ship run`, que anota el
 resultado real. `crux ship seal` cierra el recibo contra el commit actual. Y
-`crux workspace finish` se niega a abrir la propuesta si no hay recibo, si
+`crux workspace finish` **se niega a abrir la propuesta** si no hay recibo, si
 algo salió en rojo o si el commit ya no es el mismo.
 
 ![Sin comprobaciones en verde no hay propuesta](/blog/crux/rojo.webp)
@@ -175,9 +189,12 @@ algo salió en rojo o si el commit ya no es el mismo.
 
 Las reglas de cada proyecto también dejan de ser una recomendación. Cada
 `crux.json` declara las suyas, y la puerta rechaza el cambio que las incumple.
-Hay además hooks de git: uno impide subir directamente a la rama principal, y
-otro rechaza el commit cuyo mensaje no está en el idioma del proyecto. La
-puerta solo se puede saltar con una opción explícita, y solo cuando lo pido yo.
+Hay además *hooks* de git:
+
+- uno impide subir directamente a la rama principal;
+- otro rechaza el commit cuyo mensaje no está en el idioma del proyecto.
+
+La puerta solo se puede saltar con una opción explícita, y solo cuando lo pido yo.
 
 Los cambios visuales tienen un paso más, porque los tests no ven cómo queda la
 página. Antes de subir, el agente me enseña el antes y el después en
@@ -185,10 +202,13 @@ móvil y en escritorio, y lo que se ve lo apruebo yo.
 
 ## Cómo escribir skills que se usen
 
-Una skill es un procedimiento escrito en un fichero de texto: cómo se despliega
-un proyecto, cómo se revisa una propuesta de cambio, cómo se escribe un post.
-Cuando la tarea encaja, el agente la abre y sigue los pasos en vez de improvisar
-cada vez. Tengo 44 en el kernel, y cada proyecto tiene además las suyas.
+> [!NOTE] Qué es una skill
+> Un procedimiento escrito en un fichero de texto: cómo se despliega un
+> proyecto, cómo se revisa una propuesta de cambio, cómo se escribe un post.
+> Cuando la tarea encaja, el agente la abre y sigue los pasos en vez de
+> improvisar cada vez.
+
+Tengo 44 en el kernel, y cada proyecto tiene además las suyas.
 
 El agente no lee todas las skills antes de empezar, porque no le cabrían. Solo
 ve una descripción corta de cada una y decide por ella cuál abrir. Si la
