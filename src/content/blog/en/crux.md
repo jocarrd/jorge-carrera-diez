@@ -107,7 +107,7 @@ what cuts across: the architecture that ties them together, how they are
 deployed and the decisions that affect several at once.
 
 I do the same with my personal brand. Its documentation repository groups the
-website, the courses and the tools for my X account, and each new project that
+website, the blog and the tools for my X account, and each new project that
 comes out of it goes in as one more folder.
 
 Each project declares its configuration in a file, `crux.json`: which
