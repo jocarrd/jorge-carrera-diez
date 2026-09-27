@@ -12,6 +12,11 @@ tags:
   - workflow
 ---
 
+> [!SUMMARY] In short
+> - Each project's documentation lives in a git repository, which works as the agents' memory.
+> - Every task follows the same cycle, from understanding the project to closing the session.
+> - A quality gate records the real checks and does not let a change be proposed without them.
+
 I'm Jorge, a software engineer based in Logroño, Spain. I work as a Tech Lead
 on banking projects, freelance for an international client and run several
 projects of my own in production.
@@ -38,7 +43,11 @@ repositories with noise. I did not want to set up a RAG or a database either,
 with what they cost to pay for and maintain. And I wanted everything in the
 cloud.
 
-Then it clicked that a git repository is also a database. If each project has a
+Then something clicked.
+
+> A git repository is also a database.
+
+If each project has a
 repository just for its documentation, next to the code repositories, the
 context is versioned and in the cloud, costs nothing extra and is easy to
 maintain and understand, for me and for any agent.
@@ -61,13 +70,15 @@ and the agent itself wrote in the commit that it was verified.
 crux is the kernel my agents work with. It is installed once on the machine and
 all my projects depend on it. It sets the scope an agent moves in: where each
 project's information lives, which steps a task follows from start to finish
-and what has to be checked before anything is called done. The agent works
-inside that frame and cannot step out of it on its own.
+and what has to be checked before anything is called done. **The agent works
+inside that frame and cannot step out of it on its own.**
 
-It has three pieces for that. A standard that says how each project's
-documentation is organised. A set of skills, which are written procedures for
-recurring tasks. And a command, `crux`, that enforces the rules and does not let
-you continue if a step is missing.
+It has three pieces for that:
+
+- **A standard** that says how each project's documentation is organised.
+- **A set of skills**, written procedures for recurring tasks.
+- **A command, `crux`**, that enforces the rules and does not let you continue if
+  a step is missing.
 
 I started it in August and named it crux, which in climbing is the key move of a
 route, the one that decides whether you get to the top. It works with Claude
@@ -82,8 +93,8 @@ The kernel holds what is the same across all projects. Each project has its own
 documentation repository: how it is deployed, what has been built, what was
 decided and why. And each code repository only carries two short files,
 `AGENTS.md` and `CLAUDE.md`, which crux generates and which point the agent to
-that documentation. There is a single rule to decide where things go: if it
-changes when you switch projects, it does not belong in the kernel.
+that documentation. There is a single rule to decide where things go: **if it
+changes when you switch projects, it does not belong in the kernel**.
 
 One documentation repository groups all the code repositories of a project. In
 [Snowy](https://snowy.es), the weather platform I work on, there are nine: the
@@ -106,11 +117,13 @@ shows up in anything they see.
 
 ## Principles
 
-Two ground rules follow from that. Each project keeps an inventory of what
-already exists for users, which the agent reads before proposing anything so it
-does not build again what is already there. And code and documentation are
-updated in the same turn: if I change the code and not the documentation, the
-next agent works with outdated information.
+Two ground rules follow from that:
+
+- **An inventory of what already exists.** Each project keeps one, covering what
+  users see, and the agent reads it before proposing anything so it does not
+  build again what is already there.
+- **Code and documentation in the same turn.** If I change the code and not the
+  documentation, the next agent works with outdated information.
 
 ## The life of a task
 
@@ -167,7 +180,7 @@ How it is recorded changed too. The agent used to write the commit hash into a
 file after saying it had verified, and I had no way of knowing whether it
 really had. Now every check runs through `crux ship run`, which records the
 real result. `crux ship seal` closes the receipt against the current commit.
-And `crux workspace finish` refuses to open the proposal if there is no
+And `crux workspace finish` **refuses to open the proposal** if there is no
 receipt, if something came out red or if the commit is no longer the same.
 
 ![No green checks, no proposal](/blog/crux/rojo.webp)
@@ -176,8 +189,12 @@ receipt, if something came out red or if the commit is no longer the same.
 
 Each project's rules stop being a suggestion as well. Every `crux.json` declares
 its own, and the gate rejects a change that breaks them. There are git hooks
-too: one blocks pushing straight to the main branch, and another rejects a
-commit whose message is not in the project's language. The gate can only be
+too:
+
+- one blocks pushing straight to the main branch;
+- another rejects a commit whose message is not in the project's language.
+
+The gate can only be
 skipped with an explicit option, and only when I ask for it.
 
 Visual changes have one more step, because tests do not see how the page looks.
@@ -186,10 +203,12 @@ and I approve what I see.
 
 ## How to write skills that get used
 
-A skill is a procedure written in a text file: how a project is deployed, how a
-change proposal is reviewed, how a post is written. When the task fits, the
-agent opens it and follows the steps instead of improvising each time. I have
-44 in the kernel, and each project has its own on top.
+> [!NOTE] What a skill is
+> A procedure written in a text file: how a project is deployed, how a change
+> proposal is reviewed, how a post is written. When the task fits, the agent
+> opens it and follows the steps instead of improvising each time.
+
+I have 44 in the kernel, and each project has its own on top.
 
 The agent does not read every skill before starting, because they would not
 fit. It only sees a short description of each one and decides from it which to
