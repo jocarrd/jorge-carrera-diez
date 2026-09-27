@@ -1,6 +1,6 @@
 ---
 title: "How I work with AI agents across several projects at once"
-description: "crux, the system I use to organise my AI agents' work: each project's documentation in git, a fixed cycle for every task and a quality gate the agent cannot skip."
+description: "Crux, the system I use to organise my AI agents' work: each project's documentation in git, a fixed cycle for every task and a quality gate the agent cannot skip."
 date: 2026-09-27
 cover: /blog/crux/portada.webp
 preview: /blog/crux/rojo.webp
@@ -8,8 +8,8 @@ previewAlt: "Terminal: crux refuses to open the proposal because a check failed"
 coverAlt: "crux banner: a graph of nodes between folders and circuit lines on a dark background"
 tags:
   - AI agents
-  - crux
-  - workflow
+  - Crux
+  - Workflow
 ---
 
 > [!SUMMARY] In short
@@ -67,7 +67,7 @@ and the agent itself wrote in the commit that it was verified.
 
 ## What crux is
 
-crux is the kernel my agents work with. It is installed once on the machine and
+Crux is the kernel my agents work with. It is installed once on the machine and
 all my projects depend on it. It sets the scope an agent moves in: where each
 project's information lives, which steps a task follows from start to finish
 and what has to be checked before anything is called done. **The agent works
@@ -191,8 +191,8 @@ Each project's rules stop being a suggestion as well. Every `crux.json` declares
 its own, and the gate rejects a change that breaks them. There are git hooks
 too:
 
-- one blocks pushing straight to the main branch;
-- another rejects a commit whose message is not in the project's language.
+- One blocks pushing straight to the main branch.
+- Another rejects a commit whose message is not in the project's language.
 
 The gate can only be
 skipped with an explicit option, and only when I ask for it.
@@ -237,7 +237,7 @@ needed, and I fix it or remove it.
 
 ## What comes next
 
-crux keeps growing almost every week, usually because of something I miss
+Crux keeps growing almost every week, usually because of something I miss
 while working.
 
 If I see that more people are interested and it can help them, I will consider
