@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CopyLink } from "@/components/blog/CopyLink";
+import { MobileToc } from "@/components/blog/MobileToc";
 import { PostToc } from "@/components/blog/PostToc";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import { ButtonLink, Container } from "@/components/ui";
@@ -21,7 +23,6 @@ export function BlogPostView({
   if (!post) notFound();
   const copy = getCopy(locale).pages.blog;
   const url = new URL(blogPostPath(locale, slug), site.url).toString();
-  const shareHref = `https://x.com/intent/post?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(url)}&via=jorgecarrera_es`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -45,7 +46,7 @@ export function BlogPostView({
             ) : null}
 
             <div className="post-main">
-              <header className="post-header">
+              <header className="post-header" id="post-header">
                 <Link href={routePath(locale, "blog")} className="post-back">
                   <span aria-hidden>&lsaquo; </span>
                   {copy.backLabel}
@@ -78,6 +79,17 @@ export function BlogPostView({
                     <p className="post-author-name">{site.name}</p>
                     <p className="post-author-role">{copy.authorRole}</p>
                   </div>
+                  {post.xUrl ? (
+                    <a
+                      href={post.xUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="post-comment"
+                    >
+                      {copy.commentLabel}
+                      <span aria-hidden> &rsaquo;</span>
+                    </a>
+                  ) : null}
                 </div>
               </header>
 
@@ -110,21 +122,28 @@ export function BlogPostView({
                   <h2 className="t-card">{copy.endTitle}</h2>
                   <p>{copy.endText}</p>
                   <div className="post-end-actions">
+                    {post.xUrl ? (
+                      <ButtonLink
+                        href={post.xUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {copy.commentLabel}
+                      </ButtonLink>
+                    ) : null}
                     <ButtonLink
                       href={site.x}
                       target="_blank"
                       rel="noopener noreferrer"
+                      variant={post.xUrl ? "secondary" : "primary"}
                     >
                       {copy.endCta}
                     </ButtonLink>
-                    <ButtonLink
-                      href={shareHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="secondary"
-                    >
-                      {copy.shareLabel}
-                    </ButtonLink>
+                    <CopyLink
+                      url={url}
+                      label={copy.copyLinkLabel}
+                      copiedLabel={copy.copiedLabel}
+                    />
                   </div>
                 </div>
               </aside>
@@ -132,6 +151,14 @@ export function BlogPostView({
           </div>
         </Container>
       </article>
+      {post.toc.length > 1 ? (
+        <MobileToc
+          entries={post.toc}
+          label={copy.tocLabel}
+          closeLabel={copy.closeLabel}
+          startId="post-header"
+        />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -65,6 +65,7 @@ export function createPageMetadata({
   title,
   description,
   image,
+  imageSize = { width: 1600, height: 900 },
   type = "article",
 }: {
   locale: Locale;
@@ -72,6 +73,7 @@ export function createPageMetadata({
   title: string;
   description: string;
   image?: string;
+  imageSize?: { width: number; height: number };
   type?: "article" | "website";
 }): Metadata {
   const url = absolute(paths[locale]);
@@ -95,9 +97,7 @@ export function createPageMetadata({
       siteName: site.name,
       locale: openGraphLocale[locale],
       type,
-      ...(image
-        ? { images: [{ url: absolute(image), width: 1600, height: 900 }] }
-        : {}),
+      ...(image ? { images: [{ url: absolute(image), ...imageSize }] } : {}),
     },
     twitter: {
       card: "summary_large_image",

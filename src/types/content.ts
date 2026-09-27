@@ -559,6 +559,10 @@ export type Copy = {
       backLabel: string;
       tocLabel: string;
       shareLabel: string;
+      commentLabel: string;
+      copyLinkLabel: string;
+      copiedLabel: string;
+      closeLabel: string;
       authorRole: string;
       endTitle: string;
       endText: string;

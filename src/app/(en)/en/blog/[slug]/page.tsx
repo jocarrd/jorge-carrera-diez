@@ -26,6 +26,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     image: post.cover,
+    imageSize: { width: 1500, height: 600 },
   });
 }
 
