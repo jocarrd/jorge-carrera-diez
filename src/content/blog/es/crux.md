@@ -112,9 +112,7 @@ web, el blog y las herramientas de mi cuenta de X, y cada proyecto nuevo que
 sale de ahí entra como una carpeta más.
 
 Cada proyecto declara su configuración en un fichero, `crux.json`: qué
-repositorios tiene, qué se comprueba antes de un commit y cómo se despliega. Si
-el código es de un cliente, un perfil distinto se asegura de que mi *tooling* no
-aparezca en nada que él vea.
+repositorios tiene, qué se comprueba antes de un commit y cómo se despliega.
 
 ## Principios
 
