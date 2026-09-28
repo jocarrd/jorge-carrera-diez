@@ -123,10 +123,17 @@ registro. Es un script normal.
 ## Cómo lo aplico en crux
 
 En crux hay hooks que recuerdan y hooks que bloquean. Para decidir de qué tipo
-es cada uno, me pregunto cuánto cuesta deshacer el error. Si se arregla con otro
-commit, basta con recordárselo al agente. Si borra trabajo o mete en la rama
-principal código sin comprobar, se bloquea. Bloquearlo todo haría el sistema tan
-pesado que acabaría desactivándolo.
+es cada uno me hago dos preguntas.
+
+La primera, si el error tiene vuelta atrás. Lo que borra trabajo o mete en la
+rama principal código sin comprobar se bloquea siempre.
+
+La segunda, cuánto le cuesta al agente equivocarse, darse cuenta y rehacer el
+trabajo bien. Si el fallo se descubre tarde y obliga a repetir media tarea,
+conviene pararlo en el momento en que ocurre. Si se corrige en un minuto, como
+actualizar la documentación que se le ha olvidado, basta con recordárselo.
+
+Bloquearlo todo haría el sistema tan pesado que acabaría desactivándolo.
 
 **Los que recuerdan.** Cuando empiezo a trabajar sobre la rama principal, un
 hook `UserPromptSubmit` le recuerda al agente que abra primero un espacio de
