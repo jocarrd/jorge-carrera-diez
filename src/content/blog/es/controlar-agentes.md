@@ -120,26 +120,13 @@ El hook no sabe nada por sí mismo. Si necesita saber en qué rama estás o si u
 carpeta es importante, lo consulta: pregunta a git, lee un fichero o abre un
 registro. Es un script normal.
 
-## Influir o decidir
-
-Con esto el reparto queda bastante claro:
-
-- **En el contexto** va lo que necesita criterio: cómo planificar, cómo revisar
-  un cambio, cómo escribir. Ahí el agente tiene que pensar, y una regla rígida
-  estorbaría.
-- **En el arnés y en git** va lo que es caro de deshacer: borrar trabajo, subir
-  código sin comprobar, reescribir la historia. Ahí no quiero que el agente
-  pese nada.
-
-![Influir en el modelo o decidir por él](/blog/agentes/decidir.webp)
-
-La regla que sigo es sencilla: **se bloquea lo que no tiene vuelta atrás y se
-recuerda lo demás**. Si todo bloquea, el sistema se vuelve tan pesado que
-acabas desactivándolo.
-
 ## Cómo lo aplico en crux
 
-En crux hay de los dos tipos.
+En crux hay hooks que recuerdan y hooks que bloquean. Para decidir de qué tipo
+es cada uno, me pregunto cuánto cuesta deshacer el error. Si se arregla con otro
+commit, basta con recordárselo al agente. Si borra trabajo o mete en la rama
+principal código sin comprobar, se bloquea. Bloquearlo todo haría el sistema tan
+pesado que acabaría desactivándolo.
 
 **Los que recuerdan.** Cuando empiezo a trabajar sobre la rama principal, un
 hook `UserPromptSubmit` le recuerda al agente que abra primero un espacio de
