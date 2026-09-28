@@ -4119,6 +4119,27 @@ a {
   overflow-wrap: anywhere;
 }
 
+/* Un bloque de código no se parte: se desplaza dentro de su caja para no
+   ensanchar la página en el móvil. */
+.post-body pre {
+  overflow-x: auto;
+  padding: 1rem 1.125rem;
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--anillo);
+  line-height: 1.6;
+}
+
+.post-body pre code {
+  display: block;
+  line-height: 1.55;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 0.82rem;
+  overflow-wrap: normal;
+}
+
 .post-figure {
   margin: 2.5rem -22px;
 }
