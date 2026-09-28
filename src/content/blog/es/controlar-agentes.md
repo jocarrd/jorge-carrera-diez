@@ -141,8 +141,7 @@ trabajo aislado. Al retomar una tarea, otro le trae lo que se hizo y lo que
 falta. Al terminar el turno, un hook `Stop` avisa si ha cambiado código sin
 tocar la documentación.
 
-**Los que bloquean.** Aquí está lo que de verdad hace que el proceso se cumpla,
-y funciona como una cadena:
+**Los que bloquean.** Funcionan como una cadena:
 
 1. Un *hook* de git impide subir nada a la rama principal. Todo entra por una
    propuesta de cambio.
