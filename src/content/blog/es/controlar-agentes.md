@@ -24,9 +24,10 @@ palabras: ¿cómo consigues que el agente siga el proceso?
 La respuesta corta es que escribirlo no basta. Lo aprendí midiendo.
 
 Tenía una skill que describía el ciclo de una tarea, bien escrita, instalada y
-con su descripción. En 31 sesiones de trabajo el agente la abrió **cero veces**.
-Y la regla de escribir los commits en inglés estaba en la documentación desde el
-primer día; cuando fui a mirar, los 27 mensajes del historial estaban en
+con su descripción. En 31 sesiones de trabajo, el agente la abrió **cero veces**.
+
+La regla de escribir los commits en inglés estaba en la documentación desde el
+primer día. Cuando fui a mirar, **los 27 mensajes** del historial estaban en
 castellano.
 
 El agente no lo hacía por rebeldía. Para entender por qué pasa, y cómo se
@@ -52,8 +53,6 @@ El arnés y el modelo trabajan en un bucle:
 4. El resultado vuelve al modelo, y el bucle se repite hasta que el modelo
    responde sin pedir nada más.
 
-![El modelo pide, el arnés ejecuta](/blog/agentes/bucle.webp)
-
 Lo importante está en el paso 3. **El modelo solo pide.** Cada comando que ves
 ejecutarse, cada fichero que se lee o se edita, es una petición que el arnés
 decide cumplir.
@@ -77,8 +76,8 @@ los errores de la última ejecución. El modelo pesa todo eso y decide. Casi
 siempre decide bien, pero es una decisión probabilística. Una regla escrita
 **influye** en lo que hace el agente, pero no lo **obliga**.
 
-Cuando el agente va con prisa por terminar lo que le has pedido, una regla que
-está escrita a doce mensajes de distancia pierde.
+> Cuando el agente va con prisa por terminar lo que le has pedido, una regla
+> escrita a doce mensajes de distancia pierde.
 
 ## Los hooks: código en las costuras del bucle
 
@@ -99,8 +98,6 @@ En Claude Code los momentos principales son estos:
 - **`Stop`**, cuando el agente va a darte el turno. Puede revisar lo que ha hecho
   antes de soltarte.
 
-![Dónde puedes meter tu propio código](/blog/agentes/hooks.webp)
-
 Un hook `PreToolUse` recibe un JSON con la petición exacta del modelo:
 
 ```json
@@ -116,22 +113,21 @@ El script mira lo que necesite y contesta con su código de salida. Si sale con
 script haya escrito en la salida de error le llega al agente como explicación.
 El agente lo lee y cambia de plan.
 
-El hook no sabe nada por sí mismo. Si necesita saber en qué rama estás o si una
+**El hook no sabe nada por sí mismo.** Si necesita saber en qué rama estás o si una
 carpeta es importante, lo consulta: pregunta a git, lee un fichero o abre un
 registro. Es un script normal.
 
 ## Cómo lo aplico en crux
 
 En crux hay hooks que recuerdan y hooks que bloquean. Para decidir de qué tipo
-es cada uno me hago dos preguntas.
+es cada uno me hago dos preguntas:
 
-La primera, si el error tiene vuelta atrás. Lo que borra trabajo o mete en la
-rama principal código sin comprobar se bloquea siempre.
-
-La segunda, cuánto le cuesta al agente equivocarse, darse cuenta y rehacer el
-trabajo bien. Si el fallo se descubre tarde y obliga a repetir media tarea,
-conviene pararlo en el momento en que ocurre. Si se corrige en un minuto, como
-actualizar la documentación que se le ha olvidado, basta con recordárselo.
+1. **¿El error tiene vuelta atrás?** Lo que borra trabajo o mete en la rama
+   principal código sin comprobar se bloquea siempre.
+2. **¿Cuánto le cuesta al agente equivocarse, darse cuenta y rehacerlo bien?**
+   Si el fallo se descubre tarde y obliga a repetir media tarea, conviene
+   pararlo en el momento en que ocurre. Si se corrige en un minuto, como la
+   documentación que se le ha olvidado actualizar, basta con recordárselo.
 
 Bloquearlo todo haría el sistema tan pesado que acabaría desactivándolo.
 
@@ -153,9 +149,9 @@ tocar la documentación.
 Así da igual que el agente se salte un paso al principio. Lo que haya hecho mal
 no llega a la rama principal sin pasar por las comprobaciones.
 
-Esta semana encontré un hueco en esa cadena. El *hook* de git solo protegía la
-rama principal, así que el agente podía subir una rama por su cuenta y abrir la
-propuesta con `gh pr create`, sin recibo. Lo cerré con un hook `PreToolUse`.
+Hace poco encontré un hueco en esa cadena. El *hook* de git solo protegía la
+rama principal, así que **el agente podía subir una rama por su cuenta y abrir la
+propuesta con `gh pr create`, sin recibo**. Lo cerré con un hook `PreToolUse`.
 Junto a él puse otro que para los comandos que destruyen trabajo, como
 `git reset --hard`, `git push --force` o matar procesos por nombre.
 
@@ -170,11 +166,11 @@ al agente dando vueltas.
 
 Conviene no confiar de más, así que estos son los límites:
 
-- **Solo ve la petición.** Si el agente ejecuta `bash deploy.sh` y ese script
-  hace un `reset --hard` por dentro, el hook solo ve `bash deploy.sh`.
+- **Solo ve la petición.** Si el agente ejecuta `./desplegar` y ese script
+  hace un `reset --hard` por dentro, el hook solo ve `./desplegar`.
 - **Leer el texto de un comando se puede esquivar.** Una variable o un alias
-  pueden colar lo que el patrón no reconoce. Un hook para descuidos, no a
-  alguien decidido a saltárselo.
+  pueden colar lo que el patrón no reconoce. Un hook frena un descuido, pero
+  no a quien está decidido a saltárselo.
 - **Cada arnés tiene los suyos.** Los hooks de Claude Code no funcionan en
   Codex ni en Cursor, que tienen sistemas parecidos con otro formato. Los
   *hooks* de git, en cambio, funcionan con cualquier agente, y también con
@@ -189,6 +185,9 @@ que ningún agente puede saltarse desde tu máquina.
 Durante meses intenté que el agente siguiera el proceso escribiéndolo cada vez
 mejor. Lo que funcionó fue dejar de pedirle que lo recordara y poner el control
 en el sitio por el que pasa todo lo que hace.
+
+> Una regla escrita es solo prosa en su contexto, y que la cumpla es cuestión de
+> probabilidad. Un hook en su ciclo de vida se ejecuta siempre.
 
 Si quieres ver el sistema completo en el que encajan estos hooks, está en el
 [artículo sobre crux](/blog/crux). Y si estás montando algo parecido, me
