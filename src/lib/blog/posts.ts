@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { Marked } from "marked";
 import type { Locale } from "@/i18n/config";
@@ -111,6 +111,15 @@ function expandCallouts(body: string) {
   );
 }
 
+// Un diagrama ancho no se lee en el móvil: si junto a la imagen hay una
+// versión «-movil», esa es la que se sirve en pantallas estrechas.
+function mobileVariant(href: string) {
+  if (!href.startsWith("/")) return null;
+  const candidate = href.replace(/(\.\w+)$/, "-movil$1");
+  if (candidate === href) return null;
+  return existsSync(join(process.cwd(), "public", candidate)) ? candidate : null;
+}
+
 function render(body: string) {
   const toc: TocEntry[] = [];
   const marked = new Marked({ gfm: true });
@@ -130,7 +139,12 @@ function render(body: string) {
         const caption = title
           ? `<figcaption>${escapeHtml(title)}</figcaption>`
           : "";
-        return `<figure class="post-figure"><a href="${escapeHtml(href)}" target="_blank" rel="noopener"><img src="${escapeHtml(href)}" alt="${escapeHtml(text)}" loading="lazy" decoding="async" /></a>${caption}</figure>`;
+        const img = `<img src="${escapeHtml(href)}" alt="${escapeHtml(text)}" loading="lazy" decoding="async" />`;
+        const mobile = mobileVariant(href);
+        const media = mobile
+          ? `<picture><source media="(max-width: 639px)" srcset="${escapeHtml(mobile)}" />${img}</picture>`
+          : img;
+        return `<figure class="post-figure"><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${media}</a>${caption}</figure>`;
       },
       paragraph({ tokens }) {
         const only = tokens.length === 1 && tokens[0].type === "image";

@@ -1,9 +1,9 @@
 ---
-title: "Cómo se controla lo que hace un agente de IA"
-description: "Por qué un agente se salta las reglas que le escribes, qué pasa por dentro entre lo que pide y lo que ejecuta, y cómo uso los hooks para que cumpla las que importan."
+title: "Cómo conseguir que un agente de IA siga tu metodología"
+description: "Por qué un agente se salta las reglas que le escribes, qué pasa por dentro entre lo que pide y lo que ejecuta, y cómo bloquearlo cuando se salta el protocolo."
 date: 2026-09-28
 cover: /blog/agentes/portada.webp
-coverAlt: "Portada: el bucle de un agente, con el paso PreToolUse resaltado entre la petición del modelo y la ejecución"
+coverAlt: "Portada con el título «Cómo conseguir que un agente de IA siga tu metodología» y el bucle del agente, con el paso PreToolUse resaltado entre la petición del modelo y la ejecución"
 preview: /blog/agentes/guardia.webp
 previewAlt: "Terminal: un hook se niega a ejecutar un pkill y un gh pr create que había pedido el agente"
 tags:
