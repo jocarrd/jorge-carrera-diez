@@ -7210,3 +7210,25 @@ a {
     font-size: 1.25rem;
   }
 }
+
+.label-ed,
+.t-eyebrow,
+.post-callout-title,
+.post-toc-title,
+.blog-cover-toc-title,
+.blog-cover-issue,
+.blog-feed,
+.proj-card-kicker,
+.hero-ed-role,
+.page-hero-facts dt,
+.arch-tag,
+.field-label,
+.metric-label,
+.cycle-label,
+.press-source {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-transform: none;
+}

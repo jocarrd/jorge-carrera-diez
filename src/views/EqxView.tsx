@@ -57,7 +57,7 @@ export function EqxView({ locale }: { locale: Locale }) {
           {copy.products.items.map((item, index) => (
             <Reveal key={item.name} delay={index * 70}>
               <div className="area">
-                <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--accent-text)]">
+                <p className="label-ed text-[var(--accent-text)]">
                   {item.tech}
                 </p>
                 <h3 className="area-title mt-2">

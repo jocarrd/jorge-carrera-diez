@@ -122,7 +122,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         <div className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
           {copy.stack.groups.map((group) => (
             <div key={group.label}>
-              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--muted)]">
+              <p className="label-ed text-[var(--muted)]">
                 {group.label}
               </p>
               <p className="mt-2 text-base leading-[1.6] text-[var(--foreground)]">

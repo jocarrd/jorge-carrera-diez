@@ -213,7 +213,7 @@ export function Header({ locale }: { locale: Locale }) {
             className="nav-sheet-item mt-10 border-t border-[var(--line)] pt-7"
             style={{ "--i": copy.items.length } as React.CSSProperties}
           >
-            <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
+            <p className="label-ed text-[var(--muted)]">
               {copy.sectionsLabel}
             </p>
             <ul className="mt-4 flex flex-col gap-1">
