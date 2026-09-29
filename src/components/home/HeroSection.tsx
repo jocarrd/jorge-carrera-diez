@@ -24,7 +24,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
           <div className="hero-ed-stage" aria-hidden>
             <p className="hero-ed-word hero-ed-word--back">
-              Tech
+              Product
             </p>
             <Image
               src="/images/jorge-recorte.webp"
@@ -36,7 +36,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
               className="hero-ed-photo rise rise-2"
             />
             <p className="hero-ed-word hero-ed-word--front">
-              Lead
+              Engineer
             </p>
           </div>
 

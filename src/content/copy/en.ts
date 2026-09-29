@@ -4,11 +4,11 @@ import type { Copy } from "@/types/content";
 export const en: Copy = {
   meta: {
     siteTitle:
-      "Tech Lead and full stack developer: software architecture, generative AI and SEO",
+      "Tech Lead and full stack engineer: software architecture, generative AI and SEO",
     description:
       "Computer engineer from the University of La Rioja. I lead architecture and new capabilities on enterprise projects, work with EQx (Elite Quality Index, University of St. Gallen) and develop Snowy, a weather platform in production on Next.js, NestJS, Redis, MySQL and Docker.",
     location: "Logroño, La Rioja, Spain",
-    jobTitle: "Tech Lead and full stack developer",
+    jobTitle: "Tech Lead and full stack engineer",
     universityLabel: "University of La Rioja",
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
@@ -56,7 +56,7 @@ export const en: Copy = {
       "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
     positioning: "Tech Lead · Full stack · Software architecture",
     positioningLong:
-      "Tech Lead and full stack developer, from architecture to production.",
+      "Tech Lead and full stack engineer, from architecture to production.",
 
     aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
     aboutStatement: [
@@ -68,7 +68,7 @@ export const en: Copy = {
       { text: "I build Snowy", strong: true },
       { text: "." },
     ],
-    tagline: ["Tech Lead and", "full stack", "developer."],
+    tagline: ["Tech Lead and", "full stack", "engineer."],
     taglineSub:
       "Engineer on banking and insurance projects in Spain, on a Swiss academic index and on a weather platform people use every day.",
     availability: "Available for projects and teams",
