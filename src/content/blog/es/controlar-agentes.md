@@ -1,11 +1,12 @@
 ---
 title: "Cómo conseguir que un agente de IA siga tu metodología"
 description: "Por qué un agente se salta las reglas que le escribes, qué pasa por dentro entre lo que pide y lo que ejecuta, y cómo bloquearlo cuando se salta el protocolo."
-date: 2026-09-28
+date: 2026-09-29
 cover: /blog/agentes/portada.webp
 coverAlt: "Portada con el título «Cómo conseguir que un agente de IA siga tu metodología» y el bucle del agente, con el paso PreToolUse resaltado entre la petición del modelo y la ejecución"
 preview: /blog/agentes/guardia.webp
 previewAlt: "Terminal: un hook se niega a ejecutar un pkill y un gh pr create que había pedido el agente"
+xUrl: https://x.com/jorgecarrera_es/status/2105026640409493825
 tags:
   - Agentes de IA
   - Hooks
