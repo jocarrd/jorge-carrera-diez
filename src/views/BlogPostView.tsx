@@ -92,6 +92,16 @@ export function BlogPostView({
                   ) : null}
                 </div>
               </header>
+              <figure className="post-cover">
+                <Image
+                  src={post.cover}
+                  alt={post.coverAlt}
+                  width={1500}
+                  height={600}
+                  priority
+                  sizes="(min-width: 768px) 656px, 100vw"
+                />
+              </figure>
 
               {post.toc.length > 1 ? (
                 <details className="post-toc">
@@ -110,7 +120,7 @@ export function BlogPostView({
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
 
-              <aside className="post-end">
+              <aside className="post-end on-dark">
                 <Image
                   src={site.photo}
                   alt=""

@@ -100,7 +100,7 @@ export async function renderOpenGraphImage(
               />
               <path
                 d="M22.6 12.6v9.2a4.7 4.7 0 0 1-8.8 2.3"
-                stroke="#fb923c"
+                stroke="#d4ff3a"
                 strokeWidth="5"
                 strokeLinecap="round"
               />
@@ -112,7 +112,7 @@ export async function renderOpenGraphImage(
                 fontWeight: 600,
                 letterSpacing: 2.4,
                 textTransform: "uppercase",
-                color: "#fb923c",
+                color: "#d4ff3a",
               }}
             >
               {copy.ogEyebrow}

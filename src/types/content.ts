@@ -176,6 +176,7 @@ export type Copy = {
     positioning: string;
     positioningLong: string;
     aboutTitle: string;
+    aboutStatement: { text: string; strong?: boolean }[];
     tagline: string[];
     taglineSub: string;
     capabilities: { title: string; text: string }[];
@@ -209,12 +210,17 @@ export type Copy = {
     fronts: { label: string; title: string; text: string }[];
   };
   ai: {
+    titleAccent: string;
     title: string;
     lead: string;
     detailTitle: string;
     detail: string;
     rows: [string, string][];
     flow: { title: string; caption: string; metric: string }[];
+    session: {
+      label: string;
+      steps: { command: string; output: string; metric: string }[];
+    };
     diagram: {
       eyebrow: string;
       inLabel: string;
@@ -241,7 +247,20 @@ export type Copy = {
   };
   experiencePreview: SectionCopy & { cta: string };
   projectsPreview: SectionCopy;
+  sectionLabels: {
+    work: string;
+    role: string;
+    method: string;
+    projects: string;
+    snowy: string;
+    experience: string;
+    about: string;
+    blog: string;
+    contact: string;
+  };
   contactCta: {
+    terminalCommand: string;
+    terminalHint: string;
     title: string;
     text: string;
     cta: string;

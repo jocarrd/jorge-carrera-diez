@@ -4,6 +4,8 @@ import { headingTags } from "@/lib/heading";
 type SectionHeaderProps = {
   title: string;
   text?: string;
+  label?: string;
+  accent?: string;
   level?: HeadingLevel;
   align?: "center" | "left";
 };
@@ -11,23 +13,36 @@ type SectionHeaderProps = {
 export function SectionHeader({
   title,
   text,
+  label,
+  accent,
   level = 2,
   align = "left",
 }: SectionHeaderProps) {
   const Heading = headingTags[level];
-  const alignClassName =
-    align === "center" ? "mx-auto text-center" : "text-left";
+  const centered = align === "center";
 
   return (
-    <div className={`max-w-[46rem] ${alignClassName}`}>
-      <Heading className="t-section">{title}</Heading>
-      {text ? (
-        <p
-          className={`mt-4 text-[1.0625rem] leading-[1.5] text-[var(--muted)] sm:mt-5 sm:text-[1.3125rem] ${align === "center" ? "mx-auto" : ""}`}
-        >
-          {text}
+    <div className={centered ? "sh sh--center" : "sh"}>
+      {label ? (
+        <p className="sh-label">
+          {label}
+          <span aria-hidden className="sh-line" />
         </p>
       ) : null}
+      <div className={text && !centered ? "sh-split" : undefined}>
+        <Heading className="t-section">
+          {accent && title.includes(accent) ? (
+            <>
+              {title.slice(0, title.lastIndexOf(accent))}
+              <span className="sh-accent">{accent}</span>
+              {title.slice(title.lastIndexOf(accent) + accent.length)}
+            </>
+          ) : (
+            title
+          )}
+        </Heading>
+        {text ? <p className="sh-text">{text}</p> : null}
+      </div>
     </div>
   );
 }

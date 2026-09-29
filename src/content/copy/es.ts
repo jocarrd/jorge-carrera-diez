@@ -59,10 +59,19 @@ export const es: Copy = {
       "Ingeniero de software. Producto web, de la arquitectura a producción.",
 
     aboutTitle: "Ingeniero informático colegiado, desde Logroño.",
+    aboutStatement: [
+      { text: "Ingeniero de software en Logroño. " },
+      { text: "Tech Lead en banca y seguros", strong: true },
+      { text: ", " },
+      { text: "relevo técnico del Elite Quality Index", strong: true },
+      { text: " en Suiza y, en paralelo, " },
+      { text: "desarrollo Snowy", strong: true },
+      { text: "." },
+    ],
 
     tagline: ["Producto web,", "de la arquitectura", "a producción."],
     taglineSub:
-      "Ahora mismo: banca y seguros en España, un índice académico suizo y una plataforma meteorológica que usa gente cada día.",
+      "Ingeniero en proyectos de banca y seguros en España, en un índice académico suizo y en una plataforma meteorológica que usa gente cada día.",
 
     availability: "Disponible para proyectos y equipos",
     clientsLabel: "Dónde he trabajado",
@@ -210,6 +219,7 @@ export const es: Copy = {
     ],
   },
   ai: {
+    titleAccent: "agentes",
     title: "Un sistema propio para trabajar con agentes",
     lead: "En el cliente, la IA entra en flujos que ya están en producción, con sus requisitos de seguridad, trazabilidad y mantenimiento. En mis proyectos, el desarrollo se hace con agentes sobre un marco que construí para sostener ese trabajo: una herramienta interna, no un producto.",
     detailTitle: "Cada tarea sigue el mismo camino",
@@ -226,6 +236,41 @@ export const es: Copy = {
       ],
       ["repositorio", "Punteros de contexto generados, nunca escritos a mano."],
     ],
+    session: {
+      label: "Una tarea, de principio a fin",
+      steps: [
+        {
+          command: "crux workspace new mapa-3d",
+          output: "espacio 'mapa-3d' listo · rama, copia y puertos propios",
+          metric: "parallel",
+        },
+        {
+          command: "/ship",
+          output: "el agente abre el procedimiento escrito antes de commitear",
+          metric: "skills",
+        },
+        {
+          command: "crux ship run -- npm test",
+          output: "tests en verde, resultado anotado en el recibo",
+          metric: "gate",
+        },
+        {
+          command: "crux ship seal",
+          output: "recibo cerrado contra el commit actual",
+          metric: "gate",
+        },
+        {
+          command: "crux workspace finish mapa-3d",
+          output: "propuesta abierta, con el recibo como prueba",
+          metric: "base",
+        },
+        {
+          command: "crux usage",
+          output: "qué procedimientos se usan y cuáles sobran",
+          metric: "signal",
+        },
+      ],
+    },
     flow: [
       {
         title: "Estándar",
@@ -304,12 +349,20 @@ export const es: Copy = {
     ctaSecondary: "Abrir Snowy",
     gallery: [
       {
-        image: "/images/snowy-radar-map.webp",
-        imageMobile: "/images/snowy-radar-movil.webp",
-        title: "Radar de precipitación",
+        image: "/images/snowy-clima-crestas.webp",
+        imageMobile: "/images/snowy-clima-crestas-movil.webp",
+        title: "El clima desde 1950",
         caption:
-          "Media hora por paso sobre las estaciones que reportan en directo.",
-        alt: "Mapa de Snowy con el radar de precipitación sobre España y las estaciones activas",
+          "Cada cresta es un año: cómo se repartieron sus días entre más fríos y más cálidos de lo normal.",
+        alt: "Gráfico de crestas de Snowy con los días cálidos de cada año en España desde 1950, que pasan del azul al rojo",
+      },
+      {
+        image: "/images/snowy-nieve-3d.webp",
+        imageMobile: "/images/snowy-nieve-3d-movil.webp",
+        title: "Pistas de esquí en 3D",
+        caption:
+          "Relieve y pistas de cada estación, en 3D sobre el terreno real.",
+        alt: "Mapa 3D de Snowy con las pistas de Formigal sobre el relieve del Pirineo",
       },
       {
         image: "/images/snowy-home.webp",
@@ -342,7 +395,20 @@ export const es: Copy = {
     title: "Snowy, EQx y La Rioja Meteo.",
     text: "Los tres están en producción y en los tres llevo las decisiones técnicas. Uno es mío de punta a punta, otro es de un cliente en Suiza y el tercero lleva doce años publicando.",
   },
+  sectionLabels: {
+    work: "Qué hago",
+    role: "Ahora",
+    method: "Método",
+    projects: "Proyectos",
+    snowy: "Snowy",
+    experience: "Experiencia",
+    about: "Sobre mí",
+    blog: "Blog",
+    contact: "Contacto",
+  },
   contactCta: {
+    terminalCommand: "contactar --con jorge",
+    terminalHint: "Pulsa para abrir tu correo",
     title: "Si mi perfil encaja, hablamos.",
     text: "Si tienes algo entre manos y no sabes si encaja, escríbeme y te lo digo sin rodeos. Si no soy la persona, también te lo diré.",
     cta: "Escribirme",

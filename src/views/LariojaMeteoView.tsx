@@ -9,6 +9,7 @@ import {
   Reveal,
   Section,
   SectionHeader,
+  TiltOnScroll,
 } from "@/components/ui";
 import { Timeline } from "@/components/visual/Timeline";
 import { domainOf, getCopy, site } from "@/content";
@@ -27,9 +28,9 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         actions={<ButtonLink href={site.lariojameteo}>{copy.cta}</ButtonLink>}
       />
 
-      <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
+      <section className="case-shot on-dark">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Reveal>
+          <TiltOnScroll>
             <BrowserFrame label={domainOf(site.lariojameteo)}>
               <Image
                 src="/images/lariojameteo-home.webp"
@@ -40,7 +41,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
                 priority
               />
             </BrowserFrame>
-          </Reveal>
+          </TiltOnScroll>
         </div>
       </section>
 

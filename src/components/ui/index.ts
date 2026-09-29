@@ -15,3 +15,6 @@ export { Section } from "./Section";
 export { SectionHeader } from "./SectionHeader";
 export { Surface } from "./Surface";
 export { PlayOnView } from "./PlayOnView";
+export { PageHero } from "./PageHero";
+export { LightOnScroll } from "./LightOnScroll";
+export { TiltOnScroll } from "./TiltOnScroll";

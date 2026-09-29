@@ -22,7 +22,7 @@ export function Footer({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <footer className="section-band border-t border-[var(--line)]">
+    <footer className="site-footer on-dark">
       <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-5 px-6 py-9 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-[14px] font-medium text-[var(--foreground)]">

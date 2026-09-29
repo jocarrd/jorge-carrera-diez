@@ -59,9 +59,18 @@ export const en: Copy = {
       "Software engineer. Web product from architecture through to production.",
 
     aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
+    aboutStatement: [
+      { text: "Software engineer based in Logroño. " },
+      { text: "Tech Lead in banking and insurance", strong: true },
+      { text: ", " },
+      { text: "technical lead of the Elite Quality Index", strong: true },
+      { text: " in Switzerland and, on the side, " },
+      { text: "I build Snowy", strong: true },
+      { text: "." },
+    ],
     tagline: ["Web product,", "from architecture", "to production."],
     taglineSub:
-      "Right now: banking and insurance in Spain, a Swiss academic index, and a weather platform people use every day.",
+      "Engineer on banking and insurance projects in Spain, on a Swiss academic index and on a weather platform people use every day.",
     availability: "Available for projects and teams",
     clientsLabel: "Where I have worked",
     capabilities: [
@@ -216,6 +225,7 @@ export const en: Copy = {
     ],
   },
   ai: {
+    titleAccent: "agents",
     title: "A system of my own for working with agents",
     lead: "On the client side, AI goes into flows that are already in production, with their security, traceability and maintenance requirements. On my own projects, development runs on agents over a framework I built to sustain that work: an internal tool, not a product.",
     detailTitle: "Every task follows the same path",
@@ -229,6 +239,41 @@ export const en: Copy = {
       ],
       ["repository", "Generated context pointers, never written by hand."],
     ],
+    session: {
+      label: "One task, start to finish",
+      steps: [
+        {
+          command: "crux workspace new mapa-3d",
+          output: "workspace 'mapa-3d' ready · own branch, copy and ports",
+          metric: "parallel",
+        },
+        {
+          command: "/ship",
+          output: "the agent opens the written procedure before committing",
+          metric: "skills",
+        },
+        {
+          command: "crux ship run -- npm test",
+          output: "tests green, result written to the receipt",
+          metric: "gate",
+        },
+        {
+          command: "crux ship seal",
+          output: "receipt sealed against the current commit",
+          metric: "gate",
+        },
+        {
+          command: "crux workspace finish mapa-3d",
+          output: "pull request opened, with the receipt as proof",
+          metric: "base",
+        },
+        {
+          command: "crux usage",
+          output: "which procedures get used and which are dead weight",
+          metric: "signal",
+        },
+      ],
+    },
     flow: [
       {
         title: "Standard",
@@ -307,11 +352,20 @@ export const en: Copy = {
     ctaSecondary: "Open Snowy",
     gallery: [
       {
-        image: "/images/snowy-radar-map.webp",
-        imageMobile: "/images/snowy-radar-movil.webp",
-        title: "Precipitation radar",
-        caption: "Half-hour steps over the stations reporting live.",
-        alt: "Snowy map showing the precipitation radar over Spain with active stations",
+        image: "/images/snowy-clima-crestas.webp",
+        imageMobile: "/images/snowy-clima-crestas-movil.webp",
+        title: "Climate since 1950",
+        caption:
+          "Each ridge is a year: how its days split between colder and warmer than normal.",
+        alt: "Snowy ridgeline chart with the warm days of each year in Spain since 1950, shifting from blue to red",
+      },
+      {
+        image: "/images/snowy-nieve-3d.webp",
+        imageMobile: "/images/snowy-nieve-3d-movil.webp",
+        title: "Ski slopes in 3D",
+        caption:
+          "Terrain and slopes for each resort, in 3D over the real relief.",
+        alt: "Snowy 3D map with the Formigal slopes over the Pyrenees relief",
       },
       {
         image: "/images/snowy-home.webp",
@@ -343,7 +397,20 @@ export const en: Copy = {
     title: "Snowy, EQx and La Rioja Meteo.",
     text: "All three are in production and I own the technical decisions on all three. One is mine end to end, one belongs to a client in Switzerland and the third has been publishing for twelve years.",
   },
+  sectionLabels: {
+    work: "What I do",
+    role: "Now",
+    method: "Method",
+    projects: "Projects",
+    snowy: "Snowy",
+    experience: "Career",
+    about: "About me",
+    blog: "Blog",
+    contact: "Contact",
+  },
   contactCta: {
+    terminalCommand: "contact --with jorge",
+    terminalHint: "Click to open your email",
     title: "If my profile fits, let's talk.",
     text: "If you have something in mind and are not sure it fits, write to me and I will tell you straight. If I am not the right person, I will say that too.",
     cta: "Email me",

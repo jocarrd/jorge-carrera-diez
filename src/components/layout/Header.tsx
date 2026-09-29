@@ -99,6 +99,12 @@ export function Header({ locale }: { locale: Locale }) {
       data-scrolled={isScrolled}
       data-hidden={isHidden && !isOpen}
       data-menu-open={isOpen}
+      data-tone={
+        pathname.startsWith(routePath(locale, "blog")) ||
+        pathname.startsWith(routePath(locale, "cv"))
+          ? undefined
+          : "dark"
+      }
       className="site-header sticky top-0 z-50"
     >
       <div className="header-bar contenedor mx-auto w-full max-w-[1120px] px-[22px] sm:px-8">
@@ -109,13 +115,13 @@ export function Header({ locale }: { locale: Locale }) {
           onClick={closeMenu}
         >
           <Mark className="h-7 w-7 shrink-0" />
-          <span className="text-sm font-semibold tracking-[-0.01em] text-[var(--foreground)]">
+          <span className="whitespace-nowrap text-sm font-semibold tracking-[-0.01em] text-[var(--foreground)]">
             Jorge Carrera Diez
           </span>
         </Link>
         <nav
           aria-label={copy.mainNavLabel}
-          className="hidden items-center md:flex"
+          className="hidden items-center lg:flex"
         >
           {copy.items
             .filter((item) => item.key !== "contact")
@@ -136,17 +142,17 @@ export function Header({ locale }: { locale: Locale }) {
         <div className="flex items-center gap-2.5">
           <div className="flex items-center gap-1">
             <ThemeSwitch locale={locale} />
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <LocaleSwitch locale={locale} onNavigate={closeMenu} />
             </div>
           </div>
           <span
             aria-hidden
-            className="hidden h-5 w-px bg-[var(--line)] md:block"
+            className="hidden h-5 w-px bg-[var(--line)] lg:block"
           />
           <a
             href={`mailto:${site.email}`}
-            className="hidden min-h-9 items-center rounded-full bg-[var(--cta-bg)] px-4 text-xs font-medium text-[var(--cta-text)] transition hover:brightness-110 md:inline-flex"
+            className="hidden min-h-9 items-center rounded-full bg-[var(--cta-bg)] px-4 text-xs font-medium text-[var(--cta-text)] transition hover:brightness-110 lg:inline-flex"
           >
             {copy.contact}
           </a>
@@ -156,7 +162,7 @@ export function Header({ locale }: { locale: Locale }) {
             aria-controls="mobile-navigation"
             aria-label={isOpen ? copy.closeMenu : copy.openMenu}
             onClick={() => setIsOpen((current) => !current)}
-            className="header-menu-button md:hidden"
+            className="header-menu-button lg:hidden"
           >
             <span aria-hidden>
               {isOpen ? copy.closeButton : copy.menuButton}
@@ -169,7 +175,7 @@ export function Header({ locale }: { locale: Locale }) {
       <nav
         id="mobile-navigation"
         aria-label={copy.mobileNavLabel}
-        className="nav-sheet md:hidden"
+        className="nav-sheet lg:hidden"
         data-open={isOpen}
         inert={!isOpen}
       >

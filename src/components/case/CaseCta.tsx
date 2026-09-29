@@ -1,25 +1,39 @@
-import { ButtonLink, Section } from "@/components/ui";
+import { TerminalCta } from "@/components/home/TerminalCta";
+import { ButtonLink, Container } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
 export function CaseCta({ locale }: { locale: Locale }) {
-  const copy = getCopy(locale).caseCta;
+  const content = getCopy(locale);
+  const copy = content.caseCta;
 
   return (
-    <Section className="section-band border-t border-[var(--line)]">
-      <div className="mx-auto max-w-[46rem] text-center">
-        <h2 className="t-section">{copy.title}</h2>
-        <p className="mt-4 text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:mt-5 sm:text-xl">
-          {copy.text}
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <ButtonLink href={`mailto:${site.email}`}>{copy.cta}</ButtonLink>
-          <ButtonLink href={routePath(locale, "projects")} variant="secondary">
-            {copy.ctaSecondary}
-          </ButtonLink>
+    <section className="cta-ed on-dark">
+      <Container>
+        <div className="cta-ed-grid">
+          <div>
+            <h2 className="case-cta-title">{copy.title}</h2>
+            <p className="mt-5 max-w-[48ch] text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:text-[1.25rem]">
+              {copy.text}
+            </p>
+            <div className="mt-8">
+              <ButtonLink
+                href={routePath(locale, "projects")}
+                variant="secondary"
+                tone="dark"
+              >
+                {copy.ctaSecondary}
+              </ButtonLink>
+            </div>
+          </div>
+          <TerminalCta
+            email={site.email}
+            command={content.contactCta.terminalCommand}
+            hint={content.contactCta.terminalHint}
+          />
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   );
 }

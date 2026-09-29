@@ -1,63 +1,58 @@
 import Image from "next/image";
 import { ProfileSummary } from "@/components/ProfileSummary";
-import { Section, Reveal } from "@/components/ui";
+import { ButtonLink, Reveal, Section } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
+import { routePath } from "@/i18n/routes";
 
 export function AboutSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
-  const labels = copy.aboutFacts;
-
-  const facts = [
-    { label: labels.location, value: copy.meta.location },
-    {
-      label: labels.languages,
-      value: copy.languages
-        .map((lang) => `${lang.name} (${lang.level.toLowerCase()})`)
-        .join(", "),
-    },
-    { label: labels.education, value: copy.education[0]?.title ?? "" },
-  ];
 
   return (
     <Section id="sobre-mi">
-      <Reveal className="grid items-center gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-        <div className="relative mx-auto max-w-[200px] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] sm:max-w-none">
+      <Reveal className="about-ed">
+        <div className="about-photo">
           <Image
-            src={site.photo}
+            src="/images/jorge-recorte.webp"
             alt={copy.meta.ogAlt}
-            width={1083}
-            height={1452}
+            width={1032}
+            height={1248}
             className="h-auto w-full"
-            sizes="(max-width: 1024px) 100vw, 420px"
+            sizes="(max-width: 1024px) 80vw, 420px"
           />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/55 to-transparent"
-          />
+          <p className="about-photo-name">{site.name}</p>
         </div>
         <div>
-          <h2 className="t-section">{copy.profile.aboutTitle}</h2>
+          <p className="sh-label">
+            {copy.sectionLabels.about}
+            <span aria-hidden className="sh-line" />
+          </p>
+          <h2 className="about-statement">
+            {copy.profile.aboutStatement.map((part) =>
+              part.strong ? (
+                <strong key={part.text}>{part.text}</strong>
+              ) : (
+                <span key={part.text}>{part.text}</span>
+              ),
+            )}
+          </h2>
           <ProfileSummary
             locale={locale}
-            className="prose-links mt-5 text-[1.0625rem] leading-[1.6] text-[var(--muted)] sm:mt-6 sm:text-xl"
+            className="prose-links about-summary"
           />
-
-          <dl className="mt-9 grid gap-px overflow-hidden rounded-[var(--radius-card)] bg-[var(--line)] sm:grid-cols-3">
-            {facts.map((fact) => (
-              <div
-                key={fact.label}
-                className="bg-[var(--background)] px-5 py-4"
-              >
-                <dt className="text-[13px] font-medium uppercase tracking-[0.02em] text-[var(--muted)]">
-                  {fact.label}
-                </dt>
-                <dd className="mt-1.5 text-base leading-[1.6] text-[var(--foreground)]">
-                  {fact.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href={routePath(locale, "cv")}>
+              {copy.hero.paths.team.label}
+            </ButtonLink>
+            <ButtonLink
+              href={site.linkedin}
+              variant="secondary"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </ButtonLink>
+          </div>
         </div>
       </Reveal>
     </Section>

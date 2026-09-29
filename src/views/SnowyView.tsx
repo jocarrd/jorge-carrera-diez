@@ -14,7 +14,7 @@ import { ArchitectureStack } from "@/components/visual/ArchitectureStack";
 import { CapabilityRail } from "@/components/visual/CapabilityRail";
 import { SourceGrid } from "@/components/visual/SourceGrid";
 import { SpreadCone } from "@/components/visual/SpreadCone";
-import { SurfaceTiles } from "@/components/visual/SurfaceTiles";
+import { SurfaceFolder } from "@/components/visual/SurfaceFolder";
 import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -88,7 +88,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
             </p>
           </div>
           <div className="mt-10">
-            <SurfaceTiles items={copy.modules.items} />
+            <SurfaceFolder items={copy.modules.items} />
           </div>
         </div>
       </section>

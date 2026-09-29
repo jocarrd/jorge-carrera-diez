@@ -6,6 +6,7 @@ import {
   Reveal,
   Section,
   SectionHeader,
+  TiltOnScroll,
 } from "@/components/ui";
 import { domainOf, getCopy, organizations, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -33,9 +34,9 @@ export function EqxView({ locale }: { locale: Locale }) {
         }
       />
 
-      <section className="border-y border-[var(--line)] bg-[var(--panel)] py-10 sm:py-20 lg:py-24">
+      <section className="case-shot on-dark">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-          <Reveal>
+          <TiltOnScroll>
             <BrowserFrame label={domainOf(site.eqx)}>
               <Image
                 src="/images/eqx-home.webp"
@@ -46,7 +47,7 @@ export function EqxView({ locale }: { locale: Locale }) {
                 priority
               />
             </BrowserFrame>
-          </Reveal>
+          </TiltOnScroll>
         </div>
       </section>
 

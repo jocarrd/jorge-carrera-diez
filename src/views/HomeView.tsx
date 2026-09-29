@@ -1,6 +1,7 @@
 import { JsonLd } from "@/components/JsonLd";
 import { AboutSection } from "@/components/home/AboutSection";
 import { BigStat } from "@/components/home/BigStat";
+import { BlogPreview } from "@/components/home/BlogPreview";
 import { AiPreview } from "@/components/home/AiPreview";
 import { ContactCta } from "@/components/home/ContactCta";
 import { CurrentRoleSection } from "@/components/home/CurrentRoleSection";
@@ -24,6 +25,7 @@ export function HomeView({ locale }: { locale: Locale }) {
       <BigStat locale={locale} />
       <ExperiencePreview locale={locale} />
       <AboutSection locale={locale} />
+      <BlogPreview locale={locale} />
       <ContactCta locale={locale} />
     </main>
   );

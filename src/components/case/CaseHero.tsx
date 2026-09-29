@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Reveal, Section } from "@/components/ui";
+import { PageHero, Reveal } from "@/components/ui";
 import type { CaseFact } from "@/types/content";
 
 type CaseHeroProps = {
@@ -20,36 +20,23 @@ export function CaseHero({
   actions,
 }: CaseHeroProps) {
   return (
-    <Section className="pb-8 sm:pb-12 lg:pb-14">
-      <p className="t-eyebrow">{eyebrow}</p>
-      <h1 className="t-section mt-4 max-w-4xl">{heading}</h1>
-      <p className="mt-5 max-w-2xl text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:mt-6 sm:text-[1.3125rem] sm:leading-[1.5]">
-        {lead}
-      </p>
-      {detail ? (
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
-          {detail}
-        </p>
-      ) : null}
-
-      {actions ? (
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">{actions}</div>
-      ) : null}
-
+    <PageHero
+      label={eyebrow}
+      title={heading}
+      lead={lead}
+      detail={detail}
+      actions={actions}
+    >
       <Reveal>
-        <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--line)] pt-7 sm:mt-12 sm:grid-cols-4 sm:gap-x-8">
+        <dl className="page-hero-facts">
           {facts.map((fact) => (
             <div key={fact.label}>
-              <dt className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
-                {fact.label}
-              </dt>
-              <dd className="mt-2 text-base font-medium leading-[1.6] text-[var(--foreground)]">
-                {fact.value}
-              </dd>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
             </div>
           ))}
         </dl>
       </Reveal>
-    </Section>
+    </PageHero>
   );
 }
