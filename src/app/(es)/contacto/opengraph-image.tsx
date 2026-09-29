@@ -13,7 +13,7 @@ export default async function OpenGraphImage() {
     tagline: getCopy(locale).pages.contact.lead,
     stats: [
       ["Experiencia", "5 años en producción"],
-      ["Alcance", "14,7 M de impresiones"],
+      ["Alcance", "16,8 M de impresiones"],
       ["Dónde", "Remoto · España"],
     ],
   });
