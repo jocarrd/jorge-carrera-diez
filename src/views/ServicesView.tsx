@@ -1,19 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { DeliveryCycle } from "@/components/home/DeliveryCycle";
 import { ProductionStrip } from "@/components/services/ProductionStrip";
-import { ServiceIndex } from "@/components/services/ServiceIndex";
 import { ServiceStats } from "@/components/services/ServiceStats";
-import { ClicksChart } from "@/components/visual/ClicksChart";
 import {
   ButtonLink,
+  Container,
   PageHero,
   RevealChildren,
   Section,
   SectionHeader,
 } from "@/components/ui";
 import { getCopy, site } from "@/content";
-import { snowySearchDaily } from "@/content/snowy-search-daily";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 import { faqJsonLd, servicesPageJsonLd } from "@/lib/seo";
@@ -29,6 +29,7 @@ const SERVICE_SHOTS = [
 export function ServicesView({ locale }: { locale: Locale }) {
   const page = getCopy(locale).pages.services;
   const contact = getCopy(locale).pages.contact;
+  const [closed, monthly, ...priceNotes] = page.pricing;
 
   return (
     <main>
@@ -39,7 +40,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
         label={page.eyebrow}
         title={page.heading}
         lead={page.lead}
-        detail={page.detail}
         actions={
           <>
             <ButtonLink href="#llamada">{page.ctaCall}</ButtonLink>
@@ -52,33 +52,54 @@ export function ServicesView({ locale }: { locale: Locale }) {
             </ButtonLink>
           </>
         }
-      />
-      <Section>
+      >
         <ServiceStats locale={locale} />
-        <ClicksChart
-          data={snowySearchDaily}
-          copy={page.chart}
-          className="mt-12 sm:mt-16"
-        />
-      </Section>
+      </PageHero>
 
       <Section className="section-band">
         <SectionHeader
           title={contact.servicesTitle}
           text={contact.servicesText}
         />
-        <ServiceIndex
-          linkLabel={page.caseLink}
-          items={contact.services.map((service, index) => ({
-            title: service.title,
-            text: service.text,
-            href: service.route ? routePath(locale, service.route) : undefined,
-            image: SERVICE_SHOTS[index % SERVICE_SHOTS.length],
-          }))}
-        />
+        <RevealChildren as="ul" className="svc-bento">
+          {contact.services.map((service, index) => {
+            const shot = SERVICE_SHOTS[index % SERVICE_SHOTS.length];
+            return (
+              <li
+                key={service.title}
+                className={`svc-card${index < 2 ? " svc-card--big" : ""}`}
+              >
+                <div className="svc-card-shot">
+                  <Image
+                    src={shot.src}
+                    alt=""
+                    width={shot.w}
+                    height={shot.h}
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                  />
+                </div>
+                <div className="svc-card-body">
+                  <h3 className="svc-card-title">{service.title}</h3>
+                  <p className="svc-card-text">{service.text}</p>
+                  {service.route ? (
+                    <Link
+                      href={routePath(locale, service.route)}
+                      className="area-link"
+                    >
+                      {page.caseLink}
+                      <span aria-hidden className="ml-1">
+                        &rsaquo;
+                      </span>
+                    </Link>
+                  ) : null}
+                </div>
+              </li>
+            );
+          })}
+        </RevealChildren>
       </Section>
 
-      <Section className="border-t border-[var(--line)]">
+      <Section>
         <SectionHeader
           title={page.productionTitle}
           text={page.productionText}
@@ -108,33 +129,47 @@ export function ServicesView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section className="border-t border-[var(--line)]">
+      <Section>
         <SectionHeader title={contact.stepsTitle} text={contact.stepsText} />
-        <RevealChildren as="ol" className="contact-plan">
+        <RevealChildren as="ol" className="svc-steps">
           {contact.steps.map((step) => (
-            <li key={step.title} className="card-ed contact-plan-item">
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+            <li key={step.title} className="svc-step">
+              <span aria-hidden className="svc-step-dot" />
+              <h3 className="svc-step-title">{step.title}</h3>
+              <p className="svc-step-text">{step.text}</p>
             </li>
           ))}
         </RevealChildren>
+
+        <div className="svc-pricing">
+          <div className="svc-pricing-head">
+            <h3 className="svc-pricing-title">{page.pricingTitle}</h3>
+            <p className="svc-pricing-text">{page.pricingText}</p>
+          </div>
+          <RevealChildren className="svc-price-grid">
+            <div className="svc-price svc-price--dark on-dark">
+              <h4>{closed.title}</h4>
+              <p>{closed.text}</p>
+            </div>
+            <div className="svc-price">
+              <h4>{monthly.title}</h4>
+              <p>{monthly.text}</p>
+            </div>
+          </RevealChildren>
+          {priceNotes.map((note) => (
+            <p key={note.title} className="svc-price-note">
+              <span aria-hidden className="svc-price-note-dot" />
+              <span>
+                <strong>{note.title}.</strong> {note.text}
+              </span>
+            </p>
+          ))}
+        </div>
       </Section>
 
       <Section className="section-band">
-        <SectionHeader title={page.pricingTitle} text={page.pricingText} />
-        <RevealChildren className="contact-plan">
-          {page.pricing.map((item) => (
-            <div key={item.title} className="card-ed contact-plan-item">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </RevealChildren>
-      </Section>
-
-      <Section className="border-t border-[var(--line)]">
         <SectionHeader title={page.stackTitle} text={page.stackText} />
-        <RevealChildren className="mt-10 grid gap-x-12 gap-y-9 sm:mt-14 sm:grid-cols-2">
+        <RevealChildren className="mt-10 grid gap-x-10 gap-y-9 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
           {page.stack.map((row) => (
             <div key={row.group} className="area">
               <h3 className="area-title">{row.group}</h3>
@@ -148,7 +183,7 @@ export function ServicesView({ locale }: { locale: Locale }) {
         </RevealChildren>
       </Section>
 
-      <Section className="section-band">
+      <Section>
         <SectionHeader title={page.faqTitle} text={page.faqText} />
         <div className="faq-ed">
           {page.faq.map((item) => (
@@ -163,21 +198,24 @@ export function ServicesView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <Section
-        id="llamada"
-        className="scroll-mt-20 border-t border-[var(--line)]"
-      >
-        <div className="mx-auto max-w-2xl">
-          <SectionHeader title={page.formTitle} text={page.formText} />
-          <ContactForm locale={locale} />
-          <p className="field-note mt-6">
-            {page.form.emailAlt}{" "}
-            <a className="area-link mt-0" href={`mailto:${site.email}`}>
-              {site.email}
-            </a>
-          </p>
-        </div>
-      </Section>
+      <section id="llamada" className="svc-contact on-dark scroll-mt-20">
+        <Container>
+          <div className="svc-contact-grid">
+            <div>
+              <SectionHeader title={page.formTitle} text={page.formText} />
+              <p className="field-note mt-6">
+                {page.form.emailAlt}{" "}
+                <a className="area-link mt-0" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
+              </p>
+            </div>
+            <div className="svc-contact-card">
+              <ContactForm locale={locale} />
+            </div>
+          </div>
+        </Container>
+      </section>
     </main>
   );
 }

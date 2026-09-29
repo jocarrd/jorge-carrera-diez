@@ -223,9 +223,9 @@ export const es: Copy = {
     ],
   },
   ai: {
-    titleAccent: "agentes",
-    title: "Un sistema propio para trabajar con agentes",
-    lead: "En el cliente, la IA entra en flujos que ya están en producción, con sus requisitos de seguridad, trazabilidad y mantenimiento. En mis proyectos, el desarrollo se hace con agentes sobre un marco que construí para sostener ese trabajo: una herramienta interna, no un producto.",
+    titleAccent: "agentes de IA",
+    title: "Un sistema propio para trabajar con agentes de IA",
+    lead: "Uso agentes de IA para construir más rápido, pero con reglas: cada tarea sigue el mismo camino y nada llega a producción sin comprobarse. Es una herramienta interna que construí para eso.",
     detailTitle: "Cada tarea sigue el mismo camino",
     detail:
       "Lo que resuelve es que el criterio técnico no dependa de recordar cómo se hizo la última vez, ni se quede en la conversación donde se decidió.",
@@ -240,68 +240,47 @@ export const es: Copy = {
       ],
       ["repositorio", "Punteros de contexto generados, nunca escritos a mano."],
     ],
-    session: {
+    journey: {
       label: "Una tarea, de principio a fin",
+      commandsLabel: "Ver los comandos (para desarrolladores)",
       steps: [
         {
+          kicker: "Espacios aislados",
+          title: "Cada tarea, en su propio espacio",
+          text: "Varias tareas avanzan a la vez sin pisarse entre ellas.",
           command: "crux workspace new mapa-3d",
           output: "espacio 'mapa-3d' listo · rama, copia y puertos propios",
-          metric: "parallel",
         },
         {
+          kicker: "Procedimientos",
+          title: "El agente sigue un procedimiento escrito",
+          text: "Los pasos están documentados. Nada se improvisa.",
           command: "/ship",
           output: "el agente abre el procedimiento escrito antes de commitear",
-          metric: "skills",
         },
         {
+          kicker: "Puerta de calidad",
+          title: "Nada avanza sin pasar las pruebas",
+          text: "Si algo falla, se para antes de llegar a producción.",
           command: "crux ship run -- npm test",
           output: "tests en verde, resultado anotado en el recibo",
-          metric: "gate",
         },
         {
-          command: "crux ship seal",
-          output: "recibo cerrado contra el commit actual",
-          metric: "gate",
-        },
-        {
+          kicker: "Recibo",
+          title: "Cada entrega llega con su prueba",
+          text: "Queda escrito qué se comprobó y sobre qué versión.",
           command: "crux workspace finish mapa-3d",
           output: "propuesta abierta, con el recibo como prueba",
-          metric: "base",
         },
         {
+          kicker: "Medición",
+          title: "Lo que no se usa, se retira",
+          text: "Se mide qué procedimientos sirven y cuáles sobran.",
           command: "crux usage",
           output: "qué procedimientos se usan y cuáles sobran",
-          metric: "signal",
         },
       ],
     },
-    flow: [
-      {
-        title: "Estándar",
-        caption: "una forma de trabajar común a todos los proyectos",
-        metric: "base",
-      },
-      {
-        title: "Procedimientos",
-        caption: "conocimiento operativo escrito y versionado",
-        metric: "skills",
-      },
-      {
-        title: "Espacios aislados",
-        caption: "varias tareas a la vez sin interferencias",
-        metric: "parallel",
-      },
-      {
-        title: "Puertas",
-        caption: "ningún cambio se integra sin verificación",
-        metric: "gate",
-      },
-      {
-        title: "Medición",
-        caption: "qué procedimientos se usan y cuáles sobran",
-        metric: "signal",
-      },
-    ],
     diagram: {
       eyebrow: "Cada tarea, en cualquier proyecto",
       inLabel: "Entra",
@@ -421,7 +400,7 @@ export const es: Copy = {
   projectsPreview: {
     eyebrow: "Productos",
     title: "Snowy, EQx y La Rioja Meteo.",
-    text: "Los tres están en producción y en los tres llevo las decisiones técnicas. Uno es mío de punta a punta, otro es de un cliente en Suiza y el tercero lleva doce años publicando.",
+    text: "Los tres están en producción y en los tres llevo las decisiones técnicas. En uno llevo el desarrollo de punta a punta, otro es de un cliente en Suiza y el tercero lleva doce años publicando.",
   },
   sectionLabels: {
     work: "Qué hago",
@@ -631,7 +610,7 @@ export const es: Copy = {
       pitch: "Pronóstico multi-modelo, radar y asistente para toda España.",
       name: "Snowy",
       url: site.snowy,
-      label: "Producto propio",
+      label: "Plataforma meteorológica",
       logo: "/images/snowy-logo.webp",
       image: "/images/snowy-home.webp",
       description:

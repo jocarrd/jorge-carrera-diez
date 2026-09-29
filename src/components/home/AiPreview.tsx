@@ -1,5 +1,5 @@
 import { ButtonLink, Reveal, Section, SectionHeader } from "@/components/ui";
-import { CruxSession } from "@/components/home/CruxSession";
+import { TaskFlow } from "@/components/home/TaskFlow";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { blogPostPath } from "@/i18n/routes";
@@ -20,10 +20,10 @@ export function AiPreview({ locale }: { locale: Locale }) {
       </Reveal>
 
       <div className="mt-10 sm:mt-14">
-        <CruxSession
-          steps={copy.session.steps}
-          concepts={copy.flow}
-          label={copy.session.label}
+        <TaskFlow
+          steps={copy.journey.steps}
+          label={copy.journey.label}
+          commandsLabel={copy.journey.commandsLabel}
         />
       </div>
 
