@@ -5,7 +5,7 @@ date: 2026-09-29
 cover: /blog/agentes/portada.webp
 coverAlt: "Portada con el título «Cómo conseguir que un agente de IA siga tu metodología» y el bucle del agente, con el paso PreToolUse resaltado entre la petición del modelo y la ejecución"
 preview: /blog/agentes/guardia.webp
-previewAlt: "Terminal: un hook se niega a ejecutar un pkill y un gh pr create que había pedido el agente"
+previewAlt: "Tabla con dos comandos que pidió el agente, pkill y gh pr create, bloqueados por un hook PreToolUse con la alternativa que propone"
 tags:
   - Agentes de IA
   - Hooks
@@ -153,10 +153,10 @@ Un ejemplo de este segundo tipo: en crux, las PR se abren con
 build. El agente podía saltarse esa comprobación subiendo la rama y abriendo la
 PR directamente con `gh pr create`. Para evitarlo, un hook bloquea ese comando.
 
-![El agente lo pide, el hook se niega](/blog/agentes/guardia.webp)
+![Dos comandos bloqueados por un hook PreToolUse: pkill -f vite y gh pr create --fill](/blog/agentes/guardia.webp)
 
-La captura es de la sesión en la que instalé estos hooks: al probarlos, uno de
-ellos bloqueó un `pkill`. Además de rechazar el comando, el mensaje le indica
+Los mensajes de la tabla son reales, de la sesión en la que instalé estos
+hooks: al probarlos, uno de ellos bloqueó un `pkill`. Además de rechazar el comando, el mensaje le indica
 al agente qué alternativa usar. Sin esa indicación, el agente tiende a probar
 otras formas de hacer lo mismo hasta dar con una que no esté bloqueada.
 
