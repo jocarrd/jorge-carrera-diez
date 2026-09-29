@@ -117,6 +117,94 @@ El agente lo lee y cambia de plan.
 carpeta es importante, lo consulta: pregunta a git, lee un fichero o abre un
 registro. Es un script normal.
 
+### Cómo se escribe uno
+
+Un hook tiene dos piezas: una línea en la configuración que dice cuándo se
+lanza, y el script que decide.
+
+La configuración va en `.claude/settings.json`, dentro del proyecto:
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [{
+      "matcher": "Bash",
+      "hooks": [{
+        "type": "command",
+        "command": "node .claude/hooks/no-force.ts"
+      }]
+    }]
+  }
+}
+```
+
+`matcher` elige las herramientas que te interesan. Admite una expresión regular,
+así que `"Bash|Edit|Write"` también vale. `command` es cualquier cosa que se
+pueda ejecutar: un script de bash, uno de Python o, como aquí, uno de
+TypeScript. Node 24 ya lo ejecuta sin compilar.
+
+El script lee el JSON de la entrada estándar y decide:
+
+```typescript
+type PreToolUseEvent = {
+  hook_event_name: "PreToolUse";
+  tool_name: string;
+  tool_input: { command?: string };
+  cwd: string;
+};
+
+async function readStdin(): Promise<string> {
+  let raw = "";
+  for await (const chunk of process.stdin) {
+    raw += chunk;
+  }
+  return raw;
+}
+
+const raw = await readStdin();
+const event: PreToolUseEvent = JSON.parse(raw);
+const command = event.tool_input.command ?? "";
+const args = command.split(/\s+/);
+
+const isPush =
+  args.includes("git") && args.includes("push");
+const isForced =
+  args.includes("--force") || args.includes("-f");
+
+if (isPush && isForced) {
+  console.error("Parado: push forzado.");
+  console.error("Usa git push --force-with-lease.");
+  process.exit(2);
+}
+
+process.exit(0);
+```
+
+Eso es todo el contrato. **Salida 0: adelante. Salida 2: no se ejecuta**, y el
+texto de `console.error` es lo que lee el agente, así que conviene que diga qué
+hacer en su lugar. Fíjate en que `--force-with-lease` pasa: comparar palabras
+enteras en lugar de buscar «force» dentro del comando evita bloquear justo la
+alternativa segura.
+
+Se prueba sin el agente, dándole a mano el JSON que le llegaría:
+
+```bash
+echo '{"tool_input":{"command":"git push -f"}}' \
+  | node .claude/hooks/no-force.ts
+echo "salida: $?"
+```
+
+```texto
+Parado: push forzado.
+Usa git push --force-with-lease.
+salida: 2
+```
+
+Los hooks que recuerdan funcionan igual, cambiando el momento. En
+`UserPromptSubmit`, lo que el script escribe con `console.log` y salida 0 se
+añade como contexto al mensaje que acabas de enviar. Así llega un recordatorio
+en cada turno sin que tengas que escribirlo tú.
+
 ## Cómo lo aplico en crux
 
 En crux hay hooks que recuerdan y hooks que bloquean. Para decidir de qué tipo
