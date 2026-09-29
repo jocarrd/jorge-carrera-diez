@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/config";
 
 const SHOTS = [
   { src: "/images/eqx-home.webp", w: 2400, h: 1080 },
+  { src: "/images/eqx-rankings.webp", w: 2268, h: 1060 },
   { src: "/images/snowy-ai-assistant.webp", w: 1600, h: 1000 },
   { src: "/images/snowy-clima-calentamiento.webp", w: 2320, h: 1160 },
 ];
