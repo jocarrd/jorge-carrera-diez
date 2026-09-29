@@ -4,17 +4,17 @@ import type { Copy } from "@/types/content";
 export const en: Copy = {
   meta: {
     siteTitle:
-      "Software engineer focused on product, architecture, SEO and systems design",
+      "Tech Lead and full stack developer: software architecture, generative AI and SEO",
     description:
       "Computer engineer from the University of La Rioja. I lead architecture and new capabilities on enterprise projects, work with EQx (Elite Quality Index, University of St. Gallen) and develop Snowy, a weather platform in production on Next.js, NestJS, Redis, MySQL and Docker.",
     location: "Logroño, La Rioja, Spain",
-    jobTitle: "Software engineer",
+    jobTitle: "Tech Lead and full stack developer",
     universityLabel: "University of La Rioja",
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
-    ogEyebrow: "Software engineer",
+    ogEyebrow: "Tech Lead · Full stack",
     ogTagline:
-      "Product, architecture, data and generative AI in production systems.",
+      "Software architecture, full stack development and generative AI in production systems.",
     ogStats: [
       ["now", "VidaCaixa · EQx"],
       ["in production", "Snowy"],
@@ -54,9 +54,9 @@ export const en: Copy = {
   profile: {
     headline:
       "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
-    positioning: "Software engineer · Product · Architecture",
+    positioning: "Tech Lead · Full stack · Software architecture",
     positioningLong:
-      "Software engineer. Web product from architecture through to production.",
+      "Tech Lead and full stack developer, from architecture to production.",
 
     aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
     aboutStatement: [
@@ -68,19 +68,23 @@ export const en: Copy = {
       { text: "I build Snowy", strong: true },
       { text: "." },
     ],
-    tagline: ["Web product,", "from architecture", "to production."],
+    tagline: ["Tech Lead and", "full stack", "developer."],
     taglineSub:
       "Engineer on banking and insurance projects in Spain, on a Swiss academic index and on a weather platform people use every day.",
     availability: "Available for projects and teams",
     clientsLabel: "Where I have worked",
     capabilities: [
       {
-        title: "Product architecture",
-        text: "How the product is structured, what ships in each release and what stays out.",
+        title: "Software architecture",
+        text: "How a system splits into frontend, backend, data and deployment, and which decision belongs to each layer.",
+      },
+      {
+        title: "Full stack development",
+        text: "React, Next.js and TypeScript on the frontend; Node, NestJS and Java with Spring Boot on the backend.",
       },
       {
         title: "Generative AI and agents",
-        text: "Agents and models integrated into the product, with their limits, cost and maintenance.",
+        text: "Agents and models integrated into real systems, with their limits, cost and maintenance.",
       },
       {
         title: "Data and infrastructure",

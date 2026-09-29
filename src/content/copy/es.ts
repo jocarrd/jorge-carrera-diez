@@ -4,17 +4,17 @@ import type { Copy } from "@/types/content";
 export const es: Copy = {
   meta: {
     siteTitle:
-      "Ingeniero de software especializado en producto, arquitectura, SEO y diseño de sistemas",
+      "Tech Lead y desarrollador full stack: arquitectura de software, IA generativa y SEO",
     description:
       "Ingeniero Informático por la Universidad de La Rioja. Lidero arquitectura y nuevas capacidades en proyectos enterprise, colaboro con EQx (Elite Quality Index, Universidad de St. Gallen) y desarrollo Snowy, una plataforma meteorológica en producción con Next.js, NestJS, Redis, MySQL y Docker.",
     location: "Logroño, La Rioja, España",
-    jobTitle: "Ingeniero de software",
+    jobTitle: "Tech Lead y desarrollador full stack",
     universityLabel: site.university,
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
-    ogEyebrow: "Ingeniero de software",
+    ogEyebrow: "Tech Lead · Full stack",
     ogTagline:
-      "Producto, arquitectura, datos e IA generativa en sistemas en producción.",
+      "Arquitectura de software, desarrollo full stack e IA generativa en sistemas en producción.",
     ogStats: [
       ["ahora", "VidaCaixa · EQx"],
       ["en producción", "Snowy"],
@@ -54,9 +54,9 @@ export const es: Copy = {
   profile: {
     headline:
       "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
-    positioning: "Ingeniero de software · Producto · Arquitectura",
+    positioning: "Tech Lead · Full stack · Arquitectura de software",
     positioningLong:
-      "Ingeniero de software. Producto web, de la arquitectura a producción.",
+      "Tech Lead y desarrollador full stack, de la arquitectura a producción.",
 
     aboutTitle: "Ingeniero informático colegiado, desde Logroño.",
     aboutStatement: [
@@ -69,7 +69,7 @@ export const es: Copy = {
       { text: "." },
     ],
 
-    tagline: ["Producto web,", "de la arquitectura", "a producción."],
+    tagline: ["Tech Lead y", "desarrollador", "full stack."],
     taglineSub:
       "Ingeniero en proyectos de banca y seguros en España, en un índice académico suizo y en una plataforma meteorológica que usa gente cada día.",
 
@@ -77,12 +77,16 @@ export const es: Copy = {
     clientsLabel: "Dónde he trabajado",
     capabilities: [
       {
-        title: "Arquitectura de producto",
-        text: "Cómo se estructura el producto, qué entra en cada entrega y qué se queda fuera.",
+        title: "Arquitectura de software",
+        text: "Cómo se reparte un sistema en frontend, backend, datos y despliegue, y qué decisión va en cada capa.",
+      },
+      {
+        title: "Desarrollo full stack",
+        text: "React, Next.js y TypeScript en el frontend; Node, NestJS y Java con Spring Boot en el backend.",
       },
       {
         title: "IA generativa y agentes",
-        text: "Agentes y modelos integrados en el producto, con sus límites, su coste y su mantenimiento.",
+        text: "Agentes y modelos integrados en sistemas reales, con sus límites, su coste y su mantenimiento.",
       },
       {
         title: "Datos e infraestructura",
