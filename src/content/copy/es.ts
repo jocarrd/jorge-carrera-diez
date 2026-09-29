@@ -342,7 +342,7 @@ export const es: Copy = {
   },
   snowyShowcase: {
     title: "En producción, y en uso cada día.",
-    lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 14,7 millones de impresiones orgánicas y 242.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
+    lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 16,8 millones de impresiones orgánicas y 257.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
     detail:
       "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
     ctaPrimary: "Ver caso técnico",
@@ -1364,7 +1364,7 @@ export const es: Copy = {
           label: "Ámbito",
           value: "Producto completo, de la base de datos al SEO",
         },
-        { label: "Alcance", value: "14,7 M de impresiones en 90 días" },
+        { label: "Alcance", value: "16,8 M de impresiones en 90 días" },
       ],
       stack: {
         eyebrow: "Stack",
@@ -1388,7 +1388,7 @@ export const es: Copy = {
       },
       lead: "Snowy es una plataforma meteorológica para consultar predicciones, mapas, estaciones, avisos, embalses, calidad del aire, terremotos y herramientas inteligentes desde una experiencia rápida y orientada a decisiones reales.",
       detail:
-        "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 14,7 millones de impresiones, 242.000 clics orgánicos y 1.400 usuarios registrados.",
+        "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 16,8 millones de impresiones, 257.000 clics orgánicos y 1.400 usuarios registrados.",
       ctaPrimary: "Abrir Snowy",
       ctaSecondary: "Ver CV",
       imageAlts: {
@@ -1504,7 +1504,7 @@ export const es: Copy = {
       },
       traction: {
         title: "Lo que se ve en el uso.",
-        text: "En los últimos tres meses: 14,7 millones de impresiones en búsqueda orgánica, 242.000 clics y una posición media de 8.",
+        text: "En los últimos tres meses: 16,8 millones de impresiones en búsqueda orgánica, 257.000 clics y una posición media de 8.",
       },
       build: {
         eyebrow: "Construcción",
@@ -1701,7 +1701,7 @@ export const es: Copy = {
       ],
       tractionMetrics: [
         {
-          value: "14,7M",
+          value: "16,8M",
           label: "impresiones",
           detail: "últimos 3 meses en búsqueda orgánica",
         },
@@ -2069,10 +2069,10 @@ export const es: Copy = {
   },
   bigStat: {
     eyebrow: "Snowy, últimos 90 días",
-    value: 14687005,
+    value: 16830175,
     label: "impresiones en búsqueda orgánica, sin inversión en publicidad.",
     support: [
-      { value: "242.000", label: "visitas desde búsqueda" },
+      { value: "257.000", label: "visitas desde búsqueda" },
       { value: "8,1", label: "posición media en Google" },
       { value: "1.400+", label: "usuarios registrados" },
     ],

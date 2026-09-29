@@ -345,7 +345,7 @@ export const en: Copy = {
   },
   snowyShowcase: {
     title: "In production, and in use every day.",
-    lead: "The project already works as a product: over the last three months it has generated 14.7 million organic impressions and 242,000 clicks, with more than 1,400 registered users to keep building on.",
+    lead: "The project already works as a product: over the last three months it has generated 16.8 million organic impressions and 257,000 clicks, with more than 1,400 registered users to keep building on.",
     detail:
       "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
     ctaPrimary: "See the engineering case",
@@ -1360,7 +1360,7 @@ export const en: Copy = {
         { label: "Role", value: "Design, development and infrastructure" },
         { label: "Period", value: "Since 2025, ongoing" },
         { label: "Scope", value: "Whole product, from database to SEO" },
-        { label: "Reach", value: "14.7M impressions in 90 days" },
+        { label: "Reach", value: "16.8M impressions in 90 days" },
       ],
       stack: {
         eyebrow: "Stack",
@@ -1384,7 +1384,7 @@ export const en: Copy = {
       },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
-        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture built for it: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 14.7 million impressions, 242,000 organic clicks and 1,400 registered users.",
+        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture built for it: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 16.8 million impressions, 257,000 organic clicks and 1,400 registered users.",
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {
@@ -1696,7 +1696,7 @@ export const en: Copy = {
       ],
       tractionMetrics: [
         {
-          value: "14.7M",
+          value: "16.8M",
           label: "impressions",
           detail: "last 3 months in organic search",
         },
@@ -2056,10 +2056,10 @@ export const en: Copy = {
   },
   bigStat: {
     eyebrow: "Snowy, last 90 days",
-    value: 14687005,
+    value: 16830175,
     label: "organic search impressions, with no ad spend.",
     support: [
-      { value: "242,000", label: "visits from search" },
+      { value: "257,000", label: "visits from search" },
       { value: "8.1", label: "average position on Google" },
       { value: "1,400+", label: "registered users" },
     ],
