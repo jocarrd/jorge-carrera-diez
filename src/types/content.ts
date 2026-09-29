@@ -580,6 +580,8 @@ export type Copy = {
       shareLabel: string;
       commentLabel: string;
       copyLinkLabel: string;
+      copyCodeLabel: string;
+      codeCopiedLabel: string;
       copiedLabel: string;
       closeLabel: string;
       authorRole: string;

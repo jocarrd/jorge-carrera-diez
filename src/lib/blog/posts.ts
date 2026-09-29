@@ -116,6 +116,10 @@ function render(body: string) {
   const marked = new Marked({ gfm: true });
   marked.use({
     renderer: {
+      code({ text, lang }) {
+        const label = escapeHtml(lang || "texto");
+        return `<figure class="post-code"><div class="post-code-bar"><span class="post-code-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="post-code-lang">${label}</span><button type="button" class="post-code-copy">Copiar</button></div><pre><code>${escapeHtml(text)}</code></pre></figure>`;
+      },
       heading({ tokens, depth }) {
         const text = this.parser.parseInline(tokens);
         const id = slugify(text);

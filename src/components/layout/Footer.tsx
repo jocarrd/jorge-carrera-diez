@@ -23,7 +23,7 @@ export function Footer({ locale }: { locale: Locale }) {
 
   return (
     <footer className="site-footer on-dark">
-      <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-5 px-6 py-9 sm:px-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-4 px-[22px] py-8 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-[14px] font-medium text-[var(--foreground)]">
             {site.domain}
@@ -32,7 +32,7 @@ export function Footer({ locale }: { locale: Locale }) {
             {site.name} - {copy.footer.tagline}
           </p>
         </div>
-        <nav className="-mx-2 flex flex-wrap items-center gap-x-1 gap-y-1">
+        <nav className="-mx-3 flex flex-wrap items-center gap-x-1">
           {links.map((link) => (
             <a
               key={link.href}

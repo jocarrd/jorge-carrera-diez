@@ -100,10 +100,7 @@ export function Header({ locale }: { locale: Locale }) {
       data-hidden={isHidden && !isOpen}
       data-menu-open={isOpen}
       data-tone={
-        pathname.startsWith(routePath(locale, "blog")) ||
-        pathname.startsWith(routePath(locale, "cv"))
-          ? undefined
-          : "dark"
+        pathname.startsWith(routePath(locale, "cv")) ? undefined : "dark"
       }
       className="site-header sticky top-0 z-50"
     >
