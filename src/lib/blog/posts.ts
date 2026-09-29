@@ -111,8 +111,6 @@ function expandCallouts(body: string) {
   );
 }
 
-// Un diagrama ancho no se lee en el móvil: si junto a la imagen hay una
-// versión «-movil», esa es la que se sirve en pantallas estrechas.
 function mobileVariant(href: string) {
   if (!href.startsWith("/")) return null;
   const candidate = href.replace(/(\.\w+)$/, "-movil$1");
