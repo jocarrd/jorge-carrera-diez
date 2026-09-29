@@ -216,10 +216,16 @@ export type Copy = {
     detailTitle: string;
     detail: string;
     rows: [string, string][];
-    flow: { title: string; caption: string; metric: string }[];
-    session: {
+    journey: {
       label: string;
-      steps: { command: string; output: string; metric: string }[];
+      commandsLabel: string;
+      steps: {
+        kicker: string;
+        title: string;
+        text: string;
+        command: string;
+        output: string;
+      }[];
     };
     diagram: {
       eyebrow: string;

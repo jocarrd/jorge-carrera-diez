@@ -77,15 +77,13 @@ export function ContactView({ locale }: { locale: Locale }) {
       </section>
 
       <Section>
-        <SectionHeader
-          title={copy.stepsTitle}
-          text={copy.stepsText}
-        />
-        <RevealChildren as="ol" className="contact-plan">
+        <SectionHeader title={copy.stepsTitle} text={copy.stepsText} />
+        <RevealChildren as="ol" className="svc-steps">
           {copy.steps.map((step) => (
-            <li key={step.title} className="card-ed contact-plan-item">
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+            <li key={step.title} className="svc-step">
+              <span aria-hidden className="svc-step-dot" />
+              <h3 className="svc-step-title">{step.title}</h3>
+              <p className="svc-step-text">{step.text}</p>
             </li>
           ))}
         </RevealChildren>

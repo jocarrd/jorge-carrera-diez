@@ -229,9 +229,9 @@ export const en: Copy = {
     ],
   },
   ai: {
-    titleAccent: "agents",
-    title: "A system of my own for working with agents",
-    lead: "On the client side, AI goes into flows that are already in production, with their security, traceability and maintenance requirements. On my own projects, development runs on agents over a framework I built to sustain that work: an internal tool, not a product.",
+    titleAccent: "AI agents",
+    title: "A system of my own for working with AI agents",
+    lead: "I use AI agents to build faster, but with rules: every task follows the same path and nothing reaches production unchecked. It is an internal tool I built for that.",
     detailTitle: "Every task follows the same path",
     detail:
       "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
@@ -243,68 +243,47 @@ export const en: Copy = {
       ],
       ["repository", "Generated context pointers, never written by hand."],
     ],
-    session: {
+    journey: {
       label: "One task, start to finish",
+      commandsLabel: "See the commands (for developers)",
       steps: [
         {
+          kicker: "Isolated workspaces",
+          title: "Every task in its own space",
+          text: "Several tasks move forward at once without stepping on each other.",
           command: "crux workspace new mapa-3d",
           output: "workspace 'mapa-3d' ready · own branch, copy and ports",
-          metric: "parallel",
         },
         {
+          kicker: "Procedures",
+          title: "The agent follows a written procedure",
+          text: "The steps are documented. Nothing is improvised.",
           command: "/ship",
           output: "the agent opens the written procedure before committing",
-          metric: "skills",
         },
         {
+          kicker: "Quality gate",
+          title: "Nothing moves on without passing the tests",
+          text: "If something fails, it stops before it reaches production.",
           command: "crux ship run -- npm test",
           output: "tests green, result written to the receipt",
-          metric: "gate",
         },
         {
-          command: "crux ship seal",
-          output: "receipt sealed against the current commit",
-          metric: "gate",
-        },
-        {
+          kicker: "Receipt",
+          title: "Every delivery comes with its proof",
+          text: "What was checked, and on which version, is written down.",
           command: "crux workspace finish mapa-3d",
           output: "pull request opened, with the receipt as proof",
-          metric: "base",
         },
         {
+          kicker: "Measurement",
+          title: "What isn't used gets removed",
+          text: "Which procedures help and which are dead weight is measured.",
           command: "crux usage",
           output: "which procedures get used and which are dead weight",
-          metric: "signal",
         },
       ],
     },
-    flow: [
-      {
-        title: "Standard",
-        caption: "one way of working shared by every project",
-        metric: "base",
-      },
-      {
-        title: "Procedures",
-        caption: "operational knowledge written down and versioned",
-        metric: "skills",
-      },
-      {
-        title: "Isolated workspaces",
-        caption: "several tasks at once without interference",
-        metric: "parallel",
-      },
-      {
-        title: "Gates",
-        caption: "nothing is merged without verification",
-        metric: "gate",
-      },
-      {
-        title: "Measurement",
-        caption: "which procedures are used and which are dead weight",
-        metric: "signal",
-      },
-    ],
     diagram: {
       eyebrow: "Every task, in any project",
       inLabel: "Goes in",
@@ -423,7 +402,7 @@ export const en: Copy = {
   projectsPreview: {
     eyebrow: "Products",
     title: "Snowy, EQx and La Rioja Meteo.",
-    text: "All three are in production and I own the technical decisions on all three. One is mine end to end, one belongs to a client in Switzerland and the third has been publishing for twelve years.",
+    text: "All three are in production and I own the technical decisions on all three. On one I run development end to end, one belongs to a client in Switzerland and the third has been publishing for twelve years.",
   },
   sectionLabels: {
     work: "What I do",
@@ -634,7 +613,7 @@ export const en: Copy = {
         "Multi-model forecasting, radar and an assistant for all of Spain.",
       name: "Snowy",
       url: site.snowy,
-      label: "Own product",
+      label: "Weather platform",
       logo: "/images/snowy-logo.webp",
       image: "/images/snowy-home.webp",
       description:

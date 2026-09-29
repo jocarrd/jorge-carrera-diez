@@ -30,11 +30,12 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
           {role.fronts.map((front) => (
             <li
               key={front.label}
-              className="grid grid-cols-[2rem_1fr] gap-x-2 px-5 py-4"
+              className="grid grid-cols-[1.25rem_1fr] gap-x-2 px-5 py-4"
             >
-              <span className="pt-1 font-mono text-[12px] text-[var(--muted-strong)]">
-                {front.label}
-              </span>
+              <span
+                aria-hidden
+                className="mt-2 size-2 rounded-full bg-[var(--accent)]"
+              />
               <div>
                 <h3 className="text-[1.0625rem] font-semibold leading-[1.3] tracking-[-0.015em]">
                   {front.title}
@@ -59,13 +60,12 @@ function FrontCard({
   className?: string;
 }) {
   return (
-    <article
-      className={`card-ed p-8 sm:p-9 ${className}`}
-    >
-      <p className="label-ed text-[var(--muted-strong)]">
-        {front.label}
-      </p>
-      <h3 className="t-card mt-4">{front.title}</h3>
+    <article className={`card-ed p-8 sm:p-9 ${className}`}>
+      <span
+        aria-hidden
+        className="block size-2.5 rounded-full bg-[var(--accent)]"
+      />
+      <h3 className="t-card mt-5">{front.title}</h3>
       <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">
         {front.text}
       </p>
