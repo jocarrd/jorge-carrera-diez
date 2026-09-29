@@ -357,6 +357,30 @@ export const es: Copy = {
         alt: "Gráfico de crestas de Snowy con los días cálidos de cada año en España desde 1950, que pasan del azul al rojo",
       },
       {
+        image: "/images/snowy-red-estaciones-movil.webp",
+        imageMobile: "/images/snowy-red-estaciones-movil.webp",
+        title: "Red de estaciones",
+        caption:
+          "1.863 estaciones de AEMET, redes regionales y aficionados, con las que reportan ahora mismo.",
+        alt: "Listado de la red de estaciones meteorológicas de Snowy en el móvil",
+      },
+      {
+        image: "/images/snowy-estacion-ficha-movil.webp",
+        imageMobile: "/images/snowy-estacion-ficha-movil.webp",
+        title: "Tu estación, con dueño",
+        caption:
+          "Cada estación tiene su propietario: conecta la tuya a la red, síguelas y guárdalas en favoritos.",
+        alt: "Ficha de una estación en Snowy con su propietario y los botones de seguir y favorito",
+      },
+      {
+        image: "/images/snowy-reportes-movil.webp",
+        imageMobile: "/images/snowy-reportes-movil.webp",
+        title: "Reportes en vivo",
+        caption:
+          "Lluvia, granizo, nieve o niebla, reportados por la comunidad y al instante sobre el mapa.",
+        alt: "Pantalla de reportes en vivo de Snowy con el botón para reportar el tiempo",
+      },
+      {
         image: "/images/snowy-nieve-3d.webp",
         imageMobile: "/images/snowy-nieve-3d-movil.webp",
         title: "Pistas de esquí en 3D",
@@ -1914,6 +1938,8 @@ export const es: Copy = {
       shareLabel: "Compartir en X",
       commentLabel: "Comentar en X",
       copyLinkLabel: "Copiar enlace",
+      copyCodeLabel: "Copiar",
+      codeCopiedLabel: "Copiado",
       copiedLabel: "Enlace copiado",
       closeLabel: "Cerrar",
       authorRole: "Ingeniero de software",

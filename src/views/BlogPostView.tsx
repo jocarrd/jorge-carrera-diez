@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyLink } from "@/components/blog/CopyLink";
 import { MobileToc } from "@/components/blog/MobileToc";
+import { PostEnhancer } from "@/components/blog/PostEnhancer";
 import { PostToc } from "@/components/blog/PostToc";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
 import { ButtonLink, Container } from "@/components/ui";
@@ -38,6 +39,61 @@ export function BlogPostView({
   return (
     <main className="post-page">
       <ReadingProgress targetId="post-article" />
+      <PostEnhancer
+        targetId="post-article"
+        copyLabel={copy.copyCodeLabel}
+        copiedLabel={copy.codeCopiedLabel}
+      />
+      <header className="post-hero on-dark" id="post-header">
+        <Container>
+          <div className="post-hero-inner">
+            <Link href={routePath(locale, "blog")} className="post-back">
+              <span aria-hidden>&lsaquo; </span>
+              {copy.backLabel}
+            </Link>
+            <p className="post-meta">
+              <time dateTime={post.date}>
+                {formatPostDate(locale, post.date)}
+              </time>
+              <span aria-hidden>·</span>
+              <span>
+                {post.minutes} {copy.minutesLabel}
+              </span>
+            </p>
+            <h1 className="post-title">{post.title}</h1>
+            <p className="post-lead">{post.description}</p>
+            <ul className="post-tags">
+              {post.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+            <div className="post-author">
+              <Image
+                src={site.photo}
+                alt=""
+                width={44}
+                height={44}
+                className="post-author-photo"
+              />
+              <div>
+                <p className="post-author-name">{site.name}</p>
+                <p className="post-author-role">{copy.authorRole}</p>
+              </div>
+              {post.xUrl ? (
+                <a
+                  href={post.xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="post-comment"
+                >
+                  {copy.commentLabel}
+                  <span aria-hidden> &rsaquo;</span>
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </Container>
+      </header>
       <article id="post-article">
         <Container>
           <div className="post-column">
@@ -46,52 +102,6 @@ export function BlogPostView({
             ) : null}
 
             <div className="post-main">
-              <header className="post-header" id="post-header">
-                <Link href={routePath(locale, "blog")} className="post-back">
-                  <span aria-hidden>&lsaquo; </span>
-                  {copy.backLabel}
-                </Link>
-                <p className="post-meta">
-                  <time dateTime={post.date}>
-                    {formatPostDate(locale, post.date)}
-                  </time>
-                  <span aria-hidden>·</span>
-                  <span>
-                    {post.minutes} {copy.minutesLabel}
-                  </span>
-                </p>
-                <h1 className="post-title">{post.title}</h1>
-                <p className="post-lead">{post.description}</p>
-                <ul className="post-tags">
-                  {post.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-                <div className="post-author">
-                  <Image
-                    src={site.photo}
-                    alt=""
-                    width={44}
-                    height={44}
-                    className="post-author-photo"
-                  />
-                  <div>
-                    <p className="post-author-name">{site.name}</p>
-                    <p className="post-author-role">{copy.authorRole}</p>
-                  </div>
-                  {post.xUrl ? (
-                    <a
-                      href={post.xUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="post-comment"
-                    >
-                      {copy.commentLabel}
-                      <span aria-hidden> &rsaquo;</span>
-                    </a>
-                  ) : null}
-                </div>
-              </header>
               <figure className="post-cover">
                 <Image
                   src={post.cover}

@@ -1,13 +1,5 @@
-import Image from "next/image";
-import {
-  BrowserFrame,
-  ButtonLink,
-  Container,
-  DeviceFrame,
-  Rail,
-  Reveal,
-  SectionHeader,
-} from "@/components/ui";
+import { SnowyScroll } from "@/components/home/SnowyScroll";
+import { ButtonLink, Container, SectionHeader } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
@@ -48,39 +40,8 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         </div>
       </Container>
 
-      <Container className="mt-14 sm:mt-16">
-        <Reveal delay={80}>
-          <Rail label="Snowy">
-            {showcase.gallery.map((shot) => (
-              <figure
-                key={shot.image}
-                className="rail-item w-[62vw] max-w-[42rem] sm:w-[86vw]"
-              >
-                <div className="sm:hidden">
-                  <DeviceFrame src={shot.imageMobile} alt={shot.alt} />
-                </div>
-                <div className="hidden sm:block">
-                  <BrowserFrame label={site.snowyDomain} tone="dark">
-                    <Image
-                      src={shot.image}
-                      alt={shot.alt}
-                      width={1200}
-                      height={900}
-                      className="h-auto w-full"
-                      sizes="672px"
-                    />
-                  </BrowserFrame>
-                </div>
-                <figcaption className="mt-5">
-                  <p className="t-item text-white">{shot.title}</p>
-                  <p className="mt-1 text-base leading-[1.6] text-[var(--ink-dark-muted)]">
-                    {shot.caption}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
-          </Rail>
-        </Reveal>
+      <Container className="mt-10 sm:mt-14">
+        <SnowyScroll shots={showcase.gallery} />
       </Container>
 
       {snowy?.metrics ? (

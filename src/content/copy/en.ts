@@ -360,6 +360,30 @@ export const en: Copy = {
         alt: "Snowy ridgeline chart with the warm days of each year in Spain since 1950, shifting from blue to red",
       },
       {
+        image: "/images/snowy-red-estaciones-movil.webp",
+        imageMobile: "/images/snowy-red-estaciones-movil.webp",
+        title: "Station network",
+        caption:
+          "1,863 stations from AEMET, regional networks and hobbyists, with the ones reporting right now.",
+        alt: "Snowy weather station network list on a phone",
+      },
+      {
+        image: "/images/snowy-estacion-ficha-movil.webp",
+        imageMobile: "/images/snowy-estacion-ficha-movil.webp",
+        title: "Your station, with an owner",
+        caption:
+          "Every station has an owner: connect yours to the network, follow them and save favourites.",
+        alt: "Snowy station page with its owner and the follow and favourite buttons",
+      },
+      {
+        image: "/images/snowy-reportes-movil.webp",
+        imageMobile: "/images/snowy-reportes-movil.webp",
+        title: "Live reports",
+        caption:
+          "Rain, hail, snow or fog, reported by the community and shown on the map instantly.",
+        alt: "Snowy live reports screen with the report the weather button",
+      },
+      {
         image: "/images/snowy-nieve-3d.webp",
         imageMobile: "/images/snowy-nieve-3d-movil.webp",
         title: "Ski slopes in 3D",
@@ -1903,6 +1927,8 @@ export const en: Copy = {
       shareLabel: "Share on X",
       commentLabel: "Comment on X",
       copyLinkLabel: "Copy link",
+      copyCodeLabel: "Copy",
+      codeCopiedLabel: "Copied",
       copiedLabel: "Link copied",
       closeLabel: "Close",
       authorRole: "Software engineer",
