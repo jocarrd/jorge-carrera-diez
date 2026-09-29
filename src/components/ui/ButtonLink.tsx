@@ -49,15 +49,17 @@ export function ButtonLink({
       {...props}
     >
       <span>{children}</span>
-      <svg viewBox="0 0 16 10" aria-hidden className="boton-flecha">
-        <path
-          d="M10.5 1 15 5l-4.5 4M15 5H1"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="square"
-        />
-      </svg>
+      <span aria-hidden className="boton-circulo">
+        <svg viewBox="0 0 16 10" className="boton-flecha">
+          <path
+            d="M10.5 1 15 5l-4.5 4M15 5H1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="square"
+          />
+        </svg>
+      </span>
     </Link>
   );
 }
