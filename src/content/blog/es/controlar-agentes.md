@@ -98,7 +98,7 @@ En Claude Code los momentos principales son estos:
 - **`Stop`**, cuando el agente va a darte el turno. Puede revisar lo que ha hecho
   antes de soltarte.
 
-## Un hook por dentro, paso a paso
+## Un hook por dentro
 
 Para verlo con un caso concreto: quiero que el agente no pueda hacer nunca
 `git push --force`, que sobrescribe la rama remota y puede borrar el trabajo de
@@ -152,191 +152,14 @@ ejecuta.** Y lo que el script haya escrito por su *salida de error*, el canal
 que usan los programas para los avisos, es lo que el modelo recibe como
 explicación.
 
-Con eso, el hook se monta en dos pasos.
+> [!NOTE] Cómo se escribe uno
+> En el próximo artículo, «Tu primer hook, paso a paso», monto este mismo hook
+> desde cero: dónde se configura y cómo lo encuentra Claude Code, el script en
+> TypeScript línea a línea y cómo probarlo sin el agente.
 
-### Primero: dónde vive cada cosa
-
-Un hook son dos ficheros dentro de tu proyecto:
-
-```texto
-mi-proyecto/
-├── .claude/
-│   ├── settings.json
-│   └── hooks/
-│       └── no-force.ts
-└── src/
-```
-
-`settings.json` es la configuración de Claude Code para ese proyecto, y
-`no-force.ts` es el script. La carpeta `hooks/` no es obligatoria; es solo un
-sitio ordenado donde guardarlo.
-
-**Claude Code no sabe nada del script.** Lo único que conoce es
-`settings.json`, porque lo busca siempre en el mismo sitio. Al abrir una sesión
-lee tres ficheros y junta lo que hay en ellos:
-
-- `~/.claude/settings.json`, en tu carpeta de usuario. Vale para todos tus
-  proyectos.
-- `.claude/settings.json`, dentro del proyecto. Se sube a git, así que lo
-  comparte todo el equipo.
-- `.claude/settings.local.json`, también dentro del proyecto, pero solo para
-  ti: no se sube.
-
-Como los lee al arrancar, si cambias un hook con la sesión abierta, lo seguro es
-abrir una sesión nueva.
-
-Dentro de `settings.json`, el hook se declara así:
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [{
-      "matcher": "Bash",
-      "hooks": [{
-        "type": "command",
-        "command": "node .claude/hooks/no-force.ts"
-      }]
-    }]
-  }
-}
-```
-
-Se lee de fuera hacia dentro:
-
-- `"PreToolUse"` es el momento del bucle: justo antes de ejecutar una
-  herramienta.
-- `"matcher": "Bash"` filtra la herramienta. Solo se lanza cuando el modelo pide
-  `Bash`. Admite varias a la vez, por ejemplo `"Bash|Edit|Write"`.
-- `"type": "command"` dice que el hook es un comando que hay que ejecutar.
-- `"command"` es ese comando, y aquí está la respuesta a cómo encuentra el
-  script: **es una línea de terminal, tal cual.** Claude Code la ejecuta como
-  si la escribieras tú, desde la carpeta raíz del proyecto.
-
-Así que `node .claude/hooks/no-force.ts` significa lo mismo que en tu terminal:
-«con Node, ejecuta el fichero que está en `.claude/hooks/no-force.ts`», con esa
-ruta contada desde la raíz del proyecto. Por eso podría ser igual de bien
-`python3 guardia.py` o la ruta completa a un script que tengas en otra carpeta.
-Los hooks de crux, por ejemplo, viven fuera de los proyectos y se declaran con
-su ruta completa, para que todos los proyectos usen el mismo.
-
-Si prefieres que la ruta no dependa de nada, Claude Code le pasa al comando la
-variable `CLAUDE_PROJECT_DIR` con la raíz del proyecto:
-`node "$CLAUDE_PROJECT_DIR/.claude/hooks/no-force.ts"`.
-
-### Después: el script, línea a línea
-
-El fichero completo son tres piezas, una detrás de otra. Voy por partes.
-
-**Pieza 1: leer la petición.**
-
-```typescript
-type HookInput = {
-  tool_name: string;
-  tool_input: { command?: string };
-};
-
-let raw = "";
-for await (const chunk of process.stdin) {
-  raw += chunk;
-}
-const input: HookInput = JSON.parse(raw);
-```
-
-- `type HookInput` no ejecuta nada. Describe para TypeScript la forma del JSON
-  que va a llegar, solo con los campos que voy a usar. Así el editor me avisa si
-  escribo mal un nombre.
-- `let raw = ""` crea un texto vacío donde ir juntando lo que llega.
-- `for await (const chunk of process.stdin)`: `process.stdin` es la entrada
-  estándar, por donde Claude Code manda el JSON. Puede llegar partido en
-  trozos, así que el bucle espera cada trozo (`await`) y lo añade a `raw`.
-  Cuando Claude Code termina de mandar, el bucle acaba.
-- `JSON.parse(raw)` convierte ese texto en un objeto, para poder escribir
-  `input.tool_input.command` y obtener el comando.
-
-**Pieza 2: decidir.**
-
-```typescript
-const cmd = input.tool_input.command ?? "";
-const words = cmd.split(/\s+/);
-
-const isPush =
-  words.includes("git") &&
-  words.includes("push");
-const isForced =
-  words.includes("--force") ||
-  words.includes("-f");
-```
-
-- `input.tool_input.command ?? ""` saca el comando que el modelo quiere
-  ejecutar. El `??` pone un texto vacío si no viene ninguno, para que lo
-  siguiente no falle.
-- `cmd.split(/\s+/)` lo corta por los espacios. `"git push -f origin prueba"`
-  se convierte en la lista `["git", "push", "-f", "origin", "prueba"]`.
-- `words.includes("push")` pregunta si esa palabra exacta está en la lista.
-  `isPush` es verdadero si están `git` y `push`, e `isForced` si está `--force`
-  o `-f`.
-
-Comparar palabras enteras importa. Si buscara el texto «force» dentro del
-comando, también bloquearía `--force-with-lease`, que es justo la alternativa
-segura que le quiero proponer.
-
-**Pieza 3: contestar.**
-
-```typescript
-if (isPush && isForced) {
-  console.error("Parado: push forzado.");
-  console.error("Usa git push --force-with-lease.");
-  process.exit(2);
-}
-
-process.exit(0);
-```
-
-- Si es un push forzado, `console.error` escribe dos líneas en la salida de
-  error. Ese texto es lo que Claude Code le pasa al modelo.
-- `process.exit(2)` termina el script con el código 2: «no lo ejecutes».
-- En cualquier otro caso se llega a `process.exit(0)`, y Claude Code ejecuta el
-  comando con normalidad.
-
-Esto es literalmente lo que recibió el modelo cuando lo probé con una sesión
-real:
-
-```texto
-PreToolUse:Bash hook error: [node .claude/hooks/no-force.ts]:
-Parado: push forzado.
-Usa git push --force-with-lease.
-```
-
-Por eso el mensaje no se queda en «prohibido»: el modelo lo lee como si fuera
-el resultado de su comando, y con él decide qué hacer después.
-
-### Probarlo sin el agente
-
-No hace falta esperar a que el agente intente un push. Puedo hacerme pasar por
-Claude Code y mandarle al script el JSON yo mismo, con una tubería:
-
-```bash
-echo '{"tool_input":{"command":"git push -f"}}' \
-  | node .claude/hooks/no-force.ts
-echo "salida: $?"
-```
-
-`echo` escribe el JSON, la tubería `|` se lo pasa al script por su entrada
-estándar, y `$?` muestra el código con el que terminó:
-
-```texto
-Parado: push forzado.
-Usa git push --force-with-lease.
-salida: 2
-```
-
-Si cambio `-f` por `--force-with-lease`, no imprime nada y la salida es 0.
-
-### Los hooks que recuerdan
-
-Funcionan con el mismo mecanismo, en otro momento del bucle. En
-`UserPromptSubmit`, que salta cada vez que escribes un mensaje, lo que el
-script imprime con `console.log` y termina con 0 se añade al contexto junto a
+Los hooks que recuerdan funcionan con el mismo mecanismo, en otro momento del
+bucle. En `UserPromptSubmit`, que salta cada vez que escribes un mensaje, lo que
+el script imprime con `console.log` y termina con 0 se añade al contexto junto a
 tu mensaje. Así un recordatorio llega en cada turno sin que tengas que
 escribirlo.
 
