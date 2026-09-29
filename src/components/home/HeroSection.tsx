@@ -1,7 +1,9 @@
-import { ButtonLink, Container, RevealChildren } from "@/components/ui";
+import Image from "next/image";
+import { ButtonLink, Container } from "@/components/ui";
+import { CapabilityCards } from "@/components/home/CapabilityCards";
 import { ClientsStrip } from "@/components/home/ClientsStrip";
-import { HeroStage } from "@/components/home/HeroStage";
-import { getCopy } from "@/content";
+import { HeroShowcase } from "@/components/home/HeroShowcase";
+import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
@@ -9,78 +11,71 @@ export function HeroSection({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
 
   return (
-    <section className="relative overflow-hidden">
-      <Container className="relative pb-14 pt-10 sm:pb-20 sm:pt-16 lg:pb-28 lg:pt-20">
-        <div className="relative z-10 max-w-[34rem]">
-          <p className="rise rise-1 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[var(--line)] bg-[var(--panel-strong)] py-1.5 pl-2.5 pr-3.5 text-[13px] font-medium text-[var(--foreground)]">
-            <span
-              aria-hidden
-              className="h-1.5 w-1.5 rounded-full bg-[#22c55e] ring-[3px] ring-[rgba(34,197,94,0.2)]"
+    <>
+      <section className="hero-ed on-dark">
+        <Container className="hero-ed-inner">
+          <div className="hero-ed-top rise rise-1">
+            <p className="hero-ed-badge">
+              <span aria-hidden className="hero-ed-dot" />
+              {copy.profile.availability}
+            </p>
+            <p className="hero-ed-role">{copy.profile.positioning}</p>
+          </div>
+
+          <div className="hero-ed-stage" aria-hidden>
+            <p className="hero-ed-word hero-ed-word--back">
+              Product
+            </p>
+            <Image
+              src="/images/jorge-recorte.webp"
+              alt=""
+              width={1032}
+              height={1248}
+              priority
+              sizes="(max-width: 639px) 78vw, 460px"
+              className="hero-ed-photo rise rise-2"
             />
-            {copy.profile.availability}
-          </p>
+            <p className="hero-ed-word hero-ed-word--front">
+              Engineer
+            </p>
+          </div>
 
-          <h1 className="rise rise-2 mt-6 text-[2.5rem] font-semibold leading-[1.0] tracking-[-0.045em] sm:text-[3.5rem] lg:text-[4rem]">
-            {copy.profile.tagline.map((line, index) => (
-              <span
-                key={line}
-                className={index === 2 ? "block text-[var(--accent)]" : "block"}
-              >
-                {line}
-              </span>
-            ))}
-          </h1>
-
-          <p className="rise rise-3 mt-6 max-w-[42ch] text-[1.0625rem] leading-[1.58] text-[var(--muted)] sm:text-[1.125rem]">
-            {copy.profile.taglineSub}
-          </p>
-          <div className="rise rise-4 mt-8 grid gap-5 sm:grid-cols-2 sm:gap-4">
-            <div className="hero-path">
-              <p className="hero-path-question">
-                {copy.hero.paths.team.question}
-              </p>
-              <ButtonLink
-                href={routePath(locale, "cv")}
-                className="sm:self-start"
-              >
-                {copy.hero.paths.team.label}
-              </ButtonLink>
+          <div className="hero-ed-bottom rise rise-4">
+            <div className="hero-ed-copy">
+              <h1 className="hero-ed-title">
+                <span className="sr-only">{site.name}. </span>
+                {copy.profile.tagline.join(" ")}
+              </h1>
+              <p className="hero-ed-sub">{copy.profile.taglineSub}</p>
             </div>
-            <div className="hero-path">
-              <p className="hero-path-question">
-                {copy.hero.paths.product.question}
-              </p>
-              <ButtonLink
-                href={routePath(locale, "services")}
-                variant="secondary"
-                className="sm:self-start"
-              >
-                {copy.hero.paths.product.label}
-              </ButtonLink>
+
+            <div className="hero-ed-paths">
+              <div className="hero-ed-path">
+                <p>{copy.hero.paths.team.question}</p>
+                <ButtonLink href={routePath(locale, "cv")}>
+                  {copy.hero.paths.team.label}
+                </ButtonLink>
+              </div>
+              <div className="hero-ed-path">
+                <p>{copy.hero.paths.product.question}</p>
+                <ButtonLink
+                  href={routePath(locale, "services")}
+                  variant="secondary"
+                  tone="dark"
+                >
+                  {copy.hero.paths.product.label}
+                </ButtonLink>
+              </div>
             </div>
           </div>
-        </div>
+        </Container>
+      </section>
 
-        <HeroStage />
-      </Container>
+      <HeroShowcase />
 
       <ClientsStrip label={copy.profile.clientsLabel} />
 
-      <Container className="py-12 sm:py-16">
-        <RevealChildren
-          as="ul"
-          className="grid gap-8 text-left sm:grid-cols-3 sm:gap-10"
-        >
-          {copy.profile.capabilities.map((item) => (
-            <li key={item.title}>
-              <h2 className="t-item">{item.title}</h2>
-              <p className="mt-1.5 text-base leading-[1.6] text-[var(--muted)]">
-                {item.text}
-              </p>
-            </li>
-          ))}
-        </RevealChildren>
-      </Container>
-    </section>
+      <CapabilityCards locale={locale} />
+    </>
   );
 }

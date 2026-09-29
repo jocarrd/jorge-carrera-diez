@@ -1,12 +1,13 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { DeliveryCycle } from "@/components/home/DeliveryCycle";
 import { ProductionStrip } from "@/components/services/ProductionStrip";
+import { ServiceIndex } from "@/components/services/ServiceIndex";
 import { ServiceStats } from "@/components/services/ServiceStats";
 import { ClicksChart } from "@/components/visual/ClicksChart";
 import {
   ButtonLink,
+  PageHero,
   RevealChildren,
   Section,
   SectionHeader,
@@ -17,6 +18,14 @@ import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 import { faqJsonLd, servicesPageJsonLd } from "@/lib/seo";
 
+const SERVICE_SHOTS = [
+  { src: "/images/eqx-home.webp", w: 2400, h: 1080 },
+  { src: "/images/snowy-home.webp", w: 2400, h: 1500 },
+  { src: "/images/eqx-rankings.webp", w: 2268, h: 1060 },
+  { src: "/images/snowy-ai-assistant.webp", w: 1600, h: 1000 },
+  { src: "/images/snowy-climate.webp", w: 2400, h: 1500 },
+];
+
 export function ServicesView({ locale }: { locale: Locale }) {
   const page = getCopy(locale).pages.services;
   const contact = getCopy(locale).pages.contact;
@@ -26,21 +35,25 @@ export function ServicesView({ locale }: { locale: Locale }) {
       <JsonLd data={servicesPageJsonLd(locale)} />
       <JsonLd data={faqJsonLd(locale)} />
 
+      <PageHero
+        label={page.eyebrow}
+        title={page.heading}
+        lead={page.lead}
+        detail={page.detail}
+        actions={
+          <>
+            <ButtonLink href="#llamada">{page.ctaCall}</ButtonLink>
+            <ButtonLink
+              href={routePath(locale, "snowySeo")}
+              variant="secondary"
+              tone="dark"
+            >
+              {page.ctaCase}
+            </ButtonLink>
+          </>
+        }
+      />
       <Section>
-        <p className="t-eyebrow">{page.eyebrow}</p>
-        <h1 className="t-section mt-4 max-w-3xl">{page.heading}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--muted)] sm:mt-6 sm:text-xl sm:leading-9">
-          {page.lead}
-        </p>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:mt-5 sm:leading-7">
-          {page.detail}
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="#llamada">{page.ctaCall}</ButtonLink>
-          <ButtonLink href={routePath(locale, "snowySeo")} variant="secondary">
-            {page.ctaCase}
-          </ButtonLink>
-        </div>
         <ServiceStats locale={locale} />
         <ClicksChart
           data={snowySearchDaily}
@@ -54,25 +67,15 @@ export function ServicesView({ locale }: { locale: Locale }) {
           title={contact.servicesTitle}
           text={contact.servicesText}
         />
-        <RevealChildren className="mt-10 grid gap-x-12 gap-y-10 sm:mt-14 sm:grid-cols-2">
-          {contact.services.map((service) => (
-            <div key={service.title} className="area">
-              <h3 className="area-title">{service.title}</h3>
-              <p className="area-text">{service.text}</p>
-              {service.route ? (
-                <Link
-                  href={routePath(locale, service.route)}
-                  className="area-link"
-                >
-                  {page.caseLink}
-                  <span aria-hidden className="ml-1">
-                    &rsaquo;
-                  </span>
-                </Link>
-              ) : null}
-            </div>
-          ))}
-        </RevealChildren>
+        <ServiceIndex
+          linkLabel={page.caseLink}
+          items={contact.services.map((service, index) => ({
+            title: service.title,
+            text: service.text,
+            href: service.route ? routePath(locale, service.route) : undefined,
+            image: SERVICE_SHOTS[index % SERVICE_SHOTS.length],
+          }))}
+        />
       </Section>
 
       <Section className="border-t border-[var(--line)]">
@@ -107,16 +110,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
 
       <Section className="border-t border-[var(--line)]">
         <SectionHeader title={contact.stepsTitle} text={contact.stepsText} />
-        <RevealChildren as="ol" className="contact-steps mt-10 sm:mt-14">
-          {contact.steps.map((step, index) => (
-            <li key={step.title}>
-              <span className="contact-step-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="contact-step-body">
-                <span className="contact-step-title">{step.title}</span>
-                <span className="contact-step-text">{step.text}</span>
-              </span>
+        <RevealChildren as="ol" className="contact-plan">
+          {contact.steps.map((step) => (
+            <li key={step.title} className="card-ed contact-plan-item">
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
             </li>
           ))}
         </RevealChildren>
@@ -124,11 +122,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader title={page.pricingTitle} text={page.pricingText} />
-        <RevealChildren className="mt-10 grid gap-x-12 gap-y-10 sm:mt-14 sm:grid-cols-3">
+        <RevealChildren className="contact-plan">
           {page.pricing.map((item) => (
-            <div key={item.title} className="area">
-              <h3 className="area-title">{item.title}</h3>
-              <p className="area-text">{item.text}</p>
+            <div key={item.title} className="card-ed contact-plan-item">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </div>
           ))}
         </RevealChildren>
@@ -140,7 +138,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
           {page.stack.map((row) => (
             <div key={row.group} className="area">
               <h3 className="area-title">{row.group}</h3>
-              <p className="area-text">{row.items}</p>
+              <ul className="stack-chips">
+                {row.items.split(/,\s*|\s·\s/).map((tech) => (
+                  <li key={tech}>{tech.replace(/\.$/, "")}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </RevealChildren>
@@ -148,14 +150,17 @@ export function ServicesView({ locale }: { locale: Locale }) {
 
       <Section className="section-band">
         <SectionHeader title={page.faqTitle} text={page.faqText} />
-        <RevealChildren as="dl" className="faq mt-10 sm:mt-14">
+        <div className="faq-ed">
           {page.faq.map((item) => (
-            <div key={item.question} className="faq-item">
-              <dt className="faq-question">{item.question}</dt>
-              <dd className="faq-answer">{item.answer}</dd>
-            </div>
+            <details key={item.question} className="faq-ed-item">
+              <summary>
+                <span>{item.question}</span>
+                <span aria-hidden className="faq-ed-icon" />
+              </summary>
+              <p>{item.answer}</p>
+            </details>
           ))}
-        </RevealChildren>
+        </div>
       </Section>
 
       <Section

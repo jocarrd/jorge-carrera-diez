@@ -9,7 +9,11 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
   return (
     <Section id="rol-actual" className="section-band">
       <Reveal>
-        <SectionHeader title={role.homeTitle} text={role.homeText} />
+        <SectionHeader
+          label={copy.sectionLabels.role}
+          title={role.homeTitle}
+          text={role.homeText}
+        />
       </Reveal>
 
       <RevealGroup
@@ -22,7 +26,7 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
       </RevealGroup>
 
       <Reveal delay={80} className="mt-10 md:hidden">
-        <ol className="divide-y divide-[var(--line)] overflow-hidden rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel-strong)]">
+        <ol className="card-ed divide-y divide-[var(--line)] overflow-hidden">
           {role.fronts.map((front) => (
             <li
               key={front.label}
@@ -56,7 +60,7 @@ function FrontCard({
 }) {
   return (
     <article
-      className={`rounded-[var(--radius-card-lg)] border border-[var(--line)] bg-[var(--panel-strong)] p-8 sm:p-9 ${className}`}
+      className={`card-ed p-8 sm:p-9 ${className}`}
     >
       <p className="font-mono text-[11px] uppercase tracking-[0.05em] text-[var(--muted-strong)]">
         {front.label}

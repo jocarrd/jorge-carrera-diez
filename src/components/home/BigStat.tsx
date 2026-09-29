@@ -13,7 +13,7 @@ export function BigStat({ locale }: { locale: Locale }) {
           <p className="t-eyebrow">{copy.eyebrow}</p>
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
             <div>
-              <p className="text-[3.5rem] font-semibold leading-none tracking-[-0.055em] text-white sm:text-[6rem] lg:text-[7rem]">
+              <p className="text-[3.5rem] font-light leading-none tracking-[-0.06em] text-white sm:text-[6rem] lg:text-[7.5rem]">
                 <CountUp to={copy.value} />
               </p>
               <p className="mt-5 max-w-[34ch] text-[1.0625rem] leading-[1.45] text-[var(--ink-dark-muted)] sm:text-[1.25rem]">
@@ -21,18 +21,18 @@ export function BigStat({ locale }: { locale: Locale }) {
               </p>
             </div>
 
-            <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-card)] border border-white/[0.1] bg-white/[0.1] sm:grid-cols-3 lg:w-[26rem]">
+            <dl className="grid grid-cols-3 gap-5 sm:gap-8 lg:w-[32rem]">
               {copy.support.map((dato) => (
                 <div
                   key={dato.label}
-                  className="bg-[var(--ink-dark)] px-5 py-4 sm:px-4 sm:py-5"
+                  className="border-t border-white/[0.14] pt-4"
                 >
                   <dt className="sr-only">{dato.label}</dt>
-                  <dd className="flex items-baseline justify-between gap-4 sm:block">
-                    <span className="block text-[1.5rem] font-semibold leading-none tracking-[-0.035em] text-white sm:text-[1.875rem]">
+                  <dd>
+                    <span className="block text-[1.625rem] font-light leading-none tracking-[-0.045em] text-white sm:text-[2.25rem]">
                       {dato.value}
                     </span>
-                    <span className="block text-right text-[14px] leading-[1.4] text-[var(--ink-dark-muted)] sm:mt-2.5 sm:text-left sm:text-[13px]">
+                    <span className="mt-2.5 block text-[13px] leading-[1.4] text-[var(--ink-dark-muted)] sm:text-[14px]">
                       {dato.label}
                     </span>
                   </dd>

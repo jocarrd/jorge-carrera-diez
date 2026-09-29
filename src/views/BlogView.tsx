@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BlogCard } from "@/components/blog/BlogCard";
 import { ButtonLink, Reveal, Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -35,7 +36,12 @@ export function BlogView({ locale }: { locale: Locale }) {
   return (
     <main className="blog-page">
       <Section>
-        <SectionHeader title={copy.heading} text={copy.lead} level={1} />
+        <SectionHeader
+          label={copy.eyebrow}
+          title={copy.heading}
+          text={copy.lead}
+          level={1}
+        />
         <a className="blog-feed" href={`${routePath(locale, "blog")}/feed.xml`}>
           {copy.feedLabel}
         </a>
@@ -86,33 +92,21 @@ export function BlogView({ locale }: { locale: Locale }) {
 
         {posts.length > 1 ? (
           <section className="blog-list">
-            <div className="blog-list-head">
-              <h2 className="t-block">{copy.moreLabel}</h2>
-            </div>
-            <ol>
+            <p className="sh-label">
+              {copy.moreLabel}
+              <span aria-hidden className="sh-line" />
+            </p>
+            <ul className="blog-prev-grid">
               {posts.map((post) => (
                 <li key={post.slug}>
-                  <Link
-                    href={blogPostPath(locale, post.slug)}
-                    className="blog-row"
-                  >
-                    <time className="blog-row-date" dateTime={post.date}>
-                      {formatPostDate(locale, post.date)}
-                    </time>
-                    <div>
-                      <h3 className="t-card">{post.title}</h3>
-                      <p className="blog-row-text">{post.description}</p>
-                      <p className="blog-row-minutes">
-                        {post.minutes} {copy.minutesLabel}
-                      </p>
-                    </div>
-                    <span className="blog-row-arrow" aria-hidden>
-                      &rsaquo;
-                    </span>
-                  </Link>
+                  <BlogCard
+                    locale={locale}
+                    post={post}
+                    minutesLabel={copy.minutesLabel}
+                  />
                 </li>
               ))}
-            </ol>
+            </ul>
           </section>
         ) : null}
       </Section>

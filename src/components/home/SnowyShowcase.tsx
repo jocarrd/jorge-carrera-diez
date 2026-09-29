@@ -6,6 +6,7 @@ import {
   DeviceFrame,
   Rail,
   Reveal,
+  SectionHeader,
 } from "@/components/ui";
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
@@ -22,12 +23,11 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
       className="section-dark py-20 sm:py-28 lg:py-32"
     >
       <Container>
-        <h2 className="t-section max-w-[20ch] text-white">
-          {showcase.title}
-        </h2>
-        <p className="mt-5 max-w-[60ch] text-[1.0625rem] leading-[1.5] text-[var(--ink-dark-muted)] sm:text-[1.1875rem]">
-          {showcase.detail}
-        </p>
+        <SectionHeader
+          label={copy.sectionLabels.snowy}
+          title={showcase.title}
+          text={showcase.detail}
+        />
 
         <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-x-4">
           <ButtonLink
