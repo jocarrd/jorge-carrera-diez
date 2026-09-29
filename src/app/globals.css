@@ -1579,7 +1579,6 @@ a {
   background: var(--panel);
 }
 
-
 .section-dark,
 .proj-card,
 .proj-feature,
@@ -1719,87 +1718,6 @@ a {
   .site-header {
     transition: none;
   }
-}
-
-.shot-frame {
-  position: relative;
-  border-radius: var(--radius-card-lg);
-  overflow: hidden;
-  background: var(--panel);
-  box-shadow: var(--anillo);
-}
-
-.shot-frame::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-.tl-entry .tl-dot {
-  background: var(--line-strong);
-  transition: background var(--dur-rapida) var(--ease);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .tl-entry:hover .tl-dot {
-    background: var(--accent);
-  }
-}
-
-.space-border {
-  position: relative;
-  border-radius: var(--radius-card-lg);
-  background: var(--panel);
-}
-
-.space-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  box-shadow: inset 0 0 0 1px var(--line);
-}
-
-.scanline {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--line-strong),
-    transparent
-  );
-}
-
-.orbital-ring {
-  position: absolute;
-  border: 1px solid var(--line);
-  border-radius: 9999px;
-  transform: rotate(-18deg);
-}
-
-.ai-pipeline-line {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--line-strong) 45%,
-    transparent
-  );
-}
-
-.ai-node-glow {
-  box-shadow: var(--sombra-1);
-}
-
-.ai-orbit {
-  border: 1px solid var(--line);
-  border-radius: 9999px;
-}
-
-.ai-console-line {
-  border-bottom: 1px solid var(--line);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2934,7 +2852,6 @@ a {
 }
 
 @supports (animation-timeline: view()) {
-
   @keyframes flota-atras {
     to {
       transform: translateY(-2.5rem);
@@ -3145,83 +3062,13 @@ a {
 
 /* Los pasos de un encargo: el número manda, y en el móvil el texto cae
    debajo en vez de pelearse con él por el ancho. */
-.contact-steps {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .contact-steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-.contact-steps li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 1rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line-strong);
-}
-
-.contact-step-number {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: var(--accent-text);
-}
-
-.contact-step-body {
-  display: block;
-}
-
-.contact-step-title {
-  display: block;
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.contact-step-text {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--muted);
-}
 
 /* El estado de disponibilidad abre la página de contacto: es lo primero
    que quiere saber quien llega, y el punto lo dice antes que el texto. */
-.contact-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-}
 
 @keyframes status-pulse {
   50% {
     opacity: 0.35;
-  }
-}
-
-.contact-status::before {
-  content: "";
-  width: 0.4375rem;
-  height: 0.4375rem;
-  border-radius: 999px;
-  background: var(--accent);
-  animation: status-pulse 1.8s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-status::before {
-    animation: none;
   }
 }
 
@@ -3938,21 +3785,6 @@ a {
   margin-top: 5rem;
 }
 
-.blog-feed {
-  display: inline-flex;
-  min-height: 2.75rem;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-}
-
-.blog-feed:hover {
-  text-decoration: underline;
-}
-
 .reading-progress {
   position: fixed;
   z-index: 60;
@@ -4537,7 +4369,6 @@ a {
 .mobile-toc-panel a:hover {
   background: var(--hover-surface);
 }
-
 
 .boton {
   padding: 0 0.3125rem 0 1.375rem;
@@ -5257,7 +5088,6 @@ a {
   }
 }
 
-
 .cap-card {
   display: grid;
   width: 82vw;
@@ -5765,11 +5595,6 @@ a {
   }
 }
 
-.crux-session {
-  display: grid;
-  gap: 1.25rem;
-}
-
 .crux-term {
   overflow: hidden;
   border-radius: 1.25rem;
@@ -5854,74 +5679,7 @@ a {
   }
 }
 
-.crux-concepts {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.crux-concept {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  gap: 0.875rem;
-  border-radius: 1rem;
-  background: var(--panel-strong);
-  padding: 0.875rem 1rem;
-  box-shadow: 0 0 0 1px color-mix(in oklab, var(--line) 80%, transparent);
-  transition:
-    background 0.4s var(--ease),
-    box-shadow 0.4s var(--ease),
-    transform 0.4s var(--ease);
-}
-
-.crux-led {
-  width: 10px;
-  height: 10px;
-  margin-top: 0.4rem;
-  border-radius: 999px;
-  background: var(--line-strong);
-  transition:
-    background 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
-}
-
-.crux-concept-title {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.crux-concept-text {
-  margin-top: 0.125rem;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
-
-.crux-concept[data-state="on"] .crux-led {
-  background: #16a34a;
-  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
-}
-
-.crux-concept[data-state="active"] {
-  transform: translateX(6px);
-  box-shadow:
-    0 0 0 1.5px var(--accent),
-    0 16px 30px -18px rgba(0, 0, 0, 0.35);
-}
-
-.crux-concept[data-state="active"] .crux-led {
-  background: var(--accent);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent);
-}
-
 @media (min-width: 1024px) {
-  .crux-session {
-    grid-template-columns: 1.35fr 1fr;
-    align-items: stretch;
-    gap: 1.75rem;
-  }
-
   .crux-term-body {
     font-size: 14px;
     padding: 1.5rem 1.75rem;
@@ -5931,10 +5689,6 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .crux-caret {
     animation: none;
-  }
-
-  .crux-concept {
-    transition: none;
   }
 }
 
@@ -6051,63 +5805,6 @@ a {
   }
 }
 
-@media (max-width: 1023px) {
-  .crux-concepts {
-    order: -1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .crux-concept {
-    grid-template-columns: auto auto;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 999px;
-    padding: 0.45rem 0.85rem;
-  }
-
-  .crux-led {
-    width: 8px;
-    height: 8px;
-    margin-top: 0;
-  }
-
-  .crux-concept-title {
-    font-size: 0.875rem;
-  }
-
-  .crux-concept-text {
-    display: none;
-  }
-
-  .crux-concept[data-state="active"] {
-    transform: translateY(-2px);
-  }
-}
-
-.crux-scroll {
-  position: relative;
-  height: calc(var(--n) * 38svh + 100svh);
-}
-
-.crux-scroll > .crux-session {
-  position: sticky;
-  top: calc(var(--header-h) + 1rem);
-}
-
-.crux-scroll.is-static {
-  height: auto;
-}
-
-.crux-scroll.is-static > .crux-session {
-  position: static;
-}
-
-.crux-step {
-  animation: crux-in 0.35s var(--ease) both;
-}
-
 @keyframes crux-in {
   from {
     opacity: 0;
@@ -6124,32 +5821,6 @@ a {
   .crux-term-body {
     min-height: 0;
     font-size: 12.5px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .crux-step {
-    animation: none;
-  }
-}
-
-.crux-now {
-  border-left: 3px solid var(--accent);
-  padding: 0.25rem 0 0.25rem 0.875rem;
-  font-size: 0.9375rem;
-  line-height: 1.45;
-  color: var(--muted);
-  animation: crux-in 0.35s var(--ease) both;
-}
-
-.crux-now strong {
-  color: var(--foreground);
-  font-weight: 700;
-}
-
-@media (min-width: 1024px) {
-  .crux-now {
-    display: none;
   }
 }
 
@@ -6412,7 +6083,6 @@ a {
     -webkit-text-stroke: 0;
   }
 }
-
 
 .case-shot {
   background: var(--ink-dark);
@@ -6793,7 +6463,6 @@ a {
     transition: none;
   }
 }
-
 
 .proj-card::before {
   content: "";
@@ -7193,18 +6862,6 @@ a {
   }
 }
 
-.blog-intro {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem 2rem;
-}
-
-.blog-intro .sh-text {
-  margin-top: 0;
-}
-
 @media (min-width: 640px) {
   .blog-cover-lead {
     font-size: 1.25rem;
@@ -7217,7 +6874,6 @@ a {
 .post-toc-title,
 .blog-cover-toc-title,
 .blog-cover-issue,
-.blog-feed,
 .proj-card-kicker,
 .hero-ed-role,
 .page-hero-facts dt,
@@ -7231,4 +6887,120 @@ a {
   font-weight: 600;
   letter-spacing: -0.005em;
   text-transform: none;
+}
+
+.crux-session {
+  max-width: 56rem;
+}
+
+.crux-term-body {
+  min-height: 0;
+  gap: 1.25rem;
+}
+
+.crux-step {
+  transition: opacity 0.4s var(--ease);
+}
+
+.crux-step[data-state="idle"] {
+  opacity: 0.25;
+}
+
+.crux-result {
+  display: grid;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+  padding-left: 1.1em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.4s var(--ease),
+    transform 0.4s var(--ease);
+}
+
+.crux-step[data-state="done"] .crux-result {
+  opacity: 1;
+  transform: none;
+}
+
+.crux-result .crux-out {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.crux-tag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: #8b95a3;
+}
+
+.crux-tag strong {
+  font-weight: 700;
+  color: #d4ff3a;
+}
+
+.crux-led {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  align-self: center;
+  border-radius: 999px;
+  background: #d4ff3a;
+  box-shadow: 0 0 0 3px rgba(212, 255, 58, 0.18);
+}
+
+@media (min-width: 1024px) {
+  .crux-term-body {
+    padding: 1.75rem 2rem 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crux-step,
+  .crux-result {
+    transition: none;
+  }
+}
+
+.blog-cover-head {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.blog-cover-head .sh-label {
+  margin-bottom: 0;
+}
+
+.blog-cover-about {
+  max-width: 52ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #a3a3a3;
+}
+
+.blog-cover-about a {
+  color: #d4ff3a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-cover-grid {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-cover-head {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .blog-cover-about {
+    justify-self: end;
+    text-align: right;
+  }
 }

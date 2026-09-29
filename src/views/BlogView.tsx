@@ -28,10 +28,18 @@ export function BlogView({ locale }: { locale: Locale }) {
             className="blog-cover-image"
           />
           <Container className="blog-cover-inner">
-            <p className="sh-label">
-              {copy.heading}
-              <span aria-hidden className="sh-line" />
-            </p>
+            <div className="blog-cover-head">
+              <p className="sh-label">
+                {copy.heading}
+                <span aria-hidden className="sh-line" />
+              </p>
+              <p className="blog-cover-about">
+                {copy.lead}{" "}
+                <a href={`${routePath(locale, "blog")}/feed.xml`}>
+                  {copy.feedLabel}
+                </a>
+              </p>
+            </div>
             <div className="blog-cover-grid">
               <div>
                 <p className="blog-cover-issue">
@@ -78,18 +86,8 @@ export function BlogView({ locale }: { locale: Locale }) {
         </section>
       ) : null}
 
-      <Section>
-        <div className="blog-intro">
-          <p className="sh-text">{copy.lead}</p>
-          <a
-            className="blog-feed"
-            href={`${routePath(locale, "blog")}/feed.xml`}
-          >
-            {copy.feedLabel}
-          </a>
-        </div>
-
-        {rest.length > 0 ? (
+      {rest.length > 0 ? (
+        <Section>
           <section className="blog-list">
             <p className="sh-label">
               {copy.moreLabel}
@@ -105,8 +103,8 @@ export function BlogView({ locale }: { locale: Locale }) {
               }))}
             />
           </section>
-        ) : null}
-      </Section>
+        </Section>
+      ) : null}
     </main>
   );
 }
