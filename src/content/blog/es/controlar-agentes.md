@@ -91,38 +91,69 @@ En Claude Code los momentos principales son estos:
   empezar.
 - **`UserPromptSubmit`**, cada vez que escribes un mensaje. Tu script puede mirar
   el estado del proyecto y añadir un recordatorio.
-- **`PreToolUse`**, justo antes de ejecutar una herramienta. Es el único que
-  **puede negarse**.
+- **`PreToolUse`**, justo antes de ejecutar una herramienta. Es el que
+  **puede impedir que se ejecute**.
 - **`PostToolUse`**, después de ejecutarla. Ve el resultado y puede reaccionar,
   por ejemplo pasando el formateador tras cada edición.
 - **`Stop`**, cuando el agente va a darte el turno. Puede revisar lo que ha hecho
   antes de soltarte.
 
-Un hook `PreToolUse` recibe un JSON con la petición exacta del modelo:
+## Un hook por dentro, paso a paso
+
+Para verlo con un caso concreto: quiero que el agente no pueda hacer nunca
+`git push --force`, que sobrescribe la rama remota y puede borrar el trabajo de
+otra persona.
+
+Esto es lo que pasa, en orden, cuando el agente lo intenta:
+
+1. Le pido que suba los cambios.
+2. El modelo contesta con una petición: «quiero usar `Bash` con el comando
+   `git push -f`».
+3. Claude Code **todavía no lo ejecuta**. Primero mira su configuración y ve
+   que hay un hook para ese momento (`PreToolUse`) y esa herramienta (`Bash`).
+4. Arranca mi script como un programa aparte, igual que si yo lo lanzara en la
+   terminal, y le pasa la petición.
+5. Mi script la lee, ve que es un push forzado, escribe el motivo y termina
+   diciendo «no».
+6. Claude Code no ejecuta el push. En su lugar, le devuelve al modelo el motivo
+   que escribió mi script, como si fuera el resultado del comando.
+7. El modelo lo lee, ve que le propone `--force-with-lease` y lo intenta así.
+   Esta vez el script dice «sí» y el comando se ejecuta.
+
+Los pasos 4 y 5 dependen de dos cosas que conviene entender antes de ver
+código.
+
+**Cómo le llega la petición al script.** Todo programa tiene una *entrada
+estándar*: el canal por el que recibe lo que escribes con el teclado o lo que
+otro programa le manda por una tubería (`|`). Claude Code usa ese canal para
+mandarle al script un texto en formato JSON con la petición:
 
 ```json
 {
+  "hook_event_name": "PreToolUse",
   "tool_name": "Bash",
-  "tool_input": { "command": "git reset --hard HEAD~1" },
+  "tool_input": {
+    "command": "git push -f"
+  },
   "cwd": "/home/jorge/Proyectos/web"
 }
 ```
 
-El script mira lo que necesite y contesta con su código de salida. Si sale con
-0, la herramienta se ejecuta. Si sale con 2, **no se ejecuta**, y lo que el
-script haya escrito en la salida de error le llega al agente como explicación.
-El agente lo lee y cambia de plan.
+`tool_name` es la herramienta que el modelo quiere usar, `tool_input` lo que
+quiere hacer con ella y `cwd` la carpeta en la que está trabajando.
 
-**El hook no sabe nada por sí mismo.** Si necesita saber en qué rama estás o si una
-carpeta es importante, lo consulta: pregunta a git, lee un fichero o abre un
-registro. Es un script normal.
+**Cómo contesta el script.** Todo programa, al terminar, devuelve un número: su
+*código de salida*. Por convenio, 0 significa que todo fue bien. Claude Code
+añade un acuerdo propio: **si el script termina con 2, la herramienta no se
+ejecuta.** Y lo que el script haya escrito por su *salida de error*, el canal
+que usan los programas para los avisos, es lo que el modelo recibe como
+explicación.
 
-### Cómo se escribe uno
+Con eso, el hook se monta en dos pasos.
 
-Un hook tiene dos piezas: una línea en la configuración que dice cuándo se
-lanza, y el script que decide.
+### Primero: decirle a Claude Code cuándo lanzarlo
 
-La configuración va en `.claude/settings.json`, dentro del proyecto:
+Se hace en `.claude/settings.json`, dentro del proyecto:
 
 ```json
 {
@@ -138,39 +169,56 @@ La configuración va en `.claude/settings.json`, dentro del proyecto:
 }
 ```
 
-`matcher` elige las herramientas que te interesan. Admite una expresión regular,
-así que `"Bash|Edit|Write"` también vale. `command` es cualquier cosa que se
-pueda ejecutar: un script de bash, uno de Python o, como aquí, uno de
-TypeScript. Node 24 ya lo ejecuta sin compilar.
+Se lee de fuera hacia dentro: en el momento `PreToolUse`, si la herramienta es
+`Bash` (`matcher`), ejecuta este comando (`command`). `matcher` admite varias
+herramientas a la vez, por ejemplo `"Bash|Edit|Write"`. El comando puede ser
+cualquier cosa que funcione en tu terminal; aquí es un fichero de TypeScript,
+que Node 24 ya ejecuta sin compilar.
 
-El script lee el JSON de la entrada estándar y decide:
+### Después: el script, en tres piezas
+
+**Pieza 1: leer la petición.**
 
 ```typescript
-type PreToolUseEvent = {
-  hook_event_name: "PreToolUse";
+type HookInput = {
   tool_name: string;
   tool_input: { command?: string };
-  cwd: string;
 };
 
-async function readStdin(): Promise<string> {
-  let raw = "";
-  for await (const chunk of process.stdin) {
-    raw += chunk;
-  }
-  return raw;
+let raw = "";
+for await (const chunk of process.stdin) {
+  raw += chunk;
 }
+const input: HookInput = JSON.parse(raw);
+```
 
-const raw = await readStdin();
-const event: PreToolUseEvent = JSON.parse(raw);
-const command = event.tool_input.command ?? "";
-const args = command.split(/\s+/);
+`process.stdin` es la entrada estándar de la que hablaba antes. El texto puede
+llegar en varios trozos, así que el bucle los va juntando en `raw`. Después,
+`JSON.parse` convierte ese texto en un objeto, y el `type` de arriba le dice a
+TypeScript qué campos traerá.
+
+**Pieza 2: decidir.**
+
+```typescript
+const cmd = input.tool_input.command ?? "";
+const words = cmd.split(/\s+/);
 
 const isPush =
-  args.includes("git") && args.includes("push");
+  words.includes("git") &&
+  words.includes("push");
 const isForced =
-  args.includes("--force") || args.includes("-f");
+  words.includes("--force") ||
+  words.includes("-f");
+```
 
+Separo el comando en palabras y compruebo dos cosas: si es un `git push` y si
+lleva `--force` o `-f`. Comparar palabras enteras importa: si buscara el texto
+«force» dentro del comando, bloquearía también `--force-with-lease`, que es
+justo la alternativa segura que le quiero proponer.
+
+**Pieza 3: contestar.**
+
+```typescript
 if (isPush && isForced) {
   console.error("Parado: push forzado.");
   console.error("Usa git push --force-with-lease.");
@@ -180,13 +228,18 @@ if (isPush && isForced) {
 process.exit(0);
 ```
 
-Eso es todo el contrato. **Salida 0: adelante. Salida 2: no se ejecuta**, y el
-texto de `console.error` es lo que lee el agente, así que conviene que diga qué
-hacer en su lugar. Fíjate en que `--force-with-lease` pasa: comparar palabras
-enteras en lugar de buscar «force» dentro del comando evita bloquear justo la
-alternativa segura.
+`console.error` escribe en la salida de error, que es lo que leerá el modelo.
+Por eso el mensaje no se queda en «prohibido»: le dice qué hacer en su lugar.
+`process.exit(2)` termina con el código que significa «no lo ejecutes», y
+`process.exit(0)` deja pasar todo lo demás.
 
-Se prueba sin el agente, dándole a mano el JSON que le llegaría:
+Las tres piezas, una detrás de otra, son el fichero completo
+`.claude/hooks/no-force.ts`.
+
+### Probarlo sin el agente
+
+No hace falta esperar a que el agente intente un push. Puedo hacerme pasar por
+Claude Code y mandarle al script el JSON yo mismo, con una tubería:
 
 ```bash
 echo '{"tool_input":{"command":"git push -f"}}' \
@@ -194,16 +247,28 @@ echo '{"tool_input":{"command":"git push -f"}}' \
 echo "salida: $?"
 ```
 
+`echo` escribe el JSON, la tubería `|` se lo pasa al script por su entrada
+estándar, y `$?` muestra el código con el que terminó:
+
 ```texto
 Parado: push forzado.
 Usa git push --force-with-lease.
 salida: 2
 ```
 
-Los hooks que recuerdan funcionan igual, cambiando el momento. En
-`UserPromptSubmit`, lo que el script escribe con `console.log` y salida 0 se
-añade como contexto al mensaje que acabas de enviar. Así llega un recordatorio
-en cada turno sin que tengas que escribirlo tú.
+Si cambio `-f` por `--force-with-lease`, no imprime nada y la salida es 0.
+
+### Los hooks que recuerdan
+
+Funcionan con el mismo mecanismo, en otro momento del bucle. En
+`UserPromptSubmit`, que salta cada vez que escribes un mensaje, lo que el
+script imprime con `console.log` y termina con 0 se añade al contexto junto a
+tu mensaje. Así un recordatorio llega en cada turno sin que tengas que
+escribirlo.
+
+**El hook no sabe nada por sí mismo.** Si necesita saber en qué rama estás o si
+una carpeta es importante, lo consulta: pregunta a git, lee un fichero o abre
+un registro. Es un script normal.
 
 ## Cómo lo aplico en crux
 
