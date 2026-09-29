@@ -21,7 +21,7 @@ export function CaseStack({ title, text, groups }: CaseStackProps) {
         <div className="grid gap-7 sm:grid-cols-2">
           {groups.map((group) => (
             <div key={group.label}>
-              <p className="text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
+              <p className="label-ed text-[var(--muted)]">
                 {group.label}
               </p>
               <p className="mt-3 font-mono text-[13px] leading-[1.8] text-[var(--muted)]">

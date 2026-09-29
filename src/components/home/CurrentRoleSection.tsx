@@ -62,7 +62,7 @@ function FrontCard({
     <article
       className={`card-ed p-8 sm:p-9 ${className}`}
     >
-      <p className="font-mono text-[11px] uppercase tracking-[0.05em] text-[var(--muted-strong)]">
+      <p className="label-ed text-[var(--muted-strong)]">
         {front.label}
       </p>
       <h3 className="t-card mt-4">{front.title}</h3>
