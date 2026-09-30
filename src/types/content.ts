@@ -245,7 +245,6 @@ export type Copy = {
   snowyShowcase: {
     title: string;
     lead: string;
-    detail: string;
     ctaPrimary: string;
     ctaSecondary: string;
     imageAlt: string;
@@ -365,15 +364,9 @@ export type Copy = {
         label: string;
         detail: string;
       }[];
-      faqTitle: string;
-      faqText: string;
-      faq: { question: string; answer: string }[];
       ctaCall: string;
       ctaCase: string;
       caseLink: string;
-      pricingTitle: string;
-      pricingText: string;
-      pricing: TitledText[];
       chart: ChartCopy;
       productionTitle: string;
       productionText: string;

@@ -257,23 +257,6 @@ export function servicesPageJsonLd(locale: Locale) {
   };
 }
 
-export function faqJsonLd(locale: Locale) {
-  const page = getCopy(locale).pages.services;
-  const url = absolute(routePath(locale, "services"));
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${url}#faq`,
-    inLanguage: htmlLang[locale],
-    mainEntity: page.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-  };
-}
-
 export function seoServiceJsonLd(locale: Locale) {
   const page = getCopy(locale).pages.seoService;
   const url = absolute(routePath(locale, "seoService"));
