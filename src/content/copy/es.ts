@@ -767,12 +767,8 @@ export const es: Copy = {
       ],
       servicesTitle: "En qué puedo ayudarte",
       servicesText:
-        "Cinco formas de trabajo, cada una con un proyecto real detrás.",
+        "Cuatro formas de trabajo, cada una con un proyecto real detrás.",
       services: [
-        {
-          title: "Relevo técnico de un producto en marcha",
-          text: "Cuando se va quien construyó el producto, me hago cargo del código y de la infraestructura para que siga funcionando sin parar. Es lo que hago en EQx desde julio de 2026.",
-        },
         {
           title: "Producto de cero a producción",
           text: "Paso la idea de un fundador a un producto funcionando, con React, Next.js, TypeScript y NestJS. El despliegue y el SEO van desde el primer día, no al final.",
@@ -881,22 +877,6 @@ export const es: Copy = {
           image: "/images/lariojameteo-home.webp",
           alt: "Portada de La Rioja Meteo",
           route: "lariojameteo",
-        },
-      ],
-      engagementTitle: "Cómo trabajo",
-      engagementText: "El método es el mismo en todos los encargos.",
-      engagement: [
-        {
-          title: "Las decisiones quedan escritas",
-          text: "Antes de tocar código anoto qué se decidió y por qué. Quien retome el proyecto dentro de un año lo tiene ahí.",
-        },
-        {
-          title: "La dedicación se acuerda por encargo",
-          text: "Las horas de cada semana dependen de lo que haya que hacer. Las fijamos en la primera llamada y quedan por escrito en la propuesta.",
-        },
-        {
-          title: "Cada semana algo en producción",
-          text: "Cada entrega pasa por rama propia, tests, integración continua y despliegue. Al final de la semana hay algo en producción que puedes abrir.",
         },
       ],
       stackTitle: "Con qué trabajo",

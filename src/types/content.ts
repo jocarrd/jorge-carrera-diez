@@ -352,9 +352,6 @@ export type Copy = {
       heading: string;
       lead: string;
       detail: string;
-      engagementTitle: string;
-      engagementText: string;
-      engagement: TitledText[];
       stackTitle: string;
       stackText: string;
       stack: { group: string; items: string }[];

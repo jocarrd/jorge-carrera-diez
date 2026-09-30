@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
-import { DeliveryCycle } from "@/components/home/DeliveryCycle";
 import { ProductionStrip } from "@/components/services/ProductionStrip";
 import { ServiceStats } from "@/components/services/ServiceStats";
 import {
@@ -91,24 +90,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader
-          title={page.engagementTitle}
-          text={page.engagementText}
-        />
-        <div className="mt-10 grid gap-12 sm:mt-14 lg:grid-cols-2 lg:items-start">
-          <RevealChildren className="flex flex-col gap-10">
-            {page.engagement.map((item) => (
-              <div key={item.title} className="area">
-                <h3 className="area-title">{item.title}</h3>
-                <p className="area-text">{item.text}</p>
-              </div>
-            ))}
-          </RevealChildren>
-          <DeliveryCycle locale={locale} />
-        </div>
-      </Section>
-
-      <Section>
         <SectionHeader title={contact.stepsTitle} text={contact.stepsText} />
         <RevealChildren as="ol" className="svc-steps">
           {contact.steps.map((step) => (
@@ -121,7 +102,7 @@ export function ServicesView({ locale }: { locale: Locale }) {
         </RevealChildren>
       </Section>
 
-      <Section className="section-band">
+      <Section>
         <SectionHeader title={page.stackTitle} text={page.stackText} />
         <RevealChildren className="mt-10 grid gap-x-10 gap-y-9 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
           {page.stack.map((row) => (

@@ -769,12 +769,8 @@ export const en: Copy = {
         },
       ],
       servicesTitle: "How I can help",
-      servicesText: "Five ways of working, each with a real project behind it.",
+      servicesText: "Four ways of working, each with a real project behind it.",
       services: [
-        {
-          title: "Taking over a product in flight",
-          text: "When the person who built the product leaves, I take over the code and the infrastructure so it keeps running without a stop. It is what I do at EQx since July 2026.",
-        },
         {
           title: "Products from zero to production",
           text: "I turn a founder's idea into a working product, with React, Next.js, TypeScript and NestJS. Deployment and SEO come from day one, not at the end.",
@@ -882,22 +878,6 @@ export const en: Copy = {
           image: "/images/lariojameteo-home.webp",
           alt: "La Rioja Meteo homepage",
           route: "lariojameteo",
-        },
-      ],
-      engagementTitle: "How I work",
-      engagementText: "The method is the same on every engagement.",
-      engagement: [
-        {
-          title: "Decisions are written down",
-          text: "Before touching code I record what was decided and why. Whoever picks the project up a year from now has it there.",
-        },
-        {
-          title: "Dedication is agreed per engagement",
-          text: "How many hours each week depends on the work. We set them on the first call and they go in writing in the proposal.",
-        },
-        {
-          title: "Something in production every week",
-          text: "Every delivery goes through its own branch, tests, continuous integration and deployment. By the end of the week there is something in production you can open.",
         },
       ],
       stackTitle: "What I work with",
