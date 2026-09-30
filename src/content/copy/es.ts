@@ -771,24 +771,24 @@ export const es: Copy = {
       services: [
         {
           title: "Relevo técnico de un producto en marcha",
-          text: "Se va quien lo construyó y el producto tiene que seguir. Asumo el código, la infraestructura y el criterio de producto, y sostengo la operativa durante el traspaso.",
+          text: "Cuando se va quien construyó el producto, me hago cargo del código y de la infraestructura para que siga funcionando sin parar. Es lo que hago en EQx desde julio de 2026.",
         },
         {
           title: "Producto de cero a producción",
-          text: "Tomo la idea de un fundador y la convierto en un producto en producción, con React, Next.js, TypeScript y NestJS, del frontend a la infraestructura. También el despliegue y el posicionamiento en buscadores, que suelen quedarse para el final.",
+          text: "Paso la idea de un fundador a un producto funcionando, con React, Next.js, TypeScript y NestJS. El despliegue y el SEO van desde el primer día, no al final.",
         },
         {
           title: "Arquitectura y acompañamiento del equipo",
-          text: "Decido la arquitectura y reviso el código de equipos que ya están construyendo, para que lo que hagan hoy se pueda mantener dentro de un año.",
+          text: "Para equipos que ya están construyendo. Decido la arquitectura y reviso el código, para que lo que hagan hoy se pueda seguir manteniendo dentro de un año.",
         },
         {
-          title: "IA donde de verdad ahorra horas",
-          text: "Automatizo tareas que hoy hace alguien a mano y meto agentes donde el equipo pierde el tiempo. Es como trabajo yo todos los días, también en mis propios proyectos.",
+          title: "Automatización con agentes de IA",
+          text: "Busco las tareas que tu equipo hace a mano y las paso a agentes de IA. Yo trabajo así cada día con Crux, el framework que construí para eso.",
         },
         {
           title: "SEO técnico y búsqueda con IA",
           route: "seoService",
-          text: "Reviso el SEO técnico de tu web y lo adapto a cómo se busca ahora: en Google, en sus resúmenes con IA y en asistentes como ChatGPT o Perplexity. Indexación, rendimiento, datos estructurados y páginas que respondan a búsquedas concretas. Es el trabajo que hay detrás del tráfico orgánico de Snowy.",
+          text: "Reviso el SEO técnico de tu web para que aparezca en Google y en asistentes como ChatGPT o Perplexity. Es el trabajo que hay detrás del tráfico orgánico de Snowy.",
         },
       ],
       clientsTitle: "Dónde he trabajado",

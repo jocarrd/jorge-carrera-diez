@@ -773,24 +773,24 @@ export const en: Copy = {
       services: [
         {
           title: "Taking over a product in flight",
-          text: "Whoever built it is leaving and the product has to go on. I take on the code, the infrastructure and the product judgement, and hold the operation together through the handover.",
+          text: "When the person who built the product leaves, I take over the code and the infrastructure so it keeps running without a stop. It is what I do at EQx since July 2026.",
         },
         {
           title: "Products from zero to production",
-          text: "I take a founder's idea and turn it into a product in production, with React, Next.js, TypeScript and NestJS, from the frontend to the infrastructure. Including the boring part: deployment, performance and search visibility.",
+          text: "I turn a founder's idea into a working product, with React, Next.js, TypeScript and NestJS. Deployment and SEO come from day one, not at the end.",
         },
         {
           title: "Architecture and team support",
-          text: "Architecture decisions, standards and code review for teams already building who would rather not regret it a year from now.",
+          text: "For teams already building. I decide the architecture and review the code, so what they write today can still be maintained a year from now.",
         },
         {
-          title: "AI where it actually saves hours",
-          text: "I automate work someone still does by hand and put agents where the team loses time. It is how I work every day, including on my own projects.",
+          title: "Automation with AI agents",
+          text: "I find the tasks your team does by hand and hand them over to AI agents. I work like this every day with Crux, the framework I built for it.",
         },
         {
           title: "Technical SEO and AI search",
           route: "seoService",
-          text: "I review the technical SEO of your website and adapt it to how people search now: on Google, in its AI summaries and in assistants such as ChatGPT or Perplexity. Indexing, performance, structured data and pages that answer specific searches. It is the work behind Snowy's organic traffic.",
+          text: "I review the technical SEO of your website so it shows up on Google and in assistants such as ChatGPT or Perplexity. It is the work behind Snowy's organic traffic.",
         },
       ],
       clientsTitle: "Where I have worked",
