@@ -165,7 +165,7 @@ export const es: Copy = {
   currentRole: {
     homeTitle: "Tech Lead en banca y seguros.",
     homeText:
-      "Llevo la arquitectura frontend de un producto con requisitos de seguridad, trazabilidad y mantenimiento a años vista. El trabajo es decidir cómo se construye y que el equipo pueda sostenerlo.",
+      "Llevo la arquitectura frontend de un producto de banca y seguros que tiene que pasar auditorías y mantenerse durante años. Decido cómo se construye para que el equipo pueda sostenerlo.",
     fronts: [
       {
         label: "01",
@@ -224,15 +224,15 @@ export const es: Copy = {
   },
   ai: {
     titleAccent: "agentes de IA",
-    title: "Un sistema propio para trabajar con agentes de IA",
-    lead: "Uso agentes de IA para construir más rápido, pero con reglas: cada tarea sigue el mismo camino y nada llega a producción sin comprobarse. Es una herramienta interna que construí para eso.",
-    detailTitle: "Cada tarea sigue el mismo camino",
+    title: "Crux, mi framework para trabajar con agentes de IA",
+    lead: "Crux controla el ciclo de vida de cada tarea que hace un agente, desde que entiende el proyecto hasta que propone el cambio. Así el código que produce sigue los estándares de cada proyecto y no llega nada a producción sin haberse comprobado.",
+    detailTitle: "La memoria del agente vive en git",
     detail:
-      "Lo que resuelve es que el criterio técnico no dependa de recordar cómo se hizo la última vez, ni se quede en la conversación donde se decidió.",
+      "Cada proyecto tiene un repositorio solo para su documentación, con sus convenciones y sus decisiones, versionado y en la nube. El agente lo lee antes de tocar nada, y lo que aprende en una sesión no se pierde en la siguiente.",
     rows: [
       [
         "estándar",
-        "Reglas, procedimientos y herramientas comunes a todos los proyectos.",
+        "Las reglas y las herramientas que comparten todos los proyectos.",
       ],
       [
         "proyecto",
@@ -324,10 +324,8 @@ export const es: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "En producción, y en uso cada día.",
-    lead: "El proyecto ya funciona como producto: en los últimos tres meses ha generado 16,8 millones de impresiones orgánicas y 257.000 clics, con más de 1.400 usuarios registrados sobre los que seguir construyendo.",
-    detail:
-      "Su desarrollo combina decisiones de frontend, backend, caché, datos, SEO, infraestructura e IA con restricciones reales de coste, rendimiento y mantenimiento.",
+    title: "Una plataforma meteorológica en producción.",
+    lead: "Snowy es un producto complejo que abarca previsión con varios modelos, radar, estaciones, avisos, clima histórico y un asistente con IA. En los últimos tres meses ha tenido 16,8 millones de impresiones en Google y 257.000 clics, y tiene más de 1.400 usuarios registrados.",
     ctaPrimary: "Ver caso técnico",
     ctaSecondary: "Abrir Snowy",
     gallery: [
@@ -400,7 +398,7 @@ export const es: Copy = {
   projectsPreview: {
     eyebrow: "Productos",
     title: "Snowy, EQx y La Rioja Meteo.",
-    text: "Los tres están en producción y en los tres llevo las decisiones técnicas. En uno llevo el desarrollo de punta a punta, otro es de un cliente en Suiza y el tercero lleva doce años publicando.",
+    text: "Tres proyectos en producción en los que llevo la arquitectura, la infraestructura y el desarrollo.",
   },
   sectionLabels: {
     work: "Qué hago",
@@ -514,7 +512,7 @@ export const es: Copy = {
         "Desarrollo y mantenimiento del terminal de gestión de tiendas de Inditex, desplegado en miles de puntos de venta a nivel global.",
       highlights: [
         "Frontend con React y TypeScript; backend con Java y Spring Boot.",
-        "CI/CD con GitHub Actions, testing y mejora de calidad.",
+        "CI/CD con GitHub Actions y tests automatizados.",
         "Trabajo en equipos Scrum y despliegues sobre entornos cloud.",
       ],
       logo: {
@@ -773,24 +771,24 @@ export const es: Copy = {
       services: [
         {
           title: "Relevo técnico de un producto en marcha",
-          text: "Se va quien lo construyó y el producto tiene que seguir. Asumo el código, la infraestructura y el criterio de producto, y sostengo la operativa durante el traspaso.",
+          text: "Cuando se va quien construyó el producto, me hago cargo del código y de la infraestructura para que siga funcionando sin parar. Es lo que hago en EQx desde julio de 2026.",
         },
         {
           title: "Producto de cero a producción",
-          text: "Tomo la idea de un fundador y la convierto en un producto en producción, con React, Next.js, TypeScript y NestJS, del frontend a la infraestructura. Con la parte aburrida incluida: despliegue, rendimiento y posicionamiento.",
+          text: "Paso la idea de un fundador a un producto funcionando, con React, Next.js, TypeScript y NestJS. El despliegue y el SEO van desde el primer día, no al final.",
         },
         {
           title: "Arquitectura y acompañamiento del equipo",
-          text: "Decisiones de arquitectura, estándares y revisión de código para equipos que ya están construyendo y quieren no arrepentirse dentro de un año.",
+          text: "Para equipos que ya están construyendo. Decido la arquitectura y reviso el código, para que lo que hagan hoy se pueda seguir manteniendo dentro de un año.",
         },
         {
-          title: "IA donde de verdad ahorra horas",
-          text: "Automatizo tareas que hoy hace alguien a mano y meto agentes donde el equipo pierde el tiempo. Es como trabajo yo todos los días, también en mis propios proyectos.",
+          title: "Automatización con agentes de IA",
+          text: "Busco las tareas que tu equipo hace a mano y las paso a agentes de IA. Yo trabajo así cada día con Crux, el framework que construí para eso.",
         },
         {
           title: "SEO técnico y búsqueda con IA",
           route: "seoService",
-          text: "Reviso el SEO técnico de tu web y lo adapto a cómo se busca ahora: en Google, en sus resúmenes con IA y en asistentes como ChatGPT o Perplexity. Indexación, rendimiento, datos estructurados y páginas que respondan a búsquedas concretas. Es el trabajo que hay detrás del tráfico orgánico de Snowy.",
+          text: "Reviso el SEO técnico de tu web para que aparezca en Google y en asistentes como ChatGPT o Perplexity. Es el trabajo que hay detrás del tráfico orgánico de Snowy.",
         },
       ],
       clientsTitle: "Dónde he trabajado",
@@ -846,23 +844,6 @@ export const es: Copy = {
       ctaCall: "Pedir una llamada",
       ctaCase: "Ver el caso SEO de Snowy",
       caseLink: "Ver el servicio de SEO técnico",
-      pricingTitle: "Cómo se presupuesta",
-      pricingText:
-        "No hay tarifa publicada porque cada encargo es distinto. Hay dos formas de trabajar, y el precio va por escrito en la propuesta antes de empezar.",
-      pricing: [
-        {
-          title: "Encargo cerrado",
-          text: "Una auditoría, un MVP o una migración con el alcance definido. Precio cerrado por el encargo completo, con las entregas y los plazos por escrito.",
-        },
-        {
-          title: "Dedicación mensual",
-          text: "Un relevo técnico o el acompañamiento de un equipo. Cuota mensual por una dedicación acordada, que se revisa si cambia lo que hace falta.",
-        },
-        {
-          title: "Lo que mueve el precio",
-          text: "El tamaño y el estado del producto, y si el encargo es solo diagnosticar o también implementar. Por eso primero va la llamada.",
-        },
-      ],
       chart: {
         title: "Clics diarios desde Google en Snowy",
         ariaLabel:
@@ -955,40 +936,6 @@ export const es: Copy = {
           suffix: "+",
           label: "usuarios registrados",
           detail: "en Snowy",
-        },
-      ],
-      faqTitle: "Preguntas frecuentes",
-      faqText: "Lo que me suelen preguntar antes de la primera llamada.",
-      faq: [
-        {
-          question: "¿Trabajas en remoto?",
-          answer:
-            "Sí. Vivo en Logroño, en La Rioja, y trabajo en remoto en horario europeo para clientes de España y de fuera. No hace falta que el cliente esté en mi ciudad ni en mi país.",
-        },
-        {
-          question: "¿Cuánto tiempo puedes dedicar?",
-          answer:
-            "Depende del encargo. En la primera llamada vemos cuánto trabajo hay y te digo qué dedicación puedo comprometer. Si no me da para hacerlo bien, te lo digo ahí en lugar de aceptarlo y quedarme corto.",
-        },
-        {
-          question: "¿Puedes entrar en un producto que ya está construido?",
-          answer:
-            "Es la mayor parte de lo que hago. He asumido el relevo técnico de productos que estaban en producción, con usuarios dentro, sin parar la operativa durante el traspaso.",
-        },
-        {
-          question: "¿Con qué tecnologías trabajas?",
-          answer:
-            "React, Next.js y TypeScript en el frontend. Node, NestJS, Java y Spring Boot en el backend. MySQL, PostgreSQL, Redis, Docker y AWS en datos e infraestructura. Para agentes e IA, Vercel AI SDK, RAG, MCP y evaluaciones.",
-        },
-        {
-          question: "¿Cómo facturas?",
-          answer:
-            "Como autónomo dado de alta en España, con factura mensual. Después de la primera llamada te mando una propuesta cerrada por escrito con el alcance, los plazos y el precio, y con eso decides.",
-        },
-        {
-          question: "¿En qué idiomas trabajas?",
-          answer:
-            "Español, que es mi lengua materna, e inglés con nivel profesional. Los proyectos que llevo hoy se reparten entre los dos.",
         },
       ],
       formTitle: "Primero, una llamada de media hora",
@@ -1369,7 +1316,7 @@ export const es: Copy = {
           },
         ],
       },
-      lead: "Snowy es una plataforma meteorológica para consultar predicciones, mapas, estaciones, avisos, embalses, calidad del aire, terremotos y herramientas inteligentes desde una experiencia rápida y orientada a decisiones reales.",
+      lead: "Snowy es una plataforma meteorológica con previsión, mapas, estaciones, avisos, embalses, calidad del aire y terremotos.",
       detail:
         "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 16,8 millones de impresiones, 257.000 clics orgánicos y 1.400 usuarios registrados.",
       ctaPrimary: "Abrir Snowy",
@@ -1386,7 +1333,7 @@ export const es: Copy = {
         items: [
           {
             title: "Cada dato dice de qué se fía",
-            text: "La ficha no solo da la temperatura: dice cuánta confianza merece esa previsión. Cuando dieciséis modelos no se ponen de acuerdo, ocultarlo es mentir por omisión.",
+            text: "La ficha da la temperatura y cuánta confianza merece esa previsión. Si dieciséis modelos no se ponen de acuerdo, se dice.",
             image: "/images/detalle/ficha.webp",
             alt: "Ficha de estación con temperatura, humedad, viento, índice UV y fiabilidad",
           },
@@ -1412,7 +1359,7 @@ export const es: Copy = {
       convergence: {
         eyebrow: "El problema de fondo",
         title: "Dieciséis modelos que no coinciden.",
-        text: "Cada fuente da un pronóstico distinto para el mismo punto, y cuanto más lejos se mira, más se separan entre sí. El trabajo de producto no es enseñarlas todas: es dar una respuesta y decir cuánto se puede fiar uno de ella.",
+        text: "Cada fuente da un pronóstico distinto para el mismo punto, y cuanto más lejos se mira, más se separan entre sí. Snowy da una sola respuesta y dice cuánto se puede uno fiar de ella.",
         ticks: [
           { at: 0.02, label: "Ahora" },
           { at: 0.42, label: "+3 días" },
@@ -1433,7 +1380,7 @@ export const es: Copy = {
         },
         {
           title: "Estaciones en vivo",
-          text: "Red de estaciones con datos actuales, históricos y flujo de integración para usuarios.",
+          text: "Red de estaciones con datos en vivo e históricos, a la que cualquier usuario puede conectar la suya.",
         },
         {
           title: "Contenido SEO",
@@ -1467,7 +1414,7 @@ export const es: Copy = {
           },
           {
             title: "Clima histórico",
-            text: "Procesamiento de series históricas para analizar tendencias, anomalías y cambios de temperatura por zona.",
+            text: "Series históricas para ver cómo ha cambiado la temperatura en cada zona.",
             image: "/images/snowy-climate.webp",
             alt: "Módulo de clima histórico de Snowy con mapa de calentamiento en España",
           },
@@ -1535,7 +1482,7 @@ export const es: Copy = {
         },
         {
           title: "Datos",
-          text: "Unificación de modelos profesionales, estaciones, embalses, terremotos, calidad del aire, polen y fuentes oficiales bajo un modelo interno consistente.",
+          text: "Unificación de modelos profesionales, estaciones, embalses, terremotos, calidad del aire, polen y fuentes oficiales, unificados en un mismo modelo de datos.",
         },
         {
           title: "Infraestructura",
@@ -1631,7 +1578,7 @@ export const es: Copy = {
       press: {
         eyebrow: "Prensa",
         title: "Snowy también ha tenido recorrido público.",
-        text: "El proyecto nació desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales públicos. Es una señal de producto real, comunidad y continuidad.",
+        text: "El proyecto nació desde LaRiojaMeteo y ha tenido presencia en prensa, radio y portales públicos.",
         openDataLabel: "datos.gob.es",
         openDataTag: "Ficha pública",
         openDataTitle:
@@ -1836,7 +1783,7 @@ export const es: Copy = {
       history: {
         eyebrow: "El recorrido",
         title: "Doce años publicando antes de tocar una línea de código.",
-        text: "No es un proyecto que se lanza: es uno que ya tenía audiencia, archivo y posicionamiento cuando entré. Eso cambia el encargo por completo, porque cualquier cambio se hace sobre algo que ya funciona.",
+        text: "Cuando entré, el portal ya tenía lectores y buenas posiciones en Google. Cualquier cambio se hacía sobre algo que funcionaba.",
         milestones: [
           {
             at: 0,

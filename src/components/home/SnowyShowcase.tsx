@@ -18,7 +18,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
         <SectionHeader
           label={copy.sectionLabels.snowy}
           title={showcase.title}
-          text={showcase.detail}
+          text={showcase.lead}
         />
 
         <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-x-4">

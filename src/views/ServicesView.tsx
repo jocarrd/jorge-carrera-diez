@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
@@ -16,25 +15,15 @@ import {
 import { getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
-import { faqJsonLd, servicesPageJsonLd } from "@/lib/seo";
-
-const SERVICE_SHOTS = [
-  { src: "/images/eqx-home.webp", w: 2400, h: 1080 },
-  { src: "/images/snowy-home.webp", w: 2400, h: 1500 },
-  { src: "/images/eqx-rankings.webp", w: 2268, h: 1060 },
-  { src: "/images/snowy-ai-assistant.webp", w: 1600, h: 1000 },
-  { src: "/images/snowy-climate.webp", w: 2400, h: 1500 },
-];
+import { servicesPageJsonLd } from "@/lib/seo";
 
 export function ServicesView({ locale }: { locale: Locale }) {
   const page = getCopy(locale).pages.services;
   const contact = getCopy(locale).pages.contact;
-  const [closed, monthly, ...priceNotes] = page.pricing;
 
   return (
     <main>
       <JsonLd data={servicesPageJsonLd(locale)} />
-      <JsonLd data={faqJsonLd(locale)} />
 
       <PageHero
         label={page.eyebrow}
@@ -63,21 +52,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
         />
         <RevealChildren as="ul" className="svc-bento">
           {contact.services.map((service, index) => {
-            const shot = SERVICE_SHOTS[index % SERVICE_SHOTS.length];
             return (
               <li
                 key={service.title}
-                className={`svc-card${index < 2 ? " svc-card--big" : ""}`}
+                className={`svc-card${index < 2 ? " svc-card--big on-dark" : ""}`}
               >
-                <div className="svc-card-shot">
-                  <Image
-                    src={shot.src}
-                    alt=""
-                    width={shot.w}
-                    height={shot.h}
-                    sizes="(min-width: 1024px) 560px, 100vw"
-                  />
-                </div>
                 <div className="svc-card-body">
                   <h3 className="svc-card-title">{service.title}</h3>
                   <p className="svc-card-text">{service.text}</p>
@@ -140,31 +119,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
             </li>
           ))}
         </RevealChildren>
-
-        <div className="svc-pricing">
-          <div className="svc-pricing-head">
-            <h3 className="svc-pricing-title">{page.pricingTitle}</h3>
-            <p className="svc-pricing-text">{page.pricingText}</p>
-          </div>
-          <RevealChildren className="svc-price-grid">
-            <div className="svc-price svc-price--dark on-dark">
-              <h4>{closed.title}</h4>
-              <p>{closed.text}</p>
-            </div>
-            <div className="svc-price">
-              <h4>{monthly.title}</h4>
-              <p>{monthly.text}</p>
-            </div>
-          </RevealChildren>
-          {priceNotes.map((note) => (
-            <p key={note.title} className="svc-price-note">
-              <span aria-hidden className="svc-price-note-dot" />
-              <span>
-                <strong>{note.title}.</strong> {note.text}
-              </span>
-            </p>
-          ))}
-        </div>
       </Section>
 
       <Section className="section-band">
@@ -181,21 +135,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
             </div>
           ))}
         </RevealChildren>
-      </Section>
-
-      <Section>
-        <SectionHeader title={page.faqTitle} text={page.faqText} />
-        <div className="faq-ed">
-          {page.faq.map((item) => (
-            <details key={item.question} className="faq-ed-item">
-              <summary>
-                <span>{item.question}</span>
-                <span aria-hidden className="faq-ed-icon" />
-              </summary>
-              <p>{item.answer}</p>
-            </details>
-          ))}
-        </div>
       </Section>
 
       <section id="llamada" className="svc-contact on-dark scroll-mt-20">

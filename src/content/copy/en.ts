@@ -230,11 +230,11 @@ export const en: Copy = {
   },
   ai: {
     titleAccent: "AI agents",
-    title: "A system of my own for working with AI agents",
-    lead: "I use AI agents to build faster, but with rules: every task follows the same path and nothing reaches production unchecked. It is an internal tool I built for that.",
-    detailTitle: "Every task follows the same path",
+    title: "Crux, my framework for working with AI agents",
+    lead: "Crux controls the lifecycle of every task an agent does, from understanding the project to proposing the change. The code it produces follows each project's standards, and nothing reaches production without being checked.",
+    detailTitle: "The agent's memory lives in git",
     detail:
-      "What it solves is that the engineering standard stops depending on remembering how it was done last time, or staying in the conversation where it was decided.",
+      "Each project has a repository just for its documentation, with its conventions and decisions, versioned and in the cloud. The agent reads it before touching anything, and what it learns in one session is not lost in the next.",
     rows: [
       ["standard", "Rules, procedures and tooling shared by every project."],
       [
@@ -327,10 +327,8 @@ export const en: Copy = {
     ],
   },
   snowyShowcase: {
-    title: "In production, and in use every day.",
-    lead: "The project already works as a product: over the last three months it has generated 16.8 million organic impressions and 257,000 clicks, with more than 1,400 registered users to keep building on.",
-    detail:
-      "Building it combines frontend, backend, cache, data, SEO, infrastructure and AI decisions under real constraints of cost, performance and maintenance.",
+    title: "A weather platform in production.",
+    lead: "Snowy is a complex product covering multi-model forecasts, radar, weather stations, alerts, climate history and an AI assistant. Over the last three months it had 16.8 million impressions on Google and 257,000 clicks, and it has more than 1,400 registered users.",
     ctaPrimary: "See the engineering case",
     ctaSecondary: "Open Snowy",
     gallery: [
@@ -402,7 +400,7 @@ export const en: Copy = {
   projectsPreview: {
     eyebrow: "Products",
     title: "Snowy, EQx and La Rioja Meteo.",
-    text: "All three are in production and I own the technical decisions on all three. On one I run development end to end, one belongs to a client in Switzerland and the third has been publishing for twelve years.",
+    text: "Three projects in production where I handle the architecture, the infrastructure and the development.",
   },
   sectionLabels: {
     work: "What I do",
@@ -775,24 +773,24 @@ export const en: Copy = {
       services: [
         {
           title: "Taking over a product in flight",
-          text: "Whoever built it is leaving and the product has to go on. I take on the code, the infrastructure and the product judgement, and hold the operation together through the handover.",
+          text: "When the person who built the product leaves, I take over the code and the infrastructure so it keeps running without a stop. It is what I do at EQx since July 2026.",
         },
         {
           title: "Products from zero to production",
-          text: "I take a founder's idea and turn it into a product in production, with React, Next.js, TypeScript and NestJS, from the frontend to the infrastructure. Including the boring part: deployment, performance and search visibility.",
+          text: "I turn a founder's idea into a working product, with React, Next.js, TypeScript and NestJS. Deployment and SEO come from day one, not at the end.",
         },
         {
           title: "Architecture and team support",
-          text: "Architecture decisions, standards and code review for teams already building who would rather not regret it a year from now.",
+          text: "For teams already building. I decide the architecture and review the code, so what they write today can still be maintained a year from now.",
         },
         {
-          title: "AI where it actually saves hours",
-          text: "I automate work someone still does by hand and put agents where the team loses time. It is how I work every day, including on my own projects.",
+          title: "Automation with AI agents",
+          text: "I find the tasks your team does by hand and hand them over to AI agents. I work like this every day with Crux, the framework I built for it.",
         },
         {
           title: "Technical SEO and AI search",
           route: "seoService",
-          text: "I review the technical SEO of your website and adapt it to how people search now: on Google, in its AI summaries and in assistants such as ChatGPT or Perplexity. Indexing, performance, structured data and pages that answer specific searches. It is the work behind Snowy's organic traffic.",
+          text: "I review the technical SEO of your website so it shows up on Google and in assistants such as ChatGPT or Perplexity. It is the work behind Snowy's organic traffic.",
         },
       ],
       clientsTitle: "Where I have worked",
@@ -848,23 +846,6 @@ export const en: Copy = {
       ctaCall: "Book a call",
       ctaCase: "Read the Snowy SEO case",
       caseLink: "See the technical SEO service",
-      pricingTitle: "How pricing works",
-      pricingText:
-        "There is no published rate because every engagement is different. There are two ways of working, and the price goes in writing in the proposal before we start.",
-      pricing: [
-        {
-          title: "Fixed engagement",
-          text: "An audit, an MVP or a migration with a defined scope. A fixed price for the whole engagement, with deliveries and deadlines in writing.",
-        },
-        {
-          title: "Monthly dedication",
-          text: "A technical handover or support for a team. A monthly fee for an agreed dedication, reviewed if what is needed changes.",
-        },
-        {
-          title: "What moves the price",
-          text: "The size and state of the product, and whether the work is only diagnosis or implementation as well. That is why the call comes first.",
-        },
-      ],
       chart: {
         title: "Daily clicks from Google on Snowy",
         ariaLabel:
@@ -957,40 +938,6 @@ export const en: Copy = {
           suffix: "+",
           label: "registered users",
           detail: "on Snowy",
-        },
-      ],
-      faqTitle: "Frequently asked questions",
-      faqText: "What people usually ask me before the first call.",
-      faq: [
-        {
-          question: "Do you work remotely?",
-          answer:
-            "Yes. I live in Logroño, in La Rioja, Spain, and I work remotely on European hours for clients in Spain and abroad. The client does not need to be in my city or my country.",
-        },
-        {
-          question: "How much time can you commit?",
-          answer:
-            "It depends on the work. On the first call we look at how much there is and I tell you what I can commit to. If I cannot do it properly, I say so there instead of accepting and falling short.",
-        },
-        {
-          question: "Can you step into a product that is already built?",
-          answer:
-            "That is most of what I do. I have taken over products that were already in production, with users inside, without stopping their operation during the handover.",
-        },
-        {
-          question: "What technologies do you work with?",
-          answer:
-            "React, Next.js and TypeScript on the frontend. Node, NestJS, Java and Spring Boot on the backend. MySQL, PostgreSQL, Redis, Docker and AWS for data and infrastructure. For agents and AI, the Vercel AI SDK, RAG, MCP and evaluations.",
-        },
-        {
-          question: "How do you invoice?",
-          answer:
-            "As a self-employed professional registered in Spain, invoicing monthly. After the first call I send you a fixed written proposal with scope, timeline and price, and you decide on that.",
-        },
-        {
-          question: "What languages do you work in?",
-          answer:
-            "Spanish, my native language, and English at a professional level. The projects I run today are split between the two.",
         },
       ],
       formTitle: "First, a half-hour call",
