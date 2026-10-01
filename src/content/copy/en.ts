@@ -781,7 +781,7 @@ export const en: Copy = {
         },
         {
           title: "Automation with AI agents",
-          text: "I find the tasks your team does by hand and hand them over to AI agents. I work like this every day with Crux, the framework I built for it.",
+          text: "I identify the tasks your team performs manually and automate them with AI agents. It is how I work every day, with Crux, the framework I have developed for it.",
         },
         {
           title: "Technical SEO and AI search",
@@ -1294,7 +1294,7 @@ export const en: Copy = {
       },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
-        "The difference is bringing product, data, SEO, interactive maps and agents together on an architecture built for it: SSR frontend, backend as the source of truth, per-domain cache and dedicated services for radar, CMS and batch jobs. Over the last 3 months Snowy has passed 16.8 million impressions, 257,000 organic clicks and 1,400 registered users.",
+        "It combines sixteen weather models into a single forecast that states how much confidence it deserves, generates its own radar from the source data and has an assistant that answers with the network's data. I have built the platform end to end, from the architecture and the infrastructure to the product. Over the last three months it has recorded 16.8 million impressions on Google, 257,000 clicks and more than 1,400 registered users.",
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {
@@ -1875,24 +1875,24 @@ export const en: Copy = {
           {
             name: "elitequality.org",
             tech: "Astro · React · D3",
-            text: "The public website of the EQx. I defined the design system with the design team and rebuilt all ten pages with it, including the interactive world map, the rankings table and the country comparison tool.",
+            text: "The public website of the Elite Quality Index, with the rankings table of 151 countries, the interactive world map and the country comparison tool. I built it myself, from the architecture and the infrastructure, in collaboration with the foundation's design team.",
             href: "https://elitequality.org/",
           },
           {
             name: "VCr website",
             tech: "Astro · React",
-            text: "The website of the company rating, which I am building from scratch on the same design system. It includes a page for each company, the directory and the comparison tool, with the official VCr2026 data.",
+            text: "The website of the Value Creation Rating, the foundation's company rating. It includes the directory of rated companies, a page for each one and a comparison tool with the official VCr2026 data. I am building it from scratch.",
           },
           {
             name: "self-VCr",
             tech: "Next.js · Prisma · PostgreSQL",
-            text: "The platform where companies take their assessment. They answer the survey, get their rating and download the official PDF report. I maintain it and I am bringing the new design system to it.",
+            text: "The platform where companies complete their self-assessment: they answer the questionnaire, obtain their rating and download the official PDF report. I am responsible for its development and maintenance.",
           },
         ],
       },
       partners: {
         title: "With the University of St. Gallen",
-        text: "The EQx is led by Tomas Casas and Guido Cozzi of the University of St. Gallen, with three of its institutes and a network of academic partners in other countries, such as the Faculty of Economics of the University of Porto. It builds on the elite theory of economic development and measures, with 148 indicators, whether each country's elites create value or extract it. The 2026 edition is its seventh.",
+        text: "The Foundation for Value Creation is a non-profit foundation based in St. Gallen, chaired by Dr. Tomas Casas. The Elite Quality Index, edited by Dr. Tomas Casas and Professor Guido Cozzi, is produced under the academic leadership of three institutes of the University of St. Gallen and with an international network of academic partners, among them the Faculty of Economics of the University of Porto. It is grounded in the elite theory of economic development and assesses, through 148 indicators, whether each country's elites create value or extract it. The 2026 edition is the seventh.",
       },
       stack: {
         eyebrow: "Stack",
