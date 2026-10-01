@@ -14,6 +14,7 @@ const TINTS: Record<string, string> = {
   "snowy-climate": "#c42b22",
   "snowy-earthquakes": "#a35f05",
   "snowy-station-detail": "#2c6c82",
+  "snowy-ski": "#1e4fa8",
 };
 
 const keyOf = (path: string) =>

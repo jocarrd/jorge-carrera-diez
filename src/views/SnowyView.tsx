@@ -79,7 +79,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
         </div>
       </Section>
 
-      <section className="py-16 sm:py-24 lg:py-28">
+      <section className="overflow-x-clip py-16 sm:py-24 lg:py-28">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="t-section">{copy.modules.title}</h2>
