@@ -32,6 +32,7 @@ export function SurfaceFolder({ items }: { items: Surface[] }) {
         const style = {
           "--tint": TINTS[keyOf(item.image)] ?? "#4d7c0f",
           "--i": index,
+          "--n": items.length,
           "--rot": `${offset * 3}deg`,
           "--drop": `${Math.abs(offset) * 14}px`,
         } as CSSProperties;

@@ -644,7 +644,7 @@ export const es: Copy = {
       description:
         "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y panel de evaluación.",
       impact:
-        "Rehice elitequality.org con un design system, hice desde cero la web del Value Creation Rating y mantengo el panel donde las empresas hacen su evaluación.",
+        "Rediseño de elitequality.org sobre un design system, nueva web del Value Creation Rating y mantenimiento del panel donde las empresas hacen su evaluación.",
       metrics: [
         { value: "151", label: "países en el ranking" },
         { value: "148", label: "indicadores" },
@@ -1279,7 +1279,7 @@ export const es: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "Qué hay debajo.",
-        text: "Mantengo todo lo que se ve en Snowy: el render, el backend, los datos, el radar y los despliegues.",
+        text: "Las piezas sobre las que funciona Snowy, del render en servidor a los despliegues.",
         groups: [
           {
             label: "Front",
@@ -1298,7 +1298,7 @@ export const es: Copy = {
       },
       lead: "Snowy es una plataforma meteorológica con previsión, mapas, estaciones, avisos, embalses, calidad del aire y terremotos.",
       detail:
-        "Combina dieciséis modelos meteorológicos en una única previsión que indica cuánta confianza merece, genera su propio radar a partir de los datos de origen y dispone de un asistente que responde con los datos de la red. He desarrollado la plataforma de principio a fin, desde la arquitectura y la infraestructura hasta el producto. En los últimos tres meses ha registrado 16,8 millones de impresiones en Google, 257.000 clics y más de 1.400 usuarios registrados.",
+        "Combina dieciséis modelos meteorológicos en una única previsión que indica cuánta confianza merece, genera su propio radar a partir de los datos de origen y dispone de un asistente que responde con los datos de la red. En los últimos tres meses ha registrado 16,8 millones de impresiones en Google, 257.000 clics y más de 1.400 usuarios registrados.",
       ctaPrimary: "Abrir Snowy",
       ctaSecondary: "Ver CV",
       imageAlts: {
@@ -1886,18 +1886,18 @@ export const es: Copy = {
           {
             name: "elitequality.org",
             tech: "Astro · React · D3",
-            text: "La web pública del Elite Quality Index, con la tabla de rankings de 151 países, el mapa mundial interactivo y el comparador de países. La he desarrollado yo, desde la arquitectura y la infraestructura, en colaboración con el equipo de diseño de la fundación.",
+            text: "La web pública del Elite Quality Index, con la tabla de rankings de 151 países, el mapa mundial interactivo y el comparador de países.",
             href: "https://elitequality.org/",
           },
           {
             name: "Web del VCr",
             tech: "Astro · React",
-            text: "La web del Value Creation Rating, el rating de empresas de la fundación. Incluye el directorio de empresas evaluadas, la ficha de cada una y un comparador con los datos oficiales del VCr2026. La estoy desarrollando desde cero.",
+            text: "La web del Value Creation Rating, el rating de empresas de la fundación. Incluye el directorio de empresas evaluadas, la ficha de cada una y un comparador con los datos oficiales del VCr2026.",
           },
           {
             name: "self-VCr",
             tech: "Next.js · Prisma · PostgreSQL",
-            text: "La plataforma en la que las empresas realizan su autoevaluación: responden el cuestionario, obtienen su rating y descargan el informe oficial en PDF. Me encargo de su desarrollo y de su mantenimiento.",
+            text: "La plataforma en la que las empresas realizan su autoevaluación: responden el cuestionario, obtienen su rating y descargan el informe oficial en PDF.",
           },
         ],
       },
@@ -1934,29 +1934,22 @@ export const es: Copy = {
       "Secuencia del radar de lluvia de Snowy sobre la península, con las estaciones meteorológicas en vivo",
   },
   stickyShowcase: {
-    eyebrow: "Cómo trabajo",
-    title: "Lo que hay detrás de una pantalla que carga rápido.",
+    eyebrow: "Snowy",
+    title: "Del dato disperso a una herramienta útil.",
     imageAlt: "Portada de Snowy con buscador, asistente y datos en vivo",
     steps: [
       {
-        title: "Descartar es la mitad del trabajo",
-        text: "Cada función que entra hay que mantenerla durante años, así que la decisión que más pesa suele ser qué se queda fuera.",
+        title: "Reunir fuentes muy distintas",
+        text: "Datos públicos de organismos oficiales, estaciones meteorológicas de particulares y valores que Snowy calcula a partir de los modelos. El trabajo consiste en ordenarlos y presentarlos de forma que ayuden a decidir en el día a día.",
         image: "/images/snowy-home.webp",
         imageAlt:
           "Portada de Snowy con buscador, asistente y accesos a los mapas",
       },
       {
-        title: "Dieciséis modelos que no coinciden",
-        text: "Dieciséis fuentes meteorológicas con pronósticos distintos para el mismo punto, y una interfaz que tiene que dar una sola respuesta.",
-        image: "/images/snowy-station-detail.webp",
-        imageAlt:
-          "Ficha del tiempo en Madrid con fiabilidad del pronóstico al 51 %",
-      },
-      {
-        title: "Mantener, no solo entregar",
-        text: "Si el radar deja de pintar un domingo por la noche hay que arreglarlo, y eso condiciona cómo se construye desde el primer día.",
-        image: "/images/snowy-radar-map.webp",
-        imageAlt: "Radar de precipitación de Snowy sobre España",
+        title: "Snowy Developer, los datos por API",
+        text: "Con esos datos, Snowy se ha convertido en una de las cuentas de referencia de la meteorología en España. Snowy Developer es el portal que los ofrece a quien quiera integrarlos en sus propios servicios, con documentación pública y una demostración en vivo sin registro.",
+        image: "/images/snowy-developers.webp",
+        imageAlt: "Portal Snowy Developer: la API meteorológica de Snowy",
       },
     ],
   },
