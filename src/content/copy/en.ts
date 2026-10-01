@@ -647,7 +647,7 @@ export const en: Copy = {
       description:
         "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and an assessment platform.",
       impact:
-        "I rebuilt elitequality.org on a design system, built the Value Creation Rating website from scratch and maintain the platform where companies take their assessment.",
+        "Redesign of elitequality.org on a design system, a new Value Creation Rating website and maintenance of the platform where companies take their assessment.",
       metrics: [
         { value: "151", label: "countries ranked" },
         { value: "148", label: "indicators" },
@@ -1275,7 +1275,7 @@ export const en: Copy = {
       stack: {
         eyebrow: "Stack",
         title: "What runs underneath.",
-        text: "I maintain everything you see in Snowy: rendering, backend, data, radar and deployments.",
+        text: "The pieces Snowy runs on, from server rendering to deployments.",
         groups: [
           {
             label: "Front",
@@ -1294,7 +1294,7 @@ export const en: Copy = {
       },
       lead: "Snowy is a weather platform for forecasts, maps, stations, alerts, reservoirs, air quality, earthquakes and smart tools, in a fast experience aimed at real decisions.",
       detail:
-        "It combines sixteen weather models into a single forecast that states how much confidence it deserves, generates its own radar from the source data and has an assistant that answers with the network's data. I have built the platform end to end, from the architecture and the infrastructure to the product. Over the last three months it has recorded 16.8 million impressions on Google, 257,000 clicks and more than 1,400 registered users.",
+        "It combines sixteen weather models into a single forecast that states how much confidence it deserves, generates its own radar from the source data and has an assistant that answers with the network's data. Over the last three months it has recorded 16.8 million impressions on Google, 257,000 clicks and more than 1,400 registered users.",
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {
@@ -1875,18 +1875,18 @@ export const en: Copy = {
           {
             name: "elitequality.org",
             tech: "Astro · React · D3",
-            text: "The public website of the Elite Quality Index, with the rankings table of 151 countries, the interactive world map and the country comparison tool. I built it myself, from the architecture and the infrastructure, in collaboration with the foundation's design team.",
+            text: "The public website of the Elite Quality Index, with the rankings table of 151 countries, the interactive world map and the country comparison tool.",
             href: "https://elitequality.org/",
           },
           {
             name: "VCr website",
             tech: "Astro · React",
-            text: "The website of the Value Creation Rating, the foundation's company rating. It includes the directory of rated companies, a page for each one and a comparison tool with the official VCr2026 data. I am building it from scratch.",
+            text: "The website of the Value Creation Rating, the foundation's company rating. It includes the directory of rated companies, a page for each one and a comparison tool with the official VCr2026 data.",
           },
           {
             name: "self-VCr",
             tech: "Next.js · Prisma · PostgreSQL",
-            text: "The platform where companies complete their self-assessment: they answer the questionnaire, obtain their rating and download the official PDF report. I am responsible for its development and maintenance.",
+            text: "The platform where companies complete their self-assessment: they answer the questionnaire, obtain their rating and download the official PDF report.",
           },
         ],
       },
@@ -1923,27 +1923,21 @@ export const en: Copy = {
       "Sequence of Snowy's rain radar over Spain, with live weather stations",
   },
   stickyShowcase: {
-    eyebrow: "How I work",
-    title: "What sits behind a screen that loads fast.",
+    eyebrow: "Snowy",
+    title: "From scattered data to a useful tool.",
     imageAlt: "Snowy home page with search, assistant and live data",
     steps: [
       {
-        title: "Half the work is deciding what to cut",
-        text: "Every feature that ships has to be maintained for years, so the decision that weighs most is usually what stays out.",
+        title: "Bringing very different sources together",
+        text: "Public data from official agencies, weather stations run by individuals and values Snowy computes from the forecast models. The work is ordering them and presenting them so they help people make everyday decisions.",
         image: "/images/snowy-home.webp",
         imageAlt: "Snowy home with search, assistant and map entry points",
       },
       {
-        title: "Sixteen models that disagree",
-        text: "Sixteen weather sources with different forecasts for the same point, and one interface that has to give a single answer.",
-        image: "/images/snowy-station-detail.webp",
-        imageAlt: "Madrid weather page showing forecast reliability at 51%",
-      },
-      {
-        title: "Maintaining, not just shipping",
-        text: "If the radar stops rendering on a Sunday night it has to be fixed, and that shapes how the thing is built from day one.",
-        image: "/images/snowy-radar-map.webp",
-        imageAlt: "Snowy precipitation radar over Spain",
+        title: "Snowy Developer, the data through an API",
+        text: "With that data, Snowy has become one of the reference weather accounts in Spain. Snowy Developer is the portal that offers it to anyone who wants to build it into their own services, with public documentation and a live demo that needs no sign-up.",
+        image: "/images/snowy-developers.webp",
+        imageAlt: "Snowy Developer portal: Snowy's weather API",
       },
     ],
   },

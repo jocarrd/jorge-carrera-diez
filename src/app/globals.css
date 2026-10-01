@@ -392,12 +392,11 @@ a {
 }
 
 .press-card {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: var(--radius-card-lg);
   background: var(--ink-dark);
-  aspect-ratio: 4 / 3;
   transition: transform var(--dur-media) var(--ease);
 }
 
@@ -420,30 +419,22 @@ a {
 }
 
 .press-photo {
-  position: absolute;
-  inset: 0;
-  height: 100%;
+  display: block;
   width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
 
 .press-body {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 8rem 1.75rem 1.75rem;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.94) 0%,
-    rgba(0, 0, 0, 0.88) 42%,
-    rgba(0, 0, 0, 0.6) 72%,
-    transparent 100%
-  );
+  flex: 1;
+  padding: 1.5rem 1.75rem 1.75rem;
 }
 
 @media (min-width: 640px) {
   .press-body {
-    padding: 9rem 2.25rem 2.25rem;
+    padding: 1.75rem 2.25rem 2.25rem;
   }
 }
 
@@ -5441,20 +5432,31 @@ a {
 }
 
 .folder {
+  --tab-h: 3.5rem;
+  --gap: 1.25rem;
   display: grid;
+  align-items: start;
   padding-bottom: 1rem;
 }
 
+/* Cada tarjeta se suelta a una altura distinta: el margen inferior reserva el
+   hueco de las pestañas que quedan debajo, y el margen negativo de la siguiente
+   lo devuelve para que el espacio entre tarjetas no cambie. */
 .folder-card {
   position: sticky;
-  top: calc(var(--header-h) + 1rem + var(--i) * 3.5rem);
-  margin-bottom: 1.25rem;
+  top: calc(var(--header-h) + 1rem + var(--i) * var(--tab-h));
+  margin-bottom: calc((var(--n) - 1 - var(--i)) * var(--tab-h) + var(--gap));
+  margin-top: calc((var(--n) - var(--i)) * var(--tab-h) * -1);
   overflow: hidden;
   border-radius: 1.25rem;
   background: var(--panel-strong);
   box-shadow:
     0 0 0 1px color-mix(in oklab, var(--line) 80%, transparent),
     0 -10px 30px -18px rgba(0, 0, 0, 0.35);
+}
+
+.folder-card:first-child {
+  margin-top: 0;
 }
 
 .folder-tab {
@@ -5494,6 +5496,8 @@ a {
 }
 
 .folder-text {
+  /* Tres líneas para todas: con alturas distintas las pestañas no casan al soltarse */
+  min-height: calc(2.25rem + 4.5em);
   padding: 1rem 1.25rem 1.25rem;
   font-size: 0.9375rem;
   line-height: 1.5;
@@ -5540,6 +5544,15 @@ a {
     box-shadow:
       0 0 0 1px color-mix(in oklab, var(--line) 80%, transparent),
       0 50px 80px -30px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Las vecinas se apartan, como al abrir una carpeta del montón */
+  .folder-card:hover ~ .folder-card {
+    transform: translate(4.5rem, var(--drop)) rotate(calc(var(--rot) + 2deg));
+  }
+
+  .folder-card:has(~ .folder-card:hover) {
+    transform: translate(-4.5rem, var(--drop)) rotate(calc(var(--rot) - 2deg));
   }
 
   .folder:has(.folder-card:hover) .folder-card:not(:hover) {

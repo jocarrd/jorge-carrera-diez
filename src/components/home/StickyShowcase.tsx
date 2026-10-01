@@ -80,10 +80,7 @@ export function StickyShowcase({ locale }: { locale: Locale }) {
                 }}
                 className="lg:min-h-[26vh]"
               >
-                <p className="font-mono text-sm text-[var(--muted)]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 text-[1.5rem] font-semibold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
+                <h3 className="text-[1.5rem] font-semibold leading-[1.2] tracking-[-0.025em] sm:text-[2rem]">
                   {step.title}
                 </h3>
                 <p className="mt-4 text-[1.0625rem] leading-[1.55] text-[var(--muted)] sm:text-[1.1875rem]">
