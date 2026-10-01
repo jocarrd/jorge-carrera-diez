@@ -1378,17 +1378,17 @@ export const es: Copy = {
       modules: {
         eyebrow: "Módulos",
         title: "Distintas superficies, una misma arquitectura.",
-        text: "Cada módulo tiene requisitos distintos: datos externos, caché, visualización, SEO, estado en tiempo real y modelos internos comunes.",
+        text: "Cada módulo responde a una consulta concreta con sus propias fuentes de datos, y todos comparten la misma base técnica.",
         items: [
           {
             title: "Asistente IA",
-            text: "Consultas conversacionales con herramientas meteorológicas: ropa, avisos, predicción, ubicación y respuestas accionables.",
+            text: "Responde en lenguaje natural con datos de las estaciones y de los modelos, como qué ropa llevar o si hay avisos activos.",
             image: "/images/snowy-ai-assistant.webp",
             alt: "Asistente de IA de Snowy con recomendación meteorológica de ropa",
           },
           {
             title: "Embalses",
-            text: "Datos oficiales, evolución semanal, mapas y comparativas por comunidades, provincias y cuencas.",
+            text: "Estado de los embalses con datos oficiales, su evolución semanal y comparativas por cuenca.",
             image: "/images/snowy-reservoirs.webp",
             alt: "Módulo de embalses de Snowy con reserva hídrica y mapa por comunidades",
           },
@@ -1400,20 +1400,26 @@ export const es: Copy = {
           },
           {
             title: "Terremotos",
-            text: "Monitor en tiempo real con fuentes oficiales, magnitud, ubicación, detalle del evento y reporte comunitario.",
+            text: "Actividad sísmica en tiempo real a partir de fuentes oficiales, con el detalle de cada evento y los reportes de usuarios.",
             image: "/images/snowy-earthquakes.webp",
             alt: "Monitor de terremotos de Snowy con evento sísmico reciente",
           },
           {
             title: "Estaciones",
-            text: "Detalle de estación con métricas actuales, históricos, favoritos, propietario y datos meteorológicos en vivo.",
+            text: "Ficha de cada estación meteorológica con sus datos en vivo y su histórico.",
             image: "/images/snowy-station-detail.webp",
             alt: "Detalle de estación meteorológica en Snowy con métricas en vivo",
+          },
+          {
+            title: "Estaciones de esquí",
+            text: "Previsión, parte de nieve y mapa de pistas de 30 estaciones de esquí de España y Andorra.",
+            image: "/images/snowy-ski.webp",
+            alt: "Ficha de Baqueira Beret en Snowy con el perfil de la montaña y la cota de nieve",
           },
         ],
       },
       traction: {
-        title: "Lo que se ve en el uso.",
+        title: "Crecimiento orgánico, sin inversión en publicidad.",
         text: "En los últimos tres meses: 16,8 millones de impresiones en búsqueda orgánica, 257.000 clics y una posición media de 8.",
       },
       build: {

@@ -5516,7 +5516,8 @@ a {
     top: auto;
     width: 21rem;
     flex-shrink: 0;
-    margin: 0 0 0 -8.5rem;
+    /* El solape crece con el número de carpetas para que el abanico quepa siempre */
+    margin: 0 0 0 min(-8.5rem, calc((100% - 4rem - var(--n) * 21rem) / (var(--n) - 1)));
     transform: translateY(var(--drop)) rotate(var(--rot));
     transform-origin: 50% 120%;
     box-shadow:

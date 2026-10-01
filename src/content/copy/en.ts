@@ -1374,42 +1374,48 @@ export const en: Copy = {
       modules: {
         eyebrow: "Modules",
         title: "Different surfaces, one architecture.",
-        text: "Each module has different requirements: external data, cache, visualisation, SEO, real-time state and shared internal models.",
+        text: "Each module answers a specific question with its own data sources, and all of them share the same technical foundation.",
         items: [
           {
             title: "AI assistant",
-            text: "Conversational queries with weather tooling: clothing, alerts, forecast, location and actionable answers.",
+            text: "Answers in plain language with station and model data, such as what to wear or whether alerts are active.",
             image: "/images/snowy-ai-assistant.webp",
             alt: "Snowy AI assistant giving a weather-based clothing recommendation",
           },
           {
             title: "Reservoirs",
-            text: "Official data, weekly evolution, maps and comparisons by region, province and river basin.",
+            text: "Reservoir levels from official data, their weekly evolution and comparisons by river basin.",
             image: "/images/snowy-reservoirs.webp",
             alt: "Snowy reservoirs module with water reserves and a map by region",
           },
           {
             title: "Historical climate",
-            text: "Processing of historical series to analyse trends, anomalies and temperature change by area.",
+            text: "Historical series showing how temperature has changed in each area.",
             image: "/images/snowy-climate.webp",
             alt: "Snowy historical climate module with a warming map of Spain",
           },
           {
             title: "Earthquakes",
-            text: "Real-time monitor with official sources, magnitude, location, event detail and community reports.",
+            text: "Seismic activity in real time from official sources, with the detail of each event and reports from users.",
             image: "/images/snowy-earthquakes.webp",
             alt: "Snowy earthquake monitor showing a recent seismic event",
           },
           {
             title: "Stations",
-            text: "Station detail with current metrics, history, favourites, owner and live weather data.",
+            text: "The page for each weather station, with its live data and its history.",
             image: "/images/snowy-station-detail.webp",
             alt: "Weather station detail in Snowy with live metrics",
+          },
+          {
+            title: "Ski resorts",
+            text: "Forecast, snow report and piste map for 30 ski resorts in Spain and Andorra.",
+            image: "/images/snowy-ski.webp",
+            alt: "Baqueira Beret page on Snowy with the mountain profile and the snow line",
           },
         ],
       },
       traction: {
-        title: "What shows up in usage.",
+        title: "Organic growth, with no ad spend.",
         text: "SEO, performance and product usefulness already show up in usage: organic search, clicks and registered users on a platform of my own.",
       },
       build: {
