@@ -779,7 +779,7 @@ export const es: Copy = {
         },
         {
           title: "Automatización con agentes de IA",
-          text: "Busco las tareas que tu equipo hace a mano y las paso a agentes de IA. Yo trabajo así cada día con Crux, el framework que construí para eso.",
+          text: "Identifico las tareas que tu equipo realiza manualmente y las automatizo con agentes de IA. Es la forma en que trabajo cada día, con Crux, el framework que he desarrollado para ello.",
         },
         {
           title: "SEO técnico y búsqueda con IA",
@@ -1298,7 +1298,7 @@ export const es: Copy = {
       },
       lead: "Snowy es una plataforma meteorológica con previsión, mapas, estaciones, avisos, embalses, calidad del aire y terremotos.",
       detail:
-        "La diferencia está en unir producto, datos, SEO, mapas interactivos y agentes sobre una arquitectura propia: frontend SSR, backend como autoridad, caché por dominio y servicios especializados para radar, CMS y procesos batch. En los últimos 3 meses, Snowy ha superado los 16,8 millones de impresiones, 257.000 clics orgánicos y 1.400 usuarios registrados.",
+        "Combina dieciséis modelos meteorológicos en una única previsión que indica cuánta confianza merece, genera su propio radar a partir de los datos de origen y dispone de un asistente que responde con los datos de la red. He desarrollado la plataforma de principio a fin, desde la arquitectura y la infraestructura hasta el producto. En los últimos tres meses ha registrado 16,8 millones de impresiones en Google, 257.000 clics y más de 1.400 usuarios registrados.",
       ctaPrimary: "Abrir Snowy",
       ctaSecondary: "Ver CV",
       imageAlts: {
@@ -1551,7 +1551,7 @@ export const es: Copy = {
           {
             title: "Eclipses",
             url: "https://snowy.es/eclipse-2027",
-            text: "Producto de contenido y planificación: se estrenó con el eclipse total de agosto de 2026 y ya corre para el de 2027.",
+            text: "Producto de contenido y planificación. Se estrenó con el eclipse total de agosto de 2026 y ya está preparado para el de 2027.",
           },
         ],
       },
@@ -1735,7 +1735,7 @@ export const es: Copy = {
           },
           {
             title: "Plugin a medida",
-            text: "Un plugin propio de WordPress que trae los datos de Snowy al portal —estaciones, embalses, webcams— en vez de pegarlos a mano en cada entrada.",
+            text: "Un plugin propio de WordPress que incorpora al portal los datos de Snowy (estaciones, embalses y webcams) sin necesidad de copiarlos manualmente en cada entrada.",
           },
           {
             title: "Rendimiento y móvil",
@@ -1886,24 +1886,24 @@ export const es: Copy = {
           {
             name: "elitequality.org",
             tech: "Astro · React · D3",
-            text: "La web pública del EQx. Definí con el equipo de diseño el design system y rehice con él las diez páginas, entre ellas el mapa mundial interactivo, la tabla de rankings y el comparador de países.",
+            text: "La web pública del Elite Quality Index, con la tabla de rankings de 151 países, el mapa mundial interactivo y el comparador de países. La he desarrollado yo, desde la arquitectura y la infraestructura, en colaboración con el equipo de diseño de la fundación.",
             href: "https://elitequality.org/",
           },
           {
             name: "Web del VCr",
             tech: "Astro · React",
-            text: "La web del rating de empresas, que estoy construyendo desde cero sobre el mismo design system. Incluye la ficha de cada empresa, el directorio y el comparador, con los datos oficiales del VCr2026.",
+            text: "La web del Value Creation Rating, el rating de empresas de la fundación. Incluye el directorio de empresas evaluadas, la ficha de cada una y un comparador con los datos oficiales del VCr2026. La estoy desarrollando desde cero.",
           },
           {
             name: "self-VCr",
             tech: "Next.js · Prisma · PostgreSQL",
-            text: "El panel donde las empresas hacen su evaluación. Responden la encuesta, obtienen su rating y descargan el informe oficial en PDF. Lo mantengo y le estoy llevando el nuevo design system.",
+            text: "La plataforma en la que las empresas realizan su autoevaluación: responden el cuestionario, obtienen su rating y descargan el informe oficial en PDF. Me encargo de su desarrollo y de su mantenimiento.",
           },
         ],
       },
       partners: {
         title: "Con la Universidad de St. Gallen",
-        text: "El EQx lo dirigen Tomas Casas y Guido Cozzi, de la Universidad de St. Gallen, con tres de sus institutos y una red de socios académicos de otros países, como la Facultad de Economía de la Universidad de Oporto. Parte de la teoría de élites del desarrollo económico y mide, con 148 indicadores, si las élites de cada país crean valor o lo extraen. La de 2026 es su séptima edición.",
+        text: "La Foundation for Value Creation es una fundación sin ánimo de lucro con sede en St. Gallen, presidida por el Dr. Tomas Casas. El Elite Quality Index, que editan el Dr. Tomas Casas y el profesor Guido Cozzi, se elabora bajo la dirección académica de tres institutos de la Universidad de St. Gallen y con una red internacional de socios académicos, entre ellos la Facultad de Economía de la Universidad de Oporto. Se fundamenta en la teoría de élites del desarrollo económico y evalúa, mediante 148 indicadores, si las élites de cada país crean valor o lo extraen. La edición de 2026 es la séptima.",
       },
       stack: {
         eyebrow: "Tecnologías",
