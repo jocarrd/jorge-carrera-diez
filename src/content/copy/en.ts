@@ -1890,26 +1890,9 @@ export const en: Copy = {
           },
         ],
       },
-      work: {
-        title: "Way of working",
-        items: [
-          {
-            title: "Written requirements",
-            text: "Requests come in through meetings and email. Before writing code I turn them into a document stating what is in scope and what is not.",
-          },
-          {
-            title: "Official data",
-            text: "The rankings come from the foundation's data books. Every import is checked against the source, and if a number does not match, the importer gets fixed.",
-          },
-          {
-            title: "Documentation",
-            text: "Each repository documents how it is deployed and which decisions were made. The documentation I inherited no longer matched what was in production, so I rewrote it from the code.",
-          },
-          {
-            title: "Continuous deployment",
-            text: "Every approved change goes live on merge, from the foundation's GitHub organisation.",
-          },
-        ],
+      partners: {
+        title: "With the University of St. Gallen",
+        text: "The EQx is led by Tomas Casas and Guido Cozzi of the University of St. Gallen, with three of its institutes and a network of academic partners in other countries, such as the Faculty of Economics of the University of Porto. It builds on the elite theory of economic development and measures, with 148 indicators, whether each country's elites create value or extract it. The 2026 edition is its seventh.",
       },
       stack: {
         eyebrow: "Stack",
