@@ -11,6 +11,27 @@ import {
 import { domainOf, getCopy, organizations, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
+const PARTNER_LOGOS = [
+  {
+    name: "University of St.Gallen",
+    src: "/images/logos/university-of-st-gallen.svg",
+    width: 496,
+    height: 103,
+  },
+  {
+    name: "Elite Quality Index",
+    src: "/images/logos/elite-quality-index.svg",
+    width: 762,
+    height: 219,
+  },
+  {
+    name: "Value Creation Rating",
+    src: "/images/logos/value-creation-rating.svg",
+    width: 970,
+    height: 249,
+  },
+];
+
 export function EqxView({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).pages.eqx;
 
@@ -80,17 +101,21 @@ export function EqxView({ locale }: { locale: Locale }) {
       </Section>
 
       <Section className="section-band">
-        <SectionHeader title={copy.work.title} />
-        <div className="mt-10 grid gap-x-10 gap-y-9 md:grid-cols-2">
-          {copy.work.items.map((item, index) => (
-            <Reveal key={item.title} delay={index * 60}>
-              <div className="area">
-                <h3 className="area-title">{item.title}</h3>
-                <p className="area-text">{item.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <SectionHeader title={copy.partners.title} text={copy.partners.text} />
+        <Reveal>
+          <ul className="partner-logos">
+            {PARTNER_LOGOS.map((logo) => (
+              <li key={logo.name} className="partner-logo">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={logo.width}
+                  height={logo.height}
+                />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </Section>
 
       <CaseStack title={copy.stack.title} groups={copy.stack.groups} />

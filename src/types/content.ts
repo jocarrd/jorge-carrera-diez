@@ -600,7 +600,7 @@ export type Copy = {
             href?: string;
           }[];
         };
-        work: SectionCopy & { items: TitledText[] };
+        partners: { title: string; text: string };
       };
   };
   radarScrub: {

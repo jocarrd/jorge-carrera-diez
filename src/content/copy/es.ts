@@ -1901,26 +1901,9 @@ export const es: Copy = {
           },
         ],
       },
-      work: {
-        title: "Método de trabajo",
-        items: [
-          {
-            title: "Requisitos por escrito",
-            text: "Las peticiones llegan en reuniones y por correo. Antes de programar las paso a un documento con lo que entra y lo que se queda fuera.",
-          },
-          {
-            title: "Datos oficiales",
-            text: "Los rankings salen de los libros de datos de la fundación. La importación se comprueba contra el original, y si un número no cuadra se corrige el importador.",
-          },
-          {
-            title: "Documentación",
-            text: "Cada repositorio tiene escrito cómo se despliega y qué decisiones se tomaron. La documentación que heredé ya no coincidía con lo que había en producción, así que la rehice leyendo el código.",
-          },
-          {
-            title: "Despliegue continuo",
-            text: "Cada cambio aprobado se publica solo al integrarse, desde la organización de GitHub de la fundación.",
-          },
-        ],
+      partners: {
+        title: "Con la Universidad de St. Gallen",
+        text: "El EQx lo dirigen Tomas Casas y Guido Cozzi, de la Universidad de St. Gallen, con tres de sus institutos y una red de socios académicos de otros países, como la Facultad de Economía de la Universidad de Oporto. Parte de la teoría de élites del desarrollo económico y mide, con 148 indicadores, si las élites de cada país crean valor o lo extraen. La de 2026 es su séptima edición.",
       },
       stack: {
         eyebrow: "Tecnologías",
