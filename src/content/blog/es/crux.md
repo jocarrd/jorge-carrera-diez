@@ -6,7 +6,6 @@ cover: /blog/crux/portada.webp
 preview: /blog/crux/rojo.webp
 previewAlt: "Terminal: crux se niega a abrir la propuesta porque una comprobación ha fallado"
 coverAlt: "Banner de crux: un grafo de nodos entre carpetas y líneas de circuito sobre fondo oscuro"
-xUrl: https://x.com/jorgecarrera_es/status/2104217717246955637
 tags:
   - Agentes de IA
   - Crux

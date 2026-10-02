@@ -6,7 +6,6 @@ cover: /blog/crux/portada.webp
 preview: /blog/crux/rojo.webp
 previewAlt: "Terminal: crux refuses to open the proposal because a check failed"
 coverAlt: "crux banner: a graph of nodes between folders and circuit lines on a dark background"
-xUrl: https://x.com/jorgecarrera_es/status/2104217717246955637
 tags:
   - AI agents
   - Crux
