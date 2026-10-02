@@ -210,9 +210,15 @@ hay mod, así que el hook sigue mostrando las tareas como texto.
 
 ## Conclusión
 
-Los hooks sirven para las reglas que tienen que cumplirse siempre y con
-cualquier agente. Los mods, para cambiar cómo se ve y se comporta Claude Code
-cuando trabajas en él.
+Los mods son, por ahora, una funcionalidad exclusiva de Claude Code. Codex y
+el resto de arneses no los cargan, y eso hay que tenerlo en cuenta al diseñar un
+framework o una metodología propia. Si una regla vive solo en un mod, deja de
+cumplirse en cuanto trabajas con otro agente.
+
+Por eso, en mi caso, los mods son una capa extra. Mejoran la experiencia cuando
+trabajo en Claude Code, pero nada depende de ellos ni bloquea a otros arneses.
+Las reglas siguen en hooks, para que la metodología funcione igual con
+cualquier agente.
 
 Espero que os haya resultado útil. Dediqué un tiempo a entender bien en qué se
 diferencian un hook y un mod, y me pareció interesante compartirlo con quien
