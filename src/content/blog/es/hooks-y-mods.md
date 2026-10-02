@@ -223,5 +223,4 @@ cualquier agente.
 
 Espero que os haya resultado útil. Dediqué un tiempo a entender bien en qué se
 diferencian un hook y un mod, y me pareció interesante compartirlo con quien
-esté trabajando con agentes. Si estás montando algo parecido, puedes
-escribirme en X: [@jorgecarrera_es](https://x.com/jorgecarrera_es).
+esté trabajando con agentes.
