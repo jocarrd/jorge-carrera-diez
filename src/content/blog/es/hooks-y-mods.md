@@ -6,7 +6,6 @@ cover: /blog/hooks-y-mods/portada.webp
 coverAlt: "Portada con el título «Hooks y mods en Claude Code» y dos columnas: el hook como programa aparte que responde y termina, y el mod como código dentro de Claude Code"
 preview: /blog/hooks-y-mods/panel.webp
 previewAlt: "Panel de tareas abiertas dibujado por un mod de crux encima del prompt de Claude Code, con cuatro tareas de ejemplo numeradas"
-xUrl: https://x.com/jorgecarrera_es/status/2105969638324555960
 tags:
   - Agentes de IA
   - Hooks
