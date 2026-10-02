@@ -6,7 +6,6 @@ cover: /blog/agentes/portada.webp
 coverAlt: "Portada con el título «Cómo conseguir que un agente de IA siga tu metodología» y el bucle del agente, con el paso PreToolUse resaltado entre la petición del modelo y la ejecución"
 preview: /blog/agentes/guardia.webp
 previewAlt: "Tabla con dos comandos que pidió el agente, pkill y gh pr create, bloqueados por un hook PreToolUse con la alternativa que propone"
-xUrl: https://x.com/jorgecarrera_es/status/2105037123397025961
 tags:
   - Agentes de IA
   - Hooks
