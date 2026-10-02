@@ -81,15 +81,43 @@ Con esos tres argumentos, la función puede hacer tres cosas con el evento:
 
 ## La diferencia en un caso real
 
-Para verlo con un caso real, he escrito la misma regla con las dos
-herramientas. El ejemplo es un comando destructivo, `git reset --hard`, que
-descarta todos los cambios que no se han guardado en un commit. Si el agente lo
-lanza por error, ese trabajo se pierde.
+En [crux](/blog/crux), al abrir una sesión, el agente me recuerda las tareas que
+dejé a medias en cualquier ordenador. Lo he montado de las dos formas, y es
+el caso donde mejor se ve la diferencia.
+
+**Con un hook.** Al empezar la sesión, Claude Code arranca un script de crux. El
+script consulta las tareas abiertas, devuelve la lista como texto y termina. Ese
+texto aparece en la conversación y ahí se queda. Si quiero retomar una tarea,
+tengo que escribir su nombre, y en el móvil cada línea salía con un prefijo
+delante. El hook no puede hacer más: cuando el texto aparece en pantalla, el
+programa que lo generó ya no existe. No sabe si lo he leído ni puede reaccionar
+a lo que pulse.
+
+**Con un mod.** El mod se carga con la sesión y se queda dentro del arnés. Por
+eso puede hacer lo que el hook no podía:
+
+- Dibuja las tareas como un panel encima del prompt, cada una con un número.
+- Si pulso el número de una tarea, envía por mí «Retomemos la tarea…» y el
+  agente se pone con ella.
+- Recuerda que el panel ya ha cumplido: en cuanto escribo el primer mensaje, lo
+  oculta.
+
+![Panel de tareas abiertas encima del prompt de Claude Code, con cuatro tareas de ejemplo numeradas y el siguiente paso de cada una](/blog/hooks-y-mods/panel.webp "Las tareas son de ejemplo.")
+
+Los datos son los mismos en los dos casos, porque el mod llama al mismo programa
+de crux que usaba el hook. Lo que cambia es lo que se puede hacer con ellos
+desde dentro del arnés.
+
+## Para bloquear un comando, los dos sirven
+
+Donde no hay diferencia práctica es en las reglas que solo dicen sí o no. Por
+ejemplo, impedir que el agente ejecute `git reset --hard`, que descarta todos
+los cambios que no se han guardado en un commit.
 
 **Con un hook.** Claude Code arranca este script cada vez que el agente va a
-usar `Bash` y le pasa el comando en un JSON. Si el comando es un
-`git reset --hard`, el script termina con el código 2, que significa
-«bloquéalo», y el mensaje que escribe es lo que leerá el agente:
+usar `Bash` y le pasa el comando en un JSON. Si es un `git reset --hard`, el
+script termina con el código 2, que significa «bloquéalo», y el mensaje que
+escribe es lo que leerá el agente:
 
 ```bash
 #!/usr/bin/env bash
@@ -100,10 +128,10 @@ if [[ $cmd == *"git reset --hard"* ]]; then
 fi
 ```
 
-**Con un mod.** La regla es una función que Claude Code ya tiene cargada.
-Recibe la llamada a `Bash` como un evento. Si es un `git reset --hard`,
-responde ella misma con el motivo y el comando no llega a ejecutarse. Si es
-cualquier otro, llama a `next(e)` y todo sigue igual:
+**Con un mod.** La regla es una función que recibe la llamada a `Bash` como un
+evento. Si es un `git reset --hard`, responde ella misma con el motivo y el
+comando no llega a ejecutarse. Si es cualquier otro, llama a `next(e)` y todo
+sigue igual:
 
 ```js
 export function register(on) {
@@ -118,13 +146,8 @@ export function register(on) {
 
 Probé el mod en una sesión real. Le pedí al agente que lanzara el comando en un
 repositorio con un cambio sin guardar. El comando no se ejecutó, el agente
-recibió el motivo y el cambio siguió en el fichero.
-
-El resultado es el mismo con los dos. Lo que cambia es cómo se llega a él. El
-hook está fuera del arnés: Claude Code lo arranca para cada comando y desaparece
-al responder. El mod vive dentro del arnés y se queda ahí toda la sesión. Para
-bloquear un comando eso no importa, pero sí importa para todo lo demás que un
-mod puede hacer.
+recibió el motivo y el cambio siguió en el fichero. Con el hook el resultado es
+el mismo.
 
 ## Qué puede hacer un mod que un hook no puede
 
@@ -172,21 +195,18 @@ lista los eventos que maneja y lo que pide hacer sin llegar a ejecutarlo.
 
 ## Cómo los uso en crux
 
-En [crux](/blog/crux) los dos conviven, cada uno para una cosa.
+En crux los dos conviven, cada uno para una cosa.
 
 **Las reglas siguen en hooks.** No trabajar en la rama principal, no lanzar
 comandos destructivos y avisar al final de cada turno si queda documentación por
-actualizar.
-Son scripts de shell, y el mismo instalador los registra en Claude Code y en
-Codex, así que la metodología se cumple con cualquiera de los dos agentes.
+actualizar. Son scripts de shell, y el mismo instalador los registra en Claude
+Code y en Codex, así que la metodología se cumple con cualquiera de los dos
+agentes.
 
-**El mod se encarga de lo que se ve.** Al abrir una sesión, crux recuerda las
-tareas que dejé a medias en cualquier ordenador. Con un hook, eso llegaba como
-un bloque de texto en la conversación, y en el móvil cada línea salía con un
-prefijo delante. Ahora un mod lo dibuja como un panel encima del prompt, y
-pulsando el número de una tarea la retomo.
-
-![Panel de tareas abiertas encima del prompt de Claude Code, con cuatro tareas de ejemplo numeradas y el siguiente paso de cada una](/blog/hooks-y-mods/panel.webp "Las tareas son de ejemplo.")
+**El mod se encarga de lo que se ve**, como el panel de tareas. El hook del
+recordatorio sigue instalado: al abrir la sesión, el mod se ejecuta antes que él
+y le indica que no escriba el texto, porque ya lo dibuja el panel. En Codex no
+hay mod, así que el hook sigue mostrando las tareas como texto.
 
 ## Conclusión
 
