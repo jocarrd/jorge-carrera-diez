@@ -15,8 +15,8 @@ tags:
 ---
 
 > [!SUMMARY] En resumen
-> - Un hook es un programa aparte: Claude Code lo arranca en un momento concreto, le pasa lo ocurrido y espera su respuesta.
-> - Un mod es código que Claude Code carga dentro de sí mismo y que se queda activo toda la sesión.
+> - Un hook es externo al arnés de Claude Code: un programa aparte que Claude Code arranca en un momento concreto y que termina al responder.
+> - Un mod vive dentro del arnés: código que Claude Code carga en su propio proceso y que se queda activo toda la sesión.
 > - Por estar dentro, un mod puede dibujar en la interfaz, recordar cosas entre eventos y cambiar casi cualquier cosa que pase por la sesión.
 
 Hace unos días expliqué cómo uso los hooks para que mi agente
@@ -28,8 +28,10 @@ los mods sí.
 Al leer la documentación vi que la primera parte de esa frase hay que matizarla.
 Un hook ya puede cambiar los argumentos de un comando antes de que se ejecute, y
 también el resultado de una herramienta antes de que lo lea el modelo. La
-diferencia de verdad está en **dónde se ejecuta cada uno**, y de ahí sale todo
-lo demás.
+diferencia de verdad está en **dónde se ejecuta cada uno** respecto al arnés, el
+programa que rodea al modelo y ejecuta lo que este pide. Un hook es **externo
+al arnés** de Claude Code y un mod **vive dentro** de él. De ahí sale todo lo
+demás.
 
 ## Qué es un hook
 
@@ -77,14 +79,17 @@ Con esos tres argumentos, la función puede hacer tres cosas con el evento:
 - **Responderlo ella misma** sin llamar a `next`. Así se bloquea un comando, y
   ni el resto de mods ni Claude Code llegan a verlo.
 
-## La misma regla, escrita de las dos formas
+## La diferencia en un caso real
 
-Para comparar, la misma regla con cada herramienta: que el agente no pueda
-ejecutar `git reset --hard`, que descarta los cambios sin commitear.
+Para verlo con un caso real, he escrito la misma regla con las dos
+herramientas. El ejemplo es un comando destructivo, `git reset --hard`, que
+descarta todos los cambios que no se han guardado en un commit. Si el agente lo
+lanza por error, ese trabajo se pierde.
 
-Con un hook, es un script que lee el JSON de la entrada estándar. Termina con
-el código 2 para bloquear, y lo que escribe en la salida de error es el motivo
-que leerá el modelo:
+**Con un hook.** Claude Code arranca este script cada vez que el agente va a
+usar `Bash` y le pasa el comando en un JSON. Si el comando es un
+`git reset --hard`, el script termina con el código 2, que significa
+«bloquéalo», y el mensaje que escribe es lo que leerá el agente:
 
 ```bash
 #!/usr/bin/env bash
@@ -95,7 +100,10 @@ if [[ $cmd == *"git reset --hard"* ]]; then
 fi
 ```
 
-Con un mod, es una función registrada para el evento `tool.call`:
+**Con un mod.** La regla es una función que Claude Code ya tiene cargada.
+Recibe la llamada a `Bash` como un evento. Si es un `git reset --hard`,
+responde ella misma con el motivo y el comando no llega a ejecutarse. Si es
+cualquier otro, llama a `next(e)` y todo sigue igual:
 
 ```js
 export function register(on) {
@@ -108,11 +116,15 @@ export function register(on) {
 }
 ```
 
-Probé el mod en una sesión real con un repositorio que tenía un cambio sin
-guardar. El comando no se ejecutó, el agente recibió el motivo y el cambio
-siguió en el fichero. Para una regla así, los dos sirven igual. Las diferencias
-aparecen cuando se necesita algo que un programa que solo vive mientras responde
-no puede dar.
+Probé el mod en una sesión real. Le pedí al agente que lanzara el comando en un
+repositorio con un cambio sin guardar. El comando no se ejecutó, el agente
+recibió el motivo y el cambio siguió en el fichero.
+
+El resultado es el mismo con los dos. Lo que cambia es cómo se llega a él. El
+hook está fuera del arnés: Claude Code lo arranca para cada comando y desaparece
+al responder. El mod vive dentro del arnés y se queda ahí toda la sesión. Para
+bloquear un comando eso no importa, pero sí importa para todo lo demás que un
+mod puede hacer.
 
 ## Qué puede hacer un mod que un hook no puede
 
@@ -136,7 +148,7 @@ muestran lo que dibuja.
 
 | | Hook | Mod |
 | --- | --- | --- |
-| Dónde se ejecuta | En un proceso aparte | Dentro de Claude Code |
+| Dónde se ejecuta | Fuera del arnés, en un proceso aparte | Dentro del arnés de Claude Code |
 | Cuánto dura | Lo que tarda en responder | Toda la sesión |
 | Qué puede cambiar | Si una acción sigue, los argumentos y el resultado de una herramienta, y el contexto del modelo | Llamadas a herramientas, prompts, peticiones al modelo, comandos e interfaz |
 | Lenguaje | Cualquiera | JavaScript o TypeScript |
@@ -176,11 +188,13 @@ pulsando el número de una tarea la retomo.
 
 ![Panel de tareas abiertas encima del prompt de Claude Code, con cuatro tareas de ejemplo numeradas y el siguiente paso de cada una](/blog/hooks-y-mods/panel.webp "Las tareas son de ejemplo.")
 
-El mismo mod pone en el pie del prompt la tarea de esa sesión y en qué punto
-está. Cuando el mod está activo, el hook deja de escribir el texto pero el
-modelo sigue recibiendo el contexto. En Codex, o donde el mod no dibuja, todo
-sigue llegando como texto.
+## Conclusión
 
-Si un día otro agente ofrece algo parecido a los mods, se añade a su adaptador
-de crux y las reglas no cambian. Si estás montando algo parecido, puedes
+Los hooks sirven para las reglas que tienen que cumplirse siempre y con
+cualquier agente. Los mods, para cambiar cómo se ve y se comporta Claude Code
+cuando trabajas en él.
+
+Espero que os haya resultado útil. Dediqué un tiempo a entender bien en qué se
+diferencian un hook y un mod, y me pareció interesante compartirlo con quien
+esté trabajando con agentes. Si estás montando algo parecido, puedes
 escribirme en X: [@jorgecarrera_es](https://x.com/jorgecarrera_es).
