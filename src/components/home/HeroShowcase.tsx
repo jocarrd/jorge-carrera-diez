@@ -7,15 +7,15 @@ export function HeroShowcase() {
       <Container>
         <div className="hero-show-stage">
           <BrowserFrame
-            label="elitequality.org"
+            label="www.valuecreation.org"
             tone="dark"
             className="hero-show-browser"
           >
             <Image
-              src="/images/eqx-index.webp"
+              src="/images/vcr/vcr-scorecard.webp"
               alt=""
-              width={1600}
-              height={1000}
+              width={2000}
+              height={1408}
               sizes="(max-width: 1023px) 92vw, 900px"
               className="block h-auto w-full"
             />

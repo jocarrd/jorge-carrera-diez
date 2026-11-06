@@ -1,6 +1,20 @@
 import Image from "next/image";
 
-const LOGOS = [
+type Logo = {
+  src: string;
+  alt: string;
+  w: number;
+  h: number;
+  alto: string;
+};
+
+type Stop = Logo & {
+  from: number;
+  to: number | null;
+  clients?: Logo[];
+};
+
+const LOGOS: Stop[] = [
   {
     src: "/images/logos/lumyna.png",
     alt: "Lumyna",
@@ -20,15 +34,6 @@ const LOGOS = [
     to: null,
   },
   {
-    src: "/images/logos/vidacaixa.png",
-    alt: "VidaCaixa",
-    w: 140,
-    h: 120,
-    alto: "h-10",
-    from: 2025,
-    to: 2026,
-  },
-  {
     src: "/images/logos/capgemini.png",
     alt: "Capgemini",
     w: 537,
@@ -36,15 +41,22 @@ const LOGOS = [
     alto: "h-6",
     from: 2025,
     to: 2026,
-  },
-  {
-    src: "/images/logos/openbank.png",
-    alt: "Openbank",
-    w: 539,
-    h: 120,
-    alto: "h-7",
-    from: 2025,
-    to: 2025,
+    clients: [
+      {
+        src: "/images/logos/vidacaixa.png",
+        alt: "VidaCaixa",
+        w: 140,
+        h: 120,
+        alto: "h-6",
+      },
+      {
+        src: "/images/logos/openbank.png",
+        alt: "Openbank",
+        w: 539,
+        h: 120,
+        alto: "h-4",
+      },
+    ],
   },
   {
     src: "/images/logos/minsait.png",
@@ -54,10 +66,27 @@ const LOGOS = [
     alto: "h-9",
     from: 2023,
     to: 2025,
+    clients: [
+      {
+        src: "/images/logos/inditex.png",
+        alt: "Inditex",
+        w: 579,
+        h: 120,
+        alto: "h-2.5",
+      },
+    ],
   },
 ];
 
-export function ClientsStrip({ label, now }: { label: string; now: string }) {
+export function ClientsStrip({
+  label,
+  now,
+  clientsLabel,
+}: {
+  label: string;
+  now: string;
+  clientsLabel: string;
+}) {
   return (
     <section className="clients-ed">
       <div className="contenedor mx-auto w-full max-w-[1120px] px-[22px] sm:px-8">
@@ -93,6 +122,24 @@ export function ClientsStrip({ label, now }: { label: string; now: string }) {
                 </div>
                 <span aria-hidden className="career-dot" />
                 <span className="career-range">{range}</span>
+                {logo.clients ? (
+                  <ul
+                    className="career-clients"
+                    aria-label={`${clientsLabel} ${logo.clients.map((client) => client.alt).join(", ")}`}
+                  >
+                    {logo.clients.map((client) => (
+                      <li key={client.alt}>
+                        <Image
+                          src={client.src}
+                          alt={client.alt}
+                          width={client.w}
+                          height={client.h}
+                          className={`client-logo ${client.alto} w-auto`}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             );
           })}

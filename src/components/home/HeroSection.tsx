@@ -75,6 +75,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
       <ClientsStrip
         label={copy.profile.clientsLabel}
         now={copy.profile.clientsNow}
+        clientsLabel={copy.profile.clientsOf}
       />
 
       <CapabilityCards locale={locale} />

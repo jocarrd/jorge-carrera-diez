@@ -31,6 +31,13 @@ export function CareerSpan({
   for (let a = Math.floor(desde / 12); a * 12 <= fin; a++) anios.push(a);
   const posicion = (valor: number) => ((fin - valor) / total) * 100;
 
+  const groups: ExperienceItem[][] = [];
+  for (const item of items) {
+    const last = groups[groups.length - 1];
+    if (last && last[0].company === item.company) last.push(item);
+    else groups.push([item]);
+  }
+
   return (
     <div className={`span ${className}`}>
       <div className="span-grid" aria-hidden>
@@ -48,21 +55,40 @@ export function CareerSpan({
       </div>
 
       <ol className="span-rows">
-        {items.map((item) => {
-          const ini = mes(item.start);
-          const acaba = item.end ? mes(item.end) : fin;
-          const enCurso = !item.end;
+        {groups.map((group) => {
+          const ini = Math.min(...group.map((item) => mes(item.start)));
+          const acaba = Math.max(
+            ...group.map((item) => (item.end ? mes(item.end) : fin)),
+          );
+          const enCurso = group.some((item) => !item.end);
           const izquierda = posicion(acaba);
           const ancho = Math.max(((acaba - ini) / total) * 100, 2.5);
-
           const alBorde = izquierda + ancho > 62;
+          const empresa = group[0].company.replace(/ \(.*\)$/, "");
+          const clientes = group
+            .map((item) => item.client?.split(",")[0])
+            .filter((client): client is string => Boolean(client) && client !== group[0].company);
 
           return (
-            <li key={`${item.company}-${item.start}`} className="span-row">
+            <li key={`${group[0].company}-${group[0].start}`} className="span-row">
               <span
                 className={`span-bar ${enCurso ? "is-live" : ""}`}
                 style={{ left: `${izquierda}%`, width: `${ancho}%` }}
-              />
+              >
+                {group.length > 1
+                  ? group.slice(1).map((item) => {
+                      const corte = item.end ? mes(item.end) : fin;
+                      return (
+                        <span
+                          key={item.start}
+                          aria-hidden
+                          className="span-cut"
+                          style={{ left: `${((acaba - corte) / (acaba - ini)) * 100}%` }}
+                        />
+                      );
+                    })
+                  : null}
+              </span>
               <span
                 className="span-name"
                 style={
@@ -71,7 +97,10 @@ export function CareerSpan({
                     : { left: `calc(${izquierda + ancho}% + 0.625rem)` }
                 }
               >
-                {item.client ?? item.company}
+                {empresa}
+                {clientes.length ? (
+                  <span className="span-clients"> · {clientes.join(" · ")}</span>
+                ) : null}
               </span>
             </li>
           );
