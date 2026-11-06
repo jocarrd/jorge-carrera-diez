@@ -23,13 +23,20 @@ export function AboutSection({ locale }: { locale: Locale }) {
           <p className="about-photo-name">{site.name}</p>
         </div>
         <div>
-          <p className="sh-label">
-            {copy.sectionLabels.about}
-            <span aria-hidden className="sh-line" />
-          </p>
           <h2 className="about-statement">
             {copy.profile.aboutStatement.map((part) =>
-              part.strong ? (
+              part.href ? (
+                <strong key={part.text}>
+                  <a
+                    href={part.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about-link"
+                  >
+                    {part.text}
+                  </a>
+                </strong>
+              ) : part.strong ? (
                 <strong key={part.text}>{part.text}</strong>
               ) : (
                 <span key={part.text}>{part.text}</span>

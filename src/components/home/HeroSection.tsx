@@ -23,9 +23,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
           </div>
 
           <div className="hero-ed-stage" aria-hidden>
-            <p className="hero-ed-word hero-ed-word--back">
-              Product
-            </p>
+            <p className="hero-ed-word hero-ed-word--back">FDE</p>
             <Image
               src="/images/jorge-recorte.webp"
               alt=""
@@ -35,9 +33,10 @@ export function HeroSection({ locale }: { locale: Locale }) {
               sizes="(max-width: 639px) 78vw, 460px"
               className="hero-ed-photo rise rise-2"
             />
-            <p className="hero-ed-word hero-ed-word--front">
-              Engineer
-            </p>
+            <div className="hero-ed-front">
+              <p className="hero-ed-kicker">Forward Deployed</p>
+              <p className="hero-ed-word hero-ed-word--front">Engineer</p>
+            </div>
           </div>
 
           <div className="hero-ed-bottom rise rise-4">
@@ -73,7 +72,10 @@ export function HeroSection({ locale }: { locale: Locale }) {
 
       <HeroShowcase />
 
-      <ClientsStrip label={copy.profile.clientsLabel} />
+      <ClientsStrip
+        label={copy.profile.clientsLabel}
+        now={copy.profile.clientsNow}
+      />
 
       <CapabilityCards locale={locale} />
     </>

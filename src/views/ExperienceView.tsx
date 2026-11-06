@@ -41,7 +41,20 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                 <div className="xp-meta">
                   <CompanyMark logo={item.logo} />
                   <p className="xp-period">{item.period}</p>
-                  <p className="xp-context">{item.context}</p>
+                  <p className="xp-context">
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="xp-link"
+                      >
+                        {item.context}
+                      </a>
+                    ) : (
+                      item.context
+                    )}
+                  </p>
                 </div>
                 <h2 className="xp-title">
                   {item.headline ?? `${item.role} - ${item.company}`}

@@ -17,6 +17,7 @@ import type { Project } from "@/types/content";
 const caseRoutes: Record<string, RouteKey> = {
   snowy: "snowy",
   eqx: "eqx",
+  vcr: "vcr",
   lariojameteo: "lariojameteo",
 };
 
@@ -40,7 +41,7 @@ export function ProjectsPreview({ locale }: { locale: Locale }) {
 
         <RevealGroup
           delay={80}
-          className="mt-14 hidden gap-5 sm:grid sm:grid-cols-3"
+          className="mt-14 hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-4"
         >
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} locale={locale} />

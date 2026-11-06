@@ -12,6 +12,7 @@ import type { Locale } from "@/i18n/config";
 import { routePath } from "@/i18n/routes";
 
 const LOGOS: { match: string; src: string; w: number }[] = [
+  { match: "Lumyna", src: "/images/logos/lumyna.png", w: 634 },
   { match: "VidaCaixa", src: "/images/logos/vidacaixa.png", w: 140 },
   { match: "Openbank", src: "/images/logos/openbank.png", w: 539 },
   { match: "EQx", src: "/images/logos/eqx.png", w: 419 },

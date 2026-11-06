@@ -16,6 +16,7 @@ type FeaturedProjectsProps = {
 const caseRoutes: Record<string, RouteKey> = {
   snowy: "snowy",
   eqx: "eqx",
+  vcr: "vcr",
   lariojameteo: "lariojameteo",
 };
 

@@ -22,10 +22,6 @@ export function ContactCta({ locale }: { locale: Locale }) {
     <section id="contacto" className="cta-ed on-dark">
       <Container>
         <Reveal>
-          <p className="sh-label">
-            {copy.sectionLabels.contact}
-            <span aria-hidden className="sh-line" />
-          </p>
           <div className="cta-ed-grid">
             <div>
               <h2 className="cta-ed-title">

@@ -128,7 +128,7 @@ export function personJsonLd(locale: Locale) {
       addressRegion: "La Rioja",
       addressCountry: "ES",
     },
-    worksFor: [organizations.capgemini, organizations.eqx].map(
+    worksFor: [organizations.lumyna, organizations.eqx].map(
       (organization) => ({
         "@type": "Organization",
         name: organization.name,

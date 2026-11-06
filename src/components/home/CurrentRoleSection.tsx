@@ -1,5 +1,8 @@
-import { Reveal, RevealGroup, Section, SectionHeader } from "@/components/ui";
+import Image from "next/image";
+import type { CSSProperties } from "react";
+import { Reveal, Section, SectionHeader } from "@/components/ui";
 import { getCopy } from "@/content";
+import { site } from "@/content/site";
 import type { Locale } from "@/i18n/config";
 
 export function CurrentRoleSection({ locale }: { locale: Locale }) {
@@ -10,65 +13,56 @@ export function CurrentRoleSection({ locale }: { locale: Locale }) {
     <Section id="rol-actual" className="section-band">
       <Reveal>
         <SectionHeader
-          label={copy.sectionLabels.role}
           title={role.homeTitle}
           text={role.homeText}
+          accent="Lumyna"
+          accentHref={site.lumyna}
         />
       </Reveal>
 
-      <RevealGroup
-        delay={80}
-        className="mt-14 hidden gap-5 md:grid md:grid-cols-3"
-      >
-        {role.fronts.map((front) => (
-          <FrontCard key={front.label} front={front} />
-        ))}
-      </RevealGroup>
-
-      <Reveal delay={80} className="mt-10 md:hidden">
-        <ol className="card-ed divide-y divide-[var(--line)] overflow-hidden">
-          {role.fronts.map((front) => (
-            <li
-              key={front.label}
-              className="grid grid-cols-[1.25rem_1fr] gap-x-2 px-5 py-4"
-            >
+      <Reveal delay={80}>
+        <div
+          className="fde-loop"
+          style={{ "--stops": role.fronts.length } as CSSProperties}
+        >
+          <div aria-hidden className="fde-orbit">
+            <span className="fde-stars" />
+            <span className="fde-ring fde-ring--outer" />
+            <span className="fde-ring" />
+            <span className="fde-sweep" />
+            <span className="fde-sat" />
+            {role.fronts.map((front, index) => (
               <span
-                aria-hidden
-                className="mt-2 size-2 rounded-full bg-[var(--accent)]"
+                key={front.title}
+                className="fde-node"
+                style={{ "--n": index } as CSSProperties}
               />
-              <div>
-                <h3 className="text-[1.0625rem] font-semibold leading-[1.3] tracking-[-0.015em]">
-                  {front.title}
-                </h3>
-                <p className="mt-1 text-[15px] leading-[1.5] text-[var(--muted)]">
-                  {front.text}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
+            ))}
+            <span className="fde-core">
+              <Image
+                src="/images/logos/lumyna-mark.svg"
+                alt=""
+                width={64}
+                height={64}
+                className="fde-moon"
+              />
+            </span>
+          </div>
+          <ol className="fde-stops">
+            {role.fronts.map((front, index) => (
+              <li
+                key={front.title}
+                className="fde-stop"
+                style={{ "--n": index } as CSSProperties}
+              >
+                <span aria-hidden className="fde-dot" />
+                <h3 className="fde-title">{front.title}</h3>
+                <p className="fde-text">{front.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Reveal>
     </Section>
-  );
-}
-
-function FrontCard({
-  front,
-  className = "",
-}: {
-  front: { label: string; title: string; text: string };
-  className?: string;
-}) {
-  return (
-    <article className={`card-ed p-8 sm:p-9 ${className}`}>
-      <span
-        aria-hidden
-        className="block size-2.5 rounded-full bg-[var(--accent)]"
-      />
-      <h3 className="t-card mt-5">{front.title}</h3>
-      <p className="mt-3.5 text-[17px] leading-[1.55] text-[var(--muted)]">
-        {front.text}
-      </p>
-    </article>
   );
 }

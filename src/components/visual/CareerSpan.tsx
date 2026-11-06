@@ -17,15 +17,19 @@ export function CareerSpan({
   className = "",
 }: CareerSpanProps) {
   const ahora = new Date();
-  const fin = ahora.getFullYear() * 12 + ahora.getMonth();
   const inicios = items.map((item) => mes(item.start));
+  const fin = Math.max(
+    ahora.getFullYear() * 12 + ahora.getMonth(),
+    Math.max(...inicios) + 1,
+  );
   const desde = Math.min(...inicios);
   const total = fin - desde;
 
   if (total <= 0) return null;
 
   const anios: number[] = [];
-  for (let a = Math.ceil(desde / 12); a * 12 <= fin; a++) anios.push(a);
+  for (let a = Math.floor(desde / 12); a * 12 <= fin; a++) anios.push(a);
+  const posicion = (valor: number) => ((fin - valor) / total) * 100;
 
   return (
     <div className={`span ${className}`}>
@@ -34,7 +38,9 @@ export function CareerSpan({
           <span
             key={a}
             className="span-year"
-            style={{ left: `${((a * 12 - desde) / total) * 100}%` }}
+            style={{
+              left: `${Math.min(97, Math.max(3, posicion(Math.max(a * 12, desde) + (Math.min(a * 12 + 12, fin) - Math.max(a * 12, desde)) / 2)))}%`,
+            }}
           >
             {a}
           </span>
@@ -42,11 +48,11 @@ export function CareerSpan({
       </div>
 
       <ol className="span-rows">
-        {[...items].reverse().map((item) => {
+        {items.map((item) => {
           const ini = mes(item.start);
           const acaba = item.end ? mes(item.end) : fin;
           const enCurso = !item.end;
-          const izquierda = ((ini - desde) / total) * 100;
+          const izquierda = posicion(acaba);
           const ancho = Math.max(((acaba - ini) / total) * 100, 2.5);
 
           const alBorde = izquierda + ancho > 62;
