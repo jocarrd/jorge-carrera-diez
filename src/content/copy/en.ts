@@ -472,7 +472,7 @@ export const en: Copy = {
       context: "University of St. Gallen, Switzerland",
       headline: "Software engineer - EQx · VCr (Switzerland)",
       client: "Foundation for Value Creation",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       imageAlt:
         "Home page of the Elite Quality Index, the index the foundation publishes",
       period: "July 2026 - Present",
@@ -675,12 +675,12 @@ export const en: Copy = {
     },
     {
       slug: "eqx",
-      imageMobile: "/images/eqx-movil.webp",
+      imageMobile: "/images/eqx26/eqx-home-movil.webp",
       pitch: "The index ranking 151 countries by the quality of their elites.",
       name: "EQx",
       url: "https://elitequality.org/",
       label: "Client · Switzerland",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       description:
         "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and an assessment platform.",
       impact:
@@ -778,7 +778,7 @@ export const en: Copy = {
         "Professional experience of Jorge Carrera Diez as a software engineer, Forward Deployed Engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
       eyebrow: "Experience",
       heading:
-        "Software engineer with a track record in banking, insurance, retail and web product.",
+        "Software engineer, from enterprise consultancy to deploying alongside the client.",
       text: "The full track record, in order. Where I led the technical decisions, what I built at each place, and how I have been putting AI agents into flows that were already in production.",
       spanLegend: "Running right now",
     },
@@ -924,7 +924,7 @@ export const en: Copy = {
           name: "EQx",
           text: "The index that ranks 151 countries by the quality of their elites, for a Swiss foundation.",
           domain: "elitequality.org",
-          image: "/images/eqx-home.webp",
+          image: "/images/eqx26/eqx-home.webp",
           alt: "Elite Quality Index homepage with the world map",
           route: "eqx",
         },
@@ -1912,67 +1912,103 @@ export const en: Copy = {
       feedLabel: "RSS",
     },
     eqx: {
-      title: "EQx and VCr",
+      title: "Elite Quality Index",
       description:
-        "Jorge Carrera Diez builds the websites of the Elite Quality Index and the Value Creation Rating, and the platform where companies take their assessment, for the Foundation for Value Creation in St. Gallen, Switzerland.",
+        "Official website of the Elite Quality Index (EQx), the index by the Foundation for Value Creation and the University of St. Gallen that ranks 151 countries by the quality of their elites.",
       eyebrow: "Client · Switzerland",
-      heading:
-        "Websites and assessment platform for the Foundation for Value Creation",
-      lead: "The foundation, based in St. Gallen, publishes two indices: the Elite Quality Index (EQx), which scores 151 countries, and the Value Creation Rating (VCr), which scores companies. Since July 2026 I have been the project's developer, in charge of its three parts: the website of each index and the platform where companies take their assessment.",
+      heading: "Elite Quality Index: the website of the 151-country index",
+      lead: "The Elite Quality Index (EQx) asks which countries have elites that grow the pie and which ones only take a larger slice. It ranks 151 nations by the quality of their elites' business models, using 148 indicators.",
       detail:
-        "I work remotely and in English with the foundation's business and design teams. I gather what they ask for, write it down as requirements and take it to production.",
+        "It is an index by the Foundation for Value Creation, under the academic direction of the University of St. Gallen. It is published once a year and the 2026 edition is the seventh. The official website lets readers look up and compare its results.",
       ctaPrimary: "Visit elitequality.org",
-      ctaSecondary: "Let's talk",
-      facts: [
-        { label: "Client", value: "Foundation for Value Creation" },
-        { label: "Role", value: "Development and requirements" },
-        { label: "Since", value: "July 2026" },
-        { label: "Scope", value: "Two websites and an assessment platform" },
-      ],
+      ctaSecondary: "Official reports",
+      facts: [],
       imageAlts: {
         home: "elitequality.org home page with the Elite Quality Index world map",
+        homeMobile: "elitequality.org home page on a phone",
       },
-      products: {
-        title: "What I built",
+      tools: {
+        title: "From report to website",
+        text: "Four tools bring the index's results into an interactive format.",
         items: [
           {
-            name: "elitequality.org",
-            tech: "Astro · React · D3",
-            text: "The public website of the Elite Quality Index, with the rankings table of 151 countries, the interactive world map and the country comparison tool.",
-            href: "https://elitequality.org/",
+            key: "map",
+            name: "Interactive maps",
+            text: "They plot on the world map the EQx score and those of its two sub-indexes, power and value.",
+            alt: "EQx2026 world map on elitequality.org",
           },
           {
-            name: "VCr website",
-            tech: "Astro · React",
-            text: "The website of the Value Creation Rating, the foundation's company rating. It includes the directory of rated companies, a page for each one and a comparison tool with the official VCr2026 data.",
+            key: "rankings",
+            name: "Country rankings",
+            text: "It ranks the 151 countries by their EQx2026 score, with region filters and columns for the power and value sub-indexes.",
+            alt: "EQx2026 rankings table with the top ten countries",
           },
           {
-            name: "self-VCr",
-            tech: "Next.js · Prisma · PostgreSQL",
-            text: "The platform where companies complete their self-assessment: they answer the questionnaire, obtain their rating and download the official PDF report.",
+            key: "comparison",
+            name: "Comparison tool",
+            text: "It compares up to five countries on the EQx and its power and value sub-indexes.",
+            alt: "EQx country comparison tool with five countries selected",
+          },
+          {
+            key: "pvq",
+            name: "Power vs value",
+            text: "It places each country by its power and value sub-indexes, and shows where the two disagree.",
+            alt: "Scatter plot of countries by their power and value sub-indexes",
           },
         ],
       },
-      partners: {
-        title: "With the University of St. Gallen",
-        text: "The Foundation for Value Creation is a non-profit foundation based in St. Gallen, chaired by Dr. Tomas Casas. The Elite Quality Index, edited by Dr. Tomas Casas and Professor Guido Cozzi, is produced under the academic leadership of three institutes of the University of St. Gallen and with an international network of academic partners, among them the Faculty of Economics of the University of Porto. It is grounded in the elite theory of economic development and assesses, through 148 indicators, whether each country's elites create value or extract it. The 2026 edition is the seventh.",
+      products: {
+        title: "Other products for the foundation",
+        items: [
+          {
+            name: "Value Creation Rating website",
+            tech: "Astro · React",
+            text: "The official website of the foundation's firm rating, with each firm's scorecard, a comparison tool and the sustainable value matrix.",
+            href: "/en/projects/vcr",
+          },
+          {
+            name: "self-VCr",
+            tech: "Next.js · PostgreSQL",
+            text: "The platform where firms run their self-assessment: they answer the questionnaire, get their rating and download the official PDF report.",
+          },
+        ],
+      },
+      credits: {
+        title: "A cross-disciplinary project",
+        items: [
+          {
+            role: "Index direction",
+            who: "Tomas Casas i Klett and Guido Cozzi",
+            note: "Index Director and Chief Economist",
+          },
+          {
+            role: "Coordination, art direction and visual identity",
+            who: "MUTU Design",
+            note: "User experience and information design",
+            href: site.mutuDesign,
+          },
+          {
+            role: "Engineering and system",
+            who: "Jorge Carrera Diez",
+            note: "Architecture, data, tools and deployment",
+          },
+        ],
+      },
+      sources: {
+        title: "Sources",
+        items: [
+          { label: "elitequality.org, the official website", href: site.eqx },
+          { label: "Official EQx reports", href: site.eqxReports },
+          { label: "The index at the University of St. Gallen", href: site.eqxIndex },
+          { label: "Value Creation Rating", href: site.vcr },
+        ],
       },
       stack: {
-        eyebrow: "Stack",
-        title: "Stack",
+        title: "Technologies",
         groups: [
-          {
-            label: "EQx and VCr websites",
-            items: ["Astro", "React", "Tailwind", "TypeScript", "D3"],
-          },
-          {
-            label: "self-VCr platform",
-            items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
-          },
-          {
-            label: "Delivery",
-            items: ["GitHub Actions", "Vitest", "Playwright"],
-          },
+          { label: "Websites", items: ["Astro", "React", "TypeScript", "D3"] },
+          { label: "self-VCr", items: ["Next.js", "PostgreSQL"] },
+          { label: "Quality and delivery", items: ["Vitest", "Playwright", "GitHub Actions"] },
         ],
       },
     },

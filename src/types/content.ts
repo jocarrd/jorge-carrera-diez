@@ -598,7 +598,15 @@ export type Copy = {
         detail: string;
         ctaPrimary: string;
         ctaSecondary: string;
-        imageAlts: { home: string };
+        imageAlts: { home: string; homeMobile: string };
+        tools: SectionCopy & {
+          items: {
+            key: "map" | "rankings" | "comparison" | "pvq";
+            name: string;
+            text: string;
+            alt: string;
+          }[];
+        };
         products: SectionCopy & {
           items: {
             name: string;
@@ -607,7 +615,10 @@ export type Copy = {
             href?: string;
           }[];
         };
-        partners: { title: string; text: string };
+        credits: SectionCopy & {
+          items: { role: string; who: string; note: string; href?: string }[];
+        };
+        sources: SectionCopy & { items: { label: string; href: string }[] };
       };
     vcr: PageMeta &
       CaseIntro & {

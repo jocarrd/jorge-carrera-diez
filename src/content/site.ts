@@ -19,6 +19,7 @@ export const site = {
 
   snowyDomain: "snowy.es",
   eqx: "https://elitequality.org/",
+  eqxReports: "https://elitequality.org/downloads/",
   lariojameteo: "https://lariojameteo.es",
   lumyna: "https://lumyna.es",
   vcr: "https://www.valuecreation.org",

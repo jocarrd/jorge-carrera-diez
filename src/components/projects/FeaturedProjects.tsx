@@ -65,8 +65,8 @@ function FeatureCard({
         }`}
       >
         <div className="proj-feature-body">
-          <p className="proj-card-kicker">{project.label}</p>
-          <Heading className="t-block mt-3">{project.name}</Heading>
+          <Heading className="t-block">{project.name}</Heading>
+          <p className="proj-card-kicker mt-2">{project.label}</p>
           <p className="proj-feature-text mt-4 max-w-[46ch] text-[17px] leading-[1.5]">
             {project.description}
           </p>

@@ -87,8 +87,8 @@ function ProjectCard({
       className={`proj-card proj-card--${project.slug} group`}
       aria-label={`${project.name}: ${project.pitch ?? ""}`}
     >
-      <p className="proj-card-kicker">{project.label}</p>
       <h3 className="proj-card-title">{project.name}</h3>
+      <p className="proj-card-kicker">{project.label}</p>
       <p className="proj-card-pitch">{project.pitch}</p>
 
       <div className="proj-card-device">

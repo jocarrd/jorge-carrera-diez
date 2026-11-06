@@ -16,7 +16,7 @@ type Tool = {
   mobile: string | null;
 };
 
-export function VcrTools({ tools, label }: { tools: Tool[]; label: string }) {
+export function ProductTour({ tools, label }: { tools: Tool[]; label: string }) {
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [active, setActive] = useState(0);
 

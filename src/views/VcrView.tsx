@@ -9,7 +9,7 @@ import {
   TiltOnScroll,
 } from "@/components/ui";
 import { BookToWeb } from "@/components/projects/BookToWeb";
-import { VcrTools } from "@/components/projects/VcrTools";
+import { ProductTour } from "@/components/projects/ProductTour";
 import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
@@ -99,7 +99,7 @@ export function VcrView({ locale }: { locale: Locale }) {
             }}
           />
         </div>
-        <VcrTools
+        <ProductTour
           label={domainOf(site.vcr)}
           tools={copy.tools.items.map((tool) => ({
             ...tool,
