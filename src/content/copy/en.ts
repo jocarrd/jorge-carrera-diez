@@ -4,19 +4,19 @@ import type { Copy } from "@/types/content";
 export const en: Copy = {
   meta: {
     siteTitle:
-      "Tech Lead and full stack engineer: software architecture, generative AI and SEO",
+      "Forward Deployed Engineer and full stack engineer: software architecture, generative AI and SEO",
     description:
-      "Computer engineer from the University of La Rioja. I lead architecture and new capabilities on enterprise projects, work with EQx (Elite Quality Index, University of St. Gallen) and develop Snowy, a weather platform in production on Next.js, NestJS, Redis, MySQL and Docker.",
+      "Computer engineer from the University of La Rioja. I am a Forward Deployed Engineer at Lumyna, work with EQx (Elite Quality Index, University of St. Gallen) and develop Snowy, a weather platform in production on Next.js, NestJS, Redis, MySQL and Docker.",
     location: "Logroño, La Rioja, Spain",
-    jobTitle: "Tech Lead and full stack engineer",
+    jobTitle: "Forward Deployed Engineer and full stack engineer",
     universityLabel: "University of La Rioja",
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
-    ogEyebrow: "Tech Lead · Full stack",
+    ogEyebrow: "Forward Deployed Engineer · Full stack",
     ogTagline:
       "Software architecture, full stack development and generative AI in production systems.",
     ogStats: [
-      ["now", "VidaCaixa · EQx"],
+      ["now", "Lumyna · EQx"],
       ["in production", "Snowy"],
       ["where", "Remote · Spain"],
     ],
@@ -53,42 +53,58 @@ export const en: Copy = {
   },
   profile: {
     headline:
-      "Software engineer. I am Tech Lead on VidaCaixa projects, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
-    positioning: "Tech Lead · Full stack · Software architecture",
+      "Software engineer. I am a Forward Deployed Engineer at Lumyna, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
+    positioning: "Forward Deployed Engineer · Full stack · Software architecture",
     positioningLong:
-      "Tech Lead and full stack engineer, from architecture to production.",
+      "Forward Deployed Engineer and full stack engineer, from architecture to production.",
 
     aboutTitle: "Chartered computer engineer, based in Logroño, Spain.",
     aboutStatement: [
       { text: "Software engineer based in Logroño. " },
-      { text: "Tech Lead in banking and insurance", strong: true },
+      { text: "Forward Deployed Engineer at ", strong: true },
+      { text: "Lumyna", strong: true, href: site.lumyna },
       { text: ", " },
       { text: "technical lead of the Elite Quality Index", strong: true },
       { text: " in Switzerland and, on the side, " },
       { text: "I build Snowy", strong: true },
       { text: "." },
     ],
-    tagline: ["Tech Lead and", "full stack", "engineer."],
+    tagline: ["Software engineer,", "from the client", "to production."],
     taglineSub:
-      "Engineer on banking and insurance projects in Spain, on a Swiss academic index and on a weather platform people use every day.",
-    availability: "Available for projects and teams",
+      "I build and deploy software for Lumyna's clients, run the technical side of a Swiss academic index and of a weather platform people use every day.",
+    availability: "Available for projects",
     clientsLabel: "Where I have worked",
+    clientsNow: "now",
     capabilities: [
       {
+        layer: "Client",
+        title: "From the client to production",
+        text: "I work with the client to understand their process, turn it into technical requirements and stay with the rollout until their team uses it.",
+        stack: ["Requirements", "Rollout", "Support"],
+      },
+      {
+        layer: "Architecture",
         title: "Software architecture",
-        text: "How a system splits into frontend, backend, data and deployment, and which decision belongs to each layer.",
+        text: "I design systems where every part has its own responsibility and fits with the rest: the frontend presents, the backend decides, data lives in one place and deployment repeats without surprises. What is expensive to change later, I think through first.",
+        stack: ["Frontend", "Backend", "Data", "Deployment"],
       },
       {
+        layer: "Application",
         title: "Full stack development",
-        text: "React, Next.js and TypeScript on the frontend; Node, NestJS and Java with Spring Boot on the backend.",
+        text: "I do not work with a single stack: I use the one the project calls for. Where I have the most experience is React, Next.js and TypeScript on the frontend, and Node, NestJS and Java with Spring Boot on the backend.",
+        stack: ["React", "Next.js", "TypeScript", "NestJS", "Spring Boot"],
       },
       {
+        layer: "AI",
         title: "Generative AI and agents",
-        text: "Agents and models integrated into real systems, with their limits, cost and maintenance.",
+        text: "Agents and models built into real systems, with their limits, their cost and their upkeep.",
+        stack: ["Agents", "Models", "Evaluation"],
       },
       {
+        layer: "Infrastructure",
         title: "Data and infrastructure",
         text: "Databases, caching, deployments and the server everything runs on.",
+        stack: ["MySQL", "Redis", "Docker", "VPS"],
       },
     ],
     focus: [
@@ -112,7 +128,11 @@ export const en: Copy = {
         external: true,
       },
       {
-        text: ". Over five years in the industry: currently Tech Lead in banking and insurance, and freelance engineer for the Swiss foundation that publishes the ",
+        text: ". Over five years in the industry: currently Forward Deployed Engineer at ",
+      },
+      { text: "Lumyna", href: site.lumyna, external: true },
+      {
+        text: ", and freelance engineer for the Swiss foundation that publishes the ",
       },
       { text: "Elite Quality Index", href: site.eqxIndex, external: true },
       {
@@ -120,7 +140,7 @@ export const en: Copy = {
       },
     ],
     visualStats: [
-      ["Current", "Tech Lead"],
+      ["Current", "Forward Deployed Engineer"],
       ["Product", "Snowy"],
       ["Based in", "Logroño"],
       ["Stack", "Full stack"],
@@ -168,63 +188,57 @@ export const en: Copy = {
     },
   },
   currentRole: {
-    homeTitle: "Tech Lead in banking and insurance.",
+    homeTitle: "Forward Deployed Engineer at Lumyna.",
     homeText:
-      "I own the frontend architecture of a product with security, traceability and long-term maintenance requirements. The job is deciding how it gets built, and making sure the team can sustain it.",
+      "Since November 2026 I build and deploy software for Lumyna's clients and for its own products. I work with the people who will use it, from the first requirement until it is in production.",
     fronts: [
       {
-        label: "01",
-        title: "Architecture and standards",
-        text: "How the frontend is structured, what ships in each release and which conventions hold across teams.",
+        label: "client",
+        title: "With the client",
+        text: "I learn how they work, turn their process into technical requirements and stay with the rollout.",
       },
       {
-        label: "02",
-        title: "Reviews and team",
-        text: "Code reviews, technical mentoring and alignment with backend, QA and business.",
+        label: "delivery",
+        title: "Build and deploy",
+        text: "I build and deploy the solutions, both for clients and for Lumyna's own products.",
       },
       {
-        label: "03",
-        title: "Generative AI in production",
-        text: "Use cases and agents inside enterprise flows, with their limits, their cost and their maintenance.",
+        label: "production",
+        title: "After delivery",
+        text: "I maintain, improve and document what is already in production.",
       },
     ],
     eyebrow: "Current role",
-    title:
-      "Tech Lead at VidaCaixa and engineering partner to EQx in Switzerland.",
-    text: "My current work combines technical judgement, coordination across teams and shipping new capabilities — both in an enterprise environment and on an international product where I own the technical handover end to end.",
+    title: "Forward Deployed Engineer at Lumyna and freelance engineer for EQx in Switzerland.",
+    text: "I build and deploy software for clients and in-house products at Lumyna, and alongside that I lead the technical handover of a Swiss foundation's digital products.",
     paragraphs: [
       [
         {
-          text: "At VidaCaixa I work as Tech Lead in a banking and insurance environment, taking frontend architecture decisions, coordinating technically, reviewing code and aligning with backend, QA and business.",
+          text: "At Lumyna I work as a Forward Deployed Engineer: I build and deploy software solutions for clients and for in-house products, work with clients to turn their processes into technical requirements and stay with the rollout.",
         },
       ],
       [
         {
-          text: "I am also involved in integrating generative AI capabilities, landing use cases, agents and tooling inside enterprise flows with security, traceability and maintenance requirements.",
-        },
-      ],
-      [
-        {
-          text: "In parallel I collaborate as a freelance engineer with the Swiss foundation that publishes the ",
+          text: "Alongside that I freelance for the Swiss foundation that publishes the ",
         },
         { text: "Elite Quality Index", href: site.eqxIndex, external: true },
         {
-          text: ", a political-economy index under the academic leadership of the University of St. Gallen. I took over its digital products and work directly with the index directors and designers to decide what ships and when.",
+          text: ", a political economy index led academically by the University of St. Gallen. I took over the technical side of its digital products and work directly with leadership and design to decide what ships and when.",
         },
       ],
     ],
     signals: [
       {
-        title: "Technical leadership",
-        text: "Architecture, standards, code reviews, technical coordination and supporting the team.",
+        title: "With the client",
+        text: "Processes turned into technical requirements and a rollout followed through.",
       },
       {
-        title: "AI integration",
-        text: "Defining and embedding generative AI capabilities and agents into enterprise flows at Caixa.",
+        title: "Build and deploy",
+        text: "Solutions for clients and for in-house products, end to end.",
       },
       {
-        title: "Critical environment",
-        text: "Work on a banking and insurance product with business dependencies, QA, backend and cross-functional teams.",
+        title: "Production",
+        text: "Upkeep and improvement of what is already in production.",
       },
     ],
   },
@@ -399,8 +413,8 @@ export const en: Copy = {
   },
   projectsPreview: {
     eyebrow: "Products",
-    title: "Snowy, EQx and La Rioja Meteo.",
-    text: "Three projects in production where I handle the architecture, the infrastructure and the development.",
+    title: "Snowy, EQx, VCr and La Rioja Meteo.",
+    text: "Four projects in production where I handle the architecture, the infrastructure and the development.",
   },
   sectionLabels: {
     work: "What I do",
@@ -426,23 +440,46 @@ export const en: Copy = {
   },
   cvTimeline: {
     label: "Track record",
-    note: "Enterprise consultancy and international product at once: banking and insurance on one side, a Swiss foundation and a platform in production on the other.",
+    note: "Client-facing engineering and international product at once: Lumyna on one side, a Swiss foundation and a platform in production on the other.",
   },
   experience: [
+    {
+      company: "Lumyna",
+      role: "Forward Deployed Engineer",
+      context: "Lumyna",
+      headline: "Forward Deployed Engineer - Lumyna",
+      url: site.lumyna,
+      period: "November 2026 - Present",
+      start: "2026-11",
+      end: null,
+      summary:
+        "Building and deploying software solutions for clients and for Lumyna's own products, working with each client from the first requirement to the rollout.",
+      highlights: [
+        "Building and deploying solutions for clients and for in-house products.",
+        "Working with clients to understand their processes and turn them into technical requirements.",
+        "Staying with the rollout until the client's team uses the solution.",
+        "Maintaining, improving and documenting the solutions in production.",
+      ],
+      logo: {
+        src: "/images/logos/lumyna.png",
+        alt: "Lumyna",
+        fallback: "Lumyna",
+      },
+    },
     {
       company: "EQx",
       role: "Freelance software engineer",
       context: "University of St. Gallen, Switzerland",
-      headline: "Software engineer - EQx (Switzerland)",
+      headline: "Software engineer - EQx · VCr (Switzerland)",
       client: "Foundation for Value Creation",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       imageAlt:
         "Home page of the Elite Quality Index, the index the foundation publishes",
       period: "July 2026 - Present",
       start: "2026-07",
       end: null,
       summary:
-        "Technical handover of the digital products of the Foundation for Value Creation: the public site of the Elite Quality Index and the private console behind it. The index measures across 151 countries whether elites create value or extract it, under the academic direction of the University of St. Gallen.",
+        "Technical handover of the digital products of the Foundation for Value Creation: the public sites of the Elite Quality Index and the Value Creation Rating. The index measures across 151 countries whether elites create value or extract it, under the academic direction of the University of St. Gallen.",
       highlights: [
         "Handover from the previous developer with no interruption to the running product.",
         "End-to-end ownership of the user experience across both products.",
@@ -462,9 +499,9 @@ export const en: Copy = {
       context: "Capgemini",
       headline: "Tech Lead - VidaCaixa",
       client: "VidaCaixa",
-      period: "October 2025 - Present",
+      period: "October 2025 - November 2026",
       start: "2025-10",
-      end: null,
+      end: "2026-11",
       summary:
         "Frontend technical leadership on a strategic project in the insurance sector, defining architecture, development standards, best practices and the integration of generative AI into enterprise flows.",
       highlights: [
@@ -638,16 +675,16 @@ export const en: Copy = {
     },
     {
       slug: "eqx",
-      imageMobile: "/images/eqx-movil.webp",
+      imageMobile: "/images/eqx26/eqx-home-movil.webp",
       pitch: "The index ranking 151 countries by the quality of their elites.",
       name: "EQx",
       url: "https://elitequality.org/",
       label: "Client · Switzerland",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       description:
-        "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and an assessment platform.",
+        "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites.",
       impact:
-        "Redesign of elitequality.org on a design system, a new Value Creation Rating website and maintenance of the platform where companies take their assessment.",
+        "Redesign of elitequality.org on a design system and a new Value Creation Rating website.",
       metrics: [
         { value: "151", label: "countries ranked" },
         { value: "148", label: "indicators" },
@@ -662,6 +699,26 @@ export const en: Copy = {
         "D3",
         "GitHub Actions",
       ],
+    },
+    {
+      slug: "vcr",
+      imageMobile: "/images/vcr/vcr-home-movil.webp",
+      pitch: "The official website of the rating that scores 1,000 listed firms.",
+      name: "VCr",
+      url: "https://www.valuecreation.org",
+      label: "Academic website · Switzerland",
+      image: "/images/vcr/vcr-home.webp",
+      description:
+        "Value Creation Rating: the rating by the Foundation for Value Creation and the University of St. Gallen of whether the 1,000 largest listed firms create more value than they extract.",
+      impact:
+        "Official website of the rating: firm scorecards, a comparison tool and the Sustainable Value Matrix, built from the academic report. Design by MUTU Design; engineering and system by Jorge.",
+      metrics: [
+        { value: "1,000", label: "listed firms" },
+        { value: "10", label: "sectors" },
+        { value: "123", label: "metrics" },
+        { value: "9", label: "rating classes" },
+      ],
+      stack: ["Astro", "React", "TypeScript", "SVG", "Azure"],
     },
     {
       slug: "lariojameteo",
@@ -706,11 +763,11 @@ export const en: Copy = {
     projects: {
       title: "Projects",
       description:
-        "Projects by Jorge Carrera Diez: Snowy, the EQx Elite Quality Index and LaRiojaMeteo. Product, architecture, data, SEO and infrastructure.",
+        "Projects by Jorge Carrera Diez: Snowy, the EQx Elite Quality Index, the Value Creation Rating website and LaRiojaMeteo. Product, architecture, data, SEO and infrastructure.",
       eyebrow: "Projects",
       heading:
-        "A platform in production, an international client and a portal with an audience.",
-      text: "Snowy is where I test architecture decisions for real. EQx is how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
+        "A platform in production, two websites for an international client and a portal with an audience.",
+      text: "Snowy is where I test architecture decisions for real. EQx and the VCr are how I work with a client. LaRiojaMeteo is audience, content and SEO sustained over years.",
       sideTitle: "Side projects",
       sideText:
         "Tools I build on my own, to solve a problem of mine or to test an idea.",
@@ -718,10 +775,10 @@ export const en: Copy = {
     experience: {
       title: "Experience",
       description:
-        "Professional experience of Jorge Carrera Diez as a software engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
+        "Professional experience of Jorge Carrera Diez as a software engineer, Forward Deployed Engineer, Tech Lead, Lead Software Engineer and Full Stack Developer, and how he applies generative AI and agents inside enterprise workflows.",
       eyebrow: "Experience",
       heading:
-        "Software engineer with a track record in banking, insurance, retail and web product.",
+        "Software engineer, from enterprise consultancy to deploying alongside the client.",
       text: "The full track record, in order. Where I led the technical decisions, what I built at each place, and how I have been putting AI agents into flows that were already in production.",
       spanLegend: "Running right now",
     },
@@ -739,7 +796,7 @@ export const en: Copy = {
       educationTitle: "Education",
       languagesTitle: "Languages",
       downloadCta: "Download as PDF",
-      printHint: "Two pages, updated September 2026.",
+      printHint: "Two pages, updated November 2026.",
     },
     contact: {
       title: "Let's work together",
@@ -867,7 +924,7 @@ export const en: Copy = {
           name: "EQx",
           text: "The index that ranks 151 countries by the quality of their elites, for a Swiss foundation.",
           domain: "elitequality.org",
-          image: "/images/eqx-home.webp",
+          image: "/images/eqx26/eqx-home.webp",
           alt: "Elite Quality Index homepage with the world map",
           route: "eqx",
         },
@@ -1855,67 +1912,191 @@ export const en: Copy = {
       feedLabel: "RSS",
     },
     eqx: {
-      title: "EQx and VCr",
+      title: "Elite Quality Index",
       description:
-        "Jorge Carrera Diez builds the websites of the Elite Quality Index and the Value Creation Rating, and the platform where companies take their assessment, for the Foundation for Value Creation in St. Gallen, Switzerland.",
+        "Official website of the Elite Quality Index (EQx), the index by the Foundation for Value Creation and the University of St. Gallen that ranks 151 countries by the quality of their elites.",
       eyebrow: "Client · Switzerland",
-      heading:
-        "Websites and assessment platform for the Foundation for Value Creation",
-      lead: "The foundation, based in St. Gallen, publishes two indices: the Elite Quality Index (EQx), which scores 151 countries, and the Value Creation Rating (VCr), which scores companies. Since July 2026 I have been the project's developer, in charge of its three parts: the website of each index and the platform where companies take their assessment.",
+      heading: "Elite Quality Index: the website of the 151-country index",
+      lead: "The Elite Quality Index (EQx) asks which countries have elites that grow the pie and which ones only take a larger slice. It ranks 151 nations by the quality of their elites' business models, using 148 indicators.",
       detail:
-        "I work remotely and in English with the foundation's business and design teams. I gather what they ask for, write it down as requirements and take it to production.",
+        "It is an index by the Foundation for Value Creation, under the academic direction of the University of St. Gallen. It is published once a year and the 2026 edition is the seventh. The official website lets readers look up and compare its results.",
       ctaPrimary: "Visit elitequality.org",
-      ctaSecondary: "Let's talk",
-      facts: [
-        { label: "Client", value: "Foundation for Value Creation" },
-        { label: "Role", value: "Development and requirements" },
-        { label: "Since", value: "July 2026" },
-        { label: "Scope", value: "Two websites and an assessment platform" },
-      ],
+      ctaSecondary: "Official reports",
+      facts: [],
       imageAlts: {
         home: "elitequality.org home page with the Elite Quality Index world map",
+        homeMobile: "elitequality.org home page on a phone",
       },
-      products: {
-        title: "What I built",
+      tools: {
+        title: "From report to website",
+        text: "Four tools bring the index's results into an interactive format.",
         items: [
           {
-            name: "elitequality.org",
-            tech: "Astro · React · D3",
-            text: "The public website of the Elite Quality Index, with the rankings table of 151 countries, the interactive world map and the country comparison tool.",
-            href: "https://elitequality.org/",
+            key: "map",
+            name: "Interactive maps",
+            text: "They plot on the world map the EQx score and those of its two sub-indexes, power and value.",
+            alt: "EQx2026 world map on elitequality.org",
           },
           {
-            name: "VCr website",
-            tech: "Astro · React",
-            text: "The website of the Value Creation Rating, the foundation's company rating. It includes the directory of rated companies, a page for each one and a comparison tool with the official VCr2026 data.",
+            key: "rankings",
+            name: "Country rankings",
+            text: "It ranks the 151 countries by their EQx2026 score, with region filters and columns for the power and value sub-indexes.",
+            alt: "EQx2026 rankings table with the top ten countries",
           },
           {
-            name: "self-VCr",
-            tech: "Next.js · Prisma · PostgreSQL",
-            text: "The platform where companies complete their self-assessment: they answer the questionnaire, obtain their rating and download the official PDF report.",
+            key: "comparison",
+            name: "Comparison tool",
+            text: "It compares up to five countries on the EQx and its power and value sub-indexes.",
+            alt: "EQx country comparison tool with five countries selected",
+          },
+          {
+            key: "pvq",
+            name: "Power vs value",
+            text: "It places each country by its power and value sub-indexes, and shows where the two disagree.",
+            alt: "Scatter plot of countries by their power and value sub-indexes",
           },
         ],
       },
-      partners: {
-        title: "With the University of St. Gallen",
-        text: "The Foundation for Value Creation is a non-profit foundation based in St. Gallen, chaired by Dr. Tomas Casas. The Elite Quality Index, edited by Dr. Tomas Casas and Professor Guido Cozzi, is produced under the academic leadership of three institutes of the University of St. Gallen and with an international network of academic partners, among them the Faculty of Economics of the University of Porto. It is grounded in the elite theory of economic development and assesses, through 148 indicators, whether each country's elites create value or extract it. The 2026 edition is the seventh.",
+      products: {
+        title: "Other products for the foundation",
+        items: [
+          {
+            name: "Value Creation Rating website",
+            tech: "Astro · React",
+            text: "The official website of the foundation's firm rating, with each firm's scorecard, a comparison tool and the sustainable value matrix.",
+            href: "/en/projects/vcr",
+          },
+          {
+            name: "self-VCr",
+            hidden: true,
+            tech: "Next.js · PostgreSQL",
+            text: "The platform where firms run their self-assessment: they answer the questionnaire, get their rating and download the official PDF report.",
+          },
+        ],
+      },
+      credits: {
+        title: "A cross-disciplinary project",
+        items: [
+          {
+            role: "Index direction",
+            who: "Tomas Casas i Klett and Guido Cozzi",
+            note: "Index Director and Chief Economist",
+          },
+          {
+            role: "Coordination, art direction and visual identity",
+            who: "MUTU Design",
+            note: "User experience and information design",
+            href: site.mutuDesign,
+          },
+          {
+            role: "Engineering and system",
+            who: "Jorge Carrera Diez",
+            note: "Architecture, data, tools and deployment",
+          },
+        ],
+      },
+      sources: {
+        title: "Sources",
+        items: [
+          { label: "elitequality.org, the official website", href: site.eqx },
+          { label: "Official EQx reports", href: site.eqxReports },
+          { label: "The index at the University of St. Gallen", href: site.eqxIndex },
+          { label: "Value Creation Rating", href: site.vcr },
+        ],
       },
       stack: {
-        eyebrow: "Stack",
-        title: "Stack",
+        title: "Technologies",
         groups: [
+          { label: "Websites", items: ["Astro", "React", "TypeScript", "D3"] },
+          { label: "Quality and delivery", items: ["Vitest", "Playwright", "GitHub Actions"] },
+        ],
+      },
+    },
+    vcr: {
+      title: "Value Creation Rating",
+      description:
+        "Official website of the Value Creation Rating (VCr), the rating by the Foundation for Value Creation and the University of St. Gallen that assesses the world's 1,000 largest listed firms.",
+      eyebrow: "Client · Switzerland",
+      heading: "Value Creation Rating: from academic study to website",
+      lead: "The Value Creation Rating (VCr) measures whether a firm creates more value than it extracts. The 2026 edition assesses the world's 1,000 largest listed firms, weighing their value creation and inclusive transfers to stakeholders against the extractive transfers they take from them.",
+      detail:
+        "It is a study by the Foundation for Value Creation and the University of St. Gallen. The report is published once a year, in the autumn, and the 2026 edition is the third. The official website lets readers look up and compare its results.",
+      ctaPrimary: "Visit valuecreation.org",
+      ctaSecondary: "Official reports",
+      facts: [],
+      imageAlts: {
+        home: "valuecreation.org home page with the rating's question and its headline figures",
+        homeMobile: "valuecreation.org home page on a phone",
+      },
+      compare: {
+        book: "VCr2026 report, page 312",
+        bookAlt: "RTX Corporation's scorecard in the printed VCr2026 report",
+        web: "valuecreation.org",
+        webAlt: "RTX Corporation's scorecard on valuecreation.org",
+        handle: "Slide to compare the report's scorecard with the website's",
+      },
+      tools: {
+        title: "From report to website",
+        text: "Three tools bring the report's results into an interactive format.",
+        items: [
           {
-            label: "EQx and VCr websites",
-            items: ["Astro", "React", "Tailwind", "TypeScript", "D3"],
+            key: "scorecard",
+            name: "Firm scorecards",
+            text: "Each firm has its own scorecard. It assigns one of the rating's nine classes, from V1 to Z2, on a scale comparable to credit ratings, and benchmarks the firm's VCr against its sector and country baselines.",
+            alt: "Rtx Corporation's scorecard on valuecreation.org, class V4 and a VCr of 1.04",
+            mobileAlt: "The same scorecard on a phone",
           },
           {
-            label: "self-VCr platform",
-            items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+            key: "comparison",
+            name: "Comparison tool",
+            text: "It compares the VCr and VCp of up to eight firms.",
+            alt: "valuecreation.org comparison tool with two firms and their indicators",
           },
           {
-            label: "Delivery",
-            items: ["GitHub Actions", "Vitest", "Playwright"],
+            key: "matrix",
+            name: "Sustainable Value Matrix",
+            text: "It places up to three firms in one of four quadrants, according to how their business model combines value creation and profitability.",
+            alt: "Sustainable value matrix with two firms in different quadrants",
+            mobileAlt: "The matrix on a phone",
           },
+        ],
+      },
+      credits: {
+        title: "A cross-disciplinary project",
+        items: [
+          {
+            role: "Methodology",
+            who: "Tomas Casas i Klett and Martin Nerlinger",
+            note: "Co-directors of the rating",
+          },
+          {
+            role: "Coordination, art direction and visual identity",
+            who: "MUTU Design",
+            note: "User experience and information design",
+            href: site.mutuDesign,
+          },
+          {
+            role: "Engineering and system",
+            who: "Jorge Carrera Diez",
+            note: "Architecture, data, tools and deployment",
+          },
+        ],
+      },
+      sources: {
+        title: "Sources",
+        items: [
+          { label: "valuecreation.org, the official website", href: site.vcr },
+          { label: "Official VCr reports", href: site.vcrReports },
+          { label: "VCr2026 report on SSRN", href: site.vcr2026Report },
+          { label: "University of St. Gallen", href: site.unisg },
+          { label: "Elite Quality Index", href: site.eqx },
+        ],
+      },
+      stack: {
+        title: "Technologies",
+        groups: [
+          { label: "Website", items: ["Astro", "React", "TypeScript", "SVG"] },
+          { label: "Quality and delivery", items: ["Vitest", "Playwright", "Azure"] },
         ],
       },
     },

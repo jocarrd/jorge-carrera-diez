@@ -4,19 +4,19 @@ import type { Copy } from "@/types/content";
 export const es: Copy = {
   meta: {
     siteTitle:
-      "Tech Lead e ingeniero full stack: arquitectura de software, IA generativa y SEO",
+      "Forward Deployed Engineer e ingeniero full stack: arquitectura de software, IA generativa y SEO",
     description:
-      "Ingeniero Informático por la Universidad de La Rioja. Lidero arquitectura y nuevas capacidades en proyectos enterprise, colaboro con EQx (Elite Quality Index, Universidad de St. Gallen) y desarrollo Snowy, una plataforma meteorológica en producción con Next.js, NestJS, Redis, MySQL y Docker.",
+      "Ingeniero Informático por la Universidad de La Rioja. Soy Forward Deployed Engineer en Lumyna, colaboro con EQx (Elite Quality Index, Universidad de St. Gallen) y desarrollo Snowy, una plataforma meteorológica en producción con Next.js, NestJS, Redis, MySQL y Docker.",
     location: "Logroño, La Rioja, España",
-    jobTitle: "Tech Lead e ingeniero full stack",
+    jobTitle: "Forward Deployed Engineer e ingeniero full stack",
     universityLabel: site.university,
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
-    ogEyebrow: "Tech Lead · Full stack",
+    ogEyebrow: "Forward Deployed Engineer · Full stack",
     ogTagline:
       "Arquitectura de software, desarrollo full stack e IA generativa en sistemas en producción.",
     ogStats: [
-      ["ahora", "VidaCaixa · EQx"],
+      ["ahora", "Lumyna · EQx"],
       ["en producción", "Snowy"],
       ["dónde", "Remoto · España"],
     ],
@@ -53,15 +53,16 @@ export const es: Copy = {
   },
   profile: {
     headline:
-      "Ingeniero de software. Soy Tech Lead en proyectos de VidaCaixa, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
-    positioning: "Tech Lead · Full stack · Arquitectura de software",
+      "Ingeniero de software. Soy Forward Deployed Engineer en Lumyna, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
+    positioning: "Forward Deployed Engineer · Full stack · Arquitectura de software",
     positioningLong:
-      "Tech Lead e ingeniero full stack, de la arquitectura a producción.",
+      "Forward Deployed Engineer e ingeniero full stack, de la arquitectura a producción.",
 
     aboutTitle: "Ingeniero informático colegiado, desde Logroño.",
     aboutStatement: [
       { text: "Ingeniero de software en Logroño. " },
-      { text: "Tech Lead en banca y seguros", strong: true },
+      { text: "Forward Deployed Engineer en ", strong: true },
+      { text: "Lumyna", strong: true, href: site.lumyna },
       { text: ", " },
       { text: "relevo técnico del Elite Quality Index", strong: true },
       { text: " en Suiza y, en paralelo, " },
@@ -69,28 +70,43 @@ export const es: Copy = {
       { text: "." },
     ],
 
-    tagline: ["Tech Lead e", "ingeniero", "full stack."],
+    tagline: ["Ingeniero de software,", "del cliente", "a producción."],
     taglineSub:
-      "Ingeniero en proyectos de banca y seguros en España, en un índice académico suizo y en una plataforma meteorológica que usa gente cada día.",
+      "Desarrollo y despliego software para los clientes de Lumyna, llevo la parte técnica de un índice académico suizo y de una plataforma meteorológica que usa gente cada día.",
 
-    availability: "Disponible para proyectos y equipos",
+    availability: "Disponible para proyectos",
     clientsLabel: "Dónde he trabajado",
+    clientsNow: "ahora",
     capabilities: [
       {
+        layer: "Cliente",
+        title: "Del cliente a producción",
+        text: "Trabajo con el cliente para entender su proceso, lo convierto en requisitos técnicos y acompaño la implantación hasta que su equipo lo usa.",
+        stack: ["Requisitos", "Implantación", "Soporte"],
+      },
+      {
+        layer: "Arquitectura",
         title: "Arquitectura de software",
-        text: "Cómo se reparte un sistema en frontend, backend, datos y despliegue, y qué decisión va en cada capa.",
+        text: "Diseño sistemas en los que cada parte tiene su responsabilidad y encaja con el resto: el frontend presenta, el backend decide, los datos viven en un solo sitio y el despliegue se repite sin sorpresas. Lo que luego cuesta cambiar, lo pienso antes.",
+        stack: ["Frontend", "Backend", "Datos", "Despliegue"],
       },
       {
+        layer: "Aplicación",
         title: "Desarrollo full stack",
-        text: "React, Next.js y TypeScript en el frontend; Node, NestJS y Java con Spring Boot en el backend.",
+        text: "No trabajo con un stack único: uso el que pide el proyecto. Donde más experiencia tengo es en React, Next.js y TypeScript en el frontend, y en Node, NestJS y Java con Spring Boot en el backend.",
+        stack: ["React", "Next.js", "TypeScript", "NestJS", "Spring Boot"],
       },
       {
+        layer: "IA",
         title: "IA generativa y agentes",
         text: "Agentes y modelos integrados en sistemas reales, con sus límites, su coste y su mantenimiento.",
+        stack: ["Agentes", "Modelos", "Evaluación"],
       },
       {
+        layer: "Infraestructura",
         title: "Datos e infraestructura",
         text: "Bases de datos, caché, despliegues y el servidor donde corre todo.",
+        stack: ["MySQL", "Redis", "Docker", "VPS"],
       },
     ],
     focus: [
@@ -106,7 +122,11 @@ export const es: Copy = {
       { text: " y colegiado en el " },
       { text: site.college, href: site.collegeUrl, external: true },
       {
-        text: ". Más de cinco años en el sector: ahora como Tech Lead en banca y seguros, y como freelance para la fundación suiza que publica el ",
+        text: ". Más de cinco años en el sector: ahora como Forward Deployed Engineer en ",
+      },
+      { text: "Lumyna", href: site.lumyna, external: true },
+      {
+        text: ", y como freelance para la fundación suiza que publica el ",
       },
       { text: "Elite Quality Index", href: site.eqxIndex, external: true },
       {
@@ -114,7 +134,7 @@ export const es: Copy = {
       },
     ],
     visualStats: [
-      ["Actual", "Tech Lead"],
+      ["Actual", "Forward Deployed Engineer"],
       ["Producto", "Snowy"],
       ["Base", "Logroño"],
       ["Stack", "Full stack"],
@@ -163,38 +183,33 @@ export const es: Copy = {
     },
   },
   currentRole: {
-    homeTitle: "Tech Lead en banca y seguros.",
+    homeTitle: "Forward Deployed Engineer en Lumyna.",
     homeText:
-      "Llevo la arquitectura frontend de un producto de banca y seguros que tiene que pasar auditorías y mantenerse durante años. Decido cómo se construye para que el equipo pueda sostenerlo.",
+      "Desde noviembre de 2026 desarrollo y despliego software para los clientes de Lumyna y para sus productos propios. Trabajo con quien lo va a usar, desde el primer requisito hasta que está en producción.",
     fronts: [
       {
-        label: "01",
-        title: "Arquitectura y estándares",
-        text: "Cómo se estructura el frontend, qué entra en cada entrega y qué convenciones se mantienen entre equipos.",
+        label: "cliente",
+        title: "Con el cliente",
+        text: "Entiendo cómo trabaja, convierto su proceso en requisitos técnicos y acompaño la implantación.",
       },
       {
-        label: "02",
-        title: "Revisiones y equipo",
-        text: "Revisiones de código, acompañamiento técnico y alineamiento con backend, QA y negocio.",
+        label: "entrega",
+        title: "Desarrollo y despliegue",
+        text: "Construyo y despliego las soluciones, tanto para clientes como para los productos propios de Lumyna.",
       },
       {
-        label: "03",
-        title: "IA generativa en producción",
-        text: "Casos de uso y agentes dentro de flujos enterprise, con sus límites, su coste y su mantenimiento.",
+        label: "producción",
+        title: "Después de entregar",
+        text: "Mantengo, mejoro y documento lo que ya está en producción.",
       },
     ],
     eyebrow: "Rol actual",
-    title: "Tech Lead en VidaCaixa y colaborador técnico de EQx en Suiza.",
-    text: "Mi trabajo actual combina criterio técnico, coordinación con equipos y aterrizaje de nuevas capacidades, tanto en un entorno enterprise como en un producto internacional donde llevo el relevo técnico completo.",
+    title: "Forward Deployed Engineer en Lumyna e ingeniero freelance de EQx en Suiza.",
+    text: "Desarrollo y despliego software para clientes y producto propio en Lumyna, y en paralelo llevo el relevo técnico de los productos digitales de una fundación suiza.",
     paragraphs: [
       [
         {
-          text: "En VidaCaixa trabajo como Tech Lead en un entorno financiero/asegurador, participando en decisiones de arquitectura frontend, coordinación técnica, revisiones de código y alineamiento con backend, QA y negocio.",
-        },
-      ],
-      [
-        {
-          text: "También estoy involucrado en la integración de capacidades de IA generativa, aterrizando casos de uso, agentes y herramientas dentro de flujos enterprise con requisitos de seguridad, trazabilidad y mantenimiento.",
+          text: "En Lumyna trabajo como Forward Deployed Engineer: desarrollo y despliego soluciones de software para clientes y para productos propios, trabajo con los clientes para convertir sus procesos en requisitos técnicos y acompaño la implantación.",
         },
       ],
       [
@@ -209,16 +224,16 @@ export const es: Copy = {
     ],
     signals: [
       {
-        title: "Liderazgo técnico",
-        text: "Arquitectura, estándares, code reviews, coordinación técnica y acompañamiento del equipo.",
+        title: "Con el cliente",
+        text: "Procesos convertidos en requisitos técnicos e implantación acompañada.",
       },
       {
-        title: "Integración de IA",
-        text: "Definición e incorporación de capacidades de IA generativa y agentes en flujos enterprise de Caixa.",
+        title: "Desarrollo y despliegue",
+        text: "Soluciones para clientes y para producto propio, de principio a fin.",
       },
       {
-        title: "Entorno crítico",
-        text: "Trabajo sobre producto financiero/asegurador con dependencias de negocio, QA, backend y equipos transversales.",
+        title: "Producción",
+        text: "Mantenimiento y mejora de lo que ya está en producción.",
       },
     ],
   },
@@ -397,8 +412,8 @@ export const es: Copy = {
   },
   projectsPreview: {
     eyebrow: "Productos",
-    title: "Snowy, EQx y La Rioja Meteo.",
-    text: "Tres proyectos en producción en los que llevo la arquitectura, la infraestructura y el desarrollo.",
+    title: "Snowy, EQx, VCr y La Rioja Meteo.",
+    text: "Cuatro proyectos en producción en los que llevo la arquitectura, la infraestructura y el desarrollo.",
   },
   sectionLabels: {
     work: "Qué hago",
@@ -424,23 +439,46 @@ export const es: Copy = {
   },
   cvTimeline: {
     label: "Trayectoria",
-    note: "Consultoría enterprise y producto internacional a la vez: banca y seguros por un lado, una fundación suiza y una plataforma en producción por otro.",
+    note: "Ingeniería junto al cliente y producto internacional a la vez: Lumyna por un lado, una fundación suiza y una plataforma en producción por otro.",
   },
   experience: [
+    {
+      company: "Lumyna",
+      role: "Forward Deployed Engineer",
+      context: "Lumyna",
+      headline: "Forward Deployed Engineer - Lumyna",
+      url: site.lumyna,
+      period: "Noviembre 2026 - Actualidad",
+      start: "2026-11",
+      end: null,
+      summary:
+        "Desarrollo y despliegue de soluciones de software para clientes y para los productos propios de Lumyna, trabajando con cada cliente desde el primer requisito hasta la implantación.",
+      highlights: [
+        "Desarrollo y despliegue de soluciones para clientes y para producto propio.",
+        "Trabajo con los clientes para entender sus procesos y convertirlos en requisitos técnicos.",
+        "Acompañamiento de la implantación hasta que el equipo del cliente usa la solución.",
+        "Mantenimiento, mejora y documentación de las soluciones en producción.",
+      ],
+      logo: {
+        src: "/images/logos/lumyna.png",
+        alt: "Lumyna",
+        fallback: "Lumyna",
+      },
+    },
     {
       company: "EQx",
       role: "Ingeniero de software freelance",
       context: "Universidad de St. Gallen, Suiza",
-      headline: "Ingeniero de software - EQx (Suiza)",
+      headline: "Ingeniero de software - EQx · VCr (Suiza)",
       client: "Foundation for Value Creation",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       imageAlt:
         "Portada del Elite Quality Index, el índice que publica la fundación",
       period: "Julio 2026 - Actualidad",
       start: "2026-07",
       end: null,
       summary:
-        "Relevo técnico de los productos digitales de la Foundation for Value Creation: la web pública del Elite Quality Index y la consola privada que lo acompaña. El índice mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
+        "Relevo técnico de los productos digitales de la Foundation for Value Creation: las webs públicas del Elite Quality Index y del Value Creation Rating. El índice mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
       highlights: [
         "Traspaso del desarrollador anterior y continuidad del producto sin parar la operativa.",
         "Responsabilidad de punta a punta sobre la experiencia de usuario de ambos productos.",
@@ -460,9 +498,9 @@ export const es: Copy = {
       context: "Capgemini",
       headline: "Tech Lead - VidaCaixa",
       client: "VidaCaixa",
-      period: "Octubre 2025 - Actualidad",
+      period: "Octubre 2025 - Noviembre 2026",
       start: "2025-10",
-      end: null,
+      end: "2026-11",
       summary:
         "Liderazgo técnico frontend en un proyecto estratégico del sector asegurador, definiendo arquitectura, estándares de desarrollo, buenas prácticas e integración de Inteligencia Artificial generativa en flujos enterprise.",
       highlights: [
@@ -635,16 +673,16 @@ export const es: Copy = {
     },
     {
       slug: "eqx",
-      imageMobile: "/images/eqx-movil.webp",
+      imageMobile: "/images/eqx26/eqx-home-movil.webp",
       pitch: "El índice que ordena 151 países por la calidad de sus élites.",
       name: "EQx",
       url: "https://elitequality.org/",
       label: "Cliente · Suiza",
-      image: "/images/eqx-home.webp",
+      image: "/images/eqx26/eqx-home.webp",
       description:
-        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y panel de evaluación.",
+        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites.",
       impact:
-        "Rediseño de elitequality.org sobre un design system, nueva web del Value Creation Rating y mantenimiento del panel donde las empresas hacen su evaluación.",
+        "Rediseño de elitequality.org sobre un design system y nueva web del Value Creation Rating.",
       metrics: [
         { value: "151", label: "países en el ranking" },
         { value: "148", label: "indicadores" },
@@ -659,6 +697,26 @@ export const es: Copy = {
         "D3",
         "GitHub Actions",
       ],
+    },
+    {
+      slug: "vcr",
+      imageMobile: "/images/vcr/vcr-home-movil.webp",
+      pitch: "La web oficial del rating que evalúa a 1.000 empresas cotizadas.",
+      name: "VCr",
+      url: "https://www.valuecreation.org",
+      label: "Web académica · Suiza",
+      image: "/images/vcr/vcr-home.webp",
+      description:
+        "Value Creation Rating: el rating de la Foundation for Value Creation y la Universidad de St. Gallen que mide si las 1.000 mayores empresas cotizadas crean más valor del que extraen.",
+      impact:
+        "Web oficial del rating: fichas de empresa, comparador y matriz de valor sostenible a partir del informe académico. Diseño de MUTU Design; ingeniería y sistema de Jorge.",
+      metrics: [
+        { value: "1.000", label: "empresas cotizadas" },
+        { value: "10", label: "sectores" },
+        { value: "123", label: "métricas" },
+        { value: "9", label: "clases de rating" },
+      ],
+      stack: ["Astro", "React", "TypeScript", "SVG", "Azure"],
     },
     {
       slug: "lariojameteo",
@@ -703,11 +761,11 @@ export const es: Copy = {
     projects: {
       title: "Proyectos",
       description:
-        "Proyectos de Jorge Carrera Diez: Snowy, el Elite Quality Index de EQx y LaRiojaMeteo. Producto, arquitectura, datos, SEO e infraestructura.",
+        "Proyectos de Jorge Carrera Diez: Snowy, el Elite Quality Index de EQx, la web del Value Creation Rating y LaRiojaMeteo. Producto, arquitectura, datos, SEO e infraestructura.",
       eyebrow: "Proyectos",
       heading:
-        "Una plataforma en producción, un cliente internacional y un portal con audiencia.",
-      text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx es cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
+        "Una plataforma en producción, dos webs para un cliente internacional y un portal con audiencia.",
+      text: "Snowy es donde pruebo las decisiones de arquitectura en real. EQx y el VCr son cómo trabajo con un cliente. LaRiojaMeteo es audiencia, contenido y SEO sostenido en el tiempo.",
       sideTitle: "Proyectos personales",
       sideText:
         "Herramientas que construyo por mi cuenta, para resolver un problema propio o probar una idea.",
@@ -715,10 +773,10 @@ export const es: Copy = {
     experience: {
       title: "Experiencia",
       description:
-        "Experiencia profesional de Jorge Carrera Diez como ingeniero de software, Tech Lead, Lead Software Engineer y Full Stack Developer, y cómo aplica IA generativa y agentes dentro de flujos enterprise.",
+        "Experiencia profesional de Jorge Carrera Diez como ingeniero de software, Forward Deployed Engineer, Tech Lead, Lead Software Engineer y Full Stack Developer, y cómo aplica IA generativa y agentes dentro de flujos enterprise.",
       eyebrow: "Experiencia",
       heading:
-        "Ingeniero de software con trayectoria en banca, seguros, retail y producto web.",
+        "Ingeniero de software, de la consultoría enterprise al despliegue junto al cliente.",
       text: "El recorrido completo, por orden. Dónde he liderado las decisiones técnicas, qué he construido en cada sitio y cómo he ido metiendo agentes de IA en flujos que ya estaban en producción.",
       spanLegend: "En marcha ahora mismo",
     },
@@ -736,7 +794,7 @@ export const es: Copy = {
       educationTitle: "Formación",
       languagesTitle: "Idiomas",
       downloadCta: "Descargar en PDF",
-      printHint: "Dos páginas, actualizado a septiembre de 2026.",
+      printHint: "Dos páginas, actualizado a noviembre de 2026.",
     },
     contact: {
       title: "Trabajemos juntos",
@@ -866,7 +924,7 @@ export const es: Copy = {
           name: "EQx",
           text: "El índice que ordena 151 países por la calidad de sus élites, para una fundación suiza.",
           domain: "elitequality.org",
-          image: "/images/eqx-home.webp",
+          image: "/images/eqx26/eqx-home.webp",
           alt: "Portada del Elite Quality Index con el mapa mundial",
           route: "eqx",
         },
@@ -1866,67 +1924,191 @@ export const es: Copy = {
       feedLabel: "RSS",
     },
     eqx: {
-      title: "EQx y VCr",
+      title: "Elite Quality Index",
       description:
-        "Jorge Carrera Diez desarrolla las webs del Elite Quality Index y del Value Creation Rating, y el panel donde las empresas hacen su evaluación, para la Foundation for Value Creation de St. Gallen (Suiza).",
+        "Web oficial del Elite Quality Index (EQx), el índice de la Foundation for Value Creation y la Universidad de St. Gallen que clasifica 151 países según la calidad de sus élites.",
       eyebrow: "Cliente · Suiza",
-      heading:
-        "Las webs y el panel de evaluación de la Foundation for Value Creation",
-      lead: "La fundación, con sede en St. Gallen, publica dos índices: el Elite Quality Index (EQx), que puntúa a 151 países, y el Value Creation Rating (VCr), que puntúa a empresas. Desde julio de 2026 soy el desarrollador del proyecto y llevo sus tres piezas: la web de cada índice y el panel donde las empresas hacen su evaluación.",
+      heading: "Elite Quality Index: la web del índice de 151 países",
+      lead: "El Elite Quality Index (EQx) estudia en qué países las élites hacen crecer la economía y en cuáles se limitan a apropiarse de una parte mayor. Clasifica 151 países según la calidad de los modelos de negocio de sus élites, a partir de 148 indicadores.",
       detail:
-        "Trabajo en remoto y en inglés con los equipos de negocio y de diseño de la fundación. Recojo lo que piden, lo paso a requisitos por escrito y lo llevo hasta producción.",
+        "Es un índice de la Foundation for Value Creation, con dirección académica de la Universidad de St. Gallen. Se publica una vez al año y la edición de 2026 es la séptima. La web oficial permite consultar y comparar sus resultados.",
       ctaPrimary: "Ver elitequality.org",
-      ctaSecondary: "Hablemos",
-      facts: [
-        { label: "Cliente", value: "Foundation for Value Creation" },
-        { label: "Rol", value: "Desarrollo y requisitos" },
-        { label: "Desde", value: "Julio de 2026" },
-        { label: "Piezas", value: "Dos webs y un panel de evaluación" },
-      ],
+      ctaSecondary: "Informes oficiales",
+      facts: [],
       imageAlts: {
         home: "Portada de elitequality.org con el mapa mundial del Elite Quality Index",
+        homeMobile: "Portada de elitequality.org en un móvil",
       },
-      products: {
-        title: "Qué he hecho",
+      tools: {
+        title: "Del informe a la web",
+        text: "Cuatro herramientas trasladan los resultados del índice a un formato interactivo.",
         items: [
           {
-            name: "elitequality.org",
-            tech: "Astro · React · D3",
-            text: "La web pública del Elite Quality Index, con la tabla de rankings de 151 países, el mapa mundial interactivo y el comparador de países.",
-            href: "https://elitequality.org/",
+            key: "map",
+            name: "Mapas interactivos",
+            text: "Representan sobre el mapa mundial la puntuación del EQx y la de sus dos subíndices, poder y valor.",
+            alt: "Mapa mundial del EQx2026 en elitequality.org",
           },
           {
-            name: "Web del VCr",
+            key: "rankings",
+            name: "Clasificación de países",
+            text: "Ordena los 151 países por su puntuación en el EQx2026, con filtros por región y columnas para los subíndices de poder y valor.",
+            alt: "Tabla de clasificación del EQx2026 con los diez primeros países",
+          },
+          {
+            key: "comparison",
+            name: "Comparador",
+            text: "Compara hasta cinco países en el EQx y en sus subíndices de poder y valor.",
+            alt: "Comparador de países del EQx con cinco países seleccionados",
+          },
+          {
+            key: "pvq",
+            name: "Poder frente a valor",
+            text: "Sitúa cada país según sus subíndices de poder y de valor, y muestra dónde discrepan.",
+            alt: "Gráfico de dispersión de los países según sus subíndices de poder y valor",
+          },
+        ],
+      },
+      products: {
+        title: "Otros productos de la fundación",
+        items: [
+          {
+            name: "Web del Value Creation Rating",
             tech: "Astro · React",
-            text: "La web del Value Creation Rating, el rating de empresas de la fundación. Incluye el directorio de empresas evaluadas, la ficha de cada una y un comparador con los datos oficiales del VCr2026.",
+            text: "La web oficial del rating de empresas de la fundación, con la ficha de cada empresa, un comparador y la matriz de valor sostenible.",
+            href: "/proyectos/vcr",
           },
           {
             name: "self-VCr",
-            tech: "Next.js · Prisma · PostgreSQL",
+            hidden: true,
+            tech: "Next.js · PostgreSQL",
             text: "La plataforma en la que las empresas realizan su autoevaluación: responden el cuestionario, obtienen su rating y descargan el informe oficial en PDF.",
           },
         ],
       },
-      partners: {
-        title: "Con la Universidad de St. Gallen",
-        text: "La Foundation for Value Creation es una fundación sin ánimo de lucro con sede en St. Gallen, presidida por el Dr. Tomas Casas. El Elite Quality Index, que editan el Dr. Tomas Casas y el profesor Guido Cozzi, se elabora bajo la dirección académica de tres institutos de la Universidad de St. Gallen y con una red internacional de socios académicos, entre ellos la Facultad de Economía de la Universidad de Oporto. Se fundamenta en la teoría de élites del desarrollo económico y evalúa, mediante 148 indicadores, si las élites de cada país crean valor o lo extraen. La edición de 2026 es la séptima.",
+      credits: {
+        title: "Un proyecto transversal",
+        items: [
+          {
+            role: "Dirección del índice",
+            who: "Tomas Casas i Klett y Guido Cozzi",
+            note: "Director del índice y economista jefe",
+          },
+          {
+            role: "Coordinación, dirección de arte e identidad visual",
+            who: "MUTU Design",
+            note: "Experiencia de usuario y visualización de la información",
+            href: site.mutuDesign,
+          },
+          {
+            role: "Ingeniería y sistema",
+            who: "Jorge Carrera Diez",
+            note: "Arquitectura, datos, herramientas y despliegue",
+          },
+        ],
+      },
+      sources: {
+        title: "Fuentes",
+        items: [
+          { label: "elitequality.org, la web oficial", href: site.eqx },
+          { label: "Informes oficiales del EQx", href: site.eqxReports },
+          { label: "El índice en la Universidad de St. Gallen", href: site.eqxIndex },
+          { label: "Value Creation Rating", href: site.vcr },
+        ],
       },
       stack: {
-        eyebrow: "Tecnologías",
         title: "Tecnologías",
         groups: [
+          { label: "Webs", items: ["Astro", "React", "TypeScript", "D3"] },
+          { label: "Calidad y entrega", items: ["Vitest", "Playwright", "GitHub Actions"] },
+        ],
+      },
+    },
+    vcr: {
+      title: "Value Creation Rating",
+      description:
+        "Web oficial del Value Creation Rating (VCr), el rating de la Foundation for Value Creation y la Universidad de St. Gallen que evalúa a las 1.000 mayores empresas cotizadas del mundo.",
+      eyebrow: "Cliente · Suiza",
+      heading: "Value Creation Rating: del estudio académico a la web",
+      lead: "El Value Creation Rating (VCr) mide si una empresa crea más valor del que extrae. La edición de 2026 evalúa a las 1.000 mayores empresas cotizadas del mundo y, para cada una, pone en relación el valor que crea y el que transfiere a sus grupos de interés con el valor que obtiene de ellos de forma extractiva.",
+      detail:
+        "Es un estudio de la Foundation for Value Creation y la Universidad de St. Gallen. El informe se publica una vez al año, en otoño, y la edición de 2026 es la tercera. La web oficial permite consultar y comparar sus resultados.",
+      ctaPrimary: "Ver valuecreation.org",
+      ctaSecondary: "Informes oficiales",
+      facts: [],
+      imageAlts: {
+        home: "Portada de valuecreation.org con la pregunta del rating y sus cifras principales",
+        homeMobile: "Portada de valuecreation.org en un móvil",
+      },
+      compare: {
+        book: "Informe VCr2026, página 312",
+        bookAlt: "Ficha de RTX Corporation en el informe impreso VCr2026",
+        web: "valuecreation.org",
+        webAlt: "Ficha de RTX Corporation en valuecreation.org",
+        handle: "Desliza para comparar la ficha del informe con la de la web",
+      },
+      tools: {
+        title: "Del informe a la web",
+        text: "Tres herramientas trasladan los resultados del informe a un formato interactivo.",
+        items: [
           {
-            label: "Webs del EQx y del VCr",
-            items: ["Astro", "React", "Tailwind", "TypeScript", "D3"],
+            key: "scorecard",
+            name: "Fichas de empresa",
+            text: "Cada empresa tiene su ficha. En ella se le asigna una de las nueve clases del rating, de V1 a Z2, en una escala comparable a la de las calificaciones crediticias, y su VCr se compara con los valores de referencia de su sector y de su país.",
+            alt: "Ficha de Rtx Corporation en valuecreation.org, con su clase V4 y su VCr de 1,04",
+            mobileAlt: "La misma ficha en un móvil",
           },
           {
-            label: "Panel self-VCr",
-            items: ["Next.js", "Prisma", "PostgreSQL", "Auth.js"],
+            key: "comparison",
+            name: "Comparador",
+            text: "Compara el VCr y el VCp de hasta ocho empresas.",
+            alt: "Comparador de valuecreation.org con dos empresas y sus indicadores",
           },
           {
-            label: "Entrega",
-            items: ["GitHub Actions", "Vitest", "Playwright"],
+            key: "matrix",
+            name: "Matriz de valor sostenible",
+            text: "Sitúa hasta tres empresas en uno de sus cuatro cuadrantes, según cómo combine su modelo de negocio la creación de valor y la rentabilidad.",
+            alt: "Matriz de valor sostenible con dos empresas en distintos cuadrantes",
+            mobileAlt: "La matriz en un móvil",
           },
+        ],
+      },
+      credits: {
+        title: "Un proyecto transversal",
+        items: [
+          {
+            role: "Metodología",
+            who: "Tomas Casas i Klett y Martin Nerlinger",
+            note: "Codirectores del rating",
+          },
+          {
+            role: "Coordinación, dirección de arte e identidad visual",
+            who: "MUTU Design",
+            note: "Experiencia de usuario y visualización de la información",
+            href: site.mutuDesign,
+          },
+          {
+            role: "Ingeniería y sistema",
+            who: "Jorge Carrera Diez",
+            note: "Arquitectura, datos, herramientas y despliegue",
+          },
+        ],
+      },
+      sources: {
+        title: "Fuentes",
+        items: [
+          { label: "valuecreation.org, la web oficial", href: site.vcr },
+          { label: "Informes oficiales del VCr", href: site.vcrReports },
+          { label: "Informe VCr2026 en SSRN", href: site.vcr2026Report },
+          { label: "Universidad de St. Gallen", href: site.unisg },
+          { label: "Elite Quality Index", href: site.eqx },
+        ],
+      },
+      stack: {
+        title: "Tecnologías",
+        groups: [
+          { label: "Web", items: ["Astro", "React", "TypeScript", "SVG"] },
+          { label: "Calidad y entrega", items: ["Vitest", "Playwright", "Azure"] },
         ],
       },
     },

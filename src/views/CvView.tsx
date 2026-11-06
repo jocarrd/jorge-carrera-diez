@@ -79,9 +79,15 @@ export function CvView({ locale }: { locale: Locale }) {
                 {item.headline ?? `${item.role} - ${item.company}`}
               </h3>
               <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
-                {item.client
-                  ? `${item.client} · ${item.company}`
-                  : item.context}
+                {item.client ? (
+                  `${item.client} · ${item.company}`
+                ) : item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.context}
+                  </a>
+                ) : (
+                  item.context
+                )}
               </p>
               <p className="cv-entry-summary mt-5 text-base leading-relaxed text-[var(--muted)] sm:leading-7">
                 {item.summary}

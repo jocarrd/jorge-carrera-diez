@@ -6,6 +6,7 @@ type SectionHeaderProps = {
   text?: string;
   label?: string;
   accent?: string;
+  accentHref?: string;
   level?: HeadingLevel;
   align?: "center" | "left";
 };
@@ -13,8 +14,8 @@ type SectionHeaderProps = {
 export function SectionHeader({
   title,
   text,
-  label,
   accent,
+  accentHref,
   level = 2,
   align = "left",
 }: SectionHeaderProps) {
@@ -23,18 +24,23 @@ export function SectionHeader({
 
   return (
     <div className={centered ? "sh sh--center" : "sh"}>
-      {label ? (
-        <p className="sh-label">
-          {label}
-          <span aria-hidden className="sh-line" />
-        </p>
-      ) : null}
       <div className={text && !centered ? "sh-split" : undefined}>
         <Heading className="t-section">
           {accent && title.includes(accent) ? (
             <>
               {title.slice(0, title.lastIndexOf(accent))}
-              <span className="sh-accent">{accent}</span>
+              {accentHref ? (
+                <a
+                  href={accentHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sh-accent sh-accent-link"
+                >
+                  {accent}
+                </a>
+              ) : (
+                <span className="sh-accent">{accent}</span>
+              )}
               {title.slice(title.lastIndexOf(accent) + accent.length)}
             </>
           ) : (

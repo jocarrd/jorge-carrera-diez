@@ -11,7 +11,6 @@ type PageHeroProps = {
 };
 
 export function PageHero({
-  label,
   title,
   lead,
   detail,
@@ -21,12 +20,6 @@ export function PageHero({
   return (
     <section className="page-hero on-dark">
       <Container>
-        {label ? (
-          <p className="sh-label rise rise-1">
-            {label}
-            <span aria-hidden className="sh-line" />
-          </p>
-        ) : null}
         <h1 className="page-hero-title rise rise-2">{title}</h1>
         {lead || detail ? (
           <div className="page-hero-copy rise rise-3">

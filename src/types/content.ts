@@ -9,6 +9,7 @@ export type ExperienceItem = {
   period: string;
   start: string;
   end: string | null;
+  url?: string;
   summary: string;
   highlights: string[];
   image?: string;
@@ -176,12 +177,18 @@ export type Copy = {
     positioning: string;
     positioningLong: string;
     aboutTitle: string;
-    aboutStatement: { text: string; strong?: boolean }[];
+    aboutStatement: { text: string; strong?: boolean; href?: string }[];
     tagline: string[];
     taglineSub: string;
-    capabilities: { title: string; text: string }[];
+    capabilities: {
+      layer: string;
+      title: string;
+      text: string;
+      stack: string[];
+    }[];
     availability: string;
     clientsLabel: string;
+    clientsNow: string;
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
@@ -591,16 +598,55 @@ export type Copy = {
         detail: string;
         ctaPrimary: string;
         ctaSecondary: string;
-        imageAlts: { home: string };
+        imageAlts: { home: string; homeMobile: string };
+        tools: SectionCopy & {
+          items: {
+            key: "map" | "rankings" | "comparison" | "pvq";
+            name: string;
+            text: string;
+            alt: string;
+          }[];
+        };
         products: SectionCopy & {
           items: {
             name: string;
             tech: string;
             text: string;
             href?: string;
+            hidden?: boolean;
           }[];
         };
-        partners: { title: string; text: string };
+        credits: SectionCopy & {
+          items: { role: string; who: string; note: string; href?: string }[];
+        };
+        sources: SectionCopy & { items: { label: string; href: string }[] };
+      };
+    vcr: PageMeta &
+      CaseIntro & {
+        detail: string;
+        ctaPrimary: string;
+        ctaSecondary: string;
+        imageAlts: { home: string; homeMobile: string };
+        compare: {
+          book: string;
+          bookAlt: string;
+          web: string;
+          webAlt: string;
+          handle: string;
+        };
+        tools: SectionCopy & {
+          items: {
+            key: "scorecard" | "comparison" | "matrix";
+            name: string;
+            text: string;
+            alt: string;
+            mobileAlt?: string;
+          }[];
+        };
+        credits: SectionCopy & {
+          items: { role: string; who: string; note: string; href?: string }[];
+        };
+        sources: SectionCopy & { items: { label: string; href: string }[] };
       };
   };
   radarScrub: {

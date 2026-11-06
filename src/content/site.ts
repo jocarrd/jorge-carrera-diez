@@ -19,13 +19,21 @@ export const site = {
 
   snowyDomain: "snowy.es",
   eqx: "https://elitequality.org/",
+  eqxReports: "https://elitequality.org/downloads/",
   lariojameteo: "https://lariojameteo.es",
+  lumyna: "https://lumyna.es",
+  vcr: "https://www.valuecreation.org",
+  vcrReports: "https://www.valuecreation.org/downloads/",
+  vcr2026Report: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7677438",
+  unisg: "https://www.unisg.ch/en/",
+  mutuDesign: "https://mutudesign.com",
   eqxIndex:
     "https://www.unisg.ch/en/research/research-in-focus/elite-quality-index/",
   openData: "https://datos.gob.es/es/aplicaciones/snowy",
 };
 
 export const organizations = {
+  lumyna: { name: "Lumyna", url: "https://lumyna.es" },
   capgemini: { name: "Capgemini", url: "https://www.capgemini.com/es-es/" },
   eqx: {
     name: "Foundation for Value Creation",
