@@ -75,6 +75,7 @@ export const en: Copy = {
     availability: "Available for projects",
     clientsLabel: "Where I have worked",
     clientsNow: "now",
+    clientsOf: "Clients:",
     capabilities: [
       {
         layer: "Client",

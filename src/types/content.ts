@@ -189,6 +189,7 @@ export type Copy = {
     availability: string;
     clientsLabel: string;
     clientsNow: string;
+    clientsOf: string;
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];

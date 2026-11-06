@@ -71,7 +71,9 @@ export function CareerSpan({
                     : { left: `calc(${izquierda + ancho}% + 0.625rem)` }
                 }
               >
-                {item.client ?? item.company}
+                {item.client && item.client !== item.company
+                  ? `${item.company.replace(/ \(.*\)$/, "")} · ${item.client.split(",")[0]}`
+                  : item.company}
               </span>
             </li>
           );
