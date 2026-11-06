@@ -66,17 +66,31 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                 ) : null}
                 <p className="xp-summary">{item.summary}</p>
                 {item.image ? (
-                  <div className="mt-6">
-                    <BrowserFrame>
+                  <div
+                    className={`mt-6 grid gap-4 ${item.image2 ? "sm:grid-cols-2" : ""}`}
+                  >
+                    <BrowserFrame label={item.imageLabel}>
                       <Image
                         src={item.image}
                         alt={item.imageAlt ?? ""}
                         width={1600}
                         height={1000}
-                        className="h-auto w-full"
+                        className="aspect-[16/10] h-auto w-full object-cover object-top"
                         sizes="(min-width: 1024px) 640px, 100vw"
                       />
                     </BrowserFrame>
+                    {item.image2 ? (
+                      <BrowserFrame label={item.image2Label}>
+                        <Image
+                          src={item.image2}
+                          alt={item.image2Alt ?? ""}
+                          width={1600}
+                          height={1000}
+                          className="aspect-[16/10] h-auto w-full object-cover object-top"
+                          sizes="(min-width: 1024px) 320px, 100vw"
+                        />
+                      </BrowserFrame>
+                    ) : null}
                   </div>
                 ) : null}
                 <ul className="xp-highlights">

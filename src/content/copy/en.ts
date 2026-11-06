@@ -474,8 +474,11 @@ export const en: Copy = {
       headline: "Software engineer - EQx · VCr (Switzerland)",
       client: "Foundation for Value Creation",
       image: "/images/eqx26/eqx-home.webp",
-      imageAlt:
-        "Home page of the Elite Quality Index, the index the foundation publishes",
+      imageAlt: "elitequality.org home page, the Elite Quality Index website",
+      imageLabel: "elitequality.org",
+      image2: "/images/vcr/vcr-scorecard.webp",
+      image2Alt: "Firm scorecard on valuecreation.org, the Value Creation Rating website",
+      image2Label: "www.valuecreation.org",
       period: "July 2026 - Present",
       start: "2026-07",
       end: null,

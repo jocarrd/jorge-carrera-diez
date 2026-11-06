@@ -473,8 +473,11 @@ export const es: Copy = {
       headline: "Ingeniero de software - EQx · VCr (Suiza)",
       client: "Foundation for Value Creation",
       image: "/images/eqx26/eqx-home.webp",
-      imageAlt:
-        "Portada del Elite Quality Index, el índice que publica la fundación",
+      imageAlt: "Portada de elitequality.org, la web del Elite Quality Index",
+      imageLabel: "elitequality.org",
+      image2: "/images/vcr/vcr-scorecard.webp",
+      image2Alt: "Ficha de empresa en valuecreation.org, la web del Value Creation Rating",
+      image2Label: "www.valuecreation.org",
       period: "Julio 2026 - Actualidad",
       start: "2026-07",
       end: null,

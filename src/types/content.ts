@@ -14,6 +14,10 @@ export type ExperienceItem = {
   highlights: string[];
   image?: string;
   imageAlt?: string;
+  imageLabel?: string;
+  image2?: string;
+  image2Alt?: string;
+  image2Label?: string;
   logo?: {
     src?: string;
     alt: string;

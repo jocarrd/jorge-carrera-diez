@@ -8282,3 +8282,17 @@ a {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+.span-cut {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  margin-left: -1.5px;
+  background: var(--panel);
+}
+
+.span-clients {
+  font-weight: 500;
+  color: var(--muted);
+}
