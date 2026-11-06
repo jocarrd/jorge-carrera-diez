@@ -478,7 +478,7 @@ export const es: Copy = {
       start: "2026-07",
       end: null,
       summary:
-        "Relevo técnico de los productos digitales de la Foundation for Value Creation: las webs públicas del Elite Quality Index y del Value Creation Rating, y la consola privada que las acompaña. El índice mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
+        "Relevo técnico de los productos digitales de la Foundation for Value Creation: las webs públicas del Elite Quality Index y del Value Creation Rating. El índice mide en 151 países si las élites crean valor o lo extraen, con dirección académica de la Universidad de St. Gallen.",
       highlights: [
         "Traspaso del desarrollador anterior y continuidad del producto sin parar la operativa.",
         "Responsabilidad de punta a punta sobre la experiencia de usuario de ambos productos.",
@@ -680,9 +680,9 @@ export const es: Copy = {
       label: "Cliente · Suiza",
       image: "/images/eqx26/eqx-home.webp",
       description:
-        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites, con web pública y panel de evaluación.",
+        "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites.",
       impact:
-        "Rediseño de elitequality.org sobre un design system, nueva web del Value Creation Rating y mantenimiento del panel donde las empresas hacen su evaluación.",
+        "Rediseño de elitequality.org sobre un design system y nueva web del Value Creation Rating.",
       metrics: [
         { value: "151", label: "países en el ranking" },
         { value: "148", label: "indicadores" },
@@ -1980,6 +1980,7 @@ export const es: Copy = {
           },
           {
             name: "self-VCr",
+            hidden: true,
             tech: "Next.js · PostgreSQL",
             text: "La plataforma en la que las empresas realizan su autoevaluación: responden el cuestionario, obtienen su rating y descargan el informe oficial en PDF.",
           },
@@ -2019,7 +2020,6 @@ export const es: Copy = {
         title: "Tecnologías",
         groups: [
           { label: "Webs", items: ["Astro", "React", "TypeScript", "D3"] },
-          { label: "self-VCr", items: ["Next.js", "PostgreSQL"] },
           { label: "Calidad y entrega", items: ["Vitest", "Playwright", "GitHub Actions"] },
         ],
       },

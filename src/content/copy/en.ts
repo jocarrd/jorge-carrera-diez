@@ -479,7 +479,7 @@ export const en: Copy = {
       start: "2026-07",
       end: null,
       summary:
-        "Technical handover of the digital products of the Foundation for Value Creation: the public sites of the Elite Quality Index and the Value Creation Rating, and the private console behind them. The index measures across 151 countries whether elites create value or extract it, under the academic direction of the University of St. Gallen.",
+        "Technical handover of the digital products of the Foundation for Value Creation: the public sites of the Elite Quality Index and the Value Creation Rating. The index measures across 151 countries whether elites create value or extract it, under the academic direction of the University of St. Gallen.",
       highlights: [
         "Handover from the previous developer with no interruption to the running product.",
         "End-to-end ownership of the user experience across both products.",
@@ -682,9 +682,9 @@ export const en: Copy = {
       label: "Client · Switzerland",
       image: "/images/eqx26/eqx-home.webp",
       description:
-        "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites, with a public site and an assessment platform.",
+        "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites.",
       impact:
-        "Redesign of elitequality.org on a design system, a new Value Creation Rating website and maintenance of the platform where companies take their assessment.",
+        "Redesign of elitequality.org on a design system and a new Value Creation Rating website.",
       metrics: [
         { value: "151", label: "countries ranked" },
         { value: "148", label: "indicators" },
@@ -1968,6 +1968,7 @@ export const en: Copy = {
           },
           {
             name: "self-VCr",
+            hidden: true,
             tech: "Next.js · PostgreSQL",
             text: "The platform where firms run their self-assessment: they answer the questionnaire, get their rating and download the official PDF report.",
           },
@@ -2007,7 +2008,6 @@ export const en: Copy = {
         title: "Technologies",
         groups: [
           { label: "Websites", items: ["Astro", "React", "TypeScript", "D3"] },
-          { label: "self-VCr", items: ["Next.js", "PostgreSQL"] },
           { label: "Quality and delivery", items: ["Vitest", "Playwright", "GitHub Actions"] },
         ],
       },

@@ -100,7 +100,9 @@ export function EqxView({ locale }: { locale: Locale }) {
       <Section className="section-band">
         <SectionHeader title={copy.products.title} />
         <div className="mt-10 grid gap-x-10 gap-y-10 md:grid-cols-2">
-          {copy.products.items.map((item, index) => (
+          {copy.products.items
+            .filter((item) => !item.hidden)
+            .map((item, index) => (
             <Reveal key={item.name} delay={index * 70}>
               <div className="area">
                 <h3 className="area-title">

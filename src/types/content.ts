@@ -613,6 +613,7 @@ export type Copy = {
             tech: string;
             text: string;
             href?: string;
+            hidden?: boolean;
           }[];
         };
         credits: SectionCopy & {
