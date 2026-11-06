@@ -194,6 +194,7 @@ export type Copy = {
     clientsLabel: string;
     clientsNow: string;
     clientsOf: string;
+    clientVia: string;
     focus: string[];
     summary: RichSegment[];
     visualStats: [string, string][];
@@ -227,6 +228,14 @@ export type Copy = {
     lead: string;
     detailTitle: string;
     detail: string;
+    trees: {
+      columns: [string, string, string];
+      kinds: [string, string];
+      code: string;
+      docs: string;
+      codeItems: [string, string][];
+      docsItems: [string, string][];
+    };
     rows: [string, string][];
     journey: {
       label: string;

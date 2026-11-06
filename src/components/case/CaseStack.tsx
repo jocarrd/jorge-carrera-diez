@@ -25,7 +25,7 @@ export function CaseStack({ title, text, groups }: CaseStackProps) {
                 {group.label}
               </p>
               <p className="mt-3 font-mono text-[13px] leading-[1.8] text-[var(--muted)]">
-                {group.items.join(" · ")}
+                {group.items.join(", ")}
               </p>
             </div>
           ))}

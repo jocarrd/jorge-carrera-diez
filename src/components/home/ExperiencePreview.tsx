@@ -62,7 +62,11 @@ export function ExperiencePreview({ locale }: { locale: Locale }) {
                   <h3 className="tl-ed-role">{role.role}</h3>
                   <p className="tl-ed-company">
                     {role.client ?? role.company}
-                    {role.client ? <span> · {role.company}</span> : null}
+                    {role.client ? (
+                      <span>
+                        , {copy.profile.clientVia} {role.company}
+                      </span>
+                    ) : null}
                   </p>
                   <p className="tl-ed-summary">{role.summary}</p>
                 </div>

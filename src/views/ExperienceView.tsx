@@ -61,7 +61,7 @@ export function ExperienceView({ locale }: { locale: Locale }) {
                 </h2>
                 {item.client ? (
                   <p className="xp-client">
-                    {item.client} · {item.company}
+                    {item.client}, {content.profile.clientVia} {item.company}
                   </p>
                 ) : null}
                 <p className="xp-summary">{item.summary}</p>

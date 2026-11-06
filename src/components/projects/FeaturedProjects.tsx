@@ -90,7 +90,7 @@ function FeatureCard({
           ) : null}
 
           <p className="proj-feature-stack mt-7 font-mono text-[12px] leading-[1.6]">
-            {project.stack.slice(0, 7).join(" · ")}
+            {project.stack.slice(0, 7).join(", ")}
           </p>
 
           <div className="mt-8">

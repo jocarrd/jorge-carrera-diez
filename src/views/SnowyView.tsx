@@ -126,7 +126,7 @@ export function SnowyView({ locale }: { locale: Locale }) {
                 {group.label}
               </p>
               <p className="mt-2 text-base leading-[1.6] text-[var(--foreground)]">
-                {group.items.join(" · ")}
+                {group.items.join(", ")}
               </p>
             </div>
           ))}

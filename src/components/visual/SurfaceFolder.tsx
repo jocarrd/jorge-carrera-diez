@@ -9,12 +9,12 @@ type Surface = {
 };
 
 const TINTS: Record<string, string> = {
-  "snowy-ai-assistant": "#8640ee",
-  "snowy-reservoirs": "#0b7897",
+  "snowy-models": "#c2410c",
+  "snowy-storms": "#1e2a4a",
+  "snowy-teleconnections": "#0e7490",
   "snowy-climate": "#c42b22",
-  "snowy-earthquakes": "#a35f05",
-  "snowy-station-detail": "#2c6c82",
   "snowy-ski": "#1e4fa8",
+  "snowy-station-detail": "#2c6c82",
 };
 
 const keyOf = (path: string) =>
