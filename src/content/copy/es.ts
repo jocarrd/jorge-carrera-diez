@@ -12,13 +12,13 @@ export const es: Copy = {
     universityLabel: site.university,
     collegeLabel: site.college,
     ogAlt: `${site.name} - Ingeniero de software`,
-    ogEyebrow: "Forward Deployed Engineer · Full stack",
+    ogEyebrow: "Forward Deployed Engineer",
     ogTagline:
       "Arquitectura de software, desarrollo full stack e IA generativa en sistemas en producción.",
     ogStats: [
-      ["ahora", "Lumyna · EQx"],
+      ["ahora", "Lumyna y EQx"],
       ["en producción", "Snowy"],
-      ["dónde", "Remoto · España"],
+      ["dónde", "Remoto, España"],
     ],
   },
   nav: {
@@ -54,7 +54,7 @@ export const es: Copy = {
   profile: {
     headline:
       "Ingeniero de software. Soy Forward Deployed Engineer en Lumyna, llevo el relevo técnico de EQx en Suiza y desarrollo Snowy, que hoy recibe millones de impresiones al mes.",
-    positioning: "Forward Deployed Engineer · Full stack · Arquitectura de software",
+    positioning: "Forward Deployed Engineer. Full stack y arquitectura de software",
     positioningLong:
       "Forward Deployed Engineer e ingeniero full stack, de la arquitectura a producción.",
 
@@ -78,6 +78,7 @@ export const es: Copy = {
     clientsLabel: "Dónde he trabajado",
     clientsNow: "ahora",
     clientsOf: "Clientes:",
+    clientVia: "a través de",
     capabilities: [
       {
         layer: "Cliente",
@@ -240,21 +241,42 @@ export const es: Copy = {
   },
   ai: {
     titleAccent: "agentes de IA",
-    title: "Crux, mi framework para trabajar con agentes de IA",
-    lead: "Crux controla el ciclo de vida de cada tarea que hace un agente, desde que entiende el proyecto hasta que propone el cambio. Así el código que produce sigue los estándares de cada proyecto y no llega nada a producción sin haberse comprobado.",
-    detailTitle: "La memoria del agente vive en git",
+    title: "Crux, mi herramienta para trabajar con agentes de IA",
+    lead: "La diseñé para trabajar con agentes en varios ordenadores sin perder nunca el contexto. Lo que se sabe de cada proyecto vive en git, no en la memoria de una sesión ni en un solo ordenador.",
+    detailTitle: "Código y documentación, cada uno en su repositorio",
     detail:
-      "Cada proyecto tiene un repositorio solo para su documentación, con sus convenciones y sus decisiones, versionado y en la nube. El agente lo lee antes de tocar nada, y lo que aprende en una sesión no se pierde en la siguiente.",
+      "Cada proyecto separa su código de su documentación, donde quedan las decisiones tomadas y las convenciones. Los agentes la leen antes de empezar y la actualizan al terminar.",
+    trees: {
+      columns: ["Ruta", "Qué guarda", "Repositorio"],
+      kinds: ["código", "documentación"],
+      code: "jorge-carrera-diez/",
+      docs: "personal-brand-docs/",
+      codeItems: [
+        ["src/", "la web"],
+        ["public/", "imágenes y PDF del CV"],
+        ["AGENTS.md", "apunta a la documentación"],
+      ],
+      docsItems: [
+        ["decisions/", "las decisiones tomadas y por qué"],
+        ["conventions/", "diseño, redacción"],
+        ["repos/jorge-carrera-diez/", "notas propias de esta web"],
+        ["operations/", "procedimientos y runbooks"],
+        ["crux.json", "qué repositorios forman el proyecto"],
+      ],
+    },
     rows: [
       [
-        "estándar",
-        "Las reglas y las herramientas que comparten todos los proyectos.",
+        "En cada proyecto",
+        "Un repositorio de documentación, aparte del código, con las decisiones tomadas y las convenciones. Se actualiza con cada cambio.",
       ],
       [
-        "proyecto",
-        "Documentación y procedimientos propios de cada uno, declarados en un contrato.",
+        "En todos los proyectos",
+        "Procedimientos comunes que el agente sigue en lugar de improvisar: cómo se aísla una tarea, qué se comprueba antes de subirla.",
       ],
-      ["repositorio", "Punteros de contexto generados, nunca escritos a mano."],
+      [
+        "En cada ordenador",
+        "Al cambiar de máquina, una orden trae los proyectos, las tareas abiertas y los procedimientos.",
+      ],
     ],
     journey: {
       label: "Una tarea, de principio a fin",
@@ -470,7 +492,7 @@ export const es: Copy = {
       company: "EQx",
       role: "Ingeniero de software freelance",
       context: "Universidad de St. Gallen, Suiza",
-      headline: "Ingeniero de software - EQx · VCr (Suiza)",
+      headline: "Ingeniero de software - EQx y VCr (Suiza)",
       client: "Foundation for Value Creation",
       image: "/images/eqx26/eqx-home.webp",
       imageAlt: "Portada de elitequality.org, la web del Elite Quality Index",
@@ -681,7 +703,7 @@ export const es: Copy = {
       pitch: "El índice que ordena 151 países por la calidad de sus élites.",
       name: "EQx",
       url: "https://elitequality.org/",
-      label: "Cliente · Suiza",
+      label: "Cliente en Suiza",
       image: "/images/eqx26/eqx-home.webp",
       description:
         "Elite Quality Index: el índice de la Foundation for Value Creation que ordena 151 países por la calidad de sus élites.",
@@ -708,7 +730,7 @@ export const es: Copy = {
       pitch: "La web oficial del rating que evalúa a 1.000 empresas cotizadas.",
       name: "VCr",
       url: "https://www.valuecreation.org",
-      label: "Web académica · Suiza",
+      label: "Web académica en Suiza",
       image: "/images/vcr/vcr-home.webp",
       description:
         "Value Creation Rating: el rating de la Foundation for Value Creation y la Universidad de St. Gallen que mide si las 1.000 mayores empresas cotizadas crean más valor del que extraen.",
@@ -862,7 +884,7 @@ export const es: Copy = {
           text: "Terminal de gestión de tiendas, desplegado en miles de puntos de venta.",
         },
         {
-          title: "Openbank · Grupo Santander",
+          title: "Openbank, Grupo Santander",
           text: "Interfaz de un sistema de operativa bancaria para sucursales.",
         },
         {
@@ -921,7 +943,7 @@ export const es: Copy = {
           text: "Plataforma de inteligencia meteorológica: pronóstico multimodelo, radar y asistente con IA.",
           domain: "snowy.es",
           image: "/images/snowy-home.webp",
-          alt: "Portada de Snowy con el mapa de estaciones y el pronóstico",
+          alt: "Modelos meteorológicos de Snowy con el mapa de temperatura del ECMWF sobre España",
           route: "snowy",
         },
         {
@@ -1364,7 +1386,7 @@ export const es: Copy = {
       ctaPrimary: "Abrir Snowy",
       ctaSecondary: "Ver CV",
       imageAlts: {
-        home: "Interfaz principal de Snowy con asistente IA, buscador y planificador meteorológico",
+        home: "Modelos meteorológicos de Snowy con el mapa de temperatura del ECMWF sobre España",
         stations: "Mapa de estaciones meteorológicas en Snowy",
         radar: "Mapa meteorológico de Snowy con radar, avisos y estaciones",
       },
@@ -1443,40 +1465,40 @@ export const es: Copy = {
         text: "Cada módulo responde a una consulta concreta con sus propias fuentes de datos, y todos comparten la misma base técnica.",
         items: [
           {
-            title: "Asistente IA",
-            text: "Responde en lenguaje natural con datos de las estaciones y de los modelos, como qué ropa llevar o si hay avisos activos.",
-            image: "/images/snowy-ai-assistant.webp",
-            alt: "Asistente de IA de Snowy con recomendación meteorológica de ropa",
+            title: "Modelos meteorológicos",
+            text: "Los principales modelos hora a hora, con sus mapas de España, Europa y cada comunidad. Cada secuencia se puede descargar en GIF.",
+            image: "/images/snowy-models.webp",
+            alt: "Secuencia horaria de temperatura a 2 m del modelo ECMWF IFS sobre la Península en Snowy",
           },
           {
-            title: "Embalses",
-            text: "Estado de los embalses con datos oficiales, su evolución semanal y comparativas por cuenca.",
-            image: "/images/snowy-reservoirs.webp",
-            alt: "Módulo de embalses de Snowy con reserva hídrica y mapa por comunidades",
+            title: "Seguimiento de borrascas",
+            text: "Por dónde irán las borrascas del Atlántico y Europa en los próximos diez días, con su presión mínima en el centro.",
+            image: "/images/snowy-storms.webp",
+            alt: "Mapa de trayectorias de borrascas del ECMWF en Snowy con la lista de sistemas",
+          },
+          {
+            title: "Teleconexiones",
+            text: "La NAO, la AO, la MJO y el resto de índices: dónde están y qué prevé el ensemble para las próximas semanas.",
+            image: "/images/snowy-teleconnections.webp",
+            alt: "Gráfico de la Oscilación del Atlántico Norte observada y prevista por el ensemble GEFS en Snowy",
           },
           {
             title: "Clima histórico",
-            text: "Series históricas para ver cómo ha cambiado la temperatura en cada zona.",
+            text: "Cómo está cada capital frente a lo normal para la fecha, con las series desde 1950.",
             image: "/images/snowy-climate.webp",
-            alt: "Módulo de clima histórico de Snowy con mapa de calentamiento en España",
-          },
-          {
-            title: "Terremotos",
-            text: "Actividad sísmica en tiempo real a partir de fuentes oficiales, con el detalle de cada evento y los reportes de usuarios.",
-            image: "/images/snowy-earthquakes.webp",
-            alt: "Monitor de terremotos de Snowy con evento sísmico reciente",
-          },
-          {
-            title: "Estaciones",
-            text: "Ficha de cada estación meteorológica con sus datos en vivo y su histórico.",
-            image: "/images/snowy-station-detail.webp",
-            alt: "Detalle de estación meteorológica en Snowy con métricas en vivo",
+            alt: "Mapa de capitales de Snowy frente a la temperatura normal para la fecha",
           },
           {
             title: "Estaciones de esquí",
-            text: "Previsión, parte de nieve y mapa de pistas de 30 estaciones de esquí de España y Andorra.",
+            text: "Previsión, parte de nieve y cota de nieve de las estaciones de esquí de España y Andorra.",
             image: "/images/snowy-ski.webp",
-            alt: "Ficha de Baqueira Beret en Snowy con el perfil de la montaña y la cota de nieve",
+            alt: "Perfil de la montaña con la cota de nieve en Baqueira Beret en Snowy",
+          },
+          {
+            title: "El tiempo en cada ciudad",
+            text: "La previsión por horas de cada localidad, con la fiabilidad calculada a partir del acuerdo entre modelos.",
+            image: "/images/snowy-station-detail.webp",
+            alt: "Previsión de Snowy para Madrid con la lluvia por horas y la fiabilidad del pronóstico",
           },
         ],
       },
@@ -1931,7 +1953,7 @@ export const es: Copy = {
       title: "Elite Quality Index",
       description:
         "Web oficial del Elite Quality Index (EQx), el índice de la Foundation for Value Creation y la Universidad de St. Gallen que clasifica 151 países según la calidad de sus élites.",
-      eyebrow: "Cliente · Suiza",
+      eyebrow: "Cliente en Suiza",
       heading: "Elite Quality Index: la web del índice de 151 países",
       lead: "El Elite Quality Index (EQx) estudia en qué países las élites hacen crecer la economía y en cuáles se limitan a apropiarse de una parte mayor. Clasifica 151 países según la calidad de los modelos de negocio de sus élites, a partir de 148 indicadores.",
       detail:
@@ -2032,7 +2054,7 @@ export const es: Copy = {
       title: "Value Creation Rating",
       description:
         "Web oficial del Value Creation Rating (VCr), el rating de la Foundation for Value Creation y la Universidad de St. Gallen que evalúa a las 1.000 mayores empresas cotizadas del mundo.",
-      eyebrow: "Cliente · Suiza",
+      eyebrow: "Cliente en Suiza",
       heading: "Value Creation Rating: del estudio académico a la web",
       lead: "El Value Creation Rating (VCr) mide si una empresa crea más valor del que extrae. La edición de 2026 evalúa a las 1.000 mayores empresas cotizadas del mundo y, para cada una, pone en relación el valor que crea y el que transfiere a sus grupos de interés con el valor que obtiene de ellos de forma extractiva.",
       detail:
@@ -2128,14 +2150,14 @@ export const es: Copy = {
   stickyShowcase: {
     eyebrow: "Snowy",
     title: "Del dato disperso a una herramienta útil.",
-    imageAlt: "Portada de Snowy con buscador, asistente y datos en vivo",
+    imageAlt: "Modelos meteorológicos de Snowy con el mapa de temperatura del ECMWF sobre España",
     steps: [
       {
         title: "Reunir fuentes muy distintas",
         text: "Datos públicos de organismos oficiales, estaciones meteorológicas de particulares y valores que Snowy calcula a partir de los modelos. El trabajo consiste en ordenarlos y presentarlos de forma que ayuden a decidir en el día a día.",
         image: "/images/snowy-home.webp",
         imageAlt:
-          "Portada de Snowy con buscador, asistente y accesos a los mapas",
+          "Modelos meteorológicos de Snowy con el mapa de temperatura del ECMWF sobre España",
       },
       {
         title: "Snowy Developer, los datos por API",

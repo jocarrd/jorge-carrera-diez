@@ -80,7 +80,7 @@ export function CvView({ locale }: { locale: Locale }) {
               </h3>
               <p className="cv-entry-meta mt-1 text-sm text-[var(--muted)]">
                 {item.client ? (
-                  `${item.client} · ${item.company}`
+                  `${item.client}, ${content.profile.clientVia} ${item.company}`
                 ) : item.url ? (
                   <a href={item.url} target="_blank" rel="noopener noreferrer">
                     {item.context}

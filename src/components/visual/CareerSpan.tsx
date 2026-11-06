@@ -99,7 +99,7 @@ export function CareerSpan({
               >
                 {empresa}
                 {clientes.length ? (
-                  <span className="span-clients"> · {clientes.join(" · ")}</span>
+                  <span className="span-clients"> ({clientes.join(", ")})</span>
                 ) : null}
               </span>
             </li>

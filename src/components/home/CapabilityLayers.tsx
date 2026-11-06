@@ -82,7 +82,7 @@ export function CapabilityLayers({
             >
               <span className="caps-plate-label">{item.layer}</span>
               <span className="caps-plate-stack">
-                {item.stack.join(" · ")}
+                {item.stack.join(", ")}
               </span>
             </div>
           ))}

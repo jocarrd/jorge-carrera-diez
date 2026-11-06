@@ -8296,3 +8296,177 @@ a {
   font-weight: 500;
   color: var(--muted);
 }
+
+.crux-db {
+  position: relative;
+}
+
+.crux-db-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding-left: 1.25rem;
+}
+
+.crux-db-tab {
+  position: relative;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: var(--panel);
+  padding: 0.55rem 1.1rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.crux-db-tab.is-on {
+  z-index: 1;
+  background: var(--panel-strong);
+  color: var(--foreground);
+  box-shadow:
+    0 -1px 0 var(--line),
+    -1px 0 0 var(--line),
+    1px 0 0 var(--line);
+}
+
+.crux-db-sheet {
+  overflow-x: auto;
+  border-radius: 1.25rem;
+  background: var(--panel-strong);
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 1.5rem 3rem -2rem rgba(0, 0, 0, 0.35);
+}
+
+.crux-db-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.crux-db-table thead th {
+  border-bottom: 1px solid var(--line-strong);
+  padding: 0.9rem 1.25rem 0.7rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.crux-db-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 1.25rem;
+  vertical-align: top;
+}
+
+.crux-db-table tbody:last-child tr:last-child td {
+  border-bottom: 0;
+}
+
+.crux-db-group th {
+  background: var(--panel);
+  padding: 0.55rem 1.25rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.crux-db-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.6rem;
+  border-radius: 999px;
+  background: var(--line-strong);
+  vertical-align: 0.08em;
+}
+
+[data-tone="docs"] .crux-db-dot {
+  background: var(--accent);
+}
+
+.crux-db-path {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  white-space: nowrap;
+}
+
+.crux-db-note {
+  color: var(--muted);
+}
+
+.crux-db-kind span {
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--panel);
+  padding: 0.1rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+
+[data-tone="docs"] .crux-db-kind span {
+  background: color-mix(in oklab, var(--accent) 16%, transparent);
+  color: var(--accent-text);
+}
+
+.crux-rows {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.crux-rows li {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1rem;
+}
+
+.crux-row-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.crux-row-text {
+  margin-top: 0.5rem;
+  max-width: 40ch;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .crux-rows {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+
+@media (max-width: 639px) {
+  .crux-db-table {
+    min-width: 0;
+  }
+
+  .crux-db-table th:nth-child(3),
+  .crux-db-kind {
+    display: none;
+  }
+
+  .crux-db-table td,
+  .crux-db-table thead th,
+  .crux-db-group th {
+    padding-inline: 0.875rem;
+  }
+
+  .crux-db-path {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

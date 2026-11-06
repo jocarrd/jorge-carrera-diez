@@ -26,7 +26,7 @@ export function SideProjects({ locale }: { locale: Locale }) {
                   {project.description}
                 </span>
                 <span className="font-mono text-[12px] leading-[1.6] text-[var(--muted)]">
-                  {project.stack.join(" · ")}
+                  {project.stack.join(", ")}
                 </span>
                 <span className="text-[15px] font-medium text-[var(--accent-text)] group-hover:underline">
                   {project.host} ↗

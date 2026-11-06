@@ -12,13 +12,13 @@ export const en: Copy = {
     universityLabel: "University of La Rioja",
     collegeLabel: "Official Association of Computer Engineers of La Rioja",
     ogAlt: `${site.name} - Software engineer`,
-    ogEyebrow: "Forward Deployed Engineer · Full stack",
+    ogEyebrow: "Forward Deployed Engineer",
     ogTagline:
       "Software architecture, full stack development and generative AI in production systems.",
     ogStats: [
-      ["now", "Lumyna · EQx"],
+      ["now", "Lumyna and EQx"],
       ["in production", "Snowy"],
-      ["where", "Remote · Spain"],
+      ["where", "Remote, Spain"],
     ],
   },
   nav: {
@@ -54,7 +54,7 @@ export const en: Copy = {
   profile: {
     headline:
       "Software engineer. I am a Forward Deployed Engineer at Lumyna, I took over the technical lead at EQx in Switzerland, and I develop Snowy, which now takes millions of impressions a month.",
-    positioning: "Forward Deployed Engineer · Full stack · Software architecture",
+    positioning: "Forward Deployed Engineer. Full stack and software architecture",
     positioningLong:
       "Forward Deployed Engineer and full stack engineer, from architecture to production.",
 
@@ -76,6 +76,7 @@ export const en: Copy = {
     clientsLabel: "Where I have worked",
     clientsNow: "now",
     clientsOf: "Clients:",
+    clientVia: "through",
     capabilities: [
       {
         layer: "Client",
@@ -245,18 +246,42 @@ export const en: Copy = {
   },
   ai: {
     titleAccent: "AI agents",
-    title: "Crux, my framework for working with AI agents",
-    lead: "Crux controls the lifecycle of every task an agent does, from understanding the project to proposing the change. The code it produces follows each project's standards, and nothing reaches production without being checked.",
-    detailTitle: "The agent's memory lives in git",
+    title: "Crux, my tool for working with AI agents",
+    lead: "I designed it to work with agents across several computers without ever losing context. What is known about each project lives in git, not in the memory of a session or of a single machine.",
+    detailTitle: "Code and documentation, each in its own repository",
     detail:
-      "Each project has a repository just for its documentation, with its conventions and decisions, versioned and in the cloud. The agent reads it before touching anything, and what it learns in one session is not lost in the next.",
-    rows: [
-      ["standard", "Rules, procedures and tooling shared by every project."],
-      [
-        "project",
-        "Documentation and procedures of its own, declared in a contract.",
+      "Each project keeps its code apart from its documentation, where the decisions taken and the conventions are recorded. Agents read it before starting and update it when they finish.",
+    trees: {
+      columns: ["Path", "What it holds", "Repository"],
+      kinds: ["code", "documentation"],
+      code: "jorge-carrera-diez/",
+      docs: "personal-brand-docs/",
+      codeItems: [
+        ["src/", "the website"],
+        ["public/", "images and the CV pdf"],
+        ["AGENTS.md", "points to the documentation"],
       ],
-      ["repository", "Generated context pointers, never written by hand."],
+      docsItems: [
+        ["decisions/", "the decisions taken and why"],
+        ["conventions/", "design, writing"],
+        ["repos/jorge-carrera-diez/", "notes for this website"],
+        ["operations/", "procedures and runbooks"],
+        ["crux.json", "which repositories make up the project"],
+      ],
+    },
+    rows: [
+      [
+        "In each project",
+        "A documentation repository, apart from the code, with the decisions taken and the conventions. It is updated with every change.",
+      ],
+      [
+        "Across all projects",
+        "Shared procedures the agent follows instead of improvising: how a task is isolated, what is checked before it ships.",
+      ],
+      [
+        "On each computer",
+        "When switching machines, one command brings back the projects, the open tasks and the procedures.",
+      ],
     ],
     journey: {
       label: "One task, start to finish",
@@ -404,7 +429,7 @@ export const en: Copy = {
         alt: "A Snowy user profile with activity stats and their featured station",
       },
     ],
-    imageAlt: "Snowy home with weather search, AI assistant and planner",
+    imageAlt: "Snowy weather models with the ECMWF temperature map over Spain",
   },
   experiencePreview: {
     eyebrow: "Experience",
@@ -471,7 +496,7 @@ export const en: Copy = {
       company: "EQx",
       role: "Freelance software engineer",
       context: "University of St. Gallen, Switzerland",
-      headline: "Software engineer - EQx · VCr (Switzerland)",
+      headline: "Software engineer - EQx and VCr (Switzerland)",
       client: "Foundation for Value Creation",
       image: "/images/eqx26/eqx-home.webp",
       imageAlt: "elitequality.org home page, the Elite Quality Index website",
@@ -683,7 +708,7 @@ export const en: Copy = {
       pitch: "The index ranking 151 countries by the quality of their elites.",
       name: "EQx",
       url: "https://elitequality.org/",
-      label: "Client · Switzerland",
+      label: "Client in Switzerland",
       image: "/images/eqx26/eqx-home.webp",
       description:
         "Elite Quality Index: the Foundation for Value Creation index ranking 151 countries by the quality of their elites.",
@@ -710,7 +735,7 @@ export const en: Copy = {
       pitch: "The official website of the rating that scores 1,000 listed firms.",
       name: "VCr",
       url: "https://www.valuecreation.org",
-      label: "Academic website · Switzerland",
+      label: "Academic website in Switzerland",
       image: "/images/vcr/vcr-home.webp",
       description:
         "Value Creation Rating: the rating by the Foundation for Value Creation and the University of St. Gallen of whether the 1,000 largest listed firms create more value than they extract.",
@@ -921,7 +946,7 @@ export const en: Copy = {
           text: "Weather intelligence platform: multi-model forecast, radar and an AI assistant.",
           domain: "snowy.es",
           image: "/images/snowy-home.webp",
-          alt: "Snowy homepage with the station map and the forecast",
+          alt: "Snowy weather models with the ECMWF temperature map over Spain",
           route: "snowy",
         },
         {
@@ -1359,7 +1384,7 @@ export const en: Copy = {
       ctaPrimary: "Open Snowy",
       ctaSecondary: "See CV",
       imageAlts: {
-        home: "Snowy main interface with AI assistant, search and weather planner",
+        home: "Snowy weather models with the ECMWF temperature map over Spain",
         stations: "Map of weather stations in Snowy",
         radar: "Snowy weather map with radar, alerts and stations",
       },
@@ -1438,40 +1463,40 @@ export const en: Copy = {
         text: "Each module answers a specific question with its own data sources, and all of them share the same technical foundation.",
         items: [
           {
-            title: "AI assistant",
-            text: "Answers in plain language with station and model data, such as what to wear or whether alerts are active.",
-            image: "/images/snowy-ai-assistant.webp",
-            alt: "Snowy AI assistant giving a weather-based clothing recommendation",
+            title: "Weather models",
+            text: "The main models hour by hour, with their maps of Spain, Europe and each region. Every sequence can be downloaded as a GIF.",
+            image: "/images/snowy-models.webp",
+            alt: "Hourly sequence of the ECMWF IFS 2 m temperature over the Iberian Peninsula on Snowy",
           },
           {
-            title: "Reservoirs",
-            text: "Reservoir levels from official data, their weekly evolution and comparisons by river basin.",
-            image: "/images/snowy-reservoirs.webp",
-            alt: "Snowy reservoirs module with water reserves and a map by region",
+            title: "Storm tracking",
+            text: "Where Atlantic and European low-pressure systems will go over the next ten days, with their central pressure.",
+            image: "/images/snowy-storms.webp",
+            alt: "ECMWF storm track map on Snowy with the list of systems",
+          },
+          {
+            title: "Teleconnections",
+            text: "The NAO, AO, MJO and the other indices: where they stand and what the ensemble expects for the coming weeks.",
+            image: "/images/snowy-teleconnections.webp",
+            alt: "North Atlantic Oscillation chart on Snowy, observed and forecast by the GEFS ensemble",
           },
           {
             title: "Historical climate",
-            text: "Historical series showing how temperature has changed in each area.",
+            text: "How each capital compares with the normal for the date, with series going back to 1950.",
             image: "/images/snowy-climate.webp",
-            alt: "Snowy historical climate module with a warming map of Spain",
-          },
-          {
-            title: "Earthquakes",
-            text: "Seismic activity in real time from official sources, with the detail of each event and reports from users.",
-            image: "/images/snowy-earthquakes.webp",
-            alt: "Snowy earthquake monitor showing a recent seismic event",
-          },
-          {
-            title: "Stations",
-            text: "The page for each weather station, with its live data and its history.",
-            image: "/images/snowy-station-detail.webp",
-            alt: "Weather station detail in Snowy with live metrics",
+            alt: "Snowy map of capitals against the normal temperature for the date",
           },
           {
             title: "Ski resorts",
-            text: "Forecast, snow report and piste map for 30 ski resorts in Spain and Andorra.",
+            text: "Forecast, snow report and snow line for the ski resorts of Spain and Andorra.",
             image: "/images/snowy-ski.webp",
-            alt: "Baqueira Beret page on Snowy with the mountain profile and the snow line",
+            alt: "Mountain profile with the snow line at Baqueira Beret on Snowy",
+          },
+          {
+            title: "Weather in every town",
+            text: "The hourly forecast for each town, with a reliability score based on how much the models agree.",
+            image: "/images/snowy-station-detail.webp",
+            alt: "Snowy forecast for Madrid with hourly rain and forecast reliability",
           },
         ],
       },
@@ -1919,7 +1944,7 @@ export const en: Copy = {
       title: "Elite Quality Index",
       description:
         "Official website of the Elite Quality Index (EQx), the index by the Foundation for Value Creation and the University of St. Gallen that ranks 151 countries by the quality of their elites.",
-      eyebrow: "Client · Switzerland",
+      eyebrow: "Client in Switzerland",
       heading: "Elite Quality Index: the website of the 151-country index",
       lead: "The Elite Quality Index (EQx) asks which countries have elites that grow the pie and which ones only take a larger slice. It ranks 151 nations by the quality of their elites' business models, using 148 indicators.",
       detail:
@@ -2020,7 +2045,7 @@ export const en: Copy = {
       title: "Value Creation Rating",
       description:
         "Official website of the Value Creation Rating (VCr), the rating by the Foundation for Value Creation and the University of St. Gallen that assesses the world's 1,000 largest listed firms.",
-      eyebrow: "Client · Switzerland",
+      eyebrow: "Client in Switzerland",
       heading: "Value Creation Rating: from academic study to website",
       lead: "The Value Creation Rating (VCr) measures whether a firm creates more value than it extracts. The 2026 edition assesses the world's 1,000 largest listed firms, weighing their value creation and inclusive transfers to stakeholders against the extractive transfers they take from them.",
       detail:
@@ -2116,13 +2141,13 @@ export const en: Copy = {
   stickyShowcase: {
     eyebrow: "Snowy",
     title: "From scattered data to a useful tool.",
-    imageAlt: "Snowy home page with search, assistant and live data",
+    imageAlt: "Snowy weather models with the ECMWF temperature map over Spain",
     steps: [
       {
         title: "Bringing very different sources together",
         text: "Public data from official agencies, weather stations run by individuals and values Snowy computes from the forecast models. The work is ordering them and presenting them so they help people make everyday decisions.",
         image: "/images/snowy-home.webp",
-        imageAlt: "Snowy home with search, assistant and map entry points",
+        imageAlt: "Snowy weather models with the ECMWF temperature map over Spain",
       },
       {
         title: "Snowy Developer, the data through an API",

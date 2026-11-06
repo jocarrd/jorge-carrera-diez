@@ -57,7 +57,7 @@ export function SnowyShowcase({ locale }: { locale: Locale }) {
           </p>
 
           <p className="mt-8 max-w-2xl font-mono text-[12px] leading-[1.7] text-[var(--ink-dark-muted)]">
-            {(snowy.stack ?? []).join(" · ")}
+            {(snowy.stack ?? []).join(", ")}
           </p>
         </Container>
       ) : null}
