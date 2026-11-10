@@ -18,9 +18,11 @@ export function ProjectsView({ locale }: { locale: Locale }) {
         <div>
           <FeaturedProjects locale={locale} level={2} />
         </div>
-        <div className="mt-24 sm:mt-32">
-          <SideProjects locale={locale} />
-        </div>
+        {getCopy(locale).sideProjects.length > 0 ? (
+          <div className="mt-24 sm:mt-32">
+            <SideProjects locale={locale} />
+          </div>
+        ) : null}
       </Section>
     </main>
   );

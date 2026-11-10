@@ -766,17 +766,7 @@ export const es: Copy = {
       stack: ["SEO", "WordPress", "Rendimiento", "UX", "Analítica"],
     },
   ],
-  sideProjects: [
-    {
-      slug: "mac-o-menos",
-      name: "Mac o menos",
-      url: "https://macs.jorge-carrera-diez.com/",
-      host: "macs.jorge-carrera-diez.com",
-      description:
-        "Compara cada mañana el precio de 110 configuraciones de Mac en nueve tiendas españolas y en Apple, y marca dónde está más barata cada una.",
-      stack: ["Python", "Astro", "TypeScript", "GitHub Actions"],
-    },
-  ],
+  sideProjects: [],
   featuredProjects: {
     leadCta: "Ver el caso",
     secondaryCta: "Ver el caso",
