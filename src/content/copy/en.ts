@@ -771,17 +771,7 @@ export const en: Copy = {
       stack: ["SEO", "WordPress", "Performance", "UX", "Analytics"],
     },
   ],
-  sideProjects: [
-    {
-      slug: "mac-o-menos",
-      name: "Mac o menos",
-      url: "https://macs.jorge-carrera-diez.com/",
-      host: "macs.jorge-carrera-diez.com",
-      description:
-        "Every morning it compares the price of 110 Mac configurations across nine Spanish stores and Apple, and flags where each one is cheapest.",
-      stack: ["Python", "Astro", "TypeScript", "GitHub Actions"],
-    },
-  ],
+  sideProjects: [],
   featuredProjects: {
     leadCta: "See the case",
     secondaryCta: "See the case",
