@@ -752,6 +752,10 @@ export const en: Copy = {
     {
       slug: "lariojameteo",
       imageMobile: "/images/lariojameteo-movil.webp",
+      imageApp: {
+        src: "/images/lrm/app/tiempo.webp",
+        alt: "The LaRiojaMeteo app with the Logroño forecast",
+      },
       pitch: "La Rioja's reference weather portal, publishing since 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
@@ -759,16 +763,16 @@ export const en: Copy = {
       logo: "/images/lariojameteo-logo-white.png",
       image: "/images/lariojameteo-home.webp",
       description:
-        "Regional weather portal combining audience, content, SEO, community and editorial distribution for La Rioja and Logroño.",
+        "La Rioja's weather site and its app: audience, content, SEO, community and editorial distribution for La Rioja and Logroño.",
       impact:
         "A regional weather project running since 2012, with an editorial focus, SEO, community and live data.",
       metrics: [
         { value: "2012", label: "project origin" },
         { value: "2024", label: "Jorge joins" },
         { value: "130+", label: "archive pages" },
-        { value: "500k", label: "initial monthly visits" },
+        { value: "2026", label: "app on Google Play" },
       ],
-      stack: ["SEO", "WordPress", "Performance", "UX", "Analytics"],
+      stack: ["SEO", "WordPress", "React Native", "Performance", "UX"],
     },
   ],
   sideProjects: [],
@@ -1763,22 +1767,23 @@ export const en: Copy = {
     lariojameteo: {
       title: "LaRiojaMeteo",
       description:
-        "LaRiojaMeteo project case: a weather blog with more than 500,000 monthly visits where Jorge Carrera Diez works as webmaster.",
+        "LaRiojaMeteo project case: La Rioja's weather site and its app, where Jorge Carrera Diez is partner and technical lead.",
       eyebrow: "Collaboration",
       heading:
-        "LaRiojaMeteo: regional weather, community, SEO and the editorial base for Snowy.",
+        "LaRiojaMeteo: the weather site for La Rioja and its app.",
       facts: [
         { label: "Role", value: "Partner and technical lead" },
         { label: "Period", value: "Since 2024" },
-        { label: "Scope", value: "Site, SEO, performance and live data" },
+        { label: "Scope", value: "Site, app, SEO and live data" },
         { label: "Origin", value: "Running since 2012" },
       ],
       stack: {
         eyebrow: "Stack",
-        title: "A content portal that has to be fast.",
-        text: "On WordPress, with a plugin of my own for the Snowy data and the rest of the work spent making what already exists load fast, read well on a phone and get found on Google.",
+        title: "The site on WordPress and the app on React Native.",
+        text: "The site runs on WordPress, with a plugin of my own for the Snowy data and the rest of the work spent making it load fast, read well on a phone and get found on Google. The app is built with React Native and Expo.",
         groups: [
-          { label: "Platform", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "Site", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "App", items: ["React Native", "Expo", "TypeScript"] },
           {
             label: "Visibility",
             items: ["Technical SEO", "Structured data", "Core Web Vitals"],
@@ -1787,13 +1792,66 @@ export const en: Copy = {
           { label: "Measurement", items: ["Search Console", "Analytics"] },
         ],
       },
-      lead: "I work as a partner and the technical profile at LaRiojaMeteo, the reference weather portal for La Rioja and Logroño, with forecasts, analysis, live data, news, guides and community.",
+      lead: "I work as a partner and technical lead at LaRiojaMeteo, the reference weather site for La Rioja and Logroño, and on its app: forecasts, analysis, live data, news, guides and community.",
       cta: "Visit LaRiojaMeteo",
+      appCta: "See the app on Google Play",
       imageAlt: "LaRiojaMeteo home with cover, categories and latest article",
       timeline: {
         eyebrow: "Track record",
         title: "From a regional weather blog to an ecosystem with Snowy.",
         text: "LaRiojaMeteo brings history, community, local knowledge and editorial distribution. Snowy brings product, data, AI and infrastructure.",
+      },
+      app: {
+        title: "The weather for every town in La Rioja, on your phone.",
+        text: "The LaRiojaMeteo app shares articles with the site and station data with Snowy. It is free, already on Google Play and coming soon to the App Store.",
+        items: [
+          {
+            title: "Forecast for every town",
+            text: "Hourly and seven-day forecasts for every town, with how reliable each one is from comparing three models.",
+          },
+          {
+            title: "Warnings and plans",
+            text: "AEMET warnings with notifications, and an alert if the weather changes for a planned outing.",
+          },
+          {
+            title: "Live data",
+            text: "AEMET stations and the Snowy network, community reports and the Valdezcaray forecast.",
+          },
+        ],
+        shots: [
+          {
+            image: "/images/lrm/app/tiempo.webp",
+            title: "The weather in every town",
+            alt: "Logroño forecast in the LaRiojaMeteo app",
+          },
+          {
+            image: "/images/lrm/app/confianza.webp",
+            title: "Forecast confidence",
+            alt: "Confidence indicator comparing three models in the LaRiojaMeteo app",
+          },
+          {
+            image: "/images/lrm/app/plan.webp",
+            title: "Plans with alerts",
+            alt: "Form to plan an outing in the LaRiojaMeteo app",
+          },
+          {
+            image: "/images/lrm/app/avisos.webp",
+            title: "AEMET warnings",
+            alt: "Map of AEMET warnings in La Rioja inside the app",
+          },
+          {
+            image: "/images/lrm/app/estacion.webp",
+            title: "Live stations",
+            alt: "A Logroño weather station page in the app",
+          },
+          {
+            image: "/images/lrm/app/valdezcaray.webp",
+            title: "Valdezcaray",
+            alt: "Valdezcaray forecast and slope map in the app",
+          },
+        ],
+        badgeAlt: "Get it on Google Play",
+        pageCta: "See the app page",
       },
       product: {
         eyebrow: "The work",
@@ -1846,14 +1904,14 @@ export const en: Copy = {
             at: 0.55,
             year: "2024",
             title: "I join",
-            text: "With 130+ archive pages and half a million visits already banked.",
+            text: "With more than 130 archive pages and an established audience.",
             own: true,
           },
           {
             at: 1,
-            year: "Today",
-            title: "Performance, SEO and UX",
-            text: "The work is sustaining and improving what already has an audience.",
+            year: "2026",
+            title: "App on Google Play",
+            text: "The forecast for every town, now on the phone too.",
           },
         ],
       },
@@ -1878,6 +1936,11 @@ export const en: Copy = {
           label: "Snowy",
           detail: "launch of the advanced weather product",
         },
+        {
+          value: "2026",
+          label: "App",
+          detail: "launch of the app",
+        },
       ],
       responsibility: {
         eyebrow: "Responsibility",
@@ -1885,6 +1948,7 @@ export const en: Copy = {
           "A project where SEO and the mobile experience have direct impact.",
         text: "LaRiojaMeteo combines traffic, content, organic visibility and continuous maintenance.",
         items: [
+          "Design and development of the app with React Native and Expo.",
           "Architecture and technical maintenance of the site.",
           "SEO work to improve rankings and organic traffic.",
           "Multimedia content management, performance and mobile adaptation.",

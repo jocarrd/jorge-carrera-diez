@@ -15,6 +15,23 @@ import { Timeline } from "@/components/visual/Timeline";
 import { domainOf, getCopy, site } from "@/content";
 import type { Locale } from "@/i18n/config";
 
+type Shot = { image: string; title: string; alt: string };
+
+function ShotRail({ label, shots }: { label: string; shots: Shot[] }) {
+  return (
+    <Rail label={label}>
+      {shots.map((shot) => (
+        <figure key={shot.image} className="rail-item w-[62vw] max-w-[16rem]">
+          <DeviceFrame src={shot.image} alt={shot.alt} />
+          <figcaption className="mt-5 text-base font-semibold leading-[1.4] text-[var(--muted)]">
+            {shot.title}
+          </figcaption>
+        </figure>
+      ))}
+    </Rail>
+  );
+}
+
 export function LariojaMeteoView({ locale }: { locale: Locale }) {
   const copy = getCopy(locale).pages.lariojameteo;
 
@@ -25,7 +42,14 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         heading={copy.heading}
         lead={copy.lead}
         facts={copy.facts}
-        actions={<ButtonLink href={site.lariojameteo}>{copy.cta}</ButtonLink>}
+        actions={
+          <>
+            <ButtonLink href={site.lariojameteo}>{copy.cta}</ButtonLink>
+            <ButtonLink href={site.lariojameteoPlay} variant="secondary">
+              {copy.appCta}
+            </ButtonLink>
+          </>
+        }
       />
 
       <section className="case-shot on-dark">
@@ -47,7 +71,7 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
 
       <Section>
         <SectionHeader title={copy.timeline.title} text={copy.timeline.text} />
-        <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-9 sm:mt-10 lg:grid-cols-5">
           {copy.metrics.map((metric) => (
             <MetricCard key={metric.label} metric={metric} />
           ))}
@@ -67,19 +91,42 @@ export function LariojaMeteoView({ locale }: { locale: Locale }) {
         </div>
 
         <div className="mt-14">
-          <Rail label={copy.product.title}>
-            {copy.product.shots.map((shot) => (
-              <figure
-                key={shot.image}
-                className="rail-item w-[62vw] max-w-[16rem]"
-              >
-                <DeviceFrame src={shot.image} alt={shot.alt} />
-                <figcaption className="mt-5 text-base font-semibold leading-[1.4] text-[var(--muted)]">
-                  {shot.title}
-                </figcaption>
-              </figure>
-            ))}
-          </Rail>
+          <ShotRail label={copy.product.title} shots={copy.product.shots} />
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeader title={copy.app.title} text={copy.app.text} />
+
+        <div className="mt-12 grid gap-x-10 gap-y-9 md:grid-cols-3">
+          {copy.app.items.map((item) => (
+            <div key={item.title} className="area">
+              <h3 className="area-title">{item.title}</h3>
+              <p className="area-text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-14">
+          <ShotRail label={copy.app.title} shots={copy.app.shots} />
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            href={site.lariojameteoPlay}
+            className="inline-block transition-transform hover:-translate-y-0.5"
+          >
+            <Image
+              src="/images/lrm/app/google-play-badge.png"
+              alt={copy.app.badgeAlt}
+              width={646}
+              height={250}
+              className="h-auto w-[180px]"
+            />
+          </a>
+          <ButtonLink href={site.lariojameteoApp} variant="quiet">
+            {copy.app.pageCta}
+          </ButtonLink>
         </div>
       </Section>
 
