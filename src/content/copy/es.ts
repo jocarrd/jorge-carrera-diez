@@ -747,6 +747,10 @@ export const es: Copy = {
     {
       slug: "lariojameteo",
       imageMobile: "/images/lariojameteo-movil.webp",
+      imageApp: {
+        src: "/images/lrm/app/tiempo.webp",
+        alt: "La app de LaRiojaMeteo con la previsión de Logroño",
+      },
       pitch: "El portal meteorológico de referencia en La Rioja desde 2012.",
       name: "LaRiojaMeteo",
       url: site.lariojameteo,
@@ -754,16 +758,16 @@ export const es: Copy = {
       logo: "/images/lariojameteo-logo-white.png",
       image: "/images/lariojameteo-home.webp",
       description:
-        "Portal meteorológico regional que combina audiencia, contenido, SEO, comunidad y distribución editorial para La Rioja y Logroño.",
+        "La web meteorológica de La Rioja y su app: audiencia, contenido, SEO, comunidad y distribución editorial para La Rioja y Logroño.",
       impact:
         "Proyecto meteorológico regional con trayectoria desde 2012, foco editorial, SEO, comunidad y datos en directo.",
       metrics: [
         { value: "2012", label: "origen del proyecto" },
         { value: "2024", label: "incorporación de Jorge" },
         { value: "130+", label: "páginas de archivo" },
-        { value: "500k", label: "visitas históricas iniciales" },
+        { value: "2026", label: "app en Google Play" },
       ],
-      stack: ["SEO", "WordPress", "Rendimiento", "UX", "Analítica"],
+      stack: ["SEO", "WordPress", "React Native", "Rendimiento", "UX"],
     },
   ],
   sideProjects: [],
@@ -1768,22 +1772,23 @@ export const es: Copy = {
     lariojameteo: {
       title: "LaRiojaMeteo",
       description:
-        "Caso de proyecto LaRiojaMeteo, blog meteorológico con más de 500.000 visitas mensuales donde Jorge Carrera Diez colabora como webmaster.",
+        "Caso de proyecto LaRiojaMeteo: la web meteorológica de La Rioja y su app, donde Jorge Carrera Diez es socio y responsable técnico.",
       eyebrow: "Colaboración",
       heading:
-        "LaRiojaMeteo: meteorología regional, comunidad, SEO y base editorial para Snowy.",
+        "LaRiojaMeteo: la web del tiempo en La Rioja y su app.",
       facts: [
         { label: "Rol", value: "Socio y responsable técnico" },
         { label: "Periodo", value: "Desde 2024" },
-        { label: "Ámbito", value: "Web, SEO, rendimiento y datos en directo" },
+        { label: "Ámbito", value: "Web, app, SEO y datos en directo" },
         { label: "Origen", value: "Proyecto en marcha desde 2012" },
       ],
       stack: {
         eyebrow: "Stack",
-        title: "Un portal de contenido que tiene que ir rápido.",
-        text: "Sobre WordPress, con un plugin propio para los datos de Snowy y el resto del trabajo puesto en que lo que ya hay cargue rápido, se vea bien en móvil y lo encuentre Google.",
+        title: "La web sobre WordPress y la app con React Native.",
+        text: "La web va sobre WordPress, con un plugin propio para los datos de Snowy y el resto del trabajo puesto en que cargue rápido, se vea bien en móvil y la encuentre Google. La app está hecha con React Native y Expo.",
         groups: [
-          { label: "Plataforma", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "Web", items: ["WordPress", "PHP", "MySQL"] },
+          { label: "App", items: ["React Native", "Expo", "TypeScript"] },
           {
             label: "Visibilidad",
             items: ["SEO técnico", "Datos estructurados", "Core Web Vitals"],
@@ -1795,14 +1800,67 @@ export const es: Copy = {
           { label: "Medición", items: ["Search Console", "Analítica"] },
         ],
       },
-      lead: "Colaboro activamente como socio y perfil técnico en LaRiojaMeteo, portal de referencia meteorológico para La Rioja y Logroño con predicciones, análisis, datos en directo, noticias, guías y comunidad.",
+      lead: "Colaboro como socio y responsable técnico en LaRiojaMeteo, la web meteorológica de referencia en La Rioja y Logroño, y en su app: predicciones, análisis, datos en directo, noticias, guías y comunidad.",
       cta: "Visitar LaRiojaMeteo",
+      appCta: "Ver la app en Google Play",
       imageAlt:
         "Home de LaRiojaMeteo con portada, categorías y último artículo",
       timeline: {
         eyebrow: "Trayectoria",
         title: "De blog meteorológico regional a ecosistema con Snowy.",
         text: "LaRiojaMeteo aporta historia, comunidad, conocimiento local y distribución editorial. Snowy aporta producto, datos, IA e infraestructura.",
+      },
+      app: {
+        title: "El tiempo de cada municipio de La Rioja, en el móvil.",
+        text: "La app de LaRiojaMeteo comparte con la web los artículos y con Snowy los datos de las estaciones. Es gratuita, ya está en Google Play y llegará pronto a la App Store.",
+        items: [
+          {
+            title: "Previsión por municipio",
+            text: "Por horas y a siete días en todos los municipios, con lo fiable que es cada pronóstico al comparar tres modelos.",
+          },
+          {
+            title: "Avisos y planes",
+            text: "Avisos de AEMET con notificación y un aviso si cambia el tiempo de una salida planeada.",
+          },
+          {
+            title: "Datos en directo",
+            text: "Estaciones de AEMET y de la red de Snowy, reportes de la comunidad y la previsión de Valdezcaray.",
+          },
+        ],
+        shots: [
+          {
+            image: "/images/lrm/app/tiempo.webp",
+            title: "El tiempo en cada municipio",
+            alt: "Previsión de Logroño en la app de LaRiojaMeteo",
+          },
+          {
+            image: "/images/lrm/app/confianza.webp",
+            title: "Confianza del pronóstico",
+            alt: "Indicador de confianza que compara tres modelos en la app de LaRiojaMeteo",
+          },
+          {
+            image: "/images/lrm/app/plan.webp",
+            title: "Planes con aviso",
+            alt: "Formulario para planear una salida en la app de LaRiojaMeteo",
+          },
+          {
+            image: "/images/lrm/app/avisos.webp",
+            title: "Avisos de AEMET",
+            alt: "Mapa de avisos de AEMET en La Rioja dentro de la app",
+          },
+          {
+            image: "/images/lrm/app/estacion.webp",
+            title: "Estaciones en directo",
+            alt: "Ficha de una estación meteorológica de Logroño en la app",
+          },
+          {
+            image: "/images/lrm/app/valdezcaray.webp",
+            title: "Valdezcaray",
+            alt: "Previsión y mapa de pistas de Valdezcaray en la app",
+          },
+        ],
+        badgeAlt: "Disponible en Google Play",
+        pageCta: "Ver la página de la app",
       },
       product: {
         eyebrow: "El trabajo",
@@ -1855,14 +1913,14 @@ export const es: Copy = {
             at: 0.55,
             year: "2024",
             title: "Me incorporo",
-            text: "Con 130+ páginas de archivo y medio millón de visitas ya acumuladas.",
+            text: "Con más de 130 páginas de archivo y una audiencia ya formada.",
             own: true,
           },
           {
             at: 1,
-            year: "Hoy",
-            title: "Rendimiento, SEO y UX",
-            text: "El trabajo es sostener y mejorar lo que ya tiene audiencia.",
+            year: "2026",
+            title: "App en Google Play",
+            text: "La previsión de cada municipio, también en el móvil.",
           },
         ],
       },
@@ -1887,6 +1945,11 @@ export const es: Copy = {
           label: "Snowy",
           detail: "lanzamiento del producto meteorológico avanzado",
         },
+        {
+          value: "2026",
+          label: "App",
+          detail: "lanzamiento de la app",
+        },
       ],
       responsibility: {
         eyebrow: "Responsabilidad",
@@ -1894,6 +1957,7 @@ export const es: Copy = {
           "Un proyecto donde el SEO y la experiencia móvil tienen impacto directo.",
         text: "LaRiojaMeteo combina tráfico, contenido, visibilidad orgánica y mantenimiento continuo.",
         items: [
+          "Diseño y desarrollo de la app con React Native y Expo.",
           "Arquitectura y mantenimiento técnico del sitio web.",
           "Optimización SEO para mejorar posicionamiento y tráfico orgánico.",
           "Gestión de contenido multimedia, rendimiento y adaptación móvil.",

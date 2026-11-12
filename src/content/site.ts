@@ -21,6 +21,9 @@ export const site = {
   eqx: "https://elitequality.org/",
   eqxReports: "https://elitequality.org/downloads/",
   lariojameteo: "https://lariojameteo.es",
+  lariojameteoApp: "https://lariojameteo.es/app/",
+  lariojameteoPlay:
+    "https://play.google.com/store/apps/details?id=es.lariojameteo.app",
   lumyna: "https://lumyna.es",
   vcr: "https://www.valuecreation.org",
   vcrReports: "https://www.valuecreation.org/downloads/",

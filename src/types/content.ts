@@ -39,6 +39,7 @@ export type Project = {
   logo?: string;
   image?: string;
   imageMobile?: string;
+  imageApp?: { src: string; alt: string };
   pitch?: string;
 };
 
@@ -559,8 +560,17 @@ export type Copy = {
     lariojameteo: PageMeta &
       CaseIntro & {
         cta: string;
+        appCta: string;
         imageAlt: string;
         timeline: SectionCopy;
+        app: {
+          title: string;
+          text: string;
+          items: TitledText[];
+          shots: { image: string; title: string; alt: string }[];
+          badgeAlt: string;
+          pageCta: string;
+        };
         product: {
           eyebrow: string;
           title: string;

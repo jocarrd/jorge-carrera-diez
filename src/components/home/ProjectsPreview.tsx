@@ -91,12 +91,26 @@ function ProjectCard({
       <p className="proj-card-kicker">{project.label}</p>
       <p className="proj-card-pitch">{project.pitch}</p>
 
-      <div className="proj-card-device">
-        <DeviceFrame
-          src={project.imageMobile ?? ""}
-          alt={`${project.name} en un móvil`}
-        />
-      </div>
+      {project.imageApp ? (
+        <div className="proj-card-pair">
+          <div className="proj-card-pair-back">
+            <DeviceFrame
+              src={project.imageMobile ?? ""}
+              alt={`${project.name} en un móvil`}
+            />
+          </div>
+          <div className="proj-card-pair-front">
+            <DeviceFrame src={project.imageApp.src} alt={project.imageApp.alt} />
+          </div>
+        </div>
+      ) : (
+        <div className="proj-card-device">
+          <DeviceFrame
+            src={project.imageMobile ?? ""}
+            alt={`${project.name} en un móvil`}
+          />
+        </div>
+      )}
     </Link>
   );
 }
